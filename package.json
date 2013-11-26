@@ -13,7 +13,10 @@
     "docpad-plugin-eco": "~2.0.2",
     "docpad-plugin-rss": "~2.0.1",
     "docpad-plugin-jade": "~2.6.1",
-    "docpad-plugin-paged": "~2.2.3"
+    "docpad-plugin-paged": "~2.2.3",
+    "grunt-cli": "~0.1.11",
+    "grunt": "~0.4.2",
+    "grunt-ftp-push": "~0.1.2"
   },
   "main": "node_modules/docpad/bin/docpad-server",
   "scripts": {
