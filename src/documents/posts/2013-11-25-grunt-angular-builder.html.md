@@ -1,4 +1,5 @@
 ---
+date: 2013-11-25T15:19:48.436362-08:00
 layout: post
 slug: grunt-angular-builder
 tags: npm, grunt, plugin, javascript, angularjs, deployment, development

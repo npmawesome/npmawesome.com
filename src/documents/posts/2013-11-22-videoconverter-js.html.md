@@ -1,4 +1,5 @@
 ---
+date: 2013-11-22T15:20:01.275735-08:00
 layout: post
 slug: videoconverter-js
 tags: amazeballs, javascript, ffmpeg, emscripten, clientside
