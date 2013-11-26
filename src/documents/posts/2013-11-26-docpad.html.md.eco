@@ -1,0 +1,31 @@
+---
+date: 2013-11-26T15:18:56.092745-08:00
+tags: npm, javascript, coffeescript, platform, blog, cms
+npm:
+  repo: &repo bevry/docpad
+  name: &name docpad
+
+layout: post
+slug: *name
+title: *name
+---
+<%- @npm() %> is a static web site generator that is has been used in production by big and small companies for over a year and a half now to create [plenty of amazing and powerful web sites and applications](http://docpad.org/docs/showcase) quicker than ever before. What makes it different is instead of being a box to cram yourself into and hold you back, it is freeway to what you want to accomplish, just getting out of your way and allowing you to create stuff quicker than ever before without limits. Leave the redudant stuff up to me, so you can focus on the awesome stuff.
+
+    npm install <%= @document.npm.name %>
+
+## Features out of the box
+
+- Competely file based
+- Write your documents in any language, markup, templating engine, or pre-processor you wish
+- Changes to your website are automatically recompiled through our built in watch system
+- Add meta data to the top of your files to be used by templating engines to display non-standard information
+- Display custom listings of content with our powerful [Query Engine](https://github.com/bevry/query-engine/)
+- Abstract out generic headers and footers into layouts using our nested layout system
+- Deploy by copying static files
+- Built-in server to save you from having to startup your own, for dynamic deployments this even supports things like clean urls, custom routes and server-side logic
+- Robust architecture and powerful plugin system
+- Built in support for dynamic documents (e.g. search pages, signup forms, etc.)
+- Embeddable
+
+There are plenty of examples and information on the <%- @npm() %>. Check it
+out!
