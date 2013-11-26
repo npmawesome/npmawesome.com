@@ -6,7 +6,7 @@ pageSize: 3
 ---
 each page in getCollection('posts').toJSON().slice(document.page.startIdx, document.page.endIdx)
   article
-    h2: a(href=page.url)= page.title
+    h2: a(href=page.url)= preparedTitle(page)
     div!= page.contentRenderedWithoutLayouts
 
 div.pagination

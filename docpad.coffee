@@ -11,6 +11,18 @@ docpadConfig =
       author: 'Alex Gorbatchev'
       url: 'http://npmawesome.com'
 
+    preparedTitle: (doc = @document)->
+      doc.title or doc.npm?.name
+
+    preparedSlug: (doc = @document)->
+      doc.npm?.name
+
+    githubUrl: ->
+      "https://github.com/#{@document.npm.repo}"
+
+    npm: ->
+      """<a href="#{@githubUrl()}">#{@document.npm.name}</a>"""
+
   collections:
     posts: (database) ->
       database.findAllLive {relativeOutDirPath: /^posts/, isPagedAuto: $ne: true}, [basename: -1]

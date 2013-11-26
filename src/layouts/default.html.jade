@@ -1,8 +1,8 @@
 !!!
 head
-  title= document.title
-  link(rel="alternate" title="RSS" type="application/rss+xml" href="/rss")
+  title= preparedTitle() + ' | ' + site.title
+  link(rel="alternate" title="RSS" type="application/rss+xml" href="#{site.url}/rss")
   meta(charset="utf-8")
 body
-    h1= document.title
+    h1= preparedTitle()
     != content
