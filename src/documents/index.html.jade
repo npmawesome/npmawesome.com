@@ -1,0 +1,30 @@
+---
+layout: default
+isPaged: true
+pagedCollection: posts
+pageSize: 3
+---
+each page in getCollection('posts').toJSON().slice(document.page.startIdx, document.page.endIdx)
+  article
+    h2: a(href=page.url)= page.title
+    div!= page.contentRenderedWithoutLayouts
+
+div.pagination
+  ul
+    - if(!hasPrevPage())
+        li.disabled: span Prev
+    - else
+        li: a(href=getPrevPage()) Prev
+
+    - for(var pageNumber = 0; pageNumber < document.page.count; pageNumber++)
+        - if(document.page.number === pageNumber)
+            li.active: span= pageNumber + 1
+        - else
+            li: a(href=getPageUrl(pageNumber))= pageNumber + 1
+
+    - if(!hasNextPage())
+        li.disabled: span Next
+    - else
+        li: a(href=getNextPage()) Next
+
+//- pre= JSON.stringify(getCollection('documents').toJSON(), null, 2)
