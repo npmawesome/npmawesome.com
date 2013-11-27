@@ -1,0 +1,55 @@
+---
+date: 2013-11-26T16:40:43.849092-08:00
+tags: npm, javascript, browser, rpf
+npm:
+  repo: &repo Reactive-Extensions/RxJS
+  name: &name rx.js
+
+layout: post
+slug: *name
+title: *name
+---
+<%- @npm() %> is a set of libraries to compose asynchronous and event-based programs using observable collections and Array#extras style composition in JavaScript.
+
+Using RxJS, you can represent multiple asynchronous data streams (that come from diverse sources, e.g., stock quote, tweets, computer events, web service requests, etc.), and subscribe to the event stream using the Observer object. The Observable notifies the subscribed Observer instance whenever an event occurs.
+
+    npm install <%= @document.npm.name %>
+
+## Example
+
+    /* Get stock data somehow */
+    var source = getAsyncStockData();
+
+    var subscription = source
+      .filter(function (quote) {
+        return quote.price > 30;
+      })
+      .map(function (quote) {
+        return quote.price;
+      })
+      .subscribe(
+        function (price) {
+          console.log('Prices higher than $30: $' + price);
+        },
+        function (err) {
+          console.log('Something went wrong: ' + err.message);
+        });
+
+    /* When we're done */
+    subscription.dispose();
+
+Reactive programming is a very interesting way of writing code. Check out a few videos and presentations linked from rx.js
+
+#### Presentations
+- [Don't Cross the Streams - Cascadia.js 2012](http://www.slideshare.net/mattpodwysocki/cascadiajs-dont-cross-the-streams)
+- [Curing Your Asynchronous Blues - Strange Loop 2013](https://github.com/Reactive-Extensions/StrangeLoop2013)
+
+#### Videos
+- [Hello RxJS - Channel 9](http://channel9.msdn.com/Blogs/Charles/Introducing-RxJS-Reactive-Extensions-for-JavaScript)
+- [MIX 2011](http://channel9.msdn.com/events/MIX/MIX11/HTM07)
+- [RxJS Today and Tomorrow - Channel 9](http://channel9.msdn.com/Blogs/Charles/Matthew-Podwysocki-and-Bart-J-F-De-Smet-RxJS-Today-and-Tomorrow)
+- [Cascadia.js 2012](http://www.youtube.com/watch?v=FqBq4uoiG0M)
+- [Reactive Extensions Videos on Channel 9](http://channel9.msdn.com/Tags/reactive+extensions)
+
+There are plenty of examples and information on the <%- @npm() %>. Check it
+out!
