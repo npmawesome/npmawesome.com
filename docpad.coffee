@@ -11,6 +11,8 @@ docpadConfig =
       author: 'Alex Gorbatchev'
       url: 'http://npmawesome.com'
 
+    moment: require 'moment'
+
     preparedTitle: (doc = @document)->
       doc.title or doc.npm?.name
 
@@ -22,6 +24,9 @@ docpadConfig =
 
     npm: ->
       """<a href="#{@githubUrl()}">#{@document.npm.name}</a>"""
+
+    author: (doc = @document) ->
+      doc.author or 'Alex Gorbatchev'
 
   collections:
     posts: (database) ->

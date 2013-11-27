@@ -2,7 +2,21 @@
 head
   title= preparedTitle() + ' | ' + site.title
   link(rel="alternate" title="RSS" type="application/rss+xml" href="#{site.url}/rss")
+  link(rel="stylesheet" type="text/css" media="all" href="/styles.css")
+  meta(name="viewport" content="initial-scale=1, maximum-scale=1")
   meta(charset="utf-8")
 body
-    h1= preparedTitle()
-    != content
+  .container
+    .row
+      h1#logo: a(href="/") npm awesome
+      #sub-title
+        | <a href="http://npmjs.org">npm</a> picks, old and new by <a href="https://github.com/alexgorbatchev">Alex Gorbatchev</a>
+
+    .row
+      .main.col
+        block content
+          != content
+      .sidebar.col
+        iframe(src="http://githubbadge.appspot.com/alexgorbatchev" style="border: 0;height: 142px;width: 200px;overflow: hidden;" frameBorder="0")
+
+  a#fork-me(href="https://github.com/alexgorbatchev/npm-awesome-site") Fork Me

@@ -1,0 +1,144 @@
+@import (less) "../../vendor/dead-simple-grid/css/grid.css";
+
+.container {
+  max-width: 70em;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media only screen and (min-width: 34em) {
+}
+
+@media only screen and (min-width: 54em) {
+  .main { width: 66.66%; }
+  .sidebar { width: 33.33%; }
+}
+
+@media only screen and (min-width: 76em) {
+  .main { width: 75%; }
+  .sidebar { width: 25%; }
+}
+
+@code-font : Monaco, Courier New, monospace;
+
+body {
+  background: white;
+  border-top: 3px solid black;
+  margin: 0;
+  font-family: @code-font;
+  font-size: 0.9em;
+}
+
+a {
+  color: darken(yellow, 20%);
+  text-decoration: none;
+}
+
+#fork-me {
+  position: absolute;
+  left: 0;
+  top: 0;
+  background: url('/images/fork-me.png') no-repeat;
+  width: 141px;
+  height: 141px;
+  text-indent: -500px;
+}
+
+#logo {
+  font-family: @code-font;
+  text-align: center;
+  font-size: 4em;
+  font-weight: normal;
+  margin-bottom: 0;
+
+  a {
+    color: inherit;
+  }
+}
+
+#sub-title {
+  text-align: center;
+  margin-bottom: 2em;
+}
+
+article {
+  > header {
+    margin: 3em 0 1em 0;
+
+    h2 {
+      font-family: @code-font;
+      font-weight: normal;
+      font-size: 3em;
+      margin: 0;
+
+      a {
+        text-decoration: none;
+        color: #000;
+      }
+    }
+
+    .meta {
+      color: silver;
+      font-size: 0.8em;
+    }
+  }
+
+  &:first-child > header {
+    margin-top: 0;
+  }
+
+  pre, code {
+    font-family: @code-font;
+    font-size: .9em;
+  }
+
+  pre {
+    background-color: #333;
+    padding: .8em 1em;
+    color: #fff;
+    border-radius: 2px;
+
+    code {
+      background: none;
+      padding: 0;
+    }
+  }
+
+  code {
+    background: #e0e0e0;
+    padding: 0 0.3em;
+  }
+
+  blockquote {
+    padding: 0 0 0 1em;
+    quotes: "“" "“" "“" "“";
+    position: relative;
+
+    &:before {
+      content: open-quote;
+      position: absolute;
+      font-size: 5em;
+      right: 100%;
+      top: 0;
+      line-height: 1em;
+      color: silver;
+    }
+  }
+}
+
+.pagination {
+  ul {
+    list-style-type: none;
+    margin: 2em 0;
+    padding: 0;
+    text-align: center;
+
+    li {
+      display: inline-block;
+
+      & + li {
+        margin-left: 1em;
+      }
+    }
+  }
+}

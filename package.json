@@ -16,7 +16,10 @@
     "docpad-plugin-paged": "~2.2.3",
     "grunt-cli": "~0.1.11",
     "grunt": "~0.4.2",
-    "grunt-ftp-push": "~0.1.2"
+    "grunt-ftp-push": "~0.1.2",
+    "docpad-plugin-less": "~2.2.0",
+    "docpad-plugin-partials": "~2.8.1",
+    "moment": "~2.4.0"
   },
   "main": "node_modules/docpad/bin/docpad-server",
   "scripts": {
