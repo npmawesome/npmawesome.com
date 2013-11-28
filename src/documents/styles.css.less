@@ -6,19 +6,6 @@
   margin-right: auto;
 }
 
-@media only screen and (min-width: 34em) {
-}
-
-@media only screen and (min-width: 54em) {
-  .main { width: 66.66%; }
-  .sidebar { width: 33.33%; }
-}
-
-@media only screen and (min-width: 76em) {
-  .main { width: 75%; }
-  .sidebar { width: 25%; }
-}
-
 @code-font : Monaco, Courier New, monospace;
 
 body {
@@ -62,6 +49,9 @@ a {
 }
 
 article {
+  max-width: 100%;
+  overflow: hidden;
+
   > header {
     margin: 3em 0 1em 0;
 
@@ -101,6 +91,12 @@ article {
     code {
       background: none;
       padding: 0;
+      margin: 0;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      max-width: 100%;
+      display: inline-block;
+      line-height: inherit;
     }
   }
 
@@ -142,3 +138,26 @@ article {
     }
   }
 }
+
+
+@media only screen and (min-width: 34em) {
+}
+
+@media only screen and (max-width: 550px) {
+  #fork-me {
+    width: 60px;
+    height: 60px;
+    background-size: cover;
+  }
+}
+
+@media only screen and (min-width: 54em) {
+  .main { width: 66.66%; }
+  .sidebar { width: 33.33%; }
+}
+
+@media only screen and (min-width: 76em) {
+  .main { width: 75%; }
+  .sidebar { width: 25%; }
+}
+
