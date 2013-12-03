@@ -5,7 +5,7 @@ slug: event-stream
 tags: npm, javascript, streams, events
 title: event-stream
 ---
-<img src="/logos/event-stream.gif" style="width: 200px; float: right"/>
+<img src="/images/posts/event-stream.gif" style="width: 200px; float: right"/>
 [event-stream](https://github.com/dominictarr/event-stream)
 is a toolkit to make creating and working with streams easy..
 
