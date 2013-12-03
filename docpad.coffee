@@ -26,7 +26,12 @@ docpadConfig =
       """<a href="#{@githubUrl()}">#{@document.npm.name}</a>"""
 
     author: (doc = @document) ->
-      doc.author or 'Alex Gorbatchev'
+      doc.author or '<a href="http://github.com/alexgorbatchev">Alex Gorbatchev</a>'
+
+    pageTitle: ->
+      title = @preparedTitle()
+      title = "#{title} | " if title?
+      (title or '') + @site.title
 
   collections:
     posts: (database) ->
