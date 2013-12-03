@@ -35,7 +35,7 @@ docpadConfig =
 
   collections:
     posts: (database) ->
-      database.findAllLive {relativeOutDirPath: /^posts/, isPagedAuto: $ne: true}, [basename: -1]
+      database.findAllLive {relativeOutDirPath: /^posts/, isPagedAuto: $ne: true}, [date: -1, basename: -1]
 
   plugins:
     rss:
