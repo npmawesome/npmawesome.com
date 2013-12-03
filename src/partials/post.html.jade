@@ -1,6 +1,6 @@
 article
   header
     h2: a(href=post.url)= preparedTitle(post)
-    .meta posted #{moment(post.date).fromNow()} by #{author()}
+    .meta posted by !{author()} on #{moment(post.date).format("MMMM Do YYYY")}
 
   div!= post.contentRenderedWithoutLayouts
