@@ -1,0 +1,37 @@
+---
+date: 2013-12-03T11:00:17.949753-08:00
+tags: npm, javascript, ack, ag, search
+npm:
+  repo: &repo gjtorikian/nak
+  name: &name nak
+
+layout: post
+slug: *name
+title: *name
+---
+<%- @npm() %> is an ack/ag clone written in Node.js. The focus here is on speed and performance, rather than trying to 100% mimic all the functionality of ack.
+
+    npm install <%= @document.npm.name %>
+
+There were two goals set out:
+
+1. Be faster than ack
+1. Return matches in order
+
+A lot of the functionality is modeled around ag. In fact, you can provide a `.nakignore` file to define patterns to ignore. `.nakignore` files in the directory you're searching under are automatically included as ignore rules, but you can choose to specify any additional file (with `.gitignore`-style rules) with `-a`.
+
+## Usages
+
+    nak -G '*.js' 'function' .
+
+Find all files ending in `js`, in the current directory, with the phrase `function`.
+
+    nak -a ../.gitignore -i 'def' .
+
+Find all files in the current directory, with the phrase in `def` (case-insensitive), in the current directory; also, use the _.gitignore_ rules from the folder above
+
+    nak -d '*.less' -w 'mixin' .
+
+Find all files in the current directory that are not `.less`, with the phrase `mixin` (whole word), in the current directory
+
+There are plenty of examples and information on the <%- @npm() %>. Check it out!
