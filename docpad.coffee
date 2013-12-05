@@ -33,6 +33,26 @@ docpadConfig =
       title = "#{title} | " if title?
       (title or '') + @site.title
 
+  events:
+    writeAfter: (opts, next) ->
+      # Prepare
+      {rootPath, outPath} = @docpad.getConfig()
+
+      # Bundle the scripts the editor uses together
+      command = """
+        #{rootPath}/node_modules/.bin/browserify #{outPath}/scripts/npmawesome.js
+        | #{rootPath}/node_modules/.bin/uglifyjs > #{outPath}/scripts/npmawesome.bundle.js
+      """.replace(/\n/g,' ')
+
+      # Execute
+      safeps = require('safeps')
+
+      safeps.exec command, {cwd:rootPath, output:true}, next
+      # safeps.exec "find ./out/scripts | grep -v 'npmawesome.bundle.js' | xargs rm", {cwd:rootPath}, ->
+
+      # Chain
+      @
+
   collections:
     posts: (database) ->
       database.findAllLive {relativeOutDirPath: /^posts/, isPagedAuto: $ne: true}, [date: -1, basename: -1]
