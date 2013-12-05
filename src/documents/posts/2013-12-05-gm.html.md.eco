@@ -1,0 +1,42 @@
+---
+date: 2013-12-05T09:44:35.103225-08:00
+tags: npm, javascript, imagemagick
+npm:
+  repo: &repo aheckmann/gm
+  name: &name gm
+
+layout: post
+slug: *name
+title: *name
+---
+<%- @npm() %> is [ImageMagick](http://www.imagemagick.org) for node, what else is there to say?
+
+    npm install <%= @document.npm.name %>
+
+<img src="/images/posts/imagemagick.png" style="float: right; width: 100px; margin-left: 1em;" />
+
+> ImageMagick is a software suite to create, edit, compose, or convert bitmap images. It can read and write images in a variety of formats (over 100) including DPX, EXR, GIF, JPEG, JPEG-2000, PDF, PNG, Postscript, SVG, and TIFF. Use ImageMagick to resize, flip, mirror, rotate, distort, shear and transform images, adjust image colors, apply various special effects, or draw text, lines, polygons, ellipses and Bézier curves.
+
+The [demo](http://aheckmann.github.io/gm/) page has an interactive playground that shows a tiny fraction of what <%- @npm() %> can do.
+
+    var gm = require('./gm');
+
+    // resize and remove EXIF profile data
+    gm('/path/to/my/img.jpg')
+      .resize(240, 240)
+      .noProfile()
+      .write('/path/to/resize.png', function (err) {
+        if (!err) console.log('done');
+      });
+
+    // annotate an image
+    gm('/path/to/my/img.jpg')
+      .stroke("#ffffff")
+      .drawCircle(10, 10, 20, 10)
+      .font("Helvetica.ttf", 12)
+      .drawText(30, 20, "GMagick!")
+      .write("/path/to/drawing.png", function (err) {
+        if (!err) console.log('done');
+      });
+
+There are plenty of examples and information on the <%- @npm() %>. Check it out!
