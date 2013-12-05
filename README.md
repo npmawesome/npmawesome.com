@@ -1,4 +1,4 @@
-# npmawesome.com
+# npmawesome.com [![Gittip](http://img.shields.io/gittip/alexgorbatchev.png)](https://www.gittip.com/alexgorbatchev/)
 
 Source files for [npmawesome.com](http://npmawesome.com).
 
