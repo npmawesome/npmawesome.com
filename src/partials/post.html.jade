@@ -1,6 +1,11 @@
 article
   header
-    h2: a(href=post.url)= preparedTitle(post)
-    .meta posted by !{author()} on #{moment(post.date).format("MMMM Do YYYY")}
+    h2
+      a(href=post.url)= preparedTitle(post)
+    .meta
+      span posted by !{author()} on #{moment(post.date).format("MMMM Do YYYY")}
+
+      - if(post.npm)
+        .github-stars(data-github-repo=post.npm.repo)
 
   div!= post.contentRenderedWithoutLayouts

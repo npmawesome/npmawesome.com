@@ -40,14 +40,15 @@ docpadConfig =
 
       # Bundle the scripts the editor uses together
       command = """
+        cd #{rootPath} &&
         #{rootPath}/node_modules/.bin/browserify #{outPath}/scripts/npmawesome.js
         | #{rootPath}/node_modules/.bin/uglifyjs > #{outPath}/scripts/npmawesome.bundle.js
       """.replace(/\n/g,' ')
 
       # Execute
-      safeps = require('safeps')
+      shelljs = require 'shelljs'
 
-      safeps.exec command, {cwd:rootPath, output:true}, next
+      shelljs.exec command, next
       # safeps.exec "find ./out/scripts | grep -v 'npmawesome.bundle.js' | xargs rm", {cwd:rootPath}, ->
 
       # Chain

@@ -60,6 +60,7 @@ article {
       font-weight: normal;
       font-size: 3em;
       margin: 0;
+      display: inline-block;
 
       a {
         text-decoration: none;
@@ -70,6 +71,22 @@ article {
     .meta {
       color: silver;
       font-size: 0.8em;
+
+      .github-stars {
+        display: inline-block;
+        width: auto;
+        height: auto;
+        padding: .1em .3em;
+        background: silver;
+        color: white;
+        margin-left: .5em;
+        border-radius: 2px;
+
+        &:before {
+          content: '★';
+          margin: 0 .2em 0;
+        }
+      }
     }
   }
 
@@ -163,3 +180,4 @@ article {
 
 // single colum
 .main { width: 100% !important; }
+

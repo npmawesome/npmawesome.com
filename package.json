@@ -22,8 +22,8 @@
     "moment": "~2.4.0",
     "docpad-plugin-coffee": "~2.0.2",
     "browserify": "~2.36.1",
-    "safeps": "~2.2.9",
-    "uglify-js": "~2.4.6"
+    "uglify-js": "~2.4.6",
+    "shelljs": "~0.2.6"
   },
   "main": "node_modules/docpad/bin/docpad-server",
   "scripts": {
