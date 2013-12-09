@@ -1,0 +1,78 @@
+---
+date: 2013-12-09T14:17:51.697621-08:00
+tags: npm, javascript, terminal
+npm:
+  repo: &repo chjj/blessed
+  name: &name blessed
+
+layout: post
+slug: *name
+title: *name
+---
+<%- @npm() %> is a terminal control library for Unix-like systems, enabling the construction of text user interface (TUI) applications. In other words it's a curses-like library for node.js
+
+    npm install <%= @document.npm.name %>
+
+## Example
+
+This will render a box with line borders containing the text 'Hello world!', perfectly centered horizontally and vertically.
+
+<img src="/images/posts/blessed.png" style="float: right; margin-left: 1em;" />
+
+    var blessed = require('blessed');
+
+    // Create a screen object.
+    var screen = blessed.screen();
+
+    // Create a box perfectly centered horizontally and vertically.
+    var box = blessed.box({
+      top: 'center',
+      left: 'center',
+      width: '50%',
+      height: '50%',
+      content: 'Hello {bold}world{/bold}!',
+      tags: true,
+      border: {
+        type: 'line'
+      },
+      style: {
+        fg: 'white',
+        bg: 'magenta',
+        border: {
+          fg: '#ffffff'
+        },
+        hover: {
+          bg: 'green'
+        }
+      }
+    });
+
+    // Append our box to the screen.
+    screen.append(box);
+
+    // If our box is clicked, change the content.
+    box.on('click', function(data) {
+      box.setContent('{center}Some different {red-fg}content{/red-fg}.{/center}');
+      screen.render();
+    });
+
+    // If box is focused, handle `enter`/`return` and give us some more content.
+    box.key('enter', function(ch, key) {
+      box.setContent('{right}Even different {black-fg}content{/black-fg}.{/right}\n');
+      box.setLine(1, 'bar');
+      box.insertLine(1, 'foo');
+      screen.render();
+    });
+
+    // Quit on Escape, q, or Control-C.
+    screen.key(['escape', 'q', 'C-c'], function(ch, key) {
+      return process.exit(0);
+    });
+
+    // Focus our element.
+    box.focus();
+
+    // Render the screen.
+    screen.render();
+
+There are plenty of examples and information on the <%- @npm() %>. Check it out!
