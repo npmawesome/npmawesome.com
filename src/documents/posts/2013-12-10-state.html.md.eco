@@ -1,0 +1,74 @@
+---
+date: 2013-12-10T16:08:10.427992-08:00
+tags: npm, coffeescript, state
+npm:
+  repo: &repo nickfargo/state
+  name: &name state
+
+layout: post
+slug: *name
+title: *name
+---
+<%- @npm() %> is a library for implementing [first-class states](http://statejs.org/docs/#concepts--states) on arbitrary owner objects.
+
+    npm install <%= @document.npm.name %>
+
+There's an incredible amount of funtionality described in the [very extensive documentation](http://statejs.org/docs/).
+
+<img src="http://statejs.org/img/dodecagem-640px.png" style="float: right; width: 200px; margin-left: 1em;" />
+
+## Minimal footprint
+
+All functionality of State is to be instigated through the exported state function. It should be able both to generate state expressions and to implement expressed states into an existing JavaScript object, depending on the arguments provided. In the latter case, the newly implemented system of states should be accessible from a single object. `state()` method on the affected object.
+
+## Expressive power
+
+As much as possible, State should aim to look and feel like a feature of the language. The interpreted shorthand syntax, simple keyword attributes, and limited interface should allow for production code that is terse, declarative, and easy to write and understand.
+
+## Opacity
+
+Apart from the addition of the `object.state()` method, a call to `state()` must make no other modifications to a State–affected object's interface. Methods are replaced with delegators, which forward method calls to the current state. This is to be implemented opaquely and non-destructively: consumers of the object need not be aware of which states are active in the object, or even that a concept of state exists at all, and a call to `object.state('').destroy()` must restore the object to its original form.
+
+## Example
+
+    var flavors = [
+      'vanilla',
+      'chocolate',
+      'strawberry',
+      'AmeriCone Dream'
+    ];
+
+    function Kid () {}
+
+    state( Kid.prototype, 'mutable', {
+      data: {
+        favorite: 'chocolate'
+      },
+
+      waver: state.bind( function () {
+        var i = Math.random() * flavors.length << 0;
+        this.data({ favorite: flavors[i] });
+      }),
+
+      whine: function ( complaint ) {
+        if ( typeof console !== 'undefined' ) {
+          console.log( complaint );
+        }
+      },
+
+      mutate: function ( mutation, replaced ) {
+        this.owner().whine(
+          "I hate " + replaced.favorite + ", " +
+          "I want " + mutation.favorite + "!"
+        );
+      }
+    });
+
+    var jr = new Kid;
+
+    jr.waver();  // log <<< "I hate chocolate, I want strawberry!"
+    jr.waver();  // log <<< "I hate strawberry, I want chocolate!"
+    jr.waver();  // nothing
+    jr.waver();  // log <<< "I hate chocolate, I want AmeriCone Dream!"
+
+There are plenty of examples and information on the [documentation site](http://statejs.org). Check it out!
