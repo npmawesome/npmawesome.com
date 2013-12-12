@@ -2,7 +2,7 @@
 date: 2013-12-11T17:27:02.644408-08:00
 tags: npm, javascript, debugging, json, formatting
 npm:
-  repo: &repo nickfargo/prettyjson
+  repo: &repo rafeca/prettyjson
   name: &name prettyjson
 
 layout: post
