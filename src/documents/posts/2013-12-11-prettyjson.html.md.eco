@@ -1,0 +1,39 @@
+---
+date: 2013-12-11T17:27:02.644408-08:00
+tags: npm, javascript, debugging, json, formatting
+npm:
+  repo: &repo nickfargo/prettyjson
+  name: &name prettyjson
+
+layout: post
+slug: *name
+title: *name
+---
+<%- @npm() %> is package for formatting JSON data in a coloured YAML-style, perfect for CLI output.
+
+    npm install <%= @document.npm.name %>
+
+## CLI
+
+    $ prettyjson package.json
+    ...
+    $ curl https://api.github.com/users/rafeca | prettyjson
+    ...
+    $ PRETTYJSON_KEYS=red PRETTYJSON_DASH=blue PRETTYJSON_STRING=yellow prettyjson package.json
+
+## API
+
+[<img src="https://github-camo.global.ssl.fastly.net/84c63f2a817ca95b6ccaff240a75fbf1b11f7b87/687474703a2f2f7261666563612e636f6d2f7072657474796a736f6e2f696d616765732f6578616d706c65332e706e67" style="float: right; width: 300px; margin-left: 1em" />](https://github-camo.global.ssl.fastly.net/84c63f2a817ca95b6ccaff240a75fbf1b11f7b87/687474703a2f2f7261666563612e636f6d2f7072657474796a736f6e2f696d616765732f6578616d706c65332e706e67)
+
+    var prettyjson = require('prettyjson');
+
+    var data = {
+      username: 'rafeca',
+      url: 'https://github.com/rafeca',
+      twitter_account: 'https://twitter.com/rafeca',
+      projects: ['prettyprint', 'connfu']
+    };
+
+    console.log(prettyjson.render(data));
+
+There are plenty of examples and information on the <%- @npm() %>. Check it out!
