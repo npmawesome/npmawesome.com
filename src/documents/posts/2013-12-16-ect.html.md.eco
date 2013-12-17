@@ -1,0 +1,63 @@
+---
+date: 2013-12-16T16:57:39.888285-08:00
+tags: npm, coffeescript, template
+npm:
+  repo: &repo baryshev/ect
+  name: &name ect
+
+layout: post
+slug: *name
+title: *name
+---
+<%- @npm() %> is a [performance focused](http://ectjs.com/#benchmark) JavaScript template engine with embedded CoffeeScript syntax. [Just try demo](http://ectjs.com) to check all features.
+
+    npm install <%= @document.npm.name %>
+
+<img src="/images/posts/coffeescript.png" style="float: right" />
+
+## Features
+
+* Excellent performance
+* Templates caching
+* Automatic reloading of changed templates
+* CoffeeScript code in templates
+* Multi-line expressions support
+* Tag customization support
+* Node.JS and client-side support
+* Powerful but simple syntax
+* Inheritance, partials, blocks
+* Compatible with `express`
+* Compatible with `RequireJS`
+* Backward compatible with `eco`
+* [Syntax highlighting for Sublime Text 2](https://github.com/TurtlePie/Sublime-ECT) by [TurtlePie](https://github.com/TurtlePie)
+
+## Example
+
+app.js
+
+    express = require("express")
+    app = express()
+    ECT = require("ect")
+    ectRenderer = ECT watch: true, root: __dirname + "/views"
+    app.engine ".ect", ectRenderer.render
+
+    app.get "/", (req, res) ->
+      res.render "index.ect"
+
+    app.listen 3000
+    console.log "Listening on port 3000"
+
+views/index.ect
+
+    <%% extend 'layout.ect' %>
+    <div>Hello, World!</div>
+
+views/layout.ect
+
+    <html>
+      <body>
+        <%% content %>
+      </body>
+    </html>
+
+There are plenty of examples and information on the <%- @npm() %>. Check it out!

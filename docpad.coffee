@@ -34,6 +34,10 @@ docpadConfig =
       (title or '') + @site.title
 
   events:
+    parseAfter: ({collection}, done) ->
+      # @docpad.collections.posts.forEach (post) ->
+      done()
+
     writeAfter: (opts, next) ->
       # Prepare
       {rootPath, outPath} = @docpad.getConfig()
