@@ -8,6 +8,7 @@ npm:
 layout: post
 slug: *name
 title: *name
+description: ect is a performance focused JavaScript template engine with embedded CoffeeScript syntax.
 ---
 <%- @npm() %> is a [performance focused](http://ectjs.com/#benchmark) JavaScript template engine with embedded CoffeeScript syntax. [Just try demo](http://ectjs.com) to check all features.
 
