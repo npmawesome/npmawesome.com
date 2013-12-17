@@ -12,7 +12,7 @@ head
     meta(property="og:title" content=document.title)
   else
     //- index page
-    meta(property="og:image" content=document.image || "/images/posts/npm.png")
+    meta(property="og:image" content=document.image || site.url + "/images/posts/npm.png")
 
   meta(property="og:updated_time" content=(document.meta.date || getCollection('posts').at(0).get('date')).valueOf())
   meta(property="og:site_name" content=site.title)
@@ -24,7 +24,10 @@ head
 body
   .container
     .row
-      h1#logo: a(href="/") npm awesome
+      h1#logo: a(href="/")
+        span npm awesome
+        span.posts-counter=getCollection('posts').length
+
       #sub-title
         | <a href="http://npmjs.org">npm</a> picks, old and new by <a href="https://github.com/alexgorbatchev">Alex Gorbatchev</a>
         p: a(href="http://feeds.feedburner.com/npmawesome"): img(src="/images/feed.gif")
