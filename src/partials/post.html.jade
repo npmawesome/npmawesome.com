@@ -1,9 +1,10 @@
 article
   header
     h2
-      a(href=post.url)= preparedTitle(post)
+      a(href="#{post.url}")= preparedTitle(post)
     .meta
       span posted by !{author()} on #{moment(post.date).format("MMMM Do YYYY")}
+      a.comments(href="#{post.url}#disqus_thread")
 
       - if(post.npm)
         .github-stars(data-github-repo=post.npm.repo)
