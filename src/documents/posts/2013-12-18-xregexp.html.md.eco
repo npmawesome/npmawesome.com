@@ -1,0 +1,91 @@
+---
+date: 2013-12-18T17:27:16-08:00
+tags: npm, javascript, regexp
+npm:
+  repo: &repo slevithan/xregexp
+  name: &name xregexp
+
+layout: post
+slug: *name
+title: *name
+description: XRegExp provides augmented and extensible JavaScript regular expressions.
+---
+<%- @npm() %> provides augmented and extensible JavaScript regular expressions. You get new syntax, flags, and methods beyond what browsers support natively. XRegExp is also a regex utility belt with tools to make your client-side grepping simpler and more powerful, while freeing you from worrying about pesky cross-browser inconsistencies and the dubious lastIndex property.
+
+    npm install <%= @document.npm.name %>
+
+## Usage examples
+
+[<img src="http://www.bennadel.com/resources/regexday/2011/photos/1__original.jpg" style="width: 300px; float: right" />](http://www.bennadel.com/blog/2383-The-5th-Annual-Regular-Expression-Day-And-Prizes-June-1st-2012.htm)
+
+    // Using named capture and flag x (free-spacing and line comments)
+    var date = XRegExp('(?<year>  [0-9]{4} ) -?  # year  \n\
+                        (?<month> [0-9]{2} ) -?  # month \n\
+                        (?<day>   [0-9]{2} )     # day   ', 'x');
+
+    // XRegExp.exec gives you named backreferences on the match result
+    var match = XRegExp.exec('2012-02-22', date);
+    match.year; // -> '2012'
+
+    // It also includes optional pos and sticky arguments
+    var pos = 3, result = [];
+    while (match = XRegExp.exec('<1><2><3><4>5<6>', /<(\d+)>/, pos, 'sticky')) {
+      result.push(match[1]);
+      pos = match.index + match[0].length;
+    } // result -> ['2', '3', '4']
+
+    // XRegExp.replace allows named backreferences in replacements
+    XRegExp.replace('2012-02-22', date, '${month}/${day}/${year}'); // -> '02/22/2012'
+    XRegExp.replace('2012-02-22', date, function(match) {
+      return match.month + '/' + match.day + '/' + match.year;
+    }); // -> '02/22/2012'
+
+## Addons
+
+Addons are one of the more impressive features of <%- @npm() %>. In particular, the `matchRecursive` addon allows you to match balanced brackets and quotes, which is otherwise impossible with regular regex (.NET had this extension built in for some time now however).
+
+In browsers, first include the script:
+
+    <script src="src/xregexp.js"></script>
+    <script src="src/addons/matchrecursive.js"></script>
+
+You can then match recursive constructs using XRegExp pattern strings as left and right delimiters:
+
+    var str = '(t((e))s)t()(ing)';
+    XRegExp.matchRecursive(str, '\\(', '\\)', 'g');
+    // -> ['t((e))s', '', 'ing']
+
+    // Extended information mode with valueNames
+    str = 'Here is <div> <div>an</div></div> example';
+    XRegExp.matchRecursive(str, '<div\\s*>', '</div>', 'gi', {
+        valueNames: ['between', 'left', 'match', 'right']
+    });
+    /* -> [
+    {name: 'between', value: 'Here is ',       start: 0,  end: 8},
+    {name: 'left',    value: '<div>',          start: 8,  end: 13},
+    {name: 'match',   value: ' <div>an</div>', start: 13, end: 27},
+    {name: 'right',   value: '</div>',         start: 27, end: 33},
+    {name: 'between', value: ' example',       start: 33, end: 41}
+    ] */
+
+    // Omitting unneeded parts with null valueNames, and using escapeChar
+    str = '...{1}\\{{function(x,y){return y+x;}}';
+    XRegExp.matchRecursive(str, '{', '}', 'g', {
+        valueNames: ['literal', null, 'value', null],
+        escapeChar: '\\'
+    });
+    /* -> [
+    {name: 'literal', value: '...', start: 0, end: 3},
+    {name: 'value',   value: '1',   start: 4, end: 5},
+    {name: 'literal', value: '\\{', start: 6, end: 8},
+    {name: 'value',   value: 'function(x,y){return y+x;}', start: 9, end: 35}
+    ] */
+
+    // Sticky mode via flag y
+    str = '<1><<<2>>><3>4<5>';
+    XRegExp.matchRecursive(str, '<', '>', 'gy');
+    // -> ['1', '<<2>>', '3']
+
+XRegExp.matchRecursive throws an error if it scans past an unbalanced delimiter in the target string.
+
+I've been using <%- @npm() %> in [SyntaxHighlighter](https://github.com/alexgorbatchev/SyntaxHighlighter) for a while now. My favourite feature is named captures, which JavaScript is desperately missing. Have you used <%- @npm() %> already? How?
