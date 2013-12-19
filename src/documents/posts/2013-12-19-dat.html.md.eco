@@ -1,0 +1,34 @@
+---
+date: 2013-12-19T10:08:03-0800
+tags: npm, javascript, data
+npm:
+  repo: &repo maxogden/dat
+  name: &name dat
+
+layout: post
+slug: *name
+title: *name
+description: Real-time replication and versioning for large tabular data sets.
+---
+<%- @npm() %> is a project that seeks providing better tools for data collaboration.
+
+    npm install <%= @document.npm.name %>
+
+## What is dat?
+
+<img src="/images/posts/dat.png" style="float: right" />
+
+I like the name, makes for clever titles like this :) Anyways, dat:
+
+* make data syncable. automatic sync and updates of entire data sets (or subsets)
+* data sets can be very large (billions of items) or updated frequently (real time data)
+* sync and transformation plugin API to connect dat to any existing database/format/language
+* built with automated + decentralized workflows in mind
+
+To illustrate the goals of `dat` consider the GitHub project, which is a great model of this idea working in a different space. GitHub is built on top of an open source tool called `git` and provides a user-friendly web application that lets software developers find code written by others, use it in their own programs and improve upon it. In a similar fashion `dat` will be developed as a set of tools to store, synchronize, manipulate and collaborate in a decentralized fashion on sets of data, hopefully enabling platforms analogous to GitHub to be built on top of it.
+
+The concept sounds pretty amazing to me. Currently `dat` is in pre-alpha stage but with full time support from [Max Ogden](http://maxogden.com/gut-hosted-open-data-filets.html) it will evolve very quickly.
+
+<iframe width="560" height="315" src="//www.youtube.com/embed/FX7qSwz3SCk" frameborder="0" allowfullscreen></iframe>
+
+Aside from a truly epic beard, Max also has a [cool talk](http://www.youtube.com/watch?v=FX7qSwz3SCk) on YouTube introducing `dat`. Have you gotten any ideas on how this could be used yet?
