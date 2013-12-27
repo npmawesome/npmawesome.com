@@ -1,0 +1,69 @@
+<!DOCTYPE html><head><link rel="alternate" title="RSS" type="application/rss+xml" href="http://feeds.feedburner.com/npmawesome"><link rel="stylesheet" type="text/css" media="all" href="/styles.css"><meta name="viewport" content="initial-scale=1, maximum-scale=1"><meta charset="utf-8"><title>bacon.js | npm awesome</title><meta property="og:title" content="bacon.js"><meta property="og:updated_time" content="1385076001275"><meta property="og:site_name" content="npm awesome"><meta property="og:type" content="blog"><meta property="og:url" content="http://npmawesome.com/posts/2013-11-21-bacon-js"><meta name="description" content="Daily dose of awesome NPM modules for Node.js, old and new!"><meta property="og:description" content="Daily dose of awesome NPM modules for Node.js, old and new!"></head><body><div class="container"><div class="row"><h1 id="logo"><a href="/"><span>npm awesome</span><span class="posts-counter">28</span></a></h1><div id="sub-title"><a href="http://npmjs.org">npm</a> picks, old and new by <a href="https://github.com/alexgorbatchev">Alex Gorbatchev</a><p><a href="http://feeds.feedburner.com/npmawesome"><img src="/images/feed.gif"></a></p></div></div><div class="row"><div class="main col"><article><header><h2><a href="/posts/2013-11-21-bacon-js">bacon.js</a></h2><div class="meta"><span>posted by <a href="https://github.com/alexgorbatchev">Alex Gorbatchev</a> on November 21st 2013</span><a href="/posts/2013-11-21-bacon-js#disqus_thread" class="comments"></a></div></header><div><p><a href="https://github.com/baconjs/bacon.js">bacon.js</a> is a library for
+functional reactive programming. Or let’s say it’s a library for working
+with events and dynamic values (which are called Properties in
+Bacon.js). <a href="http://raimohanska.github.io/bacon.js-slides/">Check out</a>
+the interactive demo.</p>
+<pre><code>npm install baconjs</code></pre>
+<p>Conal Elliot explains functional reactive programming (FPR) over at
+<a href="http://stackoverflow.com/questions/1028250/what-is-functional-reactive-programming/1030631#1030631">Stack
+Overflow</a>:</p>
+<p><img src="/images/posts/baconjs.png" style="width: 200px; float: right"/></p>
+<blockquote>
+<p>So, what is FRP? You could have invented it yourself. Start with these
+ideas:</p>
+<ul>
+<li><p>Dynamic/evolving values (i.e., values “over time”) are first class
+values in themselves. You can define them and combine them, pass
+them into &amp; out of functions. I called these things “behaviors”.</p>
+</li>
+<li><p>Behaviors are built up out of a few primitives, like constant
+(static) behaviors and time (like a clock), and then with
+sequential and parallel combination. n behaviors are combined by
+applying an n-ary function (on static values), “point-wise”, i.e.,
+continuously over time.</p>
+</li>
+<li><p>To account for discrete phenomena, have another type (family) of
+“events”, each of which has a stream (finite or infinite) of
+occurrences. Each occurrence has an associated time and value.</p>
+</li>
+<li><p>To come up with the compositional vocabulary out of which all
+behaviors and events can be built, play with some examples. Keep
+deconstructing into pieces that are more general/simple.</p>
+</li>
+<li><p>So that you know you’re on solid ground, give the whole model a
+compositional foundation, using the technique of denotational
+semantics, which just means that (a) each type has a corresponding
+simple &amp; precise mathematical type of “meanings”, and (b) each
+primitive and operator has a simple &amp; precise meaning as a
+function of the meanings of the constituents. Never, ever mix
+implementation considerations into your exploration process. If
+this description is gibberish to you, consult (a) Denotational
+design with type class morphisms, (b) Push-pull functional
+reactive programming (ignoring the implementation bits), and (c)
+the Denotational Semantics Haskell wikibooks page. Beware that
+denotational semantics has two parts, from its two founders
+Christopher Strachey and Dana Scott: the easier &amp; more useful
+Strachey part and the harder and less useful (for software design)
+Scott part.</p>
+</li>
+</ul>
+</blockquote>
+<p>There are plenty of examples and information on the <a href="https://github.com/baconjs/bacon.js">github
+page</a>.</p>
+</div></article><div id="disqus_thread"></div><script type="text/javascript">/* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+var disqus_shortname = 'npmawesome'; // required: replace example with your forum shortname
+
+/* * * DON'T EDIT BELOW THIS LINE * * */
+(function() {
+    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+})();
+</script></div></div></div><a id="fork-me" href="https://github.com/alexgorbatchev/npm-awesome-site">Fork Me</a></body><script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-46164085-1', 'npmawesome.com');
+ga('send', 'pageview');
+</script><script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script><script src="/scripts/npmawesome.bundle.js"></script>

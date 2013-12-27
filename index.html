@@ -1,0 +1,653 @@
+<!DOCTYPE html><head><link rel="alternate" title="RSS" type="application/rss+xml" href="http://feeds.feedburner.com/npmawesome"><link rel="stylesheet" type="text/css" media="all" href="/styles.css"><meta name="viewport" content="initial-scale=1, maximum-scale=1"><meta charset="utf-8"><title>npm awesome</title><meta property="og:image" content="http://npmawesome.com/images/posts/npm.png"><meta property="og:updated_time" content="1388164770000"><meta property="og:site_name" content="npm awesome"><meta property="og:type" content="blog"><meta property="og:url" content="http://npmawesome.com/"><meta name="description" content="Daily dose of awesome NPM modules for Node.js, old and new!"><meta property="og:description" content="Daily dose of awesome NPM modules for Node.js, old and new!"></head><body><div class="container"><div class="row"><h1 id="logo"><a href="/"><span>npm awesome</span><span class="posts-counter">28</span></a></h1><div id="sub-title"><a href="http://npmjs.org">npm</a> picks, old and new by <a href="https://github.com/alexgorbatchev">Alex Gorbatchev</a><p><a href="http://feeds.feedburner.com/npmawesome"><img src="/images/feed.gif"></a></p></div></div><div class="row"><div class="main col"><article><header><h2><a href="/posts/2013-12-27-cheerio">cheerio</a></h2><div class="meta"><span>posted by <a href="https://github.com/alexgorbatchev">Alex Gorbatchev</a> on December 27th 2013</span><a href="/posts/2013-12-27-cheerio#disqus_thread" class="comments"></a><div data-github-repo="MatthewMueller/cheerio" class="github-stars"></div></div></header><div><p><a href="https://github.com/MatthewMueller/cheerio">cheerio</a> is a fast, flexible, and lean implementation of core jQuery designed specifically for the server.</p>
+<pre><code>npm install cheerio</code></pre>
+<h2 id="features">Features</h2>
+<p><img src="/images/posts/cheerio.jpg" style="width: 150px; float: right" /></p>
+<ul>
+<li>Familiar syntax. <a href="https://github.com/MatthewMueller/cheerio">cheerio</a> implements a subset of core jQuery. <a href="https://github.com/MatthewMueller/cheerio">cheerio</a> removes all the DOM inconsistencies and browser cruft from the jQuery library, revealing its truly gorgeous API.</li>
+<li>Blazingly fast. <a href="https://github.com/MatthewMueller/cheerio">cheerio</a> works with a very simple, consistent DOM model. As a result parsing, manipulating, and rendering are incredibly efficient. Preliminary end-to-end benchmarks suggest that <a href="https://github.com/MatthewMueller/cheerio">cheerio</a> is about 8x faster than JSDOM.</li>
+<li>Insanely flexible. <a href="https://github.com/MatthewMueller/cheerio">cheerio</a> wraps around <a href="https://twitter.com/fb55">@FB55</a>&#39;s <a href="https://github.com/fb55/htmlparser2">forgiving htmlparser</a>. <a href="https://github.com/MatthewMueller/cheerio">cheerio</a> can parse nearly any HTML or XML document.</li>
+</ul>
+<h2 id="example">Example</h2>
+<pre><code>var cheerio = require(&#39;cheerio&#39;),
+    $ = cheerio.load(&#39;&lt;h2 class=&quot;title&quot;&gt;Hello world&lt;/h2&gt;&#39;);
+
+$(&#39;h2.title&#39;).text(&#39;Hello there!&#39;);
+$(&#39;h2&#39;).addClass(&#39;welcome&#39;);
+
+$.html();
+//=&gt; &lt;h2 class=&quot;title welcome&quot;&gt;Hello there!&lt;/h2&gt;</code></pre>
+<h2 id="screencast-introduction">Screencast Introduction</h2>
+<iframe src="//player.vimeo.com/video/31950192" width="500" height="281" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+
+<p>Are you using jQuery on the server side?</p>
+</div></article><article><header><h2><a href="/posts/2013-12-19-dat">dat</a></h2><div class="meta"><span>posted by <a href="https://github.com/alexgorbatchev">Alex Gorbatchev</a> on December 19th 2013</span><a href="/posts/2013-12-19-dat#disqus_thread" class="comments"></a><div data-github-repo="maxogden/dat" class="github-stars"></div></div></header><div><p><a href="https://github.com/maxogden/dat">dat</a> is a project that seeks providing better tools for data collaboration.</p>
+<pre><code>npm install dat</code></pre>
+<h2 id="what-is-dat-">What is dat?</h2>
+<p><img src="/images/posts/dat.png" style="float: right" /></p>
+<p>I like the name, makes for clever titles like this :) Anyways, dat:</p>
+<ul>
+<li>make data syncable. automatic sync and updates of entire data sets (or subsets)</li>
+<li>data sets can be very large (billions of items) or updated frequently (real time data)</li>
+<li>sync and transformation plugin API to connect dat to any existing database/format/language</li>
+<li>built with automated + decentralized workflows in mind</li>
+</ul>
+<p>To illustrate the goals of <code>dat</code> consider the GitHub project, which is a great model of this idea working in a different space. GitHub is built on top of an open source tool called <code>git</code> and provides a user-friendly web application that lets software developers find code written by others, use it in their own programs and improve upon it. In a similar fashion <code>dat</code> will be developed as a set of tools to store, synchronize, manipulate and collaborate in a decentralized fashion on sets of data, hopefully enabling platforms analogous to GitHub to be built on top of it.</p>
+<p>The concept sounds pretty amazing to me. Currently <code>dat</code> is in pre-alpha stage but with full time support from <a href="http://maxogden.com/gut-hosted-open-data-filets.html">Max Ogden</a> it will evolve very quickly.</p>
+<iframe width="560" height="315" src="//www.youtube.com/embed/FX7qSwz3SCk" frameborder="0" allowfullscreen></iframe>
+
+<p>Aside from a truly epic beard, Max also has a <a href="http://www.youtube.com/watch?v=FX7qSwz3SCk">cool talk</a> on YouTube introducing <code>dat</code>. Have you gotten any ideas on how this could be used yet?</p>
+</div></article><article><header><h2><a href="/posts/2013-12-18-xregexp">xregexp</a></h2><div class="meta"><span>posted by <a href="https://github.com/alexgorbatchev">Alex Gorbatchev</a> on December 18th 2013</span><a href="/posts/2013-12-18-xregexp#disqus_thread" class="comments"></a><div data-github-repo="slevithan/xregexp" class="github-stars"></div></div></header><div><p><a href="https://github.com/slevithan/xregexp">xregexp</a> provides augmented and extensible JavaScript regular expressions. You get new syntax, flags, and methods beyond what browsers support natively. XRegExp is also a regex utility belt with tools to make your client-side grepping simpler and more powerful, while freeing you from worrying about pesky cross-browser inconsistencies and the dubious lastIndex property.</p>
+<pre><code>npm install xregexp</code></pre>
+<h2 id="usage-examples">Usage examples</h2>
+<p><a href="http://www.bennadel.com/blog/2383-The-5th-Annual-Regular-Expression-Day-And-Prizes-June-1st-2012.htm"><img src="http://www.bennadel.com/resources/regexday/2011/photos/1__original.jpg" style="width: 300px; float: right" /></a></p>
+<pre><code>// Using named capture and flag x (free-spacing and line comments)
+var date = XRegExp(&#39;(?&lt;year&gt;  [0-9]{4} ) -?  # year  \n\
+                    (?&lt;month&gt; [0-9]{2} ) -?  # month \n\
+                    (?&lt;day&gt;   [0-9]{2} )     # day   &#39;, &#39;x&#39;);
+
+// XRegExp.exec gives you named backreferences on the match result
+var match = XRegExp.exec(&#39;2012-02-22&#39;, date);
+match.year; // -&gt; &#39;2012&#39;
+
+// It also includes optional pos and sticky arguments
+var pos = 3, result = [];
+while (match = XRegExp.exec(&#39;&lt;1&gt;&lt;2&gt;&lt;3&gt;&lt;4&gt;5&lt;6&gt;&#39;, /&lt;(\d+)&gt;/, pos, &#39;sticky&#39;)) {
+  result.push(match[1]);
+  pos = match.index + match[0].length;
+} // result -&gt; [&#39;2&#39;, &#39;3&#39;, &#39;4&#39;]
+
+// XRegExp.replace allows named backreferences in replacements
+XRegExp.replace(&#39;2012-02-22&#39;, date, &#39;${month}/${day}/${year}&#39;); // -&gt; &#39;02/22/2012&#39;
+XRegExp.replace(&#39;2012-02-22&#39;, date, function(match) {
+  return match.month + &#39;/&#39; + match.day + &#39;/&#39; + match.year;
+}); // -&gt; &#39;02/22/2012&#39;</code></pre>
+<h2 id="addons">Addons</h2>
+<p>Addons are one of the more impressive features of <a href="https://github.com/slevithan/xregexp">xregexp</a>. In particular, the <code>matchRecursive</code> addon allows you to match balanced brackets and quotes, which is otherwise impossible with regular regex (.NET had this extension built in for some time now however).</p>
+<p>In browsers, first include the script:</p>
+<pre><code>&lt;script src=&quot;src/xregexp.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;src/addons/matchrecursive.js&quot;&gt;&lt;/script&gt;</code></pre>
+<p>You can then match recursive constructs using XRegExp pattern strings as left and right delimiters:</p>
+<pre><code>var str = &#39;(t((e))s)t()(ing)&#39;;
+XRegExp.matchRecursive(str, &#39;\\(&#39;, &#39;\\)&#39;, &#39;g&#39;);
+// -&gt; [&#39;t((e))s&#39;, &#39;&#39;, &#39;ing&#39;]
+
+// Extended information mode with valueNames
+str = &#39;Here is &lt;div&gt; &lt;div&gt;an&lt;/div&gt;&lt;/div&gt; example&#39;;
+XRegExp.matchRecursive(str, &#39;&lt;div\\s*&gt;&#39;, &#39;&lt;/div&gt;&#39;, &#39;gi&#39;, {
+    valueNames: [&#39;between&#39;, &#39;left&#39;, &#39;match&#39;, &#39;right&#39;]
+});
+/* -&gt; [
+{name: &#39;between&#39;, value: &#39;Here is &#39;,       start: 0,  end: 8},
+{name: &#39;left&#39;,    value: &#39;&lt;div&gt;&#39;,          start: 8,  end: 13},
+{name: &#39;match&#39;,   value: &#39; &lt;div&gt;an&lt;/div&gt;&#39;, start: 13, end: 27},
+{name: &#39;right&#39;,   value: &#39;&lt;/div&gt;&#39;,         start: 27, end: 33},
+{name: &#39;between&#39;, value: &#39; example&#39;,       start: 33, end: 41}
+] */
+
+// Omitting unneeded parts with null valueNames, and using escapeChar
+str = &#39;...{1}\\{{function(x,y){return y+x;}}&#39;;
+XRegExp.matchRecursive(str, &#39;{&#39;, &#39;}&#39;, &#39;g&#39;, {
+    valueNames: [&#39;literal&#39;, null, &#39;value&#39;, null],
+    escapeChar: &#39;\\&#39;
+});
+/* -&gt; [
+{name: &#39;literal&#39;, value: &#39;...&#39;, start: 0, end: 3},
+{name: &#39;value&#39;,   value: &#39;1&#39;,   start: 4, end: 5},
+{name: &#39;literal&#39;, value: &#39;\\{&#39;, start: 6, end: 8},
+{name: &#39;value&#39;,   value: &#39;function(x,y){return y+x;}&#39;, start: 9, end: 35}
+] */
+
+// Sticky mode via flag y
+str = &#39;&lt;1&gt;&lt;&lt;&lt;2&gt;&gt;&gt;&lt;3&gt;4&lt;5&gt;&#39;;
+XRegExp.matchRecursive(str, &#39;&lt;&#39;, &#39;&gt;&#39;, &#39;gy&#39;);
+// -&gt; [&#39;1&#39;, &#39;&lt;&lt;2&gt;&gt;&#39;, &#39;3&#39;]</code></pre>
+<p>XRegExp.matchRecursive throws an error if it scans past an unbalanced delimiter in the target string.</p>
+<p>I&#39;ve been using <a href="https://github.com/slevithan/xregexp">xregexp</a> in <a href="https://github.com/alexgorbatchev/SyntaxHighlighter">SyntaxHighlighter</a> for a while now. My favourite feature is named captures, which JavaScript is desperately missing. Have you used <a href="https://github.com/slevithan/xregexp">xregexp</a> already? How?</p>
+</div></article><article><header><h2><a href="/posts/2013-12-17-npm">npm v1.3.18</a></h2><div class="meta"><span>posted by <a href="https://github.com/alexgorbatchev">Alex Gorbatchev</a> on December 17th 2013</span><a href="/posts/2013-12-17-npm#disqus_thread" class="comments"></a></div></header><div><p>NPM v1.3.18 release notes:</p>
+<ul>
+<li><p>Added an <code>--ignore-scripts</code> option, which will prevent package.json scripts from being run. Most notably, this will work on npm install, so e.g. npm install <code>--ignore-scripts</code> will not run preinstall and prepublish scripts. (<a href="https://github.com/isaacs/npm/commit/d7e67bf0d94b085652ec1c87d595afa6f650a8f6">d7e67bf</a>, @sqs)</p>
+</li>
+<li><p>Fixed a bug introduced in 1.3.16 that would manifest with certain cache configurations, by causing spurious errors saying &quot;Adding a cache directory to the cache will make the world implode.&quot; (<a href="https://github.com/isaacs/npm/commit/966373fad8d741637f9744882bde9f6e94000865">966373f</a>, @domenic)</p>
+</li>
+<li><p>Re-fixed the multiple download of URL dependencies, whose fix was reverted in 1.3.17. (<a href="https://github.com/isaacs/npm/commit/a362c3f1919987419ed8a37c8defa19d2e6697b0">a362c3f</a>, @spmason)</p>
+</li>
+</ul>
+<p><a href="https://github.com/isaacs/npm/releases/tag/v1.3.18">https://github.com/isaacs/npm/releases/tag/v1.3.18</a></p>
+</div></article><article><header><h2><a href="/posts/2013-12-16-ect">ect</a></h2><div class="meta"><span>posted by <a href="https://github.com/alexgorbatchev">Alex Gorbatchev</a> on December 16th 2013</span><a href="/posts/2013-12-16-ect#disqus_thread" class="comments"></a><div data-github-repo="baryshev/ect" class="github-stars"></div></div></header><div><p><a href="https://github.com/baryshev/ect">ect</a> is a <a href="http://ectjs.com/#benchmark">performance focused</a> JavaScript template engine with embedded CoffeeScript syntax. <a href="http://ectjs.com">Just try demo</a> to check all features.</p>
+<pre><code>npm install ect</code></pre>
+<p><img src="/images/posts/coffeescript.png" style="float: right" /></p>
+<h2 id="features">Features</h2>
+<ul>
+<li>Excellent performance</li>
+<li>Templates caching</li>
+<li>Automatic reloading of changed templates</li>
+<li>CoffeeScript code in templates</li>
+<li>Multi-line expressions support</li>
+<li>Tag customization support</li>
+<li>Node.JS and client-side support</li>
+<li>Powerful but simple syntax</li>
+<li>Inheritance, partials, blocks</li>
+<li>Compatible with <code>express</code></li>
+<li>Compatible with <code>RequireJS</code></li>
+<li>Backward compatible with <code>eco</code></li>
+<li><a href="https://github.com/TurtlePie/Sublime-ECT">Syntax highlighting for Sublime Text 2</a> by <a href="https://github.com/TurtlePie">TurtlePie</a></li>
+</ul>
+<h2 id="example">Example</h2>
+<p>app.js</p>
+<pre><code>express = require(&quot;express&quot;)
+app = express()
+ECT = require(&quot;ect&quot;)
+ectRenderer = ECT watch: true, root: __dirname + &quot;/views&quot;
+app.engine &quot;.ect&quot;, ectRenderer.render
+
+app.get &quot;/&quot;, (req, res) -&gt;
+  res.render &quot;index.ect&quot;
+
+app.listen 3000
+console.log &quot;Listening on port 3000&quot;</code></pre>
+<p>views/index.ect</p>
+<pre><code>&lt;% extend &#39;layout.ect&#39; %&gt;
+&lt;div&gt;Hello, World!&lt;/div&gt;</code></pre>
+<p>views/layout.ect</p>
+<pre><code>&lt;html&gt;
+  &lt;body&gt;
+    &lt;% content %&gt;
+  &lt;/body&gt;
+&lt;/html&gt;</code></pre>
+<p>There are plenty of examples and information on the <a href="https://github.com/baryshev/ect">ect</a>. Check it out!</p>
+</div></article><article><header><h2><a href="/posts/2013-12-13-chrono">chrono</a></h2><div class="meta"><span>posted by <a href="https://github.com/alexgorbatchev">Alex Gorbatchev</a> on December 13th 2013</span><a href="/posts/2013-12-13-chrono#disqus_thread" class="comments"></a><div data-github-repo="wanasit/chrono" class="github-stars"></div></div></header><div><p><a href="https://github.com/wanasit/chrono">chrono</a> is a natural language date parser in Javascript. It is designed to extract date informations from any given text. Works in node and browser. Check out the <a href="http://wanasit.github.io/pages/chrono/">nifty test page</a>.</p>
+<pre><code>npm install chrono</code></pre>
+<p><img src="/images/posts/clock.gif" style="float: right; width: 100px; margin-left: 1em" /></p>
+<p><a href="https://github.com/wanasit/chrono">chrono</a> supports a number of date and time formats, including:</p>
+<ul>
+<li>Today, Tomorrow, Yesterday, last Friday, etc</li>
+<li>10/13/2013</li>
+<li>this Friday from 13:00 - 16.00</li>
+<li>Saturday, 17 August 2013 - Monday, 19 August 2013</li>
+<li>Sat Aug 17 2013 18:40:39 GMT+0900 (JST)</li>
+</ul>
+<h2 id="usage">Usage</h2>
+<pre><code>&gt; var chrono = require(&#39;chrono-node&#39;)
+
+&gt; chrono.parseDate(&#39;An appointment on Sep 12-13&#39;)
+Thu Sep 12 2013 12:00:00 GMT+0900 (JST)
+
+&gt; chrono.parse(&#39;An appointment on Sep 12-13&#39;)
+[ { start:
+     { year: 2013,
+       month: 8,
+       day: 12,
+       impliedComponents: [Object],
+       isCertain: [Function],
+       date: [Function] },
+    startDate: Thu Sep 12 2013 12:00:00 GMT+0900 (JST),
+    end:
+     { year: 2013,
+       month: 8,
+       day: 13,
+       impliedComponents: [Object],
+       isCertain: [Function],
+       date: [Function] },
+    endDate: Fri Sep 13 2013 12:00:00 GMT+0900 (JST),
+    referenceDate: Sat Aug 17 2013 17:54:57 GMT+0900 (JST),
+    index: 18,
+    text: &#39;Sep 12-13&#39;,
+    concordance: &#39;An appointment on Sep 12-13&#39; } ]</code></pre>
+<p>What&#39;s even more cool, <a href="https://github.com/wanasit/chrono">chrono</a> is designed to work with long text (notes, emails, articles, etc). <code>chrono.parse</code> will return an array of every date mentioned in the story.</p>
+<pre><code>&gt; var text = &#39;October 7, 2011, of which details were not revealed out of respect to Jobs\&#39;s family.[239] Apple announced on the same day that they had no plans for a public service, but were encouraging &quot;well-wishers&quot; to send their remembrance messages to an email address created to receive such messages.[240] Sunday, October 16, 2011&#39;
+&gt; chrono.parse(text)
+[{ start:
+    { year: 2011,
+      month: 9,
+      day: 7,
+      ....
+ { start:
+    { year: 2011,
+      month: 9,
+      day: 16,
+      ....</code></pre>
+<p>There are plenty of examples and information on the <a href="https://github.com/wanasit/chrono">chrono</a>. Check it out!</p>
+</div></article><article><header><h2><a href="/posts/2013-12-11-prettyjson">prettyjson</a></h2><div class="meta"><span>posted by <a href="https://github.com/alexgorbatchev">Alex Gorbatchev</a> on December 11th 2013</span><a href="/posts/2013-12-11-prettyjson#disqus_thread" class="comments"></a><div data-github-repo="rafeca/prettyjson" class="github-stars"></div></div></header><div><p><a href="https://github.com/rafeca/prettyjson">prettyjson</a> is package for formatting JSON data in a coloured YAML-style, perfect for CLI output.</p>
+<pre><code>npm install prettyjson</code></pre>
+<h2 id="cli">CLI</h2>
+<pre><code>$ prettyjson package.json
+...
+$ curl https://api.github.com/users/rafeca | prettyjson
+...
+$ PRETTYJSON_KEYS=red PRETTYJSON_DASH=blue PRETTYJSON_STRING=yellow prettyjson package.json</code></pre>
+<h2 id="api">API</h2>
+<p><a href="https://github-camo.global.ssl.fastly.net/84c63f2a817ca95b6ccaff240a75fbf1b11f7b87/687474703a2f2f7261666563612e636f6d2f7072657474796a736f6e2f696d616765732f6578616d706c65332e706e67"><img src="https://github-camo.global.ssl.fastly.net/84c63f2a817ca95b6ccaff240a75fbf1b11f7b87/687474703a2f2f7261666563612e636f6d2f7072657474796a736f6e2f696d616765732f6578616d706c65332e706e67" style="float: right; width: 300px; margin-left: 1em" /></a></p>
+<pre><code>var prettyjson = require(&#39;prettyjson&#39;);
+
+var data = {
+  username: &#39;rafeca&#39;,
+  url: &#39;https://github.com/rafeca&#39;,
+  twitter_account: &#39;https://twitter.com/rafeca&#39;,
+  projects: [&#39;prettyprint&#39;, &#39;connfu&#39;]
+};
+
+console.log(prettyjson.render(data));</code></pre>
+<p>There are plenty of examples and information on the <a href="https://github.com/rafeca/prettyjson">prettyjson</a>. Check it out!</p>
+</div></article><article><header><h2><a href="/posts/2013-12-10-state">state</a></h2><div class="meta"><span>posted by <a href="https://github.com/alexgorbatchev">Alex Gorbatchev</a> on December 10th 2013</span><a href="/posts/2013-12-10-state#disqus_thread" class="comments"></a><div data-github-repo="nickfargo/state" class="github-stars"></div></div></header><div><p><a href="https://github.com/nickfargo/state">state</a> is a library for implementing <a href="http://statejs.org/docs/#concepts--states">first-class states</a> on arbitrary owner objects.</p>
+<pre><code>npm install state</code></pre>
+<p>There&#39;s an incredible amount of funtionality described in the <a href="http://statejs.org/docs/">very extensive documentation</a>.</p>
+<p><img src="http://statejs.org/img/dodecagem-640px.png" style="float: right; width: 200px; margin-left: 1em;" /></p>
+<h2 id="minimal-footprint">Minimal footprint</h2>
+<p>All functionality of State is to be instigated through the exported state function. It should be able both to generate state expressions and to implement expressed states into an existing JavaScript object, depending on the arguments provided. In the latter case, the newly implemented system of states should be accessible from a single object. <code>state()</code> method on the affected object.</p>
+<h2 id="expressive-power">Expressive power</h2>
+<p>As much as possible, State should aim to look and feel like a feature of the language. The interpreted shorthand syntax, simple keyword attributes, and limited interface should allow for production code that is terse, declarative, and easy to write and understand.</p>
+<h2 id="opacity">Opacity</h2>
+<p>Apart from the addition of the <code>object.state()</code> method, a call to <code>state()</code> must make no other modifications to a State–affected object&#39;s interface. Methods are replaced with delegators, which forward method calls to the current state. This is to be implemented opaquely and non-destructively: consumers of the object need not be aware of which states are active in the object, or even that a concept of state exists at all, and a call to <code>object.state(&#39;&#39;).destroy()</code> must restore the object to its original form.</p>
+<h2 id="example">Example</h2>
+<pre><code>var flavors = [
+  &#39;vanilla&#39;,
+  &#39;chocolate&#39;,
+  &#39;strawberry&#39;,
+  &#39;AmeriCone Dream&#39;
+];
+
+function Kid () {}
+
+state( Kid.prototype, &#39;mutable&#39;, {
+  data: {
+    favorite: &#39;chocolate&#39;
+  },
+
+  waver: state.bind( function () {
+    var i = Math.random() * flavors.length &lt;&lt; 0;
+    this.data({ favorite: flavors[i] });
+  }),
+
+  whine: function ( complaint ) {
+    if ( typeof console !== &#39;undefined&#39; ) {
+      console.log( complaint );
+    }
+  },
+
+  mutate: function ( mutation, replaced ) {
+    this.owner().whine(
+      &quot;I hate &quot; + replaced.favorite + &quot;, &quot; +
+      &quot;I want &quot; + mutation.favorite + &quot;!&quot;
+    );
+  }
+});
+
+var jr = new Kid;
+
+jr.waver();  // log &lt;&lt;&lt; &quot;I hate chocolate, I want strawberry!&quot;
+jr.waver();  // log &lt;&lt;&lt; &quot;I hate strawberry, I want chocolate!&quot;
+jr.waver();  // nothing
+jr.waver();  // log &lt;&lt;&lt; &quot;I hate chocolate, I want AmeriCone Dream!&quot;</code></pre>
+<p>There are plenty of examples and information on the <a href="http://statejs.org">documentation site</a>. Check it out!</p>
+</div></article><article><header><h2><a href="/posts/2013-12-09-blessed">blessed</a></h2><div class="meta"><span>posted by <a href="https://github.com/alexgorbatchev">Alex Gorbatchev</a> on December 9th 2013</span><a href="/posts/2013-12-09-blessed#disqus_thread" class="comments"></a><div data-github-repo="chjj/blessed" class="github-stars"></div></div></header><div><p><a href="https://github.com/chjj/blessed">blessed</a> is a terminal control library for Unix-like systems, enabling the construction of text user interface (TUI) applications. In other words it&#39;s a curses-like library for node.js</p>
+<pre><code>npm install blessed</code></pre>
+<h2 id="example">Example</h2>
+<p>This will render a box with line borders containing the text &#39;Hello world!&#39;, perfectly centered horizontally and vertically.</p>
+<p><img src="/images/posts/blessed.png" style="float: right; margin-left: 1em;" /></p>
+<pre><code>var blessed = require(&#39;blessed&#39;);
+
+// Create a screen object.
+var screen = blessed.screen();
+
+// Create a box perfectly centered horizontally and vertically.
+var box = blessed.box({
+  top: &#39;center&#39;,
+  left: &#39;center&#39;,
+  width: &#39;50%&#39;,
+  height: &#39;50%&#39;,
+  content: &#39;Hello {bold}world{/bold}!&#39;,
+  tags: true,
+  border: {
+    type: &#39;line&#39;
+  },
+  style: {
+    fg: &#39;white&#39;,
+    bg: &#39;magenta&#39;,
+    border: {
+      fg: &#39;#ffffff&#39;
+    },
+    hover: {
+      bg: &#39;green&#39;
+    }
+  }
+});
+
+// Append our box to the screen.
+screen.append(box);
+
+// If our box is clicked, change the content.
+box.on(&#39;click&#39;, function(data) {
+  box.setContent(&#39;{center}Some different {red-fg}content{/red-fg}.{/center}&#39;);
+  screen.render();
+});
+
+// If box is focused, handle `enter`/`return` and give us some more content.
+box.key(&#39;enter&#39;, function(ch, key) {
+  box.setContent(&#39;{right}Even different {black-fg}content{/black-fg}.{/right}\n&#39;);
+  box.setLine(1, &#39;bar&#39;);
+  box.insertLine(1, &#39;foo&#39;);
+  screen.render();
+});
+
+// Quit on Escape, q, or Control-C.
+screen.key([&#39;escape&#39;, &#39;q&#39;, &#39;C-c&#39;], function(ch, key) {
+  return process.exit(0);
+});
+
+// Focus our element.
+box.focus();
+
+// Render the screen.
+screen.render();</code></pre>
+<p>There are plenty of examples and information on the <a href="https://github.com/chjj/blessed">blessed</a>. Check it out!</p>
+</div></article><article><header><h2><a href="/posts/2013-12-05-gm">gm</a></h2><div class="meta"><span>posted by <a href="https://github.com/alexgorbatchev">Alex Gorbatchev</a> on December 5th 2013</span><a href="/posts/2013-12-05-gm#disqus_thread" class="comments"></a><div data-github-repo="aheckmann/gm" class="github-stars"></div></div></header><div><p><a href="https://github.com/aheckmann/gm">gm</a> is <a href="http://www.imagemagick.org">ImageMagick</a> for node, what else is there to say?</p>
+<pre><code>npm install gm</code></pre>
+<p><img src="/images/posts/imagemagick.png" style="float: right; width: 100px; margin-left: 1em;" /></p>
+<blockquote>
+<p>ImageMagick is a software suite to create, edit, compose, or convert bitmap images. It can read and write images in a variety of formats (over 100) including DPX, EXR, GIF, JPEG, JPEG-2000, PDF, PNG, Postscript, SVG, and TIFF. Use ImageMagick to resize, flip, mirror, rotate, distort, shear and transform images, adjust image colors, apply various special effects, or draw text, lines, polygons, ellipses and Bézier curves.</p>
+</blockquote>
+<p>The <a href="http://aheckmann.github.io/gm/">demo</a> page has an interactive playground that shows a tiny fraction of what <a href="https://github.com/aheckmann/gm">gm</a> can do.</p>
+<pre><code>var gm = require(&#39;./gm&#39;);
+
+// resize and remove EXIF profile data
+gm(&#39;/path/to/my/img.jpg&#39;)
+  .resize(240, 240)
+  .noProfile()
+  .write(&#39;/path/to/resize.png&#39;, function (err) {
+    if (!err) console.log(&#39;done&#39;);
+  });
+
+// annotate an image
+gm(&#39;/path/to/my/img.jpg&#39;)
+  .stroke(&quot;#ffffff&quot;)
+  .drawCircle(10, 10, 20, 10)
+  .font(&quot;Helvetica.ttf&quot;, 12)
+  .drawText(30, 20, &quot;GMagick!&quot;)
+  .write(&quot;/path/to/drawing.png&quot;, function (err) {
+    if (!err) console.log(&#39;done&#39;);
+  });</code></pre>
+<p>There are plenty of examples and information on the <a href="https://github.com/aheckmann/gm">gm</a>. Check it out!</p>
+</div></article><article><header><h2><a href="/posts/2013-12-03-nak">nak</a></h2><div class="meta"><span>posted by <a href="https://github.com/alexgorbatchev">Alex Gorbatchev</a> on December 3rd 2013</span><a href="/posts/2013-12-03-nak#disqus_thread" class="comments"></a><div data-github-repo="gjtorikian/nak" class="github-stars"></div></div></header><div><p><a href="https://github.com/gjtorikian/nak">nak</a> is an ack/ag clone written in Node.js. The focus here is on speed and performance, rather than trying to 100% mimic all the functionality of ack.</p>
+<pre><code>npm install nak</code></pre>
+<p>There were two goals set out:</p>
+<ol>
+<li>Be faster than ack</li>
+<li>Return matches in order</li>
+</ol>
+<p>A lot of the functionality is modeled around ag. In fact, you can provide a <code>.nakignore</code> file to define patterns to ignore. <code>.nakignore</code> files in the directory you&#39;re searching under are automatically included as ignore rules, but you can choose to specify any additional file (with <code>.gitignore</code>-style rules) with <code>-a</code>.</p>
+<h2 id="usages">Usages</h2>
+<pre><code>nak -G &#39;*.js&#39; &#39;function&#39; .</code></pre>
+<p>Find all files ending in <code>js</code>, in the current directory, with the phrase <code>function</code>.</p>
+<pre><code>nak -a ../.gitignore -i &#39;def&#39; .</code></pre>
+<p>Find all files in the current directory, with the phrase in <code>def</code> (case-insensitive), in the current directory; also, use the <em>.gitignore</em> rules from the folder above</p>
+<pre><code>nak -d &#39;*.less&#39; -w &#39;mixin&#39; .</code></pre>
+<p>Find all files in the current directory that are not <code>.less</code>, with the phrase <code>mixin</code> (whole word), in the current directory</p>
+<p>There are plenty of examples and information on the <a href="https://github.com/gjtorikian/nak">nak</a>. Check it out!</p>
+</div></article><article><header><h2><a href="/posts/2013-12-03-verymodel">VeryModel</a></h2><div class="meta"><span>posted by <a href="https://github.com/alexgorbatchev">Alex Gorbatchev</a> on December 3rd 2013</span><a href="/posts/2013-12-03-verymodel#disqus_thread" class="comments"></a><div data-github-repo="fritzy/VeryModel" class="github-stars"></div></div></header><div><p><a href="https://github.com/fritzy/VeryModel">VeryModel</a> is a system for validation, creation, and editing of models. VeryModel is not tied to a framework, and it implements a full purpose Model system.</p>
+<pre><code>npm install VeryModel</code></pre>
+<p>Here&#39;s an example of a model definition:</p>
+<pre><code>// Create a User Factory
+var User = new VeryModel({
+  id: {primary: true, type: VeryType().isAlphanumeric(), default: 1},
+  username: {required: true, type: VeryType().isAlphanumeric().len(4, 25), default: &#39;&#39;},
+  password: {required: false, type: VeryType().len(6).custom(goodPassword)}, default: &#39;&#39;},
+  passhash: {private: true},
+});</code></pre>
+<p>Model defintions are recursive Javascript object. At each layer, you can have the following fields:</p>
+<p><img src="/images/posts/orm.png" style="width: 200px; float: right; margin-left: 1em;"/></p>
+<ul>
+<li><code>required</code> (boolean): Error on validation if this field isn&#39;t set.</li>
+<li><code>type</code> (VeryType): VeryType chain to validate field against if set.</li>
+<li><code>default</code> (any): Default value set automatically.</li>
+<li><code>model</code> (definition object or VeryModel): set this field as another model.</li>
+<li><code>collection</code> (definition object or VeryModel): set this field as a collection of a model.</li>
+<li><code>derive</code> <code>function</code>): Derive the value of this field with this function whenever field is accessed <code>{derive: function(model) {return model.first + &#39; &#39; + model.last}</code></li>
+<li><code>depends</code> ({some_other_field: VeryType or true}, ...): Require other fields when this field is set, optionally run VeryType chain check on other field.</li>
+<li><code>primary</code> (boolean): Set this on one of your fiels for easy saving and loading.</li>
+<li><code>private</code> (boolean): <code>toObject()</code> will not include this field in expect unless the argumnet usePrivate is true</li>
+</ul>
+<p>There are plenty of examples and information on the <a href="https://github.com/fritzy/VeryModel">VeryModel</a>. Check it out!</p>
+</div></article><article><header><h2><a href="/posts/2013-11-30-scala-js">scala.js</a></h2><div class="meta"><span>posted by <a href="https://github.com/alexgorbatchev">Alex Gorbatchev</a> on November 30th 2013</span><a href="/posts/2013-11-30-scala-js#disqus_thread" class="comments"></a></div></header><div><p><img src="/images/posts/scala.png" style="float: right; width: 200px; margin-left: 1em;" /></p>
+<p><a href="http://www.scala-js.org/">Scala.js</a>, a Scala to JavaScript compiler.</p>
+<p>Outstanding features are:</p>
+<ul>
+<li>Support all of Scala (including macros!),
+modulo <a href="http://www.scala-js.org/doc/semantics.html">a few semantic differences</a></li>
+<li>Very good <a href="http://www.scala-js.org/doc/js-interoperability.html">interoperability with JavaScript code</a>.
+For example, use jQuery and HTML5 from your Scala.js code, either in a
+typed or untyped way. Or create Scala.js objects and call their methods
+from JavaScript.</li>
+<li>Integrated with <a href="http://www.scala-sbt.org/">sbt</a>
+(including support for dependency management and incremental compilation)</li>
+<li>Can be used with your favorite IDE for Scala</li>
+<li>Generates <a href="http://www.html5rocks.com/en/tutorials/developertools/sourcemaps/">Source Maps</a>
+for a smooth debugging experience (step through your Scala code from within
+your browser supporting source maps)</li>
+<li>Integrates <a href="https://developers.google.com/closure/compiler/">Google Closure Compiler</a>
+for producing minimal code for production.</li>
+</ul>
+<p>There is plenty more information on the <a href="https://github.com/scala-js/scala-js">github</a> page. Check it out!</p>
+</div></article><article><header><h2><a href="/posts/2013-11-27-scale-npm">scalenpm.org</a></h2><div class="meta"><span>posted by <a href="https://github.com/alexgorbatchev">Alex Gorbatchev</a> on November 27th 2013</span><a href="/posts/2013-11-27-scale-npm#disqus_thread" class="comments"></a></div></header><div><p><img src="/images/posts/npm.png" style="float: right; width: 200px; margin-left: 1em;" /></p>
+<p>The <a href="http://npmjs.org">NPM</a> registry recently got crashy, and it was incredibly painful. Here at <a href="http://www.goodeggs.com">Good Eggs</a> we were affected as much as any other node shop - we couldn&#39;t push a build out.</p>
+<p><a href="http://scalenpm.org">scalenpm.org</a> is an effort to fix this problem by throwing some money at it. The plan is to use the money to dedicate extra engineer time and hardware to the repository we all know and love. At the moment of writing the funding reached $115k out of $200k estimated.</p>
+<p>For just $75 you get can support NPM aaaaand get a t-shirt! Woot! <a href="https://scalenpm.org/donate">Go donate!</a></p>
+</div></article><article><header><h2><a href="/posts/2013-11-26-rx-js">rx.js</a></h2><div class="meta"><span>posted by <a href="https://github.com/alexgorbatchev">Alex Gorbatchev</a> on November 26th 2013</span><a href="/posts/2013-11-26-rx-js#disqus_thread" class="comments"></a><div data-github-repo="Reactive-Extensions/RxJS" class="github-stars"></div></div></header><div><p><a href="https://github.com/Reactive-Extensions/RxJS">rx.js</a> is a set of libraries to compose asynchronous and event-based programs using observable collections and Array#extras style composition in JavaScript.</p>
+<p>Using RxJS, you can represent multiple asynchronous data streams (that come from diverse sources, e.g., stock quote, tweets, computer events, web service requests, etc.), and subscribe to the event stream using the Observer object. The Observable notifies the subscribed Observer instance whenever an event occurs.</p>
+<pre><code>npm install rx.js</code></pre>
+<h2 id="example">Example</h2>
+<pre><code>/* Get stock data somehow */
+var source = getAsyncStockData();
+
+var subscription = source
+  .filter(function (quote) {
+    return quote.price &gt; 30;
+  })
+  .map(function (quote) {
+    return quote.price;
+  })
+  .subscribe(
+    function (price) {
+      console.log(&#39;Prices higher than $30: $&#39; + price);
+    },
+    function (err) {
+      console.log(&#39;Something went wrong: &#39; + err.message);
+    });
+
+/* When we&#39;re done */
+subscription.dispose();</code></pre>
+<p>Reactive programming is a very interesting way of writing code. Check out a few videos and presentations linked from rx.js</p>
+<h4 id="presentations">Presentations</h4>
+<ul>
+<li><a href="http://www.slideshare.net/mattpodwysocki/cascadiajs-dont-cross-the-streams">Don&#39;t Cross the Streams - Cascadia.js 2012</a></li>
+<li><a href="https://github.com/Reactive-Extensions/StrangeLoop2013">Curing Your Asynchronous Blues - Strange Loop 2013</a></li>
+</ul>
+<h4 id="videos">Videos</h4>
+<ul>
+<li><a href="http://channel9.msdn.com/Blogs/Charles/Introducing-RxJS-Reactive-Extensions-for-JavaScript">Hello RxJS - Channel 9</a></li>
+<li><a href="http://channel9.msdn.com/events/MIX/MIX11/HTM07">MIX 2011</a></li>
+<li><a href="http://channel9.msdn.com/Blogs/Charles/Matthew-Podwysocki-and-Bart-J-F-De-Smet-RxJS-Today-and-Tomorrow">RxJS Today and Tomorrow - Channel 9</a></li>
+<li><a href="http://www.youtube.com/watch?v=FqBq4uoiG0M">Cascadia.js 2012</a></li>
+<li><a href="http://channel9.msdn.com/Tags/reactive+extensions">Reactive Extensions Videos on Channel 9</a></li>
+</ul>
+<p>There are plenty of examples and information on the <a href="https://github.com/Reactive-Extensions/RxJS">rx.js</a>. Check it
+out!</p>
+</div></article><article><header><h2><a href="/posts/2013-11-26-docpad">docpad</a></h2><div class="meta"><span>posted by <a href="https://github.com/alexgorbatchev">Alex Gorbatchev</a> on November 26th 2013</span><a href="/posts/2013-11-26-docpad#disqus_thread" class="comments"></a><div data-github-repo="bevry/docpad" class="github-stars"></div></div></header><div><p><a href="https://github.com/bevry/docpad">docpad</a> is a static web site generator that is has been used in production by big and small companies for over a year and a half now to create <a href="http://docpad.org/docs/showcase">plenty of amazing and powerful web sites and applications</a> quicker than ever before. What makes it different is instead of being a box to cram yourself into and hold you back, it is freeway to what you want to accomplish, just getting out of your way and allowing you to create stuff quicker than ever before without limits. Leave the redudant stuff up to me, so you can focus on the awesome stuff.</p>
+<pre><code>npm install docpad</code></pre>
+<h2 id="features-out-of-the-box">Features out of the box</h2>
+<ul>
+<li>Competely file based</li>
+<li>Write your documents in any language, markup, templating engine, or pre-processor you wish</li>
+<li>Changes to your website are automatically recompiled through our built in watch system</li>
+<li>Add meta data to the top of your files to be used by templating engines to display non-standard information</li>
+<li>Display custom listings of content with our powerful <a href="https://github.com/bevry/query-engine/">Query Engine</a></li>
+<li>Abstract out generic headers and footers into layouts using our nested layout system</li>
+<li>Deploy by copying static files</li>
+<li>Built-in server to save you from having to startup your own, for dynamic deployments this even supports things like clean urls, custom routes and server-side logic</li>
+<li>Robust architecture and powerful plugin system</li>
+<li>Built in support for dynamic documents (e.g. search pages, signup forms, etc.)</li>
+<li>Embeddable</li>
+</ul>
+<p>There are plenty of examples and information on the <a href="https://github.com/bevry/docpad">docpad</a>. Check it
+out!</p>
+</div></article><article><header><h2><a href="/posts/2013-11-25-grunt-angular-builder">grunt-angular-builder</a></h2><div class="meta"><span>posted by <a href="https://github.com/alexgorbatchev">Alex Gorbatchev</a> on November 25th 2013</span><a href="/posts/2013-11-25-grunt-angular-builder#disqus_thread" class="comments"></a></div></header><div><p><a href="https://github.com/claudio-silva/grunt-angular-builder">angular-builder</a>
+is a specialized Grunt plugin to handle all of AngularJS related assets
+issues in a truly practical, automated, simple and easy way.</p>
+<pre><code>npm install angular-builder</code></pre>
+<div style="position: relative; float: right; height: 200px;">
+    <div style="position: relative; width: 200px; height: 200px; background: url('/images/posts/angularjs.png') 50% 50% no-repeat; background-size: contain"></div>
+    <div style="position: absolute; top: 0px; left: 0px; width: 200px; height: 190px; overflow: hidden; background: url('/images/posts/grunt.png'); background-size: cover"></div>
+</div>
+
+<h2 id="features">Features</h2>
+<ol>
+<li><p>Analyzes your AngularJS source code and “understands” module
+dependencies and the relationships between your files. No need for
+AMD or CommonJS loaders.</p>
+</li>
+<li><p>Accepts source code split into as many files as you want and spread
+over any directory structure you prefer.</p>
+</li>
+<li><p>Assembles one javascript file (or just a few) for production with
+all code assembled in the correct loading order required by your
+module’s dependencies.</p>
+</li>
+<li><p>Builds fast in debug mode by generating a single script that loads
+the original source files in the correct order (no minified or
+concatenated files in debug builds).</p>
+</li>
+<li><p>Allows you to debug the source code in the browser itself and see
+readable source code for any debug breakpoint or error location,
+with the correct original line numbers.</p>
+</li>
+<li><p>Includes in the build <em>only</em> the modules that your app actually
+needs and discards dead code.</p>
+</li>
+<li><p>Includes in the build the stylesheets and assets each module
+requires and excludes those that are not used by your app.</p>
+</li>
+<li><p>Can also include in the build scripts that are not based on
+AngularJS.</p>
+</li>
+<li><p>Recognizes modules and libraries that are loaded independently and,
+therefore, are not part of the build.</p>
+</li>
+<li><p>Not only builds complete applications but also builds library
+projects, generating <em>readable</em> redistributable source code files
+for them.</p>
+</li>
+<li><p>Allows each module to have its own build configuration file. Just
+drag-and-drop a module to your project and it’s ready to build!</p>
+</li>
+<li><p>Integrates easily with other Grunt plugins to expand your build
+process with minification, optimization, preprocessing and/or
+compilation st</p>
+</li>
+</ol>
+<p>There are plenty of examples and information on the <a href="https://github.com/claudio-silva/grunt-angular-builder">github
+page</a>. Check it
+out!</p>
+</div></article><article><header><h2><a href="/posts/2013-11-22-videoconverter-js">videoconverter.js</a></h2><div class="meta"><span>posted by <a href="https://github.com/alexgorbatchev">Alex Gorbatchev</a> on November 22nd 2013</span><a href="/posts/2013-11-22-videoconverter-js#disqus_thread" class="comments"></a></div></header><div><p><a href="https://github.com/bgrins/videoconverter.js">videoconverter.js</a>
+is not really an NPM module, but is a library that allows you to convert
+and manipulate videos inside of your web browser. This is achieved by
+converting the popular <a href="http://ffmpeg.org/">FFmpeg</a> library into
+JavaScript, using <a href="https://github.com/kripken/emscripten">Emscripten</a>.
+In other words, it’s damn impressive! Just <a href="http://bgrins.github.io/videoconverter.js/demo">check out the
+demo</a>.</p>
+<p><img src="/images/posts/ffmpeg.png" style="width: 200px; float: right; margin-left: 1em;"/></p>
+<p>Here’s the fun fact,
+<a href="https://github.com/bgrins/videoconverter.js/blob/master/build/ffmpeg.js">ffmpeg.js</a>
+is a whoping 29MB in size. GZipped it comes down to 6MB. I have tried
+using <a href="https://github.com/mishoo/UglifyJS2">UglifyJS</a> to minify the
+source and gave up after 1 hour.</p>
+<p>There are plenty of examples and information on the <a href="https://github.com/bgrins/videoconverter.js">github
+page</a>.</p>
+</div></article><article><header><h2><a href="/posts/2013-11-22-event-stream">event-stream</a></h2><div class="meta"><span>posted by <a href="https://github.com/alexgorbatchev">Alex Gorbatchev</a> on November 22nd 2013</span><a href="/posts/2013-11-22-event-stream#disqus_thread" class="comments"></a></div></header><div><p><img src="/images/posts/event-stream.gif" style="width: 200px; float: right"/>
+<a href="https://github.com/dominictarr/event-stream">event-stream</a>
+is a toolkit to make creating and working with streams easy..</p>
+<pre><code>npm install event-stream</code></pre>
+<p>The usage is pretty straight forward:</p>
+<pre><code>var es = require(&#39;event-stream&#39;);
+
+es.pipeline(                         // connect streams together with `pipe`
+  process.openStdin(),               // open stdin
+  es.split(),                        // split stream to break on newlines
+  es.map(function (data, callback) { // turn this async function into a stream
+    callback(null
+      , inspect(JSON.parse(data)))   // render it nicely
+  }),
+  process.stdout                     // pipe it to stdout!
+);</code></pre>
+<p>I found the <code>map</code> function to be especially exciting because it takes a
+callback and lets you asynchronously process stream data where as
+regular stream <code>data</code> event does not.</p>
+<p>There are plenty of examples and information on the <a href="https://github.com/dominictarr/event-stream">github
+page</a>.</p>
+</div></article><article><header><h2><a href="/posts/2013-11-21-bacon-js">bacon.js</a></h2><div class="meta"><span>posted by <a href="https://github.com/alexgorbatchev">Alex Gorbatchev</a> on November 21st 2013</span><a href="/posts/2013-11-21-bacon-js#disqus_thread" class="comments"></a></div></header><div><p><a href="https://github.com/baconjs/bacon.js">bacon.js</a> is a library for
+functional reactive programming. Or let’s say it’s a library for working
+with events and dynamic values (which are called Properties in
+Bacon.js). <a href="http://raimohanska.github.io/bacon.js-slides/">Check out</a>
+the interactive demo.</p>
+<pre><code>npm install baconjs</code></pre>
+<p>Conal Elliot explains functional reactive programming (FPR) over at
+<a href="http://stackoverflow.com/questions/1028250/what-is-functional-reactive-programming/1030631#1030631">Stack
+Overflow</a>:</p>
+<p><img src="/images/posts/baconjs.png" style="width: 200px; float: right"/></p>
+<blockquote>
+<p>So, what is FRP? You could have invented it yourself. Start with these
+ideas:</p>
+<ul>
+<li><p>Dynamic/evolving values (i.e., values “over time”) are first class
+values in themselves. You can define them and combine them, pass
+them into &amp; out of functions. I called these things “behaviors”.</p>
+</li>
+<li><p>Behaviors are built up out of a few primitives, like constant
+(static) behaviors and time (like a clock), and then with
+sequential and parallel combination. n behaviors are combined by
+applying an n-ary function (on static values), “point-wise”, i.e.,
+continuously over time.</p>
+</li>
+<li><p>To account for discrete phenomena, have another type (family) of
+“events”, each of which has a stream (finite or infinite) of
+occurrences. Each occurrence has an associated time and value.</p>
+</li>
+<li><p>To come up with the compositional vocabulary out of which all
+behaviors and events can be built, play with some examples. Keep
+deconstructing into pieces that are more general/simple.</p>
+</li>
+<li><p>So that you know you’re on solid ground, give the whole model a
+compositional foundation, using the technique of denotational
+semantics, which just means that (a) each type has a corresponding
+simple &amp; precise mathematical type of “meanings”, and (b) each
+primitive and operator has a simple &amp; precise meaning as a
+function of the meanings of the constituents. Never, ever mix
+implementation considerations into your exploration process. If
+this description is gibberish to you, consult (a) Denotational
+design with type class morphisms, (b) Push-pull functional
+reactive programming (ignoring the implementation bits), and (c)
+the Denotational Semantics Haskell wikibooks page. Beware that
+denotational semantics has two parts, from its two founders
+Christopher Strachey and Dana Scott: the easier &amp; more useful
+Strachey part and the harder and less useful (for software design)
+Scott part.</p>
+</li>
+</ul>
+</blockquote>
+<p>There are plenty of examples and information on the <a href="https://github.com/baconjs/bacon.js">github
+page</a>.</p>
+</div></article><div class="pagination"><ul><li class="disabled"><span>Prev</span></li><li class="active"><span>1</span></li><li><a href="/index.1">2</a></li><li><a href="/index.1">Next</a></li></ul></div><script type="text/javascript">/* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+var disqus_shortname = 'npmawesome'; // required: replace example with your forum shortname
+
+/* * * DON'T EDIT BELOW THIS LINE * * */
+(function () {
+  var s = document.createElement('script'); s.async = true;
+  s.type = 'text/javascript';
+  s.src = 'http://' + disqus_shortname + '.disqus.com/count.js';
+  (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+}());</script></div></div></div><a id="fork-me" href="https://github.com/alexgorbatchev/npm-awesome-site">Fork Me</a></body><script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-46164085-1', 'npmawesome.com');
+ga('send', 'pageview');
+</script><script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script><script src="/scripts/npmawesome.bundle.js"></script>
