@@ -1,0 +1,36 @@
+---
+date: 2013-12-27T09:19:30-0800
+tags: npm, javascript, jquery, dom, html
+npm:
+  repo: &repo MatthewMueller/cheerio
+  name: &name cheerio
+
+layout: post
+slug: *name
+title: *name
+description: Real-time replication and versioning for large tabular data sets.
+---
+<%- @npm() %> is a fast, flexible, and lean implementation of core jQuery designed specifically for the server.
+
+    npm install <%= @document.npm.name %>
+
+## Features
+
+<img src="/images/posts/cheerio.jpg" style="width: 150px; float: right" />
+
+* Familiar syntax. <%- @npm() %> implements a subset of core jQuery. <%- @npm() %> removes all the DOM inconsistencies and browser cruft from the jQuery library, revealing its truly gorgeous API.
+* Blazingly fast. <%- @npm() %> works with a very simple, consistent DOM model. As a result parsing, manipulating, and rendering are incredibly efficient. Preliminary end-to-end benchmarks suggest that <%- @npm() %> is about 8x faster than JSDOM.
+* Insanely flexible. <%- @npm() %> wraps around [@FB55](https://twitter.com/fb55)'s [forgiving htmlparser](https://github.com/fb55/htmlparser2). <%- @npm() %> can parse nearly any HTML or XML document.
+
+## Example
+
+    var cheerio = require('cheerio'),
+        $ = cheerio.load('<h2 class="title">Hello world</h2>');
+
+    $('h2.title').text('Hello there!');
+    $('h2').addClass('welcome');
+
+    $.html();
+    //=> <h2 class="title welcome">Hello there!</h2>
+
+Are you using jQuery on the server side?
