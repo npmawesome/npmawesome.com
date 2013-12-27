@@ -5,10 +5,10 @@
         <description><![CDATA[Daily dose of awesome NPM modules for Node.js, old and new!]]></description>
         <link>http://npmawesome.com</link>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Fri, 27 Dec 2013 17:42:38 GMT</lastBuildDate>
+        <lastBuildDate>Fri, 27 Dec 2013 18:17:12 GMT</lastBuildDate>
         <atom:link href="http://npmawesome.com/rss" rel="self" type="application/rss+xml"/>
         <author><![CDATA[Alex Gorbatchev]]></author>
-        <pubDate>Fri, 27 Dec 2013 17:39:14 GMT</pubDate>
+        <pubDate>Fri, 27 Dec 2013 18:17:01 GMT</pubDate>
         <item>
             <title><![CDATA[cheerio]]></title>
             <description><![CDATA[<p><a href="https://github.com/MatthewMueller/cheerio">cheerio</a> is a fast, flexible, and lean implementation of core jQuery designed specifically for the server.</p>
