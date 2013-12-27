@@ -33,4 +33,8 @@ description: Real-time replication and versioning for large tabular data sets.
     $.html();
     //=> <h2 class="title welcome">Hello there!</h2>
 
+## Screencast Introduction
+
+<iframe src="//player.vimeo.com/video/31950192" width="500" height="281" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+
 Are you using jQuery on the server side?
