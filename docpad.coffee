@@ -13,8 +13,6 @@ docpadConfig =
       description: 'Daily dose of awesome NPM modules for Node.js, old and new!'
       url: 'http://npmawesome.com'
 
-    moment: require 'moment'
-
     fullUrl: (doc = @document) ->
       @site.url + doc.url
 
