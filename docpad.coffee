@@ -1,7 +1,8 @@
-# DocPad Configuration File
-# http://docpad.org/docs/config
+CONTRIBUTORS =
+  alexgorbatchev:
+    name: 'Alex Gorbatchev'
+    github: 'alexgorbatchev'
 
-# Define the DocPad Configuration
 docpadConfig =
   env: 'static'
 
@@ -30,7 +31,11 @@ docpadConfig =
       """<a href="#{@githubUrl()}">#{@document.npm.name}</a>"""
 
     author: (doc = @document) ->
-      doc.author or '<a href="http://github.com/alexgorbatchev">Alex Gorbatchev</a>'
+      slug = doc.author or 'alexgorbatchev'
+      author = CONTRIBUTORS[slug]
+
+      throw "Unknown author `#{slug}`" unless author?
+      "<a href=\"https://github.com/#{author.github}\">#{author.name}</a>"
 
     pageTitle: ->
       title = @preparedTitle()
