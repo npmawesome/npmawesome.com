@@ -8,7 +8,7 @@ npm:
 layout: post
 slug: *name
 title: *name
-description: Real-time replication and versioning for large tabular data sets.
+description: Fast, flexible, and lean implementation of core jQuery designed specifically for the server.
 ---
 <%- @npm() %> is a fast, flexible, and lean implementation of core jQuery designed specifically for the server.
 
