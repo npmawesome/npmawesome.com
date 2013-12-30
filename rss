@@ -5,10 +5,47 @@
         <description><![CDATA[Daily dose of awesome NPM modules for Node.js, old and new!]]></description>
         <link>http://npmawesome.com</link>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Fri, 27 Dec 2013 18:17:12 GMT</lastBuildDate>
+        <lastBuildDate>Mon, 30 Dec 2013 18:51:20 GMT</lastBuildDate>
         <atom:link href="http://npmawesome.com/rss" rel="self" type="application/rss+xml"/>
         <author><![CDATA[Alex Gorbatchev]]></author>
-        <pubDate>Fri, 27 Dec 2013 18:17:01 GMT</pubDate>
+        <pubDate>Mon, 30 Dec 2013 18:43:18 GMT</pubDate>
+        <item>
+            <title><![CDATA[rework]]></title>
+            <description><![CDATA[<p><a href="https://github.com/reworkcss/rework">rework</a> is a a tool for CSS manipulations built on css, allowing you to automate vendor prefixing, create your own properties, inline images, anything you can imagine! Also works in the browser.</p>
+<pre><code>npm install rework</code></pre>
+<p><img src="/images/posts/rework.gif" style="width: 250px; float: right" /></p>
+<p>Originally written by TJ Holowaychuk, <a href="https://github.com/reworkcss/rework">rework</a> is a module for working with CSS. Just like <a href="https://github.com/ariya/esprima">esprima</a> for JavaScript, <a href="https://github.com/reworkcss/rework">rework</a> allows you to change and extend CSS, basically take it to a whole new level.</p>
+<h2 id="example">Example</h2>
+<p>To get an idea of how to use <a href="https://github.com/reworkcss/rework">rework</a>, take a look at one of the many plugins. A good example would be <a href="https://github.com/simme/rework-imagesize">rework-imagesize</a> plugin.</p>
+<pre><code>var rework = require(&#39;rework&#39;);
+var size   = require(&#39;rework-imagesize&#39;);
+
+var css = rework(str)
+  .use(size(&#39;path/to/images/folder&#39;))
+  .toString();</code></pre>
+<p>Using the above JavaScript. This:</p>
+<pre><code>h1 {
+  background: url(&#39;myimage.png&#39;);
+  imgsize: myimage.png;
+  text-indent: 100%;
+}</code></pre>
+<p>Would produce something like:</p>
+<pre><code>h1 {
+  background: url(&#39;myimage.png&#39;);
+  text-indent: 100%;
+  height: 201px;
+  width: 300px;
+}</code></pre>
+<p><a href="https://github.com/reworkcss">Rework Github</a> account has a good number of modules to do various things to your CSS. I also like the idea of using <a href="https://github.com/reworkcss/rework">rework</a> as a post processor for your favourite dynamic CSS language, such as <a href="http://lesscss.org/">LESS</a>, <a href="http://learnboost.github.io/stylus/">Stylus</a> or <a href="https://github.com/andrew/node-sass">SASS</a>.</p>
+<p>Curious what is your favourite dynamic CSS framework?</p>
+<p><em>Image borrowed from <a href="http://www.horriblelogos.com/rework-digital/">horrible logos</a> and isn&#39;t the official logo :)</em></p>
+]]></description>
+            <link>http://npmawesome.com/posts/2013-12-30-rework</link>
+            <guid isPermaLink="true">
+                http://npmawesome.com/posts/2013-12-30-rework            </guid>
+            <dc:creator><![CDATA[Alex Gorbatchev]]></dc:creator>
+            <pubDate>Mon, 30 Dec 2013 18:27:29 GMT</pubDate>
+        </item>
         <item>
             <title><![CDATA[cheerio]]></title>
             <description><![CDATA[<p><a href="https://github.com/MatthewMueller/cheerio">cheerio</a> is a fast, flexible, and lean implementation of core jQuery designed specifically for the server.</p>
@@ -431,42 +468,6 @@ screen.render();</code></pre>
                 http://npmawesome.com/posts/2013-12-09-blessed            </guid>
             <dc:creator><![CDATA[Alex Gorbatchev]]></dc:creator>
             <pubDate>Mon, 09 Dec 2013 22:17:51 GMT</pubDate>
-        </item>
-        <item>
-            <title><![CDATA[gm]]></title>
-            <description><![CDATA[<p><a href="https://github.com/aheckmann/gm">gm</a> is <a href="http://www.imagemagick.org">ImageMagick</a> for node, what else is there to say?</p>
-<pre><code>npm install gm</code></pre>
-<p><img src="/images/posts/imagemagick.png" style="float: right; width: 100px; margin-left: 1em;" /></p>
-<blockquote>
-<p>ImageMagick is a software suite to create, edit, compose, or convert bitmap images. It can read and write images in a variety of formats (over 100) including DPX, EXR, GIF, JPEG, JPEG-2000, PDF, PNG, Postscript, SVG, and TIFF. Use ImageMagick to resize, flip, mirror, rotate, distort, shear and transform images, adjust image colors, apply various special effects, or draw text, lines, polygons, ellipses and Bézier curves.</p>
-</blockquote>
-<p>The <a href="http://aheckmann.github.io/gm/">demo</a> page has an interactive playground that shows a tiny fraction of what <a href="https://github.com/aheckmann/gm">gm</a> can do.</p>
-<pre><code>var gm = require(&#39;./gm&#39;);
-
-// resize and remove EXIF profile data
-gm(&#39;/path/to/my/img.jpg&#39;)
-  .resize(240, 240)
-  .noProfile()
-  .write(&#39;/path/to/resize.png&#39;, function (err) {
-    if (!err) console.log(&#39;done&#39;);
-  });
-
-// annotate an image
-gm(&#39;/path/to/my/img.jpg&#39;)
-  .stroke(&quot;#ffffff&quot;)
-  .drawCircle(10, 10, 20, 10)
-  .font(&quot;Helvetica.ttf&quot;, 12)
-  .drawText(30, 20, &quot;GMagick!&quot;)
-  .write(&quot;/path/to/drawing.png&quot;, function (err) {
-    if (!err) console.log(&#39;done&#39;);
-  });</code></pre>
-<p>There are plenty of examples and information on the <a href="https://github.com/aheckmann/gm">gm</a>. Check it out!</p>
-]]></description>
-            <link>http://npmawesome.com/posts/2013-12-05-gm</link>
-            <guid isPermaLink="true">
-                http://npmawesome.com/posts/2013-12-05-gm            </guid>
-            <dc:creator><![CDATA[Alex Gorbatchev]]></dc:creator>
-            <pubDate>Thu, 05 Dec 2013 17:44:35 GMT</pubDate>
         </item>
     </channel>
 </rss>
