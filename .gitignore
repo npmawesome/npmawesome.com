@@ -2,4 +2,4 @@ out
 log
 pids
 node_modules
-.ftpauth
+.grunt

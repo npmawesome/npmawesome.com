@@ -1,20 +1,10 @@
 module.exports = (grunt) ->
-  grunt.loadNpmTasks 'grunt-ftp-push'
+  grunt.loadNpmTasks 'grunt-gh-pages'
 
   grunt.initConfig
-    ftp_push:
-      default:
-        options:
-          authKey: 'npmawesome',
-          host: '69.163.149.228',
-          dest: '/public/',
-          port: 21
-        files: [
-          {
-            expand: true
-            cwd: 'out'
-            src: ['**/*']
-          }
-        ]
+    'gh-pages':
+      options:
+        base: 'out'
+      src: ['**']
 
-  grunt.registerTask 'default', ['ftp_push']
+  grunt.registerTask 'publish', ['gh-pages']
