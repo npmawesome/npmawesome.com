@@ -5,10 +5,10 @@
         <description><![CDATA[Daily dose of awesome NPM modules for Node.js, old and new!]]></description>
         <link>http://npmawesome.com</link>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Mon, 30 Dec 2013 18:51:20 GMT</lastBuildDate>
+        <lastBuildDate>Mon, 30 Dec 2013 19:19:16 GMT</lastBuildDate>
         <atom:link href="http://npmawesome.com/rss" rel="self" type="application/rss+xml"/>
         <author><![CDATA[Alex Gorbatchev]]></author>
-        <pubDate>Mon, 30 Dec 2013 18:43:18 GMT</pubDate>
+        <pubDate>Mon, 30 Dec 2013 19:08:54 GMT</pubDate>
         <item>
             <title><![CDATA[rework]]></title>
             <description><![CDATA[<p><a href="https://github.com/reworkcss/rework">rework</a> is a a tool for CSS manipulations built on css, allowing you to automate vendor prefixing, create your own properties, inline images, anything you can imagine! Also works in the browser.</p>
