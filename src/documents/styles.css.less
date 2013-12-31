@@ -91,6 +91,7 @@ article {
         color: white;
         margin-left: .5em;
         border-radius: 2px;
+        text-shadow: 0px 1px 1px rgba(0,0,0,.3);
 
         &:before {
           content: '★';
@@ -167,6 +168,10 @@ article {
 }
 
 aside {
+  h4 {
+    margin-bottom: 0;
+  }
+
   .other-posts {
     .current a {
       padding: 2px 4px;
@@ -176,6 +181,10 @@ aside {
       border-radius: 2px;
       text-shadow: 0px 1px 1px rgba(0,0,0,.3);
     }
+  }
+
+  .feedburner {
+    margin-bottom: 1em;
   }
 }
 
@@ -187,10 +196,12 @@ footer {
 }
 
 @media only screen and (max-width: 550px) {
-  #fork-me {
-    width: 60px;
-    height: 60px;
-    background-size: cover;
+  #logo {
+    font-size: 100%;
+  }
+
+  .hide-on-mobile {
+    display: none;
   }
 }
 

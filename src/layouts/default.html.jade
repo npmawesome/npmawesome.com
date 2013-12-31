@@ -30,7 +30,6 @@ body
 
       #sub-title
         | <a href="http://npmjs.org">npm</a> picks, old and new by <a href="https://github.com/alexgorbatchev">Alex Gorbatchev</a>
-        p: a(href="http://feeds.feedburner.com/npmawesome"): img(src="/images/feed.gif")
 
     .row
       .main.col
@@ -38,6 +37,7 @@ body
           != content
 
       aside.col
+        .feedburner: a(href="http://feeds.feedburner.com/npmawesome"): img(src="/images/feed.gif")
         != partial('other-posts')
         //- iframe(src="http://githubbadge.appspot.com/alexgorbatchev" style="border: 0;height: 142px;width: 200px;overflow: hidden;" frameBorder="0")
 
