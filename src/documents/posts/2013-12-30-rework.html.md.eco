@@ -10,7 +10,7 @@ slug: *name
 title: *name
 description: CSS manipulations built on css, allowing you to automate vendor prefixing, create your own properties, inline images, anything you can imagine! Also works in the browser.
 ---
-<%- @npm() %> is a a tool for CSS manipulations built on css, allowing you to automate vendor prefixing, create your own properties, inline images, anything you can imagine! Also works in the browser.
+<%- @npm() %> is a tool for CSS manipulations built on css, allowing you to automate vendor prefixing, create your own properties, inline images, anything you can imagine! Also works in the browser.
 
     npm install <%= @document.npm.name %>
 

@@ -1,0 +1,69 @@
+---
+layout: post
+date: 2013-12-31T10:45:13-0800
+tags: npm, deployment
+npm:
+  repo: &repo doxout/recluster
+  name: &name recluster
+slug: *name
+title: *name
+description: Clustering library with support for zero-downtime reloading.
+---
+<%- @npm() %> is a clustering library with support for zero-downtime reloading.
+
+    npm install <%= @document.npm.name %>
+
+<img class="hide-on-mobile" src="/images/posts/recluster.jpg" style="width: 250px; float: right" />
+
+Delivering that 100% uptime for web apps can be a tricky business. Errors and new code rollouts are the things we have to deal with on a daily basis and if you run continuous integration, your app is probably restarting many times a day. What kind of experience this might be creating for your users?
+
+<%- @npm() %> is among a [few](https://github.com/nodejitsu/forever) [other](https://github.com/superjoe30/naught) libraries that try to address this issue. It is:
+
+* Cluster aware.
+* Zero downtime errors and deploys.
+* Does not run as daemon.
+* Log agnostic.
+* Simple, relatively easy to reason about.
+
+## Example
+
+If `server.js` is your regular http server (e.g. express), create `cluster.js` and add:
+
+    var recluster = require('recluster'),
+        path = require('path');
+
+    var cluster = recluster(path.join(__dirname, 'server.js'));
+    cluster.run();
+
+    process.on('SIGUSR2', function() {
+        console.log('Got SIGUSR2, reloading cluster...');
+        cluster.reload();
+    });
+
+    console.log("spawned cluster, kill -s SIGUSR2", process.pid, "to reload");
+
+then run it
+
+    node cluster.js
+
+To hot-reload the server, simply run
+
+    kill -s SIGUSR2 <cluster_pid>
+
+A server worker can gracefully exit by cleaning up in the 'close' event of its server:
+
+    server.on('close', function() {
+        // cleanup
+    });
+
+Non-server workers can listen for the disconnect command and shut down gracefully before the kill timeout:
+
+    process.on('message', function(m) {
+        if (m.cmd == 'disconnect') {
+            // cleanup
+        }
+    })
+
+For some fantastic insights on the subject, checkout [Towards 100% Uptime with Node.js](http://sandinmyjoints.github.io/towards-100-pct-uptime) slides by [William Bert](https://github.com/sandinmyjoints) [@williamjohnbert](https://twitter.com/williamjohnbert) and [10 steps to nodejs nirvana in production](http://qzaidi.github.io/2013/05/14/node-in-production/) by [Qasim Zaidi](http://github.com/qzaidi) [@kernelhacker](http://twitter.com/#!/kernelhacker).
+
+Curious, how do you manage your node process?
