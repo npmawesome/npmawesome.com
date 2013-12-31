@@ -6,15 +6,19 @@
 body{background:white;border-top:3px solid black;margin:0;font-family:Monaco,Courier New,monospace;font-size:0.9em}
 a{color:#990;text-decoration:none}
 #fork-me{position:absolute;left:0;top:0;background:url('/images/fork-me.png') no-repeat;width:141px;height:141px;text-indent:-500px}
-#logo{font-family:Monaco,Courier New,monospace;text-align:center;font-size:4em;font-weight:normal;margin-bottom:0}#logo a{color:inherit}#logo a .posts-counter{font-size:80%;background:silver;color:white;padding:.1em .3em;margin-left:.3em;border-radius:2px}
+#logo{font-family:Monaco,Courier New,monospace;text-align:center;font-size:4em;font-weight:normal;margin-bottom:0}#logo a{color:inherit}#logo a .posts-counter{font-size:50%;color:silver;vertical-align:super}
 #sub-title{text-align:center;margin-bottom:2em}
 article{max-width:100%;overflow:hidden}article>header{margin:3em 0 1em 0}article>header h2{font-family:Monaco,Courier New,monospace;font-weight:normal;font-size:3em;margin:0;display:inline-block}article>header h2 a{text-decoration:none;color:#000}
 article>header .meta{color:silver;font-size:0.8em}article>header .meta .comments{margin-left:.5em}
-article>header .meta .github-stars{display:inline-block;width:auto;height:auto;padding:.1em .3em;background:silver;color:white;margin-left:.5em;border-radius:2px}article>header .meta .github-stars:before{content:'★';margin:0 .2em 0}
+article>header .meta .github-stars{display:inline-block;width:auto;height:auto;padding:.1em .3em;background:silver;color:white;margin-left:.5em;border-radius:2px;text-shadow:0 1px 1px rgba(0,0,0,0.3)}article>header .meta .github-stars:before{content:'★';margin:0 .2em 0}
 article:first-child>header{margin-top:0}
 article pre,article code{font-family:Monaco,Courier New,monospace;font-size:.95em}
 article pre{background-color:#333;padding:.8em 1em;color:#fff;border-radius:2px}article pre code{background:none;padding:0;margin:0;overflow:hidden;text-overflow:ellipsis;max-width:100%;display:block;line-height:inherit}
 article code{background:#e0e0e0;padding:0 0.3em}
 article blockquote{padding:0 0 0 1em;quotes:"“" "“" "“" "“";position:relative}article blockquote:before{content:open-quote;position:absolute;font-size:5em;right:100%;top:0;line-height:1em;color:silver}
 .pagination ul{list-style-type:none;margin:2em 0;padding:0;text-align:center}.pagination ul li{display:inline-block}.pagination ul li+li{margin-left:1em}
-@media only screen and (min-width:34em){}@media only screen and (max-width:550px){#fork-me{width:60px;height:60px;background-size:cover}}@media only screen and (min-width:54em){.main{width:66.66%} .sidebar{width:33.33%}}@media only screen and (min-width:76em){.main{width:75%} .sidebar{width:25%}}.main{width:100% !important}
+aside h4{margin-bottom:0}
+aside .other-posts .current a{padding:2px 4px;margin:-2px -4px;background:silver;color:white;border-radius:2px;text-shadow:0 1px 1px rgba(0,0,0,0.3)}
+aside .feedburner{margin-bottom:1em}
+footer{clear:both}
+@media only screen and (min-width:34em){}@media only screen and (max-width:550px){#logo{font-size:100%} .hide-on-mobile{display:none}}@media only screen and (min-width:54em){.main{width:66.66% !important} aside{width:33.33% !important}}@media only screen and (min-width:76em){.main{width:75% !important} aside{width:25% !important}}

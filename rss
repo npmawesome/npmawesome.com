@@ -5,15 +5,66 @@
         <description><![CDATA[Daily dose of awesome NPM modules for Node.js, old and new!]]></description>
         <link>http://npmawesome.com</link>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Mon, 30 Dec 2013 19:19:16 GMT</lastBuildDate>
+        <lastBuildDate>Tue, 31 Dec 2013 19:09:18 GMT</lastBuildDate>
         <atom:link href="http://npmawesome.com/rss" rel="self" type="application/rss+xml"/>
         <author><![CDATA[Alex Gorbatchev]]></author>
-        <pubDate>Mon, 30 Dec 2013 19:08:54 GMT</pubDate>
+        <pubDate>Tue, 31 Dec 2013 19:09:06 GMT</pubDate>
+        <item>
+            <title><![CDATA[recluster]]></title>
+            <description><![CDATA[<p><a href="https://github.com/doxout/recluster">recluster</a> is a clustering library with support for zero-downtime reloading.</p>
+<pre><code>npm install recluster</code></pre>
+<p><img class="hide-on-mobile" src="/images/posts/recluster.jpg" style="width: 250px; float: right" /></p>
+<p>Delivering that 100% uptime for web apps can be a tricky business. Errors and new code rollouts are the things we have to deal with on a daily basis and if you run continuous integration, your app is probably restarting many times a day. What kind of experience this might be creating for your users?</p>
+<p><a href="https://github.com/doxout/recluster">recluster</a> is among a <a href="https://github.com/nodejitsu/forever">few</a> <a href="https://github.com/superjoe30/naught">other</a> libraries that try to address this issue. It is:</p>
+<ul>
+<li>Cluster aware.</li>
+<li>Zero downtime errors and deploys.</li>
+<li>Does not run as daemon.</li>
+<li>Log agnostic.</li>
+<li>Simple, relatively easy to reason about.</li>
+</ul>
+<h2 id="example">Example</h2>
+<p>If <code>server.js</code> is your regular http server (e.g. express), create <code>cluster.js</code> and add:</p>
+<pre><code>var recluster = require(&#39;recluster&#39;),
+    path = require(&#39;path&#39;);
+
+var cluster = recluster(path.join(__dirname, &#39;server.js&#39;));
+cluster.run();
+
+process.on(&#39;SIGUSR2&#39;, function() {
+    console.log(&#39;Got SIGUSR2, reloading cluster...&#39;);
+    cluster.reload();
+});
+
+console.log(&quot;spawned cluster, kill -s SIGUSR2&quot;, process.pid, &quot;to reload&quot;);</code></pre>
+<p>then run it</p>
+<pre><code>node cluster.js</code></pre>
+<p>To hot-reload the server, simply run</p>
+<pre><code>kill -s SIGUSR2 &lt;cluster_pid&gt;</code></pre>
+<p>A server worker can gracefully exit by cleaning up in the &#39;close&#39; event of its server:</p>
+<pre><code>server.on(&#39;close&#39;, function() {
+    // cleanup
+});</code></pre>
+<p>Non-server workers can listen for the disconnect command and shut down gracefully before the kill timeout:</p>
+<pre><code>process.on(&#39;message&#39;, function(m) {
+    if (m.cmd == &#39;disconnect&#39;) {
+        // cleanup
+    }
+})</code></pre>
+<p>For some fantastic insights on the subject, checkout <a href="http://sandinmyjoints.github.io/towards-100-pct-uptime">Towards 100% Uptime with Node.js</a> slides by <a href="https://github.com/sandinmyjoints">William Bert</a> <a href="https://twitter.com/williamjohnbert">@williamjohnbert</a> and <a href="http://qzaidi.github.io/2013/05/14/node-in-production/">10 steps to nodejs nirvana in production</a> by <a href="http://github.com/qzaidi">Qasim Zaidi</a> <a href="http://twitter.com/#!/kernelhacker">@kernelhacker</a>.</p>
+<p>Curious, how do you manage your node process?</p>
+]]></description>
+            <link>http://npmawesome.com/posts/2013-12-31-recluster</link>
+            <guid isPermaLink="true">
+                http://npmawesome.com/posts/2013-12-31-recluster            </guid>
+            <dc:creator><![CDATA[Alex Gorbatchev]]></dc:creator>
+            <pubDate>Tue, 31 Dec 2013 18:45:13 GMT</pubDate>
+        </item>
         <item>
             <title><![CDATA[rework]]></title>
-            <description><![CDATA[<p><a href="https://github.com/reworkcss/rework">rework</a> is a a tool for CSS manipulations built on css, allowing you to automate vendor prefixing, create your own properties, inline images, anything you can imagine! Also works in the browser.</p>
+            <description><![CDATA[<p><a href="https://github.com/reworkcss/rework">rework</a> is a tool for CSS manipulations built on css, allowing you to automate vendor prefixing, create your own properties, inline images, anything you can imagine! Also works in the browser.</p>
 <pre><code>npm install rework</code></pre>
-<p><img src="/images/posts/rework.gif" style="width: 250px; float: right" /></p>
+<p><img class="hide-on-mobile" src="/images/posts/rework.gif" style="width: 250px; float: right" /></p>
 <p>Originally written by TJ Holowaychuk, <a href="https://github.com/reworkcss/rework">rework</a> is a module for working with CSS. Just like <a href="https://github.com/ariya/esprima">esprima</a> for JavaScript, <a href="https://github.com/reworkcss/rework">rework</a> allows you to change and extend CSS, basically take it to a whole new level.</p>
 <h2 id="example">Example</h2>
 <p>To get an idea of how to use <a href="https://github.com/reworkcss/rework">rework</a>, take a look at one of the many plugins. A good example would be <a href="https://github.com/simme/rework-imagesize">rework-imagesize</a> plugin.</p>
@@ -51,7 +102,7 @@ var css = rework(str)
             <description><![CDATA[<p><a href="https://github.com/MatthewMueller/cheerio">cheerio</a> is a fast, flexible, and lean implementation of core jQuery designed specifically for the server.</p>
 <pre><code>npm install cheerio</code></pre>
 <h2 id="features">Features</h2>
-<p><img src="/images/posts/cheerio.jpg" style="width: 150px; float: right" /></p>
+<p><img class="hide-on-mobile" src="/images/posts/cheerio.jpg" style="width: 150px; float: right" /></p>
 <ul>
 <li>Familiar syntax. <a href="https://github.com/MatthewMueller/cheerio">cheerio</a> implements a subset of core jQuery. <a href="https://github.com/MatthewMueller/cheerio">cheerio</a> removes all the DOM inconsistencies and browser cruft from the jQuery library, revealing its truly gorgeous API.</li>
 <li>Blazingly fast. <a href="https://github.com/MatthewMueller/cheerio">cheerio</a> works with a very simple, consistent DOM model. As a result parsing, manipulating, and rendering are incredibly efficient. Preliminary end-to-end benchmarks suggest that <a href="https://github.com/MatthewMueller/cheerio">cheerio</a> is about 8x faster than JSDOM.</li>
@@ -82,7 +133,7 @@ $.html();
             <description><![CDATA[<p><a href="https://github.com/maxogden/dat">dat</a> is a project that seeks providing better tools for data collaboration.</p>
 <pre><code>npm install dat</code></pre>
 <h2 id="what-is-dat-">What is dat?</h2>
-<p><img src="/images/posts/dat.png" style="float: right" /></p>
+<p><img class="hide-on-mobile" src="/images/posts/dat.png" style="float: right" /></p>
 <p>I like the name, makes for clever titles like this :) Anyways, dat:</p>
 <ul>
 <li>make data syncable. automatic sync and updates of entire data sets (or subsets)</li>
@@ -107,7 +158,7 @@ $.html();
             <description><![CDATA[<p><a href="https://github.com/slevithan/xregexp">xregexp</a> provides augmented and extensible JavaScript regular expressions. You get new syntax, flags, and methods beyond what browsers support natively. XRegExp is also a regex utility belt with tools to make your client-side grepping simpler and more powerful, while freeing you from worrying about pesky cross-browser inconsistencies and the dubious lastIndex property.</p>
 <pre><code>npm install xregexp</code></pre>
 <h2 id="usage-examples">Usage examples</h2>
-<p><a href="http://www.bennadel.com/blog/2383-The-5th-Annual-Regular-Expression-Day-And-Prizes-June-1st-2012.htm"><img src="http://www.bennadel.com/resources/regexday/2011/photos/1__original.jpg" style="width: 300px; float: right" /></a></p>
+<p><a href="http://www.bennadel.com/blog/2383-The-5th-Annual-Regular-Expression-Day-And-Prizes-June-1st-2012.htm"><img class="hide-on-mobile" src="http://www.bennadel.com/resources/regexday/2011/photos/1__original.jpg" style="width: 300px; float: right" /></a></p>
 <pre><code>// Using named capture and flag x (free-spacing and line comments)
 var date = XRegExp(&#39;(?&lt;year&gt;  [0-9]{4} ) -?  # year  \n\
                     (?&lt;month&gt; [0-9]{2} ) -?  # month \n\
@@ -201,7 +252,7 @@ XRegExp.matchRecursive(str, &#39;&lt;&#39;, &#39;&gt;&#39;, &#39;gy&#39;);
             <title><![CDATA[ect]]></title>
             <description><![CDATA[<p><a href="https://github.com/baryshev/ect">ect</a> is a <a href="http://ectjs.com/#benchmark">performance focused</a> JavaScript template engine with embedded CoffeeScript syntax. <a href="http://ectjs.com">Just try demo</a> to check all features.</p>
 <pre><code>npm install ect</code></pre>
-<p><img src="/images/posts/coffeescript.png" style="float: right" /></p>
+<p><img class="hide-on-mobile" src="/images/posts/coffeescript.png" style="float: right" /></p>
 <h2 id="features">Features</h2>
 <ul>
 <li>Excellent performance</li>
@@ -252,7 +303,7 @@ console.log &quot;Listening on port 3000&quot;</code></pre>
             <title><![CDATA[chrono]]></title>
             <description><![CDATA[<p><a href="https://github.com/wanasit/chrono">chrono</a> is a natural language date parser in Javascript. It is designed to extract date informations from any given text. Works in node and browser. Check out the <a href="http://wanasit.github.io/pages/chrono/">nifty test page</a>.</p>
 <pre><code>npm install chrono</code></pre>
-<p><img src="/images/posts/clock.gif" style="float: right; width: 100px; margin-left: 1em" /></p>
+<p><img class="hide-on-mobile" src="/images/posts/clock.gif" style="float: right; width: 100px; margin-left: 1em" /></p>
 <p><a href="https://github.com/wanasit/chrono">chrono</a> supports a number of date and time formats, including:</p>
 <ul>
 <li>Today, Tomorrow, Yesterday, last Friday, etc</li>
@@ -320,7 +371,7 @@ $ curl https://api.github.com/users/rafeca | prettyjson
 ...
 $ PRETTYJSON_KEYS=red PRETTYJSON_DASH=blue PRETTYJSON_STRING=yellow prettyjson package.json</code></pre>
 <h2 id="api">API</h2>
-<p><a href="https://github-camo.global.ssl.fastly.net/84c63f2a817ca95b6ccaff240a75fbf1b11f7b87/687474703a2f2f7261666563612e636f6d2f7072657474796a736f6e2f696d616765732f6578616d706c65332e706e67"><img src="https://github-camo.global.ssl.fastly.net/84c63f2a817ca95b6ccaff240a75fbf1b11f7b87/687474703a2f2f7261666563612e636f6d2f7072657474796a736f6e2f696d616765732f6578616d706c65332e706e67" style="float: right; width: 300px; margin-left: 1em" /></a></p>
+<p><a href="https://github-camo.global.ssl.fastly.net/84c63f2a817ca95b6ccaff240a75fbf1b11f7b87/687474703a2f2f7261666563612e636f6d2f7072657474796a736f6e2f696d616765732f6578616d706c65332e706e67"><img class="hide-on-mobile" src="https://github-camo.global.ssl.fastly.net/84c63f2a817ca95b6ccaff240a75fbf1b11f7b87/687474703a2f2f7261666563612e636f6d2f7072657474796a736f6e2f696d616765732f6578616d706c65332e706e67" style="float: right; width: 300px; margin-left: 1em" /></a></p>
 <pre><code>var prettyjson = require(&#39;prettyjson&#39;);
 
 var data = {
@@ -344,7 +395,7 @@ console.log(prettyjson.render(data));</code></pre>
             <description><![CDATA[<p><a href="https://github.com/nickfargo/state">state</a> is a library for implementing <a href="http://statejs.org/docs/#concepts--states">first-class states</a> on arbitrary owner objects.</p>
 <pre><code>npm install state</code></pre>
 <p>There&#39;s an incredible amount of funtionality described in the <a href="http://statejs.org/docs/">very extensive documentation</a>.</p>
-<p><img src="http://statejs.org/img/dodecagem-640px.png" style="float: right; width: 200px; margin-left: 1em;" /></p>
+<p><img class="hide-on-mobile" src="http://statejs.org/img/dodecagem-640px.png" style="float: right; width: 200px; margin-left: 1em;" /></p>
 <h2 id="minimal-footprint">Minimal footprint</h2>
 <p>All functionality of State is to be instigated through the exported state function. It should be able both to generate state expressions and to implement expressed states into an existing JavaScript object, depending on the arguments provided. In the latter case, the newly implemented system of states should be accessible from a single object. <code>state()</code> method on the affected object.</p>
 <h2 id="expressive-power">Expressive power</h2>
@@ -398,76 +449,6 @@ jr.waver();  // log &lt;&lt;&lt; &quot;I hate chocolate, I want AmeriCone Dream!
                 http://npmawesome.com/posts/2013-12-10-state            </guid>
             <dc:creator><![CDATA[Alex Gorbatchev]]></dc:creator>
             <pubDate>Wed, 11 Dec 2013 00:08:10 GMT</pubDate>
-        </item>
-        <item>
-            <title><![CDATA[blessed]]></title>
-            <description><![CDATA[<p><a href="https://github.com/chjj/blessed">blessed</a> is a terminal control library for Unix-like systems, enabling the construction of text user interface (TUI) applications. In other words it&#39;s a curses-like library for node.js</p>
-<pre><code>npm install blessed</code></pre>
-<h2 id="example">Example</h2>
-<p>This will render a box with line borders containing the text &#39;Hello world!&#39;, perfectly centered horizontally and vertically.</p>
-<p><img src="/images/posts/blessed.png" style="float: right; margin-left: 1em;" /></p>
-<pre><code>var blessed = require(&#39;blessed&#39;);
-
-// Create a screen object.
-var screen = blessed.screen();
-
-// Create a box perfectly centered horizontally and vertically.
-var box = blessed.box({
-  top: &#39;center&#39;,
-  left: &#39;center&#39;,
-  width: &#39;50%&#39;,
-  height: &#39;50%&#39;,
-  content: &#39;Hello {bold}world{/bold}!&#39;,
-  tags: true,
-  border: {
-    type: &#39;line&#39;
-  },
-  style: {
-    fg: &#39;white&#39;,
-    bg: &#39;magenta&#39;,
-    border: {
-      fg: &#39;#ffffff&#39;
-    },
-    hover: {
-      bg: &#39;green&#39;
-    }
-  }
-});
-
-// Append our box to the screen.
-screen.append(box);
-
-// If our box is clicked, change the content.
-box.on(&#39;click&#39;, function(data) {
-  box.setContent(&#39;{center}Some different {red-fg}content{/red-fg}.{/center}&#39;);
-  screen.render();
-});
-
-// If box is focused, handle `enter`/`return` and give us some more content.
-box.key(&#39;enter&#39;, function(ch, key) {
-  box.setContent(&#39;{right}Even different {black-fg}content{/black-fg}.{/right}\n&#39;);
-  box.setLine(1, &#39;bar&#39;);
-  box.insertLine(1, &#39;foo&#39;);
-  screen.render();
-});
-
-// Quit on Escape, q, or Control-C.
-screen.key([&#39;escape&#39;, &#39;q&#39;, &#39;C-c&#39;], function(ch, key) {
-  return process.exit(0);
-});
-
-// Focus our element.
-box.focus();
-
-// Render the screen.
-screen.render();</code></pre>
-<p>There are plenty of examples and information on the <a href="https://github.com/chjj/blessed">blessed</a>. Check it out!</p>
-]]></description>
-            <link>http://npmawesome.com/posts/2013-12-09-blessed</link>
-            <guid isPermaLink="true">
-                http://npmawesome.com/posts/2013-12-09-blessed            </guid>
-            <dc:creator><![CDATA[Alex Gorbatchev]]></dc:creator>
-            <pubDate>Mon, 09 Dec 2013 22:17:51 GMT</pubDate>
         </item>
     </channel>
 </rss>
