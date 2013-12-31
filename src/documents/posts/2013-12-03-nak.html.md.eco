@@ -1,11 +1,10 @@
 ---
+layout: post
 date: 2013-12-03T11:00:17.949753-08:00
 tags: npm, javascript, ack, ag, search
 npm:
   repo: &repo gjtorikian/nak
   name: &name nak
-
-layout: post
 slug: *name
 title: *name
 ---

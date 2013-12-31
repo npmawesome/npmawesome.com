@@ -17,7 +17,7 @@ title: *name
 
 This will render a box with line borders containing the text 'Hello world!', perfectly centered horizontally and vertically.
 
-<img src="/images/posts/blessed.png" style="float: right; margin-left: 1em;" />
+<img class="hide-on-mobile" src="/images/posts/blessed.png" style="float: right; margin-left: 1em;" />
 
     var blessed = require('blessed');
 

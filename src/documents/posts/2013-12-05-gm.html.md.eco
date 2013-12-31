@@ -13,7 +13,7 @@ title: *name
 
     npm install <%= @document.npm.name %>
 
-<img src="/images/posts/imagemagick.png" style="float: right; width: 100px; margin-left: 1em;" />
+<img class="hide-on-mobile" src="/images/posts/imagemagick.png" style="float: right; width: 100px; margin-left: 1em;" />
 
 > ImageMagick is a software suite to create, edit, compose, or convert bitmap images. It can read and write images in a variety of formats (over 100) including DPX, EXR, GIF, JPEG, JPEG-2000, PDF, PNG, Postscript, SVG, and TIFF. Use ImageMagick to resize, flip, mirror, rotate, distort, shear and transform images, adjust image colors, apply various special effects, or draw text, lines, polygons, ellipses and Bézier curves.
 

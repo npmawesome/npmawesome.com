@@ -1,11 +1,10 @@
 ---
+layout: post
 date: 2013-11-26T15:18:56.092745-08:00
 tags: npm, javascript, coffeescript, platform, blog, cms
 npm:
   repo: &repo bevry/docpad
   name: &name docpad
-
-layout: post
 slug: *name
 title: *name
 ---

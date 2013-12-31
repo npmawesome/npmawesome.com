@@ -23,7 +23,7 @@ title: *name
 
 ## API
 
-[<img src="https://github-camo.global.ssl.fastly.net/84c63f2a817ca95b6ccaff240a75fbf1b11f7b87/687474703a2f2f7261666563612e636f6d2f7072657474796a736f6e2f696d616765732f6578616d706c65332e706e67" style="float: right; width: 300px; margin-left: 1em" />](https://github-camo.global.ssl.fastly.net/84c63f2a817ca95b6ccaff240a75fbf1b11f7b87/687474703a2f2f7261666563612e636f6d2f7072657474796a736f6e2f696d616765732f6578616d706c65332e706e67)
+[<img class="hide-on-mobile" src="https://github-camo.global.ssl.fastly.net/84c63f2a817ca95b6ccaff240a75fbf1b11f7b87/687474703a2f2f7261666563612e636f6d2f7072657474796a736f6e2f696d616765732f6578616d706c65332e706e67" style="float: right; width: 300px; margin-left: 1em" />](https://github-camo.global.ssl.fastly.net/84c63f2a817ca95b6ccaff240a75fbf1b11f7b87/687474703a2f2f7261666563612e636f6d2f7072657474796a736f6e2f696d616765732f6578616d706c65332e706e67)
 
     var prettyjson = require('prettyjson');
 

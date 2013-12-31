@@ -1,9 +1,12 @@
 ---
-date: 2013-11-25T15:19:48.436362-08:00
 layout: post
-slug: grunt-angular-builder
+date: 2013-11-25T15:19:48.436362-08:00
 tags: npm, grunt, plugin, javascript, angularjs, deployment, development
-title: grunt-angular-builder
+npm:
+  repo: &repo claudio-silva/grunt-angular-builder
+  name: &name grunt-angular-builder
+slug: *name
+title: *name
 ---
 [angular-builder](https://github.com/claudio-silva/grunt-angular-builder)
 is a specialized Grunt plugin to handle all of AngularJS related assets
@@ -11,7 +14,7 @@ issues in a truly practical, automated, simple and easy way.
 
     npm install angular-builder
 
-<div style="position: relative; float: right; height: 200px;">
+<div class="hide-on-mobile" style="position: relative; float: right; height: 200px;">
     <div style="position: relative; width: 200px; height: 200px; background: url('/images/posts/angularjs.png') 50% 50% no-repeat; background-size: contain"></div>
     <div style="position: absolute; top: 0px; left: 0px; width: 200px; height: 190px; overflow: hidden; background: url('/images/posts/grunt.png'); background-size: cover"></div>
 </div>

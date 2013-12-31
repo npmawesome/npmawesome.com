@@ -13,7 +13,7 @@ JavaScript, using [Emscripten](https://github.com/kripken/emscripten).
 In other words, it’s damn impressive! Just [check out the
 demo](http://bgrins.github.io/videoconverter.js/demo).
 
-<img src="/images/posts/ffmpeg.png" style="width: 200px; float: right; margin-left: 1em;"/>
+<img class="hide-on-mobile" src="/images/posts/ffmpeg.png" style="width: 200px; float: right; margin-left: 1em;"/>
 
 Here’s the fun fact,
 [ffmpeg.js](https://github.com/bgrins/videoconverter.js/blob/master/build/ffmpeg.js)

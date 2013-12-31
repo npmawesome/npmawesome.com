@@ -16,7 +16,7 @@ description: Real-time replication and versioning for large tabular data sets.
 
 ## What is dat?
 
-<img src="/images/posts/dat.png" style="float: right" />
+<img class="hide-on-mobile" src="/images/posts/dat.png" style="float: right" />
 
 I like the name, makes for clever titles like this :) Anyways, dat:
 

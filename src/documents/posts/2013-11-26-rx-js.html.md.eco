@@ -40,11 +40,11 @@ Using RxJS, you can represent multiple asynchronous data streams (that come from
 
 Reactive programming is a very interesting way of writing code. Check out a few videos and presentations linked from rx.js
 
-#### Presentations
+## Presentations
 - [Don't Cross the Streams - Cascadia.js 2012](http://www.slideshare.net/mattpodwysocki/cascadiajs-dont-cross-the-streams)
 - [Curing Your Asynchronous Blues - Strange Loop 2013](https://github.com/Reactive-Extensions/StrangeLoop2013)
 
-#### Videos
+## Videos
 - [Hello RxJS - Channel 9](http://channel9.msdn.com/Blogs/Charles/Introducing-RxJS-Reactive-Extensions-for-JavaScript)
 - [MIX 2011](http://channel9.msdn.com/events/MIX/MIX11/HTM07)
 - [RxJS Today and Tomorrow - Channel 9](http://channel9.msdn.com/Blogs/Charles/Matthew-Podwysocki-and-Bart-J-F-De-Smet-RxJS-Today-and-Tomorrow)

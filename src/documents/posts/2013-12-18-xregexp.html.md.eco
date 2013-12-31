@@ -16,7 +16,7 @@ description: XRegExp provides augmented and extensible JavaScript regular expres
 
 ## Usage examples
 
-[<img src="http://www.bennadel.com/resources/regexday/2011/photos/1__original.jpg" style="width: 300px; float: right" />](http://www.bennadel.com/blog/2383-The-5th-Annual-Regular-Expression-Day-And-Prizes-June-1st-2012.htm)
+[<img class="hide-on-mobile" src="http://www.bennadel.com/resources/regexday/2011/photos/1__original.jpg" style="width: 300px; float: right" />](http://www.bennadel.com/blog/2383-The-5th-Annual-Regular-Expression-Day-And-Prizes-June-1st-2012.htm)
 
     // Using named capture and flag x (free-spacing and line comments)
     var date = XRegExp('(?<year>  [0-9]{4} ) -?  # year  \n\

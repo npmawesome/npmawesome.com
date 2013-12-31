@@ -15,7 +15,7 @@ title: *name
 
 There's an incredible amount of funtionality described in the [very extensive documentation](http://statejs.org/docs/).
 
-<img src="http://statejs.org/img/dodecagem-640px.png" style="float: right; width: 200px; margin-left: 1em;" />
+<img class="hide-on-mobile" src="http://statejs.org/img/dodecagem-640px.png" style="float: right; width: 200px; margin-left: 1em;" />
 
 ## Minimal footprint
 

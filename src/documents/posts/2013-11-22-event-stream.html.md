@@ -1,13 +1,16 @@
 ---
-date: 2013-11-22T15:20:01.275735-08:00
 layout: post
-slug: event-stream
+date: 2013-11-22T15:20:01.275735-08:00
 tags: npm, javascript, streams, events
-title: event-stream
+npm:
+  repo: &repo dominictarr/event-stream
+  name: &name event-stream
+slug: *name
+title: *name
 ---
-<img src="/images/posts/event-stream.gif" style="width: 200px; float: right"/>
-[event-stream](https://github.com/dominictarr/event-stream)
-is a toolkit to make creating and working with streams easy..
+<img class="hide-on-mobile" src="/images/posts/event-stream.gif" style="width: 200px; float: right"/>
+
+[event-stream](https://github.com/dominictarr/event-stream) is a toolkit to make creating and working with streams easy..
 
     npm install event-stream
 
@@ -25,10 +28,7 @@ The usage is pretty straight forward:
       process.stdout                     // pipe it to stdout!
     );
 
-I found the `map` function to be especially exciting because it takes a
-callback and lets you asynchronously process stream data where as
-regular stream `data` event does not.
+I found the `map` function to be especially exciting because it takes a callback and lets you asynchronously process stream data where as regular stream `data` event does not.
 
-There are plenty of examples and information on the [github
-page](https://github.com/dominictarr/event-stream).
+There are plenty of examples and information on the [github page](https://github.com/dominictarr/event-stream).
 
