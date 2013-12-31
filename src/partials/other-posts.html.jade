@@ -1,0 +1,4 @@
+.other-posts
+  each page in getCollection('posts').toJSON()
+    if page.npm
+      div(class=page.url === document.url ? 'current' : ''): a(href=page.url)!= page.npm.name

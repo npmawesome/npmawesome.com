@@ -16,17 +16,17 @@ docpadConfig =
     fullUrl: (doc = @document) ->
       @site.url + doc.url
 
-    preparedTitle: (doc = @document)->
+    preparedTitle: (doc = @document) ->
       doc.title or doc.npm?.name
 
-    preparedSlug: (doc = @document)->
+    preparedSlug: (doc = @document) ->
       doc.npm?.name
 
-    githubUrl: ->
-      "https://github.com/#{@document.npm.repo}"
+    githubUrl: (doc = @document) ->
+      "https://github.com/#{doc.npm.repo}"
 
-    npm: ->
-      """<a href="#{@githubUrl()}">#{@document.npm.name}</a>"""
+    npm: (doc = @document) ->
+      """<a href="#{@githubUrl doc}">#{doc.npm.name}</a>"""
 
     author: (doc = @document) ->
       slug = doc.author or 'alexgorbatchev'
@@ -66,8 +66,11 @@ docpadConfig =
       @
 
   collections:
-    posts: (database) ->
+    pagedPosts: (database) ->
       database.findAllLive {relativeOutDirPath: /^posts/, isPagedAuto: $ne: true}, [date: -1, basename: -1]
+
+    posts: (database) ->
+      database.findAllLive {relativeOutDirPath: /^posts/}, [date: -1, basename: -1]
 
   plugins:
     rss:

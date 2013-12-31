@@ -42,12 +42,9 @@ a {
     color: inherit;
 
     .posts-counter {
-      font-size: 80%;
-      background: silver;
-      color: white;
-      padding: .1em .3em;
-      margin-left: .3em;
-      border-radius: 2px;
+      font-size: 50%;
+      color: silver;
+      vertical-align: super;
     }
   }
 }
@@ -169,6 +166,22 @@ article {
   }
 }
 
+aside {
+  .other-posts {
+    .current a {
+      padding: 2px 4px;
+      margin: -2px -4px;
+      background: silver;
+      color: white;
+      border-radius: 2px;
+      text-shadow: 0px 1px 1px rgba(0,0,0,.3);
+    }
+  }
+}
+
+footer {
+  clear: both;
+}
 
 @media only screen and (min-width: 34em) {
 }
@@ -182,15 +195,15 @@ article {
 }
 
 @media only screen and (min-width: 54em) {
-  .main { width: 66.66%; }
-  .sidebar { width: 33.33%; }
+  .main { width: 66.66% !important; }
+  aside { width: 33.33% !important; }
 }
 
 @media only screen and (min-width: 76em) {
-  .main { width: 75%; }
-  .sidebar { width: 25%; }
+  .main { width: 75% !important; }
+  aside { width: 25% !important; }
 }
 
 // single colum
-.main { width: 100% !important; }
+// .main { width: 100% !important; }
 
