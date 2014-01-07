@@ -1,0 +1,44 @@
+---
+layout: post
+date: 2014-01-06T16:17:02-0800
+tags: npm, terminal, colors, console, stdout
+npm:
+  repo: &repo sindresorhus/chalk
+  name: &name chalk
+slug: *name
+title: *name
+description: Chalk is a clean and focused alternative to colors.js
+---
+<%- @npm() %> is a clean and focused alternative to [colors.js](https://github.com/Marak/colors.js), which is currently the most popular string styling module, but it has serious deficiencies like extending String.prototype which causes all kinds of [problems](https://github.com/yeoman/yo/issues/68). Although there are other ones, they either do too much or not enough.
+
+    npm install <%= @document.npm.name %>
+
+<img class="hide-on-mobile" src="/images/posts/chalk.png" style="width: 250px; float: right" />
+
+## Why
+
+- **Doesn't extend String.prototype**
+- Expressive API
+- Clean and focused
+- Auto-detects color support
+- Actively maintained
+- [Used by 150+ modules](https://npmjs.org/browse/depended/chalk)
+
+## Example
+
+    var chalk = require('chalk');
+
+    // style a string
+    console.log(  chalk.blue('Hello world!')  );
+
+    // combine styled and normal strings
+    console.log(  chalk.blue('Hello'), 'World' + chalk.red('!')  );
+
+    // compose multiple styles using the chainable API
+    console.log(  chalk.blue.bgRed.bold('Hello world!')  );
+
+    // nest styles
+    console.log(  chalk.red('Hello', chalk.underline.bgBlue('world') + '!')  );
+
+    // pass in multiple arguments
+    console.log(  chalk.blue('Hello', 'World!', 'Foo', 'bar', 'biz', 'baz')  );
