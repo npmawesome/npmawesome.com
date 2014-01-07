@@ -5,10 +5,48 @@
         <description><![CDATA[Daily dose of awesome NPM modules for Node.js, old and new!]]></description>
         <link>http://npmawesome.com</link>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Tue, 31 Dec 2013 19:09:18 GMT</lastBuildDate>
+        <lastBuildDate>Tue, 07 Jan 2014 00:24:31 GMT</lastBuildDate>
         <atom:link href="http://npmawesome.com/rss" rel="self" type="application/rss+xml"/>
         <author><![CDATA[Alex Gorbatchev]]></author>
-        <pubDate>Tue, 31 Dec 2013 19:09:06 GMT</pubDate>
+        <pubDate>Tue, 07 Jan 2014 00:24:15 GMT</pubDate>
+        <item>
+            <title><![CDATA[chalk]]></title>
+            <description><![CDATA[<p><a href="https://github.com/sindresorhus/chalk">chalk</a> is a clean and focused alternative to <a href="https://github.com/Marak/colors.js">colors.js</a>, which is currently the most popular string styling module, but it has serious deficiencies like extending String.prototype which causes all kinds of <a href="https://github.com/yeoman/yo/issues/68">problems</a>. Although there are other ones, they either do too much or not enough.</p>
+<pre><code>npm install chalk</code></pre>
+<p><img class="hide-on-mobile" src="/images/posts/chalk.png" style="width: 250px; float: right" /></p>
+<h2 id="why">Why</h2>
+<ul>
+<li><strong>Doesn&#39;t extend String.prototype</strong></li>
+<li>Expressive API</li>
+<li>Clean and focused</li>
+<li>Auto-detects color support</li>
+<li>Actively maintained</li>
+<li><a href="https://npmjs.org/browse/depended/chalk">Used by 150+ modules</a></li>
+</ul>
+<h2 id="example">Example</h2>
+<pre><code>var chalk = require(&#39;chalk&#39;);
+
+// style a string
+console.log(  chalk.blue(&#39;Hello world!&#39;)  );
+
+// combine styled and normal strings
+console.log(  chalk.blue(&#39;Hello&#39;), &#39;World&#39; + chalk.red(&#39;!&#39;)  );
+
+// compose multiple styles using the chainable API
+console.log(  chalk.blue.bgRed.bold(&#39;Hello world!&#39;)  );
+
+// nest styles
+console.log(  chalk.red(&#39;Hello&#39;, chalk.underline.bgBlue(&#39;world&#39;) + &#39;!&#39;)  );
+
+// pass in multiple arguments
+console.log(  chalk.blue(&#39;Hello&#39;, &#39;World!&#39;, &#39;Foo&#39;, &#39;bar&#39;, &#39;biz&#39;, &#39;baz&#39;)  );</code></pre>
+]]></description>
+            <link>http://npmawesome.com/posts/2014-01-06-chalk</link>
+            <guid isPermaLink="true">
+                http://npmawesome.com/posts/2014-01-06-chalk            </guid>
+            <dc:creator><![CDATA[Alex Gorbatchev]]></dc:creator>
+            <pubDate>Tue, 07 Jan 2014 00:17:02 GMT</pubDate>
+        </item>
         <item>
             <title><![CDATA[recluster]]></title>
             <description><![CDATA[<p><a href="https://github.com/doxout/recluster">recluster</a> is a clustering library with support for zero-downtime reloading.</p>
@@ -389,66 +427,6 @@ console.log(prettyjson.render(data));</code></pre>
                 http://npmawesome.com/posts/2013-12-11-prettyjson            </guid>
             <dc:creator><![CDATA[Alex Gorbatchev]]></dc:creator>
             <pubDate>Thu, 12 Dec 2013 01:27:02 GMT</pubDate>
-        </item>
-        <item>
-            <title><![CDATA[state]]></title>
-            <description><![CDATA[<p><a href="https://github.com/nickfargo/state">state</a> is a library for implementing <a href="http://statejs.org/docs/#concepts--states">first-class states</a> on arbitrary owner objects.</p>
-<pre><code>npm install state</code></pre>
-<p>There&#39;s an incredible amount of funtionality described in the <a href="http://statejs.org/docs/">very extensive documentation</a>.</p>
-<p><img class="hide-on-mobile" src="http://statejs.org/img/dodecagem-640px.png" style="float: right; width: 200px; margin-left: 1em;" /></p>
-<h2 id="minimal-footprint">Minimal footprint</h2>
-<p>All functionality of State is to be instigated through the exported state function. It should be able both to generate state expressions and to implement expressed states into an existing JavaScript object, depending on the arguments provided. In the latter case, the newly implemented system of states should be accessible from a single object. <code>state()</code> method on the affected object.</p>
-<h2 id="expressive-power">Expressive power</h2>
-<p>As much as possible, State should aim to look and feel like a feature of the language. The interpreted shorthand syntax, simple keyword attributes, and limited interface should allow for production code that is terse, declarative, and easy to write and understand.</p>
-<h2 id="opacity">Opacity</h2>
-<p>Apart from the addition of the <code>object.state()</code> method, a call to <code>state()</code> must make no other modifications to a State–affected object&#39;s interface. Methods are replaced with delegators, which forward method calls to the current state. This is to be implemented opaquely and non-destructively: consumers of the object need not be aware of which states are active in the object, or even that a concept of state exists at all, and a call to <code>object.state(&#39;&#39;).destroy()</code> must restore the object to its original form.</p>
-<h2 id="example">Example</h2>
-<pre><code>var flavors = [
-  &#39;vanilla&#39;,
-  &#39;chocolate&#39;,
-  &#39;strawberry&#39;,
-  &#39;AmeriCone Dream&#39;
-];
-
-function Kid () {}
-
-state( Kid.prototype, &#39;mutable&#39;, {
-  data: {
-    favorite: &#39;chocolate&#39;
-  },
-
-  waver: state.bind( function () {
-    var i = Math.random() * flavors.length &lt;&lt; 0;
-    this.data({ favorite: flavors[i] });
-  }),
-
-  whine: function ( complaint ) {
-    if ( typeof console !== &#39;undefined&#39; ) {
-      console.log( complaint );
-    }
-  },
-
-  mutate: function ( mutation, replaced ) {
-    this.owner().whine(
-      &quot;I hate &quot; + replaced.favorite + &quot;, &quot; +
-      &quot;I want &quot; + mutation.favorite + &quot;!&quot;
-    );
-  }
-});
-
-var jr = new Kid;
-
-jr.waver();  // log &lt;&lt;&lt; &quot;I hate chocolate, I want strawberry!&quot;
-jr.waver();  // log &lt;&lt;&lt; &quot;I hate strawberry, I want chocolate!&quot;
-jr.waver();  // nothing
-jr.waver();  // log &lt;&lt;&lt; &quot;I hate chocolate, I want AmeriCone Dream!&quot;</code></pre>
-<p>There are plenty of examples and information on the <a href="http://statejs.org">documentation site</a>. Check it out!</p>
-]]></description>
-            <link>http://npmawesome.com/posts/2013-12-10-state</link>
-            <guid isPermaLink="true">
-                http://npmawesome.com/posts/2013-12-10-state            </guid>
-            <dc:creator><![CDATA[Alex Gorbatchev]]></dc:creator>
-            <pubDate>Wed, 11 Dec 2013 00:08:10 GMT</pubDate>
         </item>
     </channel>
 </rss>
