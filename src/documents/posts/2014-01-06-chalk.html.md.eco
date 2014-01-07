@@ -42,3 +42,5 @@ description: Chalk is a clean and focused alternative to colors.js
 
     // pass in multiple arguments
     console.log(  chalk.blue('Hello', 'World!', 'Foo', 'bar', 'biz', 'baz')  );
+
+<%- @npm() %> was written by [Sindre Sorhus](https://github.com/sindresorhus) [@sindresorhus](https://twitter.com/sindresorhus) who's got a ton of other opensource work. Thank you!
