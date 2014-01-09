@@ -1,4 +1,45 @@
-<!DOCTYPE html><head><link rel="alternate" title="RSS" type="application/rss+xml" href="http://feeds.feedburner.com/npmawesome"><link rel="stylesheet" type="text/css" media="all" href="/styles.css"><meta name="viewport" content="initial-scale=1, maximum-scale=1"><meta charset="utf-8"><title>npm awesome</title><meta property="og:image" content="http://npmawesome.com/images/posts/npm.png"><meta property="og:updated_time" content="1389053822000"><meta property="og:site_name" content="npm awesome"><meta property="og:type" content="blog"><meta property="og:url" content="http://npmawesome.com/"><meta name="description" content="Daily dose of awesome NPM modules for Node.js, old and new!"><meta property="og:description" content="Daily dose of awesome NPM modules for Node.js, old and new!"></head><body><div class="container"><div class="row"><h1 id="logo"><a href="/"><span>npm awesome</span><span class="posts-counter">31</span></a></h1><div id="sub-title"><a href="http://npmjs.org">npm</a> picks, old and new by <a href="https://github.com/alexgorbatchev">Alex Gorbatchev</a></div></div><div class="row"><div class="main col"><article><header><h2><a href="/posts/2014-01-06-chalk">chalk</a></h2><div class="meta"><span>posted by <a href="https://github.com/alexgorbatchev">Alex Gorbatchev</a> on January 6th 2014</span><a href="http://npmawesome.com/posts/2014-01-06-chalk#disqus_thread" class="comments"></a><div data-github-repo="sindresorhus/chalk" class="github-stars"></div></div></header><div><p><a href="https://github.com/sindresorhus/chalk">chalk</a> is a clean and focused alternative to <a href="https://github.com/Marak/colors.js">colors.js</a>, which is currently the most popular string styling module, but it has serious deficiencies like extending String.prototype which causes all kinds of <a href="https://github.com/yeoman/yo/issues/68">problems</a>. Although there are other ones, they either do too much or not enough.</p>
+<!DOCTYPE html><head><link rel="alternate" title="RSS" type="application/rss+xml" href="http://feeds.feedburner.com/npmawesome"><link rel="stylesheet" type="text/css" media="all" href="/styles.css"><meta name="viewport" content="initial-scale=1, maximum-scale=1"><meta charset="utf-8"><title>npm awesome</title><meta property="og:image" content="http://npmawesome.com/images/posts/npm.png"><meta property="og:updated_time" content="1389290272000"><meta property="og:site_name" content="npm awesome"><meta property="og:type" content="blog"><meta property="og:url" content="http://npmawesome.com/"><meta name="description" content="Daily dose of awesome NPM modules for Node.js, old and new!"><meta property="og:description" content="Daily dose of awesome NPM modules for Node.js, old and new!"></head><body><div class="container"><div class="row"><h1 id="logo"><a href="/"><span>npm awesome</span><span class="posts-counter">32</span></a></h1><div id="sub-title"><a href="http://npmjs.org">npm</a> picks, old and new by <a href="https://github.com/alexgorbatchev">Alex Gorbatchev</a></div></div><div class="row"><div class="main col"><article><header><h2><a href="/posts/2014-01-09-gulp">gulp</a></h2><div class="meta"><span>posted by <a href="https://github.com/alexgorbatchev">Alex Gorbatchev</a> on January 9th 2014</span><a href="http://npmawesome.com/posts/2014-01-09-gulp#disqus_thread" class="comments"></a><div data-github-repo="gulpjs/gulp" class="github-stars"></div></div></header><div><p><a href="https://github.com/gulpjs/gulp">gulp</a> is a streaming build and task runner system. It&#39;s an alternative to the ever prelific <a href="http://gruntjs.com/">grunt.js</a>. There&#39;s been quite <a href="https://twitter.com/search?q=gulp%20grunt&amp;src=typd">a bit of buzz on the twitters</a>.</p>
+<h2 id="example">Example</h2>
+<p>This file is just a quick sample to give you a taste of what gulp does.</p>
+<pre><code>var gulp = require(&#39;gulp&#39;);
+var uglify = require(&#39;gulp-uglify&#39;);
+var imagemin = require(&#39;gulp-imagemin&#39;);
+
+gulp.task(&#39;scripts&#39;, function() {
+  // Minify and copy all JavaScript (except vendor scripts)
+  return gulp.src([&#39;client/js/**/*.js&#39;, &#39;!client/js/vendor/**&#39;])
+    .pipe(uglify())
+    .pipe(gulp.dest(&#39;build/js&#39;));
+});
+
+// Copy all static images
+gulp.task(&#39;images&#39;, function() {
+ return gulp.src(&#39;client/img/**&#39;)
+    .pipe(imagemin())
+    .pipe(gulp.dest(&#39;build/img&#39;));
+});
+
+// The default task (called when you run `gulp`)
+gulp.task(&#39;default&#39;, function() {
+  gulp.run(&#39;scripts&#39;, &#39;images&#39;);
+
+  // Watch files and run tasks if they change
+  gulp.watch(&#39;client/js/**&#39;, function() {
+    gulp.run(&#39;scripts&#39;);
+  });
+
+  gulp.watch(&#39;client/img/**&#39;, function() {
+    gulp.run(&#39;images&#39;);
+  });
+});</code></pre>
+<p><img class="hide-on-mobile" src="/images/posts/gulp.png" style="width: 150px; float: right" /></p>
+<h2 id="opinion">Opinion</h2>
+<p>There&#39;s always a lot of excitement when a new thing comes out that promises to be better than the current thing. It seems to be especially true when the current thing is already pretty solid and just works. What gets to people are the edge cases and they feel annoyed and frustrated easily forgetting how smoothly the rest of the system works.</p>
+<p><a href="https://github.com/bevacqua">Nicolas Bevacqua</a> has written a <a href="http://blog.ponyfoo.com/2014/01/09/gulp-grunt-whatever">very interesting article</a> on the subject. My favorite quote:</p>
+<blockquote>
+<p>Make a choice by yourself, don&#39;t just pick something <em>because XYZ said so</em>. Pick the tool which works for you. The one you understand, are comfortable with. Above all, <strong>the one that fits your needs</strong>. Don&#39;t go blindly chasing the latest fad because someone else tells you to. Similarly, don&#39;t get stuck with monolithic jQuery applications (just to give out an example), try something else. Innovate. Be the change you want to see in the world.</p>
+</blockquote>
+</div></article><article><header><h2><a href="/posts/2014-01-06-chalk">chalk</a></h2><div class="meta"><span>posted by <a href="https://github.com/alexgorbatchev">Alex Gorbatchev</a> on January 6th 2014</span><a href="http://npmawesome.com/posts/2014-01-06-chalk#disqus_thread" class="comments"></a><div data-github-repo="sindresorhus/chalk" class="github-stars"></div></div></header><div><p><a href="https://github.com/sindresorhus/chalk">chalk</a> is a clean and focused alternative to <a href="https://github.com/Marak/colors.js">colors.js</a>, which is currently the most popular string styling module, but it has serious deficiencies like extending String.prototype which causes all kinds of <a href="https://github.com/yeoman/yo/issues/68">problems</a>. Although there are other ones, they either do too much or not enough.</p>
 <pre><code>npm install chalk</code></pre>
 <p><img class="hide-on-mobile" src="/images/posts/chalk.png" style="width: 250px; float: right" /></p>
 <h2 id="why">Why</h2>
@@ -27,6 +68,7 @@ console.log(  chalk.red(&#39;Hello&#39;, chalk.underline.bgBlue(&#39;world&#39;)
 
 // pass in multiple arguments
 console.log(  chalk.blue(&#39;Hello&#39;, &#39;World!&#39;, &#39;Foo&#39;, &#39;bar&#39;, &#39;biz&#39;, &#39;baz&#39;)  );</code></pre>
+<p><a href="https://github.com/sindresorhus/chalk">chalk</a> was written by <a href="https://github.com/sindresorhus">Sindre Sorhus</a> <a href="https://twitter.com/sindresorhus">@sindresorhus</a> who&#39;s got a ton of other opensource work. Thank you!</p>
 </div></article><article><header><h2><a href="/posts/2013-12-31-recluster">recluster</a></h2><div class="meta"><span>posted by <a href="https://github.com/alexgorbatchev">Alex Gorbatchev</a> on December 31st 2013</span><a href="http://npmawesome.com/posts/2013-12-31-recluster#disqus_thread" class="comments"></a><div data-github-repo="doxout/recluster" class="github-stars"></div></div></header><div><p><a href="https://github.com/doxout/recluster">recluster</a> is a clustering library with support for zero-downtime reloading.</p>
 <pre><code>npm install recluster</code></pre>
 <p><img class="hide-on-mobile" src="/images/posts/recluster.jpg" style="width: 250px; float: right" /></p>
@@ -580,63 +622,6 @@ out!</p>
 </ul>
 <p>There are plenty of examples and information on the <a href="https://github.com/bevry/docpad">docpad</a>. Check it
 out!</p>
-</div></article><article><header><h2><a href="/posts/2013-11-25-grunt-angular-builder">grunt-angular-builder</a></h2><div class="meta"><span>posted by <a href="https://github.com/alexgorbatchev">Alex Gorbatchev</a> on November 25th 2013</span><a href="http://npmawesome.com/posts/2013-11-25-grunt-angular-builder#disqus_thread" class="comments"></a><div data-github-repo="claudio-silva/grunt-angular-builder" class="github-stars"></div></div></header><div><p><a href="https://github.com/claudio-silva/grunt-angular-builder">angular-builder</a>
-is a specialized Grunt plugin to handle all of AngularJS related assets
-issues in a truly practical, automated, simple and easy way.</p>
-<pre><code>npm install angular-builder</code></pre>
-<div class="hide-on-mobile" style="position: relative; float: right; height: 200px;">
-    <div style="position: relative; width: 200px; height: 200px; background: url('/images/posts/angularjs.png') 50% 50% no-repeat; background-size: contain"></div>
-    <div style="position: absolute; top: 0px; left: 0px; width: 200px; height: 190px; overflow: hidden; background: url('/images/posts/grunt.png'); background-size: cover"></div>
-</div>
-
-<h2 id="features">Features</h2>
-<ol>
-<li><p>Analyzes your AngularJS source code and “understands” module
-dependencies and the relationships between your files. No need for
-AMD or CommonJS loaders.</p>
-</li>
-<li><p>Accepts source code split into as many files as you want and spread
-over any directory structure you prefer.</p>
-</li>
-<li><p>Assembles one javascript file (or just a few) for production with
-all code assembled in the correct loading order required by your
-module’s dependencies.</p>
-</li>
-<li><p>Builds fast in debug mode by generating a single script that loads
-the original source files in the correct order (no minified or
-concatenated files in debug builds).</p>
-</li>
-<li><p>Allows you to debug the source code in the browser itself and see
-readable source code for any debug breakpoint or error location,
-with the correct original line numbers.</p>
-</li>
-<li><p>Includes in the build <em>only</em> the modules that your app actually
-needs and discards dead code.</p>
-</li>
-<li><p>Includes in the build the stylesheets and assets each module
-requires and excludes those that are not used by your app.</p>
-</li>
-<li><p>Can also include in the build scripts that are not based on
-AngularJS.</p>
-</li>
-<li><p>Recognizes modules and libraries that are loaded independently and,
-therefore, are not part of the build.</p>
-</li>
-<li><p>Not only builds complete applications but also builds library
-projects, generating <em>readable</em> redistributable source code files
-for them.</p>
-</li>
-<li><p>Allows each module to have its own build configuration file. Just
-drag-and-drop a module to your project and it’s ready to build!</p>
-</li>
-<li><p>Integrates easily with other Grunt plugins to expand your build
-process with minification, optimization, preprocessing and/or
-compilation st</p>
-</li>
-</ol>
-<p>There are plenty of examples and information on the <a href="https://github.com/claudio-silva/grunt-angular-builder">github
-page</a>. Check it
-out!</p>
 </div></article><footer class="pagination"><ul><li class="disabled"><span>Prev</span></li><li class="active"><span>1</span></li><li><a href="/index.1">2</a></li><li><a href="/index.1">Next</a></li></ul></footer><script type="text/javascript">/* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
 var disqus_shortname = 'npmawesome'; // required: replace example with your forum shortname
 
@@ -646,7 +631,7 @@ var disqus_shortname = 'npmawesome'; // required: replace example with your foru
   s.type = 'text/javascript';
   s.src = 'http://' + disqus_shortname + '.disqus.com/count.js';
   (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
-}());</script></div><aside class="col"><div class="feedburner"><a href="http://feeds.feedburner.com/npmawesome"><img src="/images/feed.gif"></a></div><div class="other-posts"><h4>Previously...</h4><div><a href="/posts/2014-01-06-chalk">chalk</a></div><div><a href="/posts/2013-12-31-recluster">recluster</a></div><div><a href="/posts/2013-12-30-rework">rework</a></div><div><a href="/posts/2013-12-27-cheerio">cheerio</a></div><div><a href="/posts/2013-12-19-dat">dat</a></div><div><a href="/posts/2013-12-18-xregexp">xregexp</a></div><div><a href="/posts/2013-12-16-ect">ect</a></div><div><a href="/posts/2013-12-13-chrono">chrono</a></div><div><a href="/posts/2013-12-11-prettyjson">prettyjson</a></div><div><a href="/posts/2013-12-10-state">state</a></div><div><a href="/posts/2013-12-09-blessed">blessed</a></div><div><a href="/posts/2013-12-05-gm">gm</a></div><div><a href="/posts/2013-12-03-nak">nak</a></div><div><a href="/posts/2013-12-03-verymodel">VeryModel</a></div><div><a href="/posts/2013-11-26-rx-js">rx.js</a></div><div><a href="/posts/2013-11-26-docpad">docpad</a></div><div><a href="/posts/2013-11-25-grunt-angular-builder">grunt-angular-builder</a></div><div><a href="/posts/2013-11-22-event-stream">event-stream</a></div><div><a href="/posts/2013-11-21-bacon-js">bacon.js</a></div><div><a href="/posts/2013-11-20-spdy">node-spdy</a></div><div><a href="/posts/2013-11-19-json-mask">json-mask</a></div><div><a href="/posts/2013-11-18-pm2">pm2</a></div><div><a href="/posts/2013-11-18-npmd">npmd</a></div><div><a href="/posts/2013-11-18-nixt">nixt</a></div><div><a href="/posts/2013-11-17-vm-js">vm.js</a></div><div><a href="/posts/2013-11-17-node-jvm">node-jvm</a></div><div><a href="/posts/2013-11-17-flake">flake</a></div></div></aside></div></div><a id="fork-me" href="https://github.com/alexgorbatchev/npm-awesome-site" class="hide-on-mobile">Fork Me</a></body><script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+}());</script></div><aside class="col"><div class="feedburner"><a href="http://feeds.feedburner.com/npmawesome"><img src="/images/feed.gif"></a></div><div class="other-posts"><h4>Previously...</h4><div><a href="/posts/2014-01-09-gulp">gulp</a></div><div><a href="/posts/2014-01-06-chalk">chalk</a></div><div><a href="/posts/2013-12-31-recluster">recluster</a></div><div><a href="/posts/2013-12-30-rework">rework</a></div><div><a href="/posts/2013-12-27-cheerio">cheerio</a></div><div><a href="/posts/2013-12-19-dat">dat</a></div><div><a href="/posts/2013-12-18-xregexp">xregexp</a></div><div><a href="/posts/2013-12-16-ect">ect</a></div><div><a href="/posts/2013-12-13-chrono">chrono</a></div><div><a href="/posts/2013-12-11-prettyjson">prettyjson</a></div><div><a href="/posts/2013-12-10-state">state</a></div><div><a href="/posts/2013-12-09-blessed">blessed</a></div><div><a href="/posts/2013-12-05-gm">gm</a></div><div><a href="/posts/2013-12-03-nak">nak</a></div><div><a href="/posts/2013-12-03-verymodel">VeryModel</a></div><div><a href="/posts/2013-11-26-rx-js">rx.js</a></div><div><a href="/posts/2013-11-26-docpad">docpad</a></div><div><a href="/posts/2013-11-25-grunt-angular-builder">grunt-angular-builder</a></div><div><a href="/posts/2013-11-22-event-stream">event-stream</a></div><div><a href="/posts/2013-11-21-bacon-js">bacon.js</a></div><div><a href="/posts/2013-11-20-spdy">node-spdy</a></div><div><a href="/posts/2013-11-19-json-mask">json-mask</a></div><div><a href="/posts/2013-11-18-pm2">pm2</a></div><div><a href="/posts/2013-11-18-npmd">npmd</a></div><div><a href="/posts/2013-11-18-nixt">nixt</a></div><div><a href="/posts/2013-11-17-vm-js">vm.js</a></div><div><a href="/posts/2013-11-17-node-jvm">node-jvm</a></div><div><a href="/posts/2013-11-17-flake">flake</a></div></div></aside></div></div><a id="fork-me" href="https://github.com/alexgorbatchev/npm-awesome-site" class="hide-on-mobile">Fork Me</a></body><script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
 (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
 m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
 })(window,document,'script','//www.google-analytics.com/analytics.js','ga');

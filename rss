@@ -5,10 +5,60 @@
         <description><![CDATA[Daily dose of awesome NPM modules for Node.js, old and new!]]></description>
         <link>http://npmawesome.com</link>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Tue, 07 Jan 2014 00:24:31 GMT</lastBuildDate>
+        <lastBuildDate>Thu, 09 Jan 2014 18:18:14 GMT</lastBuildDate>
         <atom:link href="http://npmawesome.com/rss" rel="self" type="application/rss+xml"/>
         <author><![CDATA[Alex Gorbatchev]]></author>
-        <pubDate>Tue, 07 Jan 2014 00:24:15 GMT</pubDate>
+        <pubDate>Thu, 09 Jan 2014 18:17:05 GMT</pubDate>
+        <item>
+            <title><![CDATA[gulp]]></title>
+            <description><![CDATA[<p><a href="https://github.com/gulpjs/gulp">gulp</a> is a streaming build and task runner system. It&#39;s an alternative to the ever prelific <a href="http://gruntjs.com/">grunt.js</a>. There&#39;s been quite <a href="https://twitter.com/search?q=gulp%20grunt&amp;src=typd">a bit of buzz on the twitters</a>.</p>
+<h2 id="example">Example</h2>
+<p>This file is just a quick sample to give you a taste of what gulp does.</p>
+<pre><code>var gulp = require(&#39;gulp&#39;);
+var uglify = require(&#39;gulp-uglify&#39;);
+var imagemin = require(&#39;gulp-imagemin&#39;);
+
+gulp.task(&#39;scripts&#39;, function() {
+  // Minify and copy all JavaScript (except vendor scripts)
+  return gulp.src([&#39;client/js/**/*.js&#39;, &#39;!client/js/vendor/**&#39;])
+    .pipe(uglify())
+    .pipe(gulp.dest(&#39;build/js&#39;));
+});
+
+// Copy all static images
+gulp.task(&#39;images&#39;, function() {
+ return gulp.src(&#39;client/img/**&#39;)
+    .pipe(imagemin())
+    .pipe(gulp.dest(&#39;build/img&#39;));
+});
+
+// The default task (called when you run `gulp`)
+gulp.task(&#39;default&#39;, function() {
+  gulp.run(&#39;scripts&#39;, &#39;images&#39;);
+
+  // Watch files and run tasks if they change
+  gulp.watch(&#39;client/js/**&#39;, function() {
+    gulp.run(&#39;scripts&#39;);
+  });
+
+  gulp.watch(&#39;client/img/**&#39;, function() {
+    gulp.run(&#39;images&#39;);
+  });
+});</code></pre>
+<p><img class="hide-on-mobile" src="/images/posts/gulp.png" style="width: 150px; float: right" /></p>
+<h2 id="opinion">Opinion</h2>
+<p>There&#39;s always a lot of excitement when a new thing comes out that promises to be better than the current thing. It seems to be especially true when the current thing is already pretty solid and just works. What gets to people are the edge cases and they feel annoyed and frustrated easily forgetting how smoothly the rest of the system works.</p>
+<p><a href="https://github.com/bevacqua">Nicolas Bevacqua</a> has written a <a href="http://blog.ponyfoo.com/2014/01/09/gulp-grunt-whatever">very interesting article</a> on the subject. My favorite quote:</p>
+<blockquote>
+<p>Make a choice by yourself, don&#39;t just pick something <em>because XYZ said so</em>. Pick the tool which works for you. The one you understand, are comfortable with. Above all, <strong>the one that fits your needs</strong>. Don&#39;t go blindly chasing the latest fad because someone else tells you to. Similarly, don&#39;t get stuck with monolithic jQuery applications (just to give out an example), try something else. Innovate. Be the change you want to see in the world.</p>
+</blockquote>
+]]></description>
+            <link>http://npmawesome.com/posts/2014-01-09-gulp</link>
+            <guid isPermaLink="true">
+                http://npmawesome.com/posts/2014-01-09-gulp            </guid>
+            <dc:creator><![CDATA[Alex Gorbatchev]]></dc:creator>
+            <pubDate>Thu, 09 Jan 2014 17:57:52 GMT</pubDate>
+        </item>
         <item>
             <title><![CDATA[chalk]]></title>
             <description><![CDATA[<p><a href="https://github.com/sindresorhus/chalk">chalk</a> is a clean and focused alternative to <a href="https://github.com/Marak/colors.js">colors.js</a>, which is currently the most popular string styling module, but it has serious deficiencies like extending String.prototype which causes all kinds of <a href="https://github.com/yeoman/yo/issues/68">problems</a>. Although there are other ones, they either do too much or not enough.</p>
@@ -40,6 +90,7 @@ console.log(  chalk.red(&#39;Hello&#39;, chalk.underline.bgBlue(&#39;world&#39;)
 
 // pass in multiple arguments
 console.log(  chalk.blue(&#39;Hello&#39;, &#39;World!&#39;, &#39;Foo&#39;, &#39;bar&#39;, &#39;biz&#39;, &#39;baz&#39;)  );</code></pre>
+<p><a href="https://github.com/sindresorhus/chalk">chalk</a> was written by <a href="https://github.com/sindresorhus">Sindre Sorhus</a> <a href="https://twitter.com/sindresorhus">@sindresorhus</a> who&#39;s got a ton of other opensource work. Thank you!</p>
 ]]></description>
             <link>http://npmawesome.com/posts/2014-01-06-chalk</link>
             <guid isPermaLink="true">
@@ -397,36 +448,6 @@ Thu Sep 12 2013 12:00:00 GMT+0900 (JST)
                 http://npmawesome.com/posts/2013-12-13-chrono            </guid>
             <dc:creator><![CDATA[Alex Gorbatchev]]></dc:creator>
             <pubDate>Sat, 14 Dec 2013 01:14:45 GMT</pubDate>
-        </item>
-        <item>
-            <title><![CDATA[prettyjson]]></title>
-            <description><![CDATA[<p><a href="https://github.com/rafeca/prettyjson">prettyjson</a> is package for formatting JSON data in a coloured YAML-style, perfect for CLI output.</p>
-<pre><code>npm install prettyjson</code></pre>
-<h2 id="cli">CLI</h2>
-<pre><code>$ prettyjson package.json
-...
-$ curl https://api.github.com/users/rafeca | prettyjson
-...
-$ PRETTYJSON_KEYS=red PRETTYJSON_DASH=blue PRETTYJSON_STRING=yellow prettyjson package.json</code></pre>
-<h2 id="api">API</h2>
-<p><a href="https://github-camo.global.ssl.fastly.net/84c63f2a817ca95b6ccaff240a75fbf1b11f7b87/687474703a2f2f7261666563612e636f6d2f7072657474796a736f6e2f696d616765732f6578616d706c65332e706e67"><img class="hide-on-mobile" src="https://github-camo.global.ssl.fastly.net/84c63f2a817ca95b6ccaff240a75fbf1b11f7b87/687474703a2f2f7261666563612e636f6d2f7072657474796a736f6e2f696d616765732f6578616d706c65332e706e67" style="float: right; width: 300px; margin-left: 1em" /></a></p>
-<pre><code>var prettyjson = require(&#39;prettyjson&#39;);
-
-var data = {
-  username: &#39;rafeca&#39;,
-  url: &#39;https://github.com/rafeca&#39;,
-  twitter_account: &#39;https://twitter.com/rafeca&#39;,
-  projects: [&#39;prettyprint&#39;, &#39;connfu&#39;]
-};
-
-console.log(prettyjson.render(data));</code></pre>
-<p>There are plenty of examples and information on the <a href="https://github.com/rafeca/prettyjson">prettyjson</a>. Check it out!</p>
-]]></description>
-            <link>http://npmawesome.com/posts/2013-12-11-prettyjson</link>
-            <guid isPermaLink="true">
-                http://npmawesome.com/posts/2013-12-11-prettyjson            </guid>
-            <dc:creator><![CDATA[Alex Gorbatchev]]></dc:creator>
-            <pubDate>Thu, 12 Dec 2013 01:27:02 GMT</pubDate>
         </item>
     </channel>
 </rss>
