@@ -1,0 +1,59 @@
+---
+layout: post
+date: 2014-01-09T09:57:52-0800
+tags: npm, terminal, build
+npm:
+  repo: &repo gulpjs/gulp
+  name: &name gulp
+slug: *name
+title: *name
+description: Gulp.js is a streaming build and task runner system.
+---
+<%- @npm() %> is a streaming build and task runner system. It's an alternative to the ever prelific <a href="http://gruntjs.com/">grunt.js</a>. There's been quite [a bit of buzz on the twitters](https://twitter.com/search?q=gulp%20grunt&src=typd).
+
+## Example
+
+This file is just a quick sample to give you a taste of what gulp does.
+
+    var gulp = require('gulp');
+    var uglify = require('gulp-uglify');
+    var imagemin = require('gulp-imagemin');
+
+    gulp.task('scripts', function() {
+      // Minify and copy all JavaScript (except vendor scripts)
+      return gulp.src(['client/js/**/*.js', '!client/js/vendor/**'])
+        .pipe(uglify())
+        .pipe(gulp.dest('build/js'));
+    });
+
+    // Copy all static images
+    gulp.task('images', function() {
+     return gulp.src('client/img/**')
+        .pipe(imagemin())
+        .pipe(gulp.dest('build/img'));
+    });
+
+    // The default task (called when you run `gulp`)
+    gulp.task('default', function() {
+      gulp.run('scripts', 'images');
+
+      // Watch files and run tasks if they change
+      gulp.watch('client/js/**', function() {
+        gulp.run('scripts');
+      });
+
+      gulp.watch('client/img/**', function() {
+        gulp.run('images');
+      });
+    });
+
+<img class="hide-on-mobile" src="/images/posts/gulp.png" style="width: 150px; float: right" />
+
+## Opinion
+
+There's always a lot of excitement when a new thing comes out that promises to be better than the current thing. It seems to be especially true when the current thing is already pretty solid and just works. What gets to people are the edge cases and they feel annoyed and frustrated easily forgetting how smoothly the rest of the system works.
+
+[Nicolas Bevacqua](https://github.com/bevacqua) has written a [very interesting article](http://blog.ponyfoo.com/2014/01/09/gulp-grunt-whatever) on the subject. My favorite quote:
+
+> Make a choice by yourself, don't just pick something _because XYZ said so_. Pick the tool which works for you. The one you understand, are comfortable with. Above all, **the one that fits your needs**. Don't go blindly chasing the latest fad because someone else tells you to. Similarly, don't get stuck with monolithic jQuery applications (just to give out an example), try something else. Innovate. Be the change you want to see in the world.
+
