@@ -1,0 +1,59 @@
+---
+layout: post
+date: 2014-01-13T12:49:41-0800
+tags: npm, testing, coffeescript, mocha
+npm:
+  repo: &repo groupon/testium
+  name: &name testium
+slug: *name
+title: *name
+description: Integration test platform for Node.js using mocha and a sync API.
+---
+<%- @npm() %> is a testing platform focused on providing a simple, but effective, platform for testing your code in different browsers (via Selenium) and headlessly (via PhantomJS). It uses [webdriver-http-sync](https://github.com/groupon/webdriver-http-sync)
+which Groupon wrote in order to communicate using the WebDriver protocol to a Selenium server.
+
+<img class="hide-on-mobile" src="https://0.gravatar.com/avatar/f07c4699fa2274d2ad44323331ee8161?d=https%3A%2F%2Fidenticons.github.com%2Fa25772e176c9744a17818d2be63b2c20.png&r=x&s=400" style="width: 150px; float: right" />
+
+<blockquote class="twitter-tweet" data-cards="hidden" lang="en"><p><a href="https://twitter.com/Groupon">@Groupon</a>&#39;s Browser Integration Testing platform <a href="https://twitter.com/search?q=%23Testium&amp;src=hash">#Testium</a> is now open source! <a href="https://twitter.com/search?q=%23nodejs&amp;src=hash">#nodejs</a> + Mocha + Selenium = Happy! <a href="https://t.co/lgXiRjflx0">https://t.co/lgXiRjflx0</a></p>&mdash; Jess Telford (@jesstelford) <a href="https://twitter.com/jesstelford/statuses/413382587348811776">December 18, 2013</a></blockquote>
+<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+From [the introductory article][intro]:
+
+> We wanted to write tests in JavaScript and Mocha with a synchronous API that takes advantage of our existing Selenium infrastructure. WD.js came close, but the challenge for full adoption came with the syntax, which is callback-based or promise-based. These are typical patterns in JavaScript projects, but for an integration testing tool, we only want to execute serial actions. A synchronous API made the most sense.
+
+and
+
+> Further, there are existing technical limitations due to WebDriver being a common standard across all browsers. Some aspects can’t be implemented in a specific browser and therefore these features are not implemented at all.
+>
+> There are four specific issues with WebDriver we wanted to resolve:
+>
+> * response status codes unavailable
+> * response headers unavailable
+> * request headers not modifiable
+> * page must be loaded to set cookies
+
+## Example
+
+A simple test using [assertive](https://github.com/groupon/assertive).
+
+    {getBrowser} = require 'testium'
+    assert = require 'assertive' # or whatever assert library you prefer
+
+    describe 'browse', ->
+      before ->
+        @browser = getBrowser()
+        @browser.navigateTo '/my-account'
+        assert.equal 200, @browser.getStatusCode()
+
+      it 'is serving up gzipped content', ->
+        assert.equal 'gzip', @browser.getHeader('Content-Encoding')
+
+## More
+
+One of the more exciting and unique features is ability to diff screenshots and fail based on the difference. This isn't a new idea, but shipping it as part of a testing framework can increase its adopatation. Finally, check out the demo video and don't forget to read [the introductory article][intro].
+
+<iframe width="560" height="315" src="//www.youtube.com/embed/qmPlM_SqZes" frameborder="0" allowfullscreen></iframe>
+
+[intro]: https://engineering.groupon.com/2014/misc/i-tier-testium/
+
+On the side note, super excited to find out that Groupon is using CoffeeScript! Are you?
