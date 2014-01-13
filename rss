@@ -5,10 +5,58 @@
         <description><![CDATA[Daily dose of awesome NPM modules for Node.js, old and new!]]></description>
         <link>http://npmawesome.com</link>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Fri, 10 Jan 2014 18:35:45 GMT</lastBuildDate>
+        <lastBuildDate>Mon, 13 Jan 2014 21:13:32 GMT</lastBuildDate>
         <atom:link href="http://npmawesome.com/rss" rel="self" type="application/rss+xml"/>
         <author><![CDATA[Alex Gorbatchev]]></author>
-        <pubDate>Fri, 10 Jan 2014 18:32:45 GMT</pubDate>
+        <pubDate>Mon, 13 Jan 2014 21:11:21 GMT</pubDate>
+        <item>
+            <title><![CDATA[testium]]></title>
+            <description><![CDATA[<p><a href="https://github.com/groupon/testium">testium</a> is a testing platform focused on providing a simple, but effective, platform for testing your code in different browsers (via Selenium) and headlessly (via PhantomJS). It uses <a href="https://github.com/groupon/webdriver-http-sync">webdriver-http-sync</a>
+which Groupon wrote in order to communicate using the WebDriver protocol to a Selenium server.</p>
+<p><img class="hide-on-mobile" src="https://0.gravatar.com/avatar/f07c4699fa2274d2ad44323331ee8161?d=https%3A%2F%2Fidenticons.github.com%2Fa25772e176c9744a17818d2be63b2c20.png&r=x&s=400" style="width: 150px; float: right" /></p>
+<p><blockquote class="twitter-tweet" data-cards="hidden" lang="en"><p><a href="https://twitter.com/Groupon">@Groupon</a>&#39;s Browser Integration Testing platform <a href="https://twitter.com/search?q=%23Testium&amp;src=hash">#Testium</a> is now open source! <a href="https://twitter.com/search?q=%23nodejs&amp;src=hash">#nodejs</a> + Mocha + Selenium = Happy! <a href="https://t.co/lgXiRjflx0"><a href="https://t.co/lgXiRjflx0">https://t.co/lgXiRjflx0</a></a></p>&mdash; Jess Telford (@jesstelford) <a href="https://twitter.com/jesstelford/statuses/413382587348811776">December 18, 2013</a></blockquote></p>
+<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+<p>From <a href="https://engineering.groupon.com/2014/misc/i-tier-testium/">the introductory article</a>:</p>
+<blockquote>
+<p>We wanted to write tests in JavaScript and Mocha with a synchronous API that takes advantage of our existing Selenium infrastructure. WD.js came close, but the challenge for full adoption came with the syntax, which is callback-based or promise-based. These are typical patterns in JavaScript projects, but for an integration testing tool, we only want to execute serial actions. A synchronous API made the most sense.</p>
+</blockquote>
+<p>and</p>
+<blockquote>
+<p>Further, there are existing technical limitations due to WebDriver being a common standard across all browsers. Some aspects can’t be implemented in a specific browser and therefore these features are not implemented at all.</p>
+<p>There are four specific issues with WebDriver we wanted to resolve:</p>
+<ul>
+<li>response status codes unavailable</li>
+<li>response headers unavailable</li>
+<li>request headers not modifiable</li>
+<li>page must be loaded to set cookies</li>
+</ul>
+</blockquote>
+<h2 id="example">Example</h2>
+<p>A simple test using <a href="https://github.com/groupon/assertive">assertive</a>.</p>
+<pre><code>{getBrowser} = require &#39;testium&#39;
+assert = require &#39;assertive&#39; # or whatever assert library you prefer
+
+describe &#39;browse&#39;, -&gt;
+  before -&gt;
+    @browser = getBrowser()
+    @browser.navigateTo &#39;/my-account&#39;
+    assert.equal 200, @browser.getStatusCode()
+
+  it &#39;is serving up gzipped content&#39;, -&gt;
+    assert.equal &#39;gzip&#39;, @browser.getHeader(&#39;Content-Encoding&#39;)</code></pre>
+<h2 id="more">More</h2>
+<p>One of the more exciting and unique features is ability to diff screenshots and fail based on the difference. This isn&#39;t a new idea, but shipping it as part of a testing framework can increase its adopatation. Finally, check out the demo video and don&#39;t forget to read <a href="https://engineering.groupon.com/2014/misc/i-tier-testium/">the introductory article</a>.</p>
+<iframe width="560" height="315" src="//www.youtube.com/embed/qmPlM_SqZes" frameborder="0" allowfullscreen></iframe>
+
+<p>On the side note, super excited to find out that Groupon is using CoffeeScript! Are you?</p>
+]]></description>
+            <link>http://npmawesome.com/posts/2014-01-13-testium</link>
+            <guid isPermaLink="true">
+                http://npmawesome.com/posts/2014-01-13-testium            </guid>
+            <dc:creator><![CDATA[Alex Gorbatchev]]></dc:creator>
+            <pubDate>Mon, 13 Jan 2014 20:49:41 GMT</pubDate>
+        </item>
         <item>
             <title><![CDATA[messageformat.js]]></title>
             <description><![CDATA[<p><a href="https://github.com/SlexAxton/messageformat.js">messageformat.js</a> is a module by <a href="https://github.com/SlexAxton">Alex Sexton</a> (<a href="https://twitter.com/SlexAxton">@SlexAxton</a>) for handling both <em>pluralization</em> and <em>gender</em> in your applications. It can also lead to much better translations, as it was built by <a href="http://icu-project.org/apiref/icu4j/com/ibm/icu/text/MessageFormat.html">ICU</a> to help solve those two problems for all known <a href="http://cldr.unicode.org/">CLDR</a> languages - likely all the ones you care about.</p>
@@ -374,57 +422,6 @@ XRegExp.matchRecursive(str, &#39;&lt;&#39;, &#39;&gt;&#39;, &#39;gy&#39;);
                 http://npmawesome.com/posts/2013-12-17-npm            </guid>
             <dc:creator><![CDATA[Alex Gorbatchev]]></dc:creator>
             <pubDate>Tue, 17 Dec 2013 18:41:23 GMT</pubDate>
-        </item>
-        <item>
-            <title><![CDATA[ect]]></title>
-            <description><![CDATA[<p><a href="https://github.com/baryshev/ect">ect</a> is a <a href="http://ectjs.com/#benchmark">performance focused</a> JavaScript template engine with embedded CoffeeScript syntax. <a href="http://ectjs.com">Just try demo</a> to check all features.</p>
-<pre><code>npm install ect</code></pre>
-<p><img class="hide-on-mobile" src="/images/posts/coffeescript.png" style="float: right" /></p>
-<h2 id="features">Features</h2>
-<ul>
-<li>Excellent performance</li>
-<li>Templates caching</li>
-<li>Automatic reloading of changed templates</li>
-<li>CoffeeScript code in templates</li>
-<li>Multi-line expressions support</li>
-<li>Tag customization support</li>
-<li>Node.JS and client-side support</li>
-<li>Powerful but simple syntax</li>
-<li>Inheritance, partials, blocks</li>
-<li>Compatible with <code>express</code></li>
-<li>Compatible with <code>RequireJS</code></li>
-<li>Backward compatible with <code>eco</code></li>
-<li><a href="https://github.com/TurtlePie/Sublime-ECT">Syntax highlighting for Sublime Text 2</a> by <a href="https://github.com/TurtlePie">TurtlePie</a></li>
-</ul>
-<h2 id="example">Example</h2>
-<p>app.js</p>
-<pre><code>express = require(&quot;express&quot;)
-app = express()
-ECT = require(&quot;ect&quot;)
-ectRenderer = ECT watch: true, root: __dirname + &quot;/views&quot;
-app.engine &quot;.ect&quot;, ectRenderer.render
-
-app.get &quot;/&quot;, (req, res) -&gt;
-  res.render &quot;index.ect&quot;
-
-app.listen 3000
-console.log &quot;Listening on port 3000&quot;</code></pre>
-<p>views/index.ect</p>
-<pre><code>&lt;% extend &#39;layout.ect&#39; %&gt;
-&lt;div&gt;Hello, World!&lt;/div&gt;</code></pre>
-<p>views/layout.ect</p>
-<pre><code>&lt;html&gt;
-  &lt;body&gt;
-    &lt;% content %&gt;
-  &lt;/body&gt;
-&lt;/html&gt;</code></pre>
-<p>There are plenty of examples and information on the <a href="https://github.com/baryshev/ect">ect</a>. Check it out!</p>
-]]></description>
-            <link>http://npmawesome.com/posts/2013-12-16-ect</link>
-            <guid isPermaLink="true">
-                http://npmawesome.com/posts/2013-12-16-ect            </guid>
-            <dc:creator><![CDATA[Alex Gorbatchev]]></dc:creator>
-            <pubDate>Tue, 17 Dec 2013 00:57:39 GMT</pubDate>
         </item>
     </channel>
 </rss>
