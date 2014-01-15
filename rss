@@ -5,10 +5,83 @@
         <description><![CDATA[Daily dose of awesome NPM modules for Node.js, old and new!]]></description>
         <link>http://npmawesome.com</link>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Mon, 13 Jan 2014 21:13:32 GMT</lastBuildDate>
+        <lastBuildDate>Wed, 15 Jan 2014 01:05:27 GMT</lastBuildDate>
         <atom:link href="http://npmawesome.com/rss" rel="self" type="application/rss+xml"/>
         <author><![CDATA[Alex Gorbatchev]]></author>
-        <pubDate>Mon, 13 Jan 2014 21:11:21 GMT</pubDate>
+        <pubDate>Wed, 15 Jan 2014 01:05:12 GMT</pubDate>
+        <item>
+            <title><![CDATA[shortId]]></title>
+            <description><![CDATA[<p><a href="https://github.com/dylang/shortid">shortId</a> creates amazingly short non-sequential url-friendly unique IDs. Perfect for url shorteners, MongoDB and Redis as well as any other ID users might see.</p>
+<h2 id="features">Features</h2>
+<ul>
+<li>By default 7-12 url-friendly characters: <code>A-Z</code>, <code>a-z</code>, <code>0-9</code>, <code>_-</code></li>
+<li>Non-sequential so they are not predictable</li>
+<li>Supports cluster (automatically), custom seeds, custom alphabet</li>
+</ul>
+<h2 id="example">Example</h2>
+<pre><code>var shortId = require(&#39;shortid&#39;);
+
+console.log(shortId.generate());
+// PPBqWA9</code></pre>
+<h2 id="more">More</h2>
+<p>What really caught my eye was the <a href="https://github.com/dylang/shortid/blob/master/lib/random.js">custom implementation</a> of <code>random</code>.</p>
+<pre><code>var seed = 1;
+
+function random() {
+  seed = (seed * 9301 + 49297) % 233280;
+  return seed/(233280.0);
+};</code></pre>
+<p>Here&#39;s a JSFiddle to play around with it. It works...</p>
+<iframe width="100%" height="300" src="http://jsfiddle.net/alexgorbatchev/8yxC2/embedded/" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
+
+<p>It got me very curious as to what it actually does as it&#39;s not obvious to me at first glance. I found a <a href="http://indiegamr.com/generate-repeatable-random-numbers-in-js/">decent article</a> talking about this function. Turns out this function is meant to generate predictable &quot;random&quot; numbers based on the seed.</p>
+<p>Digging a little bit further, I found <a href="https://gist.github.com/alexgorbatchev/8428967">this post</a> from the past days:</p>
+<blockquote>
+<p>... horrible random (sic) number generators are used by people who don&#39;t know better, while very good ones take less than 20 lines of Pascal! Amoung the horrid generators are some that come with certain systems or are presented in textbooks!</p>
+<p>...</p>
+<p>Simple (bad) Psuedo Random Number Generator (Sic)
+The low bit typically just toggles between calls.</p>
+<pre><code>random() {
+   seed = ( seed * mulitiplier + increment ) % modulus;
+   return seed;
+}</code></pre>
+</blockquote>
+<p>and then later</p>
+<blockquote>
+<pre><code>/*
+** Dr. Park&#39;s algorithm published in the Oct. &#39;88 ACM
+** &quot;Random Number Generators: Good Ones Are Hard To Find&quot;
+** His version available at ftp://cs.wm.edu/pub/rngs.tar
+** This is called a   Lehmer Generator
+*/
+
+static long Seed = 1;       /* This is required to be 32 bits long */
+
+long random()
+/*
+**    Random number between  0  and  2147483647 (2**31 - 1)  inclusive
+**/
+{
+  a = 48271
+  m = 2147483647
+  r = 3399    /* r = m mod a */
+  q = 44488   /* q = m div a */
+  if ((Seed = Seed % q * a - Seed / q * r) &lt; 0)
+    Seed += m;
+  return Seed - 1;
+}</code></pre>
+</blockquote>
+<p>Here&#39;s a JavaScript implementation:</p>
+<iframe width="100%" height="300" src="http://jsfiddle.net/alexgorbatchev/g6aRe/1/embedded/" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
+
+<p>Should the function in <a href="https://github.com/dylang/shortid">shortId</a> be patched? Thoughts?</p>
+]]></description>
+            <link>http://npmawesome.com/posts/2014-01-14-shortid</link>
+            <guid isPermaLink="true">
+                http://npmawesome.com/posts/2014-01-14-shortid            </guid>
+            <dc:creator><![CDATA[Alex Gorbatchev]]></dc:creator>
+            <pubDate>Wed, 15 Jan 2014 00:33:38 GMT</pubDate>
+        </item>
         <item>
             <title><![CDATA[testium]]></title>
             <description><![CDATA[<p><a href="https://github.com/groupon/testium">testium</a> is a testing platform focused on providing a simple, but effective, platform for testing your code in different browsers (via Selenium) and headlessly (via PhantomJS). It uses <a href="https://github.com/groupon/webdriver-http-sync">webdriver-http-sync</a>
@@ -403,25 +476,6 @@ XRegExp.matchRecursive(str, &#39;&lt;&#39;, &#39;&gt;&#39;, &#39;gy&#39;);
                 http://npmawesome.com/posts/2013-12-18-xregexp            </guid>
             <dc:creator><![CDATA[Alex Gorbatchev]]></dc:creator>
             <pubDate>Thu, 19 Dec 2013 01:27:16 GMT</pubDate>
-        </item>
-        <item>
-            <title><![CDATA[npm v1.3.18]]></title>
-            <description><![CDATA[<p>NPM v1.3.18 release notes:</p>
-<ul>
-<li><p>Added an <code>--ignore-scripts</code> option, which will prevent package.json scripts from being run. Most notably, this will work on npm install, so e.g. npm install <code>--ignore-scripts</code> will not run preinstall and prepublish scripts. (<a href="https://github.com/isaacs/npm/commit/d7e67bf0d94b085652ec1c87d595afa6f650a8f6">d7e67bf</a>, @sqs)</p>
-</li>
-<li><p>Fixed a bug introduced in 1.3.16 that would manifest with certain cache configurations, by causing spurious errors saying &quot;Adding a cache directory to the cache will make the world implode.&quot; (<a href="https://github.com/isaacs/npm/commit/966373fad8d741637f9744882bde9f6e94000865">966373f</a>, @domenic)</p>
-</li>
-<li><p>Re-fixed the multiple download of URL dependencies, whose fix was reverted in 1.3.17. (<a href="https://github.com/isaacs/npm/commit/a362c3f1919987419ed8a37c8defa19d2e6697b0">a362c3f</a>, @spmason)</p>
-</li>
-</ul>
-<p><a href="https://github.com/isaacs/npm/releases/tag/v1.3.18">https://github.com/isaacs/npm/releases/tag/v1.3.18</a></p>
-]]></description>
-            <link>http://npmawesome.com/posts/2013-12-17-npm</link>
-            <guid isPermaLink="true">
-                http://npmawesome.com/posts/2013-12-17-npm            </guid>
-            <dc:creator><![CDATA[Alex Gorbatchev]]></dc:creator>
-            <pubDate>Tue, 17 Dec 2013 18:41:23 GMT</pubDate>
         </item>
     </channel>
 </rss>
