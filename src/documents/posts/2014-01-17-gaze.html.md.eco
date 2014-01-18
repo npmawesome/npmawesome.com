@@ -9,7 +9,7 @@ slug: *name
 title: *name
 description: Gaze is a globbing fs.watch wrapper built from the best parts of other fine watch libs.
 ---
-<%- @npm() %> a globbing `fs.watch` wrapper written by [Vsevolod Strukchinsky](https://github.com/floatdrop) [@floatdrop](https://twitter.com/floatdrop) and built from the best parts of other fine watch libs. Compatible with Node.js 0.10/0.8, Windows, OSX and Linux. There's a [pretty long list](https://npmjs.org/browse/depended/gaze) of other great modules that are built on top of <%- @npm() %>.
+<%- @npm() %> a globbing `fs.watch` wrapper written by [Kyle Robinson Young](https://github.com/shama) and built from the best parts of other fine watch libs. Compatible with Node.js 0.10/0.8, Windows, OSX and Linux. There's a [pretty long list](https://npmjs.org/browse/depended/gaze) of other great modules that are built on top of <%- @npm() %>.
 
 <img src="https://github-camo.global.ssl.fastly.net/4b73eecb09b0400ba274ed9aa205da664ee5538e/687474703a2f2f646f6e746b72792e636f6d2f696d616765732f7265706f732f67617a652e706e67" style="width: 100%"/>
 
