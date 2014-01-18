@@ -5,10 +5,63 @@
         <description><![CDATA[Daily dose of awesome NPM modules for Node.js, old and new!]]></description>
         <link>http://npmawesome.com</link>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Wed, 15 Jan 2014 01:05:27 GMT</lastBuildDate>
+        <lastBuildDate>Sat, 18 Jan 2014 02:03:17 GMT</lastBuildDate>
         <atom:link href="http://npmawesome.com/rss" rel="self" type="application/rss+xml"/>
         <author><![CDATA[Alex Gorbatchev]]></author>
-        <pubDate>Wed, 15 Jan 2014 01:05:12 GMT</pubDate>
+        <pubDate>Sat, 18 Jan 2014 01:58:21 GMT</pubDate>
+        <item>
+            <title><![CDATA[gaze]]></title>
+            <description><![CDATA[<p><a href="https://github.com/shama/gaze">gaze</a> a globbing <code>fs.watch</code> wrapper written by <a href="https://github.com/floatdrop">Vsevolod Strukchinsky</a> <a href="https://twitter.com/floatdrop">@floatdrop</a> and built from the best parts of other fine watch libs. Compatible with Node.js 0.10/0.8, Windows, OSX and Linux. There&#39;s a <a href="https://npmjs.org/browse/depended/gaze">pretty long list</a> of other great modules that are built on top of <a href="https://github.com/shama/gaze">gaze</a>.</p>
+<p><img src="https://github-camo.global.ssl.fastly.net/4b73eecb09b0400ba274ed9aa205da664ee5538e/687474703a2f2f646f6e746b72792e636f6d2f696d616765732f7265706f732f67617a652e706e67" style="width: 100%"/></p>
+<h2 id="usage">Usage</h2>
+<pre><code>var gaze = require(&#39;gaze&#39;);
+
+// Watch all .js files/dirs in process.cwd()
+gaze(&#39;**/*.js&#39;, function(err, watcher) {
+  // Files have all started watching
+  // watcher === this
+
+  // Get all watched files
+  console.log(this.watched());
+
+  // On file changed
+  this.on(&#39;changed&#39;, function(filepath) {
+    console.log(filepath + &#39; was changed&#39;);
+  });
+
+  // On file added
+  this.on(&#39;added&#39;, function(filepath) {
+    console.log(filepath + &#39; was added&#39;);
+  });
+
+  // On file deleted
+  this.on(&#39;deleted&#39;, function(filepath) {
+    console.log(filepath + &#39; was deleted&#39;);
+  });
+
+  // On changed/added/deleted
+  this.on(&#39;all&#39;, function(event, filepath) {
+    console.log(filepath + &#39; was &#39; + event);
+  });
+
+  // Get watched files with relative paths
+  console.log(this.relative());
+});
+
+// Also accepts an array of patterns
+gaze([&#39;stylesheets/*.css&#39;, &#39;images/**/*.png&#39;], function() {
+  // Add more patterns later to be watched
+  this.add([&#39;js/*.js&#39;]);
+});</code></pre>
+<p>I&#39;ve been getting my feet wet with <a href="http://gulpjs.com">gulp.js</a> and specifically <a href="https://github.com/floatdrop/gulp-watch">gulp-watch</a> plugin which helps you process only the files that were changed. This helps to speed up asset building quite a bit.</p>
+<p>Are you using any file watchers in your project?</p>
+]]></description>
+            <link>http://npmawesome.com/posts/2014-01-17-gaze</link>
+            <guid isPermaLink="true">
+                http://npmawesome.com/posts/2014-01-17-gaze            </guid>
+            <dc:creator><![CDATA[Alex Gorbatchev]]></dc:creator>
+            <pubDate>Sat, 18 Jan 2014 01:50:40 GMT</pubDate>
+        </item>
         <item>
             <title><![CDATA[shortId]]></title>
             <description><![CDATA[<p><a href="https://github.com/dylang/shortid">shortId</a> creates amazingly short non-sequential url-friendly unique IDs. Perfect for url shorteners, MongoDB and Redis as well as any other ID users might see.</p>
@@ -400,82 +453,6 @@ $.html();
                 http://npmawesome.com/posts/2013-12-19-dat            </guid>
             <dc:creator><![CDATA[Alex Gorbatchev]]></dc:creator>
             <pubDate>Thu, 19 Dec 2013 18:08:03 GMT</pubDate>
-        </item>
-        <item>
-            <title><![CDATA[xregexp]]></title>
-            <description><![CDATA[<p><a href="https://github.com/slevithan/xregexp">xregexp</a> provides augmented and extensible JavaScript regular expressions. You get new syntax, flags, and methods beyond what browsers support natively. XRegExp is also a regex utility belt with tools to make your client-side grepping simpler and more powerful, while freeing you from worrying about pesky cross-browser inconsistencies and the dubious lastIndex property.</p>
-<pre><code>npm install xregexp</code></pre>
-<h2 id="usage-examples">Usage examples</h2>
-<p><a href="http://www.bennadel.com/blog/2383-The-5th-Annual-Regular-Expression-Day-And-Prizes-June-1st-2012.htm"><img class="hide-on-mobile" src="http://www.bennadel.com/resources/regexday/2011/photos/1__original.jpg" style="width: 300px; float: right" /></a></p>
-<pre><code>// Using named capture and flag x (free-spacing and line comments)
-var date = XRegExp(&#39;(?&lt;year&gt;  [0-9]{4} ) -?  # year  \n\
-                    (?&lt;month&gt; [0-9]{2} ) -?  # month \n\
-                    (?&lt;day&gt;   [0-9]{2} )     # day   &#39;, &#39;x&#39;);
-
-// XRegExp.exec gives you named backreferences on the match result
-var match = XRegExp.exec(&#39;2012-02-22&#39;, date);
-match.year; // -&gt; &#39;2012&#39;
-
-// It also includes optional pos and sticky arguments
-var pos = 3, result = [];
-while (match = XRegExp.exec(&#39;&lt;1&gt;&lt;2&gt;&lt;3&gt;&lt;4&gt;5&lt;6&gt;&#39;, /&lt;(\d+)&gt;/, pos, &#39;sticky&#39;)) {
-  result.push(match[1]);
-  pos = match.index + match[0].length;
-} // result -&gt; [&#39;2&#39;, &#39;3&#39;, &#39;4&#39;]
-
-// XRegExp.replace allows named backreferences in replacements
-XRegExp.replace(&#39;2012-02-22&#39;, date, &#39;${month}/${day}/${year}&#39;); // -&gt; &#39;02/22/2012&#39;
-XRegExp.replace(&#39;2012-02-22&#39;, date, function(match) {
-  return match.month + &#39;/&#39; + match.day + &#39;/&#39; + match.year;
-}); // -&gt; &#39;02/22/2012&#39;</code></pre>
-<h2 id="addons">Addons</h2>
-<p>Addons are one of the more impressive features of <a href="https://github.com/slevithan/xregexp">xregexp</a>. In particular, the <code>matchRecursive</code> addon allows you to match balanced brackets and quotes, which is otherwise impossible with regular regex (.NET had this extension built in for some time now however).</p>
-<p>In browsers, first include the script:</p>
-<pre><code>&lt;script src=&quot;src/xregexp.js&quot;&gt;&lt;/script&gt;
-&lt;script src=&quot;src/addons/matchrecursive.js&quot;&gt;&lt;/script&gt;</code></pre>
-<p>You can then match recursive constructs using XRegExp pattern strings as left and right delimiters:</p>
-<pre><code>var str = &#39;(t((e))s)t()(ing)&#39;;
-XRegExp.matchRecursive(str, &#39;\\(&#39;, &#39;\\)&#39;, &#39;g&#39;);
-// -&gt; [&#39;t((e))s&#39;, &#39;&#39;, &#39;ing&#39;]
-
-// Extended information mode with valueNames
-str = &#39;Here is &lt;div&gt; &lt;div&gt;an&lt;/div&gt;&lt;/div&gt; example&#39;;
-XRegExp.matchRecursive(str, &#39;&lt;div\\s*&gt;&#39;, &#39;&lt;/div&gt;&#39;, &#39;gi&#39;, {
-    valueNames: [&#39;between&#39;, &#39;left&#39;, &#39;match&#39;, &#39;right&#39;]
-});
-/* -&gt; [
-{name: &#39;between&#39;, value: &#39;Here is &#39;,       start: 0,  end: 8},
-{name: &#39;left&#39;,    value: &#39;&lt;div&gt;&#39;,          start: 8,  end: 13},
-{name: &#39;match&#39;,   value: &#39; &lt;div&gt;an&lt;/div&gt;&#39;, start: 13, end: 27},
-{name: &#39;right&#39;,   value: &#39;&lt;/div&gt;&#39;,         start: 27, end: 33},
-{name: &#39;between&#39;, value: &#39; example&#39;,       start: 33, end: 41}
-] */
-
-// Omitting unneeded parts with null valueNames, and using escapeChar
-str = &#39;...{1}\\{{function(x,y){return y+x;}}&#39;;
-XRegExp.matchRecursive(str, &#39;{&#39;, &#39;}&#39;, &#39;g&#39;, {
-    valueNames: [&#39;literal&#39;, null, &#39;value&#39;, null],
-    escapeChar: &#39;\\&#39;
-});
-/* -&gt; [
-{name: &#39;literal&#39;, value: &#39;...&#39;, start: 0, end: 3},
-{name: &#39;value&#39;,   value: &#39;1&#39;,   start: 4, end: 5},
-{name: &#39;literal&#39;, value: &#39;\\{&#39;, start: 6, end: 8},
-{name: &#39;value&#39;,   value: &#39;function(x,y){return y+x;}&#39;, start: 9, end: 35}
-] */
-
-// Sticky mode via flag y
-str = &#39;&lt;1&gt;&lt;&lt;&lt;2&gt;&gt;&gt;&lt;3&gt;4&lt;5&gt;&#39;;
-XRegExp.matchRecursive(str, &#39;&lt;&#39;, &#39;&gt;&#39;, &#39;gy&#39;);
-// -&gt; [&#39;1&#39;, &#39;&lt;&lt;2&gt;&gt;&#39;, &#39;3&#39;]</code></pre>
-<p>XRegExp.matchRecursive throws an error if it scans past an unbalanced delimiter in the target string.</p>
-<p>I&#39;ve been using <a href="https://github.com/slevithan/xregexp">xregexp</a> in <a href="https://github.com/alexgorbatchev/SyntaxHighlighter">SyntaxHighlighter</a> for a while now. My favourite feature is named captures, which JavaScript is desperately missing. Have you used <a href="https://github.com/slevithan/xregexp">xregexp</a> already? How?</p>
-]]></description>
-            <link>http://npmawesome.com/posts/2013-12-18-xregexp</link>
-            <guid isPermaLink="true">
-                http://npmawesome.com/posts/2013-12-18-xregexp            </guid>
-            <dc:creator><![CDATA[Alex Gorbatchev]]></dc:creator>
-            <pubDate>Thu, 19 Dec 2013 01:27:16 GMT</pubDate>
         </item>
     </channel>
 </rss>
