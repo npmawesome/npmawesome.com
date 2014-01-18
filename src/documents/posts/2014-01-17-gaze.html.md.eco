@@ -1,0 +1,60 @@
+---
+layout: post
+date: 2014-01-17T17:50:40-0800
+tags: npm, filewatcher
+npm:
+  repo: &repo shama/gaze
+  name: &name gaze
+slug: *name
+title: *name
+description: Gaze is a globbing fs.watch wrapper built from the best parts of other fine watch libs.
+---
+<%- @npm() %> a globbing `fs.watch` wrapper written by [Vsevolod Strukchinsky](https://github.com/floatdrop) [@floatdrop](https://twitter.com/floatdrop) and built from the best parts of other fine watch libs. Compatible with Node.js 0.10/0.8, Windows, OSX and Linux. There's a [pretty long list](https://npmjs.org/browse/depended/gaze) of other great modules that are built on top of <%- @npm() %>.
+
+<img src="https://github-camo.global.ssl.fastly.net/4b73eecb09b0400ba274ed9aa205da664ee5538e/687474703a2f2f646f6e746b72792e636f6d2f696d616765732f7265706f732f67617a652e706e67" style="width: 100%"/>
+
+## Usage
+
+    var gaze = require('gaze');
+
+    // Watch all .js files/dirs in process.cwd()
+    gaze('**/*.js', function(err, watcher) {
+      // Files have all started watching
+      // watcher === this
+
+      // Get all watched files
+      console.log(this.watched());
+
+      // On file changed
+      this.on('changed', function(filepath) {
+        console.log(filepath + ' was changed');
+      });
+
+      // On file added
+      this.on('added', function(filepath) {
+        console.log(filepath + ' was added');
+      });
+
+      // On file deleted
+      this.on('deleted', function(filepath) {
+        console.log(filepath + ' was deleted');
+      });
+
+      // On changed/added/deleted
+      this.on('all', function(event, filepath) {
+        console.log(filepath + ' was ' + event);
+      });
+
+      // Get watched files with relative paths
+      console.log(this.relative());
+    });
+
+    // Also accepts an array of patterns
+    gaze(['stylesheets/*.css', 'images/**/*.png'], function() {
+      // Add more patterns later to be watched
+      this.add(['js/*.js']);
+    });
+
+I've been getting my feet wet with [gulp.js](http://gulpjs.com) and specifically [gulp-watch](https://github.com/floatdrop/gulp-watch) plugin which helps you process only the files that were changed. This helps to speed up asset building quite a bit.
+
+Are you using any file watchers in your project?
