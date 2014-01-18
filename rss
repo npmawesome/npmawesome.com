@@ -5,13 +5,13 @@
         <description><![CDATA[Daily dose of awesome NPM modules for Node.js, old and new!]]></description>
         <link>http://npmawesome.com</link>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Sat, 18 Jan 2014 02:03:17 GMT</lastBuildDate>
+        <lastBuildDate>Sat, 18 Jan 2014 02:21:53 GMT</lastBuildDate>
         <atom:link href="http://npmawesome.com/rss" rel="self" type="application/rss+xml"/>
         <author><![CDATA[Alex Gorbatchev]]></author>
-        <pubDate>Sat, 18 Jan 2014 01:58:21 GMT</pubDate>
+        <pubDate>Sat, 18 Jan 2014 02:21:35 GMT</pubDate>
         <item>
             <title><![CDATA[gaze]]></title>
-            <description><![CDATA[<p><a href="https://github.com/shama/gaze">gaze</a> a globbing <code>fs.watch</code> wrapper written by <a href="https://github.com/floatdrop">Vsevolod Strukchinsky</a> <a href="https://twitter.com/floatdrop">@floatdrop</a> and built from the best parts of other fine watch libs. Compatible with Node.js 0.10/0.8, Windows, OSX and Linux. There&#39;s a <a href="https://npmjs.org/browse/depended/gaze">pretty long list</a> of other great modules that are built on top of <a href="https://github.com/shama/gaze">gaze</a>.</p>
+            <description><![CDATA[<p><a href="https://github.com/shama/gaze">gaze</a> a globbing <code>fs.watch</code> wrapper written by <a href="https://github.com/shama">Kyle Robinson Young</a> and built from the best parts of other fine watch libs. Compatible with Node.js 0.10/0.8, Windows, OSX and Linux. There&#39;s a <a href="https://npmjs.org/browse/depended/gaze">pretty long list</a> of other great modules that are built on top of <a href="https://github.com/shama/gaze">gaze</a>.</p>
 <p><img src="https://github-camo.global.ssl.fastly.net/4b73eecb09b0400ba274ed9aa205da664ee5538e/687474703a2f2f646f6e746b72792e636f6d2f696d616765732f7265706f732f67617a652e706e67" style="width: 100%"/></p>
 <h2 id="usage">Usage</h2>
 <pre><code>var gaze = require(&#39;gaze&#39;);
