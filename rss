@@ -5,10 +5,35 @@
         <description><![CDATA[Daily dose of awesome NPM modules for Node.js, old and new!]]></description>
         <link>http://npmawesome.com</link>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Sat, 18 Jan 2014 02:21:53 GMT</lastBuildDate>
+        <lastBuildDate>Tue, 21 Jan 2014 17:28:10 GMT</lastBuildDate>
         <atom:link href="http://npmawesome.com/rss" rel="self" type="application/rss+xml"/>
         <author><![CDATA[Alex Gorbatchev]]></author>
-        <pubDate>Sat, 18 Jan 2014 02:21:35 GMT</pubDate>
+        <pubDate>Tue, 21 Jan 2014 17:26:24 GMT</pubDate>
+        <item>
+            <title><![CDATA[js-yaml]]></title>
+            <description><![CDATA[<p><a href="https://github.com/nodeca/js-yaml">js-yaml</a> is an implementation of <a href="http://yaml.org/">YAML</a> written by <a href="https://github.com/nodeca">Dervus Grim</a> and is a human friendly data serialization language. It started as <a href="http://pyyaml.org/">PyYAML</a> port, but was completely rewritten from scratch. Full support for 1.2 spec.</p>
+<h2 id="example">Example</h2>
+<p>You can parse a YAML document into an object:</p>
+<pre><code>var fs = require(&#39;fs&#39;);
+var yaml = require(&#39;js-yaml&#39;);
+var obj = yaml.load(fs.readFileSync(filename, &#39;utf8&#39;));</code></pre>
+<p>And of course you can stringify an object into a YAML document:</p>
+<pre><code>yaml.dump(object, opts);</code></pre>
+<p>YAML to JSON is what CoffeeScript to JavaScript - pure awesomeness. On the surface it&#39;s a one to one data format that is much more human friendly. Under the surface, YAML allows you to reference other nodes and values within the document to avoid repetition. For example, the header for post in the source looks like this:</p>
+<pre><code>npm:
+  repo: &amp;repo nodeca/js-yaml
+  name: &amp;name js-yaml
+slug: *name
+title: *name</code></pre>
+<p>Where <code>&amp;name</code> is an anchor and repeated using <code>*name</code> reference. This is a very simple example, but anchors could point to entire nodes consisting of other references and objects. Checkout <a href="https://github.com/nodeca/js-yaml">js-yaml</a> repo for more examples and explanation.</p>
+<p>YAML is awesome! I wish <code>package.json</code> was <code>package.yaml</code>. Are you using YAML in your project?</p>
+]]></description>
+            <link>http://npmawesome.com/posts/2014-01-21-js-yaml</link>
+            <guid isPermaLink="true">
+                http://npmawesome.com/posts/2014-01-21-js-yaml            </guid>
+            <dc:creator><![CDATA[Alex Gorbatchev]]></dc:creator>
+            <pubDate>Tue, 21 Jan 2014 17:11:30 GMT</pubDate>
+        </item>
         <item>
             <title><![CDATA[gaze]]></title>
             <description><![CDATA[<p><a href="https://github.com/shama/gaze">gaze</a> a globbing <code>fs.watch</code> wrapper written by <a href="https://github.com/shama">Kyle Robinson Young</a> and built from the best parts of other fine watch libs. Compatible with Node.js 0.10/0.8, Windows, OSX and Linux. There&#39;s a <a href="https://npmjs.org/browse/depended/gaze">pretty long list</a> of other great modules that are built on top of <a href="https://github.com/shama/gaze">gaze</a>.</p>
@@ -428,31 +453,6 @@ $.html();
                 http://npmawesome.com/posts/2013-12-27-cheerio            </guid>
             <dc:creator><![CDATA[Alex Gorbatchev]]></dc:creator>
             <pubDate>Fri, 27 Dec 2013 17:19:30 GMT</pubDate>
-        </item>
-        <item>
-            <title><![CDATA[dat]]></title>
-            <description><![CDATA[<p><a href="https://github.com/maxogden/dat">dat</a> is a project that seeks providing better tools for data collaboration.</p>
-<pre><code>npm install dat</code></pre>
-<h2 id="what-is-dat-">What is dat?</h2>
-<p><img class="hide-on-mobile" src="/images/posts/dat.png" style="float: right" /></p>
-<p>I like the name, makes for clever titles like this :) Anyways, dat:</p>
-<ul>
-<li>make data syncable. automatic sync and updates of entire data sets (or subsets)</li>
-<li>data sets can be very large (billions of items) or updated frequently (real time data)</li>
-<li>sync and transformation plugin API to connect dat to any existing database/format/language</li>
-<li>built with automated + decentralized workflows in mind</li>
-</ul>
-<p>To illustrate the goals of <code>dat</code> consider the GitHub project, which is a great model of this idea working in a different space. GitHub is built on top of an open source tool called <code>git</code> and provides a user-friendly web application that lets software developers find code written by others, use it in their own programs and improve upon it. In a similar fashion <code>dat</code> will be developed as a set of tools to store, synchronize, manipulate and collaborate in a decentralized fashion on sets of data, hopefully enabling platforms analogous to GitHub to be built on top of it.</p>
-<p>The concept sounds pretty amazing to me. Currently <code>dat</code> is in pre-alpha stage but with full time support from <a href="http://maxogden.com/gut-hosted-open-data-filets.html">Max Ogden</a> it will evolve very quickly.</p>
-<iframe width="560" height="315" src="//www.youtube.com/embed/FX7qSwz3SCk" frameborder="0" allowfullscreen></iframe>
-
-<p>Aside from a truly epic beard, Max also has a <a href="http://www.youtube.com/watch?v=FX7qSwz3SCk">cool talk</a> on YouTube introducing <code>dat</code>. Have you gotten any ideas on how this could be used yet?</p>
-]]></description>
-            <link>http://npmawesome.com/posts/2013-12-19-dat</link>
-            <guid isPermaLink="true">
-                http://npmawesome.com/posts/2013-12-19-dat            </guid>
-            <dc:creator><![CDATA[Alex Gorbatchev]]></dc:creator>
-            <pubDate>Thu, 19 Dec 2013 18:08:03 GMT</pubDate>
         </item>
     </channel>
 </rss>
