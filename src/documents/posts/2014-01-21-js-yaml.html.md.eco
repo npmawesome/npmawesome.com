@@ -1,0 +1,36 @@
+---
+layout: post
+date: 2014-01-21T09:11:30-0800
+tags: npm, yaml, json, data
+npm:
+  repo: &repo nodeca/js-yaml
+  name: &name js-yaml
+slug: *name
+title: *name
+description: js-yaml JavaScript YAML parser and dumper.
+---
+<%- @npm() %> is an implementation of [YAML](http://yaml.org/) written by [Dervus Grim](https://github.com/nodeca) and is a human friendly data serialization language. It started as [PyYAML](http://pyyaml.org/) port, but was completely rewritten from scratch. Full support for 1.2 spec.
+
+## Example
+
+You can parse a YAML document into an object:
+
+    var fs = require('fs');
+    var yaml = require('js-yaml');
+    var obj = yaml.load(fs.readFileSync(filename, 'utf8'));
+
+And of course you can stringify an object into a YAML document:
+
+    yaml.dump(object, opts);
+
+YAML to JSON is what CoffeeScript to JavaScript - pure awesomeness. On the surface it's a one to one data format that is much more human friendly. Under the surface, YAML allows you to reference other nodes and values within the document to avoid repetition. For example, the header for post in the source looks like this:
+
+    npm:
+      repo: &repo nodeca/js-yaml
+      name: &name js-yaml
+    slug: *name
+    title: *name
+
+Where `&name` is an anchor and repeated using `*name` reference. This is a very simple example, but anchors could point to entire nodes consisting of other references and objects. Checkout <%- @npm() %> repo for more examples and explanation.
+
+YAML is awesome! I wish `package.json` was `package.yaml`. Are you using YAML in your project?
