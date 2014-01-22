@@ -57,6 +57,15 @@ var disqus_shortname = 'npmawesome'; // required: replace example with your foru
 m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
 })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
+// http://drawingablank.me/blog/fix-your-bounce-rate.html
+// https://news.ycombinator.com/item?id=5766883
+setTimeout(function() {
+  window.onscroll = function() {
+    window.onscroll = null; // Only track the event once
+    ga('send', 'scroll', 'read');
+  }
+}, 5000);
+
 ga('create', 'UA-46164085-1', 'npmawesome.com');
 ga('send', 'pageview');
 </script><script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script><script src="/scripts/npmawesome.bundle.js"></script>

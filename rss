@@ -5,10 +5,10 @@
         <description><![CDATA[Daily dose of awesome NPM modules for Node.js, old and new!]]></description>
         <link>http://npmawesome.com</link>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Wed, 22 Jan 2014 17:57:56 GMT</lastBuildDate>
+        <lastBuildDate>Wed, 22 Jan 2014 18:16:02 GMT</lastBuildDate>
         <atom:link href="http://npmawesome.com/rss" rel="self" type="application/rss+xml"/>
         <author><![CDATA[Alex Gorbatchev]]></author>
-        <pubDate>Wed, 22 Jan 2014 17:53:37 GMT</pubDate>
+        <pubDate>Wed, 22 Jan 2014 18:15:46 GMT</pubDate>
         <item>
             <title><![CDATA[autoprefixer]]></title>
             <description><![CDATA[<p><a href="https://github.com/ai/autoprefixer">autoprefixer</a> parses CSS and adds vendor prefixes to rules based on information from the glorious <a href="http://caniuse.com">Can I Use</a>.</p>
