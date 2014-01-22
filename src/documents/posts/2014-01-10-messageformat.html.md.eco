@@ -11,6 +11,8 @@ description: ICU MessageFormat for Javascript - i18n Plural and Gender Capable M
 ---
 <%- @npm() %> is a module by [Alex Sexton](https://github.com/SlexAxton) ([@SlexAxton](https://twitter.com/SlexAxton)) for handling both *pluralization* and *gender* in your applications. It can also lead to much better translations, as it was built by [ICU](http://icu-project.org/apiref/icu4j/com/ibm/icu/text/MessageFormat.html) to help solve those two problems for all known [CLDR](http://cldr.unicode.org/) languages - likely all the ones you care about.
 
+    npm install <%= @document.npm.name %>
+
 ## Features
 
 <img class="hide-on-mobile" src="/images/posts/messageformat.png" style="width: 150px; float: right" />

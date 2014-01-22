@@ -11,6 +11,8 @@ description: ShortId creates amazingly short non-sequential url-friendly unique 
 ---
 <%- @npm() %> creates amazingly short non-sequential url-friendly unique IDs. Perfect for url shorteners, MongoDB and Redis as well as any other ID users might see.
 
+    npm install <%= @document.npm.name %>
+
 ## Features
 
 * By default 7-12 url-friendly characters: `A-Z`, `a-z`, `0-9`, `_-`

@@ -11,6 +11,8 @@ description: js-yaml JavaScript YAML parser and dumper.
 ---
 <%- @npm() %> is an implementation of [YAML](http://yaml.org/) written by [Dervus Grim](https://github.com/nodeca) and is a human friendly data serialization language. It started as [PyYAML](http://pyyaml.org/) port, but was completely rewritten from scratch. Full support for 1.2 spec.
 
+    npm install <%= @document.npm.name %>
+
 ## Example
 
 You can parse a YAML document into an object:

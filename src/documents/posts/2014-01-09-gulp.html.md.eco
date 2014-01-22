@@ -11,6 +11,8 @@ description: Gulp.js is a streaming build and task runner system.
 ---
 <%- @npm() %> is a streaming build and task runner system. It's an alternative to the ever prelific <a href="http://gruntjs.com/">grunt.js</a>. There's been quite [a bit of buzz on the twitters](https://twitter.com/search?q=gulp%20grunt&src=typd).
 
+    npm install <%= @document.npm.name %>
+
 ## Example
 
 This file is just a quick sample to give you a taste of what gulp does.
