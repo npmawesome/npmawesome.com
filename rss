@@ -5,13 +5,49 @@
         <description><![CDATA[Daily dose of awesome NPM modules for Node.js, old and new!]]></description>
         <link>http://npmawesome.com</link>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Tue, 21 Jan 2014 17:28:10 GMT</lastBuildDate>
+        <lastBuildDate>Wed, 22 Jan 2014 17:57:56 GMT</lastBuildDate>
         <atom:link href="http://npmawesome.com/rss" rel="self" type="application/rss+xml"/>
         <author><![CDATA[Alex Gorbatchev]]></author>
-        <pubDate>Tue, 21 Jan 2014 17:26:24 GMT</pubDate>
+        <pubDate>Wed, 22 Jan 2014 17:53:37 GMT</pubDate>
+        <item>
+            <title><![CDATA[autoprefixer]]></title>
+            <description><![CDATA[<p><a href="https://github.com/ai/autoprefixer">autoprefixer</a> parses CSS and adds vendor prefixes to rules based on information from the glorious <a href="http://caniuse.com">Can I Use</a>.</p>
+<pre><code>npm install autoprefixer</code></pre>
+<p><img class="hide-on-mobile" src="/images/posts/autoprefixer.svg" style="width: 200px; float: right" /></p>
+<p>The best tool is a tool you can&#39;t see and one that does the work for you. This is the main idea behind <a href="https://github.com/ai/autoprefixer">autoprefixer</a>. The interface is simple: just forget about vendor prefixes and write normal CSS according to latest W3C specs. You don’t need a special language (like Sass) or special mixins. Of course, you can still use something like <a href="http://sass-lang.com/">SASS</a>, <a href="http://learnboost.github.io/stylus/">Stylus</a> or <a href="http://www.lesscss.org/">LESS</a> because <a href="https://github.com/ai/autoprefixer">autoprefixer</a> is a postprocessor for CSS.</p>
+<h2 id="features">Features</h2>
+<ul>
+<li>Because <a href="https://github.com/ai/autoprefixer">autoprefixer</a> uses actual data from <a href="http://caniuse.com">Can I Use</a>, it can also clean up your CSS and remove prefixes that are no longer needed.</li>
+<li>Flexbox or gradients have different syntaxes in different browsers (sometimes you need to recalculate angles, sometimes you need 2 old properties instead of new one), but <a href="https://github.com/ai/autoprefixer">autoprefixer</a> hides this from you. Just code by latest W3C specs and Autoprefixer will produce the code for old browsers.</li>
+<li>You can specify the browsers you want to target</li>
+<li>Source map support</li>
+</ul>
+<h2 id="usage">Usage</h2>
+<p>There&#39;s an incredible amount of ways you can use <a href="https://github.com/ai/autoprefixer">autoprefixer</a>:</p>
+<ul>
+<li>as a grunt task using <a href="https://github.com/nDmitry/grunt-autoprefixer">grunt-autoprefixer</a> plugin</li>
+<li>with Compass</li>
+<li>with Stylus</li>
+<li>with Rails</li>
+<li>with Mincer</li>
+<li>with Middleman</li>
+<li>with Node</li>
+<li>with PHP</li>
+</ul>
+<p>There are plenty of examples and information on the <a href="https://github.com/ai/autoprefixer">autoprefixer</a>. Check it out!</p>
+<p>I&#39;m completely in love with CSS preprocessors, they make life so much easier. I still go between <a href="http://www.lesscss.org/">LESS</a> and <a href="http://learnboost.github.io/stylus/">Stylus</a>, but more often lean towards LESS because it makes using <a href="http://getbootstrap.com/">Bootstrap</a> framework so much easier and so much more modular.</p>
+<p>Do you use a CSS preprocessor? Which one?</p>
+]]></description>
+            <link>http://npmawesome.com/posts/2014-01-22-autoprefixer</link>
+            <guid isPermaLink="true">
+                http://npmawesome.com/posts/2014-01-22-autoprefixer            </guid>
+            <dc:creator><![CDATA[Alex Gorbatchev]]></dc:creator>
+            <pubDate>Wed, 22 Jan 2014 17:35:00 GMT</pubDate>
+        </item>
         <item>
             <title><![CDATA[js-yaml]]></title>
             <description><![CDATA[<p><a href="https://github.com/nodeca/js-yaml">js-yaml</a> is an implementation of <a href="http://yaml.org/">YAML</a> written by <a href="https://github.com/nodeca">Dervus Grim</a> and is a human friendly data serialization language. It started as <a href="http://pyyaml.org/">PyYAML</a> port, but was completely rewritten from scratch. Full support for 1.2 spec.</p>
+<pre><code>npm install js-yaml</code></pre>
 <h2 id="example">Example</h2>
 <p>You can parse a YAML document into an object:</p>
 <pre><code>var fs = require(&#39;fs&#39;);
@@ -37,6 +73,7 @@ title: *name</code></pre>
         <item>
             <title><![CDATA[gaze]]></title>
             <description><![CDATA[<p><a href="https://github.com/shama/gaze">gaze</a> a globbing <code>fs.watch</code> wrapper written by <a href="https://github.com/shama">Kyle Robinson Young</a> and built from the best parts of other fine watch libs. Compatible with Node.js 0.10/0.8, Windows, OSX and Linux. There&#39;s a <a href="https://npmjs.org/browse/depended/gaze">pretty long list</a> of other great modules that are built on top of <a href="https://github.com/shama/gaze">gaze</a>.</p>
+<pre><code>npm install gaze</code></pre>
 <p><img src="https://github-camo.global.ssl.fastly.net/4b73eecb09b0400ba274ed9aa205da664ee5538e/687474703a2f2f646f6e746b72792e636f6d2f696d616765732f7265706f732f67617a652e706e67" style="width: 100%"/></p>
 <h2 id="usage">Usage</h2>
 <pre><code>var gaze = require(&#39;gaze&#39;);
@@ -90,6 +127,7 @@ gaze([&#39;stylesheets/*.css&#39;, &#39;images/**/*.png&#39;], function() {
         <item>
             <title><![CDATA[shortId]]></title>
             <description><![CDATA[<p><a href="https://github.com/dylang/shortid">shortId</a> creates amazingly short non-sequential url-friendly unique IDs. Perfect for url shorteners, MongoDB and Redis as well as any other ID users might see.</p>
+<pre><code>npm install shortId</code></pre>
 <h2 id="features">Features</h2>
 <ul>
 <li>By default 7-12 url-friendly characters: <code>A-Z</code>, <code>a-z</code>, <code>0-9</code>, <code>_-</code></li>
@@ -164,6 +202,7 @@ long random()
             <title><![CDATA[testium]]></title>
             <description><![CDATA[<p><a href="https://github.com/groupon/testium">testium</a> is a testing platform focused on providing a simple, but effective, platform for testing your code in different browsers (via Selenium) and headlessly (via PhantomJS). It uses <a href="https://github.com/groupon/webdriver-http-sync">webdriver-http-sync</a>
 which Groupon wrote in order to communicate using the WebDriver protocol to a Selenium server.</p>
+<pre><code>npm install testium</code></pre>
 <p><img class="hide-on-mobile" src="https://0.gravatar.com/avatar/f07c4699fa2274d2ad44323331ee8161?d=https%3A%2F%2Fidenticons.github.com%2Fa25772e176c9744a17818d2be63b2c20.png&r=x&s=400" style="width: 150px; float: right" /></p>
 <p><blockquote class="twitter-tweet" data-cards="hidden" lang="en"><p><a href="https://twitter.com/Groupon">@Groupon</a>&#39;s Browser Integration Testing platform <a href="https://twitter.com/search?q=%23Testium&amp;src=hash">#Testium</a> is now open source! <a href="https://twitter.com/search?q=%23nodejs&amp;src=hash">#nodejs</a> + Mocha + Selenium = Happy! <a href="https://t.co/lgXiRjflx0"><a href="https://t.co/lgXiRjflx0">https://t.co/lgXiRjflx0</a></a></p>&mdash; Jess Telford (@jesstelford) <a href="https://twitter.com/jesstelford/statuses/413382587348811776">December 18, 2013</a></blockquote></p>
 <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
@@ -211,6 +250,7 @@ describe &#39;browse&#39;, -&gt;
         <item>
             <title><![CDATA[messageformat.js]]></title>
             <description><![CDATA[<p><a href="https://github.com/SlexAxton/messageformat.js">messageformat.js</a> is a module by <a href="https://github.com/SlexAxton">Alex Sexton</a> (<a href="https://twitter.com/SlexAxton">@SlexAxton</a>) for handling both <em>pluralization</em> and <em>gender</em> in your applications. It can also lead to much better translations, as it was built by <a href="http://icu-project.org/apiref/icu4j/com/ibm/icu/text/MessageFormat.html">ICU</a> to help solve those two problems for all known <a href="http://cldr.unicode.org/">CLDR</a> languages - likely all the ones you care about.</p>
+<pre><code>npm install messageformat.js</code></pre>
 <h2 id="features">Features</h2>
 <p><img class="hide-on-mobile" src="/images/posts/messageformat.png" style="width: 150px; float: right" /></p>
 <p>MessageFormat in Java-land technically incorporates all other type formatting (and the older ChoiceFormat) directly into its messages, however, in the name of filesize, messageformat.js only strives to implement <strong>SelectFormat</strong> and <strong>PluralFormat</strong>. There are plans to pull in locale-aware <strong>NumberFormat</strong> parsing as a &quot;plugin&quot; to this library, but as of right now, it&#39;s best to pass things in preformatted (as suggested in the ICU docs).</p>
@@ -249,6 +289,7 @@ message({ &quot;NAME&quot; : &quot;Jed&quot; });
         <item>
             <title><![CDATA[gulp]]></title>
             <description><![CDATA[<p><a href="https://github.com/gulpjs/gulp">gulp</a> is a streaming build and task runner system. It&#39;s an alternative to the ever prelific <a href="http://gruntjs.com/">grunt.js</a>. There&#39;s been quite <a href="https://twitter.com/search?q=gulp%20grunt&amp;src=typd">a bit of buzz on the twitters</a>.</p>
+<pre><code>npm install gulp</code></pre>
 <h2 id="example">Example</h2>
 <p>This file is just a quick sample to give you a taste of what gulp does.</p>
 <pre><code>var gulp = require(&#39;gulp&#39;);
@@ -422,37 +463,6 @@ var css = rework(str)
                 http://npmawesome.com/posts/2013-12-30-rework            </guid>
             <dc:creator><![CDATA[Alex Gorbatchev]]></dc:creator>
             <pubDate>Mon, 30 Dec 2013 18:27:29 GMT</pubDate>
-        </item>
-        <item>
-            <title><![CDATA[cheerio]]></title>
-            <description><![CDATA[<p><a href="https://github.com/MatthewMueller/cheerio">cheerio</a> is a fast, flexible, and lean implementation of core jQuery designed specifically for the server.</p>
-<pre><code>npm install cheerio</code></pre>
-<h2 id="features">Features</h2>
-<p><img class="hide-on-mobile" src="/images/posts/cheerio.jpg" style="width: 150px; float: right" /></p>
-<ul>
-<li>Familiar syntax. <a href="https://github.com/MatthewMueller/cheerio">cheerio</a> implements a subset of core jQuery. <a href="https://github.com/MatthewMueller/cheerio">cheerio</a> removes all the DOM inconsistencies and browser cruft from the jQuery library, revealing its truly gorgeous API.</li>
-<li>Blazingly fast. <a href="https://github.com/MatthewMueller/cheerio">cheerio</a> works with a very simple, consistent DOM model. As a result parsing, manipulating, and rendering are incredibly efficient. Preliminary end-to-end benchmarks suggest that <a href="https://github.com/MatthewMueller/cheerio">cheerio</a> is about 8x faster than JSDOM.</li>
-<li>Insanely flexible. <a href="https://github.com/MatthewMueller/cheerio">cheerio</a> wraps around <a href="https://twitter.com/fb55">@FB55</a>&#39;s <a href="https://github.com/fb55/htmlparser2">forgiving htmlparser</a>. <a href="https://github.com/MatthewMueller/cheerio">cheerio</a> can parse nearly any HTML or XML document.</li>
-</ul>
-<h2 id="example">Example</h2>
-<pre><code>var cheerio = require(&#39;cheerio&#39;),
-    $ = cheerio.load(&#39;&lt;h2 class=&quot;title&quot;&gt;Hello world&lt;/h2&gt;&#39;);
-
-$(&#39;h2.title&#39;).text(&#39;Hello there!&#39;);
-$(&#39;h2&#39;).addClass(&#39;welcome&#39;);
-
-$.html();
-//=&gt; &lt;h2 class=&quot;title welcome&quot;&gt;Hello there!&lt;/h2&gt;</code></pre>
-<h2 id="screencast-introduction">Screencast Introduction</h2>
-<iframe src="//player.vimeo.com/video/31950192" width="500" height="281" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
-
-<p>Are you using jQuery on the server side?</p>
-]]></description>
-            <link>http://npmawesome.com/posts/2013-12-27-cheerio</link>
-            <guid isPermaLink="true">
-                http://npmawesome.com/posts/2013-12-27-cheerio            </guid>
-            <dc:creator><![CDATA[Alex Gorbatchev]]></dc:creator>
-            <pubDate>Fri, 27 Dec 2013 17:19:30 GMT</pubDate>
         </item>
     </channel>
 </rss>
