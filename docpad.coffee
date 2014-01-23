@@ -22,13 +22,17 @@ docpadConfig =
     preparedSlug: (doc = @document) ->
       doc.npm?.name
 
-    githubUrl: (doc = @document) ->
-      "https://github.com/#{doc.npm.repo}"
+    githubUrl: (slug) ->
+      "https://github.com/#{slug}"
 
-    npm: (doc = @document) ->
-      """<a href="#{@githubUrl doc}">#{doc.npm.name}</a>"""
+    npm: ({npm} = @document) ->
+      """<a href="#{@githubUrl npm.repo}">#{npm.name}</a>""" if npm?
 
-    author: (doc = @document) ->
+    author: ({npm} = @document) ->
+      {author} = npm or {}
+      """<a href="#{@githubUrl author.github}">#{author.name}</a>""" if author?
+
+    by: (doc = @document) ->
       slug = doc.author or 'alexgorbatchev'
       author = CONTRIBUTORS[slug]
 
