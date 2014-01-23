@@ -1,0 +1,70 @@
+---
+layout: post
+date: 2014-01-23T09:46:38-0800
+tags: npm, json, ajax
+
+npm:
+  repo: &repo jimhigson/oboe.js
+  name: &name oboe.js
+
+  author:
+    name: Jim Higson
+    github: jimhigson
+
+slug: *name
+title: *name
+description: A fresh approach to JSON loading that speeds up web applications by providing the parsed objects before the response completes.
+---
+<img class="hide-on-mobile" src="https://2.gravatar.com/avatar/a26d7792bcf2ccd16be185627ce8e37d" style="float: right; margin-left: 1em"/>
+
+<%- @npm() %> is written by <%- @author() %> and helps web applications respond quicker by wrapping HTTP's request-response model with a progressively streamed interface. It glues a transport that sits somewhere between streaming and downloading to a JSON parser. It doesn't have any external dependencies.
+
+    npm install <%= @document.npm.name %>
+
+## Features
+
+The library is extremely feature rich for its 13KB size. I will try to summarize them here and you can get full details with examples on the <%- @npm() %> github page.
+
+* Can hanging up when everything that's needed was processed
+* Can react to field and node names
+* Can react to partial arrays
+* Can react to specific nodes or to fields located anywhere
+* Can use CSS4 style matching patterns
+
+> Asynchronous parsing is better if the data is written out progressively from the server side because we're sending and parsing everything at the earliest possible opportunity. If you can, send small bits of the output asynchronously as soon as it is ready instead of waiting before everything is ready to start sending.
+
+<div style="text-align: center"><img class="hide-on-mobile" src="/images/posts/oboe.png" style="width: 400px; margin: 1em 0" /></div>
+
+## Usage
+
+Here's a very **basic** use case:
+
+    {
+       "foods": [
+          {"colour":"purple"},
+          {"colour":"red"},
+          {"colour":"brown"}
+       ],
+       "badThings": [
+          {"name":"poison"},
+          {"name":"broken_glass"}
+       ]
+    }
+
+    var oboe = require('oboe');
+
+    oboe('http://localhost/myapp/things.json')
+      .node('foods.*', function(foodThing) {
+        // This callback will be called everytime a new object is found in the
+        // foods array. Oboe won't wait for the download to finish first.
+        console.log(foodThing.name);
+      })
+      .node('badThings.*', function(badThing) {
+        console.log('Danger! stay away from ' + badThings.name);
+      })
+      .done(function(things) {
+        console.log('there are ' + things.foods.length + ' things you can eat ' +
+          'and ' + things.badThings.length + ' that you shouldn\'t.');
+      });
+
+Have you used streaming JSON parser before?
