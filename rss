@@ -5,10 +5,66 @@
         <description><![CDATA[Daily dose of awesome NPM modules for Node.js, old and new!]]></description>
         <link>http://npmawesome.com</link>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Wed, 22 Jan 2014 18:16:02 GMT</lastBuildDate>
+        <lastBuildDate>Thu, 23 Jan 2014 18:25:37 GMT</lastBuildDate>
         <atom:link href="http://npmawesome.com/rss" rel="self" type="application/rss+xml"/>
         <author><![CDATA[Alex Gorbatchev]]></author>
-        <pubDate>Wed, 22 Jan 2014 18:15:46 GMT</pubDate>
+        <pubDate>Thu, 23 Jan 2014 18:25:24 GMT</pubDate>
+        <item>
+            <title><![CDATA[oboe.js]]></title>
+            <description><![CDATA[<p><img class="hide-on-mobile" src="https://2.gravatar.com/avatar/a26d7792bcf2ccd16be185627ce8e37d" style="float: right; margin-left: 1em"/></p>
+<p><a href="https://github.com/jimhigson/oboe.js">oboe.js</a> is written by <a href="https://github.com/jimhigson">Jim Higson</a> and helps web applications respond quicker by wrapping HTTP&#39;s request-response model with a progressively streamed interface. It glues a transport that sits somewhere between streaming and downloading to a JSON parser. It doesn&#39;t have any external dependencies.</p>
+<pre><code>npm install oboe.js</code></pre>
+<h2 id="features">Features</h2>
+<p>The library is extremely feature rich for its 13KB size. I will try to summarize them here and you can get full details with examples on the <a href="https://github.com/jimhigson/oboe.js">oboe.js</a> github page.</p>
+<ul>
+<li>Can hanging up when everything that&#39;s needed was processed</li>
+<li>Can react to field and node names</li>
+<li>Can react to partial arrays</li>
+<li>Can react to specific nodes or to fields located anywhere</li>
+<li>Can use CSS4 style matching patterns</li>
+</ul>
+<blockquote>
+<p>Asynchronous parsing is better if the data is written out progressively from the server side because we&#39;re sending and parsing everything at the earliest possible opportunity. If you can, send small bits of the output asynchronously as soon as it is ready instead of waiting before everything is ready to start sending.</p>
+</blockquote>
+<div style="text-align: center"><img class="hide-on-mobile" src="/images/posts/oboe.png" style="width: 400px; margin: 1em 0" /></div>
+
+<h2 id="usage">Usage</h2>
+<p>Here&#39;s a very <strong>basic</strong> use case:</p>
+<pre><code>{
+   &quot;foods&quot;: [
+      {&quot;colour&quot;:&quot;purple&quot;},
+      {&quot;colour&quot;:&quot;red&quot;},
+      {&quot;colour&quot;:&quot;brown&quot;}
+   ],
+   &quot;badThings&quot;: [
+      {&quot;name&quot;:&quot;poison&quot;},
+      {&quot;name&quot;:&quot;broken_glass&quot;}
+   ]
+}
+
+var oboe = require(&#39;oboe&#39;);
+
+oboe(&#39;http://localhost/myapp/things.json&#39;)
+  .node(&#39;foods.*&#39;, function(foodThing) {
+    // This callback will be called everytime a new object is found in the
+    // foods array. Oboe won&#39;t wait for the download to finish first.
+    console.log(foodThing.name);
+  })
+  .node(&#39;badThings.*&#39;, function(badThing) {
+    console.log(&#39;Danger! stay away from &#39; + badThings.name);
+  })
+  .done(function(things) {
+    console.log(&#39;there are &#39; + things.foods.length + &#39; things you can eat &#39; +
+      &#39;and &#39; + things.badThings.length + &#39; that you shouldn\&#39;t.&#39;);
+  });</code></pre>
+<p>Have you used streaming JSON parser before?</p>
+]]></description>
+            <link>http://npmawesome.com/posts/2014-01-23-oboe-js</link>
+            <guid isPermaLink="true">
+                http://npmawesome.com/posts/2014-01-23-oboe-js            </guid>
+            <dc:creator><![CDATA[Alex Gorbatchev]]></dc:creator>
+            <pubDate>Thu, 23 Jan 2014 17:46:38 GMT</pubDate>
+        </item>
         <item>
             <title><![CDATA[autoprefixer]]></title>
             <description><![CDATA[<p><a href="https://github.com/ai/autoprefixer">autoprefixer</a> parses CSS and adds vendor prefixes to rules based on information from the glorious <a href="http://caniuse.com">Can I Use</a>.</p>
@@ -426,43 +482,6 @@ console.log(&quot;spawned cluster, kill -s SIGUSR2&quot;, process.pid, &quot;to 
                 http://npmawesome.com/posts/2013-12-31-recluster            </guid>
             <dc:creator><![CDATA[Alex Gorbatchev]]></dc:creator>
             <pubDate>Tue, 31 Dec 2013 18:45:13 GMT</pubDate>
-        </item>
-        <item>
-            <title><![CDATA[rework]]></title>
-            <description><![CDATA[<p><a href="https://github.com/reworkcss/rework">rework</a> is a tool for CSS manipulations built on css, allowing you to automate vendor prefixing, create your own properties, inline images, anything you can imagine! Also works in the browser.</p>
-<pre><code>npm install rework</code></pre>
-<p><img class="hide-on-mobile" src="/images/posts/rework.gif" style="width: 250px; float: right" /></p>
-<p>Originally written by TJ Holowaychuk, <a href="https://github.com/reworkcss/rework">rework</a> is a module for working with CSS. Just like <a href="https://github.com/ariya/esprima">esprima</a> for JavaScript, <a href="https://github.com/reworkcss/rework">rework</a> allows you to change and extend CSS, basically take it to a whole new level.</p>
-<h2 id="example">Example</h2>
-<p>To get an idea of how to use <a href="https://github.com/reworkcss/rework">rework</a>, take a look at one of the many plugins. A good example would be <a href="https://github.com/simme/rework-imagesize">rework-imagesize</a> plugin.</p>
-<pre><code>var rework = require(&#39;rework&#39;);
-var size   = require(&#39;rework-imagesize&#39;);
-
-var css = rework(str)
-  .use(size(&#39;path/to/images/folder&#39;))
-  .toString();</code></pre>
-<p>Using the above JavaScript. This:</p>
-<pre><code>h1 {
-  background: url(&#39;myimage.png&#39;);
-  imgsize: myimage.png;
-  text-indent: 100%;
-}</code></pre>
-<p>Would produce something like:</p>
-<pre><code>h1 {
-  background: url(&#39;myimage.png&#39;);
-  text-indent: 100%;
-  height: 201px;
-  width: 300px;
-}</code></pre>
-<p><a href="https://github.com/reworkcss">Rework Github</a> account has a good number of modules to do various things to your CSS. I also like the idea of using <a href="https://github.com/reworkcss/rework">rework</a> as a post processor for your favourite dynamic CSS language, such as <a href="http://lesscss.org/">LESS</a>, <a href="http://learnboost.github.io/stylus/">Stylus</a> or <a href="https://github.com/andrew/node-sass">SASS</a>.</p>
-<p>Curious what is your favourite dynamic CSS framework?</p>
-<p><em>Image borrowed from <a href="http://www.horriblelogos.com/rework-digital/">horrible logos</a> and isn&#39;t the official logo :)</em></p>
-]]></description>
-            <link>http://npmawesome.com/posts/2013-12-30-rework</link>
-            <guid isPermaLink="true">
-                http://npmawesome.com/posts/2013-12-30-rework            </guid>
-            <dc:creator><![CDATA[Alex Gorbatchev]]></dc:creator>
-            <pubDate>Mon, 30 Dec 2013 18:27:29 GMT</pubDate>
         </item>
     </channel>
 </rss>
