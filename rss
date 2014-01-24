@@ -5,10 +5,118 @@
         <description><![CDATA[Daily dose of awesome NPM modules for Node.js, old and new!]]></description>
         <link>http://npmawesome.com</link>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Thu, 23 Jan 2014 18:25:37 GMT</lastBuildDate>
+        <lastBuildDate>Fri, 24 Jan 2014 17:47:11 GMT</lastBuildDate>
         <atom:link href="http://npmawesome.com/rss" rel="self" type="application/rss+xml"/>
         <author><![CDATA[Alex Gorbatchev]]></author>
-        <pubDate>Thu, 23 Jan 2014 18:25:24 GMT</pubDate>
+        <pubDate>Fri, 24 Jan 2014 17:44:13 GMT</pubDate>
+        <item>
+            <title><![CDATA[schema-inspector]]></title>
+            <description><![CDATA[<div style="text-align: center"><img class="hide-on-mobile" src="/images/posts/schema-inspector.png" style="margin-bottom: 1em" /></div>
+
+<p><img class="hide-on-mobile" src="https://0.gravatar.com/avatar/16c362a6f8dbbedbc3bf13d001c6b286" style="float: right; margin-left: 1em"/></p>
+<p><a href="https://github.com/Atinux/schema-inspector">schema-inspector</a> is a powerful tool to sanitize and validate JS objects written by <a href="https://github.com/Atinux">Sébastien Chopin</a>. It&#39;s disigned to work both client-side and server-side and to be scalable with allowing asynchronous and synchronous calls. There&#39;s support for object validation and sanitazation with a very simple schema definition.</p>
+<pre><code>npm install schema-inspector</code></pre>
+<h2 id="usage">Usage</h2>
+<pre><code>var inspector = require(&#39;schema-inspector&#39;);
+
+var schema = {
+  type: &#39;object&#39;,
+  properties: {
+    lorem: { type: &#39;string&#39;, eq: &#39;ipsum&#39; },
+    dolor: {
+      type: &#39;array&#39;,
+      items: { type: &#39;number&#39; }
+    }
+  }
+};
+
+var candidate = {
+  lorem: &#39;not_ipsum&#39;,
+  dolor: [ 12, 34, &#39;ERROR&#39;, 45, &#39;INVALID&#39; ]
+};
+var result = inspector.validate(schema, candidate); // Candidate is not valid
+console.log(result.format());
+
+/*
+  Property @.lorem: must be equal to &quot;ipsum&quot;, but is equal to &quot;not_ipsum&quot;
+  Property @.dolor[2]: must be number, but is string
+  Property @.dolor[4]: must be number, but is string
+*/</code></pre>
+<h2 id="more">More</h2>
+<p>Object validation can come in extremely handy when you are writing APIs. On one end you can validate user input:</p>
+<pre><code>var express = require(&#39;express&#39;);
+var inspector = require(&#39;schema-inspector&#39;);
+var app = express();
+
+var schema = {
+  type: &#39;object&#39;,
+  properties: {
+    title: { type: &#39;string&#39;, ne: &#39;&#39; },
+    message: { type: &#39;string&#39;, ne: &#39;&#39; }
+  }
+};
+
+app.post(&#39;/api&#39;, function(req, res, next) {
+  var post = req.body;
+  var validation = inspector.validate(schema, post);
+
+  if(!validation.valid) {
+    return res.send(validation.errors, 400);
+  }
+
+  res.send({status: &#39;ok&#39;});
+});</code></pre>
+<p>On the flip side, you can use the <a href="https://github.com/Atinux/schema-inspector">schema-inspector</a> to validate API response in your tests:</p>
+<pre><code>var request = require(&#39;request&#39;);
+var inspector = require(&#39;schema-inspector&#39;);
+
+var schema = {
+  type: &#39;object&#39;,
+  properties: {
+    statusCode: { type: &#39;number&#39;, eq: 200 },
+    body: { type: &#39;object&#39;, properties: {
+      status: { type: &#39;string&#39;, eq: &#39;ok&#39; }
+    }}
+  }
+};
+
+describe(&#39;POST /api&#39;, function()
+{
+  var response;
+
+  before(function(done) {
+    request(
+      {
+        url: &#39;/api&#39;,
+        json: { title: &#39;Hello!&#39;, message: &#39;First Post&#39; }
+        method: &#39;POST&#39;
+      },
+      function(err, r) {
+        response = {
+          statusCode: r.statusCode,
+          body: r.body
+        };
+        done()
+      }
+    );
+  });
+
+  it(&#39;validates&#39;, function() {
+    var validation = inspector.validate(schema, response);
+
+    if(!validation.valid) {
+      throw new Error(validation.format());
+    }
+  });
+});</code></pre>
+<p>In the end, you have a strong contract between your APIs, consumer and your tests with just a few lines of code. I&#39;m loving this! The <a href="http://atinux.github.io/schema-inspector/">documentation</a> site is very good and I strongly recommend checking it out.</p>
+]]></description>
+            <link>http://npmawesome.com/posts/2014-01-24-schema-inspector</link>
+            <guid isPermaLink="true">
+                http://npmawesome.com/posts/2014-01-24-schema-inspector            </guid>
+            <dc:creator><![CDATA[Alex Gorbatchev]]></dc:creator>
+            <pubDate>Fri, 24 Jan 2014 17:17:24 GMT</pubDate>
+        </item>
         <item>
             <title><![CDATA[oboe.js]]></title>
             <description><![CDATA[<p><img class="hide-on-mobile" src="https://2.gravatar.com/avatar/a26d7792bcf2ccd16be185627ce8e37d" style="float: right; margin-left: 1em"/></p>
@@ -431,57 +539,6 @@ console.log(  chalk.blue(&#39;Hello&#39;, &#39;World!&#39;, &#39;Foo&#39;, &#39;
                 http://npmawesome.com/posts/2014-01-06-chalk            </guid>
             <dc:creator><![CDATA[Alex Gorbatchev]]></dc:creator>
             <pubDate>Tue, 07 Jan 2014 00:17:02 GMT</pubDate>
-        </item>
-        <item>
-            <title><![CDATA[recluster]]></title>
-            <description><![CDATA[<p><a href="https://github.com/doxout/recluster">recluster</a> is a clustering library with support for zero-downtime reloading.</p>
-<pre><code>npm install recluster</code></pre>
-<p><img class="hide-on-mobile" src="/images/posts/recluster.jpg" style="width: 250px; float: right" /></p>
-<p>Delivering that 100% uptime for web apps can be a tricky business. Errors and new code rollouts are the things we have to deal with on a daily basis and if you run continuous integration, your app is probably restarting many times a day. What kind of experience this might be creating for your users?</p>
-<p><a href="https://github.com/doxout/recluster">recluster</a> is among a <a href="https://github.com/nodejitsu/forever">few</a> <a href="https://github.com/superjoe30/naught">other</a> libraries that try to address this issue. It is:</p>
-<ul>
-<li>Cluster aware.</li>
-<li>Zero downtime errors and deploys.</li>
-<li>Does not run as daemon.</li>
-<li>Log agnostic.</li>
-<li>Simple, relatively easy to reason about.</li>
-</ul>
-<h2 id="example">Example</h2>
-<p>If <code>server.js</code> is your regular http server (e.g. express), create <code>cluster.js</code> and add:</p>
-<pre><code>var recluster = require(&#39;recluster&#39;),
-    path = require(&#39;path&#39;);
-
-var cluster = recluster(path.join(__dirname, &#39;server.js&#39;));
-cluster.run();
-
-process.on(&#39;SIGUSR2&#39;, function() {
-    console.log(&#39;Got SIGUSR2, reloading cluster...&#39;);
-    cluster.reload();
-});
-
-console.log(&quot;spawned cluster, kill -s SIGUSR2&quot;, process.pid, &quot;to reload&quot;);</code></pre>
-<p>then run it</p>
-<pre><code>node cluster.js</code></pre>
-<p>To hot-reload the server, simply run</p>
-<pre><code>kill -s SIGUSR2 &lt;cluster_pid&gt;</code></pre>
-<p>A server worker can gracefully exit by cleaning up in the &#39;close&#39; event of its server:</p>
-<pre><code>server.on(&#39;close&#39;, function() {
-    // cleanup
-});</code></pre>
-<p>Non-server workers can listen for the disconnect command and shut down gracefully before the kill timeout:</p>
-<pre><code>process.on(&#39;message&#39;, function(m) {
-    if (m.cmd == &#39;disconnect&#39;) {
-        // cleanup
-    }
-})</code></pre>
-<p>For some fantastic insights on the subject, checkout <a href="http://sandinmyjoints.github.io/towards-100-pct-uptime">Towards 100% Uptime with Node.js</a> slides by <a href="https://github.com/sandinmyjoints">William Bert</a> <a href="https://twitter.com/williamjohnbert">@williamjohnbert</a> and <a href="http://qzaidi.github.io/2013/05/14/node-in-production/">10 steps to nodejs nirvana in production</a> by <a href="http://github.com/qzaidi">Qasim Zaidi</a> <a href="http://twitter.com/#!/kernelhacker">@kernelhacker</a>.</p>
-<p>Curious, how do you manage your node process?</p>
-]]></description>
-            <link>http://npmawesome.com/posts/2013-12-31-recluster</link>
-            <guid isPermaLink="true">
-                http://npmawesome.com/posts/2013-12-31-recluster            </guid>
-            <dc:creator><![CDATA[Alex Gorbatchev]]></dc:creator>
-            <pubDate>Tue, 31 Dec 2013 18:45:13 GMT</pubDate>
         </item>
     </channel>
 </rss>
