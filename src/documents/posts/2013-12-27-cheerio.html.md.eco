@@ -5,14 +5,20 @@ npm:
   repo: &repo MatthewMueller/cheerio
   name: &name cheerio
 
+  author:
+    name: Matthew Mueller
+    github: matthewmueller
+
 layout: post
 slug: *name
 title: *name
 description: Fast, flexible, and lean implementation of core jQuery designed specifically for the server.
 ---
-<%- @npm() %> is a fast, flexible, and lean implementation of core jQuery designed specifically for the server.
+<img class="hide-on-mobile" src="https://2.gravatar.com/avatar/824b41e6108a22c4c96f50ee23419369" style="float: right; margin-left: 1em"/>
 
-    npm install <%= @document.npm.name %>
+<%- @npm() %> is a fast, flexible, and lean implementation of core jQuery written by <%- @author() %> and designed specifically for the server.
+
+    <%- @install() %>
 
 ## Features
 
