@@ -21,6 +21,14 @@ description: mversion is an NPM, Bower, Jam, Ender module version handler.
 
     <%- @install() %>
 
+## Features
+
+* Update version by defining new semver valid version or a release string (major, minor, patch, build).
+* Use `-m` to auto commit and tag in Git. Apply optional message and use `%s` as placeholder for the updated version. Default message is `v%s` where `%s` is replaced with new version. For example:
+
+      $ mversion minor -m
+      $ mversion minor -m 'Bumped to v%s'
+
 ## CLI Usage
 
     $ mversion 0.0.5 -m
