@@ -5,10 +5,10 @@
         <description><![CDATA[Daily dose of awesome NPM modules for Node.js, old and new!]]></description>
         <link>http://npmawesome.com</link>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Tue, 28 Jan 2014 02:08:19 GMT</lastBuildDate>
+        <lastBuildDate>Tue, 28 Jan 2014 02:09:35 GMT</lastBuildDate>
         <atom:link href="http://npmawesome.com/rss" rel="self" type="application/rss+xml"/>
         <author><![CDATA[Alex Gorbatchev]]></author>
-        <pubDate>Tue, 28 Jan 2014 02:08:01 GMT</pubDate>
+        <pubDate>Tue, 28 Jan 2014 02:09:15 GMT</pubDate>
         <item>
             <title><![CDATA[mversion]]></title>
             <description><![CDATA[<p><img class="hide-on-mobile" src="https://0.gravatar.com/avatar/c1ad8925b70df4f6665315865511eafc" style="float: right; margin-left: 1em"/></p>
@@ -17,10 +17,11 @@
 <h2 id="features">Features</h2>
 <ul>
 <li>Update version by defining new semver valid version or a release string (major, minor, patch, build).</li>
-<li>Use <code>-m</code> to auto commit and tag in Git. Apply optional message and use <code>%s</code> as placeholder for the updated version. Default message is &#39;v%s&#39; where %s is replaced with new version. For example:</li>
-</ul>
+<li><p>Use <code>-m</code> to auto commit and tag in Git. Apply optional message and use <code>%s</code> as placeholder for the updated version. Default message is <code>v%s</code> where <code>%s</code> is replaced with new version. For example:</p>
 <pre><code>$ mversion minor -m
 $ mversion minor -m &#39;Bumped to v%s&#39;</code></pre>
+</li>
+</ul>
 <h2 id="cli-usage">CLI Usage</h2>
 <pre><code>$ mversion 0.0.5 -m
 New Version: 0.0.5
