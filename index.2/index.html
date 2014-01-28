@@ -1,0 +1,47 @@
+<!DOCTYPE html><head><link rel="alternate" title="RSS" type="application/rss+xml" href="http://feeds.feedburner.com/npmawesome"><link rel="stylesheet" type="text/css" media="all" href="/styles.css"><meta name="viewport" content="initial-scale=1, maximum-scale=1"><meta charset="utf-8"><title>npm awesome</title><meta property="og:image" content="http://npmawesome.com/images/posts/npm.png"><meta property="og:updated_time" content="1390583844000"><meta property="og:site_name" content="npm awesome"><meta property="og:type" content="blog"><meta property="og:url" content="http://npmawesome.com/index.2"><meta name="description" content="Daily dose of awesome NPM modules for Node.js, old and new!"><meta property="og:description" content="Daily dose of awesome NPM modules for Node.js, old and new!"></head><body><div class="container"><div class="row"><h1 id="logo"><a href="/"><span>npm awesome</span><span class="posts-counter">41</span></a></h1><div id="sub-title"><a href="http://npmjs.org">npm</a> picks, old and new by <a href="https://github.com/alexgorbatchev">Alex Gorbatchev</a></div></div><div class="row"><div class="main col"><article><header><h2><a href="/posts/2013-11-17-flake">flake</a></h2><div class="meta"><span>posted by <a href="https://github.com/alexgorbatchev">Alex Gorbatchev</a> on November 17th 2013</span><a href="http://npmawesome.com/posts/2013-11-17-flake#disqus_thread" class="comments"></a><div data-github-repo="chilts/flake" class="github-stars"></div></div></header><div><p><a href="https://github.com/chilts/flake">flake</a> can generate practically unique
+approximately sortable IDs in a distributed environment, similiar to
+Twitter’s <a href="https://github.com/twitter/snowflake">Snowflake</a>.</p>
+<pre><code>npm install flake</code></pre>
+<p>Use in distributed environments where you don’t have a central service
+which can be a single point of failure - perfect when you want
+everything to be redundant and independent of each other. Flake Id is
+made up of <code>timestamp-counter-pid-macaddress</code></p>
+<pre><code>&gt; var flake = require(&#39;flake&#39;)(&#39;eth0&#39;);
+&gt; console.log(flake());
+013b829b1520-0000-18f0-984be1b8b104
+&gt; console.log(flake());
+013b829b1527-0000-18f0-984be1b8b104
+&gt; console.log(flake());
+013b829b1527-0001-18f0-984be1b8b104</code></pre>
+<p>In the example above, <code>eth0</code> is used for machine’s network interface,
+but this is not guaranteed to work on your machine. You need to change
+it to something which exists on your machine. It’s easy to find it on
+your machine using <code>ifconfig</code> or something similiar.</p>
+<p>There are plenty of examples and information on the <a href="https://github.com/chilts/flake">github
+page</a>.</p>
+</div></article><footer class="pagination"><ul><li><a href="/index.1">Prev</a></li><li><a href="/">1</a></li><li><a href="/index.1">2</a></li><li class="active"><span>3</span></li><li class="disabled"><span>Next</span></li></ul></footer><script type="text/javascript">/* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+var disqus_shortname = 'npmawesome'; // required: replace example with your forum shortname
+
+/* * * DON'T EDIT BELOW THIS LINE * * */
+(function () {
+  var s = document.createElement('script'); s.async = true;
+  s.type = 'text/javascript';
+  s.src = 'http://' + disqus_shortname + '.disqus.com/count.js';
+  (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+}());</script></div><aside class="col"><div class="feedburner"><a href="http://feeds.feedburner.com/npmawesome"><img src="/images/feed.gif"></a></div><div class="other-posts"><h4>Previously...</h4><div><a href="/posts/2014-01-27-mversion">mversion</a></div><div><a href="/posts/2014-01-24-schema-inspector">schema-inspector</a></div><div><a href="/posts/2014-01-23-oboe-js">oboe.js</a></div><div><a href="/posts/2014-01-22-autoprefixer">autoprefixer</a></div><div><a href="/posts/2014-01-21-js-yaml">js-yaml</a></div><div><a href="/posts/2014-01-17-gaze">gaze</a></div><div><a href="/posts/2014-01-14-shortid">shortId</a></div><div><a href="/posts/2014-01-13-testium">testium</a></div><div><a href="/posts/2014-01-10-messageformat">messageformat.js</a></div><div><a href="/posts/2014-01-09-gulp">gulp</a></div><div><a href="/posts/2014-01-06-chalk">chalk</a></div><div><a href="/posts/2013-12-31-recluster">recluster</a></div><div><a href="/posts/2013-12-30-rework">rework</a></div><div><a href="/posts/2013-12-27-cheerio">cheerio</a></div><div><a href="/posts/2013-12-19-dat">dat</a></div><div><a href="/posts/2013-12-18-xregexp">xregexp</a></div><div><a href="/posts/2013-12-16-ect">ect</a></div><div><a href="/posts/2013-12-13-chrono">chrono</a></div><div><a href="/posts/2013-12-11-prettyjson">prettyjson</a></div><div><a href="/posts/2013-12-10-state">state</a></div><div><a href="/posts/2013-12-09-blessed">blessed</a></div><div><a href="/posts/2013-12-05-gm">gm</a></div><div><a href="/posts/2013-12-03-nak">nak</a></div><div><a href="/posts/2013-12-03-verymodel">VeryModel</a></div><div><a href="/posts/2013-11-26-rx-js">rx.js</a></div><div><a href="/posts/2013-11-26-docpad">docpad</a></div><div><a href="/posts/2013-11-25-grunt-angular-builder">grunt-angular-builder</a></div><div><a href="/posts/2013-11-22-event-stream">event-stream</a></div><div><a href="/posts/2013-11-21-bacon-js">bacon.js</a></div><div><a href="/posts/2013-11-20-spdy">node-spdy</a></div><div><a href="/posts/2013-11-19-json-mask">json-mask</a></div><div><a href="/posts/2013-11-18-pm2">pm2</a></div><div><a href="/posts/2013-11-18-npmd">npmd</a></div><div><a href="/posts/2013-11-18-nixt">nixt</a></div><div><a href="/posts/2013-11-17-vm-js">vm.js</a></div><div><a href="/posts/2013-11-17-node-jvm">node-jvm</a></div><div><a href="/posts/2013-11-17-flake">flake</a></div></div></aside></div></div><a id="fork-me" href="https://github.com/alexgorbatchev/npm-awesome-site" class="hide-on-mobile">Fork Me</a></body><script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+// http://drawingablank.me/blog/fix-your-bounce-rate.html
+// https://news.ycombinator.com/item?id=5766883
+setTimeout(function() {
+  window.onscroll = function() {
+    window.onscroll = null; // Only track the event once
+    ga('send', 'scroll', 'read');
+  }
+}, 5000);
+
+ga('create', 'UA-46164085-1', 'npmawesome.com');
+ga('send', 'pageview');
+</script><script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script><script src="/scripts/npmawesome.bundle.js"></script>

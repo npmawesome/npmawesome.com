@@ -5,10 +5,52 @@
         <description><![CDATA[Daily dose of awesome NPM modules for Node.js, old and new!]]></description>
         <link>http://npmawesome.com</link>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Fri, 24 Jan 2014 17:47:11 GMT</lastBuildDate>
+        <lastBuildDate>Tue, 28 Jan 2014 02:03:12 GMT</lastBuildDate>
         <atom:link href="http://npmawesome.com/rss" rel="self" type="application/rss+xml"/>
         <author><![CDATA[Alex Gorbatchev]]></author>
-        <pubDate>Fri, 24 Jan 2014 17:44:13 GMT</pubDate>
+        <pubDate>Tue, 28 Jan 2014 02:00:40 GMT</pubDate>
+        <item>
+            <title><![CDATA[mversion]]></title>
+            <description><![CDATA[<p><img class="hide-on-mobile" src="https://0.gravatar.com/avatar/c1ad8925b70df4f6665315865511eafc" style="float: right; margin-left: 1em"/></p>
+<p><a href="https://github.com/mikaelbr/mversion">mversion</a> is an NPM, Bower, Jam, Ender module version handler. It imitates <a href="https://npmjs.org/doc/version.html"><code>npm version</code></a> to also work on other packaging files. For those times you have either have multiple packaging files (like <code>bower.json</code>, <code>component.json</code>, <code>manifest.json</code>) or just not a <code>package.json</code> file. <code>mversion</code> can easily bump your version and optionally commit and create a tag.</p>
+<pre><code>npm install mversion</code></pre>
+<h2 id="cli-usage">CLI Usage</h2>
+<pre><code>$ mversion 0.0.5 -m
+New Version: 0.0.5
+Updated package.json
+Updated component.json
+Updated manifest.json
+Commited to git and created tag v0.0.5</code></pre>
+<h2 id="api-usage">API Usage</h2>
+<pre><code>var mversion = require(&#39;mversion&#39;);
+
+mversion.get(function (err, data) {
+  /*
+    data = {
+      &#39;package.json&#39;: VERSION,
+      &#39;component.json&#39;: VERSION
+    }
+  */
+});
+
+mversion.update(&#39;minor&#39;, function (err, data) { })
+mversion.update(&#39;major&#39;, function (err, data) { })
+mversion.update(&#39;major&#39;, &#39;Some commit message for version %s&#39;, function (err, data) { }) // Will commit/tag
+mversion.update(&#39;patch&#39;, function (err, data) { })
+mversion.update(&#39;build&#39;, function (err, data) { })
+mversion.update(&#39;0.0.1&#39;, &#39;Bumping version&#39;, function (err, data) { }) // Will commit/tag
+mversion.update(&#39;v1.0.1&#39;, function (err, data) { })
+mversion.update(&#39;v1.0.1-beta&#39;, function (err, data) { })
+mversion.update(&#39;v1.0.1-010988&#39;, function (err, data) { })</code></pre>
+<h2 id="gulp">Gulp</h2>
+<p>Of course, <a href="https://github.com/mikaelbr">Mikael Brevik</a> has <a href="https://github.com/mikaelbr/gulp-mversion">gulp.js plugin</a> to help you with automate build and deploy process.</p>
+]]></description>
+            <link>http://npmawesome.com/posts/2014-01-27-mversion</link>
+            <guid isPermaLink="true">
+                http://npmawesome.com/posts/2014-01-27-mversion            </guid>
+            <dc:creator><![CDATA[Alex Gorbatchev]]></dc:creator>
+            <pubDate>Fri, 24 Jan 2014 17:17:24 GMT</pubDate>
+        </item>
         <item>
             <title><![CDATA[schema-inspector]]></title>
             <description><![CDATA[<div style="text-align: center"><img class="hide-on-mobile" src="/images/posts/schema-inspector.png" style="margin-bottom: 1em" /></div>
@@ -500,45 +542,6 @@ gulp.task(&#39;default&#39;, function() {
                 http://npmawesome.com/posts/2014-01-09-gulp            </guid>
             <dc:creator><![CDATA[Alex Gorbatchev]]></dc:creator>
             <pubDate>Thu, 09 Jan 2014 17:57:52 GMT</pubDate>
-        </item>
-        <item>
-            <title><![CDATA[chalk]]></title>
-            <description><![CDATA[<p><a href="https://github.com/sindresorhus/chalk">chalk</a> is a clean and focused alternative to <a href="https://github.com/Marak/colors.js">colors.js</a>, which is currently the most popular string styling module, but it has serious deficiencies like extending String.prototype which causes all kinds of <a href="https://github.com/yeoman/yo/issues/68">problems</a>. Although there are other ones, they either do too much or not enough.</p>
-<pre><code>npm install chalk</code></pre>
-<p><img class="hide-on-mobile" src="/images/posts/chalk.png" style="width: 250px; float: right" /></p>
-<h2 id="why">Why</h2>
-<ul>
-<li><strong>Doesn&#39;t extend String.prototype</strong></li>
-<li>Expressive API</li>
-<li>Clean and focused</li>
-<li>Auto-detects color support</li>
-<li>Actively maintained</li>
-<li><a href="https://npmjs.org/browse/depended/chalk">Used by 150+ modules</a></li>
-</ul>
-<h2 id="example">Example</h2>
-<pre><code>var chalk = require(&#39;chalk&#39;);
-
-// style a string
-console.log(  chalk.blue(&#39;Hello world!&#39;)  );
-
-// combine styled and normal strings
-console.log(  chalk.blue(&#39;Hello&#39;), &#39;World&#39; + chalk.red(&#39;!&#39;)  );
-
-// compose multiple styles using the chainable API
-console.log(  chalk.blue.bgRed.bold(&#39;Hello world!&#39;)  );
-
-// nest styles
-console.log(  chalk.red(&#39;Hello&#39;, chalk.underline.bgBlue(&#39;world&#39;) + &#39;!&#39;)  );
-
-// pass in multiple arguments
-console.log(  chalk.blue(&#39;Hello&#39;, &#39;World!&#39;, &#39;Foo&#39;, &#39;bar&#39;, &#39;biz&#39;, &#39;baz&#39;)  );</code></pre>
-<p><a href="https://github.com/sindresorhus/chalk">chalk</a> was written by <a href="https://github.com/sindresorhus">Sindre Sorhus</a> <a href="https://twitter.com/sindresorhus">@sindresorhus</a> who&#39;s got a ton of other opensource work. Thank you!</p>
-]]></description>
-            <link>http://npmawesome.com/posts/2014-01-06-chalk</link>
-            <guid isPermaLink="true">
-                http://npmawesome.com/posts/2014-01-06-chalk            </guid>
-            <dc:creator><![CDATA[Alex Gorbatchev]]></dc:creator>
-            <pubDate>Tue, 07 Jan 2014 00:17:02 GMT</pubDate>
         </item>
     </channel>
 </rss>
