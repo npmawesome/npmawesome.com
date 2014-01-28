@@ -5,15 +5,23 @@
         <description><![CDATA[Daily dose of awesome NPM modules for Node.js, old and new!]]></description>
         <link>http://npmawesome.com</link>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Tue, 28 Jan 2014 02:03:12 GMT</lastBuildDate>
+        <lastBuildDate>Tue, 28 Jan 2014 02:06:59 GMT</lastBuildDate>
         <atom:link href="http://npmawesome.com/rss" rel="self" type="application/rss+xml"/>
         <author><![CDATA[Alex Gorbatchev]]></author>
-        <pubDate>Tue, 28 Jan 2014 02:00:40 GMT</pubDate>
+        <pubDate>Tue, 28 Jan 2014 02:06:41 GMT</pubDate>
         <item>
             <title><![CDATA[mversion]]></title>
             <description><![CDATA[<p><img class="hide-on-mobile" src="https://0.gravatar.com/avatar/c1ad8925b70df4f6665315865511eafc" style="float: right; margin-left: 1em"/></p>
 <p><a href="https://github.com/mikaelbr/mversion">mversion</a> is an NPM, Bower, Jam, Ender module version handler. It imitates <a href="https://npmjs.org/doc/version.html"><code>npm version</code></a> to also work on other packaging files. For those times you have either have multiple packaging files (like <code>bower.json</code>, <code>component.json</code>, <code>manifest.json</code>) or just not a <code>package.json</code> file. <code>mversion</code> can easily bump your version and optionally commit and create a tag.</p>
 <pre><code>npm install mversion</code></pre>
+<h2 id="features">Features</h2>
+<ul>
+<li>Update version by defining new semver valid version or a release string (major, minor, patch, build).</li>
+<li><p>Use <code>-m</code> to auto commit and tag in Git. Apply optional message and use <code>%s</code> as placeholder for the updated version. Default message is &#39;v%s&#39; where %s is replaced with new version. For example:</p>
+<p>  $ mversion minor -m
+  $ mversion minor -m &#39;Bumped to v%s&#39;</p>
+</li>
+</ul>
 <h2 id="cli-usage">CLI Usage</h2>
 <pre><code>$ mversion 0.0.5 -m
 New Version: 0.0.5
