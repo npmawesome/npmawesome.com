@@ -4,11 +4,10 @@
 <h2 id="features">Features</h2>
 <ul>
 <li>Update version by defining new semver valid version or a release string (major, minor, patch, build).</li>
-<li><p>Use <code>-m</code> to auto commit and tag in Git. Apply optional message and use <code>%s</code> as placeholder for the updated version. Default message is &#39;v%s&#39; where %s is replaced with new version. For example:</p>
-<p>  $ mversion minor -m
-  $ mversion minor -m &#39;Bumped to v%s&#39;</p>
-</li>
+<li>Use <code>-m</code> to auto commit and tag in Git. Apply optional message and use <code>%s</code> as placeholder for the updated version. Default message is &#39;v%s&#39; where %s is replaced with new version. For example:</li>
 </ul>
+<pre><code>$ mversion minor -m
+$ mversion minor -m &#39;Bumped to v%s&#39;</code></pre>
 <h2 id="cli-usage">CLI Usage</h2>
 <pre><code>$ mversion 0.0.5 -m
 New Version: 0.0.5
