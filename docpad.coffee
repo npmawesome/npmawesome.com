@@ -32,6 +32,9 @@ docpadConfig =
       {author} = npm or {}
       """<a href="#{@githubUrl author.github}">#{author.name}</a>""" if author?
 
+    install: ({npm} = @document) ->
+      """npm install #{npm.name}"""
+
     by: (doc = @document) ->
       slug = doc.author or 'alexgorbatchev'
       author = CONTRIBUTORS[slug]

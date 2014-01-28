@@ -1,0 +1,126 @@
+---
+layout: post
+date: 2014-01-24T09:17:24-0800
+tags: npm, json, validation
+
+npm:
+  repo: &repo Atinux/schema-inspector
+  name: &name schema-inspector
+
+  author:
+    name: Sébastien Chopin
+    github: Atinux
+
+slug: *name
+title: *name
+description: Schema-Inspector is a powerful tool to sanitize and validate JS objects.
+---
+<div style="text-align: center"><img class="hide-on-mobile" src="/images/posts/schema-inspector.png" style="margin-bottom: 1em" /></div>
+
+<img class="hide-on-mobile" src="https://0.gravatar.com/avatar/16c362a6f8dbbedbc3bf13d001c6b286" style="float: right; margin-left: 1em"/>
+
+<%- @npm() %> is a powerful tool to sanitize and validate JS objects written by <%- @author() %>. It's disigned to work both client-side and server-side and to be scalable with allowing asynchronous and synchronous calls. There's support for object validation and sanitazation with a very simple schema definition.
+
+    <%- @install() %>
+
+## Usage
+
+    var inspector = require('schema-inspector');
+
+    var schema = {
+      type: 'object',
+      properties: {
+        lorem: { type: 'string', eq: 'ipsum' },
+        dolor: {
+          type: 'array',
+          items: { type: 'number' }
+        }
+      }
+    };
+
+    var candidate = {
+      lorem: 'not_ipsum',
+      dolor: [ 12, 34, 'ERROR', 45, 'INVALID' ]
+    };
+    var result = inspector.validate(schema, candidate); // Candidate is not valid
+    console.log(result.format());
+
+    /*
+      Property @.lorem: must be equal to "ipsum", but is equal to "not_ipsum"
+      Property @.dolor[2]: must be number, but is string
+      Property @.dolor[4]: must be number, but is string
+    */
+
+## More
+
+Object validation can come in extremely handy when you are writing APIs. On one end you can validate user input:
+
+    var express = require('express');
+    var inspector = require('schema-inspector');
+    var app = express();
+
+    var schema = {
+      type: 'object',
+      properties: {
+        title: { type: 'string', ne: '' },
+        message: { type: 'string', ne: '' }
+      }
+    };
+
+    app.post('/api', function(req, res, next) {
+      var post = req.body;
+      var validation = inspector.validate(schema, post);
+
+      if(!validation.valid) {
+        return res.send(validation.errors, 400);
+      }
+
+      res.send({status: 'ok'});
+    });
+
+On the flip side, you can use the <%- @npm() %> to validate API response in your tests:
+
+    var request = require('request');
+    var inspector = require('schema-inspector');
+
+    var schema = {
+      type: 'object',
+      properties: {
+        statusCode: { type: 'number', eq: 200 },
+        body: { type: 'object', properties: {
+          status: { type: 'string', eq: 'ok' }
+        }}
+      }
+    };
+
+    describe('POST /api', function()
+    {
+      var response;
+
+      before(function(done) {
+        request(
+          {
+            url: '/api',
+            json: { title: 'Hello!', message: 'First Post' }
+            method: 'POST'
+          },
+          function(err, r) {
+            response = {
+              statusCode: r.statusCode,
+              body: r.body
+            };
+            done()
+          }
+        );
+      });
+
+      it('validates', function() {
+        var validation = inspector.validate(schema, response);
+
+        if(!validation.valid) {
+          throw new Error(validation.format());
+        }
+      });
+    });
+
+In the end, you have a strong contract between your APIs, consumer and your tests with just a few lines of code. I'm loving this! The [documentation](http://atinux.github.io/schema-inspector/) site is very good and I strongly recommend checking it out.
