@@ -1,0 +1,111 @@
+---
+layout: post
+date: 2014-01-29T09:37:23-0800
+tags: npm, rest, api
+
+npm:
+  repo: &repo njoyard/yarm
+  name: &name yarm
+
+  author:
+    name: Nicolas Joyard
+    github: njoyard
+
+slug: *name
+title: *name
+description: YARM is Yet Another REST Module for node.js and Express.
+---
+<img class="hide-on-mobile" src="https://0.gravatar.com/avatar/b928accd038cf24ef3f14cb5dd758b04" style="float: right; margin-left: 1em"/>
+
+<%- @npm() %> is Yet Another REST Middleware for node.js and Express written by <%- @author() %>. It has no dependencies, however it is intended to be used with [Express](http://expressjs.com/) and will have additional features if [Mongoose](http://mongoosejs.com/) is present.
+
+    <%- @install() %>
+
+## Features
+
+The list of features is very extensive. <%- @npm() %> creates REST style APIs for native objects, [Mongoose](http://mongoosejs.com/) and allows you to have pretty tight control over what's happening. There's a long list of customization options that let you specify output format, what's included, how MongoDB collection are fetched, permissions and so.
+
+## Usage
+
+    var app = require("express")();
+    var yarm = require("yarm");
+    var mongoose = require("mongoose");
+
+    app.use("/rest", yarm());
+
+    var postSchema = new mongoose.Schema({
+      title: String,
+      text: String,
+      comments: [{
+        author: String,
+        text: String
+      }]
+    });
+
+    var Post = mongoose.model("post", postSchema);
+
+    yarm.mongoose("posts", Post);
+
+    app.listen(80);
+
+    $ curl http://localhost/rest/posts?skip=10&limit=1
+    {
+      "_count": 42,
+      "_items": [
+        {
+          "_id": "507f191e810c19729de860ea",
+          "title": "My 11th post",
+          "text": "Hello, World",
+          "comments": [
+            {
+              "author": "Bob",
+              "text": "First !"
+            }
+          ]
+        }
+      ]
+    }
+
+    $ curl http://localhost/rest/posts/507f191e810c19729de860ea
+    {
+      "_id": "507f191e810c19729de860ea",
+      "title": "My 11th post",
+      "text": "Hello, World",
+      "comments": [
+        {
+          "author": "Bob",
+          "text": "First !"
+        }
+      ]
+    }
+
+    $ curl http://localhost/rest/posts/507f191e810c19729de860ea/comments/0/text
+    First !
+
+You can roll your own:
+
+    resource
+      .get(function(req, cb) {
+        // GET handler
+      })
+      .put(function(req, isPatch, cb) {
+        // PUT and PATCH handler
+      })
+      .post(function(req, cb) {
+        // POST handler
+      })
+      .del(function(req, cb) {
+        // DELETE handler
+      });
+
+Of course, you can have nested resources.
+
+    yarm.resource("/posts/:pid").sub("comments/:cid/*").get(function(req, cb) {
+      cb(null, { ... });
+    });
+
+    $ curl http://localhost/rest/posts/first-post/comments/3/foo/bar
+    ...
+
+Check out <%- @npm() %> github page for complete documentation. How do you handle your APIs?
+
