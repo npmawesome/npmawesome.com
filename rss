@@ -5,10 +5,170 @@
         <description><![CDATA[Daily dose of awesome NPM modules for Node.js, old and new!]]></description>
         <link>http://npmawesome.com</link>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Tue, 28 Jan 2014 02:09:35 GMT</lastBuildDate>
+        <lastBuildDate>Wed, 29 Jan 2014 18:26:51 GMT</lastBuildDate>
         <atom:link href="http://npmawesome.com/rss" rel="self" type="application/rss+xml"/>
         <author><![CDATA[Alex Gorbatchev]]></author>
-        <pubDate>Tue, 28 Jan 2014 02:09:15 GMT</pubDate>
+        <pubDate>Wed, 29 Jan 2014 18:11:34 GMT</pubDate>
+        <item>
+            <title><![CDATA[yarm]]></title>
+            <description><![CDATA[<p><img class="hide-on-mobile" src="https://0.gravatar.com/avatar/b928accd038cf24ef3f14cb5dd758b04" style="float: right; margin-left: 1em"/></p>
+<p><a href="https://github.com/njoyard/yarm">yarm</a> is Yet Another REST Middleware for node.js and Express written by <a href="https://github.com/njoyard">Nicolas Joyard</a>. It has no dependencies, however it is intended to be used with <a href="http://expressjs.com/">Express</a> and will have additional features if <a href="http://mongoosejs.com/">Mongoose</a> is present.</p>
+<pre><code>npm install yarm</code></pre>
+<h2 id="features">Features</h2>
+<p>The list of features is very extensive. <a href="https://github.com/njoyard/yarm">yarm</a> creates REST style APIs for native objects, <a href="http://mongoosejs.com/">Mongoose</a> and allows you to have pretty tight control over what&#39;s happening. There&#39;s a long list of customization options that let you specify output format, what&#39;s included, how MongoDB collection are fetched, permissions and so.</p>
+<h2 id="usage">Usage</h2>
+<pre><code>var app = require(&quot;express&quot;)();
+var yarm = require(&quot;yarm&quot;);
+var mongoose = require(&quot;mongoose&quot;);
+
+app.use(&quot;/rest&quot;, yarm());
+
+var postSchema = new mongoose.Schema({
+  title: String,
+  text: String,
+  comments: [{
+    author: String,
+    text: String
+  }]
+});
+
+var Post = mongoose.model(&quot;post&quot;, postSchema);
+
+yarm.mongoose(&quot;posts&quot;, Post);
+
+app.listen(80);
+
+$ curl http://localhost/rest/posts?skip=10&amp;limit=1
+{
+  &quot;_count&quot;: 42,
+  &quot;_items&quot;: [
+    {
+      &quot;_id&quot;: &quot;507f191e810c19729de860ea&quot;,
+      &quot;title&quot;: &quot;My 11th post&quot;,
+      &quot;text&quot;: &quot;Hello, World&quot;,
+      &quot;comments&quot;: [
+        {
+          &quot;author&quot;: &quot;Bob&quot;,
+          &quot;text&quot;: &quot;First !&quot;
+        }
+      ]
+    }
+  ]
+}
+
+$ curl http://localhost/rest/posts/507f191e810c19729de860ea
+{
+  &quot;_id&quot;: &quot;507f191e810c19729de860ea&quot;,
+  &quot;title&quot;: &quot;My 11th post&quot;,
+  &quot;text&quot;: &quot;Hello, World&quot;,
+  &quot;comments&quot;: [
+    {
+      &quot;author&quot;: &quot;Bob&quot;,
+      &quot;text&quot;: &quot;First !&quot;
+    }
+  ]
+}
+
+$ curl http://localhost/rest/posts/507f191e810c19729de860ea/comments/0/text
+First !</code></pre>
+<p>You can roll your own:</p>
+<pre><code>resource
+  .get(function(req, cb) {
+    // GET handler
+  })
+  .put(function(req, isPatch, cb) {
+    // PUT and PATCH handler
+  })
+  .post(function(req, cb) {
+    // POST handler
+  })
+  .del(function(req, cb) {
+    // DELETE handler
+  });</code></pre>
+<p>Of course, you can have nested resources.</p>
+<pre><code>yarm.resource(&quot;/posts/:pid&quot;).sub(&quot;comments/:cid/*&quot;).get(function(req, cb) {
+  cb(null, { ... });
+});
+
+$ curl http://localhost/rest/posts/first-post/comments/3/foo/bar
+...</code></pre>
+<p>Check out <a href="https://github.com/njoyard/yarm">yarm</a> github page for complete documentation. How do you handle your APIs?</p>
+]]></description>
+            <link>http://npmawesome.com/posts/2014-01-29-yarm</link>
+            <guid isPermaLink="true">http://npmawesome.com/posts/2014-01-29-yarm</guid>
+            <dc:creator><![CDATA[Alex Gorbatchev]]></dc:creator>
+            <pubDate>Wed, 29 Jan 2014 17:37:23 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[modella]]></title>
+            <description><![CDATA[<p><img class="hide-on-mobile" src="https://2.gravatar.com/avatar/824b41e6108a22c4c96f50ee23419369" style="float: right; margin-left: 1em"/></p>
+<p><a href="https://github.com/modella/modella">modella</a> is a bare bones model framework written by <a href="https://github.com/matthewmueller">Matthew Mueller</a> of the <a href="/posts/2013-12-27-cheerio/">cheerio</a> fame. It exposes a few APIs on which plugins can be built to enhance functionality. The core module and select plugins work on the client and server.</p>
+<pre><code>npm install modella</code></pre>
+<h2 id="plugins">Plugins</h2>
+<p>Most of functionality comes bundles as plugins:</p>
+<ul>
+<li><p>Adapter (Sync Layer) Plugins</p>
+<ul>
+<li><a href="https://github.com/modella/ajax">ajax</a> - RESTful AJAX HTTP adapter.</li>
+<li><a href="https://github.com/modella/ejdb">ejdb</a> - Ejdb database adapter.</li>
+<li><a href="https://github.com/modella/leveldb">leveldb</a> - LevelDB adapter.</li>
+<li><a href="https://github.com/modella/mongo">mongo</a> - MongoDB adapter.</li>
+<li><a href="https://github.com/alexmingoia/modella-mysql">modella-mysql</a> - MySQL adapter.</li>
+<li><a href="https://github.com/alexmingoia/modella-memory">modella-memory</a> - In-memory adapter.</li>
+</ul>
+</li>
+<li><p>Attribute Utilities</p>
+<ul>
+<li><a href="https://github.com/modella/validators">validators</a> - Validations for attributes</li>
+<li><a href="https://github.com/modella/slug">slug</a> - Slug generation on attributes</li>
+<li><a href="https://github.com/ramitos/modella-level-relations">modella-level-relations</a> - LevelUP based modella relations</li>
+</ul>
+</li>
+<li><p>Security Plugins</p>
+<ul>
+<li><a href="https://github.com/modella/auth">auth</a> - Authorization plugin.</li>
+<li><a href="https://github.com/modella/filter">filter</a> - Filter sensitive fields from a JSON blob.</li>
+<li><a href="https://github.com/modella/protection">protection</a> - Mass-assignment protection.</li>
+</ul>
+</li>
+<li><p>Misc</p>
+<ul>
+<li><a href="https://github.com/alexmingoia/modella-resource">modella-resource</a> - Expose <a href="https://github.com/modella/modella">modella</a> models via RESTful resource middleware (for use with Express).</li>
+<li><a href="https://github.com/modella/friendly-errors">friendly-errors</a> - add friendly error messages to attributes.</li>
+<li><a href="https://github.com/modella/save-invalid">save-invalid</a> - Save invalid models and mark them as dirty in the database.</li>
+</ul>
+</li>
+</ul>
+<h2 id="usage">Usage</h2>
+<pre><code>var modella = require(&#39;modella&#39;);
+var validators = require(&#39;modella-validators&#39;);
+var mongo = require(&#39;modella-mongo&#39;)(&#39;localhost/db&#39;)
+var User = modella(&#39;User&#39;);
+
+User.use(validators);
+User.use(mongo);
+
+User
+  .attr(&#39;_id&#39;)
+  .attr(&#39;username&#39;, { required: true })
+  .attr(&#39;email&#39;, { required: true, format: &#39;email&#39; });
+
+User.index(&#39;email&#39;, { unique : true });
+
+var user = new User({ name: &#39;Charley&#39; });
+
+user.save(function(err) {
+  User.find(user._id, function(err, u) {
+    console.log(u.username());
+  });
+});</code></pre>
+<p>If you feel disgrundled with Mongoose or just tired of using the raw driver, give <a href="https://github.com/modella/modella">modella</a> a try!</p>
+]]></description>
+            <link>http://npmawesome.com/posts/2014-01-28-modella</link>
+            <guid isPermaLink="true">http://npmawesome.com/posts/2014-01-28-modella</guid>
+            <dc:creator><![CDATA[Alex Gorbatchev]]></dc:creator>
+            <pubDate>Tue, 28 Jan 2014 17:56:33 GMT</pubDate>
+        </item>
         <item>
             <title><![CDATA[mversion]]></title>
             <description><![CDATA[<p><img class="hide-on-mobile" src="https://0.gravatar.com/avatar/c1ad8925b70df4f6665315865511eafc" style="float: right; margin-left: 1em"/></p>
@@ -54,10 +214,9 @@ mversion.update(&#39;v1.0.1-010988&#39;, function (err, data) { })</code></pre>
 <p>Of course, <a href="https://github.com/mikaelbr">Mikael Brevik</a> has <a href="https://github.com/mikaelbr/gulp-mversion">gulp.js plugin</a> to help you with automate build and deploy process.</p>
 ]]></description>
             <link>http://npmawesome.com/posts/2014-01-27-mversion</link>
-            <guid isPermaLink="true">
-                http://npmawesome.com/posts/2014-01-27-mversion            </guid>
+            <guid isPermaLink="true">http://npmawesome.com/posts/2014-01-27-mversion</guid>
             <dc:creator><![CDATA[Alex Gorbatchev]]></dc:creator>
-            <pubDate>Fri, 24 Jan 2014 17:17:24 GMT</pubDate>
+            <pubDate>Tue, 28 Jan 2014 01:47:14 GMT</pubDate>
         </item>
         <item>
             <title><![CDATA[schema-inspector]]></title>
@@ -162,8 +321,7 @@ describe(&#39;POST /api&#39;, function()
 <p>In the end, you have a strong contract between your APIs, consumer and your tests with just a few lines of code. I&#39;m loving this! The <a href="http://atinux.github.io/schema-inspector/">documentation</a> site is very good and I strongly recommend checking it out.</p>
 ]]></description>
             <link>http://npmawesome.com/posts/2014-01-24-schema-inspector</link>
-            <guid isPermaLink="true">
-                http://npmawesome.com/posts/2014-01-24-schema-inspector            </guid>
+            <guid isPermaLink="true">http://npmawesome.com/posts/2014-01-24-schema-inspector</guid>
             <dc:creator><![CDATA[Alex Gorbatchev]]></dc:creator>
             <pubDate>Fri, 24 Jan 2014 17:17:24 GMT</pubDate>
         </item>
@@ -218,8 +376,7 @@ oboe(&#39;http://localhost/myapp/things.json&#39;)
 <p>Have you used streaming JSON parser before?</p>
 ]]></description>
             <link>http://npmawesome.com/posts/2014-01-23-oboe-js</link>
-            <guid isPermaLink="true">
-                http://npmawesome.com/posts/2014-01-23-oboe-js            </guid>
+            <guid isPermaLink="true">http://npmawesome.com/posts/2014-01-23-oboe-js</guid>
             <dc:creator><![CDATA[Alex Gorbatchev]]></dc:creator>
             <pubDate>Thu, 23 Jan 2014 17:46:38 GMT</pubDate>
         </item>
@@ -253,8 +410,7 @@ oboe(&#39;http://localhost/myapp/things.json&#39;)
 <p>Do you use a CSS preprocessor? Which one?</p>
 ]]></description>
             <link>http://npmawesome.com/posts/2014-01-22-autoprefixer</link>
-            <guid isPermaLink="true">
-                http://npmawesome.com/posts/2014-01-22-autoprefixer            </guid>
+            <guid isPermaLink="true">http://npmawesome.com/posts/2014-01-22-autoprefixer</guid>
             <dc:creator><![CDATA[Alex Gorbatchev]]></dc:creator>
             <pubDate>Wed, 22 Jan 2014 17:35:00 GMT</pubDate>
         </item>
@@ -279,8 +435,7 @@ title: *name</code></pre>
 <p>YAML is awesome! I wish <code>package.json</code> was <code>package.yaml</code>. Are you using YAML in your project?</p>
 ]]></description>
             <link>http://npmawesome.com/posts/2014-01-21-js-yaml</link>
-            <guid isPermaLink="true">
-                http://npmawesome.com/posts/2014-01-21-js-yaml            </guid>
+            <guid isPermaLink="true">http://npmawesome.com/posts/2014-01-21-js-yaml</guid>
             <dc:creator><![CDATA[Alex Gorbatchev]]></dc:creator>
             <pubDate>Tue, 21 Jan 2014 17:11:30 GMT</pubDate>
         </item>
@@ -333,8 +488,7 @@ gaze([&#39;stylesheets/*.css&#39;, &#39;images/**/*.png&#39;], function() {
 <p>Are you using any file watchers in your project?</p>
 ]]></description>
             <link>http://npmawesome.com/posts/2014-01-17-gaze</link>
-            <guid isPermaLink="true">
-                http://npmawesome.com/posts/2014-01-17-gaze            </guid>
+            <guid isPermaLink="true">http://npmawesome.com/posts/2014-01-17-gaze</guid>
             <dc:creator><![CDATA[Alex Gorbatchev]]></dc:creator>
             <pubDate>Sat, 18 Jan 2014 01:50:40 GMT</pubDate>
         </item>
@@ -407,8 +561,7 @@ long random()
 <p>Should the function in <a href="https://github.com/dylang/shortid">shortId</a> be patched? Thoughts?</p>
 ]]></description>
             <link>http://npmawesome.com/posts/2014-01-14-shortid</link>
-            <guid isPermaLink="true">
-                http://npmawesome.com/posts/2014-01-14-shortid            </guid>
+            <guid isPermaLink="true">http://npmawesome.com/posts/2014-01-14-shortid</guid>
             <dc:creator><![CDATA[Alex Gorbatchev]]></dc:creator>
             <pubDate>Wed, 15 Jan 2014 00:33:38 GMT</pubDate>
         </item>
@@ -456,100 +609,9 @@ describe &#39;browse&#39;, -&gt;
 <p>On the side note, super excited to find out that Groupon is using CoffeeScript! Are you?</p>
 ]]></description>
             <link>http://npmawesome.com/posts/2014-01-13-testium</link>
-            <guid isPermaLink="true">
-                http://npmawesome.com/posts/2014-01-13-testium            </guid>
+            <guid isPermaLink="true">http://npmawesome.com/posts/2014-01-13-testium</guid>
             <dc:creator><![CDATA[Alex Gorbatchev]]></dc:creator>
             <pubDate>Mon, 13 Jan 2014 20:49:41 GMT</pubDate>
-        </item>
-        <item>
-            <title><![CDATA[messageformat.js]]></title>
-            <description><![CDATA[<p><a href="https://github.com/SlexAxton/messageformat.js">messageformat.js</a> is a module by <a href="https://github.com/SlexAxton">Alex Sexton</a> (<a href="https://twitter.com/SlexAxton">@SlexAxton</a>) for handling both <em>pluralization</em> and <em>gender</em> in your applications. It can also lead to much better translations, as it was built by <a href="http://icu-project.org/apiref/icu4j/com/ibm/icu/text/MessageFormat.html">ICU</a> to help solve those two problems for all known <a href="http://cldr.unicode.org/">CLDR</a> languages - likely all the ones you care about.</p>
-<pre><code>npm install messageformat.js</code></pre>
-<h2 id="features">Features</h2>
-<p><img class="hide-on-mobile" src="/images/posts/messageformat.png" style="width: 150px; float: right" /></p>
-<p>MessageFormat in Java-land technically incorporates all other type formatting (and the older ChoiceFormat) directly into its messages, however, in the name of filesize, messageformat.js only strives to implement <strong>SelectFormat</strong> and <strong>PluralFormat</strong>. There are plans to pull in locale-aware <strong>NumberFormat</strong> parsing as a &quot;plugin&quot; to this library, but as of right now, it&#39;s best to pass things in preformatted (as suggested in the ICU docs).</p>
-<ul>
-<li>Handles arbitrary nesting of pluralization and select rules.</li>
-<li>Works on the server and the client.</li>
-<li>No i18n necessary - you can use it for just well-formed english sentences. <code>UX++;</code></li>
-<li>Speed: Compiles messages to JavaScript code.<ul>
-<li>This is great for speed. Message formatting is just string concatenation.</li>
-<li>Run a precompiler at build time and remove the need for most of the library. <code>filesize--;</code></li>
-</ul>
-</li>
-<li>Compatible with other languages that support MessageFormat</li>
-<li>Very whitespace tolerant.</li>
-<li>Supports unicode characters</li>
-<li>Most translation companies are beginning to be exposed to translations like this, even if it&#39;s not their core business.</li>
-</ul>
-<h2 id="example">Example</h2>
-<pre><code>var mf = new MessageFormat(&#39;en&#39;);
-var message = mf.compile(&#39;This is a message.&#39;); // returns a function
-
-message();
-// &quot;This is a message.&quot;
-
-message = mf.compile(&#39;His name is {NAME}.&#39;);
-message({ &quot;NAME&quot; : &quot;Jed&quot; });
-// &quot;His name is Jed.&quot;</code></pre>
-<p>Have you ever had to localize an application? What was your eperience like?</p>
-]]></description>
-            <link>http://npmawesome.com/posts/2014-01-10-messageformat</link>
-            <guid isPermaLink="true">
-                http://npmawesome.com/posts/2014-01-10-messageformat            </guid>
-            <dc:creator><![CDATA[Alex Gorbatchev]]></dc:creator>
-            <pubDate>Fri, 10 Jan 2014 18:24:37 GMT</pubDate>
-        </item>
-        <item>
-            <title><![CDATA[gulp]]></title>
-            <description><![CDATA[<p><a href="https://github.com/gulpjs/gulp">gulp</a> is a streaming build and task runner system. It&#39;s an alternative to the ever prelific <a href="http://gruntjs.com/">grunt.js</a>. There&#39;s been quite <a href="https://twitter.com/search?q=gulp%20grunt&amp;src=typd">a bit of buzz on the twitters</a>.</p>
-<pre><code>npm install gulp</code></pre>
-<h2 id="example">Example</h2>
-<p>This file is just a quick sample to give you a taste of what gulp does.</p>
-<pre><code>var gulp = require(&#39;gulp&#39;);
-var uglify = require(&#39;gulp-uglify&#39;);
-var imagemin = require(&#39;gulp-imagemin&#39;);
-
-gulp.task(&#39;scripts&#39;, function() {
-  // Minify and copy all JavaScript (except vendor scripts)
-  return gulp.src([&#39;client/js/**/*.js&#39;, &#39;!client/js/vendor/**&#39;])
-    .pipe(uglify())
-    .pipe(gulp.dest(&#39;build/js&#39;));
-});
-
-// Copy all static images
-gulp.task(&#39;images&#39;, function() {
- return gulp.src(&#39;client/img/**&#39;)
-    .pipe(imagemin())
-    .pipe(gulp.dest(&#39;build/img&#39;));
-});
-
-// The default task (called when you run `gulp`)
-gulp.task(&#39;default&#39;, function() {
-  gulp.run(&#39;scripts&#39;, &#39;images&#39;);
-
-  // Watch files and run tasks if they change
-  gulp.watch(&#39;client/js/**&#39;, function() {
-    gulp.run(&#39;scripts&#39;);
-  });
-
-  gulp.watch(&#39;client/img/**&#39;, function() {
-    gulp.run(&#39;images&#39;);
-  });
-});</code></pre>
-<p><img class="hide-on-mobile" src="/images/posts/gulp.png" style="width: 150px; float: right" /></p>
-<h2 id="opinion">Opinion</h2>
-<p>There&#39;s always a lot of excitement when a new thing comes out that promises to be better than the current thing. It seems to be especially true when the current thing is already pretty solid and just works. What gets to people are the edge cases and they feel annoyed and frustrated easily forgetting how smoothly the rest of the system works.</p>
-<p><a href="https://github.com/bevacqua">Nicolas Bevacqua</a> has written a <a href="http://blog.ponyfoo.com/2014/01/09/gulp-grunt-whatever">very interesting article</a> on the subject. My favorite quote:</p>
-<blockquote>
-<p>Make a choice by yourself, don&#39;t just pick something <em>because XYZ said so</em>. Pick the tool which works for you. The one you understand, are comfortable with. Above all, <strong>the one that fits your needs</strong>. Don&#39;t go blindly chasing the latest fad because someone else tells you to. Similarly, don&#39;t get stuck with monolithic jQuery applications (just to give out an example), try something else. Innovate. Be the change you want to see in the world.</p>
-</blockquote>
-]]></description>
-            <link>http://npmawesome.com/posts/2014-01-09-gulp</link>
-            <guid isPermaLink="true">
-                http://npmawesome.com/posts/2014-01-09-gulp            </guid>
-            <dc:creator><![CDATA[Alex Gorbatchev]]></dc:creator>
-            <pubDate>Thu, 09 Jan 2014 17:57:52 GMT</pubDate>
         </item>
     </channel>
 </rss>
