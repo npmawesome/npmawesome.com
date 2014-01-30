@@ -1,0 +1,72 @@
+---
+layout: post
+date: 2014-01-30T09:49:19-0800
+tags: npm, testing
+
+npm:
+  repo: &repo jhnns/rewire
+  name: &name rewire
+
+  author:
+    name: Johannes Ewald
+    github: jhnns
+
+slug: *name
+title: *name
+description: Rewire is a dependency injection module for node.js applications.
+---
+<%- @npm() %> is a dependency injection module for node.js applications written by <%- @author() %>. It adds a special setter and getter to modules so you can modify their behaviour for better unit testing.
+
+    <%- @install() %>
+
+## Features
+
+* Inject mocks for other modules or globals like process
+* Leak private variables
+* Override variables within the module
+* Works with CoffeeScript
+
+## Usage
+
+    var rewire = require("rewire");
+
+    // rewire acts exactly like require.
+    var myModule = rewire("./myModule.js");
+
+    // Just with one difference:
+    // Your module will now export a special setter and getter for private variables.
+    myModule.__set__("myPrivateVar", 123);
+    myModule.__get__("myPrivateVar"); // = 123
+
+    // This allows you to mock almost everything within the module e.g. the fs-module.
+    // Just pass the variable name as first parameter and your mock as second.
+    myModule.__set__("fs", {
+      readFile: function (path, encoding, cb) {
+        cb(null, "Success!");
+      }
+    });
+
+    myModule.readSomethingFromFileSystem(function (err, data) {
+      console.log(data); // = Success!
+    });
+
+    // You can set different variables with one call.
+    myModule.__set__({
+      fs: fsMock,
+      http: httpMock,
+      someOtherVar: "hello"
+    });
+
+    // You may also override globals. These changes are only within the module, so
+    // you don't have to be concerned that other modules are influenced by your mock.
+    myModule.__set__({
+      console: {
+        log: function () { /* be quiet */ }
+      }
+    });
+
+The biggest difference between `rewire` and `require` is that calling `rewire` multiple times gives you a new module instance every time. Something to keep in mind.
+
+This seems like a good and bad idea at the same time. The power to change and introspect private variables might lead to code that isn't exactly very suitable for tests. I find that writing code to be testable leads to much better code structure and I spend alot more time considering my API.
+
+What do you think?
