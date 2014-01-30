@@ -5,10 +5,67 @@
         <description><![CDATA[Daily dose of awesome NPM modules for Node.js, old and new!]]></description>
         <link>http://npmawesome.com</link>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Wed, 29 Jan 2014 18:26:51 GMT</lastBuildDate>
+        <lastBuildDate>Thu, 30 Jan 2014 18:13:50 GMT</lastBuildDate>
         <atom:link href="http://npmawesome.com/rss" rel="self" type="application/rss+xml"/>
         <author><![CDATA[Alex Gorbatchev]]></author>
-        <pubDate>Wed, 29 Jan 2014 18:11:34 GMT</pubDate>
+        <pubDate>Thu, 30 Jan 2014 18:13:29 GMT</pubDate>
+        <item>
+            <title><![CDATA[rewire]]></title>
+            <description><![CDATA[<p><a href="https://github.com/jhnns/rewire">rewire</a> is a dependency injection module for node.js applications written by <a href="https://github.com/jhnns">Johannes Ewald</a>. It adds a special setter and getter to modules so you can modify their behaviour for better unit testing.</p>
+<pre><code>npm install rewire</code></pre>
+<h2 id="features">Features</h2>
+<ul>
+<li>Inject mocks for other modules or globals like process</li>
+<li>Leak private variables</li>
+<li>Override variables within the module</li>
+<li>Works with CoffeeScript</li>
+</ul>
+<h2 id="usage">Usage</h2>
+<pre><code>var rewire = require(&quot;rewire&quot;);
+
+// rewire acts exactly like require.
+var myModule = rewire(&quot;./myModule.js&quot;);
+
+// Just with one difference:
+// Your module will now export a special setter and getter for private variables.
+myModule.__set__(&quot;myPrivateVar&quot;, 123);
+myModule.__get__(&quot;myPrivateVar&quot;); // = 123
+
+// This allows you to mock almost everything within the module e.g. the fs-module.
+// Just pass the variable name as first parameter and your mock as second.
+myModule.__set__(&quot;fs&quot;, {
+  readFile: function (path, encoding, cb) {
+    cb(null, &quot;Success!&quot;);
+  }
+});
+
+myModule.readSomethingFromFileSystem(function (err, data) {
+  console.log(data); // = Success!
+});
+
+// You can set different variables with one call.
+myModule.__set__({
+  fs: fsMock,
+  http: httpMock,
+  someOtherVar: &quot;hello&quot;
+});
+
+// You may also override globals. These changes are only within the module, so
+// you don&#39;t have to be concerned that other modules are influenced by your mock.
+myModule.__set__({
+  console: {
+    log: function () { /* be quiet */ }
+  }
+});</code></pre>
+<p>The biggest difference between <code>rewire</code> and <code>require</code> is that calling <code>rewire</code> multiple times gives you a new module instance every time. Something to keep in mind.</p>
+<p>This seems like a good and bad idea at the same time. The power to change and introspect private variables might lead to code that isn&#39;t exactly very suitable for tests. I find that writing code to be testable leads to much better code structure and I spend alot more time considering my API.</p>
+<p>What do you think?</p>
+]]></description>
+            <link>http://npmawesome.com/posts/2014-01-30-rewire</link>
+            <guid isPermaLink="true">http://npmawesome.com/posts/2014-01-30-rewire</guid>
+            <dc:creator><![CDATA[Alex Gorbatchev]]></dc:creator>
+            <pubDate>Thu, 30 Jan 2014 17:49:19 GMT</pubDate>
+        </item>
         <item>
             <title><![CDATA[yarm]]></title>
             <description><![CDATA[<p><img class="hide-on-mobile" src="https://0.gravatar.com/avatar/b928accd038cf24ef3f14cb5dd758b04" style="float: right; margin-left: 1em"/></p>
@@ -564,54 +621,6 @@ long random()
             <guid isPermaLink="true">http://npmawesome.com/posts/2014-01-14-shortid</guid>
             <dc:creator><![CDATA[Alex Gorbatchev]]></dc:creator>
             <pubDate>Wed, 15 Jan 2014 00:33:38 GMT</pubDate>
-        </item>
-        <item>
-            <title><![CDATA[testium]]></title>
-            <description><![CDATA[<p><a href="https://github.com/groupon/testium">testium</a> is a testing platform focused on providing a simple, but effective, platform for testing your code in different browsers (via Selenium) and headlessly (via PhantomJS). It uses <a href="https://github.com/groupon/webdriver-http-sync">webdriver-http-sync</a>
-which Groupon wrote in order to communicate using the WebDriver protocol to a Selenium server.</p>
-<pre><code>npm install testium</code></pre>
-<p><img class="hide-on-mobile" src="https://0.gravatar.com/avatar/f07c4699fa2274d2ad44323331ee8161?d=https%3A%2F%2Fidenticons.github.com%2Fa25772e176c9744a17818d2be63b2c20.png&r=x&s=400" style="width: 150px; float: right" /></p>
-<p><blockquote class="twitter-tweet" data-cards="hidden" lang="en"><p><a href="https://twitter.com/Groupon">@Groupon</a>&#39;s Browser Integration Testing platform <a href="https://twitter.com/search?q=%23Testium&amp;src=hash">#Testium</a> is now open source! <a href="https://twitter.com/search?q=%23nodejs&amp;src=hash">#nodejs</a> + Mocha + Selenium = Happy! <a href="https://t.co/lgXiRjflx0"><a href="https://t.co/lgXiRjflx0">https://t.co/lgXiRjflx0</a></a></p>&mdash; Jess Telford (@jesstelford) <a href="https://twitter.com/jesstelford/statuses/413382587348811776">December 18, 2013</a></blockquote></p>
-<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
-
-<p>From <a href="https://engineering.groupon.com/2014/misc/i-tier-testium/">the introductory article</a>:</p>
-<blockquote>
-<p>We wanted to write tests in JavaScript and Mocha with a synchronous API that takes advantage of our existing Selenium infrastructure. WD.js came close, but the challenge for full adoption came with the syntax, which is callback-based or promise-based. These are typical patterns in JavaScript projects, but for an integration testing tool, we only want to execute serial actions. A synchronous API made the most sense.</p>
-</blockquote>
-<p>and</p>
-<blockquote>
-<p>Further, there are existing technical limitations due to WebDriver being a common standard across all browsers. Some aspects can’t be implemented in a specific browser and therefore these features are not implemented at all.</p>
-<p>There are four specific issues with WebDriver we wanted to resolve:</p>
-<ul>
-<li>response status codes unavailable</li>
-<li>response headers unavailable</li>
-<li>request headers not modifiable</li>
-<li>page must be loaded to set cookies</li>
-</ul>
-</blockquote>
-<h2 id="example">Example</h2>
-<p>A simple test using <a href="https://github.com/groupon/assertive">assertive</a>.</p>
-<pre><code>{getBrowser} = require &#39;testium&#39;
-assert = require &#39;assertive&#39; # or whatever assert library you prefer
-
-describe &#39;browse&#39;, -&gt;
-  before -&gt;
-    @browser = getBrowser()
-    @browser.navigateTo &#39;/my-account&#39;
-    assert.equal 200, @browser.getStatusCode()
-
-  it &#39;is serving up gzipped content&#39;, -&gt;
-    assert.equal &#39;gzip&#39;, @browser.getHeader(&#39;Content-Encoding&#39;)</code></pre>
-<h2 id="more">More</h2>
-<p>One of the more exciting and unique features is ability to diff screenshots and fail based on the difference. This isn&#39;t a new idea, but shipping it as part of a testing framework can increase its adopatation. Finally, check out the demo video and don&#39;t forget to read <a href="https://engineering.groupon.com/2014/misc/i-tier-testium/">the introductory article</a>.</p>
-<iframe width="560" height="315" src="//www.youtube.com/embed/qmPlM_SqZes" frameborder="0" allowfullscreen></iframe>
-
-<p>On the side note, super excited to find out that Groupon is using CoffeeScript! Are you?</p>
-]]></description>
-            <link>http://npmawesome.com/posts/2014-01-13-testium</link>
-            <guid isPermaLink="true">http://npmawesome.com/posts/2014-01-13-testium</guid>
-            <dc:creator><![CDATA[Alex Gorbatchev]]></dc:creator>
-            <pubDate>Mon, 13 Jan 2014 20:49:41 GMT</pubDate>
         </item>
     </channel>
 </rss>
