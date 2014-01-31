@@ -5,10 +5,10 @@
         <description><![CDATA[Daily dose of awesome NPM modules for Node.js, old and new!]]></description>
         <link>http://npmawesome.com</link>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Fri, 31 Jan 2014 21:30:01 GMT</lastBuildDate>
+        <lastBuildDate>Fri, 31 Jan 2014 22:14:31 GMT</lastBuildDate>
         <atom:link href="http://npmawesome.com/rss" rel="self" type="application/rss+xml"/>
         <author><![CDATA[Alex Gorbatchev]]></author>
-        <pubDate>Fri, 31 Jan 2014 21:29:38 GMT</pubDate>
+        <pubDate>Fri, 31 Jan 2014 22:14:06 GMT</pubDate>
         <item>
             <title><![CDATA[coupon-code]]></title>
             <description><![CDATA[<p><a href="https://github.com/appsattic/node-coupon-code">coupon-code</a> implementation of Perl&#39;s <a href="https://github.com/grantm/Algorithm-CouponCode">Algorithm::CouponCode</a> written by <a href="https://github.com/appsattic">Andrew Chilton</a>. It is meant to solve a what appears on the surface very simple problem - coupon code validation. You would imagine printing codes on paper cups and then having user enter them - pretty straight forward. What happens however when user confuses zero for letter O, or five for S? Should you tell them their code is invalid?</p>
