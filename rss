@@ -5,10 +5,39 @@
         <description><![CDATA[Daily dose of awesome NPM modules for Node.js, old and new!]]></description>
         <link>http://npmawesome.com</link>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Thu, 30 Jan 2014 18:13:50 GMT</lastBuildDate>
+        <lastBuildDate>Fri, 31 Jan 2014 18:00:44 GMT</lastBuildDate>
         <atom:link href="http://npmawesome.com/rss" rel="self" type="application/rss+xml"/>
         <author><![CDATA[Alex Gorbatchev]]></author>
-        <pubDate>Thu, 30 Jan 2014 18:13:29 GMT</pubDate>
+        <pubDate>Fri, 31 Jan 2014 17:59:40 GMT</pubDate>
+        <item>
+            <title><![CDATA[coupon-code]]></title>
+            <description><![CDATA[<p><a href="https://github.com/appsattic/node-coupon-code">coupon-code</a> implementation of Perl&#39;s [Algorithm::CouponCode][<a href="https://github.com/grantm/Algorithm-CouponCode">https://github.com/grantm/Algorithm-CouponCode</a>] written by <a href="https://github.com/appsattic">Andrew Chilton</a>. It is meant to solve a what appears on the surface very simple problem - coupon code validation. You would imagine printing codes on paper cups and then having user enter them - pretty straight forward. What happens however when user confuses zero for letter O, or five for S? Should you tell them their code is invalid?</p>
+<pre><code>npm install coupon-code</code></pre>
+<h2 id="usage">Usage</h2>
+<p>Lets say you issue a code and print it on a coffee cup.</p>
+<pre><code>var cc = require(&#39;coupon-code&#39;);
+
+var code = cc.generate();
+// 55G2-DHM0-50NN</code></pre>
+<p>Somebody enjoyed their coffee and decided to enter the code, which now, upon inspection, is a little bit wet and fuzzy. They enter:</p>
+<pre><code>cc.validate(&#39;s5g2-dhmo-50nn&#39;);
+// true</code></pre>
+<p>You can also specify size of the desired code:</p>
+<pre><code>cc.generate();
+// 55G2-DHM0-50NN
+
+cc.generate({ parts : 4 });
+// U5H9-HKDH-8RNX-1EX7
+
+cc.generate({ partLen : 6 });
+// WYLKQM-U35V40-9N84DA</code></pre>
+<p>Pretty cool, eh? Until finding this package, I haven&#39;t given this problem a second thought. Have you dealt with coupon codes in your app?</p>
+]]></description>
+            <link>http://npmawesome.com/posts/2014-01-31-coupon-code</link>
+            <guid isPermaLink="true">http://npmawesome.com/posts/2014-01-31-coupon-code</guid>
+            <dc:creator><![CDATA[Alex Gorbatchev]]></dc:creator>
+            <pubDate>Fri, 31 Jan 2014 17:35:42 GMT</pubDate>
+        </item>
         <item>
             <title><![CDATA[rewire]]></title>
             <description><![CDATA[<p><a href="https://github.com/jhnns/rewire">rewire</a> is a dependency injection module for node.js applications written by <a href="https://github.com/jhnns">Johannes Ewald</a>. It adds a special setter and getter to modules so you can modify their behaviour for better unit testing.</p>
@@ -548,79 +577,6 @@ gaze([&#39;stylesheets/*.css&#39;, &#39;images/**/*.png&#39;], function() {
             <guid isPermaLink="true">http://npmawesome.com/posts/2014-01-17-gaze</guid>
             <dc:creator><![CDATA[Alex Gorbatchev]]></dc:creator>
             <pubDate>Sat, 18 Jan 2014 01:50:40 GMT</pubDate>
-        </item>
-        <item>
-            <title><![CDATA[shortId]]></title>
-            <description><![CDATA[<p><a href="https://github.com/dylang/shortid">shortId</a> creates amazingly short non-sequential url-friendly unique IDs. Perfect for url shorteners, MongoDB and Redis as well as any other ID users might see.</p>
-<pre><code>npm install shortId</code></pre>
-<h2 id="features">Features</h2>
-<ul>
-<li>By default 7-12 url-friendly characters: <code>A-Z</code>, <code>a-z</code>, <code>0-9</code>, <code>_-</code></li>
-<li>Non-sequential so they are not predictable</li>
-<li>Supports cluster (automatically), custom seeds, custom alphabet</li>
-</ul>
-<h2 id="example">Example</h2>
-<pre><code>var shortId = require(&#39;shortid&#39;);
-
-console.log(shortId.generate());
-// PPBqWA9</code></pre>
-<h2 id="more">More</h2>
-<p>What really caught my eye was the <a href="https://github.com/dylang/shortid/blob/master/lib/random.js">custom implementation</a> of <code>random</code>.</p>
-<pre><code>var seed = 1;
-
-function random() {
-  seed = (seed * 9301 + 49297) % 233280;
-  return seed/(233280.0);
-};</code></pre>
-<p>Here&#39;s a JSFiddle to play around with it. It works...</p>
-<iframe width="100%" height="300" src="http://jsfiddle.net/alexgorbatchev/8yxC2/embedded/" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
-
-<p>It got me very curious as to what it actually does as it&#39;s not obvious to me at first glance. I found a <a href="http://indiegamr.com/generate-repeatable-random-numbers-in-js/">decent article</a> talking about this function. Turns out this function is meant to generate predictable &quot;random&quot; numbers based on the seed.</p>
-<p>Digging a little bit further, I found <a href="https://gist.github.com/alexgorbatchev/8428967">this post</a> from the past days:</p>
-<blockquote>
-<p>... horrible random (sic) number generators are used by people who don&#39;t know better, while very good ones take less than 20 lines of Pascal! Amoung the horrid generators are some that come with certain systems or are presented in textbooks!</p>
-<p>...</p>
-<p>Simple (bad) Psuedo Random Number Generator (Sic)
-The low bit typically just toggles between calls.</p>
-<pre><code>random() {
-   seed = ( seed * mulitiplier + increment ) % modulus;
-   return seed;
-}</code></pre>
-</blockquote>
-<p>and then later</p>
-<blockquote>
-<pre><code>/*
-** Dr. Park&#39;s algorithm published in the Oct. &#39;88 ACM
-** &quot;Random Number Generators: Good Ones Are Hard To Find&quot;
-** His version available at ftp://cs.wm.edu/pub/rngs.tar
-** This is called a   Lehmer Generator
-*/
-
-static long Seed = 1;       /* This is required to be 32 bits long */
-
-long random()
-/*
-**    Random number between  0  and  2147483647 (2**31 - 1)  inclusive
-**/
-{
-  a = 48271
-  m = 2147483647
-  r = 3399    /* r = m mod a */
-  q = 44488   /* q = m div a */
-  if ((Seed = Seed % q * a - Seed / q * r) &lt; 0)
-    Seed += m;
-  return Seed - 1;
-}</code></pre>
-</blockquote>
-<p>Here&#39;s a JavaScript implementation:</p>
-<iframe width="100%" height="300" src="http://jsfiddle.net/alexgorbatchev/g6aRe/1/embedded/" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
-
-<p>Should the function in <a href="https://github.com/dylang/shortid">shortId</a> be patched? Thoughts?</p>
-]]></description>
-            <link>http://npmawesome.com/posts/2014-01-14-shortid</link>
-            <guid isPermaLink="true">http://npmawesome.com/posts/2014-01-14-shortid</guid>
-            <dc:creator><![CDATA[Alex Gorbatchev]]></dc:creator>
-            <pubDate>Wed, 15 Jan 2014 00:33:38 GMT</pubDate>
         </item>
     </channel>
 </rss>
