@@ -1,0 +1,47 @@
+---
+layout: post
+date: 2014-01-31T09:35:42-0800
+tags: npm, sales
+
+npm:
+  repo: &repo appsattic/node-coupon-code
+  name: &name coupon-code
+
+  author:
+    name: Andrew Chilton
+    github: appsattic
+
+slug: *name
+title: *name
+description: coupon-code is an implementation of Perl's Algorithm::CouponCode for node.js
+---
+<%- @npm() %> implementation of Perl's [Algorithm::CouponCode][https://github.com/grantm/Algorithm-CouponCode] written by <%- @author() %>. It is meant to solve a what appears on the surface very simple problem - coupon code validation. You would imagine printing codes on paper cups and then having user enter them - pretty straight forward. What happens however when user confuses zero for letter O, or five for S? Should you tell them their code is invalid?
+
+    <%- @install() %>
+
+## Usage
+
+Lets say you issue a code and print it on a coffee cup.
+
+    var cc = require('coupon-code');
+
+    var code = cc.generate();
+    // 55G2-DHM0-50NN
+
+Somebody enjoyed their coffee and decided to enter the code, which now, upon inspection, is a little bit wet and fuzzy. They enter:
+
+    cc.validate('s5g2-dhmo-50nn');
+    // true
+
+You can also specify size of the desired code:
+
+    cc.generate();
+    // 55G2-DHM0-50NN
+
+    cc.generate({ parts : 4 });
+    // U5H9-HKDH-8RNX-1EX7
+
+    cc.generate({ partLen : 6 });
+    // WYLKQM-U35V40-9N84DA
+
+Pretty cool, eh? Until finding this package, I haven't given this problem a second thought. Have you dealt with coupon codes in your app?
