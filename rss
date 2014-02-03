@@ -5,10 +5,82 @@
         <description><![CDATA[Daily dose of awesome NPM modules for Node.js, old and new!]]></description>
         <link>http://npmawesome.com</link>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Fri, 31 Jan 2014 22:14:31 GMT</lastBuildDate>
+        <lastBuildDate>Mon, 03 Feb 2014 19:25:37 GMT</lastBuildDate>
         <atom:link href="http://npmawesome.com/rss" rel="self" type="application/rss+xml"/>
         <author><![CDATA[Alex Gorbatchev]]></author>
-        <pubDate>Fri, 31 Jan 2014 22:14:06 GMT</pubDate>
+        <pubDate>Mon, 03 Feb 2014 19:25:15 GMT</pubDate>
+        <item>
+            <title><![CDATA[power-assert]]></title>
+            <description><![CDATA[<p><a href="https://github.com/twada/power-assert">power-assert</a> is a module written by <a href="https://github.com/twada">Takuto Wada</a> and provides pretty damn descriptive assert messages for your tests.</p>
+<pre><code>npm install power-assert</code></pre>
+<h2 id="features">Features</h2>
+<p><a href="https://github.com/twada/power-assert">power-assert</a> transforms your regular boring asserts to this:</p>
+<pre><code>AssertionError: # /path/to/examples/mocha_node.js:10
+
+    assert(this.ary.indexOf(who) === two);
+                |   |       |    |   |
+                |   |       |    |   2
+                |   |       |    false
+                |   -1      &quot;ariya&quot;
+                [1,2,3]</code></pre>
+<h2 id="usages">Usages</h2>
+<p>There are two ways to use <a href="https://github.com/twada/power-assert">power-assert</a>.</p>
+<ol>
+<li><code>power-assert</code> + <code>espower-loader</code> : Only works under Node.</li>
+<li><code>power-assert</code> + <a href="http://github.com/twada/grunt-espower"><code>grunt-espower</code></a> or <a href="http://github.com/twada/gulp-espower"><code>gulp-espower</code></a> : Generates instrumented code so works anywhere.</li>
+</ol>
+<p>To give you an idea what the trasnformed code looks like, for example, it transforms:</p>
+<pre><code>assert(this.ary.indexOf(who) === two);</code></pre>
+<p>into:</p>
+<pre><code>assert(assert._expr(assert._capt(assert._capt(assert._capt(this.ary, &#39;ident&#39;, {
+    start: {
+        line: 9,
+        column: 20
+    }
+}).indexOf(assert._capt(who, &#39;ident&#39;, {
+    start: {
+        line: 9,
+        column: 32
+    }
+})), &#39;funcall&#39;, {
+    start: {
+        line: 9,
+        column: 24
+    }
+}) === assert._capt(two, &#39;ident&#39;, {
+    start: {
+        line: 9,
+        column: 41
+    }
+}), &#39;binary&#39;, {
+    start: {
+        line: 9,
+        column: 37
+    }
+}), {
+    start: {
+        line: 9,
+        column: 15
+    },
+    path: &#39;/Users/alexgorbatchev/1-npmawesome/1/power-assert-demo/test/power_assert/mocha_power_assert_test.js&#39;
+}, &#39;        assert(this.ary.indexOf(who) === two);&#39;));</code></pre>
+<p><a href="https://github.com/twada/power-assert">power-assert</a> also works with CoffeeScript files to produce output:</p>
+<pre><code>AssertionError:
+
+    assert this.ary.indexOf(who) isnt minusOne
+                |   |       |    |    |
+                |   |       |    |    -1
+                |   |       |    false
+                |   -1      &quot;ariya&quot;
+                [1,2,3]</code></pre>
+<p>I&#39;m very tempted to give this a try over my goto <a href="http://chaijs.com/">chai.js</a> library. I&#39;m a little bit worried that it changes number of lines and it might be harder to do certain type of debugging, but the benefit might be worth it!</p>
+<p>There&#39;s a full documentation on the <a href="https://github.com/twada/power-assert">power-assert</a> github page and a <a href="https://github.com/twada/power-assert-demo">demo project</a>. What do you think?</p>
+]]></description>
+            <link>http://npmawesome.com/posts/2014-02-33-power-assert</link>
+            <guid isPermaLink="true">http://npmawesome.com/posts/2014-02-33-power-assert</guid>
+            <dc:creator><![CDATA[Alex Gorbatchev]]></dc:creator>
+            <pubDate>Mon, 03 Feb 2014 18:59:55 GMT</pubDate>
+        </item>
         <item>
             <title><![CDATA[coupon-code]]></title>
             <description><![CDATA[<p><a href="https://github.com/appsattic/node-coupon-code">coupon-code</a> implementation of Perl&#39;s <a href="https://github.com/grantm/Algorithm-CouponCode">Algorithm::CouponCode</a> written by <a href="https://github.com/appsattic">Andrew Chilton</a>. It is meant to solve a what appears on the surface very simple problem - coupon code validation. You would imagine printing codes on paper cups and then having user enter them - pretty straight forward. What happens however when user confuses zero for letter O, or five for S? Should you tell them their code is invalid?</p>
@@ -524,59 +596,6 @@ title: *name</code></pre>
             <guid isPermaLink="true">http://npmawesome.com/posts/2014-01-21-js-yaml</guid>
             <dc:creator><![CDATA[Alex Gorbatchev]]></dc:creator>
             <pubDate>Tue, 21 Jan 2014 17:11:30 GMT</pubDate>
-        </item>
-        <item>
-            <title><![CDATA[gaze]]></title>
-            <description><![CDATA[<p><a href="https://github.com/shama/gaze">gaze</a> a globbing <code>fs.watch</code> wrapper written by <a href="https://github.com/shama">Kyle Robinson Young</a> and built from the best parts of other fine watch libs. Compatible with Node.js 0.10/0.8, Windows, OSX and Linux. There&#39;s a <a href="https://npmjs.org/browse/depended/gaze">pretty long list</a> of other great modules that are built on top of <a href="https://github.com/shama/gaze">gaze</a>.</p>
-<pre><code>npm install gaze</code></pre>
-<p><img src="https://github-camo.global.ssl.fastly.net/4b73eecb09b0400ba274ed9aa205da664ee5538e/687474703a2f2f646f6e746b72792e636f6d2f696d616765732f7265706f732f67617a652e706e67" style="width: 100%"/></p>
-<h2 id="usage">Usage</h2>
-<pre><code>var gaze = require(&#39;gaze&#39;);
-
-// Watch all .js files/dirs in process.cwd()
-gaze(&#39;**/*.js&#39;, function(err, watcher) {
-  // Files have all started watching
-  // watcher === this
-
-  // Get all watched files
-  console.log(this.watched());
-
-  // On file changed
-  this.on(&#39;changed&#39;, function(filepath) {
-    console.log(filepath + &#39; was changed&#39;);
-  });
-
-  // On file added
-  this.on(&#39;added&#39;, function(filepath) {
-    console.log(filepath + &#39; was added&#39;);
-  });
-
-  // On file deleted
-  this.on(&#39;deleted&#39;, function(filepath) {
-    console.log(filepath + &#39; was deleted&#39;);
-  });
-
-  // On changed/added/deleted
-  this.on(&#39;all&#39;, function(event, filepath) {
-    console.log(filepath + &#39; was &#39; + event);
-  });
-
-  // Get watched files with relative paths
-  console.log(this.relative());
-});
-
-// Also accepts an array of patterns
-gaze([&#39;stylesheets/*.css&#39;, &#39;images/**/*.png&#39;], function() {
-  // Add more patterns later to be watched
-  this.add([&#39;js/*.js&#39;]);
-});</code></pre>
-<p>I&#39;ve been getting my feet wet with <a href="http://gulpjs.com">gulp.js</a> and specifically <a href="https://github.com/floatdrop/gulp-watch">gulp-watch</a> plugin which helps you process only the files that were changed. This helps to speed up asset building quite a bit.</p>
-<p>Are you using any file watchers in your project?</p>
-]]></description>
-            <link>http://npmawesome.com/posts/2014-01-17-gaze</link>
-            <guid isPermaLink="true">http://npmawesome.com/posts/2014-01-17-gaze</guid>
-            <dc:creator><![CDATA[Alex Gorbatchev]]></dc:creator>
-            <pubDate>Sat, 18 Jan 2014 01:50:40 GMT</pubDate>
         </item>
     </channel>
 </rss>
