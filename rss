@@ -5,10 +5,10 @@
         <description><![CDATA[Daily dose of awesome NPM modules for Node.js, old and new!]]></description>
         <link>http://npmawesome.com</link>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Tue, 04 Feb 2014 18:13:28 GMT</lastBuildDate>
+        <lastBuildDate>Tue, 04 Feb 2014 18:19:01 GMT</lastBuildDate>
         <atom:link href="http://npmawesome.com/rss" rel="self" type="application/rss+xml"/>
         <author><![CDATA[Alex Gorbatchev]]></author>
-        <pubDate>Tue, 04 Feb 2014 18:13:06 GMT</pubDate>
+        <pubDate>Tue, 04 Feb 2014 18:18:38 GMT</pubDate>
         <item>
             <title><![CDATA[binary.js]]></title>
             <description><![CDATA[<p><a href="https://github.com/binaryjs/binaryjs">binary.js</a> is a lightweight framework by <a href="https://github.com/binaryjs">Eric Zhang</a> that utilizes websockets to send, stream, and pipe binary data bidirectionally between browser javascript.</p>
@@ -29,7 +29,7 @@
 <li>Realtime multiplayer video games without expensive stringifying</li>
 <li>Streaming FLAC into HTML5 WebAudio api</li>
 <li>Progressive image loading (for retina displays and high-res photorgraphy)</li>
-<li>Streaming file uploads Example</li>
+<li>Streaming file uploads</li>
 <li>Live HTML <code>&lt;video&gt;</code> streaming</li>
 <li>PJAX (pushState + ajax) with no HTTP requests. Not even for image assets</li>
 <li>Video/audio chat over websockets</li>
