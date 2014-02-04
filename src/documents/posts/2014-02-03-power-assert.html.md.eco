@@ -13,9 +13,9 @@ npm:
 
 slug: *name
 title: *name
-description:
+description: power-asserts is a module that provides pretty damn descriptive assert messages for your tests.
 ---
-<%- @npm() %> is a module written by <%- @author() %> and provides pretty damn descriptive assert messages for your tests.
+<%- @npm() %> is a module written by <%- @author() %> that provides pretty damn descriptive assert messages for your tests.
 
     <%- @install() %>
 
