@@ -5,13 +5,64 @@
         <description><![CDATA[Daily dose of awesome NPM modules for Node.js, old and new!]]></description>
         <link>http://npmawesome.com</link>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Mon, 03 Feb 2014 19:25:37 GMT</lastBuildDate>
+        <lastBuildDate>Tue, 04 Feb 2014 18:13:28 GMT</lastBuildDate>
         <atom:link href="http://npmawesome.com/rss" rel="self" type="application/rss+xml"/>
         <author><![CDATA[Alex Gorbatchev]]></author>
-        <pubDate>Mon, 03 Feb 2014 19:25:15 GMT</pubDate>
+        <pubDate>Tue, 04 Feb 2014 18:13:06 GMT</pubDate>
+        <item>
+            <title><![CDATA[binary.js]]></title>
+            <description><![CDATA[<p><a href="https://github.com/binaryjs/binaryjs">binary.js</a> is a lightweight framework by <a href="https://github.com/binaryjs">Eric Zhang</a> that utilizes websockets to send, stream, and pipe binary data bidirectionally between browser javascript.</p>
+<pre><code>npm install binaryjs</code></pre>
+<p><img class="hide-on-mobile" src="https://pbs.twimg.com/profile_images/1896980487/418999_10151351854540262_653030261_23084074_1065502090_n_bigger.jpg" style="float: right; margin-left: 1em"/></p>
+<h2 id="features">Features</h2>
+<ul>
+<li>BinaryPack serialization format is fast, binary, and JSON-type compatible. Data stays binary end to end</li>
+<li>Automatically chunks large binary data buffers for streaming performance</li>
+<li>Send multiple streams of data concurrently over multiplexed websocket connection</li>
+<li>API implements Node.js read/write Streams. You can pipe any stream into BinaryJS streams (and vice-versa)</li>
+<li><code>pause</code>, <code>resume</code>, and <code>end</code> as in the Streams API</li>
+<li>Currently supports Chrome 15+ and Firefox 11+, IE10. Fallbacks that will support Safari, mobile iOS and Android, and older FF/Chrome versions are in the works.</li>
+</ul>
+<h2 id="what-can-you-do-with-this-">What can you do with this?</h2>
+<p>You have just as much flexibility as a full TCP socket between client and server. Here are some ideas by <a href="https://github.com/binaryjs">Eric Zhang</a> that are now possible:</p>
+<ul>
+<li>Realtime multiplayer video games without expensive stringifying</li>
+<li>Streaming FLAC into HTML5 WebAudio api</li>
+<li>Progressive image loading (for retina displays and high-res photorgraphy)</li>
+<li>Streaming file uploads Example</li>
+<li>Live HTML <code>&lt;video&gt;</code> streaming</li>
+<li>PJAX (pushState + ajax) with no HTTP requests. Not even for image assets</li>
+<li>Video/audio chat over websockets</li>
+</ul>
+<h2 id="usages">Usages</h2>
+<p>Server</p>
+<pre><code>var server = BinaryServer({port: 9000});
+
+server.on(&#39;connection&#39;, function(client){
+  client.on(&#39;stream&#39;, function(stream, meta){
+    var file = fs.createWriteStream(meta.file);
+    stream.pipe(file);
+  });
+});</code></pre>
+<p>Browser:</p>
+<pre><code>var client = BinaryClient(&#39;ws://localhost:9000&#39;);
+
+client.on(&#39;open&#39;, function(stream){
+  var stream = client.createStream({file: &#39;hello.txt&#39;});
+  stream.write(&#39;Hello&#39;);
+  stream.write(&#39;World!&#39;);
+  stream.end();
+});</code></pre>
+<p>Check out <a href="https://github.com/binaryjs/binaryjs/blob/master/doc/start.md">getting started</a> page and <a href="for extensive documentation">binaryjs.com</a>. Thanks <a href="https://github.com/binaryjs">Eric Zhang</a> for making this happen!</p>
+]]></description>
+            <link>http://npmawesome.com/posts/2014-02-04-binary-js</link>
+            <guid isPermaLink="true">http://npmawesome.com/posts/2014-02-04-binary-js</guid>
+            <dc:creator><![CDATA[Alex Gorbatchev]]></dc:creator>
+            <pubDate>Tue, 04 Feb 2014 17:41:51 GMT</pubDate>
+        </item>
         <item>
             <title><![CDATA[power-assert]]></title>
-            <description><![CDATA[<p><a href="https://github.com/twada/power-assert">power-assert</a> is a module written by <a href="https://github.com/twada">Takuto Wada</a> and provides pretty damn descriptive assert messages for your tests.</p>
+            <description><![CDATA[<p><a href="https://github.com/twada/power-assert">power-assert</a> is a module written by <a href="https://github.com/twada">Takuto Wada</a> that provides pretty damn descriptive assert messages for your tests.</p>
 <pre><code>npm install power-assert</code></pre>
 <h2 id="features">Features</h2>
 <p><a href="https://github.com/twada/power-assert">power-assert</a> transforms your regular boring asserts to this:</p>
@@ -76,8 +127,8 @@
 <p>I&#39;m very tempted to give this a try over my goto <a href="http://chaijs.com/">chai.js</a> library. I&#39;m a little bit worried that it changes number of lines and it might be harder to do certain type of debugging, but the benefit might be worth it!</p>
 <p>There&#39;s a full documentation on the <a href="https://github.com/twada/power-assert">power-assert</a> github page and a <a href="https://github.com/twada/power-assert-demo">demo project</a>. What do you think?</p>
 ]]></description>
-            <link>http://npmawesome.com/posts/2014-02-33-power-assert</link>
-            <guid isPermaLink="true">http://npmawesome.com/posts/2014-02-33-power-assert</guid>
+            <link>http://npmawesome.com/posts/2014-02-03-power-assert</link>
+            <guid isPermaLink="true">http://npmawesome.com/posts/2014-02-03-power-assert</guid>
             <dc:creator><![CDATA[Alex Gorbatchev]]></dc:creator>
             <pubDate>Mon, 03 Feb 2014 18:59:55 GMT</pubDate>
         </item>
@@ -487,7 +538,7 @@ describe(&#39;POST /api&#39;, function()
             <title><![CDATA[oboe.js]]></title>
             <description><![CDATA[<p><img class="hide-on-mobile" src="https://2.gravatar.com/avatar/a26d7792bcf2ccd16be185627ce8e37d" style="float: right; margin-left: 1em"/></p>
 <p><a href="https://github.com/jimhigson/oboe.js">oboe.js</a> is written by <a href="https://github.com/jimhigson">Jim Higson</a> and helps web applications respond quicker by wrapping HTTP&#39;s request-response model with a progressively streamed interface. It glues a transport that sits somewhere between streaming and downloading to a JSON parser. It doesn&#39;t have any external dependencies.</p>
-<pre><code>npm install oboe.js</code></pre>
+<pre><code>npm install oboe</code></pre>
 <h2 id="features">Features</h2>
 <p>The library is extremely feature rich for its 13KB size. I will try to summarize them here and you can get full details with examples on the <a href="https://github.com/jimhigson/oboe.js">oboe.js</a> github page.</p>
 <ul>
@@ -571,31 +622,6 @@ oboe(&#39;http://localhost/myapp/things.json&#39;)
             <guid isPermaLink="true">http://npmawesome.com/posts/2014-01-22-autoprefixer</guid>
             <dc:creator><![CDATA[Alex Gorbatchev]]></dc:creator>
             <pubDate>Wed, 22 Jan 2014 17:35:00 GMT</pubDate>
-        </item>
-        <item>
-            <title><![CDATA[js-yaml]]></title>
-            <description><![CDATA[<p><a href="https://github.com/nodeca/js-yaml">js-yaml</a> is an implementation of <a href="http://yaml.org/">YAML</a> written by <a href="https://github.com/nodeca">Dervus Grim</a> and is a human friendly data serialization language. It started as <a href="http://pyyaml.org/">PyYAML</a> port, but was completely rewritten from scratch. Full support for 1.2 spec.</p>
-<pre><code>npm install js-yaml</code></pre>
-<h2 id="example">Example</h2>
-<p>You can parse a YAML document into an object:</p>
-<pre><code>var fs = require(&#39;fs&#39;);
-var yaml = require(&#39;js-yaml&#39;);
-var obj = yaml.load(fs.readFileSync(filename, &#39;utf8&#39;));</code></pre>
-<p>And of course you can stringify an object into a YAML document:</p>
-<pre><code>yaml.dump(object, opts);</code></pre>
-<p>YAML to JSON is what CoffeeScript to JavaScript - pure awesomeness. On the surface it&#39;s a one to one data format that is much more human friendly. Under the surface, YAML allows you to reference other nodes and values within the document to avoid repetition. For example, the header for post in the source looks like this:</p>
-<pre><code>npm:
-  repo: &amp;repo nodeca/js-yaml
-  name: &amp;name js-yaml
-slug: *name
-title: *name</code></pre>
-<p>Where <code>&amp;name</code> is an anchor and repeated using <code>*name</code> reference. This is a very simple example, but anchors could point to entire nodes consisting of other references and objects. Checkout <a href="https://github.com/nodeca/js-yaml">js-yaml</a> repo for more examples and explanation.</p>
-<p>YAML is awesome! I wish <code>package.json</code> was <code>package.yaml</code>. Are you using YAML in your project?</p>
-]]></description>
-            <link>http://npmawesome.com/posts/2014-01-21-js-yaml</link>
-            <guid isPermaLink="true">http://npmawesome.com/posts/2014-01-21-js-yaml</guid>
-            <dc:creator><![CDATA[Alex Gorbatchev]]></dc:creator>
-            <pubDate>Tue, 21 Jan 2014 17:11:30 GMT</pubDate>
         </item>
     </channel>
 </rss>
