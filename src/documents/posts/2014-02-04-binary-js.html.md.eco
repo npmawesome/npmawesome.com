@@ -38,7 +38,7 @@ You have just as much flexibility as a full TCP socket between client and server
 * Realtime multiplayer video games without expensive stringifying
 * Streaming FLAC into HTML5 WebAudio api
 * Progressive image loading (for retina displays and high-res photorgraphy)
-* Streaming file uploads Example
+* Streaming file uploads
 * Live HTML `<video>` streaming
 * PJAX (pushState + ajax) with no HTTP requests. Not even for image assets
 * Video/audio chat over websockets
