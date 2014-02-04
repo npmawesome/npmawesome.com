@@ -6,6 +6,7 @@ tags: npm, json, ajax
 npm:
   repo: &repo jimhigson/oboe.js
   name: &name oboe.js
+  install: oboe
 
   author:
     name: Jim Higson
@@ -19,7 +20,7 @@ description: A fresh approach to JSON loading that speeds up web applications by
 
 <%- @npm() %> is written by <%- @author() %> and helps web applications respond quicker by wrapping HTTP's request-response model with a progressively streamed interface. It glues a transport that sits somewhere between streaming and downloading to a JSON parser. It doesn't have any external dependencies.
 
-    npm install <%= @document.npm.name %>
+    <%- @install() %>
 
 ## Features
 
