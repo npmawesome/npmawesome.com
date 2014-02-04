@@ -1,0 +1,70 @@
+---
+layout: post
+date: 2014-02-04T09:41:51-0800
+tags: npm, sockets
+
+npm:
+  repo: &repo binaryjs/binaryjs
+  name: &name binary.js
+  install: binaryjs
+
+  author:
+    name: Eric Zhang
+    github: binaryjs
+
+slug: *name
+title: *name
+description:
+---
+<%- @npm() %> is a lightweight framework by <%- @author() %> that utilizes websockets to send, stream, and pipe binary data bidirectionally between browser javascript.
+
+    <%- @install() %>
+
+<img class="hide-on-mobile" src="https://pbs.twimg.com/profile_images/1896980487/418999_10151351854540262_653030261_23084074_1065502090_n_bigger.jpg" style="float: right; margin-left: 1em"/>
+
+## Features
+
+* BinaryPack serialization format is fast, binary, and JSON-type compatible. Data stays binary end to end
+* Automatically chunks large binary data buffers for streaming performance
+* Send multiple streams of data concurrently over multiplexed websocket connection
+* API implements Node.js read/write Streams. You can pipe any stream into BinaryJS streams (and vice-versa)
+* `pause`, `resume`, and `end` as in the Streams API
+* Currently supports Chrome 15+ and Firefox 11+, IE10. Fallbacks that will support Safari, mobile iOS and Android, and older FF/Chrome versions are in the works.
+
+## What can you do with this?
+
+You have just as much flexibility as a full TCP socket between client and server. Here are some ideas by <%- @author() %> that are now possible:
+
+* Realtime multiplayer video games without expensive stringifying
+* Streaming FLAC into HTML5 WebAudio api
+* Progressive image loading (for retina displays and high-res photorgraphy)
+* Streaming file uploads Example
+* Live HTML `<video>` streaming
+* PJAX (pushState + ajax) with no HTTP requests. Not even for image assets
+* Video/audio chat over websockets
+
+## Usages
+
+Server
+
+    var server = BinaryServer({port: 9000});
+
+    server.on('connection', function(client){
+      client.on('stream', function(stream, meta){
+        var file = fs.createWriteStream(meta.file);
+        stream.pipe(file);
+      });
+    });
+
+Browser:
+
+    var client = BinaryClient('ws://localhost:9000');
+
+    client.on('open', function(stream){
+      var stream = client.createStream({file: 'hello.txt'});
+      stream.write('Hello');
+      stream.write('World!');
+      stream.end();
+    });
+
+Check out [getting started](https://github.com/binaryjs/binaryjs/blob/master/doc/start.md) page and [binaryjs.com](for extensive documentation). Thanks <%- @author() %> for making this happen!
