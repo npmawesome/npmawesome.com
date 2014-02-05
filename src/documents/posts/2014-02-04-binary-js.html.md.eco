@@ -14,7 +14,7 @@ npm:
 
 slug: *name
 title: *name
-description:
+description: binary.js is a lightweight framework that utilizes websockets to send, stream, and pipe binary data bidirectionally between browser javascript.
 ---
 <%- @npm() %> is a lightweight framework by <%- @author() %> that utilizes websockets to send, stream, and pipe binary data bidirectionally between browser javascript.
 
@@ -43,7 +43,7 @@ You have just as much flexibility as a full TCP socket between client and server
 * PJAX (pushState + ajax) with no HTTP requests. Not even for image assets
 * Video/audio chat over websockets
 
-## Usages
+## Usage
 
 Server
 
