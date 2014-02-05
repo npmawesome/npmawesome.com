@@ -5,10 +5,10 @@
         <description><![CDATA[Daily dose of awesome NPM modules for Node.js, old and new!]]></description>
         <link>http://npmawesome.com</link>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Wed, 05 Feb 2014 21:26:30 GMT</lastBuildDate>
+        <lastBuildDate>Wed, 05 Feb 2014 21:28:16 GMT</lastBuildDate>
         <atom:link href="http://npmawesome.com/rss" rel="self" type="application/rss+xml"/>
         <author><![CDATA[Alex Gorbatchev]]></author>
-        <pubDate>Wed, 05 Feb 2014 21:25:59 GMT</pubDate>
+        <pubDate>Wed, 05 Feb 2014 21:27:45 GMT</pubDate>
         <item>
             <title><![CDATA[cucumber.js]]></title>
             <description><![CDATA[<p><img class="hide-on-mobile" src="/images/posts/cucumber-logo.png" style="width: 100%; margin-bottom: 1em"/></p>
@@ -52,7 +52,8 @@ Feature: Example feature
     callback.fail(new Error(&quot;Expected to be on page with title &quot; + title));
   }
 });</code></pre>
-<p>Writing <a href="https://github.com/cucumber/cucumber/wiki/Feature-Introduction">Cucumber scenarios</a> is pretty straight forward and is very addictive. I currently use <a href="http://visionmedia.github.io/mocha/">Mocha</a> and write <code>describe</code> and <code>it</code> blocks in nearly the same fasion so that they read as a cohesive story. Perhaps I should just use <a href="https://github.com/cucumber/cucumber-js">cucumber.js</a> instead?</p>
+<p><img class="hide-on-mobile" src="/images/posts/cucumber-meme.jpg" style="float: right; margin-left: 1em"/>
+Writing <a href="https://github.com/cucumber/cucumber/wiki/Feature-Introduction">Cucumber scenarios</a> is pretty straight forward and is very addictive. I currently use <a href="http://visionmedia.github.io/mocha/">Mocha</a> and write <code>describe</code> and <code>it</code> blocks in nearly the same fasion so that they read as a cohesive story. Perhaps I should just use <a href="https://github.com/cucumber/cucumber-js">cucumber.js</a> instead?</p>
 <p><a href="http://www.martinfowler.com/bliki/BusinessReadableDSL.html">The pipe dream</a> is to be let business people to write software rules without involving programmers. I&#39;m on the fence if it&#39;s a good idea, or even if it&#39;s possible, but I used to write Cucumber tests back in my Ruby days and loved it!</p>
 <p>Check out this <a href="http://flippinawesome.org/2014/01/27/bdd-in-javascript-with-cucumberjs/">awesome write up</a> on <a href="https://github.com/cucumber/cucumber-js">cucumber.js</a>. So, what do you think? Is Cucumber a good idea?</p>
 ]]></description>
