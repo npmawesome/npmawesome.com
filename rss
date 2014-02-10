@@ -5,10 +5,48 @@
         <description><![CDATA[Daily dose of awesome NPM modules for Node.js, old and new!]]></description>
         <link>http://npmawesome.com</link>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Wed, 05 Feb 2014 21:28:16 GMT</lastBuildDate>
+        <lastBuildDate>Mon, 10 Feb 2014 18:58:26 GMT</lastBuildDate>
         <atom:link href="http://npmawesome.com/rss" rel="self" type="application/rss+xml"/>
         <author><![CDATA[Alex Gorbatchev]]></author>
-        <pubDate>Wed, 05 Feb 2014 21:27:45 GMT</pubDate>
+        <pubDate>Mon, 10 Feb 2014 18:58:02 GMT</pubDate>
+        <item>
+            <title><![CDATA[node-dependencies]]></title>
+            <description><![CDATA[<p><img class="hide-on-mobile" src="https://0.gravatar.com/avatar/91ab609100e96dd5ccb270399e1acab6" style="float: right; margin-left: 1em"/>
+<a href="https://github.com/FogCreek/node-dependencies">node-dependencies</a> is a very basic but incredibly useful command line utility that checks and prints out out-of-date dependencies for your Node.js app.</p>
+<pre><code>npm install node-dependencies</code></pre>
+<h2 id="usage">Usage</h2>
+<pre><code>$ node-dependencies --sort=urgency
+
+Package                   Local      Major      Minor      Patch
+tedious                   0.1.4        ---        ---      0.1.5
+mongoose                 3.6.11        ---        ---   3.6.0rc1
+optimist                  0.5.0        ---      0.6.0      0.5.2
+redis                     0.8.1        ---        ---      0.8.3
+underscore                1.4.3        ---        ---      1.4.4
+less-middleware          0.1.11        ---        ---     0.1.12
+express                   3.2.4        ---        ---      3.2.6
+grunt                     0.4.1        ---        ---   0.4.0rc8
+coffee-script             1.6.2        ---        ---      1.6.3
+bcrypt                    0.7.5        ---        ---      0.7.6
+knox                      0.8.2        ---        ---      0.8.3
+coffee-backtrace          0.2.0        ---      0.3.4      0.2.1
+socket.io                0.9.14        ---        ---    0.9.1-1
+async                    0.1.22        ---      0.2.9        ---
+mocha                     1.9.0        ---     1.11.0        ---
+less                      1.3.3        ---   1.4.0-b4        ---
+hbs                       2.1.0        ---      2.3.0        ---
+grunt-ember-handleba      0.4.0        ---      0.6.0        ---
+js-yaml                   1.0.3      2.1.0        ---        ---
+ent                       0.0.5        ---        ---        ---
+date-utils               1.2.13        ---        ---        ---
+jquery                    1.8.3        ---        ---        ---</code></pre>
+<p>I came about  trying to update dependencies for a whole bunch of NPM modules. It would be even more useful if it could update <code>package.json</code> for me.</p>
+]]></description>
+            <link>http://npmawesome.com/posts/2014-02-10-node-dependencies</link>
+            <guid isPermaLink="true">http://npmawesome.com/posts/2014-02-10-node-dependencies</guid>
+            <dc:creator><![CDATA[Alex Gorbatchev]]></dc:creator>
+            <pubDate>Mon, 10 Feb 2014 18:57:16 GMT</pubDate>
+        </item>
         <item>
             <title><![CDATA[cucumber.js]]></title>
             <description><![CDATA[<p><img class="hide-on-mobile" src="/images/posts/cucumber-logo.png" style="width: 100%; margin-bottom: 1em"/></p>
@@ -586,61 +624,6 @@ describe(&#39;POST /api&#39;, function()
             <guid isPermaLink="true">http://npmawesome.com/posts/2014-01-24-schema-inspector</guid>
             <dc:creator><![CDATA[Alex Gorbatchev]]></dc:creator>
             <pubDate>Fri, 24 Jan 2014 17:17:24 GMT</pubDate>
-        </item>
-        <item>
-            <title><![CDATA[oboe.js]]></title>
-            <description><![CDATA[<p><img class="hide-on-mobile" src="https://2.gravatar.com/avatar/a26d7792bcf2ccd16be185627ce8e37d" style="float: right; margin-left: 1em"/></p>
-<p><a href="https://github.com/jimhigson/oboe.js">oboe.js</a> is written by <a href="https://github.com/jimhigson">Jim Higson</a> and helps web applications respond quicker by wrapping HTTP&#39;s request-response model with a progressively streamed interface. It glues a transport that sits somewhere between streaming and downloading to a JSON parser. It doesn&#39;t have any external dependencies.</p>
-<pre><code>npm install oboe</code></pre>
-<h2 id="features">Features</h2>
-<p>The library is extremely feature rich for its 13KB size. I will try to summarize them here and you can get full details with examples on the <a href="https://github.com/jimhigson/oboe.js">oboe.js</a> github page.</p>
-<ul>
-<li>Can hanging up when everything that&#39;s needed was processed</li>
-<li>Can react to field and node names</li>
-<li>Can react to partial arrays</li>
-<li>Can react to specific nodes or to fields located anywhere</li>
-<li>Can use CSS4 style matching patterns</li>
-</ul>
-<blockquote>
-<p>Asynchronous parsing is better if the data is written out progressively from the server side because we&#39;re sending and parsing everything at the earliest possible opportunity. If you can, send small bits of the output asynchronously as soon as it is ready instead of waiting before everything is ready to start sending.</p>
-</blockquote>
-<div style="text-align: center"><img class="hide-on-mobile" src="/images/posts/oboe.png" style="width: 400px; margin: 1em 0" /></div>
-
-<h2 id="usage">Usage</h2>
-<p>Here&#39;s a very <strong>basic</strong> use case:</p>
-<pre><code>{
-   &quot;foods&quot;: [
-      {&quot;colour&quot;:&quot;purple&quot;},
-      {&quot;colour&quot;:&quot;red&quot;},
-      {&quot;colour&quot;:&quot;brown&quot;}
-   ],
-   &quot;badThings&quot;: [
-      {&quot;name&quot;:&quot;poison&quot;},
-      {&quot;name&quot;:&quot;broken_glass&quot;}
-   ]
-}
-
-var oboe = require(&#39;oboe&#39;);
-
-oboe(&#39;http://localhost/myapp/things.json&#39;)
-  .node(&#39;foods.*&#39;, function(foodThing) {
-    // This callback will be called everytime a new object is found in the
-    // foods array. Oboe won&#39;t wait for the download to finish first.
-    console.log(foodThing.name);
-  })
-  .node(&#39;badThings.*&#39;, function(badThing) {
-    console.log(&#39;Danger! stay away from &#39; + badThings.name);
-  })
-  .done(function(things) {
-    console.log(&#39;there are &#39; + things.foods.length + &#39; things you can eat &#39; +
-      &#39;and &#39; + things.badThings.length + &#39; that you shouldn\&#39;t.&#39;);
-  });</code></pre>
-<p>Have you used streaming JSON parser before?</p>
-]]></description>
-            <link>http://npmawesome.com/posts/2014-01-23-oboe-js</link>
-            <guid isPermaLink="true">http://npmawesome.com/posts/2014-01-23-oboe-js</guid>
-            <dc:creator><![CDATA[Alex Gorbatchev]]></dc:creator>
-            <pubDate>Thu, 23 Jan 2014 17:46:38 GMT</pubDate>
         </item>
     </channel>
 </rss>
