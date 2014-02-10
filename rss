@@ -5,14 +5,14 @@
         <description><![CDATA[Daily dose of awesome NPM modules for Node.js, old and new!]]></description>
         <link>http://npmawesome.com</link>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Mon, 10 Feb 2014 19:00:00 GMT</lastBuildDate>
+        <lastBuildDate>Mon, 10 Feb 2014 19:01:34 GMT</lastBuildDate>
         <atom:link href="http://npmawesome.com/rss" rel="self" type="application/rss+xml"/>
         <author><![CDATA[Alex Gorbatchev]]></author>
-        <pubDate>Mon, 10 Feb 2014 18:59:38 GMT</pubDate>
+        <pubDate>Mon, 10 Feb 2014 19:01:10 GMT</pubDate>
         <item>
             <title><![CDATA[node-dependencies]]></title>
             <description><![CDATA[<p><img class="hide-on-mobile" src="https://0.gravatar.com/avatar/91ab609100e96dd5ccb270399e1acab6" style="float: right; margin-left: 1em"/>
-<a href="https://github.com/FogCreek/node-dependencies">node-dependencies</a> is a very basic but incredibly useful command line utility written by <a href="https://github.com/dpatti">Doug Patti</a> that checks and prints out out-of-date dependencies for your Node.js app.</p>
+<a href="https://github.com/FogCreek/node-dependencies">node-dependencies</a> is a very basic but incredibly useful command line utility written by <a href="https://github.com/dpatti">Doug Patti</a> of <a href="https://www.fogcreek.com/">Fog Creek</a> that checks and prints out out-of-date dependencies for your Node.js app.</p>
 <pre><code>npm install node-dependencies</code></pre>
 <h2 id="usage">Usage</h2>
 <pre><code>$ node-dependencies --sort=urgency
