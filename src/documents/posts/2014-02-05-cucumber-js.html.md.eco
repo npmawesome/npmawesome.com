@@ -14,7 +14,7 @@ npm:
 
 slug: *name
 title: *name
-description:
+description: cucumber.js is a port of the famous Ruby Cucumber testing framework that lets software development teams describe how software should behave in plain text.
 ---
 <img class="hide-on-mobile" src="/images/posts/cucumber-logo.png" style="width: 100%; margin-bottom: 1em"/>
 
