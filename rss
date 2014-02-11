@@ -5,10 +5,10 @@
         <description><![CDATA[Daily dose of awesome NPM modules for Node.js, old and new!]]></description>
         <link>http://npmawesome.com</link>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Tue, 11 Feb 2014 18:32:56 GMT</lastBuildDate>
+        <lastBuildDate>Tue, 11 Feb 2014 19:47:42 GMT</lastBuildDate>
         <atom:link href="http://npmawesome.com/rss" rel="self" type="application/rss+xml"/>
         <author><![CDATA[Alex Gorbatchev]]></author>
-        <pubDate>Tue, 11 Feb 2014 18:32:35 GMT</pubDate>
+        <pubDate>Tue, 11 Feb 2014 19:47:22 GMT</pubDate>
         <item>
             <title><![CDATA[peer.js]]></title>
             <description><![CDATA[<p><img class="hide-on-mobile" src="/images/posts/peerjs.png" style="float: right; margin-left: 1em"/>

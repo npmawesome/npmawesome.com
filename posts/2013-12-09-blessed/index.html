@@ -76,12 +76,7 @@ m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
 
 // http://drawingablank.me/blog/fix-your-bounce-rate.html
 // https://news.ycombinator.com/item?id=5766883
-setTimeout(function() {
-  window.onscroll = function() {
-    window.onscroll = null; // Only track the event once
-    ga('send', 'scroll', 'read');
-  }
-}, 5000);
+setTimeout(function() { ga('send', 'event', 'read', 'auto generated'); }, 5000);
 
 ga('create', 'UA-46164085-1', 'npmawesome.com');
 ga('send', 'pageview');
