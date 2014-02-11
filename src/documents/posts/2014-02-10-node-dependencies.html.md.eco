@@ -17,7 +17,7 @@ title: *name
 description: node-dependencies is a very basic but incredibly useful command line utility that checks and prints out out-of-date dependencies for your Node.js app.
 ---
 <img class="hide-on-mobile" src="https://0.gravatar.com/avatar/91ab609100e96dd5ccb270399e1acab6" style="float: right; margin-left: 1em"/>
-<%- @npm() %> is a very basic but incredibly useful command line utility written by <%- @author() %> that checks and prints out out-of-date dependencies for your Node.js app.
+<%- @npm() %> is a very basic but incredibly useful command line utility written by <%- @author() %> of [Fog Creek](https://www.fogcreek.com/) that checks and prints out out-of-date dependencies for your Node.js app.
 
     <%- @install() %>
 
