@@ -5,10 +5,40 @@
         <description><![CDATA[Daily dose of awesome NPM modules for Node.js, old and new!]]></description>
         <link>http://npmawesome.com</link>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Mon, 10 Feb 2014 19:01:34 GMT</lastBuildDate>
+        <lastBuildDate>Tue, 11 Feb 2014 18:32:56 GMT</lastBuildDate>
         <atom:link href="http://npmawesome.com/rss" rel="self" type="application/rss+xml"/>
         <author><![CDATA[Alex Gorbatchev]]></author>
-        <pubDate>Mon, 10 Feb 2014 19:01:10 GMT</pubDate>
+        <pubDate>Tue, 11 Feb 2014 18:32:35 GMT</pubDate>
+        <item>
+            <title><![CDATA[peer.js]]></title>
+            <description><![CDATA[<p><img class="hide-on-mobile" src="/images/posts/peerjs.png" style="float: right; margin-left: 1em"/>
+<a href="https://github.com/peers/peerjs">peer.js</a> provides a complete, configurable, and easy-to-use peer-to-peer API built on top of WebRTC, supporting both data channels and media streams. <a href="https://github.com/peers/peerjs">peer.js</a> wraps the browser&#39;s WebRTC implementation to provide a complete, configurable, and easy-to-use peer-to-peer connection API. Equipped with nothing but an ID, a peer can create a P2P data or media stream connection to a remote peer.</p>
+<pre><code>npm install peerjs</code></pre>
+<p>To broker connections, <a href="https://github.com/peers/peerjs">peer.js</a> connects to a PeerServer (<a href="http://peerjs.com/peerserver">free hosted</a> or <a href="https://github.com/peers/peerjs-server">host your own</a>). Note that <strong>no peer-to-peer data goes through the server</strong> - the server acts only as connection broker.</p>
+<h2 id="usage">Usage</h2>
+<pre><code>var Peer = require(&#39;peerjs&#39;).Peer;
+
+// You can pick your own id or omit the id if you want to get a random one from the server.
+var peer = new Peer(&#39;pick-an-id&#39;, { key: &#39;myapikey&#39; });</code></pre>
+<p>Connect</p>
+<pre><code>var conn = peer.connect(&#39;another-peers-id&#39;);
+conn.on(&#39;open&#39;, function() {
+  conn.send(&#39;hi!&#39;);
+});</code></pre>
+<p>Receive</p>
+<pre><code>peer.on(&#39;connection&#39;, function(conn) {
+  conn.on(&#39;data&#39;, function(data) {
+    // Will print &#39;hi!&#39;
+    console.log(data);
+  });
+});</code></pre>
+<p>Checkout the <a href="http://peerjs.com/docs/#api">awesome API docs</a> and take it out for a spin. You can create a video chat with just a few lines of code. Have you done any peer-to-peer stuff?</p>
+]]></description>
+            <link>http://npmawesome.com/posts/2014-02-11-peer-js</link>
+            <guid isPermaLink="true">http://npmawesome.com/posts/2014-02-11-peer-js</guid>
+            <dc:creator><![CDATA[Alex Gorbatchev]]></dc:creator>
+            <pubDate>Tue, 11 Feb 2014 17:59:37 GMT</pubDate>
+        </item>
         <item>
             <title><![CDATA[node-dependencies]]></title>
             <description><![CDATA[<p><img class="hide-on-mobile" src="https://0.gravatar.com/avatar/91ab609100e96dd5ccb270399e1acab6" style="float: right; margin-left: 1em"/>
@@ -517,113 +547,6 @@ mversion.update(&#39;v1.0.1-010988&#39;, function (err, data) { })</code></pre>
             <guid isPermaLink="true">http://npmawesome.com/posts/2014-01-27-mversion</guid>
             <dc:creator><![CDATA[Alex Gorbatchev]]></dc:creator>
             <pubDate>Tue, 28 Jan 2014 01:47:14 GMT</pubDate>
-        </item>
-        <item>
-            <title><![CDATA[schema-inspector]]></title>
-            <description><![CDATA[<div style="text-align: center"><img class="hide-on-mobile" src="/images/posts/schema-inspector.png" style="margin-bottom: 1em" /></div>
-
-<p><img class="hide-on-mobile" src="https://0.gravatar.com/avatar/16c362a6f8dbbedbc3bf13d001c6b286" style="float: right; margin-left: 1em"/></p>
-<p><a href="https://github.com/Atinux/schema-inspector">schema-inspector</a> is a powerful tool to sanitize and validate JS objects written by <a href="https://github.com/Atinux">Sébastien Chopin</a>. It&#39;s disigned to work both client-side and server-side and to be scalable with allowing asynchronous and synchronous calls. There&#39;s support for object validation and sanitazation with a very simple schema definition.</p>
-<pre><code>npm install schema-inspector</code></pre>
-<h2 id="usage">Usage</h2>
-<pre><code>var inspector = require(&#39;schema-inspector&#39;);
-
-var schema = {
-  type: &#39;object&#39;,
-  properties: {
-    lorem: { type: &#39;string&#39;, eq: &#39;ipsum&#39; },
-    dolor: {
-      type: &#39;array&#39;,
-      items: { type: &#39;number&#39; }
-    }
-  }
-};
-
-var candidate = {
-  lorem: &#39;not_ipsum&#39;,
-  dolor: [ 12, 34, &#39;ERROR&#39;, 45, &#39;INVALID&#39; ]
-};
-var result = inspector.validate(schema, candidate); // Candidate is not valid
-console.log(result.format());
-
-/*
-  Property @.lorem: must be equal to &quot;ipsum&quot;, but is equal to &quot;not_ipsum&quot;
-  Property @.dolor[2]: must be number, but is string
-  Property @.dolor[4]: must be number, but is string
-*/</code></pre>
-<h2 id="more">More</h2>
-<p>Object validation can come in extremely handy when you are writing APIs. On one end you can validate user input:</p>
-<pre><code>var express = require(&#39;express&#39;);
-var inspector = require(&#39;schema-inspector&#39;);
-var app = express();
-
-var schema = {
-  type: &#39;object&#39;,
-  properties: {
-    title: { type: &#39;string&#39;, ne: &#39;&#39; },
-    message: { type: &#39;string&#39;, ne: &#39;&#39; }
-  }
-};
-
-app.post(&#39;/api&#39;, function(req, res, next) {
-  var post = req.body;
-  var validation = inspector.validate(schema, post);
-
-  if(!validation.valid) {
-    return res.send(validation.errors, 400);
-  }
-
-  res.send({status: &#39;ok&#39;});
-});</code></pre>
-<p>On the flip side, you can use the <a href="https://github.com/Atinux/schema-inspector">schema-inspector</a> to validate API response in your tests:</p>
-<pre><code>var request = require(&#39;request&#39;);
-var inspector = require(&#39;schema-inspector&#39;);
-
-var schema = {
-  type: &#39;object&#39;,
-  properties: {
-    statusCode: { type: &#39;number&#39;, eq: 200 },
-    body: { type: &#39;object&#39;, properties: {
-      status: { type: &#39;string&#39;, eq: &#39;ok&#39; }
-    }}
-  }
-};
-
-describe(&#39;POST /api&#39;, function()
-{
-  var response;
-
-  before(function(done) {
-    request(
-      {
-        url: &#39;/api&#39;,
-        json: { title: &#39;Hello!&#39;, message: &#39;First Post&#39; }
-        method: &#39;POST&#39;
-      },
-      function(err, r) {
-        response = {
-          statusCode: r.statusCode,
-          body: r.body
-        };
-        done()
-      }
-    );
-  });
-
-  it(&#39;validates&#39;, function() {
-    var validation = inspector.validate(schema, response);
-
-    if(!validation.valid) {
-      throw new Error(validation.format());
-    }
-  });
-});</code></pre>
-<p>In the end, you have a strong contract between your APIs, consumer and your tests with just a few lines of code. I&#39;m loving this! The <a href="http://atinux.github.io/schema-inspector/">documentation</a> site is very good and I strongly recommend checking it out.</p>
-]]></description>
-            <link>http://npmawesome.com/posts/2014-01-24-schema-inspector</link>
-            <guid isPermaLink="true">http://npmawesome.com/posts/2014-01-24-schema-inspector</guid>
-            <dc:creator><![CDATA[Alex Gorbatchev]]></dc:creator>
-            <pubDate>Fri, 24 Jan 2014 17:17:24 GMT</pubDate>
         </item>
     </channel>
 </rss>
