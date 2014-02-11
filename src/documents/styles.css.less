@@ -6,14 +6,15 @@
   margin-right: auto;
 }
 
-@code-font : Monaco, Courier New, monospace;
+@code-font: Monaco, Courier New, monospace;
 
 body {
   background: white;
   border-top: 3px solid black;
   margin: 0;
-  font-family: @code-font;
-  font-size: 0.9em;
+  font-family: Georgia;
+  font-size: 1.1em;
+  line-height: 150%;
 }
 
 a {
@@ -37,6 +38,7 @@ a {
   font-size: 4em;
   font-weight: normal;
   margin-bottom: 0;
+  line-height: normal;
 
   a {
     color: inherit;
@@ -92,6 +94,7 @@ article {
         margin-left: .5em;
         border-radius: 2px;
         text-shadow: 0px 1px 1px rgba(0,0,0,.3);
+        line-height: normal;
 
         &:before {
           content: '★';
@@ -108,6 +111,7 @@ article {
   pre, code {
     font-family: @code-font;
     font-size: .95em;
+    line-height: normal;
   }
 
   pre {
@@ -147,6 +151,14 @@ article {
       line-height: 1em;
       color: silver;
     }
+  }
+
+  ul {
+    padding-left: 1.5em;
+  }
+
+  strong {
+    font-weight: bold;
   }
 }
 
@@ -197,11 +209,31 @@ footer {
 
 @media only screen and (max-width: 550px) {
   #logo {
-    font-size: 100%;
+    font-size: 150%;
   }
 
   .hide-on-mobile {
     display: none;
+  }
+
+  article {
+    > header {
+      h2 {
+        font-size: 150%;
+      }
+
+      .meta .github-stars {
+        display: none;
+      }
+    }
+
+    code, pre {
+      font-size: .85em;
+    }
+
+    blockquote {
+      padding-left: 0.5em;
+    }
   }
 }
 
