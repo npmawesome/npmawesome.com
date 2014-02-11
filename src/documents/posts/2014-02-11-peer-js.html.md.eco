@@ -1,0 +1,45 @@
+---
+layout: post
+date: 2014-02-11T09:59:37-0800
+tags: npm, webrtc, p2p
+
+npm:
+  repo: &repo peers/peerjs
+  name: &name peer.js
+  install: peerjs
+
+slug: *name
+title: *name
+description: peer.js provides a complete, configurable, and easy-to-use peer-to-peer API built on top of WebRTC, supporting both data channels and media streams.
+---
+<img class="hide-on-mobile" src="/images/posts/peerjs.png" style="float: right; margin-left: 1em"/>
+<%- @npm() %> provides a complete, configurable, and easy-to-use peer-to-peer API built on top of WebRTC, supporting both data channels and media streams. <%- @npm() %> wraps the browser's WebRTC implementation to provide a complete, configurable, and easy-to-use peer-to-peer connection API. Equipped with nothing but an ID, a peer can create a P2P data or media stream connection to a remote peer.
+
+    <%- @install() %>
+
+To broker connections, <%- @npm() %> connects to a PeerServer ([free hosted](http://peerjs.com/peerserver) or [host your own](https://github.com/peers/peerjs-server)). Note that **no peer-to-peer data goes through the server** - the server acts only as connection broker.
+
+## Usage
+
+    var Peer = require('peerjs').Peer;
+
+    // You can pick your own id or omit the id if you want to get a random one from the server.
+    var peer = new Peer('pick-an-id', { key: 'myapikey' });
+
+Connect
+
+    var conn = peer.connect('another-peers-id');
+    conn.on('open', function() {
+      conn.send('hi!');
+    });
+
+Receive
+
+    peer.on('connection', function(conn) {
+      conn.on('data', function(data) {
+        // Will print 'hi!'
+        console.log(data);
+      });
+    });
+
+Checkout the [awesome API docs](http://peerjs.com/docs/#api) and take it out for a spin. You can create a video chat with just a few lines of code. Have you done any peer-to-peer stuff?
