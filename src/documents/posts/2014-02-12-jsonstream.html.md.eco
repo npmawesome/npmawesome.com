@@ -1,0 +1,47 @@
+---
+layout: post
+date: 2014-02-12T10:07:44-0800
+tags: npm, json, stream, parsing
+
+npm:
+  repo: &repo dominictarr/JSONStream
+  name: &name JSONStream
+  install: jsonstream
+
+  author:
+    name: Dominic Tarr
+    github: dominictarr
+
+slug: *name
+title: *name
+description: JSONStream is a module for streaming JSON.parse and JSON.stringify.
+---
+<%- @npm() %> is a module by <%- @author() %> for streaming `JSON.parse` and `JSON.stringify`.
+
+    <%- @install() %>
+
+## Usage
+
+    var request = require('request'),
+        JSONStream = require('JSONStream'),
+        es = require('event-stream')
+        ;
+
+    var parser = JSONStream.parse(['rows', true]),
+        req = request({url: 'http://isaacs.couchone.com/registry/_all_docs'}),
+        logger = es.mapSync(function (data) {
+          console.error(data);
+          return data;
+        })
+
+    request({url: 'http://isaacs.couchone.com/registry/_all_docs'})
+      .pipe(JSONStream.parse('rows.*'))
+      .pipe(es.mapSync(function (data) {
+        console.error(data);
+        return data;
+      }));
+
+<img class="hide-on-mobile" src="/images/posts/json.svg" style="float: right; width: 100px; margin-left: 1em"/>
+I like the idea behind streaming JSON alot because you don't have to wait for the whole document to come down the pipe, especially if it's very large. It can also integrate with [gulp.js](http://gulpjs.com) very nicely. The really cool thing for me is that you can react to specific nodes in the data structure vs having to seek them out and loop over them manually.
+
+Are you dealing with large JSON structures on your project?
