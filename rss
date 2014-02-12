@@ -5,10 +5,42 @@
         <description><![CDATA[Daily dose of awesome NPM modules for Node.js, old and new!]]></description>
         <link>http://npmawesome.com</link>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Tue, 11 Feb 2014 19:47:42 GMT</lastBuildDate>
+        <lastBuildDate>Wed, 12 Feb 2014 18:17:17 GMT</lastBuildDate>
         <atom:link href="http://npmawesome.com/rss" rel="self" type="application/rss+xml"/>
         <author><![CDATA[Alex Gorbatchev]]></author>
-        <pubDate>Tue, 11 Feb 2014 19:47:22 GMT</pubDate>
+        <pubDate>Wed, 12 Feb 2014 18:16:48 GMT</pubDate>
+        <item>
+            <title><![CDATA[JSONStream]]></title>
+            <description><![CDATA[<p><a href="https://github.com/dominictarr/JSONStream">JSONStream</a> is a module by <a href="https://github.com/dominictarr">Dominic Tarr</a> for streaming <code>JSON.parse</code> and <code>JSON.stringify</code>.</p>
+<pre><code>npm install jsonstream</code></pre>
+<h2 id="usage">Usage</h2>
+<pre><code>var request = require(&#39;request&#39;),
+    JSONStream = require(&#39;JSONStream&#39;),
+    es = require(&#39;event-stream&#39;)
+    ;
+
+var parser = JSONStream.parse([&#39;rows&#39;, true]),
+    req = request({url: &#39;http://isaacs.couchone.com/registry/_all_docs&#39;}),
+    logger = es.mapSync(function (data) {
+      console.error(data);
+      return data;
+    })
+
+request({url: &#39;http://isaacs.couchone.com/registry/_all_docs&#39;})
+  .pipe(JSONStream.parse(&#39;rows.*&#39;))
+  .pipe(es.mapSync(function (data) {
+    console.error(data);
+    return data;
+  }));</code></pre>
+<p><img class="hide-on-mobile" src="/images/posts/json.svg" style="float: right; width: 100px; margin-left: 1em"/>
+I like the idea behind streaming JSON alot because you don&#39;t have to wait for the whole document to come down the pipe, especially if it&#39;s very large. It can also integrate with <a href="http://gulpjs.com">gulp.js</a> very nicely. The really cool thing for me is that you can react to specific nodes in the data structure vs having to seek them out and loop over them manually.</p>
+<p>Are you dealing with large JSON structures on your project?</p>
+]]></description>
+            <link>http://npmawesome.com/posts/2014-02-12-jsonstream</link>
+            <guid isPermaLink="true">http://npmawesome.com/posts/2014-02-12-jsonstream</guid>
+            <dc:creator><![CDATA[Alex Gorbatchev]]></dc:creator>
+            <pubDate>Wed, 12 Feb 2014 18:07:44 GMT</pubDate>
+        </item>
         <item>
             <title><![CDATA[peer.js]]></title>
             <description><![CDATA[<p><img class="hide-on-mobile" src="/images/posts/peerjs.png" style="float: right; margin-left: 1em"/>
@@ -498,55 +530,6 @@ user.save(function(err) {
             <guid isPermaLink="true">http://npmawesome.com/posts/2014-01-28-modella</guid>
             <dc:creator><![CDATA[Alex Gorbatchev]]></dc:creator>
             <pubDate>Tue, 28 Jan 2014 17:56:33 GMT</pubDate>
-        </item>
-        <item>
-            <title><![CDATA[mversion]]></title>
-            <description><![CDATA[<p><img class="hide-on-mobile" src="https://0.gravatar.com/avatar/c1ad8925b70df4f6665315865511eafc" style="float: right; margin-left: 1em"/></p>
-<p><a href="https://github.com/mikaelbr/mversion">mversion</a> is an NPM, Bower, Jam, Ender module version handler. It imitates <a href="https://npmjs.org/doc/version.html"><code>npm version</code></a> to also work on other packaging files. For those times you have either have multiple packaging files (like <code>bower.json</code>, <code>component.json</code>, <code>manifest.json</code>) or just not a <code>package.json</code> file. <code>mversion</code> can easily bump your version and optionally commit and create a tag.</p>
-<pre><code>npm install mversion</code></pre>
-<h2 id="features">Features</h2>
-<ul>
-<li>Update version by defining new semver valid version or a release string (major, minor, patch, build).</li>
-<li><p>Use <code>-m</code> to auto commit and tag in Git. Apply optional message and use <code>%s</code> as placeholder for the updated version. Default message is <code>v%s</code> where <code>%s</code> is replaced with new version. For example:</p>
-<pre><code>$ mversion minor -m
-$ mversion minor -m &#39;Bumped to v%s&#39;</code></pre>
-</li>
-</ul>
-<h2 id="cli-usage">CLI Usage</h2>
-<pre><code>$ mversion 0.0.5 -m
-New Version: 0.0.5
-Updated package.json
-Updated component.json
-Updated manifest.json
-Commited to git and created tag v0.0.5</code></pre>
-<h2 id="api-usage">API Usage</h2>
-<pre><code>var mversion = require(&#39;mversion&#39;);
-
-mversion.get(function (err, data) {
-  /*
-    data = {
-      &#39;package.json&#39;: VERSION,
-      &#39;component.json&#39;: VERSION
-    }
-  */
-});
-
-mversion.update(&#39;minor&#39;, function (err, data) { })
-mversion.update(&#39;major&#39;, function (err, data) { })
-mversion.update(&#39;major&#39;, &#39;Some commit message for version %s&#39;, function (err, data) { }) // Will commit/tag
-mversion.update(&#39;patch&#39;, function (err, data) { })
-mversion.update(&#39;build&#39;, function (err, data) { })
-mversion.update(&#39;0.0.1&#39;, &#39;Bumping version&#39;, function (err, data) { }) // Will commit/tag
-mversion.update(&#39;v1.0.1&#39;, function (err, data) { })
-mversion.update(&#39;v1.0.1-beta&#39;, function (err, data) { })
-mversion.update(&#39;v1.0.1-010988&#39;, function (err, data) { })</code></pre>
-<h2 id="gulp">Gulp</h2>
-<p>Of course, <a href="https://github.com/mikaelbr">Mikael Brevik</a> has <a href="https://github.com/mikaelbr/gulp-mversion">gulp.js plugin</a> to help you with automate build and deploy process.</p>
-]]></description>
-            <link>http://npmawesome.com/posts/2014-01-27-mversion</link>
-            <guid isPermaLink="true">http://npmawesome.com/posts/2014-01-27-mversion</guid>
-            <dc:creator><![CDATA[Alex Gorbatchev]]></dc:creator>
-            <pubDate>Tue, 28 Jan 2014 01:47:14 GMT</pubDate>
         </item>
     </channel>
 </rss>
