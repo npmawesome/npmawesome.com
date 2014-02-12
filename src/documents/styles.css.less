@@ -14,7 +14,6 @@ body {
   margin: 0;
   font-family: Georgia;
   font-size: 1.1em;
-  line-height: 150%;
 }
 
 a {
@@ -85,6 +84,7 @@ article {
       }
 
       .github-stars {
+        font-family: @code-font;
         display: inline-block;
         width: auto;
         height: auto;
@@ -102,6 +102,10 @@ article {
         }
       }
     }
+  }
+
+  .content {
+    line-height: 150%;
   }
 
   &:first-child > header {
