@@ -1,6 +1,10 @@
-# npmawesome.com [![Gittip](http://img.shields.io/gittip/alexgorbatchev.png)](https://www.gittip.com/alexgorbatchev/)
+# npmawesome.com
 
 Source files for [npmawesome.com](http://npmawesome.com).
+
+## Now taking pull requests and tips [![Gittip](http://img.shields.io/gittip/alexgorbatchev.png)](https://www.gittip.com/alexgorbatchev/)
+
+Wrote a module? Know of a cool module! Send a PR and it will be published!
 
 ## Installation
 
