@@ -5,10 +5,60 @@
         <description><![CDATA[Daily dose of awesome NPM modules for Node.js, old and new!]]></description>
         <link>http://npmawesome.com</link>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Wed, 12 Feb 2014 18:17:17 GMT</lastBuildDate>
+        <lastBuildDate>Thu, 13 Feb 2014 21:39:02 GMT</lastBuildDate>
         <atom:link href="http://npmawesome.com/rss" rel="self" type="application/rss+xml"/>
         <author><![CDATA[Alex Gorbatchev]]></author>
-        <pubDate>Wed, 12 Feb 2014 18:16:48 GMT</pubDate>
+        <pubDate>Thu, 13 Feb 2014 21:38:36 GMT</pubDate>
+        <item>
+            <title><![CDATA[domain-context]]></title>
+            <description><![CDATA[<p><img class="hide-on-mobile" src="/images/posts/domain-context.jpg" style="width: 100%"/></p>
+<p><a href="https://github.com/andreypopp/domain-context">domain-context</a> is a module by <a href="https://github.com/andreypopp">Andrey Popp</a> for dealing with globally accessible domain-bound contexts, connect/express middleware included.</p>
+<pre><code>npm install domain-context</code></pre>
+<h2 id="usage">Usage</h2>
+<pre><code>var connectDomain = require(&#39;connect-domain&#39;),
+    domainContext = require(&#39;domain-context&#39;),
+    express = require(&#39;express&#39;);
+
+var lifecycle = {
+  context: function() {
+    return {db: new pg.Client(...)}
+  },
+  cleanup: function(context) {
+    context.db.query(&#39;commit&#39;);
+    context.db.end();
+  },
+  onError: function(err, context) {
+    context.db.query(&#39;rollback&#39;);
+    context.db.end();
+  }
+};
+
+app = express();
+app.use(connectDomain());
+app.use(domainContext.middleware(lifecycle));
+
+// Your applicaiton&#39;s middleware goes here
+//
+// Note that because of connect/express design you are required to place two
+// middlewares around your application — domainContext.middleware() and
+// domainContext.middlewareOnError().
+
+app.use(domainContext.middlewareOnError(lifecycle));
+
+// Now you can use domainContext.get() to query data from the currently active domain:
+
+var domainContext = require(&#39;connect-reqcontext&#39;);
+
+function getUserById(id, cb) {
+  domainContext.get(&#39;db&#39;).query(&quot;select ...&quot;, cb);
+}</code></pre>
+<p>I feel that this is pretty self-explanatory here. Being able to get request context outside of the <code>express</code> handlers and not having to pass so much context around to API is pretty great.</p>
+]]></description>
+            <link>http://npmawesome.com/posts/2014-02-13-domain-context</link>
+            <guid isPermaLink="true">http://npmawesome.com/posts/2014-02-13-domain-context</guid>
+            <dc:creator><![CDATA[Alex Gorbatchev]]></dc:creator>
+            <pubDate>Thu, 13 Feb 2014 21:20:38 GMT</pubDate>
+        </item>
         <item>
             <title><![CDATA[JSONStream]]></title>
             <description><![CDATA[<p><a href="https://github.com/dominictarr/JSONStream">JSONStream</a> is a module by <a href="https://github.com/dominictarr">Dominic Tarr</a> for streaming <code>JSON.parse</code> and <code>JSON.stringify</code>.</p>
@@ -460,76 +510,6 @@ $ curl http://localhost/rest/posts/first-post/comments/3/foo/bar
             <guid isPermaLink="true">http://npmawesome.com/posts/2014-01-29-yarm</guid>
             <dc:creator><![CDATA[Alex Gorbatchev]]></dc:creator>
             <pubDate>Wed, 29 Jan 2014 17:37:23 GMT</pubDate>
-        </item>
-        <item>
-            <title><![CDATA[modella]]></title>
-            <description><![CDATA[<p><img class="hide-on-mobile" src="https://2.gravatar.com/avatar/824b41e6108a22c4c96f50ee23419369" style="float: right; margin-left: 1em"/></p>
-<p><a href="https://github.com/modella/modella">modella</a> is a bare bones model framework written by <a href="https://github.com/matthewmueller">Matthew Mueller</a> of the <a href="/posts/2013-12-27-cheerio/">cheerio</a> fame. It exposes a few APIs on which plugins can be built to enhance functionality. The core module and select plugins work on the client and server.</p>
-<pre><code>npm install modella</code></pre>
-<h2 id="plugins">Plugins</h2>
-<p>Most of functionality comes bundles as plugins:</p>
-<ul>
-<li><p>Adapter (Sync Layer) Plugins</p>
-<ul>
-<li><a href="https://github.com/modella/ajax">ajax</a> - RESTful AJAX HTTP adapter.</li>
-<li><a href="https://github.com/modella/ejdb">ejdb</a> - Ejdb database adapter.</li>
-<li><a href="https://github.com/modella/leveldb">leveldb</a> - LevelDB adapter.</li>
-<li><a href="https://github.com/modella/mongo">mongo</a> - MongoDB adapter.</li>
-<li><a href="https://github.com/alexmingoia/modella-mysql">modella-mysql</a> - MySQL adapter.</li>
-<li><a href="https://github.com/alexmingoia/modella-memory">modella-memory</a> - In-memory adapter.</li>
-</ul>
-</li>
-<li><p>Attribute Utilities</p>
-<ul>
-<li><a href="https://github.com/modella/validators">validators</a> - Validations for attributes</li>
-<li><a href="https://github.com/modella/slug">slug</a> - Slug generation on attributes</li>
-<li><a href="https://github.com/ramitos/modella-level-relations">modella-level-relations</a> - LevelUP based modella relations</li>
-</ul>
-</li>
-<li><p>Security Plugins</p>
-<ul>
-<li><a href="https://github.com/modella/auth">auth</a> - Authorization plugin.</li>
-<li><a href="https://github.com/modella/filter">filter</a> - Filter sensitive fields from a JSON blob.</li>
-<li><a href="https://github.com/modella/protection">protection</a> - Mass-assignment protection.</li>
-</ul>
-</li>
-<li><p>Misc</p>
-<ul>
-<li><a href="https://github.com/alexmingoia/modella-resource">modella-resource</a> - Expose <a href="https://github.com/modella/modella">modella</a> models via RESTful resource middleware (for use with Express).</li>
-<li><a href="https://github.com/modella/friendly-errors">friendly-errors</a> - add friendly error messages to attributes.</li>
-<li><a href="https://github.com/modella/save-invalid">save-invalid</a> - Save invalid models and mark them as dirty in the database.</li>
-</ul>
-</li>
-</ul>
-<h2 id="usage">Usage</h2>
-<pre><code>var modella = require(&#39;modella&#39;);
-var validators = require(&#39;modella-validators&#39;);
-var mongo = require(&#39;modella-mongo&#39;)(&#39;localhost/db&#39;)
-var User = modella(&#39;User&#39;);
-
-User.use(validators);
-User.use(mongo);
-
-User
-  .attr(&#39;_id&#39;)
-  .attr(&#39;username&#39;, { required: true })
-  .attr(&#39;email&#39;, { required: true, format: &#39;email&#39; });
-
-User.index(&#39;email&#39;, { unique : true });
-
-var user = new User({ name: &#39;Charley&#39; });
-
-user.save(function(err) {
-  User.find(user._id, function(err, u) {
-    console.log(u.username());
-  });
-});</code></pre>
-<p>If you feel disgrundled with Mongoose or just tired of using the raw driver, give <a href="https://github.com/modella/modella">modella</a> a try!</p>
-]]></description>
-            <link>http://npmawesome.com/posts/2014-01-28-modella</link>
-            <guid isPermaLink="true">http://npmawesome.com/posts/2014-01-28-modella</guid>
-            <dc:creator><![CDATA[Alex Gorbatchev]]></dc:creator>
-            <pubDate>Tue, 28 Jan 2014 17:56:33 GMT</pubDate>
         </item>
     </channel>
 </rss>
