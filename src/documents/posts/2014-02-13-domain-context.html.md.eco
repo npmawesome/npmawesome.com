@@ -1,0 +1,64 @@
+---
+layout: post
+date: 2014-02-13T13:20:38-0800
+tags: npm, express, domains, context
+
+npm:
+  repo: &repo andreypopp/domain-context
+  name: &name domain-context
+
+  author:
+    name: Andrey Popp
+    github: andreypopp
+
+slug: *name
+title: *name
+description: domain-context is a module for dealing with globally accessible domain-bound contexts, connect/express middleware included.
+---
+<img class="hide-on-mobile" src="/images/posts/domain-context.jpg" style="width: 100%"/>
+
+<%- @npm() %> is a module by <%- @author() %> for dealing with globally accessible domain-bound contexts, connect/express middleware included.
+
+    <%- @install() %>
+
+## Usage
+
+    var connectDomain = require('connect-domain'),
+        domainContext = require('domain-context'),
+        express = require('express');
+
+    var lifecycle = {
+      context: function() {
+        return {db: new pg.Client(...)}
+      },
+      cleanup: function(context) {
+        context.db.query('commit');
+        context.db.end();
+      },
+      onError: function(err, context) {
+        context.db.query('rollback');
+        context.db.end();
+      }
+    };
+
+    app = express();
+    app.use(connectDomain());
+    app.use(domainContext.middleware(lifecycle));
+
+    // Your applicaiton's middleware goes here
+    //
+    // Note that because of connect/express design you are required to place two
+    // middlewares around your application — domainContext.middleware() and
+    // domainContext.middlewareOnError().
+
+    app.use(domainContext.middlewareOnError(lifecycle));
+
+    // Now you can use domainContext.get() to query data from the currently active domain:
+
+    var domainContext = require('connect-reqcontext');
+
+    function getUserById(id, cb) {
+      domainContext.get('db').query("select ...", cb);
+    }
+
+I feel that this is pretty self-explanatory here. Being able to get request context outside of the `express` handlers and not having to pass so much context around to API is pretty great.
