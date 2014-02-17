@@ -5,10 +5,47 @@
         <description><![CDATA[Daily dose of awesome NPM modules for Node.js, old and new!]]></description>
         <link>http://npmawesome.com</link>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Thu, 13 Feb 2014 21:39:02 GMT</lastBuildDate>
+        <lastBuildDate>Mon, 17 Feb 2014 18:08:28 GMT</lastBuildDate>
         <atom:link href="http://npmawesome.com/rss" rel="self" type="application/rss+xml"/>
         <author><![CDATA[Alex Gorbatchev]]></author>
-        <pubDate>Thu, 13 Feb 2014 21:38:36 GMT</pubDate>
+        <pubDate>Mon, 17 Feb 2014 18:08:02 GMT</pubDate>
+        <item>
+            <title><![CDATA[NodePDF]]></title>
+            <description><![CDATA[<p><img class="hide-on-mobile" src="https://0.gravatar.com/avatar/c0f5a91f71e988a9e2d9c20ffa546f4e" style="float: right; margin-left: 1em"/>
+<a href="https://github.com/TJkrusinski/NodePDF">NodePDF</a> is a module by <a href="https://github.com/TJkrusinski">TJ Krusinski</a> for creating PDF files from web pages. It depends on <a href="http://phantomjs.org/">PhantomJS</a> and works by simply taking a screenshot of a page and stuffing it into a PDF. One the plus side, this makes it really easy to do mostly graphics based PDF files from node. On the down side, the content isn&#39;t scalable at all, so printing quality will suffer.</p>
+<pre><code>npm install nodepdf</code></pre>
+<h2 id="usage">Usage</h2>
+<p><img class="hide-on-mobile" src="/images/posts/nodepdf.jpg" style="width: 300px; float: right; margin: 1em;"/></p>
+<pre><code>var nodepdf = require(&#39;nodepdf&#39;);
+
+// last argument is optional, sets the width and height
+// for the viewport to render the pdf from
+var pdf = new nodepdf(
+  &#39;http://npmawesome.com&#39;,
+  &#39;npmawesome.pdf&#39;,
+  {
+    args: &#39;--debug=true&#39;,
+    viewportSize: {
+      width: 500,
+      height: 300
+    }
+  }
+);
+
+pdf.on(&#39;error&#39;, function(msg){
+    console.log(msg);
+});
+
+pdf.on(&#39;done&#39;, function(pathToFile){
+    console.log(pathToFile);
+});</code></pre>
+<p>I can imagine this being used for something simple, like printing tickets, post cards, photos and so on.</p>
+]]></description>
+            <link>http://npmawesome.com/posts/2014-02-17-nodepdf</link>
+            <guid isPermaLink="true">http://npmawesome.com/posts/2014-02-17-nodepdf</guid>
+            <dc:creator><![CDATA[Alex Gorbatchev]]></dc:creator>
+            <pubDate>Mon, 17 Feb 2014 17:56:26 GMT</pubDate>
+        </item>
         <item>
             <title><![CDATA[domain-context]]></title>
             <description><![CDATA[<p><img class="hide-on-mobile" src="/images/posts/domain-context.jpg" style="width: 100%"/></p>
@@ -420,96 +457,6 @@ myModule.__set__({
             <guid isPermaLink="true">http://npmawesome.com/posts/2014-01-30-rewire</guid>
             <dc:creator><![CDATA[Alex Gorbatchev]]></dc:creator>
             <pubDate>Thu, 30 Jan 2014 17:49:19 GMT</pubDate>
-        </item>
-        <item>
-            <title><![CDATA[yarm]]></title>
-            <description><![CDATA[<p><img class="hide-on-mobile" src="https://0.gravatar.com/avatar/b928accd038cf24ef3f14cb5dd758b04" style="float: right; margin-left: 1em"/></p>
-<p><a href="https://github.com/njoyard/yarm">yarm</a> is Yet Another REST Middleware for node.js and Express written by <a href="https://github.com/njoyard">Nicolas Joyard</a>. It has no dependencies, however it is intended to be used with <a href="http://expressjs.com/">Express</a> and will have additional features if <a href="http://mongoosejs.com/">Mongoose</a> is present.</p>
-<pre><code>npm install yarm</code></pre>
-<h2 id="features">Features</h2>
-<p>The list of features is very extensive. <a href="https://github.com/njoyard/yarm">yarm</a> creates REST style APIs for native objects, <a href="http://mongoosejs.com/">Mongoose</a> and allows you to have pretty tight control over what&#39;s happening. There&#39;s a long list of customization options that let you specify output format, what&#39;s included, how MongoDB collection are fetched, permissions and so.</p>
-<h2 id="usage">Usage</h2>
-<pre><code>var app = require(&quot;express&quot;)();
-var yarm = require(&quot;yarm&quot;);
-var mongoose = require(&quot;mongoose&quot;);
-
-app.use(&quot;/rest&quot;, yarm());
-
-var postSchema = new mongoose.Schema({
-  title: String,
-  text: String,
-  comments: [{
-    author: String,
-    text: String
-  }]
-});
-
-var Post = mongoose.model(&quot;post&quot;, postSchema);
-
-yarm.mongoose(&quot;posts&quot;, Post);
-
-app.listen(80);
-
-$ curl http://localhost/rest/posts?skip=10&amp;limit=1
-{
-  &quot;_count&quot;: 42,
-  &quot;_items&quot;: [
-    {
-      &quot;_id&quot;: &quot;507f191e810c19729de860ea&quot;,
-      &quot;title&quot;: &quot;My 11th post&quot;,
-      &quot;text&quot;: &quot;Hello, World&quot;,
-      &quot;comments&quot;: [
-        {
-          &quot;author&quot;: &quot;Bob&quot;,
-          &quot;text&quot;: &quot;First !&quot;
-        }
-      ]
-    }
-  ]
-}
-
-$ curl http://localhost/rest/posts/507f191e810c19729de860ea
-{
-  &quot;_id&quot;: &quot;507f191e810c19729de860ea&quot;,
-  &quot;title&quot;: &quot;My 11th post&quot;,
-  &quot;text&quot;: &quot;Hello, World&quot;,
-  &quot;comments&quot;: [
-    {
-      &quot;author&quot;: &quot;Bob&quot;,
-      &quot;text&quot;: &quot;First !&quot;
-    }
-  ]
-}
-
-$ curl http://localhost/rest/posts/507f191e810c19729de860ea/comments/0/text
-First !</code></pre>
-<p>You can roll your own:</p>
-<pre><code>resource
-  .get(function(req, cb) {
-    // GET handler
-  })
-  .put(function(req, isPatch, cb) {
-    // PUT and PATCH handler
-  })
-  .post(function(req, cb) {
-    // POST handler
-  })
-  .del(function(req, cb) {
-    // DELETE handler
-  });</code></pre>
-<p>Of course, you can have nested resources.</p>
-<pre><code>yarm.resource(&quot;/posts/:pid&quot;).sub(&quot;comments/:cid/*&quot;).get(function(req, cb) {
-  cb(null, { ... });
-});
-
-$ curl http://localhost/rest/posts/first-post/comments/3/foo/bar
-...</code></pre>
-<p>Check out <a href="https://github.com/njoyard/yarm">yarm</a> github page for complete documentation. How do you handle your APIs?</p>
-]]></description>
-            <link>http://npmawesome.com/posts/2014-01-29-yarm</link>
-            <guid isPermaLink="true">http://npmawesome.com/posts/2014-01-29-yarm</guid>
-            <dc:creator><![CDATA[Alex Gorbatchev]]></dc:creator>
-            <pubDate>Wed, 29 Jan 2014 17:37:23 GMT</pubDate>
         </item>
     </channel>
 </rss>
