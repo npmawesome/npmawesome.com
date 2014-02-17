@@ -1,0 +1,52 @@
+---
+layout: post
+date: 2014-02-17T09:56:26-0800
+tags: npm, pdf
+
+npm:
+  repo: &repo TJkrusinski/NodePDF
+  name: &name NodePDF
+  install: nodepdf
+
+  author:
+    name: TJ Krusinski
+    github: TJkrusinski
+
+slug: *name
+title: *name
+description: NodePDF is a module for creating PDF files from web pages.
+---
+<img class="hide-on-mobile" src="https://0.gravatar.com/avatar/c0f5a91f71e988a9e2d9c20ffa546f4e" style="float: right; margin-left: 1em"/>
+<%- @npm() %> is a module by <%- @author() %> for creating PDF files from web pages. It depends on [PhantomJS](http://phantomjs.org/) and works by simply taking a screenshot of a page and stuffing it into a PDF. One the plus side, this makes it really easy to do mostly graphics based PDF files from node. On the down side, the content isn't scalable at all, so printing quality will suffer.
+
+    <%- @install() %>
+
+## Usage
+
+<img class="hide-on-mobile" src="/images/posts/nodepdf.jpg" style="width: 300px; float: right; margin: 1em;"/>
+
+    var nodepdf = require('nodepdf');
+
+    // last argument is optional, sets the width and height
+    // for the viewport to render the pdf from
+    var pdf = new nodepdf(
+      'http://npmawesome.com',
+      'npmawesome.pdf',
+      {
+        args: '--debug=true',
+        viewportSize: {
+          width: 500,
+          height: 300
+        }
+      }
+    );
+
+    pdf.on('error', function(msg){
+        console.log(msg);
+    });
+
+    pdf.on('done', function(pathToFile){
+        console.log(pathToFile);
+    });
+
+I can imagine this being used for something simple, like printing tickets, post cards, photos and so on.
