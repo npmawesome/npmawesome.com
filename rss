@@ -5,10 +5,25 @@
         <description><![CDATA[Daily dose of awesome NPM modules for Node.js, old and new!]]></description>
         <link>http://npmawesome.com</link>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Mon, 17 Feb 2014 18:08:28 GMT</lastBuildDate>
+        <lastBuildDate>Tue, 18 Feb 2014 19:19:17 GMT</lastBuildDate>
         <atom:link href="http://npmawesome.com/rss" rel="self" type="application/rss+xml"/>
         <author><![CDATA[Alex Gorbatchev]]></author>
-        <pubDate>Mon, 17 Feb 2014 18:08:02 GMT</pubDate>
+        <pubDate>Tue, 18 Feb 2014 19:18:52 GMT</pubDate>
+        <item>
+            <title><![CDATA[npm-diff]]></title>
+            <description><![CDATA[<p><img class="hide-on-mobile" src="https://1.gravatar.com/avatar/a010d5218f2c3d194dbbac9c5d14d0ad" style="float: right; margin-left: 1em"/>
+<a href="https://github.com/segmentio/npm-diff">npm-diff</a> is a utility module by <a href="https://github.com/juliangruber">Julian Gruber</a> to diff two versions of NPM module. I&#39;ve been fascinated recently by all the tools being released to help you manage <code>package.json</code> and module publishing. It&#39;s really cool!</p>
+<pre><code>npm install npm-diff</code></pre>
+<h2 id="usage">Usage</h2>
+<pre><code>$ npm-diff intersect 0.0.0 0.1.0 | colordiff</code></pre>
+<p><img class="hide-on-mobile" src="https://github-camo.global.ssl.fastly.net/304bdd7188c9fea08e87e731790aad980877ce7b/68747470733a2f2f692e636c6f756475702e636f6d2f5267694263634b7664742e706e67" style="width: 100%"/></p>
+<p>BOOM! <code>brew install colordiff</code> if you haven&#39;t got it.</p>
+]]></description>
+            <link>http://npmawesome.com/posts/2014-02-18-npm-diff</link>
+            <guid isPermaLink="true">http://npmawesome.com/posts/2014-02-18-npm-diff</guid>
+            <dc:creator><![CDATA[Alex Gorbatchev]]></dc:creator>
+            <pubDate>Tue, 18 Feb 2014 19:13:20 GMT</pubDate>
+        </item>
         <item>
             <title><![CDATA[NodePDF]]></title>
             <description><![CDATA[<p><img class="hide-on-mobile" src="https://0.gravatar.com/avatar/c0f5a91f71e988a9e2d9c20ffa546f4e" style="float: right; margin-left: 1em"/>
@@ -400,63 +415,6 @@ cc.generate({ partLen : 6 });
             <guid isPermaLink="true">http://npmawesome.com/posts/2014-01-31-coupon-code</guid>
             <dc:creator><![CDATA[Alex Gorbatchev]]></dc:creator>
             <pubDate>Fri, 31 Jan 2014 17:35:42 GMT</pubDate>
-        </item>
-        <item>
-            <title><![CDATA[rewire]]></title>
-            <description><![CDATA[<p><a href="https://github.com/jhnns/rewire">rewire</a> is a dependency injection module for node.js applications written by <a href="https://github.com/jhnns">Johannes Ewald</a>. It adds a special setter and getter to modules so you can modify their behaviour for better unit testing.</p>
-<pre><code>npm install rewire</code></pre>
-<h2 id="features">Features</h2>
-<ul>
-<li>Inject mocks for other modules or globals like process</li>
-<li>Leak private variables</li>
-<li>Override variables within the module</li>
-<li>Works with CoffeeScript</li>
-</ul>
-<h2 id="usage">Usage</h2>
-<pre><code>var rewire = require(&quot;rewire&quot;);
-
-// rewire acts exactly like require.
-var myModule = rewire(&quot;./myModule.js&quot;);
-
-// Just with one difference:
-// Your module will now export a special setter and getter for private variables.
-myModule.__set__(&quot;myPrivateVar&quot;, 123);
-myModule.__get__(&quot;myPrivateVar&quot;); // = 123
-
-// This allows you to mock almost everything within the module e.g. the fs-module.
-// Just pass the variable name as first parameter and your mock as second.
-myModule.__set__(&quot;fs&quot;, {
-  readFile: function (path, encoding, cb) {
-    cb(null, &quot;Success!&quot;);
-  }
-});
-
-myModule.readSomethingFromFileSystem(function (err, data) {
-  console.log(data); // = Success!
-});
-
-// You can set different variables with one call.
-myModule.__set__({
-  fs: fsMock,
-  http: httpMock,
-  someOtherVar: &quot;hello&quot;
-});
-
-// You may also override globals. These changes are only within the module, so
-// you don&#39;t have to be concerned that other modules are influenced by your mock.
-myModule.__set__({
-  console: {
-    log: function () { /* be quiet */ }
-  }
-});</code></pre>
-<p>The biggest difference between <code>rewire</code> and <code>require</code> is that calling <code>rewire</code> multiple times gives you a new module instance every time. Something to keep in mind.</p>
-<p>This seems like a good and bad idea at the same time. The power to change and introspect private variables might lead to code that isn&#39;t exactly very suitable for tests. I find that writing code to be testable leads to much better code structure and I spend alot more time considering my API.</p>
-<p>What do you think?</p>
-]]></description>
-            <link>http://npmawesome.com/posts/2014-01-30-rewire</link>
-            <guid isPermaLink="true">http://npmawesome.com/posts/2014-01-30-rewire</guid>
-            <dc:creator><![CDATA[Alex Gorbatchev]]></dc:creator>
-            <pubDate>Thu, 30 Jan 2014 17:49:19 GMT</pubDate>
         </item>
     </channel>
 </rss>
