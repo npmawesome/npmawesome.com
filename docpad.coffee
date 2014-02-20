@@ -81,8 +81,9 @@ docpadConfig =
 
   plugins:
     rss:
-      collection: 'posts'
-      url: '/rss'
+      default:
+        collection: 'posts'
+        url: '/rss'
 
 # Export the DocPad Configuration
 module.exports = docpadConfig
