@@ -1,0 +1,2638 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+	<title>npm awesome</title>
+	<subtitle>Daily dose of awesome NPM modules for Node.js, old and new!</subtitle>
+	<link href="http://npmawesome.com/atom.xml" rel="self" />
+	<link href="http://npmawesome.com" />
+	<id>http://npmawesome.com</id>
+	<updated>2014-02-20T18:46:33.001Z</updated>
+	<author>
+		<name>Alex Gorbatchev</name>
+		<email></email>
+	</author>
+
+	
+		<entry>
+			<title>spritesmith</title>
+			<link href="http://npmawesome.com/posts/2014-02-20-spritesmith"/>
+			<updated>2014-02-20T17:58:22.000Z</updated>
+			<id>http://npmawesome.com/posts/2014-02-20-spritesmith</id>
+			<content type="html">&lt;p&gt;&lt;img class=&quot;hide-on-mobile&quot; src=&quot;https://0.gravatar.com/avatar/15927fc52919e9223adc7ed99e125d4d&quot; style=&quot;float: right; margin-left: 1em&quot;/&gt;
+&lt;a href=&quot;https://github.com/Ensighten/spritesmith&quot;&gt;spritesmith&lt;/a&gt; is a module by &lt;a href=&quot;https://github.com/twolfson&quot;&gt;Todd Wolfson&lt;/a&gt; that takes image files and generates &lt;a href=&quot;http://en.wikipedia.org/wiki/Sprite_%28computer_graphics%29#Sprites_by_CSS&quot;&gt;spritesheets&lt;/a&gt; and coordinate maps. By itself &lt;a href=&quot;https://github.com/Ensighten/spritesmith&quot;&gt;spritesmith&lt;/a&gt; would be somewhat difficult to utilize in your workflow, that&amp;#39;s why nice people have created &lt;a href=&quot;https://github.com/twolfson/gulp.spritesmith&quot;&gt;gulp.spritesmith&lt;/a&gt; and &lt;a href=&quot;https://github.com/Ensighten/grunt-spritesmith&quot;&gt;grunt-spritesmith&lt;/a&gt; tasks to make build sprites for you with just a few lines of code.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;npm install spritesmith
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&quot;usage&quot;&gt;Usage&lt;/h2&gt;
+&lt;p&gt;&lt;img class=&quot;hide-on-mobile&quot; src=&quot;http://upload.wikimedia.org/wikipedia/commons/0/03/Sprite-example.gif&quot; style=&quot;float: right; width: 150px; margin-left: 1em; background: white; padding: 1em&quot;/&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;var sprites = [
+  &amp;#39;sprite1.png&amp;#39;,
+  &amp;#39;sprite2.jpg&amp;#39;,
+  &amp;#39;sprite3.png&amp;#39;
+];
+
+spritesmith({&amp;#39;src&amp;#39;: sprites}, function (err, result) {
+  // Binary string representation of image
+  result.image;
+
+  // Object mapping filename to {x, y, width, height} of image
+  result.coordinates;
+
+  // Object with metadata about spritesheet {width, height}
+  result.properties;
+});
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Converting this structure to image files and CSS now seems like a pretty straightforward task.&lt;/p&gt;
+</content>
+		</entry>
+	
+		<entry>
+			<title>9 gulp.js plugins for a great build system</title>
+			<link href="http://npmawesome.com/posts/2014-02-19-9-gulp-js-plugins-for-a-great-build-system"/>
+			<updated>2014-02-19T17:26:59.000Z</updated>
+			<id>http://npmawesome.com/posts/2014-02-19-9-gulp-js-plugins-for-a-great-build-system</id>
+			<content type="html">&lt;div class=&quot;highlight&quot;&gt;
+  &lt;img class=&quot;hide-on-mobile&quot; src=&quot;/images/posts/nodejitsu.png&quot; style=&quot;height: 80px&quot;/&gt;
+  This post was written for &lt;a href=&quot;https://blog.nodejitsu.com&quot;&gt;Nodejitsu&lt;/a&gt; blog and is crossposted here. &lt;a href=&quot;https://blog.nodejitsu.com&quot;&gt;Nodejitsu&lt;/a&gt; loved what I was doing at &lt;a href=&quot;http://npmawesome.com&quot;&gt;npmawesome.com&lt;/a&gt; and is now supporting the project.
+&lt;/div&gt;
+
+&lt;p&gt;This article assumes you have experience with node.js, npm and you are pretty familiar with the concept of task runners and command-line interface. It will walk through general steps required to get up and running with &lt;a href=&quot;http://gulpjs.com&quot;&gt;gulp.js&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Not unlike all the other build systems, it all starts by installing the task runner itself, e.g. &lt;code&gt;npm install gulp&lt;/code&gt; and creating the main file in the root of your project called &lt;code&gt;gulpfile.js&lt;/code&gt;. For those people like myself, who immediately want to know if &lt;a href=&quot;http://gulpjs.com&quot;&gt;gulp.js&lt;/a&gt; supports CoffeeScript - the answer is yes - just &lt;code&gt;require(&amp;#39;./gulpfile.coffee&amp;#39;)&lt;/code&gt; from &lt;code&gt;gulpfile.js&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;Now that we have everything sorted out, lets get cracking and make a task runner to support our HTML5 node.js project.&lt;/p&gt;
+&lt;h2 id=&quot;-gulp-util-&quot;&gt;&lt;a href=&quot;https://github.com/gulpjs/gulp-util&quot;&gt;gulp-util&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;This is the official tool belt for &lt;a href=&quot;http://gulpjs.com&quot;&gt;gulp.js&lt;/a&gt;. The authors decided to split up helpers into a separate module which you basically end up requiring every time. This module brings in functionality for logging, coloring console output, and so on. Check out the &lt;a href=&quot;https://github.com/gulpjs/gulp-util&quot;&gt;gulp-util&lt;/a&gt; github page for the full list.&lt;/p&gt;
+&lt;p&gt;Since this is a utility module, there isn&amp;#39;t a specific place to get started with it, so we will use it throughout instead.&lt;/p&gt;
+&lt;h2 id=&quot;-gulp-clean-&quot;&gt;&lt;a href=&quot;https://github.com/peter-vilja/gulp-clean&quot;&gt;gulp-clean&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;The first thing any self-respecting build system should do is clean the space and remove everything that&amp;#39;s in the way.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;var gulp = require(&amp;#39;gulp&amp;#39;);
+var clean = require(&amp;#39;gulp-clean&amp;#39;);
+
+gulp.task(&amp;#39;clean&amp;#39;, function () {
+  gulp.src(&amp;#39;build&amp;#39;, {read: false})
+    .pipe(clean());
+});
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;You can now run &lt;code&gt;gulp clean&lt;/code&gt; and the &lt;code&gt;build&lt;/code&gt; folder in the root of your project will be obliterated.&lt;/p&gt;
+&lt;h2 id=&quot;-gulp-concat-&quot;&gt;&lt;a href=&quot;https://github.com/wearefractal/gulp-concat&quot;&gt;gulp-concat&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;It&amp;#39;s probably safe to assume that your HTML5 project has a few external dependencies like &lt;a href=&quot;http://jquery.com&quot;&gt;jQuery&lt;/a&gt;, maybe &lt;a href=&quot;http://modernizr.com/&quot;&gt;Modernizr&lt;/a&gt; and such. Instead of having a separate &lt;code&gt;&amp;lt;script&amp;gt;&lt;/code&gt; tag for each one of them, it would be nice to concat them together into one file. That&amp;#39;s where &lt;a href=&quot;https://github.com/wearefractal/gulp-concat&quot;&gt;gulp-concat&lt;/a&gt; comes in:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;var concat = require(&amp;#39;gulp-concat&amp;#39;);
+
+gulp.task(&amp;#39;vendor&amp;#39;, function() {
+  gulp.src(&amp;#39;vendor/*.js&amp;#39;)
+    .pipe(concat(&amp;#39;vendor.js&amp;#39;))
+    .pipe(gulp.dest(&amp;#39;build/vendor.js&amp;#39;))
+});
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Now, running &lt;code&gt;gulp vendor&lt;/code&gt; will take all &lt;code&gt;*.js&lt;/code&gt; files from the local &lt;code&gt;vendor&lt;/code&gt; folder and concat them into &lt;code&gt;build/vendor.js&lt;/code&gt;.&lt;/p&gt;
+&lt;h2 id=&quot;-gulp-uglify-&quot;&gt;&lt;a href=&quot;https://github.com/terinjokes/gulp-uglify&quot;&gt;gulp-uglify&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;The next thing to do is to minify our &lt;code&gt;vendor.js&lt;/code&gt;. Lets add this to our &lt;code&gt;vendor&lt;/code&gt; task.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;var uglify = require(&amp;#39;gulp-uglify&amp;#39;);
+
+gulp.task(&amp;#39;vendor&amp;#39;, function() {
+  gulp.src(&amp;#39;vendor/*.js&amp;#39;)
+    .pipe(concat(&amp;#39;vendor.js&amp;#39;))
+    .pipe(uglify())
+    .pipe(gulp.dest(&amp;#39;build/vendor.js&amp;#39;))
+});
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Notice, that instead of creating a separate task for minifying, we simply added another &lt;code&gt;pipe&lt;/code&gt; call. This is essentially what &lt;a href=&quot;http://gulpjs.com&quot;&gt;gulp.js&lt;/a&gt; is all about - applying the right tools!&lt;/p&gt;
+&lt;p&gt;This is also where things might start going wrong, because &lt;a href=&quot;https://github.com/terinjokes/gulp-uglify&quot;&gt;gulp-uglify&lt;/a&gt; will throw an error if you have invalid JavaScript syntax. To deal with that lets add a basic error:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;var gutil = require(&amp;#39;gulp-util&amp;#39;);
+
+gulp.task(&amp;#39;vendor&amp;#39;, function() {
+  gulp.src(&amp;#39;vendor/*.js&amp;#39;)
+    .pipe(concat(&amp;#39;vendor.js&amp;#39;))
+    .pipe(uglify())
+    .pipe(gulp.dest(&amp;#39;build/vendor.js&amp;#39;))
+    .on(&amp;#39;error&amp;#39;, gutil.log)
+});
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&quot;-gulp-rename-&quot;&gt;&lt;a href=&quot;https://github.com/hparra/gulp-rename&quot;&gt;gulp-rename&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Do you want to keep both, minified and source files around? That&amp;#39;s not a problem! Lets extend our &lt;code&gt;vendor&lt;/code&gt; task to write out &lt;code&gt;vendor.js&lt;/code&gt; and &lt;code&gt;vendor.min.js&lt;/code&gt; at the same time.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;var rename = require(&amp;#39;gulp-rename&amp;#39;);
+
+gulp.task(&amp;#39;vendor&amp;#39;, function() {
+  gulp.src(&amp;#39;vendor/*.js&amp;#39;)
+    .pipe(concat(&amp;#39;vendor.js&amp;#39;))
+    .pipe(gulp.dest(&amp;#39;build&amp;#39;))
+    .pipe(uglify())
+    .pipe(rename(&amp;#39;vendor.min.js`))
+    .pipe(gulp.dest(&amp;#39;build&amp;#39;))
+    .on(&amp;#39;error&amp;#39;, gutil.log)
+});
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Notice that &lt;code&gt;gulp.dest&lt;/code&gt; is used twice here. This is the cool thing about &lt;a href=&quot;http://gulpjs.com&quot;&gt;gulp.js&lt;/a&gt; - everything is just streams. Adding &lt;code&gt;gulp.dest&lt;/code&gt; merely dumps whatever we currently have in the stream to disk, we can then mutate it further and save the new state again. Cool, eh?&lt;/p&gt;
+&lt;h2 id=&quot;-gulp-filesize-&quot;&gt;&lt;a href=&quot;https://github.com/Metrime/gulp-filesize&quot;&gt;gulp-filesize&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Don&amp;#39;t know about you, but after minifying JavaScript I always want to know the file size. Guess what - I&amp;#39;m not the only one and there&amp;#39;s a plugin for that.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;var filesize = require(&amp;#39;gulp-filesize&amp;#39;);
+
+gulp.task(&amp;#39;vendor&amp;#39;, function() {
+  gulp.src(&amp;#39;vendor/*.js&amp;#39;)
+    .pipe(concat(&amp;#39;vendor.js&amp;#39;))
+    .pipe(gulp.dest(&amp;#39;build&amp;#39;))
+    .pipe(filesize())
+    .pipe(uglify())
+    .pipe(rename(&amp;#39;vendor.min.js`))
+    .pipe(gulp.dest(&amp;#39;build&amp;#39;))
+    .pipe(filesize())
+    .on(&amp;#39;error&amp;#39;, gutil.log)
+});
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Again, see how &lt;code&gt;filesize&lt;/code&gt; is used twice? It will first print out the size of our source file and then the minified size.&lt;/p&gt;
+&lt;h2 id=&quot;-gulp-less-&quot;&gt;&lt;a href=&quot;https://github.com/plus3network/gulp-less&quot;&gt;gulp-less&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Lets assume you used the amazing &lt;a href=&quot;http://lesscss.org/&quot;&gt;LESS&lt;/a&gt; preprocessor for your generating your CSS files and now want to generate them. &lt;a href=&quot;https://github.com/plus3network/gulp-less&quot;&gt;gulp-less&lt;/a&gt; to the rescue!&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;var less = require(&amp;#39;gulp-less&amp;#39;);
+var path = require(&amp;#39;path&amp;#39;);
+
+gulp.task(&amp;#39;css&amp;#39;, function () {
+  gulp.src(&amp;#39;less/**/*.less&amp;#39;)
+    .pipe(less({
+      paths: [ path.join(__dirname, &amp;#39;less&amp;#39;, &amp;#39;includes&amp;#39;) ]
+    }))
+    .pipe(gulp.dest(&amp;#39;build/css&amp;#39;))
+    .on(&amp;#39;error&amp;#39;, gutil.log);
+});
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Running &lt;code&gt;gulp css&lt;/code&gt; will compile all &lt;a href=&quot;http://lesscss.org/&quot;&gt;LESS&lt;/a&gt; files from the &lt;code&gt;less&lt;/code&gt; folder into &lt;code&gt;build/css&lt;/code&gt;.&lt;/p&gt;
+&lt;h2 id=&quot;-gulp-changed-&quot;&gt;&lt;a href=&quot;https://github.com/sindresorhus/gulp-changed&quot;&gt;gulp-changed&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;I would be forever unhappy if every time I ran &lt;code&gt;gulp css&lt;/code&gt; all of my files would be regenerated regardless if the source &lt;a href=&quot;http://lesscss.org/&quot;&gt;LESS&lt;/a&gt; files have changed or not. Lets use &lt;a href=&quot;https://github.com/sindresorhus/gulp-changed&quot;&gt;gulp-changed&lt;/a&gt; to excluded not modified files.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;var changed = require(&amp;#39;gulp-changed&amp;#39;);
+
+gulp.task(&amp;#39;css&amp;#39;, function () {
+  gulp.src(&amp;#39;less/**/*.less&amp;#39;)
+    .pipe(changed(&amp;#39;build/css&amp;#39;))
+    .pipe(less({
+      paths: [ path.join(__dirname, &amp;#39;less&amp;#39;, &amp;#39;includes&amp;#39;) ]
+    }))
+    .pipe(gulp.dest(&amp;#39;build/css&amp;#39;))
+    .on(&amp;#39;error&amp;#39;, gutil.log);
+});
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&quot;-gulp-watch-&quot;&gt;&lt;a href=&quot;https://github.com/floatdrop/gulp-watch&quot;&gt;gulp-watch&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;It would be really cool if you didn&amp;#39;t have to run &lt;code&gt;gulp css&lt;/code&gt; every time you make a change, right? Lets set up a task that will monitor our files for changes and and compile them right away.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://github.com/floatdrop/gulp-watch&quot;&gt;gulp-watch&lt;/a&gt; is a little bit different from the other plugins and we use it instead of &lt;code&gt;gulp.src&lt;/code&gt; as the starting point.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;var watch = require(&amp;#39;gulp-watch&amp;#39;);
+
+gulp.task(&amp;#39;css:watch&amp;#39;, function () {
+  watch({
+    glob: &amp;#39;less/**/*.less&amp;#39;,
+    emit: &amp;#39;one&amp;#39;,
+    emitOnGlob: false
+  }, function(files) {
+    return files
+      .pipe(less({
+        paths: [ path.join(__dirname, &amp;#39;less&amp;#39;, &amp;#39;includes&amp;#39;) ]
+      }))
+      .pipe(gulp.dest(&amp;#39;build/css&amp;#39;))
+      .on(&amp;#39;error&amp;#39;, gutil.log);
+  });
+});
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;code&gt;gulp css:watch&lt;/code&gt; will being watching all of our LESS files and compile only the changed one.&lt;/p&gt;
+&lt;h2 id=&quot;all-together&quot;&gt;All together&lt;/h2&gt;
+&lt;p&gt;Now lets put it all together into &lt;code&gt;gulpfile.js&lt;/code&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;var path = require(&amp;#39;path&amp;#39;);
+var gulp = require(&amp;#39;gulp&amp;#39;);
+var gutil = require(&amp;#39;gulp-util&amp;#39;);
+var clean = require(&amp;#39;gulp-clean&amp;#39;);
+var concat = require(&amp;#39;gulp-concat&amp;#39;);
+var uglify = require(&amp;#39;gulp-uglify&amp;#39;);
+var rename = require(&amp;#39;gulp-rename&amp;#39;);
+var filesize = require(&amp;#39;gulp-filesize&amp;#39;);
+var less = require(&amp;#39;gulp-less&amp;#39;);
+var changed = require(&amp;#39;gulp-changed&amp;#39;);
+var watch = require(&amp;#39;gulp-watch&amp;#39;);
+
+gulp.task(&amp;#39;clean&amp;#39;, function () {
+  gulp.src(&amp;#39;build&amp;#39;, {read: false})
+    .pipe(clean());
+});
+
+gulp.task(&amp;#39;vendor&amp;#39;, function() {
+  gulp.src(&amp;#39;vendor/*.js&amp;#39;)
+    .pipe(concat(&amp;#39;vendor.js&amp;#39;))
+    .pipe(gulp.dest(&amp;#39;build&amp;#39;))
+    .pipe(filesize())
+    .pipe(uglify())
+    .pipe(rename(&amp;#39;vendor.min.js`))
+    .pipe(gulp.dest(&amp;#39;build&amp;#39;))
+    .pipe(filesize())
+    .on(&amp;#39;error&amp;#39;, gutil.log)
+});
+
+gulp.task(&amp;#39;css&amp;#39;, function () {
+  gulp.src(&amp;#39;less/**/*.less&amp;#39;)
+    .pipe(changed(&amp;#39;build/css&amp;#39;))
+    .pipe(less({
+      paths: [ path.join(__dirname, &amp;#39;less&amp;#39;, &amp;#39;includes&amp;#39;) ]
+    }))
+    .pipe(gulp.dest(&amp;#39;build/css&amp;#39;))
+    .on(&amp;#39;error&amp;#39;, gutil.log);
+});
+
+gulp.task(&amp;#39;css:watch&amp;#39;, function () {
+  watch({
+    glob: &amp;#39;less/**/*.less&amp;#39;,
+    emit: &amp;#39;one&amp;#39;,
+    emitOnGlob: false
+  }, function(files) {
+    return files
+      .pipe(less({
+        paths: [ path.join(__dirname, &amp;#39;less&amp;#39;, &amp;#39;includes&amp;#39;) ]
+      }))
+      .pipe(gulp.dest(&amp;#39;build/css&amp;#39;))
+      .on(&amp;#39;error&amp;#39;, gutil.log);
+  });
+});
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&quot;summary&quot;&gt;Summary&lt;/h2&gt;
+&lt;p&gt;The thing that I personally really like about &lt;a href=&quot;http://gulpjs.com&quot;&gt;gulp.js&lt;/a&gt; is that it feels to me like a toolbox full of single purpose tools that I can use to assemble almost anything. It&amp;#39;s amazing how in a span of a couple of months community has wrote &lt;a href=&quot;http://gulpjs.com/plugins/&quot;&gt;over 300 plugins&lt;/a&gt;.&lt;/p&gt;
+</content>
+		</entry>
+	
+		<entry>
+			<title>npm-diff</title>
+			<link href="http://npmawesome.com/posts/2014-02-18-npm-diff"/>
+			<updated>2014-02-18T19:13:20.000Z</updated>
+			<id>http://npmawesome.com/posts/2014-02-18-npm-diff</id>
+			<content type="html">&lt;p&gt;&lt;img class=&quot;hide-on-mobile&quot; src=&quot;https://1.gravatar.com/avatar/a010d5218f2c3d194dbbac9c5d14d0ad&quot; style=&quot;float: right; margin-left: 1em&quot;/&gt;
+&lt;a href=&quot;https://github.com/segmentio/npm-diff&quot;&gt;npm-diff&lt;/a&gt; is a utility module by &lt;a href=&quot;https://github.com/juliangruber&quot;&gt;Julian Gruber&lt;/a&gt; to diff two versions of NPM module. I&amp;#39;ve been fascinated recently by all the tools being released to help you manage &lt;code&gt;package.json&lt;/code&gt; and module publishing. It&amp;#39;s really cool!&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;npm install npm-diff
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&quot;usage&quot;&gt;Usage&lt;/h2&gt;
+&lt;pre&gt;&lt;code&gt;$ npm-diff intersect 0.0.0 0.1.0 | colordiff
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;img class=&quot;hide-on-mobile&quot; src=&quot;https://github-camo.global.ssl.fastly.net/304bdd7188c9fea08e87e731790aad980877ce7b/68747470733a2f2f692e636c6f756475702e636f6d2f5267694263634b7664742e706e67&quot; style=&quot;width: 100%&quot;/&gt;&lt;/p&gt;
+&lt;p&gt;BOOM! &lt;code&gt;brew install colordiff&lt;/code&gt; if you haven&amp;#39;t got it.&lt;/p&gt;
+</content>
+		</entry>
+	
+		<entry>
+			<title>NodePDF</title>
+			<link href="http://npmawesome.com/posts/2014-02-17-nodepdf"/>
+			<updated>2014-02-17T17:56:26.000Z</updated>
+			<id>http://npmawesome.com/posts/2014-02-17-nodepdf</id>
+			<content type="html">&lt;p&gt;&lt;img class=&quot;hide-on-mobile&quot; src=&quot;https://0.gravatar.com/avatar/c0f5a91f71e988a9e2d9c20ffa546f4e&quot; style=&quot;float: right; margin-left: 1em&quot;/&gt;
+&lt;a href=&quot;https://github.com/TJkrusinski/NodePDF&quot;&gt;NodePDF&lt;/a&gt; is a module by &lt;a href=&quot;https://github.com/TJkrusinski&quot;&gt;TJ Krusinski&lt;/a&gt; for creating PDF files from web pages. It depends on &lt;a href=&quot;http://phantomjs.org/&quot;&gt;PhantomJS&lt;/a&gt; and works by simply taking a screenshot of a page and stuffing it into a PDF. One the plus side, this makes it really easy to do mostly graphics based PDF files from node. On the down side, the content isn&amp;#39;t scalable at all, so printing quality will suffer.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;npm install nodepdf
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&quot;usage&quot;&gt;Usage&lt;/h2&gt;
+&lt;p&gt;&lt;img class=&quot;hide-on-mobile&quot; src=&quot;/images/posts/nodepdf.jpg&quot; style=&quot;width: 300px; float: right; margin: 1em;&quot;/&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;var nodepdf = require(&amp;#39;nodepdf&amp;#39;);
+
+// last argument is optional, sets the width and height
+// for the viewport to render the pdf from
+var pdf = new nodepdf(
+  &amp;#39;http://npmawesome.com&amp;#39;,
+  &amp;#39;npmawesome.pdf&amp;#39;,
+  {
+    args: &amp;#39;--debug=true&amp;#39;,
+    viewportSize: {
+      width: 500,
+      height: 300
+    }
+  }
+);
+
+pdf.on(&amp;#39;error&amp;#39;, function(msg){
+    console.log(msg);
+});
+
+pdf.on(&amp;#39;done&amp;#39;, function(pathToFile){
+    console.log(pathToFile);
+});
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;I can imagine this being used for something simple, like printing tickets, post cards, photos and so on.&lt;/p&gt;
+</content>
+		</entry>
+	
+		<entry>
+			<title>domain-context</title>
+			<link href="http://npmawesome.com/posts/2014-02-13-domain-context"/>
+			<updated>2014-02-13T21:20:38.000Z</updated>
+			<id>http://npmawesome.com/posts/2014-02-13-domain-context</id>
+			<content type="html">&lt;p&gt;&lt;img class=&quot;hide-on-mobile&quot; src=&quot;/images/posts/domain-context.jpg&quot; style=&quot;width: 100%&quot;/&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://github.com/andreypopp/domain-context&quot;&gt;domain-context&lt;/a&gt; is a module by &lt;a href=&quot;https://github.com/andreypopp&quot;&gt;Andrey Popp&lt;/a&gt; for dealing with globally accessible domain-bound contexts, connect/express middleware included.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;npm install domain-context
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&quot;usage&quot;&gt;Usage&lt;/h2&gt;
+&lt;pre&gt;&lt;code&gt;var connectDomain = require(&amp;#39;connect-domain&amp;#39;),
+    domainContext = require(&amp;#39;domain-context&amp;#39;),
+    express = require(&amp;#39;express&amp;#39;);
+
+var lifecycle = {
+  context: function() {
+    return {db: new pg.Client(...)}
+  },
+  cleanup: function(context) {
+    context.db.query(&amp;#39;commit&amp;#39;);
+    context.db.end();
+  },
+  onError: function(err, context) {
+    context.db.query(&amp;#39;rollback&amp;#39;);
+    context.db.end();
+  }
+};
+
+app = express();
+app.use(connectDomain());
+app.use(domainContext.middleware(lifecycle));
+
+// Your applicaiton&amp;#39;s middleware goes here
+//
+// Note that because of connect/express design you are required to place two
+// middlewares around your application — domainContext.middleware() and
+// domainContext.middlewareOnError().
+
+app.use(domainContext.middlewareOnError(lifecycle));
+
+// Now you can use domainContext.get() to query data from the currently active domain:
+
+var domainContext = require(&amp;#39;connect-reqcontext&amp;#39;);
+
+function getUserById(id, cb) {
+  domainContext.get(&amp;#39;db&amp;#39;).query(&amp;quot;select ...&amp;quot;, cb);
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;I feel that this is pretty self-explanatory here. Being able to get request context outside of the &lt;code&gt;express&lt;/code&gt; handlers and not having to pass so much context around to API is pretty great.&lt;/p&gt;
+</content>
+		</entry>
+	
+		<entry>
+			<title>JSONStream</title>
+			<link href="http://npmawesome.com/posts/2014-02-12-jsonstream"/>
+			<updated>2014-02-12T18:07:44.000Z</updated>
+			<id>http://npmawesome.com/posts/2014-02-12-jsonstream</id>
+			<content type="html">&lt;p&gt;&lt;a href=&quot;https://github.com/dominictarr/JSONStream&quot;&gt;JSONStream&lt;/a&gt; is a module by &lt;a href=&quot;https://github.com/dominictarr&quot;&gt;Dominic Tarr&lt;/a&gt; for streaming &lt;code&gt;JSON.parse&lt;/code&gt; and &lt;code&gt;JSON.stringify&lt;/code&gt;.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;npm install jsonstream
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&quot;usage&quot;&gt;Usage&lt;/h2&gt;
+&lt;pre&gt;&lt;code&gt;var request = require(&amp;#39;request&amp;#39;),
+    JSONStream = require(&amp;#39;JSONStream&amp;#39;),
+    es = require(&amp;#39;event-stream&amp;#39;)
+    ;
+
+var parser = JSONStream.parse([&amp;#39;rows&amp;#39;, true]),
+    req = request({url: &amp;#39;http://isaacs.couchone.com/registry/_all_docs&amp;#39;}),
+    logger = es.mapSync(function (data) {
+      console.error(data);
+      return data;
+    })
+
+request({url: &amp;#39;http://isaacs.couchone.com/registry/_all_docs&amp;#39;})
+  .pipe(JSONStream.parse(&amp;#39;rows.*&amp;#39;))
+  .pipe(es.mapSync(function (data) {
+    console.error(data);
+    return data;
+  }));
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;img class=&quot;hide-on-mobile&quot; src=&quot;/images/posts/json.svg&quot; style=&quot;float: right; width: 100px; margin-left: 1em&quot;/&gt;
+I like the idea behind streaming JSON alot because you don&amp;#39;t have to wait for the whole document to come down the pipe, especially if it&amp;#39;s very large. It can also integrate with &lt;a href=&quot;http://gulpjs.com&quot;&gt;gulp.js&lt;/a&gt; very nicely. The really cool thing for me is that you can react to specific nodes in the data structure vs having to seek them out and loop over them manually.&lt;/p&gt;
+&lt;p&gt;Are you dealing with large JSON structures on your project?&lt;/p&gt;
+</content>
+		</entry>
+	
+		<entry>
+			<title>peer.js</title>
+			<link href="http://npmawesome.com/posts/2014-02-11-peer-js"/>
+			<updated>2014-02-11T17:59:37.000Z</updated>
+			<id>http://npmawesome.com/posts/2014-02-11-peer-js</id>
+			<content type="html">&lt;p&gt;&lt;img class=&quot;hide-on-mobile&quot; src=&quot;/images/posts/peerjs.png&quot; style=&quot;float: right; margin-left: 1em&quot;/&gt;
+&lt;a href=&quot;https://github.com/peers/peerjs&quot;&gt;peer.js&lt;/a&gt; provides a complete, configurable, and easy-to-use peer-to-peer API built on top of WebRTC, supporting both data channels and media streams. &lt;a href=&quot;https://github.com/peers/peerjs&quot;&gt;peer.js&lt;/a&gt; wraps the browser&amp;#39;s WebRTC implementation to provide a complete, configurable, and easy-to-use peer-to-peer connection API. Equipped with nothing but an ID, a peer can create a P2P data or media stream connection to a remote peer.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;npm install peerjs
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;To broker connections, &lt;a href=&quot;https://github.com/peers/peerjs&quot;&gt;peer.js&lt;/a&gt; connects to a PeerServer (&lt;a href=&quot;http://peerjs.com/peerserver&quot;&gt;free hosted&lt;/a&gt; or &lt;a href=&quot;https://github.com/peers/peerjs-server&quot;&gt;host your own&lt;/a&gt;). Note that &lt;strong&gt;no peer-to-peer data goes through the server&lt;/strong&gt; - the server acts only as connection broker.&lt;/p&gt;
+&lt;h2 id=&quot;usage&quot;&gt;Usage&lt;/h2&gt;
+&lt;pre&gt;&lt;code&gt;var Peer = require(&amp;#39;peerjs&amp;#39;).Peer;
+
+// You can pick your own id or omit the id if you want to get a random one from the server.
+var peer = new Peer(&amp;#39;pick-an-id&amp;#39;, { key: &amp;#39;myapikey&amp;#39; });
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Connect&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;var conn = peer.connect(&amp;#39;another-peers-id&amp;#39;);
+conn.on(&amp;#39;open&amp;#39;, function() {
+  conn.send(&amp;#39;hi!&amp;#39;);
+});
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Receive&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;peer.on(&amp;#39;connection&amp;#39;, function(conn) {
+  conn.on(&amp;#39;data&amp;#39;, function(data) {
+    // Will print &amp;#39;hi!&amp;#39;
+    console.log(data);
+  });
+});
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Checkout the &lt;a href=&quot;http://peerjs.com/docs/#api&quot;&gt;awesome API docs&lt;/a&gt; and take it out for a spin. You can create a video chat with just a few lines of code. Have you done any peer-to-peer stuff?&lt;/p&gt;
+</content>
+		</entry>
+	
+		<entry>
+			<title>node-dependencies</title>
+			<link href="http://npmawesome.com/posts/2014-02-10-node-dependencies"/>
+			<updated>2014-02-10T18:57:16.000Z</updated>
+			<id>http://npmawesome.com/posts/2014-02-10-node-dependencies</id>
+			<content type="html">&lt;p&gt;&lt;img class=&quot;hide-on-mobile&quot; src=&quot;https://0.gravatar.com/avatar/91ab609100e96dd5ccb270399e1acab6&quot; style=&quot;float: right; margin-left: 1em&quot;/&gt;
+&lt;a href=&quot;https://github.com/FogCreek/node-dependencies&quot;&gt;node-dependencies&lt;/a&gt; is a very basic but incredibly useful command line utility written by &lt;a href=&quot;https://github.com/dpatti&quot;&gt;Doug Patti&lt;/a&gt; of &lt;a href=&quot;https://www.fogcreek.com/&quot;&gt;Fog Creek&lt;/a&gt; that checks and prints out out-of-date dependencies for your Node.js app.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;npm install node-dependencies
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&quot;usage&quot;&gt;Usage&lt;/h2&gt;
+&lt;pre&gt;&lt;code&gt;$ node-dependencies --sort=urgency
+
+Package                   Local      Major      Minor      Patch
+tedious                   0.1.4        ---        ---      0.1.5
+mongoose                 3.6.11        ---        ---   3.6.0rc1
+optimist                  0.5.0        ---      0.6.0      0.5.2
+redis                     0.8.1        ---        ---      0.8.3
+underscore                1.4.3        ---        ---      1.4.4
+less-middleware          0.1.11        ---        ---     0.1.12
+express                   3.2.4        ---        ---      3.2.6
+grunt                     0.4.1        ---        ---   0.4.0rc8
+coffee-script             1.6.2        ---        ---      1.6.3
+bcrypt                    0.7.5        ---        ---      0.7.6
+knox                      0.8.2        ---        ---      0.8.3
+coffee-backtrace          0.2.0        ---      0.3.4      0.2.1
+socket.io                0.9.14        ---        ---    0.9.1-1
+async                    0.1.22        ---      0.2.9        ---
+mocha                     1.9.0        ---     1.11.0        ---
+less                      1.3.3        ---   1.4.0-b4        ---
+hbs                       2.1.0        ---      2.3.0        ---
+grunt-ember-handleba      0.4.0        ---      0.6.0        ---
+js-yaml                   1.0.3      2.1.0        ---        ---
+ent                       0.0.5        ---        ---        ---
+date-utils               1.2.13        ---        ---        ---
+jquery                    1.8.3        ---        ---        ---
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;I came about  trying to update dependencies for a whole bunch of NPM modules. It would be even more useful if it could update &lt;code&gt;package.json&lt;/code&gt; for me.&lt;/p&gt;
+</content>
+		</entry>
+	
+		<entry>
+			<title>cucumber.js</title>
+			<link href="http://npmawesome.com/posts/2014-02-05-cucumber-js"/>
+			<updated>2014-02-05T21:06:18.000Z</updated>
+			<id>http://npmawesome.com/posts/2014-02-05-cucumber-js</id>
+			<content type="html">&lt;p&gt;&lt;img class=&quot;hide-on-mobile&quot; src=&quot;/images/posts/cucumber-logo.png&quot; style=&quot;width: 100%; margin-bottom: 1em&quot;/&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img class=&quot;hide-on-mobile&quot; src=&quot;https://2.gravatar.com/avatar/cbc1acceddbfaceee4cf3cae24d7c912&quot; style=&quot;float: right; margin-left: 1em&quot;/&gt;
+&lt;a href=&quot;https://github.com/cucumber/cucumber-js&quot;&gt;cucumber.js&lt;/a&gt; is a port of the famous Ruby &lt;a href=&quot;http://cukes.info/&quot;&gt;Cucumber testing framework&lt;/a&gt; by &lt;a href=&quot;https://github.com/jbpros&quot;&gt;Julien Biezemans&lt;/a&gt; that lets software development teams describe how software should behave in plain text. The text is written in a business-readable domain-specific language and serves as documentation, automated tests and development-aid - all rolled into one format.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;npm install cucumber
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&quot;features&quot;&gt;Features&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&quot;https://github.com/cucumber/cucumber-js&quot;&gt;cucumber.js&lt;/a&gt; implements most of the Ruby counterpart&amp;#39;s feature for feature and has baked in support for CoffeeScript.&lt;/p&gt;
+&lt;h2 id=&quot;usage&quot;&gt;Usage&lt;/h2&gt;
+&lt;p&gt;Features are written with the &lt;a href=&quot;https://github.com/cucumber/cucumber/wiki/Gherkin&quot;&gt;Gherkin syntax&lt;/a&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;# features/myFeature.feature
+
+Feature: Example feature
+  As a user of cucumber.js
+  I want to have documentation on cucumber
+  So that I can concentrate on building awesome applications
+
+  Scenario: Reading documentation
+    Given I am on the Cucumber.js GitHub repository
+    When I go to the README file
+    Then I should see &amp;quot;Usage&amp;quot; as the page title
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Then&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;@Then &amp;quot;I should see \&amp;quot;$title\&amp;quot; as the page title&amp;quot;, (title, callback) -&amp;gt;
+  # the above string is converted to the following Regexp by Cucumber:
+  # /^I should see &amp;quot;([^&amp;quot;]*)&amp;quot; as the page title$/
+  pageTitle = @browser.text(&amp;quot;title&amp;quot;)
+
+  if title is pageTitle
+    callback()
+  else
+    callback.fail new Error(&amp;quot;Expected to be on page with title &amp;quot; + title)
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;or in JavaScript&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;this.Then(&amp;#39;I should see &amp;quot;$title&amp;quot; as the page title&amp;#39;, function(title, callback) {
+  // the above string is converted to the following Regexp by Cucumber:
+  // /^I should see &amp;quot;([^&amp;quot;]*)&amp;quot; as the page title$/
+
+  var pageTitle = this.browser.text(&amp;#39;title&amp;#39;);
+  if (title === pageTitle) {
+    callback();
+  } else {
+    callback.fail(new Error(&amp;quot;Expected to be on page with title &amp;quot; + title));
+  }
+});
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;img class=&quot;hide-on-mobile&quot; src=&quot;/images/posts/cucumber-meme.jpg&quot; style=&quot;float: right; margin-left: 1em&quot;/&gt;
+Writing &lt;a href=&quot;https://github.com/cucumber/cucumber/wiki/Feature-Introduction&quot;&gt;Cucumber scenarios&lt;/a&gt; is pretty straight forward and is very addictive. I currently use &lt;a href=&quot;http://visionmedia.github.io/mocha/&quot;&gt;Mocha&lt;/a&gt; and write &lt;code&gt;describe&lt;/code&gt; and &lt;code&gt;it&lt;/code&gt; blocks in nearly the same fasion so that they read as a cohesive story. Perhaps I should just use &lt;a href=&quot;https://github.com/cucumber/cucumber-js&quot;&gt;cucumber.js&lt;/a&gt; instead?&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;http://www.martinfowler.com/bliki/BusinessReadableDSL.html&quot;&gt;The pipe dream&lt;/a&gt; is to be let business people to write software rules without involving programmers. I&amp;#39;m on the fence if it&amp;#39;s a good idea, or even if it&amp;#39;s possible, but I used to write Cucumber tests back in my Ruby days and loved it!&lt;/p&gt;
+&lt;p&gt;Check out this &lt;a href=&quot;http://flippinawesome.org/2014/01/27/bdd-in-javascript-with-cucumberjs/&quot;&gt;awesome write up&lt;/a&gt; on &lt;a href=&quot;https://github.com/cucumber/cucumber-js&quot;&gt;cucumber.js&lt;/a&gt;. So, what do you think? Is Cucumber a good idea?&lt;/p&gt;
+</content>
+		</entry>
+	
+		<entry>
+			<title>binary.js</title>
+			<link href="http://npmawesome.com/posts/2014-02-04-binary-js"/>
+			<updated>2014-02-04T17:41:51.000Z</updated>
+			<id>http://npmawesome.com/posts/2014-02-04-binary-js</id>
+			<content type="html">&lt;p&gt;&lt;a href=&quot;https://github.com/binaryjs/binaryjs&quot;&gt;binary.js&lt;/a&gt; is a lightweight framework by &lt;a href=&quot;https://github.com/binaryjs&quot;&gt;Eric Zhang&lt;/a&gt; that utilizes websockets to send, stream, and pipe binary data bidirectionally between browser javascript.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;npm install binaryjs
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;img class=&quot;hide-on-mobile&quot; src=&quot;https://pbs.twimg.com/profile_images/1896980487/418999_10151351854540262_653030261_23084074_1065502090_n_bigger.jpg&quot; style=&quot;float: right; margin-left: 1em&quot;/&gt;&lt;/p&gt;
+&lt;h2 id=&quot;features&quot;&gt;Features&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;BinaryPack serialization format is fast, binary, and JSON-type compatible. Data stays binary end to end&lt;/li&gt;
+&lt;li&gt;Automatically chunks large binary data buffers for streaming performance&lt;/li&gt;
+&lt;li&gt;Send multiple streams of data concurrently over multiplexed websocket connection&lt;/li&gt;
+&lt;li&gt;API implements Node.js read/write Streams. You can pipe any stream into BinaryJS streams (and vice-versa)&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;pause&lt;/code&gt;, &lt;code&gt;resume&lt;/code&gt;, and &lt;code&gt;end&lt;/code&gt; as in the Streams API&lt;/li&gt;
+&lt;li&gt;Currently supports Chrome 15+ and Firefox 11+, IE10. Fallbacks that will support Safari, mobile iOS and Android, and older FF/Chrome versions are in the works.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;what-can-you-do-with-this-&quot;&gt;What can you do with this?&lt;/h2&gt;
+&lt;p&gt;You have just as much flexibility as a full TCP socket between client and server. Here are some ideas by &lt;a href=&quot;https://github.com/binaryjs&quot;&gt;Eric Zhang&lt;/a&gt; that are now possible:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Realtime multiplayer video games without expensive stringifying&lt;/li&gt;
+&lt;li&gt;Streaming FLAC into HTML5 WebAudio api&lt;/li&gt;
+&lt;li&gt;Progressive image loading (for retina displays and high-res photorgraphy)&lt;/li&gt;
+&lt;li&gt;Streaming file uploads&lt;/li&gt;
+&lt;li&gt;Live HTML &lt;code&gt;&amp;lt;video&amp;gt;&lt;/code&gt; streaming&lt;/li&gt;
+&lt;li&gt;PJAX (pushState + ajax) with no HTTP requests. Not even for image assets&lt;/li&gt;
+&lt;li&gt;Video/audio chat over websockets&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;usage&quot;&gt;Usage&lt;/h2&gt;
+&lt;p&gt;Server&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;var server = BinaryServer({port: 9000});
+
+server.on(&amp;#39;connection&amp;#39;, function(client){
+  client.on(&amp;#39;stream&amp;#39;, function(stream, meta){
+    var file = fs.createWriteStream(meta.file);
+    stream.pipe(file);
+  });
+});
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Browser:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;var client = BinaryClient(&amp;#39;ws://localhost:9000&amp;#39;);
+
+client.on(&amp;#39;open&amp;#39;, function(stream){
+  var stream = client.createStream({file: &amp;#39;hello.txt&amp;#39;});
+  stream.write(&amp;#39;Hello&amp;#39;);
+  stream.write(&amp;#39;World!&amp;#39;);
+  stream.end();
+});
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Check out &lt;a href=&quot;https://github.com/binaryjs/binaryjs/blob/master/doc/start.md&quot;&gt;getting started&lt;/a&gt; page and &lt;a href=&quot;for extensive documentation&quot;&gt;binaryjs.com&lt;/a&gt;. Thanks &lt;a href=&quot;https://github.com/binaryjs&quot;&gt;Eric Zhang&lt;/a&gt; for making this happen!&lt;/p&gt;
+</content>
+		</entry>
+	
+		<entry>
+			<title>power-assert</title>
+			<link href="http://npmawesome.com/posts/2014-02-03-power-assert"/>
+			<updated>2014-02-03T18:59:55.000Z</updated>
+			<id>http://npmawesome.com/posts/2014-02-03-power-assert</id>
+			<content type="html">&lt;p&gt;&lt;a href=&quot;https://github.com/twada/power-assert&quot;&gt;power-assert&lt;/a&gt; is a module written by &lt;a href=&quot;https://github.com/twada&quot;&gt;Takuto Wada&lt;/a&gt; that provides pretty damn descriptive assert messages for your tests.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;npm install power-assert
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&quot;features&quot;&gt;Features&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&quot;https://github.com/twada/power-assert&quot;&gt;power-assert&lt;/a&gt; transforms your regular boring asserts to this:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;AssertionError: # /path/to/examples/mocha_node.js:10
+
+    assert(this.ary.indexOf(who) === two);
+                |   |       |    |   |
+                |   |       |    |   2
+                |   |       |    false
+                |   -1      &amp;quot;ariya&amp;quot;
+                [1,2,3]
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&quot;usages&quot;&gt;Usages&lt;/h2&gt;
+&lt;p&gt;There are two ways to use &lt;a href=&quot;https://github.com/twada/power-assert&quot;&gt;power-assert&lt;/a&gt;.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;code&gt;power-assert&lt;/code&gt; + &lt;code&gt;espower-loader&lt;/code&gt; : Only works under Node.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;power-assert&lt;/code&gt; + &lt;a href=&quot;http://github.com/twada/grunt-espower&quot;&gt;&lt;code&gt;grunt-espower&lt;/code&gt;&lt;/a&gt; or &lt;a href=&quot;http://github.com/twada/gulp-espower&quot;&gt;&lt;code&gt;gulp-espower&lt;/code&gt;&lt;/a&gt; : Generates instrumented code so works anywhere.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;To give you an idea what the trasnformed code looks like, for example, it transforms:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;assert(this.ary.indexOf(who) === two);
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;into:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;assert(assert._expr(assert._capt(assert._capt(assert._capt(this.ary, &amp;#39;ident&amp;#39;, {
+    start: {
+        line: 9,
+        column: 20
+    }
+}).indexOf(assert._capt(who, &amp;#39;ident&amp;#39;, {
+    start: {
+        line: 9,
+        column: 32
+    }
+})), &amp;#39;funcall&amp;#39;, {
+    start: {
+        line: 9,
+        column: 24
+    }
+}) === assert._capt(two, &amp;#39;ident&amp;#39;, {
+    start: {
+        line: 9,
+        column: 41
+    }
+}), &amp;#39;binary&amp;#39;, {
+    start: {
+        line: 9,
+        column: 37
+    }
+}), {
+    start: {
+        line: 9,
+        column: 15
+    },
+    path: &amp;#39;/Users/alexgorbatchev/1-npmawesome/1/power-assert-demo/test/power_assert/mocha_power_assert_test.js&amp;#39;
+}, &amp;#39;        assert(this.ary.indexOf(who) === two);&amp;#39;));
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;a href=&quot;https://github.com/twada/power-assert&quot;&gt;power-assert&lt;/a&gt; also works with CoffeeScript files to produce output:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;AssertionError:
+
+    assert this.ary.indexOf(who) isnt minusOne
+                |   |       |    |    |
+                |   |       |    |    -1
+                |   |       |    false
+                |   -1      &amp;quot;ariya&amp;quot;
+                [1,2,3]
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;I&amp;#39;m very tempted to give this a try over my goto &lt;a href=&quot;http://chaijs.com/&quot;&gt;chai.js&lt;/a&gt; library. I&amp;#39;m a little bit worried that it changes number of lines and it might be harder to do certain type of debugging, but the benefit might be worth it!&lt;/p&gt;
+&lt;p&gt;There&amp;#39;s a full documentation on the &lt;a href=&quot;https://github.com/twada/power-assert&quot;&gt;power-assert&lt;/a&gt; github page and a &lt;a href=&quot;https://github.com/twada/power-assert-demo&quot;&gt;demo project&lt;/a&gt;. What do you think?&lt;/p&gt;
+</content>
+		</entry>
+	
+		<entry>
+			<title>coupon-code</title>
+			<link href="http://npmawesome.com/posts/2014-01-31-coupon-code"/>
+			<updated>2014-01-31T17:35:42.000Z</updated>
+			<id>http://npmawesome.com/posts/2014-01-31-coupon-code</id>
+			<content type="html">&lt;p&gt;&lt;a href=&quot;https://github.com/appsattic/node-coupon-code&quot;&gt;coupon-code&lt;/a&gt; implementation of Perl&amp;#39;s &lt;a href=&quot;https://github.com/grantm/Algorithm-CouponCode&quot;&gt;Algorithm::CouponCode&lt;/a&gt; written by &lt;a href=&quot;https://github.com/appsattic&quot;&gt;Andrew Chilton&lt;/a&gt;. It is meant to solve a what appears on the surface very simple problem - coupon code validation. You would imagine printing codes on paper cups and then having user enter them - pretty straight forward. What happens however when user confuses zero for letter O, or five for S? Should you tell them their code is invalid?&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;npm install coupon-code
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&quot;usage&quot;&gt;Usage&lt;/h2&gt;
+&lt;p&gt;Lets say you issue a code and print it on a coffee cup.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;var cc = require(&amp;#39;coupon-code&amp;#39;);
+
+var code = cc.generate();
+// 55G2-DHM0-50NN
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Somebody enjoyed their coffee and decided to enter the code, which now, upon inspection, is a little bit wet and fuzzy. They enter:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;cc.validate(&amp;#39;s5g2-dhmo-50nn&amp;#39;);
+// true
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;You can also specify size of the desired code:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;cc.generate();
+// 55G2-DHM0-50NN
+
+cc.generate({ parts : 4 });
+// U5H9-HKDH-8RNX-1EX7
+
+cc.generate({ partLen : 6 });
+// WYLKQM-U35V40-9N84DA
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Pretty cool, eh? Until finding this package, I haven&amp;#39;t given this problem a second thought. Have you dealt with coupon codes in your app?&lt;/p&gt;
+</content>
+		</entry>
+	
+		<entry>
+			<title>rewire</title>
+			<link href="http://npmawesome.com/posts/2014-01-30-rewire"/>
+			<updated>2014-01-30T17:49:19.000Z</updated>
+			<id>http://npmawesome.com/posts/2014-01-30-rewire</id>
+			<content type="html">&lt;p&gt;&lt;a href=&quot;https://github.com/jhnns/rewire&quot;&gt;rewire&lt;/a&gt; is a dependency injection module for node.js applications written by &lt;a href=&quot;https://github.com/jhnns&quot;&gt;Johannes Ewald&lt;/a&gt;. It adds a special setter and getter to modules so you can modify their behaviour for better unit testing.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;npm install rewire
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&quot;features&quot;&gt;Features&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Inject mocks for other modules or globals like process&lt;/li&gt;
+&lt;li&gt;Leak private variables&lt;/li&gt;
+&lt;li&gt;Override variables within the module&lt;/li&gt;
+&lt;li&gt;Works with CoffeeScript&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;usage&quot;&gt;Usage&lt;/h2&gt;
+&lt;pre&gt;&lt;code&gt;var rewire = require(&amp;quot;rewire&amp;quot;);
+
+// rewire acts exactly like require.
+var myModule = rewire(&amp;quot;./myModule.js&amp;quot;);
+
+// Just with one difference:
+// Your module will now export a special setter and getter for private variables.
+myModule.__set__(&amp;quot;myPrivateVar&amp;quot;, 123);
+myModule.__get__(&amp;quot;myPrivateVar&amp;quot;); // = 123
+
+// This allows you to mock almost everything within the module e.g. the fs-module.
+// Just pass the variable name as first parameter and your mock as second.
+myModule.__set__(&amp;quot;fs&amp;quot;, {
+  readFile: function (path, encoding, cb) {
+    cb(null, &amp;quot;Success!&amp;quot;);
+  }
+});
+
+myModule.readSomethingFromFileSystem(function (err, data) {
+  console.log(data); // = Success!
+});
+
+// You can set different variables with one call.
+myModule.__set__({
+  fs: fsMock,
+  http: httpMock,
+  someOtherVar: &amp;quot;hello&amp;quot;
+});
+
+// You may also override globals. These changes are only within the module, so
+// you don&amp;#39;t have to be concerned that other modules are influenced by your mock.
+myModule.__set__({
+  console: {
+    log: function () { /* be quiet */ }
+  }
+});
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;The biggest difference between &lt;code&gt;rewire&lt;/code&gt; and &lt;code&gt;require&lt;/code&gt; is that calling &lt;code&gt;rewire&lt;/code&gt; multiple times gives you a new module instance every time. Something to keep in mind.&lt;/p&gt;
+&lt;p&gt;This seems like a good and bad idea at the same time. The power to change and introspect private variables might lead to code that isn&amp;#39;t exactly very suitable for tests. I find that writing code to be testable leads to much better code structure and I spend alot more time considering my API.&lt;/p&gt;
+&lt;p&gt;What do you think?&lt;/p&gt;
+</content>
+		</entry>
+	
+		<entry>
+			<title>yarm</title>
+			<link href="http://npmawesome.com/posts/2014-01-29-yarm"/>
+			<updated>2014-01-29T17:37:23.000Z</updated>
+			<id>http://npmawesome.com/posts/2014-01-29-yarm</id>
+			<content type="html">&lt;p&gt;&lt;img class=&quot;hide-on-mobile&quot; src=&quot;https://0.gravatar.com/avatar/b928accd038cf24ef3f14cb5dd758b04&quot; style=&quot;float: right; margin-left: 1em&quot;/&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://github.com/njoyard/yarm&quot;&gt;yarm&lt;/a&gt; is Yet Another REST Middleware for node.js and Express written by &lt;a href=&quot;https://github.com/njoyard&quot;&gt;Nicolas Joyard&lt;/a&gt;. It has no dependencies, however it is intended to be used with &lt;a href=&quot;http://expressjs.com/&quot;&gt;Express&lt;/a&gt; and will have additional features if &lt;a href=&quot;http://mongoosejs.com/&quot;&gt;Mongoose&lt;/a&gt; is present.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;npm install yarm
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&quot;features&quot;&gt;Features&lt;/h2&gt;
+&lt;p&gt;The list of features is very extensive. &lt;a href=&quot;https://github.com/njoyard/yarm&quot;&gt;yarm&lt;/a&gt; creates REST style APIs for native objects, &lt;a href=&quot;http://mongoosejs.com/&quot;&gt;Mongoose&lt;/a&gt; and allows you to have pretty tight control over what&amp;#39;s happening. There&amp;#39;s a long list of customization options that let you specify output format, what&amp;#39;s included, how MongoDB collection are fetched, permissions and so.&lt;/p&gt;
+&lt;h2 id=&quot;usage&quot;&gt;Usage&lt;/h2&gt;
+&lt;pre&gt;&lt;code&gt;var app = require(&amp;quot;express&amp;quot;)();
+var yarm = require(&amp;quot;yarm&amp;quot;);
+var mongoose = require(&amp;quot;mongoose&amp;quot;);
+
+app.use(&amp;quot;/rest&amp;quot;, yarm());
+
+var postSchema = new mongoose.Schema({
+  title: String,
+  text: String,
+  comments: [{
+    author: String,
+    text: String
+  }]
+});
+
+var Post = mongoose.model(&amp;quot;post&amp;quot;, postSchema);
+
+yarm.mongoose(&amp;quot;posts&amp;quot;, Post);
+
+app.listen(80);
+
+$ curl http://localhost/rest/posts?skip=10&amp;amp;limit=1
+{
+  &amp;quot;_count&amp;quot;: 42,
+  &amp;quot;_items&amp;quot;: [
+    {
+      &amp;quot;_id&amp;quot;: &amp;quot;507f191e810c19729de860ea&amp;quot;,
+      &amp;quot;title&amp;quot;: &amp;quot;My 11th post&amp;quot;,
+      &amp;quot;text&amp;quot;: &amp;quot;Hello, World&amp;quot;,
+      &amp;quot;comments&amp;quot;: [
+        {
+          &amp;quot;author&amp;quot;: &amp;quot;Bob&amp;quot;,
+          &amp;quot;text&amp;quot;: &amp;quot;First !&amp;quot;
+        }
+      ]
+    }
+  ]
+}
+
+$ curl http://localhost/rest/posts/507f191e810c19729de860ea
+{
+  &amp;quot;_id&amp;quot;: &amp;quot;507f191e810c19729de860ea&amp;quot;,
+  &amp;quot;title&amp;quot;: &amp;quot;My 11th post&amp;quot;,
+  &amp;quot;text&amp;quot;: &amp;quot;Hello, World&amp;quot;,
+  &amp;quot;comments&amp;quot;: [
+    {
+      &amp;quot;author&amp;quot;: &amp;quot;Bob&amp;quot;,
+      &amp;quot;text&amp;quot;: &amp;quot;First !&amp;quot;
+    }
+  ]
+}
+
+$ curl http://localhost/rest/posts/507f191e810c19729de860ea/comments/0/text
+First !
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;You can roll your own:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;resource
+  .get(function(req, cb) {
+    // GET handler
+  })
+  .put(function(req, isPatch, cb) {
+    // PUT and PATCH handler
+  })
+  .post(function(req, cb) {
+    // POST handler
+  })
+  .del(function(req, cb) {
+    // DELETE handler
+  });
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Of course, you can have nested resources.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;yarm.resource(&amp;quot;/posts/:pid&amp;quot;).sub(&amp;quot;comments/:cid/*&amp;quot;).get(function(req, cb) {
+  cb(null, { ... });
+});
+
+$ curl http://localhost/rest/posts/first-post/comments/3/foo/bar
+...
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Check out &lt;a href=&quot;https://github.com/njoyard/yarm&quot;&gt;yarm&lt;/a&gt; github page for complete documentation. How do you handle your APIs?&lt;/p&gt;
+</content>
+		</entry>
+	
+		<entry>
+			<title>modella</title>
+			<link href="http://npmawesome.com/posts/2014-01-28-modella"/>
+			<updated>2014-01-28T17:56:33.000Z</updated>
+			<id>http://npmawesome.com/posts/2014-01-28-modella</id>
+			<content type="html">&lt;p&gt;&lt;img class=&quot;hide-on-mobile&quot; src=&quot;https://2.gravatar.com/avatar/824b41e6108a22c4c96f50ee23419369&quot; style=&quot;float: right; margin-left: 1em&quot;/&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://github.com/modella/modella&quot;&gt;modella&lt;/a&gt; is a bare bones model framework written by &lt;a href=&quot;https://github.com/matthewmueller&quot;&gt;Matthew Mueller&lt;/a&gt; of the &lt;a href=&quot;/posts/2013-12-27-cheerio/&quot;&gt;cheerio&lt;/a&gt; fame. It exposes a few APIs on which plugins can be built to enhance functionality. The core module and select plugins work on the client and server.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;npm install modella
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&quot;plugins&quot;&gt;Plugins&lt;/h2&gt;
+&lt;p&gt;Most of functionality comes bundles as plugins:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;Adapter (Sync Layer) Plugins&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/modella/ajax&quot;&gt;ajax&lt;/a&gt; - RESTful AJAX HTTP adapter.&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/modella/ejdb&quot;&gt;ejdb&lt;/a&gt; - Ejdb database adapter.&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/modella/leveldb&quot;&gt;leveldb&lt;/a&gt; - LevelDB adapter.&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/modella/mongo&quot;&gt;mongo&lt;/a&gt; - MongoDB adapter.&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/alexmingoia/modella-mysql&quot;&gt;modella-mysql&lt;/a&gt; - MySQL adapter.&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/alexmingoia/modella-memory&quot;&gt;modella-memory&lt;/a&gt; - In-memory adapter.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Attribute Utilities&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/modella/validators&quot;&gt;validators&lt;/a&gt; - Validations for attributes&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/modella/slug&quot;&gt;slug&lt;/a&gt; - Slug generation on attributes&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/ramitos/modella-level-relations&quot;&gt;modella-level-relations&lt;/a&gt; - LevelUP based modella relations&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Security Plugins&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/modella/auth&quot;&gt;auth&lt;/a&gt; - Authorization plugin.&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/modella/filter&quot;&gt;filter&lt;/a&gt; - Filter sensitive fields from a JSON blob.&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/modella/protection&quot;&gt;protection&lt;/a&gt; - Mass-assignment protection.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Misc&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/alexmingoia/modella-resource&quot;&gt;modella-resource&lt;/a&gt; - Expose &lt;a href=&quot;https://github.com/modella/modella&quot;&gt;modella&lt;/a&gt; models via RESTful resource middleware (for use with Express).&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/modella/friendly-errors&quot;&gt;friendly-errors&lt;/a&gt; - add friendly error messages to attributes.&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/modella/save-invalid&quot;&gt;save-invalid&lt;/a&gt; - Save invalid models and mark them as dirty in the database.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;usage&quot;&gt;Usage&lt;/h2&gt;
+&lt;pre&gt;&lt;code&gt;var modella = require(&amp;#39;modella&amp;#39;);
+var validators = require(&amp;#39;modella-validators&amp;#39;);
+var mongo = require(&amp;#39;modella-mongo&amp;#39;)(&amp;#39;localhost/db&amp;#39;)
+var User = modella(&amp;#39;User&amp;#39;);
+
+User.use(validators);
+User.use(mongo);
+
+User
+  .attr(&amp;#39;_id&amp;#39;)
+  .attr(&amp;#39;username&amp;#39;, { required: true })
+  .attr(&amp;#39;email&amp;#39;, { required: true, format: &amp;#39;email&amp;#39; });
+
+User.index(&amp;#39;email&amp;#39;, { unique : true });
+
+var user = new User({ name: &amp;#39;Charley&amp;#39; });
+
+user.save(function(err) {
+  User.find(user._id, function(err, u) {
+    console.log(u.username());
+  });
+});
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;If you feel disgrundled with Mongoose or just tired of using the raw driver, give &lt;a href=&quot;https://github.com/modella/modella&quot;&gt;modella&lt;/a&gt; a try!&lt;/p&gt;
+</content>
+		</entry>
+	
+		<entry>
+			<title>mversion</title>
+			<link href="http://npmawesome.com/posts/2014-01-27-mversion"/>
+			<updated>2014-01-28T01:47:14.000Z</updated>
+			<id>http://npmawesome.com/posts/2014-01-27-mversion</id>
+			<content type="html">&lt;p&gt;&lt;img class=&quot;hide-on-mobile&quot; src=&quot;https://0.gravatar.com/avatar/c1ad8925b70df4f6665315865511eafc&quot; style=&quot;float: right; margin-left: 1em&quot;/&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://github.com/mikaelbr/mversion&quot;&gt;mversion&lt;/a&gt; is an NPM, Bower, Jam, Ender module version handler. It imitates &lt;a href=&quot;https://npmjs.org/doc/version.html&quot;&gt;&lt;code&gt;npm version&lt;/code&gt;&lt;/a&gt; to also work on other packaging files. For those times you have either have multiple packaging files (like &lt;code&gt;bower.json&lt;/code&gt;, &lt;code&gt;component.json&lt;/code&gt;, &lt;code&gt;manifest.json&lt;/code&gt;) or just not a &lt;code&gt;package.json&lt;/code&gt; file. &lt;code&gt;mversion&lt;/code&gt; can easily bump your version and optionally commit and create a tag.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;npm install mversion
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&quot;features&quot;&gt;Features&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Update version by defining new semver valid version or a release string (major, minor, patch, build).&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Use &lt;code&gt;-m&lt;/code&gt; to auto commit and tag in Git. Apply optional message and use &lt;code&gt;%s&lt;/code&gt; as placeholder for the updated version. Default message is &lt;code&gt;v%s&lt;/code&gt; where &lt;code&gt;%s&lt;/code&gt; is replaced with new version. For example:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;$ mversion minor -m
+$ mversion minor -m &amp;#39;Bumped to v%s&amp;#39;
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;cli-usage&quot;&gt;CLI Usage&lt;/h2&gt;
+&lt;pre&gt;&lt;code&gt;$ mversion 0.0.5 -m
+New Version: 0.0.5
+Updated package.json
+Updated component.json
+Updated manifest.json
+Commited to git and created tag v0.0.5
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&quot;api-usage&quot;&gt;API Usage&lt;/h2&gt;
+&lt;pre&gt;&lt;code&gt;var mversion = require(&amp;#39;mversion&amp;#39;);
+
+mversion.get(function (err, data) {
+  /*
+    data = {
+      &amp;#39;package.json&amp;#39;: VERSION,
+      &amp;#39;component.json&amp;#39;: VERSION
+    }
+  */
+});
+
+mversion.update(&amp;#39;minor&amp;#39;, function (err, data) { })
+mversion.update(&amp;#39;major&amp;#39;, function (err, data) { })
+mversion.update(&amp;#39;major&amp;#39;, &amp;#39;Some commit message for version %s&amp;#39;, function (err, data) { }) // Will commit/tag
+mversion.update(&amp;#39;patch&amp;#39;, function (err, data) { })
+mversion.update(&amp;#39;build&amp;#39;, function (err, data) { })
+mversion.update(&amp;#39;0.0.1&amp;#39;, &amp;#39;Bumping version&amp;#39;, function (err, data) { }) // Will commit/tag
+mversion.update(&amp;#39;v1.0.1&amp;#39;, function (err, data) { })
+mversion.update(&amp;#39;v1.0.1-beta&amp;#39;, function (err, data) { })
+mversion.update(&amp;#39;v1.0.1-010988&amp;#39;, function (err, data) { })
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&quot;gulp&quot;&gt;Gulp&lt;/h2&gt;
+&lt;p&gt;Of course, &lt;a href=&quot;https://github.com/mikaelbr&quot;&gt;Mikael Brevik&lt;/a&gt; has &lt;a href=&quot;https://github.com/mikaelbr/gulp-mversion&quot;&gt;gulp.js plugin&lt;/a&gt; to help you with automate build and deploy process.&lt;/p&gt;
+</content>
+		</entry>
+	
+		<entry>
+			<title>schema-inspector</title>
+			<link href="http://npmawesome.com/posts/2014-01-24-schema-inspector"/>
+			<updated>2014-01-24T17:17:24.000Z</updated>
+			<id>http://npmawesome.com/posts/2014-01-24-schema-inspector</id>
+			<content type="html">&lt;div style=&quot;text-align: center&quot;&gt;&lt;img class=&quot;hide-on-mobile&quot; src=&quot;/images/posts/schema-inspector.png&quot; style=&quot;margin-bottom: 1em&quot; /&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;img class=&quot;hide-on-mobile&quot; src=&quot;https://0.gravatar.com/avatar/16c362a6f8dbbedbc3bf13d001c6b286&quot; style=&quot;float: right; margin-left: 1em&quot;/&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://github.com/Atinux/schema-inspector&quot;&gt;schema-inspector&lt;/a&gt; is a powerful tool to sanitize and validate JS objects written by &lt;a href=&quot;https://github.com/Atinux&quot;&gt;Sébastien Chopin&lt;/a&gt;. It&amp;#39;s disigned to work both client-side and server-side and to be scalable with allowing asynchronous and synchronous calls. There&amp;#39;s support for object validation and sanitazation with a very simple schema definition.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;npm install schema-inspector
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&quot;usage&quot;&gt;Usage&lt;/h2&gt;
+&lt;pre&gt;&lt;code&gt;var inspector = require(&amp;#39;schema-inspector&amp;#39;);
+
+var schema = {
+  type: &amp;#39;object&amp;#39;,
+  properties: {
+    lorem: { type: &amp;#39;string&amp;#39;, eq: &amp;#39;ipsum&amp;#39; },
+    dolor: {
+      type: &amp;#39;array&amp;#39;,
+      items: { type: &amp;#39;number&amp;#39; }
+    }
+  }
+};
+
+var candidate = {
+  lorem: &amp;#39;not_ipsum&amp;#39;,
+  dolor: [ 12, 34, &amp;#39;ERROR&amp;#39;, 45, &amp;#39;INVALID&amp;#39; ]
+};
+var result = inspector.validate(schema, candidate); // Candidate is not valid
+console.log(result.format());
+
+/*
+  Property @.lorem: must be equal to &amp;quot;ipsum&amp;quot;, but is equal to &amp;quot;not_ipsum&amp;quot;
+  Property @.dolor[2]: must be number, but is string
+  Property @.dolor[4]: must be number, but is string
+*/
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&quot;more&quot;&gt;More&lt;/h2&gt;
+&lt;p&gt;Object validation can come in extremely handy when you are writing APIs. On one end you can validate user input:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;var express = require(&amp;#39;express&amp;#39;);
+var inspector = require(&amp;#39;schema-inspector&amp;#39;);
+var app = express();
+
+var schema = {
+  type: &amp;#39;object&amp;#39;,
+  properties: {
+    title: { type: &amp;#39;string&amp;#39;, ne: &amp;#39;&amp;#39; },
+    message: { type: &amp;#39;string&amp;#39;, ne: &amp;#39;&amp;#39; }
+  }
+};
+
+app.post(&amp;#39;/api&amp;#39;, function(req, res, next) {
+  var post = req.body;
+  var validation = inspector.validate(schema, post);
+
+  if(!validation.valid) {
+    return res.send(validation.errors, 400);
+  }
+
+  res.send({status: &amp;#39;ok&amp;#39;});
+});
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;On the flip side, you can use the &lt;a href=&quot;https://github.com/Atinux/schema-inspector&quot;&gt;schema-inspector&lt;/a&gt; to validate API response in your tests:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;var request = require(&amp;#39;request&amp;#39;);
+var inspector = require(&amp;#39;schema-inspector&amp;#39;);
+
+var schema = {
+  type: &amp;#39;object&amp;#39;,
+  properties: {
+    statusCode: { type: &amp;#39;number&amp;#39;, eq: 200 },
+    body: { type: &amp;#39;object&amp;#39;, properties: {
+      status: { type: &amp;#39;string&amp;#39;, eq: &amp;#39;ok&amp;#39; }
+    }}
+  }
+};
+
+describe(&amp;#39;POST /api&amp;#39;, function()
+{
+  var response;
+
+  before(function(done) {
+    request(
+      {
+        url: &amp;#39;/api&amp;#39;,
+        json: { title: &amp;#39;Hello!&amp;#39;, message: &amp;#39;First Post&amp;#39; }
+        method: &amp;#39;POST&amp;#39;
+      },
+      function(err, r) {
+        response = {
+          statusCode: r.statusCode,
+          body: r.body
+        };
+        done()
+      }
+    );
+  });
+
+  it(&amp;#39;validates&amp;#39;, function() {
+    var validation = inspector.validate(schema, response);
+
+    if(!validation.valid) {
+      throw new Error(validation.format());
+    }
+  });
+});
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;In the end, you have a strong contract between your APIs, consumer and your tests with just a few lines of code. I&amp;#39;m loving this! The &lt;a href=&quot;http://atinux.github.io/schema-inspector/&quot;&gt;documentation&lt;/a&gt; site is very good and I strongly recommend checking it out.&lt;/p&gt;
+</content>
+		</entry>
+	
+		<entry>
+			<title>oboe.js</title>
+			<link href="http://npmawesome.com/posts/2014-01-23-oboe-js"/>
+			<updated>2014-01-23T17:46:38.000Z</updated>
+			<id>http://npmawesome.com/posts/2014-01-23-oboe-js</id>
+			<content type="html">&lt;p&gt;&lt;img class=&quot;hide-on-mobile&quot; src=&quot;https://2.gravatar.com/avatar/a26d7792bcf2ccd16be185627ce8e37d&quot; style=&quot;float: right; margin-left: 1em&quot;/&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://github.com/jimhigson/oboe.js&quot;&gt;oboe.js&lt;/a&gt; is written by &lt;a href=&quot;https://github.com/jimhigson&quot;&gt;Jim Higson&lt;/a&gt; and helps web applications respond quicker by wrapping HTTP&amp;#39;s request-response model with a progressively streamed interface. It glues a transport that sits somewhere between streaming and downloading to a JSON parser. It doesn&amp;#39;t have any external dependencies.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;npm install oboe
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&quot;features&quot;&gt;Features&lt;/h2&gt;
+&lt;p&gt;The library is extremely feature rich for its 13KB size. I will try to summarize them here and you can get full details with examples on the &lt;a href=&quot;https://github.com/jimhigson/oboe.js&quot;&gt;oboe.js&lt;/a&gt; github page.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Can hanging up when everything that&amp;#39;s needed was processed&lt;/li&gt;
+&lt;li&gt;Can react to field and node names&lt;/li&gt;
+&lt;li&gt;Can react to partial arrays&lt;/li&gt;
+&lt;li&gt;Can react to specific nodes or to fields located anywhere&lt;/li&gt;
+&lt;li&gt;Can use CSS4 style matching patterns&lt;/li&gt;
+&lt;/ul&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Asynchronous parsing is better if the data is written out progressively from the server side because we&amp;#39;re sending and parsing everything at the earliest possible opportunity. If you can, send small bits of the output asynchronously as soon as it is ready instead of waiting before everything is ready to start sending.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;div style=&quot;text-align: center&quot;&gt;&lt;img class=&quot;hide-on-mobile&quot; src=&quot;/images/posts/oboe.png&quot; style=&quot;width: 400px; margin: 1em 0&quot; /&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;usage&quot;&gt;Usage&lt;/h2&gt;
+&lt;p&gt;Here&amp;#39;s a very &lt;strong&gt;basic&lt;/strong&gt; use case:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;{
+   &amp;quot;foods&amp;quot;: [
+      {&amp;quot;colour&amp;quot;:&amp;quot;purple&amp;quot;},
+      {&amp;quot;colour&amp;quot;:&amp;quot;red&amp;quot;},
+      {&amp;quot;colour&amp;quot;:&amp;quot;brown&amp;quot;}
+   ],
+   &amp;quot;badThings&amp;quot;: [
+      {&amp;quot;name&amp;quot;:&amp;quot;poison&amp;quot;},
+      {&amp;quot;name&amp;quot;:&amp;quot;broken_glass&amp;quot;}
+   ]
+}
+
+var oboe = require(&amp;#39;oboe&amp;#39;);
+
+oboe(&amp;#39;http://localhost/myapp/things.json&amp;#39;)
+  .node(&amp;#39;foods.*&amp;#39;, function(foodThing) {
+    // This callback will be called everytime a new object is found in the
+    // foods array. Oboe won&amp;#39;t wait for the download to finish first.
+    console.log(foodThing.name);
+  })
+  .node(&amp;#39;badThings.*&amp;#39;, function(badThing) {
+    console.log(&amp;#39;Danger! stay away from &amp;#39; + badThings.name);
+  })
+  .done(function(things) {
+    console.log(&amp;#39;there are &amp;#39; + things.foods.length + &amp;#39; things you can eat &amp;#39; +
+      &amp;#39;and &amp;#39; + things.badThings.length + &amp;#39; that you shouldn\&amp;#39;t.&amp;#39;);
+  });
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Have you used streaming JSON parser before?&lt;/p&gt;
+</content>
+		</entry>
+	
+		<entry>
+			<title>autoprefixer</title>
+			<link href="http://npmawesome.com/posts/2014-01-22-autoprefixer"/>
+			<updated>2014-01-22T17:35:00.000Z</updated>
+			<id>http://npmawesome.com/posts/2014-01-22-autoprefixer</id>
+			<content type="html">&lt;p&gt;&lt;a href=&quot;https://github.com/ai/autoprefixer&quot;&gt;autoprefixer&lt;/a&gt; parses CSS and adds vendor prefixes to rules based on information from the glorious &lt;a href=&quot;http://caniuse.com&quot;&gt;Can I Use&lt;/a&gt;.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;npm install autoprefixer
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;img class=&quot;hide-on-mobile&quot; src=&quot;/images/posts/autoprefixer.svg&quot; style=&quot;width: 200px; float: right&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;The best tool is a tool you can&amp;#39;t see and one that does the work for you. This is the main idea behind &lt;a href=&quot;https://github.com/ai/autoprefixer&quot;&gt;autoprefixer&lt;/a&gt;. The interface is simple: just forget about vendor prefixes and write normal CSS according to latest W3C specs. You don’t need a special language (like Sass) or special mixins. Of course, you can still use something like &lt;a href=&quot;http://sass-lang.com/&quot;&gt;SASS&lt;/a&gt;, &lt;a href=&quot;http://learnboost.github.io/stylus/&quot;&gt;Stylus&lt;/a&gt; or &lt;a href=&quot;http://www.lesscss.org/&quot;&gt;LESS&lt;/a&gt; because &lt;a href=&quot;https://github.com/ai/autoprefixer&quot;&gt;autoprefixer&lt;/a&gt; is a postprocessor for CSS.&lt;/p&gt;
+&lt;h2 id=&quot;features&quot;&gt;Features&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Because &lt;a href=&quot;https://github.com/ai/autoprefixer&quot;&gt;autoprefixer&lt;/a&gt; uses actual data from &lt;a href=&quot;http://caniuse.com&quot;&gt;Can I Use&lt;/a&gt;, it can also clean up your CSS and remove prefixes that are no longer needed.&lt;/li&gt;
+&lt;li&gt;Flexbox or gradients have different syntaxes in different browsers (sometimes you need to recalculate angles, sometimes you need 2 old properties instead of new one), but &lt;a href=&quot;https://github.com/ai/autoprefixer&quot;&gt;autoprefixer&lt;/a&gt; hides this from you. Just code by latest W3C specs and Autoprefixer will produce the code for old browsers.&lt;/li&gt;
+&lt;li&gt;You can specify the browsers you want to target&lt;/li&gt;
+&lt;li&gt;Source map support&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;usage&quot;&gt;Usage&lt;/h2&gt;
+&lt;p&gt;There&amp;#39;s an incredible amount of ways you can use &lt;a href=&quot;https://github.com/ai/autoprefixer&quot;&gt;autoprefixer&lt;/a&gt;:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;as a grunt task using &lt;a href=&quot;https://github.com/nDmitry/grunt-autoprefixer&quot;&gt;grunt-autoprefixer&lt;/a&gt; plugin&lt;/li&gt;
+&lt;li&gt;with Compass&lt;/li&gt;
+&lt;li&gt;with Stylus&lt;/li&gt;
+&lt;li&gt;with Rails&lt;/li&gt;
+&lt;li&gt;with Mincer&lt;/li&gt;
+&lt;li&gt;with Middleman&lt;/li&gt;
+&lt;li&gt;with Node&lt;/li&gt;
+&lt;li&gt;with PHP&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;There are plenty of examples and information on the &lt;a href=&quot;https://github.com/ai/autoprefixer&quot;&gt;autoprefixer&lt;/a&gt;. Check it out!&lt;/p&gt;
+&lt;p&gt;I&amp;#39;m completely in love with CSS preprocessors, they make life so much easier. I still go between &lt;a href=&quot;http://www.lesscss.org/&quot;&gt;LESS&lt;/a&gt; and &lt;a href=&quot;http://learnboost.github.io/stylus/&quot;&gt;Stylus&lt;/a&gt;, but more often lean towards LESS because it makes using &lt;a href=&quot;http://getbootstrap.com/&quot;&gt;Bootstrap&lt;/a&gt; framework so much easier and so much more modular.&lt;/p&gt;
+&lt;p&gt;Do you use a CSS preprocessor? Which one?&lt;/p&gt;
+</content>
+		</entry>
+	
+		<entry>
+			<title>js-yaml</title>
+			<link href="http://npmawesome.com/posts/2014-01-21-js-yaml"/>
+			<updated>2014-01-21T17:11:30.000Z</updated>
+			<id>http://npmawesome.com/posts/2014-01-21-js-yaml</id>
+			<content type="html">&lt;p&gt;&lt;a href=&quot;https://github.com/nodeca/js-yaml&quot;&gt;js-yaml&lt;/a&gt; is an implementation of &lt;a href=&quot;http://yaml.org/&quot;&gt;YAML&lt;/a&gt; written by &lt;a href=&quot;https://github.com/nodeca&quot;&gt;Dervus Grim&lt;/a&gt; and is a human friendly data serialization language. It started as &lt;a href=&quot;http://pyyaml.org/&quot;&gt;PyYAML&lt;/a&gt; port, but was completely rewritten from scratch. Full support for 1.2 spec.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;npm install js-yaml
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&quot;example&quot;&gt;Example&lt;/h2&gt;
+&lt;p&gt;You can parse a YAML document into an object:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;var fs = require(&amp;#39;fs&amp;#39;);
+var yaml = require(&amp;#39;js-yaml&amp;#39;);
+var obj = yaml.load(fs.readFileSync(filename, &amp;#39;utf8&amp;#39;));
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;And of course you can stringify an object into a YAML document:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;yaml.dump(object, opts);
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;YAML to JSON is what CoffeeScript to JavaScript - pure awesomeness. On the surface it&amp;#39;s a one to one data format that is much more human friendly. Under the surface, YAML allows you to reference other nodes and values within the document to avoid repetition. For example, the header for post in the source looks like this:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;npm:
+  repo: &amp;amp;repo nodeca/js-yaml
+  name: &amp;amp;name js-yaml
+slug: *name
+title: *name
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Where &lt;code&gt;&amp;amp;name&lt;/code&gt; is an anchor and repeated using &lt;code&gt;*name&lt;/code&gt; reference. This is a very simple example, but anchors could point to entire nodes consisting of other references and objects. Checkout &lt;a href=&quot;https://github.com/nodeca/js-yaml&quot;&gt;js-yaml&lt;/a&gt; repo for more examples and explanation.&lt;/p&gt;
+&lt;p&gt;YAML is awesome! I wish &lt;code&gt;package.json&lt;/code&gt; was &lt;code&gt;package.yaml&lt;/code&gt;. Are you using YAML in your project?&lt;/p&gt;
+</content>
+		</entry>
+	
+		<entry>
+			<title>gaze</title>
+			<link href="http://npmawesome.com/posts/2014-01-17-gaze"/>
+			<updated>2014-01-18T01:50:40.000Z</updated>
+			<id>http://npmawesome.com/posts/2014-01-17-gaze</id>
+			<content type="html">&lt;p&gt;&lt;a href=&quot;https://github.com/shama/gaze&quot;&gt;gaze&lt;/a&gt; a globbing &lt;code&gt;fs.watch&lt;/code&gt; wrapper written by &lt;a href=&quot;https://github.com/shama&quot;&gt;Kyle Robinson Young&lt;/a&gt; and built from the best parts of other fine watch libs. Compatible with Node.js 0.10/0.8, Windows, OSX and Linux. There&amp;#39;s a &lt;a href=&quot;https://npmjs.org/browse/depended/gaze&quot;&gt;pretty long list&lt;/a&gt; of other great modules that are built on top of &lt;a href=&quot;https://github.com/shama/gaze&quot;&gt;gaze&lt;/a&gt;.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;npm install gaze
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;img src=&quot;https://github-camo.global.ssl.fastly.net/4b73eecb09b0400ba274ed9aa205da664ee5538e/687474703a2f2f646f6e746b72792e636f6d2f696d616765732f7265706f732f67617a652e706e67&quot; style=&quot;width: 100%&quot;/&gt;&lt;/p&gt;
+&lt;h2 id=&quot;usage&quot;&gt;Usage&lt;/h2&gt;
+&lt;pre&gt;&lt;code&gt;var gaze = require(&amp;#39;gaze&amp;#39;);
+
+// Watch all .js files/dirs in process.cwd()
+gaze(&amp;#39;**/*.js&amp;#39;, function(err, watcher) {
+  // Files have all started watching
+  // watcher === this
+
+  // Get all watched files
+  console.log(this.watched());
+
+  // On file changed
+  this.on(&amp;#39;changed&amp;#39;, function(filepath) {
+    console.log(filepath + &amp;#39; was changed&amp;#39;);
+  });
+
+  // On file added
+  this.on(&amp;#39;added&amp;#39;, function(filepath) {
+    console.log(filepath + &amp;#39; was added&amp;#39;);
+  });
+
+  // On file deleted
+  this.on(&amp;#39;deleted&amp;#39;, function(filepath) {
+    console.log(filepath + &amp;#39; was deleted&amp;#39;);
+  });
+
+  // On changed/added/deleted
+  this.on(&amp;#39;all&amp;#39;, function(event, filepath) {
+    console.log(filepath + &amp;#39; was &amp;#39; + event);
+  });
+
+  // Get watched files with relative paths
+  console.log(this.relative());
+});
+
+// Also accepts an array of patterns
+gaze([&amp;#39;stylesheets/*.css&amp;#39;, &amp;#39;images/**/*.png&amp;#39;], function() {
+  // Add more patterns later to be watched
+  this.add([&amp;#39;js/*.js&amp;#39;]);
+});
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;I&amp;#39;ve been getting my feet wet with &lt;a href=&quot;http://gulpjs.com&quot;&gt;gulp.js&lt;/a&gt; and specifically &lt;a href=&quot;https://github.com/floatdrop/gulp-watch&quot;&gt;gulp-watch&lt;/a&gt; plugin which helps you process only the files that were changed. This helps to speed up asset building quite a bit.&lt;/p&gt;
+&lt;p&gt;Are you using any file watchers in your project?&lt;/p&gt;
+</content>
+		</entry>
+	
+		<entry>
+			<title>shortId</title>
+			<link href="http://npmawesome.com/posts/2014-01-14-shortid"/>
+			<updated>2014-01-15T00:33:38.000Z</updated>
+			<id>http://npmawesome.com/posts/2014-01-14-shortid</id>
+			<content type="html">&lt;p&gt;&lt;a href=&quot;https://github.com/dylang/shortid&quot;&gt;shortId&lt;/a&gt; creates amazingly short non-sequential url-friendly unique IDs. Perfect for url shorteners, MongoDB and Redis as well as any other ID users might see.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;npm install shortId
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&quot;features&quot;&gt;Features&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;By default 7-12 url-friendly characters: &lt;code&gt;A-Z&lt;/code&gt;, &lt;code&gt;a-z&lt;/code&gt;, &lt;code&gt;0-9&lt;/code&gt;, &lt;code&gt;_-&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Non-sequential so they are not predictable&lt;/li&gt;
+&lt;li&gt;Supports cluster (automatically), custom seeds, custom alphabet&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;example&quot;&gt;Example&lt;/h2&gt;
+&lt;pre&gt;&lt;code&gt;var shortId = require(&amp;#39;shortid&amp;#39;);
+
+console.log(shortId.generate());
+// PPBqWA9
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&quot;more&quot;&gt;More&lt;/h2&gt;
+&lt;p&gt;What really caught my eye was the &lt;a href=&quot;https://github.com/dylang/shortid/blob/master/lib/random.js&quot;&gt;custom implementation&lt;/a&gt; of &lt;code&gt;random&lt;/code&gt;.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;var seed = 1;
+
+function random() {
+  seed = (seed * 9301 + 49297) % 233280;
+  return seed/(233280.0);
+};
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Here&amp;#39;s a JSFiddle to play around with it. It works...&lt;/p&gt;
+&lt;iframe width=&quot;100%&quot; height=&quot;300&quot; src=&quot;http://jsfiddle.net/alexgorbatchev/8yxC2/embedded/&quot; allowfullscreen=&quot;allowfullscreen&quot; frameborder=&quot;0&quot;&gt;&lt;/iframe&gt;
+
+&lt;p&gt;It got me very curious as to what it actually does as it&amp;#39;s not obvious to me at first glance. I found a &lt;a href=&quot;http://indiegamr.com/generate-repeatable-random-numbers-in-js/&quot;&gt;decent article&lt;/a&gt; talking about this function. Turns out this function is meant to generate predictable &amp;quot;random&amp;quot; numbers based on the seed.&lt;/p&gt;
+&lt;p&gt;Digging a little bit further, I found &lt;a href=&quot;https://gist.github.com/alexgorbatchev/8428967&quot;&gt;this post&lt;/a&gt; from the past days:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;... horrible random (sic) number generators are used by people who don&amp;#39;t know better, while very good ones take less than 20 lines of Pascal! Amoung the horrid generators are some that come with certain systems or are presented in textbooks!&lt;/p&gt;
+&lt;p&gt;...&lt;/p&gt;
+&lt;p&gt;Simple (bad) Psuedo Random Number Generator (Sic)
+The low bit typically just toggles between calls.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;random() {
+   seed = ( seed * mulitiplier + increment ) % modulus;
+   return seed;
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/blockquote&gt;
+&lt;p&gt;and then later&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;pre&gt;&lt;code&gt;/*
+** Dr. Park&amp;#39;s algorithm published in the Oct. &amp;#39;88 ACM
+** &amp;quot;Random Number Generators: Good Ones Are Hard To Find&amp;quot;
+** His version available at ftp://cs.wm.edu/pub/rngs.tar
+** This is called a   Lehmer Generator
+*/
+
+static long Seed = 1;       /* This is required to be 32 bits long */
+
+long random()
+/*
+**    Random number between  0  and  2147483647 (2**31 - 1)  inclusive
+**/
+{
+  a = 48271
+  m = 2147483647
+  r = 3399    /* r = m mod a */
+  q = 44488   /* q = m div a */
+  if ((Seed = Seed % q * a - Seed / q * r) &amp;lt; 0)
+    Seed += m;
+  return Seed - 1;
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/blockquote&gt;
+&lt;p&gt;Here&amp;#39;s a JavaScript implementation:&lt;/p&gt;
+&lt;iframe width=&quot;100%&quot; height=&quot;300&quot; src=&quot;http://jsfiddle.net/alexgorbatchev/g6aRe/1/embedded/&quot; allowfullscreen=&quot;allowfullscreen&quot; frameborder=&quot;0&quot;&gt;&lt;/iframe&gt;
+
+&lt;p&gt;Should the function in &lt;a href=&quot;https://github.com/dylang/shortid&quot;&gt;shortId&lt;/a&gt; be patched? Thoughts?&lt;/p&gt;
+</content>
+		</entry>
+	
+		<entry>
+			<title>testium</title>
+			<link href="http://npmawesome.com/posts/2014-01-13-testium"/>
+			<updated>2014-01-13T20:49:41.000Z</updated>
+			<id>http://npmawesome.com/posts/2014-01-13-testium</id>
+			<content type="html">&lt;p&gt;&lt;a href=&quot;https://github.com/groupon/testium&quot;&gt;testium&lt;/a&gt; is a testing platform focused on providing a simple, but effective, platform for testing your code in different browsers (via Selenium) and headlessly (via PhantomJS). It uses &lt;a href=&quot;https://github.com/groupon/webdriver-http-sync&quot;&gt;webdriver-http-sync&lt;/a&gt;
+which Groupon wrote in order to communicate using the WebDriver protocol to a Selenium server.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;npm install testium
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;img class=&quot;hide-on-mobile&quot; src=&quot;https://0.gravatar.com/avatar/f07c4699fa2274d2ad44323331ee8161?d=https%3A%2F%2Fidenticons.github.com%2Fa25772e176c9744a17818d2be63b2c20.png&amp;r=x&amp;s=400&quot; style=&quot;width: 150px; float: right&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;blockquote class=&quot;twitter-tweet&quot; data-cards=&quot;hidden&quot; lang=&quot;en&quot;&gt;&lt;p&gt;&lt;a href=&quot;https://twitter.com/Groupon&quot;&gt;@Groupon&lt;/a&gt;&amp;#39;s Browser Integration Testing platform &lt;a href=&quot;https://twitter.com/search?q=%23Testium&amp;amp;src=hash&quot;&gt;#Testium&lt;/a&gt; is now open source! &lt;a href=&quot;https://twitter.com/search?q=%23nodejs&amp;amp;src=hash&quot;&gt;#nodejs&lt;/a&gt; + Mocha + Selenium = Happy! &lt;a href=&quot;https://t.co/lgXiRjflx0&quot;&gt;&lt;a href=&quot;https://t.co/lgXiRjflx0&quot;&gt;https://t.co/lgXiRjflx0&lt;/a&gt;&lt;/a&gt;&lt;/p&gt;&amp;mdash; Jess Telford (@jesstelford) &lt;a href=&quot;https://twitter.com/jesstelford/statuses/413382587348811776&quot;&gt;December 18, 2013&lt;/a&gt;&lt;/blockquote&gt;&lt;/p&gt;
+&lt;script async src=&quot;//platform.twitter.com/widgets.js&quot; charset=&quot;utf-8&quot;&gt;&lt;/script&gt;
+
+&lt;p&gt;From &lt;a href=&quot;https://engineering.groupon.com/2014/misc/i-tier-testium/&quot;&gt;the introductory article&lt;/a&gt;:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;We wanted to write tests in JavaScript and Mocha with a synchronous API that takes advantage of our existing Selenium infrastructure. WD.js came close, but the challenge for full adoption came with the syntax, which is callback-based or promise-based. These are typical patterns in JavaScript projects, but for an integration testing tool, we only want to execute serial actions. A synchronous API made the most sense.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;and&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Further, there are existing technical limitations due to WebDriver being a common standard across all browsers. Some aspects can’t be implemented in a specific browser and therefore these features are not implemented at all.&lt;/p&gt;
+&lt;p&gt;There are four specific issues with WebDriver we wanted to resolve:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;response status codes unavailable&lt;/li&gt;
+&lt;li&gt;response headers unavailable&lt;/li&gt;
+&lt;li&gt;request headers not modifiable&lt;/li&gt;
+&lt;li&gt;page must be loaded to set cookies&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&quot;example&quot;&gt;Example&lt;/h2&gt;
+&lt;p&gt;A simple test using &lt;a href=&quot;https://github.com/groupon/assertive&quot;&gt;assertive&lt;/a&gt;.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;{getBrowser} = require &amp;#39;testium&amp;#39;
+assert = require &amp;#39;assertive&amp;#39; # or whatever assert library you prefer
+
+describe &amp;#39;browse&amp;#39;, -&amp;gt;
+  before -&amp;gt;
+    @browser = getBrowser()
+    @browser.navigateTo &amp;#39;/my-account&amp;#39;
+    assert.equal 200, @browser.getStatusCode()
+
+  it &amp;#39;is serving up gzipped content&amp;#39;, -&amp;gt;
+    assert.equal &amp;#39;gzip&amp;#39;, @browser.getHeader(&amp;#39;Content-Encoding&amp;#39;)
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&quot;more&quot;&gt;More&lt;/h2&gt;
+&lt;p&gt;One of the more exciting and unique features is ability to diff screenshots and fail based on the difference. This isn&amp;#39;t a new idea, but shipping it as part of a testing framework can increase its adopatation. Finally, check out the demo video and don&amp;#39;t forget to read &lt;a href=&quot;https://engineering.groupon.com/2014/misc/i-tier-testium/&quot;&gt;the introductory article&lt;/a&gt;.&lt;/p&gt;
+&lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;//www.youtube.com/embed/qmPlM_SqZes&quot; frameborder=&quot;0&quot; allowfullscreen&gt;&lt;/iframe&gt;
+
+&lt;p&gt;On the side note, super excited to find out that Groupon is using CoffeeScript! Are you?&lt;/p&gt;
+</content>
+		</entry>
+	
+		<entry>
+			<title>messageformat.js</title>
+			<link href="http://npmawesome.com/posts/2014-01-10-messageformat"/>
+			<updated>2014-01-10T18:24:37.000Z</updated>
+			<id>http://npmawesome.com/posts/2014-01-10-messageformat</id>
+			<content type="html">&lt;p&gt;&lt;a href=&quot;https://github.com/SlexAxton/messageformat.js&quot;&gt;messageformat.js&lt;/a&gt; is a module by &lt;a href=&quot;https://github.com/SlexAxton&quot;&gt;Alex Sexton&lt;/a&gt; (&lt;a href=&quot;https://twitter.com/SlexAxton&quot;&gt;@SlexAxton&lt;/a&gt;) for handling both &lt;em&gt;pluralization&lt;/em&gt; and &lt;em&gt;gender&lt;/em&gt; in your applications. It can also lead to much better translations, as it was built by &lt;a href=&quot;http://icu-project.org/apiref/icu4j/com/ibm/icu/text/MessageFormat.html&quot;&gt;ICU&lt;/a&gt; to help solve those two problems for all known &lt;a href=&quot;http://cldr.unicode.org/&quot;&gt;CLDR&lt;/a&gt; languages - likely all the ones you care about.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;npm install messageformat
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&quot;features&quot;&gt;Features&lt;/h2&gt;
+&lt;p&gt;&lt;img class=&quot;hide-on-mobile&quot; src=&quot;/images/posts/messageformat.png&quot; style=&quot;width: 150px; float: right&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;MessageFormat in Java-land technically incorporates all other type formatting (and the older ChoiceFormat) directly into its messages, however, in the name of filesize, messageformat.js only strives to implement &lt;strong&gt;SelectFormat&lt;/strong&gt; and &lt;strong&gt;PluralFormat&lt;/strong&gt;. There are plans to pull in locale-aware &lt;strong&gt;NumberFormat&lt;/strong&gt; parsing as a &amp;quot;plugin&amp;quot; to this library, but as of right now, it&amp;#39;s best to pass things in preformatted (as suggested in the ICU docs).&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Handles arbitrary nesting of pluralization and select rules.&lt;/li&gt;
+&lt;li&gt;Works on the server and the client.&lt;/li&gt;
+&lt;li&gt;No i18n necessary - you can use it for just well-formed english sentences. &lt;code&gt;UX++;&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Speed: Compiles messages to JavaScript code.&lt;ul&gt;
+&lt;li&gt;This is great for speed. Message formatting is just string concatenation.&lt;/li&gt;
+&lt;li&gt;Run a precompiler at build time and remove the need for most of the library. &lt;code&gt;filesize--;&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Compatible with other languages that support MessageFormat&lt;/li&gt;
+&lt;li&gt;Very whitespace tolerant.&lt;/li&gt;
+&lt;li&gt;Supports unicode characters&lt;/li&gt;
+&lt;li&gt;Most translation companies are beginning to be exposed to translations like this, even if it&amp;#39;s not their core business.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;example&quot;&gt;Example&lt;/h2&gt;
+&lt;pre&gt;&lt;code&gt;var mf = new MessageFormat(&amp;#39;en&amp;#39;);
+var message = mf.compile(&amp;#39;This is a message.&amp;#39;); // returns a function
+
+message();
+// &amp;quot;This is a message.&amp;quot;
+
+message = mf.compile(&amp;#39;His name is {NAME}.&amp;#39;);
+message({ &amp;quot;NAME&amp;quot; : &amp;quot;Jed&amp;quot; });
+// &amp;quot;His name is Jed.&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Have you ever had to localize an application? What was your eperience like?&lt;/p&gt;
+</content>
+		</entry>
+	
+		<entry>
+			<title>gulp</title>
+			<link href="http://npmawesome.com/posts/2014-01-09-gulp"/>
+			<updated>2014-01-09T17:57:52.000Z</updated>
+			<id>http://npmawesome.com/posts/2014-01-09-gulp</id>
+			<content type="html">&lt;p&gt;&lt;a href=&quot;https://github.com/gulpjs/gulp&quot;&gt;gulp&lt;/a&gt; is a streaming build and task runner system. It&amp;#39;s an alternative to the ever prelific &lt;a href=&quot;http://gruntjs.com/&quot;&gt;grunt.js&lt;/a&gt;. There&amp;#39;s been quite &lt;a href=&quot;https://twitter.com/search?q=gulp%20grunt&amp;amp;src=typd&quot;&gt;a bit of buzz on the twitters&lt;/a&gt;.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;npm install gulp
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&quot;example&quot;&gt;Example&lt;/h2&gt;
+&lt;p&gt;This file is just a quick sample to give you a taste of what gulp does.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;var gulp = require(&amp;#39;gulp&amp;#39;);
+var uglify = require(&amp;#39;gulp-uglify&amp;#39;);
+var imagemin = require(&amp;#39;gulp-imagemin&amp;#39;);
+
+gulp.task(&amp;#39;scripts&amp;#39;, function() {
+  // Minify and copy all JavaScript (except vendor scripts)
+  return gulp.src([&amp;#39;client/js/**/*.js&amp;#39;, &amp;#39;!client/js/vendor/**&amp;#39;])
+    .pipe(uglify())
+    .pipe(gulp.dest(&amp;#39;build/js&amp;#39;));
+});
+
+// Copy all static images
+gulp.task(&amp;#39;images&amp;#39;, function() {
+ return gulp.src(&amp;#39;client/img/**&amp;#39;)
+    .pipe(imagemin())
+    .pipe(gulp.dest(&amp;#39;build/img&amp;#39;));
+});
+
+// The default task (called when you run `gulp`)
+gulp.task(&amp;#39;default&amp;#39;, function() {
+  gulp.run(&amp;#39;scripts&amp;#39;, &amp;#39;images&amp;#39;);
+
+  // Watch files and run tasks if they change
+  gulp.watch(&amp;#39;client/js/**&amp;#39;, function() {
+    gulp.run(&amp;#39;scripts&amp;#39;);
+  });
+
+  gulp.watch(&amp;#39;client/img/**&amp;#39;, function() {
+    gulp.run(&amp;#39;images&amp;#39;);
+  });
+});
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;img class=&quot;hide-on-mobile&quot; src=&quot;/images/posts/gulp.png&quot; style=&quot;width: 150px; float: right&quot; /&gt;&lt;/p&gt;
+&lt;h2 id=&quot;opinion&quot;&gt;Opinion&lt;/h2&gt;
+&lt;p&gt;There&amp;#39;s always a lot of excitement when a new thing comes out that promises to be better than the current thing. It seems to be especially true when the current thing is already pretty solid and just works. What gets to people are the edge cases and they feel annoyed and frustrated easily forgetting how smoothly the rest of the system works.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://github.com/bevacqua&quot;&gt;Nicolas Bevacqua&lt;/a&gt; has written a &lt;a href=&quot;http://blog.ponyfoo.com/2014/01/09/gulp-grunt-whatever&quot;&gt;very interesting article&lt;/a&gt; on the subject. My favorite quote:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Make a choice by yourself, don&amp;#39;t just pick something &lt;em&gt;because XYZ said so&lt;/em&gt;. Pick the tool which works for you. The one you understand, are comfortable with. Above all, &lt;strong&gt;the one that fits your needs&lt;/strong&gt;. Don&amp;#39;t go blindly chasing the latest fad because someone else tells you to. Similarly, don&amp;#39;t get stuck with monolithic jQuery applications (just to give out an example), try something else. Innovate. Be the change you want to see in the world.&lt;/p&gt;
+&lt;/blockquote&gt;
+</content>
+		</entry>
+	
+		<entry>
+			<title>chalk</title>
+			<link href="http://npmawesome.com/posts/2014-01-06-chalk"/>
+			<updated>2014-01-07T00:17:02.000Z</updated>
+			<id>http://npmawesome.com/posts/2014-01-06-chalk</id>
+			<content type="html">&lt;p&gt;&lt;a href=&quot;https://github.com/sindresorhus/chalk&quot;&gt;chalk&lt;/a&gt; is a clean and focused alternative to &lt;a href=&quot;https://github.com/Marak/colors.js&quot;&gt;colors.js&lt;/a&gt;, which is currently the most popular string styling module, but it has serious deficiencies like extending String.prototype which causes all kinds of &lt;a href=&quot;https://github.com/yeoman/yo/issues/68&quot;&gt;problems&lt;/a&gt;. Although there are other ones, they either do too much or not enough.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;npm install chalk
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;img class=&quot;hide-on-mobile&quot; src=&quot;/images/posts/chalk.png&quot; style=&quot;width: 250px; float: right&quot; /&gt;&lt;/p&gt;
+&lt;h2 id=&quot;why&quot;&gt;Why&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Doesn&amp;#39;t extend String.prototype&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;Expressive API&lt;/li&gt;
+&lt;li&gt;Clean and focused&lt;/li&gt;
+&lt;li&gt;Auto-detects color support&lt;/li&gt;
+&lt;li&gt;Actively maintained&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://npmjs.org/browse/depended/chalk&quot;&gt;Used by 150+ modules&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;example&quot;&gt;Example&lt;/h2&gt;
+&lt;pre&gt;&lt;code&gt;var chalk = require(&amp;#39;chalk&amp;#39;);
+
+// style a string
+console.log(  chalk.blue(&amp;#39;Hello world!&amp;#39;)  );
+
+// combine styled and normal strings
+console.log(  chalk.blue(&amp;#39;Hello&amp;#39;), &amp;#39;World&amp;#39; + chalk.red(&amp;#39;!&amp;#39;)  );
+
+// compose multiple styles using the chainable API
+console.log(  chalk.blue.bgRed.bold(&amp;#39;Hello world!&amp;#39;)  );
+
+// nest styles
+console.log(  chalk.red(&amp;#39;Hello&amp;#39;, chalk.underline.bgBlue(&amp;#39;world&amp;#39;) + &amp;#39;!&amp;#39;)  );
+
+// pass in multiple arguments
+console.log(  chalk.blue(&amp;#39;Hello&amp;#39;, &amp;#39;World!&amp;#39;, &amp;#39;Foo&amp;#39;, &amp;#39;bar&amp;#39;, &amp;#39;biz&amp;#39;, &amp;#39;baz&amp;#39;)  );
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;a href=&quot;https://github.com/sindresorhus/chalk&quot;&gt;chalk&lt;/a&gt; was written by &lt;a href=&quot;https://github.com/sindresorhus&quot;&gt;Sindre Sorhus&lt;/a&gt; &lt;a href=&quot;https://twitter.com/sindresorhus&quot;&gt;@sindresorhus&lt;/a&gt; who&amp;#39;s got a ton of other opensource work. Thank you!&lt;/p&gt;
+</content>
+		</entry>
+	
+		<entry>
+			<title>recluster</title>
+			<link href="http://npmawesome.com/posts/2013-12-31-recluster"/>
+			<updated>2013-12-31T18:45:13.000Z</updated>
+			<id>http://npmawesome.com/posts/2013-12-31-recluster</id>
+			<content type="html">&lt;p&gt;&lt;a href=&quot;https://github.com/doxout/recluster&quot;&gt;recluster&lt;/a&gt; is a clustering library with support for zero-downtime reloading.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;npm install recluster
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;img class=&quot;hide-on-mobile&quot; src=&quot;/images/posts/recluster.jpg&quot; style=&quot;width: 250px; float: right&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;Delivering that 100% uptime for web apps can be a tricky business. Errors and new code rollouts are the things we have to deal with on a daily basis and if you run continuous integration, your app is probably restarting many times a day. What kind of experience this might be creating for your users?&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://github.com/doxout/recluster&quot;&gt;recluster&lt;/a&gt; is among a &lt;a href=&quot;https://github.com/nodejitsu/forever&quot;&gt;few&lt;/a&gt; &lt;a href=&quot;https://github.com/superjoe30/naught&quot;&gt;other&lt;/a&gt; libraries that try to address this issue. It is:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Cluster aware.&lt;/li&gt;
+&lt;li&gt;Zero downtime errors and deploys.&lt;/li&gt;
+&lt;li&gt;Does not run as daemon.&lt;/li&gt;
+&lt;li&gt;Log agnostic.&lt;/li&gt;
+&lt;li&gt;Simple, relatively easy to reason about.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;example&quot;&gt;Example&lt;/h2&gt;
+&lt;p&gt;If &lt;code&gt;server.js&lt;/code&gt; is your regular http server (e.g. express), create &lt;code&gt;cluster.js&lt;/code&gt; and add:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;var recluster = require(&amp;#39;recluster&amp;#39;),
+    path = require(&amp;#39;path&amp;#39;);
+
+var cluster = recluster(path.join(__dirname, &amp;#39;server.js&amp;#39;));
+cluster.run();
+
+process.on(&amp;#39;SIGUSR2&amp;#39;, function() {
+    console.log(&amp;#39;Got SIGUSR2, reloading cluster...&amp;#39;);
+    cluster.reload();
+});
+
+console.log(&amp;quot;spawned cluster, kill -s SIGUSR2&amp;quot;, process.pid, &amp;quot;to reload&amp;quot;);
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;then run it&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;node cluster.js
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;To hot-reload the server, simply run&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;kill -s SIGUSR2 &amp;lt;cluster_pid&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;A server worker can gracefully exit by cleaning up in the &amp;#39;close&amp;#39; event of its server:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;server.on(&amp;#39;close&amp;#39;, function() {
+    // cleanup
+});
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Non-server workers can listen for the disconnect command and shut down gracefully before the kill timeout:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;process.on(&amp;#39;message&amp;#39;, function(m) {
+    if (m.cmd == &amp;#39;disconnect&amp;#39;) {
+        // cleanup
+    }
+})
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;For some fantastic insights on the subject, checkout &lt;a href=&quot;http://sandinmyjoints.github.io/towards-100-pct-uptime&quot;&gt;Towards 100% Uptime with Node.js&lt;/a&gt; slides by &lt;a href=&quot;https://github.com/sandinmyjoints&quot;&gt;William Bert&lt;/a&gt; &lt;a href=&quot;https://twitter.com/williamjohnbert&quot;&gt;@williamjohnbert&lt;/a&gt; and &lt;a href=&quot;http://qzaidi.github.io/2013/05/14/node-in-production/&quot;&gt;10 steps to nodejs nirvana in production&lt;/a&gt; by &lt;a href=&quot;http://github.com/qzaidi&quot;&gt;Qasim Zaidi&lt;/a&gt; &lt;a href=&quot;http://twitter.com/#!/kernelhacker&quot;&gt;@kernelhacker&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Curious, how do you manage your node process?&lt;/p&gt;
+</content>
+		</entry>
+	
+		<entry>
+			<title>rework</title>
+			<link href="http://npmawesome.com/posts/2013-12-30-rework"/>
+			<updated>2013-12-30T18:27:29.000Z</updated>
+			<id>http://npmawesome.com/posts/2013-12-30-rework</id>
+			<content type="html">&lt;p&gt;&lt;a href=&quot;https://github.com/reworkcss/rework&quot;&gt;rework&lt;/a&gt; is a tool for CSS manipulations built on css, allowing you to automate vendor prefixing, create your own properties, inline images, anything you can imagine! Also works in the browser.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;npm install rework
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;img class=&quot;hide-on-mobile&quot; src=&quot;/images/posts/rework.gif&quot; style=&quot;width: 250px; float: right&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;Originally written by TJ Holowaychuk, &lt;a href=&quot;https://github.com/reworkcss/rework&quot;&gt;rework&lt;/a&gt; is a module for working with CSS. Just like &lt;a href=&quot;https://github.com/ariya/esprima&quot;&gt;esprima&lt;/a&gt; for JavaScript, &lt;a href=&quot;https://github.com/reworkcss/rework&quot;&gt;rework&lt;/a&gt; allows you to change and extend CSS, basically take it to a whole new level.&lt;/p&gt;
+&lt;h2 id=&quot;example&quot;&gt;Example&lt;/h2&gt;
+&lt;p&gt;To get an idea of how to use &lt;a href=&quot;https://github.com/reworkcss/rework&quot;&gt;rework&lt;/a&gt;, take a look at one of the many plugins. A good example would be &lt;a href=&quot;https://github.com/simme/rework-imagesize&quot;&gt;rework-imagesize&lt;/a&gt; plugin.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;var rework = require(&amp;#39;rework&amp;#39;);
+var size   = require(&amp;#39;rework-imagesize&amp;#39;);
+
+var css = rework(str)
+  .use(size(&amp;#39;path/to/images/folder&amp;#39;))
+  .toString();
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Using the above JavaScript. This:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;h1 {
+  background: url(&amp;#39;myimage.png&amp;#39;);
+  imgsize: myimage.png;
+  text-indent: 100%;
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Would produce something like:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;h1 {
+  background: url(&amp;#39;myimage.png&amp;#39;);
+  text-indent: 100%;
+  height: 201px;
+  width: 300px;
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;a href=&quot;https://github.com/reworkcss&quot;&gt;Rework Github&lt;/a&gt; account has a good number of modules to do various things to your CSS. I also like the idea of using &lt;a href=&quot;https://github.com/reworkcss/rework&quot;&gt;rework&lt;/a&gt; as a post processor for your favourite dynamic CSS language, such as &lt;a href=&quot;http://lesscss.org/&quot;&gt;LESS&lt;/a&gt;, &lt;a href=&quot;http://learnboost.github.io/stylus/&quot;&gt;Stylus&lt;/a&gt; or &lt;a href=&quot;https://github.com/andrew/node-sass&quot;&gt;SASS&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Curious what is your favourite dynamic CSS framework?&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;Image borrowed from &lt;a href=&quot;http://www.horriblelogos.com/rework-digital/&quot;&gt;horrible logos&lt;/a&gt; and isn&amp;#39;t the official logo :)&lt;/em&gt;&lt;/p&gt;
+</content>
+		</entry>
+	
+		<entry>
+			<title>cheerio</title>
+			<link href="http://npmawesome.com/posts/2013-12-27-cheerio"/>
+			<updated>2013-12-27T17:19:30.000Z</updated>
+			<id>http://npmawesome.com/posts/2013-12-27-cheerio</id>
+			<content type="html">&lt;p&gt;&lt;img class=&quot;hide-on-mobile&quot; src=&quot;https://2.gravatar.com/avatar/824b41e6108a22c4c96f50ee23419369&quot; style=&quot;float: right; margin-left: 1em&quot;/&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://github.com/MatthewMueller/cheerio&quot;&gt;cheerio&lt;/a&gt; is a fast, flexible, and lean implementation of core jQuery written by &lt;a href=&quot;https://github.com/matthewmueller&quot;&gt;Matthew Mueller&lt;/a&gt; and designed specifically for the server.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;npm install cheerio
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&quot;features&quot;&gt;Features&lt;/h2&gt;
+&lt;p&gt;&lt;img class=&quot;hide-on-mobile&quot; src=&quot;/images/posts/cheerio.jpg&quot; style=&quot;width: 150px; float: right&quot; /&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Familiar syntax. &lt;a href=&quot;https://github.com/MatthewMueller/cheerio&quot;&gt;cheerio&lt;/a&gt; implements a subset of core jQuery. &lt;a href=&quot;https://github.com/MatthewMueller/cheerio&quot;&gt;cheerio&lt;/a&gt; removes all the DOM inconsistencies and browser cruft from the jQuery library, revealing its truly gorgeous API.&lt;/li&gt;
+&lt;li&gt;Blazingly fast. &lt;a href=&quot;https://github.com/MatthewMueller/cheerio&quot;&gt;cheerio&lt;/a&gt; works with a very simple, consistent DOM model. As a result parsing, manipulating, and rendering are incredibly efficient. Preliminary end-to-end benchmarks suggest that &lt;a href=&quot;https://github.com/MatthewMueller/cheerio&quot;&gt;cheerio&lt;/a&gt; is about 8x faster than JSDOM.&lt;/li&gt;
+&lt;li&gt;Insanely flexible. &lt;a href=&quot;https://github.com/MatthewMueller/cheerio&quot;&gt;cheerio&lt;/a&gt; wraps around &lt;a href=&quot;https://twitter.com/fb55&quot;&gt;@FB55&lt;/a&gt;&amp;#39;s &lt;a href=&quot;https://github.com/fb55/htmlparser2&quot;&gt;forgiving htmlparser&lt;/a&gt;. &lt;a href=&quot;https://github.com/MatthewMueller/cheerio&quot;&gt;cheerio&lt;/a&gt; can parse nearly any HTML or XML document.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;example&quot;&gt;Example&lt;/h2&gt;
+&lt;pre&gt;&lt;code&gt;var cheerio = require(&amp;#39;cheerio&amp;#39;),
+    $ = cheerio.load(&amp;#39;&amp;lt;h2 class=&amp;quot;title&amp;quot;&amp;gt;Hello world&amp;lt;/h2&amp;gt;&amp;#39;);
+
+$(&amp;#39;h2.title&amp;#39;).text(&amp;#39;Hello there!&amp;#39;);
+$(&amp;#39;h2&amp;#39;).addClass(&amp;#39;welcome&amp;#39;);
+
+$.html();
+//=&amp;gt; &amp;lt;h2 class=&amp;quot;title welcome&amp;quot;&amp;gt;Hello there!&amp;lt;/h2&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&quot;screencast-introduction&quot;&gt;Screencast Introduction&lt;/h2&gt;
+&lt;iframe src=&quot;//player.vimeo.com/video/31950192&quot; width=&quot;500&quot; height=&quot;281&quot; frameborder=&quot;0&quot; webkitallowfullscreen mozallowfullscreen allowfullscreen&gt;&lt;/iframe&gt;
+
+&lt;p&gt;Are you using jQuery on the server side?&lt;/p&gt;
+</content>
+		</entry>
+	
+		<entry>
+			<title>dat</title>
+			<link href="http://npmawesome.com/posts/2013-12-19-dat"/>
+			<updated>2013-12-19T18:08:03.000Z</updated>
+			<id>http://npmawesome.com/posts/2013-12-19-dat</id>
+			<content type="html">&lt;p&gt;&lt;a href=&quot;https://github.com/maxogden/dat&quot;&gt;dat&lt;/a&gt; is a project that seeks providing better tools for data collaboration.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;npm install dat
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&quot;what-is-dat-&quot;&gt;What is dat?&lt;/h2&gt;
+&lt;p&gt;&lt;img class=&quot;hide-on-mobile&quot; src=&quot;/images/posts/dat.png&quot; style=&quot;float: right&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;I like the name, makes for clever titles like this :) Anyways, dat:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;make data syncable. automatic sync and updates of entire data sets (or subsets)&lt;/li&gt;
+&lt;li&gt;data sets can be very large (billions of items) or updated frequently (real time data)&lt;/li&gt;
+&lt;li&gt;sync and transformation plugin API to connect dat to any existing database/format/language&lt;/li&gt;
+&lt;li&gt;built with automated + decentralized workflows in mind&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;To illustrate the goals of &lt;code&gt;dat&lt;/code&gt; consider the GitHub project, which is a great model of this idea working in a different space. GitHub is built on top of an open source tool called &lt;code&gt;git&lt;/code&gt; and provides a user-friendly web application that lets software developers find code written by others, use it in their own programs and improve upon it. In a similar fashion &lt;code&gt;dat&lt;/code&gt; will be developed as a set of tools to store, synchronize, manipulate and collaborate in a decentralized fashion on sets of data, hopefully enabling platforms analogous to GitHub to be built on top of it.&lt;/p&gt;
+&lt;p&gt;The concept sounds pretty amazing to me. Currently &lt;code&gt;dat&lt;/code&gt; is in pre-alpha stage but with full time support from &lt;a href=&quot;http://maxogden.com/gut-hosted-open-data-filets.html&quot;&gt;Max Ogden&lt;/a&gt; it will evolve very quickly.&lt;/p&gt;
+&lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;//www.youtube.com/embed/FX7qSwz3SCk&quot; frameborder=&quot;0&quot; allowfullscreen&gt;&lt;/iframe&gt;
+
+&lt;p&gt;Aside from a truly epic beard, Max also has a &lt;a href=&quot;http://www.youtube.com/watch?v=FX7qSwz3SCk&quot;&gt;cool talk&lt;/a&gt; on YouTube introducing &lt;code&gt;dat&lt;/code&gt;. Have you gotten any ideas on how this could be used yet?&lt;/p&gt;
+</content>
+		</entry>
+	
+		<entry>
+			<title>xregexp</title>
+			<link href="http://npmawesome.com/posts/2013-12-18-xregexp"/>
+			<updated>2013-12-19T01:27:16.000Z</updated>
+			<id>http://npmawesome.com/posts/2013-12-18-xregexp</id>
+			<content type="html">&lt;p&gt;&lt;a href=&quot;https://github.com/slevithan/xregexp&quot;&gt;xregexp&lt;/a&gt; provides augmented and extensible JavaScript regular expressions. You get new syntax, flags, and methods beyond what browsers support natively. XRegExp is also a regex utility belt with tools to make your client-side grepping simpler and more powerful, while freeing you from worrying about pesky cross-browser inconsistencies and the dubious lastIndex property.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;npm install xregexp
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&quot;usage-examples&quot;&gt;Usage examples&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&quot;http://www.bennadel.com/blog/2383-The-5th-Annual-Regular-Expression-Day-And-Prizes-June-1st-2012.htm&quot;&gt;&lt;img class=&quot;hide-on-mobile&quot; src=&quot;http://www.bennadel.com/resources/regexday/2011/photos/1__original.jpg&quot; style=&quot;width: 300px; float: right&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;// Using named capture and flag x (free-spacing and line comments)
+var date = XRegExp(&amp;#39;(?&amp;lt;year&amp;gt;  [0-9]{4} ) -?  # year  \n\
+                    (?&amp;lt;month&amp;gt; [0-9]{2} ) -?  # month \n\
+                    (?&amp;lt;day&amp;gt;   [0-9]{2} )     # day   &amp;#39;, &amp;#39;x&amp;#39;);
+
+// XRegExp.exec gives you named backreferences on the match result
+var match = XRegExp.exec(&amp;#39;2012-02-22&amp;#39;, date);
+match.year; // -&amp;gt; &amp;#39;2012&amp;#39;
+
+// It also includes optional pos and sticky arguments
+var pos = 3, result = [];
+while (match = XRegExp.exec(&amp;#39;&amp;lt;1&amp;gt;&amp;lt;2&amp;gt;&amp;lt;3&amp;gt;&amp;lt;4&amp;gt;5&amp;lt;6&amp;gt;&amp;#39;, /&amp;lt;(\d+)&amp;gt;/, pos, &amp;#39;sticky&amp;#39;)) {
+  result.push(match[1]);
+  pos = match.index + match[0].length;
+} // result -&amp;gt; [&amp;#39;2&amp;#39;, &amp;#39;3&amp;#39;, &amp;#39;4&amp;#39;]
+
+// XRegExp.replace allows named backreferences in replacements
+XRegExp.replace(&amp;#39;2012-02-22&amp;#39;, date, &amp;#39;${month}/${day}/${year}&amp;#39;); // -&amp;gt; &amp;#39;02/22/2012&amp;#39;
+XRegExp.replace(&amp;#39;2012-02-22&amp;#39;, date, function(match) {
+  return match.month + &amp;#39;/&amp;#39; + match.day + &amp;#39;/&amp;#39; + match.year;
+}); // -&amp;gt; &amp;#39;02/22/2012&amp;#39;
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&quot;addons&quot;&gt;Addons&lt;/h2&gt;
+&lt;p&gt;Addons are one of the more impressive features of &lt;a href=&quot;https://github.com/slevithan/xregexp&quot;&gt;xregexp&lt;/a&gt;. In particular, the &lt;code&gt;matchRecursive&lt;/code&gt; addon allows you to match balanced brackets and quotes, which is otherwise impossible with regular regex (.NET had this extension built in for some time now however).&lt;/p&gt;
+&lt;p&gt;In browsers, first include the script:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;&amp;lt;script src=&amp;quot;src/xregexp.js&amp;quot;&amp;gt;&amp;lt;/script&amp;gt;
+&amp;lt;script src=&amp;quot;src/addons/matchrecursive.js&amp;quot;&amp;gt;&amp;lt;/script&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;You can then match recursive constructs using XRegExp pattern strings as left and right delimiters:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;var str = &amp;#39;(t((e))s)t()(ing)&amp;#39;;
+XRegExp.matchRecursive(str, &amp;#39;\\(&amp;#39;, &amp;#39;\\)&amp;#39;, &amp;#39;g&amp;#39;);
+// -&amp;gt; [&amp;#39;t((e))s&amp;#39;, &amp;#39;&amp;#39;, &amp;#39;ing&amp;#39;]
+
+// Extended information mode with valueNames
+str = &amp;#39;Here is &amp;lt;div&amp;gt; &amp;lt;div&amp;gt;an&amp;lt;/div&amp;gt;&amp;lt;/div&amp;gt; example&amp;#39;;
+XRegExp.matchRecursive(str, &amp;#39;&amp;lt;div\\s*&amp;gt;&amp;#39;, &amp;#39;&amp;lt;/div&amp;gt;&amp;#39;, &amp;#39;gi&amp;#39;, {
+    valueNames: [&amp;#39;between&amp;#39;, &amp;#39;left&amp;#39;, &amp;#39;match&amp;#39;, &amp;#39;right&amp;#39;]
+});
+/* -&amp;gt; [
+{name: &amp;#39;between&amp;#39;, value: &amp;#39;Here is &amp;#39;,       start: 0,  end: 8},
+{name: &amp;#39;left&amp;#39;,    value: &amp;#39;&amp;lt;div&amp;gt;&amp;#39;,          start: 8,  end: 13},
+{name: &amp;#39;match&amp;#39;,   value: &amp;#39; &amp;lt;div&amp;gt;an&amp;lt;/div&amp;gt;&amp;#39;, start: 13, end: 27},
+{name: &amp;#39;right&amp;#39;,   value: &amp;#39;&amp;lt;/div&amp;gt;&amp;#39;,         start: 27, end: 33},
+{name: &amp;#39;between&amp;#39;, value: &amp;#39; example&amp;#39;,       start: 33, end: 41}
+] */
+
+// Omitting unneeded parts with null valueNames, and using escapeChar
+str = &amp;#39;...{1}\\{{function(x,y){return y+x;}}&amp;#39;;
+XRegExp.matchRecursive(str, &amp;#39;{&amp;#39;, &amp;#39;}&amp;#39;, &amp;#39;g&amp;#39;, {
+    valueNames: [&amp;#39;literal&amp;#39;, null, &amp;#39;value&amp;#39;, null],
+    escapeChar: &amp;#39;\\&amp;#39;
+});
+/* -&amp;gt; [
+{name: &amp;#39;literal&amp;#39;, value: &amp;#39;...&amp;#39;, start: 0, end: 3},
+{name: &amp;#39;value&amp;#39;,   value: &amp;#39;1&amp;#39;,   start: 4, end: 5},
+{name: &amp;#39;literal&amp;#39;, value: &amp;#39;\\{&amp;#39;, start: 6, end: 8},
+{name: &amp;#39;value&amp;#39;,   value: &amp;#39;function(x,y){return y+x;}&amp;#39;, start: 9, end: 35}
+] */
+
+// Sticky mode via flag y
+str = &amp;#39;&amp;lt;1&amp;gt;&amp;lt;&amp;lt;&amp;lt;2&amp;gt;&amp;gt;&amp;gt;&amp;lt;3&amp;gt;4&amp;lt;5&amp;gt;&amp;#39;;
+XRegExp.matchRecursive(str, &amp;#39;&amp;lt;&amp;#39;, &amp;#39;&amp;gt;&amp;#39;, &amp;#39;gy&amp;#39;);
+// -&amp;gt; [&amp;#39;1&amp;#39;, &amp;#39;&amp;lt;&amp;lt;2&amp;gt;&amp;gt;&amp;#39;, &amp;#39;3&amp;#39;]
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;XRegExp.matchRecursive throws an error if it scans past an unbalanced delimiter in the target string.&lt;/p&gt;
+&lt;p&gt;I&amp;#39;ve been using &lt;a href=&quot;https://github.com/slevithan/xregexp&quot;&gt;xregexp&lt;/a&gt; in &lt;a href=&quot;https://github.com/alexgorbatchev/SyntaxHighlighter&quot;&gt;SyntaxHighlighter&lt;/a&gt; for a while now. My favourite feature is named captures, which JavaScript is desperately missing. Have you used &lt;a href=&quot;https://github.com/slevithan/xregexp&quot;&gt;xregexp&lt;/a&gt; already? How?&lt;/p&gt;
+</content>
+		</entry>
+	
+		<entry>
+			<title>npm v1.3.18</title>
+			<link href="http://npmawesome.com/posts/2013-12-17-npm"/>
+			<updated>2013-12-17T18:41:23.851Z</updated>
+			<id>http://npmawesome.com/posts/2013-12-17-npm</id>
+			<content type="html">&lt;p&gt;NPM v1.3.18 release notes:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;Added an &lt;code&gt;--ignore-scripts&lt;/code&gt; option, which will prevent package.json scripts from being run. Most notably, this will work on npm install, so e.g. npm install &lt;code&gt;--ignore-scripts&lt;/code&gt; will not run preinstall and prepublish scripts. (&lt;a href=&quot;https://github.com/isaacs/npm/commit/d7e67bf0d94b085652ec1c87d595afa6f650a8f6&quot;&gt;d7e67bf&lt;/a&gt;, @sqs)&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Fixed a bug introduced in 1.3.16 that would manifest with certain cache configurations, by causing spurious errors saying &amp;quot;Adding a cache directory to the cache will make the world implode.&amp;quot; (&lt;a href=&quot;https://github.com/isaacs/npm/commit/966373fad8d741637f9744882bde9f6e94000865&quot;&gt;966373f&lt;/a&gt;, @domenic)&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Re-fixed the multiple download of URL dependencies, whose fix was reverted in 1.3.17. (&lt;a href=&quot;https://github.com/isaacs/npm/commit/a362c3f1919987419ed8a37c8defa19d2e6697b0&quot;&gt;a362c3f&lt;/a&gt;, @spmason)&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;a href=&quot;https://github.com/isaacs/npm/releases/tag/v1.3.18&quot;&gt;https://github.com/isaacs/npm/releases/tag/v1.3.18&lt;/a&gt;&lt;/p&gt;
+</content>
+		</entry>
+	
+		<entry>
+			<title>ect</title>
+			<link href="http://npmawesome.com/posts/2013-12-16-ect"/>
+			<updated>2013-12-17T00:57:39.888Z</updated>
+			<id>http://npmawesome.com/posts/2013-12-16-ect</id>
+			<content type="html">&lt;p&gt;&lt;a href=&quot;https://github.com/baryshev/ect&quot;&gt;ect&lt;/a&gt; is a &lt;a href=&quot;http://ectjs.com/#benchmark&quot;&gt;performance focused&lt;/a&gt; JavaScript template engine with embedded CoffeeScript syntax. &lt;a href=&quot;http://ectjs.com&quot;&gt;Just try demo&lt;/a&gt; to check all features.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;npm install ect
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;img class=&quot;hide-on-mobile&quot; src=&quot;/images/posts/coffeescript.png&quot; style=&quot;float: right&quot; /&gt;&lt;/p&gt;
+&lt;h2 id=&quot;features&quot;&gt;Features&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Excellent performance&lt;/li&gt;
+&lt;li&gt;Templates caching&lt;/li&gt;
+&lt;li&gt;Automatic reloading of changed templates&lt;/li&gt;
+&lt;li&gt;CoffeeScript code in templates&lt;/li&gt;
+&lt;li&gt;Multi-line expressions support&lt;/li&gt;
+&lt;li&gt;Tag customization support&lt;/li&gt;
+&lt;li&gt;Node.JS and client-side support&lt;/li&gt;
+&lt;li&gt;Powerful but simple syntax&lt;/li&gt;
+&lt;li&gt;Inheritance, partials, blocks&lt;/li&gt;
+&lt;li&gt;Compatible with &lt;code&gt;express&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Compatible with &lt;code&gt;RequireJS&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Backward compatible with &lt;code&gt;eco&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/TurtlePie/Sublime-ECT&quot;&gt;Syntax highlighting for Sublime Text 2&lt;/a&gt; by &lt;a href=&quot;https://github.com/TurtlePie&quot;&gt;TurtlePie&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;example&quot;&gt;Example&lt;/h2&gt;
+&lt;p&gt;app.js&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;express = require(&amp;quot;express&amp;quot;)
+app = express()
+ECT = require(&amp;quot;ect&amp;quot;)
+ectRenderer = ECT watch: true, root: __dirname + &amp;quot;/views&amp;quot;
+app.engine &amp;quot;.ect&amp;quot;, ectRenderer.render
+
+app.get &amp;quot;/&amp;quot;, (req, res) -&amp;gt;
+  res.render &amp;quot;index.ect&amp;quot;
+
+app.listen 3000
+console.log &amp;quot;Listening on port 3000&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;views/index.ect&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;&amp;lt;% extend &amp;#39;layout.ect&amp;#39; %&amp;gt;
+&amp;lt;div&amp;gt;Hello, World!&amp;lt;/div&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;views/layout.ect&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;&amp;lt;html&amp;gt;
+  &amp;lt;body&amp;gt;
+    &amp;lt;% content %&amp;gt;
+  &amp;lt;/body&amp;gt;
+&amp;lt;/html&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;There are plenty of examples and information on the &lt;a href=&quot;https://github.com/baryshev/ect&quot;&gt;ect&lt;/a&gt;. Check it out!&lt;/p&gt;
+</content>
+		</entry>
+	
+		<entry>
+			<title>chrono</title>
+			<link href="http://npmawesome.com/posts/2013-12-13-chrono"/>
+			<updated>2013-12-14T01:14:45.063Z</updated>
+			<id>http://npmawesome.com/posts/2013-12-13-chrono</id>
+			<content type="html">&lt;p&gt;&lt;a href=&quot;https://github.com/wanasit/chrono&quot;&gt;chrono&lt;/a&gt; is a natural language date parser in Javascript. It is designed to extract date informations from any given text. Works in node and browser. Check out the &lt;a href=&quot;http://wanasit.github.io/pages/chrono/&quot;&gt;nifty test page&lt;/a&gt;.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;npm install chrono
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;img class=&quot;hide-on-mobile&quot; src=&quot;/images/posts/clock.gif&quot; style=&quot;float: right; width: 100px; margin-left: 1em&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://github.com/wanasit/chrono&quot;&gt;chrono&lt;/a&gt; supports a number of date and time formats, including:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Today, Tomorrow, Yesterday, last Friday, etc&lt;/li&gt;
+&lt;li&gt;10/13/2013&lt;/li&gt;
+&lt;li&gt;this Friday from 13:00 - 16.00&lt;/li&gt;
+&lt;li&gt;Saturday, 17 August 2013 - Monday, 19 August 2013&lt;/li&gt;
+&lt;li&gt;Sat Aug 17 2013 18:40:39 GMT+0900 (JST)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;usage&quot;&gt;Usage&lt;/h2&gt;
+&lt;pre&gt;&lt;code&gt;&amp;gt; var chrono = require(&amp;#39;chrono-node&amp;#39;)
+
+&amp;gt; chrono.parseDate(&amp;#39;An appointment on Sep 12-13&amp;#39;)
+Thu Sep 12 2013 12:00:00 GMT+0900 (JST)
+
+&amp;gt; chrono.parse(&amp;#39;An appointment on Sep 12-13&amp;#39;)
+[ { start:
+     { year: 2013,
+       month: 8,
+       day: 12,
+       impliedComponents: [Object],
+       isCertain: [Function],
+       date: [Function] },
+    startDate: Thu Sep 12 2013 12:00:00 GMT+0900 (JST),
+    end:
+     { year: 2013,
+       month: 8,
+       day: 13,
+       impliedComponents: [Object],
+       isCertain: [Function],
+       date: [Function] },
+    endDate: Fri Sep 13 2013 12:00:00 GMT+0900 (JST),
+    referenceDate: Sat Aug 17 2013 17:54:57 GMT+0900 (JST),
+    index: 18,
+    text: &amp;#39;Sep 12-13&amp;#39;,
+    concordance: &amp;#39;An appointment on Sep 12-13&amp;#39; } ]
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;What&amp;#39;s even more cool, &lt;a href=&quot;https://github.com/wanasit/chrono&quot;&gt;chrono&lt;/a&gt; is designed to work with long text (notes, emails, articles, etc). &lt;code&gt;chrono.parse&lt;/code&gt; will return an array of every date mentioned in the story.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;&amp;gt; var text = &amp;#39;October 7, 2011, of which details were not revealed out of respect to Jobs\&amp;#39;s family.[239] Apple announced on the same day that they had no plans for a public service, but were encouraging &amp;quot;well-wishers&amp;quot; to send their remembrance messages to an email address created to receive such messages.[240] Sunday, October 16, 2011&amp;#39;
+&amp;gt; chrono.parse(text)
+[{ start:
+    { year: 2011,
+      month: 9,
+      day: 7,
+      ....
+ { start:
+    { year: 2011,
+      month: 9,
+      day: 16,
+      ....
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;There are plenty of examples and information on the &lt;a href=&quot;https://github.com/wanasit/chrono&quot;&gt;chrono&lt;/a&gt;. Check it out!&lt;/p&gt;
+</content>
+		</entry>
+	
+		<entry>
+			<title>prettyjson</title>
+			<link href="http://npmawesome.com/posts/2013-12-11-prettyjson"/>
+			<updated>2013-12-12T01:27:02.644Z</updated>
+			<id>http://npmawesome.com/posts/2013-12-11-prettyjson</id>
+			<content type="html">&lt;p&gt;&lt;a href=&quot;https://github.com/rafeca/prettyjson&quot;&gt;prettyjson&lt;/a&gt; is package for formatting JSON data in a coloured YAML-style, perfect for CLI output.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;npm install prettyjson
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&quot;cli&quot;&gt;CLI&lt;/h2&gt;
+&lt;pre&gt;&lt;code&gt;$ prettyjson package.json
+...
+$ curl https://api.github.com/users/rafeca | prettyjson
+...
+$ PRETTYJSON_KEYS=red PRETTYJSON_DASH=blue PRETTYJSON_STRING=yellow prettyjson package.json
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&quot;api&quot;&gt;API&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&quot;https://github-camo.global.ssl.fastly.net/84c63f2a817ca95b6ccaff240a75fbf1b11f7b87/687474703a2f2f7261666563612e636f6d2f7072657474796a736f6e2f696d616765732f6578616d706c65332e706e67&quot;&gt;&lt;img class=&quot;hide-on-mobile&quot; src=&quot;https://github-camo.global.ssl.fastly.net/84c63f2a817ca95b6ccaff240a75fbf1b11f7b87/687474703a2f2f7261666563612e636f6d2f7072657474796a736f6e2f696d616765732f6578616d706c65332e706e67&quot; style=&quot;float: right; width: 300px; margin-left: 1em&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;var prettyjson = require(&amp;#39;prettyjson&amp;#39;);
+
+var data = {
+  username: &amp;#39;rafeca&amp;#39;,
+  url: &amp;#39;https://github.com/rafeca&amp;#39;,
+  twitter_account: &amp;#39;https://twitter.com/rafeca&amp;#39;,
+  projects: [&amp;#39;prettyprint&amp;#39;, &amp;#39;connfu&amp;#39;]
+};
+
+console.log(prettyjson.render(data));
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;There are plenty of examples and information on the &lt;a href=&quot;https://github.com/rafeca/prettyjson&quot;&gt;prettyjson&lt;/a&gt;. Check it out!&lt;/p&gt;
+</content>
+		</entry>
+	
+		<entry>
+			<title>state</title>
+			<link href="http://npmawesome.com/posts/2013-12-10-state"/>
+			<updated>2013-12-11T00:08:10.427Z</updated>
+			<id>http://npmawesome.com/posts/2013-12-10-state</id>
+			<content type="html">&lt;p&gt;&lt;a href=&quot;https://github.com/nickfargo/state&quot;&gt;state&lt;/a&gt; is a library for implementing &lt;a href=&quot;http://statejs.org/docs/#concepts--states&quot;&gt;first-class states&lt;/a&gt; on arbitrary owner objects.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;npm install state
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;There&amp;#39;s an incredible amount of funtionality described in the &lt;a href=&quot;http://statejs.org/docs/&quot;&gt;very extensive documentation&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;img class=&quot;hide-on-mobile&quot; src=&quot;http://statejs.org/img/dodecagem-640px.png&quot; style=&quot;float: right; width: 200px; margin-left: 1em;&quot; /&gt;&lt;/p&gt;
+&lt;h2 id=&quot;minimal-footprint&quot;&gt;Minimal footprint&lt;/h2&gt;
+&lt;p&gt;All functionality of State is to be instigated through the exported state function. It should be able both to generate state expressions and to implement expressed states into an existing JavaScript object, depending on the arguments provided. In the latter case, the newly implemented system of states should be accessible from a single object. &lt;code&gt;state()&lt;/code&gt; method on the affected object.&lt;/p&gt;
+&lt;h2 id=&quot;expressive-power&quot;&gt;Expressive power&lt;/h2&gt;
+&lt;p&gt;As much as possible, State should aim to look and feel like a feature of the language. The interpreted shorthand syntax, simple keyword attributes, and limited interface should allow for production code that is terse, declarative, and easy to write and understand.&lt;/p&gt;
+&lt;h2 id=&quot;opacity&quot;&gt;Opacity&lt;/h2&gt;
+&lt;p&gt;Apart from the addition of the &lt;code&gt;object.state()&lt;/code&gt; method, a call to &lt;code&gt;state()&lt;/code&gt; must make no other modifications to a State–affected object&amp;#39;s interface. Methods are replaced with delegators, which forward method calls to the current state. This is to be implemented opaquely and non-destructively: consumers of the object need not be aware of which states are active in the object, or even that a concept of state exists at all, and a call to &lt;code&gt;object.state(&amp;#39;&amp;#39;).destroy()&lt;/code&gt; must restore the object to its original form.&lt;/p&gt;
+&lt;h2 id=&quot;example&quot;&gt;Example&lt;/h2&gt;
+&lt;pre&gt;&lt;code&gt;var flavors = [
+  &amp;#39;vanilla&amp;#39;,
+  &amp;#39;chocolate&amp;#39;,
+  &amp;#39;strawberry&amp;#39;,
+  &amp;#39;AmeriCone Dream&amp;#39;
+];
+
+function Kid () {}
+
+state( Kid.prototype, &amp;#39;mutable&amp;#39;, {
+  data: {
+    favorite: &amp;#39;chocolate&amp;#39;
+  },
+
+  waver: state.bind( function () {
+    var i = Math.random() * flavors.length &amp;lt;&amp;lt; 0;
+    this.data({ favorite: flavors[i] });
+  }),
+
+  whine: function ( complaint ) {
+    if ( typeof console !== &amp;#39;undefined&amp;#39; ) {
+      console.log( complaint );
+    }
+  },
+
+  mutate: function ( mutation, replaced ) {
+    this.owner().whine(
+      &amp;quot;I hate &amp;quot; + replaced.favorite + &amp;quot;, &amp;quot; +
+      &amp;quot;I want &amp;quot; + mutation.favorite + &amp;quot;!&amp;quot;
+    );
+  }
+});
+
+var jr = new Kid;
+
+jr.waver();  // log &amp;lt;&amp;lt;&amp;lt; &amp;quot;I hate chocolate, I want strawberry!&amp;quot;
+jr.waver();  // log &amp;lt;&amp;lt;&amp;lt; &amp;quot;I hate strawberry, I want chocolate!&amp;quot;
+jr.waver();  // nothing
+jr.waver();  // log &amp;lt;&amp;lt;&amp;lt; &amp;quot;I hate chocolate, I want AmeriCone Dream!&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;There are plenty of examples and information on the &lt;a href=&quot;http://statejs.org&quot;&gt;documentation site&lt;/a&gt;. Check it out!&lt;/p&gt;
+</content>
+		</entry>
+	
+		<entry>
+			<title>blessed</title>
+			<link href="http://npmawesome.com/posts/2013-12-09-blessed"/>
+			<updated>2013-12-09T22:17:51.697Z</updated>
+			<id>http://npmawesome.com/posts/2013-12-09-blessed</id>
+			<content type="html">&lt;p&gt;&lt;a href=&quot;https://github.com/chjj/blessed&quot;&gt;blessed&lt;/a&gt; is a terminal control library for Unix-like systems, enabling the construction of text user interface (TUI) applications. In other words it&amp;#39;s a curses-like library for node.js&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;npm install blessed
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&quot;example&quot;&gt;Example&lt;/h2&gt;
+&lt;p&gt;This will render a box with line borders containing the text &amp;#39;Hello world!&amp;#39;, perfectly centered horizontally and vertically.&lt;/p&gt;
+&lt;p&gt;&lt;img class=&quot;hide-on-mobile&quot; src=&quot;/images/posts/blessed.png&quot; style=&quot;float: right; margin-left: 1em;&quot; /&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;var blessed = require(&amp;#39;blessed&amp;#39;);
+
+// Create a screen object.
+var screen = blessed.screen();
+
+// Create a box perfectly centered horizontally and vertically.
+var box = blessed.box({
+  top: &amp;#39;center&amp;#39;,
+  left: &amp;#39;center&amp;#39;,
+  width: &amp;#39;50%&amp;#39;,
+  height: &amp;#39;50%&amp;#39;,
+  content: &amp;#39;Hello {bold}world{/bold}!&amp;#39;,
+  tags: true,
+  border: {
+    type: &amp;#39;line&amp;#39;
+  },
+  style: {
+    fg: &amp;#39;white&amp;#39;,
+    bg: &amp;#39;magenta&amp;#39;,
+    border: {
+      fg: &amp;#39;#ffffff&amp;#39;
+    },
+    hover: {
+      bg: &amp;#39;green&amp;#39;
+    }
+  }
+});
+
+// Append our box to the screen.
+screen.append(box);
+
+// If our box is clicked, change the content.
+box.on(&amp;#39;click&amp;#39;, function(data) {
+  box.setContent(&amp;#39;{center}Some different {red-fg}content{/red-fg}.{/center}&amp;#39;);
+  screen.render();
+});
+
+// If box is focused, handle `enter`/`return` and give us some more content.
+box.key(&amp;#39;enter&amp;#39;, function(ch, key) {
+  box.setContent(&amp;#39;{right}Even different {black-fg}content{/black-fg}.{/right}\n&amp;#39;);
+  box.setLine(1, &amp;#39;bar&amp;#39;);
+  box.insertLine(1, &amp;#39;foo&amp;#39;);
+  screen.render();
+});
+
+// Quit on Escape, q, or Control-C.
+screen.key([&amp;#39;escape&amp;#39;, &amp;#39;q&amp;#39;, &amp;#39;C-c&amp;#39;], function(ch, key) {
+  return process.exit(0);
+});
+
+// Focus our element.
+box.focus();
+
+// Render the screen.
+screen.render();
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;There are plenty of examples and information on the &lt;a href=&quot;https://github.com/chjj/blessed&quot;&gt;blessed&lt;/a&gt;. Check it out!&lt;/p&gt;
+</content>
+		</entry>
+	
+		<entry>
+			<title>gm</title>
+			<link href="http://npmawesome.com/posts/2013-12-05-gm"/>
+			<updated>2013-12-05T17:44:35.103Z</updated>
+			<id>http://npmawesome.com/posts/2013-12-05-gm</id>
+			<content type="html">&lt;p&gt;&lt;a href=&quot;https://github.com/aheckmann/gm&quot;&gt;gm&lt;/a&gt; is &lt;a href=&quot;http://www.imagemagick.org&quot;&gt;ImageMagick&lt;/a&gt; for node, what else is there to say?&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;npm install gm
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;img class=&quot;hide-on-mobile&quot; src=&quot;/images/posts/imagemagick.png&quot; style=&quot;float: right; width: 100px; margin-left: 1em;&quot; /&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;ImageMagick is a software suite to create, edit, compose, or convert bitmap images. It can read and write images in a variety of formats (over 100) including DPX, EXR, GIF, JPEG, JPEG-2000, PDF, PNG, Postscript, SVG, and TIFF. Use ImageMagick to resize, flip, mirror, rotate, distort, shear and transform images, adjust image colors, apply various special effects, or draw text, lines, polygons, ellipses and Bézier curves.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;The &lt;a href=&quot;http://aheckmann.github.io/gm/&quot;&gt;demo&lt;/a&gt; page has an interactive playground that shows a tiny fraction of what &lt;a href=&quot;https://github.com/aheckmann/gm&quot;&gt;gm&lt;/a&gt; can do.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;var gm = require(&amp;#39;./gm&amp;#39;);
+
+// resize and remove EXIF profile data
+gm(&amp;#39;/path/to/my/img.jpg&amp;#39;)
+  .resize(240, 240)
+  .noProfile()
+  .write(&amp;#39;/path/to/resize.png&amp;#39;, function (err) {
+    if (!err) console.log(&amp;#39;done&amp;#39;);
+  });
+
+// annotate an image
+gm(&amp;#39;/path/to/my/img.jpg&amp;#39;)
+  .stroke(&amp;quot;#ffffff&amp;quot;)
+  .drawCircle(10, 10, 20, 10)
+  .font(&amp;quot;Helvetica.ttf&amp;quot;, 12)
+  .drawText(30, 20, &amp;quot;GMagick!&amp;quot;)
+  .write(&amp;quot;/path/to/drawing.png&amp;quot;, function (err) {
+    if (!err) console.log(&amp;#39;done&amp;#39;);
+  });
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;There are plenty of examples and information on the &lt;a href=&quot;https://github.com/aheckmann/gm&quot;&gt;gm&lt;/a&gt;. Check it out!&lt;/p&gt;
+</content>
+		</entry>
+	
+		<entry>
+			<title>nak</title>
+			<link href="http://npmawesome.com/posts/2013-12-03-nak"/>
+			<updated>2013-12-03T19:00:17.949Z</updated>
+			<id>http://npmawesome.com/posts/2013-12-03-nak</id>
+			<content type="html">&lt;p&gt;&lt;a href=&quot;https://github.com/gjtorikian/nak&quot;&gt;nak&lt;/a&gt; is an ack/ag clone written in Node.js. The focus here is on speed and performance, rather than trying to 100% mimic all the functionality of ack.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;npm install nak
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;There were two goals set out:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Be faster than ack&lt;/li&gt;
+&lt;li&gt;Return matches in order&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;A lot of the functionality is modeled around ag. In fact, you can provide a &lt;code&gt;.nakignore&lt;/code&gt; file to define patterns to ignore. &lt;code&gt;.nakignore&lt;/code&gt; files in the directory you&amp;#39;re searching under are automatically included as ignore rules, but you can choose to specify any additional file (with &lt;code&gt;.gitignore&lt;/code&gt;-style rules) with &lt;code&gt;-a&lt;/code&gt;.&lt;/p&gt;
+&lt;h2 id=&quot;usages&quot;&gt;Usages&lt;/h2&gt;
+&lt;pre&gt;&lt;code&gt;nak -G &amp;#39;*.js&amp;#39; &amp;#39;function&amp;#39; .
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Find all files ending in &lt;code&gt;js&lt;/code&gt;, in the current directory, with the phrase &lt;code&gt;function&lt;/code&gt;.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;nak -a ../.gitignore -i &amp;#39;def&amp;#39; .
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Find all files in the current directory, with the phrase in &lt;code&gt;def&lt;/code&gt; (case-insensitive), in the current directory; also, use the &lt;em&gt;.gitignore&lt;/em&gt; rules from the folder above&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;nak -d &amp;#39;*.less&amp;#39; -w &amp;#39;mixin&amp;#39; .
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Find all files in the current directory that are not &lt;code&gt;.less&lt;/code&gt;, with the phrase &lt;code&gt;mixin&lt;/code&gt; (whole word), in the current directory&lt;/p&gt;
+&lt;p&gt;There are plenty of examples and information on the &lt;a href=&quot;https://github.com/gjtorikian/nak&quot;&gt;nak&lt;/a&gt;. Check it out!&lt;/p&gt;
+</content>
+		</entry>
+	
+		<entry>
+			<title>VeryModel</title>
+			<link href="http://npmawesome.com/posts/2013-12-03-verymodel"/>
+			<updated>2013-12-03T17:57:46.852Z</updated>
+			<id>http://npmawesome.com/posts/2013-12-03-verymodel</id>
+			<content type="html">&lt;p&gt;&lt;a href=&quot;https://github.com/fritzy/VeryModel&quot;&gt;VeryModel&lt;/a&gt; is a system for validation, creation, and editing of models. VeryModel is not tied to a framework, and it implements a full purpose Model system.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;npm install VeryModel
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Here&amp;#39;s an example of a model definition:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;// Create a User Factory
+var User = new VeryModel({
+  id: {primary: true, type: VeryType().isAlphanumeric(), default: 1},
+  username: {required: true, type: VeryType().isAlphanumeric().len(4, 25), default: &amp;#39;&amp;#39;},
+  password: {required: false, type: VeryType().len(6).custom(goodPassword)}, default: &amp;#39;&amp;#39;},
+  passhash: {private: true},
+});
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Model defintions are recursive Javascript object. At each layer, you can have the following fields:&lt;/p&gt;
+&lt;p&gt;&lt;img class=&quot;hide-on-mobile&quot; src=&quot;/images/posts/orm.png&quot; style=&quot;width: 200px; float: right; margin-left: 1em;&quot;/&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;required&lt;/code&gt; (boolean): Error on validation if this field isn&amp;#39;t set.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;type&lt;/code&gt; (VeryType): VeryType chain to validate field against if set.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;default&lt;/code&gt; (any): Default value set automatically.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;model&lt;/code&gt; (definition object or VeryModel): set this field as another model.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;collection&lt;/code&gt; (definition object or VeryModel): set this field as a collection of a model.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;derive&lt;/code&gt; &lt;code&gt;function&lt;/code&gt;): Derive the value of this field with this function whenever field is accessed &lt;code&gt;{derive: function(model) {return model.first + &amp;#39; &amp;#39; + model.last}&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;depends&lt;/code&gt; ({some_other_field: VeryType or true}, ...): Require other fields when this field is set, optionally run VeryType chain check on other field.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;primary&lt;/code&gt; (boolean): Set this on one of your fiels for easy saving and loading.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;private&lt;/code&gt; (boolean): &lt;code&gt;toObject()&lt;/code&gt; will not include this field in expect unless the argumnet usePrivate is true&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;There are plenty of examples and information on the &lt;a href=&quot;https://github.com/fritzy/VeryModel&quot;&gt;VeryModel&lt;/a&gt;. Check it out!&lt;/p&gt;
+</content>
+		</entry>
+	
+		<entry>
+			<title>scala.js</title>
+			<link href="http://npmawesome.com/posts/2013-11-30-scala-js"/>
+			<updated>2013-11-30T16:52:13.839Z</updated>
+			<id>http://npmawesome.com/posts/2013-11-30-scala-js</id>
+			<content type="html">&lt;p&gt;&lt;img class=&quot;hide-on-mobile&quot; src=&quot;/images/posts/scala.png&quot; style=&quot;float: right; width: 200px; margin-left: 1em;&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;http://www.scala-js.org/&quot;&gt;Scala.js&lt;/a&gt;, a Scala to JavaScript compiler.&lt;/p&gt;
+&lt;p&gt;Outstanding features are:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Support all of Scala (including macros!), modulo &lt;a href=&quot;http://www.scala-js.org/doc/semantics.html&quot;&gt;a few semantic differences&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Very good &lt;a href=&quot;http://www.scala-js.org/doc/js-interoperability.html&quot;&gt;interoperability with JavaScript code&lt;/a&gt;. For example, use jQuery and HTML5 from your Scala.js code, either in a typed or untyped way. Or create Scala.js objects and call their methods from JavaScript.&lt;/li&gt;
+&lt;li&gt;Integrated with &lt;a href=&quot;http://www.scala-sbt.org/&quot;&gt;sbt&lt;/a&gt; (including support for dependency management and incremental compilation)&lt;/li&gt;
+&lt;li&gt;Can be used with your favorite IDE for Scala&lt;/li&gt;
+&lt;li&gt;Generates &lt;a href=&quot;http://www.html5rocks.com/en/tutorials/developertools/sourcemaps/&quot;&gt;Source Maps&lt;/a&gt; for a smooth debugging experience (step through your Scala code from within your browser supporting source maps)&lt;/li&gt;
+&lt;li&gt;Integrates &lt;a href=&quot;https://developers.google.com/closure/compiler/&quot;&gt;Google Closure Compiler&lt;/a&gt; for producing minimal code for production.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;There is plenty more information on the &lt;a href=&quot;https://github.com/scala-js/scala-js&quot;&gt;github&lt;/a&gt; page. Check it out!&lt;/p&gt;
+</content>
+		</entry>
+	
+		<entry>
+			<title>scalenpm.org</title>
+			<link href="http://npmawesome.com/posts/2013-11-27-scale-npm"/>
+			<updated>2013-11-27T19:27:43.883Z</updated>
+			<id>http://npmawesome.com/posts/2013-11-27-scale-npm</id>
+			<content type="html">&lt;p&gt;&lt;img class=&quot;hide-on-mobile&quot; src=&quot;/images/posts/npm.png&quot; style=&quot;float: right; width: 200px; margin-left: 1em;&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;The &lt;a href=&quot;http://npmjs.org&quot;&gt;NPM&lt;/a&gt; registry recently got crashy, and it was incredibly painful. Here at &lt;a href=&quot;http://www.goodeggs.com&quot;&gt;Good Eggs&lt;/a&gt; we were affected as much as any other node shop - we couldn&amp;#39;t push a build out.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;http://scalenpm.org&quot;&gt;scalenpm.org&lt;/a&gt; is an effort to fix this problem by throwing some money at it. The plan is to use the money to dedicate extra engineer time and hardware to the repository we all know and love. At the moment of writing the funding reached $115k out of $200k estimated.&lt;/p&gt;
+&lt;p&gt;For just $75 you get can support NPM aaaaand get a t-shirt! Woot! &lt;a href=&quot;https://scalenpm.org/donate&quot;&gt;Go donate!&lt;/a&gt;&lt;/p&gt;
+</content>
+		</entry>
+	
+		<entry>
+			<title>rx.js</title>
+			<link href="http://npmawesome.com/posts/2013-11-26-rx-js"/>
+			<updated>2013-11-27T00:40:43.849Z</updated>
+			<id>http://npmawesome.com/posts/2013-11-26-rx-js</id>
+			<content type="html">&lt;p&gt;&lt;a href=&quot;https://github.com/Reactive-Extensions/RxJS&quot;&gt;rx.js&lt;/a&gt; is a set of libraries to compose asynchronous and event-based programs using observable collections and Array#extras style composition in JavaScript.&lt;/p&gt;
+&lt;p&gt;Using RxJS, you can represent multiple asynchronous data streams (that come from diverse sources, e.g., stock quote, tweets, computer events, web service requests, etc.), and subscribe to the event stream using the Observer object. The Observable notifies the subscribed Observer instance whenever an event occurs.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;npm install rx.js
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&quot;example&quot;&gt;Example&lt;/h2&gt;
+&lt;pre&gt;&lt;code&gt;/* Get stock data somehow */
+var source = getAsyncStockData();
+
+var subscription = source
+  .filter(function (quote) {
+    return quote.price &amp;gt; 30;
+  })
+  .map(function (quote) {
+    return quote.price;
+  })
+  .subscribe(
+    function (price) {
+      console.log(&amp;#39;Prices higher than $30: $&amp;#39; + price);
+    },
+    function (err) {
+      console.log(&amp;#39;Something went wrong: &amp;#39; + err.message);
+    });
+
+/* When we&amp;#39;re done */
+subscription.dispose();
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Reactive programming is a very interesting way of writing code. Check out a few videos and presentations linked from rx.js&lt;/p&gt;
+&lt;h2 id=&quot;presentations&quot;&gt;Presentations&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;http://www.slideshare.net/mattpodwysocki/cascadiajs-dont-cross-the-streams&quot;&gt;Don&amp;#39;t Cross the Streams - Cascadia.js 2012&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/Reactive-Extensions/StrangeLoop2013&quot;&gt;Curing Your Asynchronous Blues - Strange Loop 2013&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;videos&quot;&gt;Videos&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;http://channel9.msdn.com/Blogs/Charles/Introducing-RxJS-Reactive-Extensions-for-JavaScript&quot;&gt;Hello RxJS - Channel 9&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://channel9.msdn.com/events/MIX/MIX11/HTM07&quot;&gt;MIX 2011&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://channel9.msdn.com/Blogs/Charles/Matthew-Podwysocki-and-Bart-J-F-De-Smet-RxJS-Today-and-Tomorrow&quot;&gt;RxJS Today and Tomorrow - Channel 9&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://www.youtube.com/watch?v=FqBq4uoiG0M&quot;&gt;Cascadia.js 2012&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://channel9.msdn.com/Tags/reactive+extensions&quot;&gt;Reactive Extensions Videos on Channel 9&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;There are plenty of examples and information on the &lt;a href=&quot;https://github.com/Reactive-Extensions/RxJS&quot;&gt;rx.js&lt;/a&gt;. Check it
+out!&lt;/p&gt;
+</content>
+		</entry>
+	
+		<entry>
+			<title>docpad</title>
+			<link href="http://npmawesome.com/posts/2013-11-26-docpad"/>
+			<updated>2013-11-26T23:18:56.092Z</updated>
+			<id>http://npmawesome.com/posts/2013-11-26-docpad</id>
+			<content type="html">&lt;p&gt;&lt;a href=&quot;https://github.com/bevry/docpad&quot;&gt;docpad&lt;/a&gt; is a static web site generator that is has been used in production by big and small companies for over a year and a half now to create &lt;a href=&quot;http://docpad.org/docs/showcase&quot;&gt;plenty of amazing and powerful web sites and applications&lt;/a&gt; quicker than ever before. What makes it different is instead of being a box to cram yourself into and hold you back, it is freeway to what you want to accomplish, just getting out of your way and allowing you to create stuff quicker than ever before without limits. Leave the redudant stuff up to me, so you can focus on the awesome stuff.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;npm install docpad
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&quot;features-out-of-the-box&quot;&gt;Features out of the box&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Competely file based&lt;/li&gt;
+&lt;li&gt;Write your documents in any language, markup, templating engine, or pre-processor you wish&lt;/li&gt;
+&lt;li&gt;Changes to your website are automatically recompiled through our built in watch system&lt;/li&gt;
+&lt;li&gt;Add meta data to the top of your files to be used by templating engines to display non-standard information&lt;/li&gt;
+&lt;li&gt;Display custom listings of content with our powerful &lt;a href=&quot;https://github.com/bevry/query-engine/&quot;&gt;Query Engine&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Abstract out generic headers and footers into layouts using our nested layout system&lt;/li&gt;
+&lt;li&gt;Deploy by copying static files&lt;/li&gt;
+&lt;li&gt;Built-in server to save you from having to startup your own, for dynamic deployments this even supports things like clean urls, custom routes and server-side logic&lt;/li&gt;
+&lt;li&gt;Robust architecture and powerful plugin system&lt;/li&gt;
+&lt;li&gt;Built in support for dynamic documents (e.g. search pages, signup forms, etc.)&lt;/li&gt;
+&lt;li&gt;Embeddable&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;There are plenty of examples and information on the &lt;a href=&quot;https://github.com/bevry/docpad&quot;&gt;docpad&lt;/a&gt;. Check it
+out!&lt;/p&gt;
+</content>
+		</entry>
+	
+		<entry>
+			<title>grunt-angular-builder</title>
+			<link href="http://npmawesome.com/posts/2013-11-25-grunt-angular-builder"/>
+			<updated>2013-11-25T23:19:48.436Z</updated>
+			<id>http://npmawesome.com/posts/2013-11-25-grunt-angular-builder</id>
+			<content type="html">&lt;p&gt;&lt;a href=&quot;https://github.com/claudio-silva/grunt-angular-builder&quot;&gt;angular-builder&lt;/a&gt;
+is a specialized Grunt plugin to handle all of AngularJS related assets
+issues in a truly practical, automated, simple and easy way.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;npm install angular-builder
+&lt;/code&gt;&lt;/pre&gt;&lt;div class=&quot;hide-on-mobile&quot; style=&quot;position: relative; float: right; height: 200px;&quot;&gt;
+    &lt;div style=&quot;position: relative; width: 200px; height: 200px; background: url('/images/posts/angularjs.png') 50% 50% no-repeat; background-size: contain&quot;&gt;&lt;/div&gt;
+    &lt;div style=&quot;position: absolute; top: 0px; left: 0px; width: 200px; height: 190px; overflow: hidden; background: url('/images/posts/grunt.png'); background-size: cover&quot;&gt;&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;h2 id=&quot;features&quot;&gt;Features&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;Analyzes your AngularJS source code and “understands” module
+dependencies and the relationships between your files. No need for
+AMD or CommonJS loaders.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Accepts source code split into as many files as you want and spread
+over any directory structure you prefer.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Assembles one javascript file (or just a few) for production with
+all code assembled in the correct loading order required by your
+module’s dependencies.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Builds fast in debug mode by generating a single script that loads
+the original source files in the correct order (no minified or
+concatenated files in debug builds).&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Allows you to debug the source code in the browser itself and see
+readable source code for any debug breakpoint or error location,
+with the correct original line numbers.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Includes in the build &lt;em&gt;only&lt;/em&gt; the modules that your app actually
+needs and discards dead code.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Includes in the build the stylesheets and assets each module
+requires and excludes those that are not used by your app.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Can also include in the build scripts that are not based on
+AngularJS.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Recognizes modules and libraries that are loaded independently and,
+therefore, are not part of the build.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Not only builds complete applications but also builds library
+projects, generating &lt;em&gt;readable&lt;/em&gt; redistributable source code files
+for them.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Allows each module to have its own build configuration file. Just
+drag-and-drop a module to your project and it’s ready to build!&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Integrates easily with other Grunt plugins to expand your build
+process with minification, optimization, preprocessing and/or
+compilation st&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;There are plenty of examples and information on the &lt;a href=&quot;https://github.com/claudio-silva/grunt-angular-builder&quot;&gt;github
+page&lt;/a&gt;. Check it
+out!&lt;/p&gt;
+</content>
+		</entry>
+	
+		<entry>
+			<title>videoconverter.js</title>
+			<link href="http://npmawesome.com/posts/2013-11-22-videoconverter-js"/>
+			<updated>2013-11-22T23:20:01.275Z</updated>
+			<id>http://npmawesome.com/posts/2013-11-22-videoconverter-js</id>
+			<content type="html">&lt;p&gt;&lt;a href=&quot;https://github.com/bgrins/videoconverter.js&quot;&gt;videoconverter.js&lt;/a&gt;
+is not really an NPM module, but is a library that allows you to convert
+and manipulate videos inside of your web browser. This is achieved by
+converting the popular &lt;a href=&quot;http://ffmpeg.org/&quot;&gt;FFmpeg&lt;/a&gt; library into
+JavaScript, using &lt;a href=&quot;https://github.com/kripken/emscripten&quot;&gt;Emscripten&lt;/a&gt;.
+In other words, it’s damn impressive! Just &lt;a href=&quot;http://bgrins.github.io/videoconverter.js/demo&quot;&gt;check out the
+demo&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;img class=&quot;hide-on-mobile&quot; src=&quot;/images/posts/ffmpeg.png&quot; style=&quot;width: 200px; float: right; margin-left: 1em;&quot;/&gt;&lt;/p&gt;
+&lt;p&gt;Here’s the fun fact,
+&lt;a href=&quot;https://github.com/bgrins/videoconverter.js/blob/master/build/ffmpeg.js&quot;&gt;ffmpeg.js&lt;/a&gt;
+is a whoping 29MB in size. GZipped it comes down to 6MB. I have tried
+using &lt;a href=&quot;https://github.com/mishoo/UglifyJS2&quot;&gt;UglifyJS&lt;/a&gt; to minify the
+source and gave up after 1 hour.&lt;/p&gt;
+&lt;p&gt;There are plenty of examples and information on the &lt;a href=&quot;https://github.com/bgrins/videoconverter.js&quot;&gt;github
+page&lt;/a&gt;.&lt;/p&gt;
+</content>
+		</entry>
+	
+		<entry>
+			<title>event-stream</title>
+			<link href="http://npmawesome.com/posts/2013-11-22-event-stream"/>
+			<updated>2013-11-22T23:20:01.275Z</updated>
+			<id>http://npmawesome.com/posts/2013-11-22-event-stream</id>
+			<content type="html">&lt;p&gt;&lt;img class=&quot;hide-on-mobile&quot; src=&quot;/images/posts/event-stream.gif&quot; style=&quot;width: 200px; float: right&quot;/&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://github.com/dominictarr/event-stream&quot;&gt;event-stream&lt;/a&gt; is a toolkit to make creating and working with streams easy..&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;npm install event-stream
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;The usage is pretty straight forward:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;var es = require(&amp;#39;event-stream&amp;#39;);
+
+es.pipeline(                         // connect streams together with `pipe`
+  process.openStdin(),               // open stdin
+  es.split(),                        // split stream to break on newlines
+  es.map(function (data, callback) { // turn this async function into a stream
+    callback(null
+      , inspect(JSON.parse(data)))   // render it nicely
+  }),
+  process.stdout                     // pipe it to stdout!
+);
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;I found the &lt;code&gt;map&lt;/code&gt; function to be especially exciting because it takes a callback and lets you asynchronously process stream data where as regular stream &lt;code&gt;data&lt;/code&gt; event does not.&lt;/p&gt;
+&lt;p&gt;There are plenty of examples and information on the &lt;a href=&quot;https://github.com/dominictarr/event-stream&quot;&gt;github page&lt;/a&gt;.&lt;/p&gt;
+</content>
+		</entry>
+	
+		<entry>
+			<title>bacon.js</title>
+			<link href="http://npmawesome.com/posts/2013-11-21-bacon-js"/>
+			<updated>2013-11-21T23:20:01.275Z</updated>
+			<id>http://npmawesome.com/posts/2013-11-21-bacon-js</id>
+			<content type="html">&lt;p&gt;&lt;a href=&quot;https://github.com/baconjs/bacon.js&quot;&gt;bacon.js&lt;/a&gt; is a library for
+functional reactive programming. Or let’s say it’s a library for working
+with events and dynamic values (which are called Properties in
+Bacon.js). &lt;a href=&quot;http://raimohanska.github.io/bacon.js-slides/&quot;&gt;Check out&lt;/a&gt;
+the interactive demo.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;npm install baconjs
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Conal Elliot explains functional reactive programming (FPR) over at
+&lt;a href=&quot;http://stackoverflow.com/questions/1028250/what-is-functional-reactive-programming/1030631#1030631&quot;&gt;Stack Overflow&lt;/a&gt;:&lt;/p&gt;
+&lt;p&gt;&lt;img class=&quot;hide-on-mobile&quot; src=&quot;/images/posts/baconjs.png&quot; style=&quot;width: 200px; float: right&quot;/&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;So, what is FRP? You could have invented it yourself. Start with these
+ideas:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;Dynamic/evolving values (i.e., values “over time”) are first class
+values in themselves. You can define them and combine them, pass
+them into &amp;amp; out of functions. I called these things “behaviors”.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Behaviors are built up out of a few primitives, like constant
+(static) behaviors and time (like a clock), and then with
+sequential and parallel combination. n behaviors are combined by
+applying an n-ary function (on static values), “point-wise”, i.e.,
+continuously over time.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;To account for discrete phenomena, have another type (family) of
+“events”, each of which has a stream (finite or infinite) of
+occurrences. Each occurrence has an associated time and value.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;To come up with the compositional vocabulary out of which all
+behaviors and events can be built, play with some examples. Keep
+deconstructing into pieces that are more general/simple.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;So that you know you’re on solid ground, give the whole model a
+compositional foundation, using the technique of denotational
+semantics, which just means that (a) each type has a corresponding
+simple &amp;amp; precise mathematical type of “meanings”, and (b) each
+primitive and operator has a simple &amp;amp; precise meaning as a
+function of the meanings of the constituents. Never, ever mix
+implementation considerations into your exploration process. If
+this description is gibberish to you, consult (a) Denotational
+design with type class morphisms, (b) Push-pull functional
+reactive programming (ignoring the implementation bits), and (c)
+the Denotational Semantics Haskell wikibooks page. Beware that
+denotational semantics has two parts, from its two founders
+Christopher Strachey and Dana Scott: the easier &amp;amp; more useful
+Strachey part and the harder and less useful (for software design)
+Scott part.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;There are plenty of examples and information on the &lt;a href=&quot;https://github.com/baconjs/bacon.js&quot;&gt;github page&lt;/a&gt;.&lt;/p&gt;
+</content>
+		</entry>
+	
+		<entry>
+			<title>node-spdy</title>
+			<link href="http://npmawesome.com/posts/2013-11-20-spdy"/>
+			<updated>2013-11-20T23:20:01.275Z</updated>
+			<id>http://npmawesome.com/posts/2013-11-20-spdy</id>
+			<content type="html">&lt;p&gt;&lt;a href=&quot;https://github.com/indutny/node-spdy&quot;&gt;spdy&lt;/a&gt; lets you create &lt;a href=&quot;http://www.chromium.org/spdy&quot;&gt;SPDY
+servers&lt;/a&gt; in node.js with natural http
+module interface and fallback to regular https (for browsers that don’t
+support SPDY yet).&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;npm install spdy
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;From &lt;a href=&quot;http://en.wikipedia.org/wiki/SPDY&quot;&gt;Wikipedia&lt;/a&gt;:&lt;/p&gt;
+&lt;p&gt;&lt;img class=&quot;hide-on-mobile&quot; src=&quot;/images/posts/spdy.jpg&quot; style=&quot;width: 200px; float: right&quot;/&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;The goal of SPDY is to reduce web page load time. This is achieved by
+prioritizing and multiplexing the transfer of web page subresources so
+that only one connection per client is required. TLS encryption is
+nearly ubiquitous in SPDY implementations, and transmission headers
+are gzip-or DEFLATE-compressed by design (in contrast to HTTP, where
+the headers are sent as human-readable text). Moreover, servers may
+hint or even push content instead of awaiting individual requests for
+each resource of a web page.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Here’s how you would use it with express:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;var spdy = require(&amp;#39;spdy&amp;#39;),
+    express = require(&amp;#39;express&amp;#39;),
+    fs = require(&amp;#39;fs&amp;#39;);
+
+var options = {
+  key: fs.readFileSync(__dirname + &amp;#39;/keys/spdy-key.pem&amp;#39;),
+  cert: fs.readFileSync(__dirname + &amp;#39;/keys/spdy-cert.pem&amp;#39;),
+  ca: fs.readFileSync(__dirname + &amp;#39;/keys/spdy-ca.pem&amp;#39;),
+
+  // SPDY-specific options
+  windowSize: 1024 // Server&amp;#39;s window size
+};
+
+var app = express();
+app.use(/* your favorite middleware */);
+var server = spdy.createServer(options, app);
+server.listen(443);
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;There are plenty of examples and information on the &lt;a href=&quot;https://github.com/indutny/node-spdy&quot;&gt;github page&lt;/a&gt;.&lt;/p&gt;
+</content>
+		</entry>
+	
+		<entry>
+			<title>json-mask</title>
+			<link href="http://npmawesome.com/posts/2013-11-19-json-mask"/>
+			<updated>2013-11-19T23:20:01.275Z</updated>
+			<id>http://npmawesome.com/posts/2013-11-19-json-mask</id>
+			<content type="html">&lt;p&gt;&lt;a href=&quot;https://github.com/nemtsov/json-mask&quot;&gt;json-mask&lt;/a&gt; is a tiny language and
+an engine for selecting specific parts of a JavaScript object.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;npm install json-mask
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;The use is very straightforward:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;&amp;gt; var mask = require(&amp;#39;json-mask&amp;#39;)
+&amp;gt; mask({p: {a: 1, b: 2}, z: 1}, &amp;#39;p/a,z&amp;#39;)
+{p: {a: 1}, z: 1}
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;img class=&quot;hide-on-mobile&quot; src=&quot;/images/posts/json-mask.png&quot; style=&quot;width: 200px; float: right&quot;/&gt;&lt;/p&gt;
+&lt;p&gt;The main difference between JSONPath / JSONSelect and this engine is
+that JSON Mask preserves the structure of the original input object.
+Instead of returning an array of selected sub-elements (e.g.
+&lt;code&gt;[{a: 1}, {z: 1}]&lt;/code&gt; from example above), it filters-out the parts of the
+object that you don’t need, keeping the structure unchanged:
+&lt;code&gt;{p: {a: 1}, z: 1}&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;This is important because JSON Mask was designed with HTTP resources in
+mind, the structure of which I didn’t want to change after the unwanted
+fields were masked / filtered.&lt;/p&gt;
+&lt;h2 id=&quot;syntax&quot;&gt;Syntax&lt;/h2&gt;
+&lt;p&gt;The syntax is loosely based on XPath:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;a,b,c&lt;/code&gt; comma-separated list will select multiple fields&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;a/b/c&lt;/code&gt; path will select a field from its parent&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;a(b,c)&lt;/code&gt; sub-selection will select many fields from a parent&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;a/*/c&lt;/code&gt; the star &lt;code&gt;*&lt;/code&gt; wildcard will select all items in a field&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;There are plenty of examples and information on the &lt;a href=&quot;https://github.com/nemtsov/json-mask&quot;&gt;github page&lt;/a&gt;.&lt;/p&gt;
+</content>
+		</entry>
+	
+		<entry>
+			<title>pm2</title>
+			<link href="http://npmawesome.com/posts/2013-11-18-pm2"/>
+			<updated>2013-11-18T23:20:01.275Z</updated>
+			<id>http://npmawesome.com/posts/2013-11-18-pm2</id>
+			<content type="html">&lt;p&gt;&lt;a href=&quot;https://github.com/Unitech/pm2&quot;&gt;pm2&lt;/a&gt; is a process manager for Node apps with a builtin load-balancer.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;npm install pm2
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;img class=&quot;hide-on-mobile&quot; src=&quot;/images/posts/pm2.png&quot; style=&quot;width: 200px; float: right&quot;/&gt;&lt;/p&gt;
+&lt;p&gt;pm2 is perfect when you need to spread your stateless code accross all
+CPUs available on a server, to keep all processes alive forever and to
+0s reload it. Good fit for IaaS structures. Don’t use it on PaaS
+solutions (a solution for PaaS will be developed later).&lt;/p&gt;
+&lt;h2 id=&quot;main-features&quot;&gt;Main features&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Builtin load-balancer (using the node cluster module)&lt;/li&gt;
+&lt;li&gt;Script daemonization&lt;/li&gt;
+&lt;li&gt;0s downtime reload&lt;/li&gt;
+&lt;li&gt;Startup scripts for Ubuntu and CentOS&lt;/li&gt;
+&lt;li&gt;Stop unstable process (avoid infinite loop)&lt;/li&gt;
+&lt;li&gt;Monitoring in console&lt;/li&gt;
+&lt;li&gt;HTTP API&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/Unitech/pm2-interface&quot;&gt;Remote control and real time interface API&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;more-details&quot;&gt;More Details&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://raw.github.com/Unitech/pm2#a2&quot;&gt;Usage/Features&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://raw.github.com/Unitech/pm2#a3&quot;&gt;Different ways to launch a process&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://raw.github.com/Unitech/pm2#a16&quot;&gt;0s downtime reload&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://raw.github.com/Unitech/pm2#a19&quot;&gt;CoffeeScript&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://raw.github.com/Unitech/pm2#a4&quot;&gt;Is my production server ready for PM2&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://raw.github.com/Unitech/pm2#a6&quot;&gt;Listing processes : pm2 list&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://raw.github.com/Unitech/pm2#a7&quot;&gt;Monitoring processes (CPU/RAM) : pm2 monit&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://raw.github.com/Unitech/pm2#a8&quot;&gt;Startup script generation : pm2 startup&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://raw.github.com/Unitech/pm2#a9&quot;&gt;Log aggregation : pm2 logs&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://raw.github.com/Unitech/pm2#a23&quot;&gt;Fork mode&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://raw.github.com/Unitech/pm2#a24&quot;&gt;Customization&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://raw.github.com/Unitech/pm2#a12&quot;&gt;API health end point : pm2 web&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://raw.github.com/Unitech/pm2#a13&quot;&gt;JSON processes declaration&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://raw.github.com/Unitech/pm2#a27&quot;&gt;Contributing/Development mode&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://raw.github.com/Unitech/pm2#a21&quot;&gt;Known bugs&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://raw.github.com/Unitech/pm2#a4&quot;&gt;Launching the tests&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;There are plenty of examples and information on the &lt;a href=&quot;https://github.com/Unitech/pm2&quot;&gt;github page&lt;/a&gt;.&lt;/p&gt;
+</content>
+		</entry>
+	
+		<entry>
+			<title>npmd</title>
+			<link href="http://npmawesome.com/posts/2013-11-18-npmd"/>
+			<updated>2013-11-18T23:20:01.275Z</updated>
+			<id>http://npmawesome.com/posts/2013-11-18-npmd</id>
+			<content type="html">&lt;p&gt;&lt;a href=&quot;https://github.com/dominictarr/npmd&quot;&gt;npmd&lt;/a&gt; is an alternative npm
+client, based around a local replication of the npm metadata
+(package.json &amp;amp; readmes are replicated for every package, but only
+tarballs that you have installed are replicated). Replicating data
+locally makes the client much smarter, and enables all manner of Mad
+Science.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;npm install npmd
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;To begin, replicate the registry metadata. When this gets near 100% you
+can use the other commands.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;npmd --sync
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;You should leave the npmd service running in the background, this will
+make running other npmd commands much faster. npmd will pull down npm
+metadata, and store it in a leveldb. This will be less than 200mb,
+including a full text index.&lt;/p&gt;
+&lt;p&gt;To publish a module locally from the package directory, just do:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;npmd publish
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;and your package version will be stashed into a queue for local use. You
+can npmd install yourpkg locally even if yourpkg isn’t on the public npm
+yet. You can even have multiple versions of your package queued up
+locally.&lt;/p&gt;
+&lt;p&gt;There are plenty of examples and information on the &lt;a href=&quot;https://github.com/dominictarr/npmd&quot;&gt;github
+page&lt;/a&gt;.&lt;/p&gt;
+</content>
+		</entry>
+	
+		<entry>
+			<title>nixt</title>
+			<link href="http://npmawesome.com/posts/2013-11-18-nixt"/>
+			<updated>2013-11-18T23:20:01.275Z</updated>
+			<id>http://npmawesome.com/posts/2013-11-18-nixt</id>
+			<content type="html">&lt;p&gt;&lt;img class=&quot;hide-on-mobile&quot; src=&quot;/images/posts/nixt.jpg&quot; style=&quot;width: 200px; float: right&quot;/&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://github.com/vesln/nixt&quot;&gt;nixt&lt;/a&gt; is aiming to make testing of
+command-line apps as simple as possible. It plays nice with the testing
+tools that you are already using and in case you are one of those guys
+who practice outside-in BDD, it has the potential to become something
+that lives in every command-line app that you are going to build.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;npm install nixt
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;The use is very straightforward:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;describe(&amp;#39;todo add&amp;#39;, function() {
+  it(&amp;#39;adds a new todo item&amp;#39;, function(done) {
+    nixt()
+      .run(&amp;#39;todo add&amp;#39;)
+      .stdout(&amp;#39;A new todo has been added&amp;#39;)
+      .end(done);
+  });
+});
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;There are plenty of examples and information on the &lt;a href=&quot;https://github.com/vesln/nixt&quot;&gt;github
+page&lt;/a&gt;.&lt;/p&gt;
+</content>
+		</entry>
+	
+		<entry>
+			<title>vm.js</title>
+			<link href="http://npmawesome.com/posts/2013-11-17-vm-js"/>
+			<updated>2013-11-17T23:20:01.275Z</updated>
+			<id>http://npmawesome.com/posts/2013-11-17-vm-js</id>
+			<content type="html">&lt;p&gt;&lt;a href=&quot;https://github.com/tarruda/vm.js&quot;&gt;vm.js&lt;/a&gt; is a pretty impressive fully
+functional ECMAScript virtual machine that can be used from any
+ECMAScript3-compatible environment. Eventually it will provide a
+complete ECMAScript 6 environment (for now only some features are
+supported).&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;npm install vm.js
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;It’s written in CoffeeScript and has plenty of tests. The most
+impressive thing is that the tests themselves run inside &lt;code&gt;vm.js&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;Here are some possible use cases:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Simple in-process javascript sandbox&lt;/li&gt;
+&lt;li&gt;Async-to-sync API adapter using fibers (lightweight in-process threads, not node.js fibers)&lt;/li&gt;
+&lt;li&gt;Use new ECMAScript features in very old browsers&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;The main API can be accessed through vm instances. Each vm is indirectly
+associated with a global object (through a “realm”) and is isolated from
+other vms.&lt;/p&gt;
+&lt;p&gt;Start by creating a new instance:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;&amp;gt; Vm = require(&amp;#39;vm.js&amp;#39;)
+&amp;gt; vm = new Vm()
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Evaluate simple expressions:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;&amp;gt; vm.eval(&amp;#39;40 + 2&amp;#39;)
+42
+&amp;gt; vm.eval(&amp;#39;[a, b, c] = [1, 2, 3]&amp;#39;) // Harmony destructuring assignment
+[1, 2, 3]
+&amp;gt; vm.realm.global.a
+1
+&amp;gt; vm.realm.global.b
+2
+&amp;gt; vm.realm.global.c
+3
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Compile programs and run later&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;// pass filename as second argument for stack traces/debugging
+&amp;gt; script = Vm.compile(&amp;#39;2 + 2&amp;#39;, &amp;#39;sum.js&amp;#39;)
+&amp;gt; vm.run(script)
+4
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Compiled scripts can be serialized/deserialized to/from JSON-friendly
+structures:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;&amp;gt; scriptObj = script.toJSON()
+&amp;gt; serializedScript = JSON.stringify(scriptObj)
+&amp;gt; deserializedScript = Vm.fromJSON(JSON.parse(serializedScript))
+&amp;gt; vm.run(deserializedScript)
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Expose objects to be used by code running inside the Vm&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;&amp;gt; vm.realm.global.factorial = function factorial(n) { return n &amp;gt; 1 ? factorial(n - 1) * n : 1 }
+&amp;gt; vm.eval(&amp;#39;factorial(5)&amp;#39;)
+120
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;The inverse also works:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;&amp;gt; vm.eval(&amp;#39;function factorial(n) { return n &amp;gt; 1 ? factorial(n - 1) * n : 1 }&amp;#39;)
+&amp;gt; vm.realm.global.factorial(5)
+120
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Return values asynchronously using fiber pause/resume:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;// created a paused fiber from compiled code
+fiber = vm.createFiber(Vm.compile(&amp;#39;user = null; user = fetchAsync(&amp;quot;/users/1&amp;quot;);&amp;#39;))
+vm.realm.global.fetchAsync = function(url) {
+  fiber.pause() // pause execution
+  $.get(url, function(data) {
+    // user === null
+    fiber.setReturnValue(data)
+    fiber.resume()
+    // user === data
+  });
+}
+// start fiber
+fiber.run()
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;There are plenty of examples on the &lt;a href=&quot;https://github.com/tarruda/vm.js&quot;&gt;github page&lt;/a&gt;.&lt;/p&gt;
+</content>
+		</entry>
+	
+		<entry>
+			<title>node-jvm</title>
+			<link href="http://npmawesome.com/posts/2013-11-17-node-jvm"/>
+			<updated>2013-11-17T23:20:01.275Z</updated>
+			<id>http://npmawesome.com/posts/2013-11-17-node-jvm</id>
+			<content type="html">&lt;p&gt;&lt;a href=&quot;https://github.com/YaroslavGaponov/node-jvm&quot;&gt;node-jvm&lt;/a&gt; is a complete
+JVM virtual machine written in JavaScript written by Yaroslav Gaponov
+during his preparation for a Java SE 7 exam.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;npm install node-jvm
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;In Java land:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;public class Main {
+    public static long fib(int n) {
+        if (n &amp;lt;= 1) return n;
+        return fib(n-1) + fib(n-2);
+    }
+
+    public static void main(String[] args) {
+        if (args.length == 0) {
+            System.out.print(&amp;quot;help: java Main.class {Number}&amp;quot;);
+            return;
+        }
+
+        int N = Integer.parseInt(args[0]);
+        long start = System.currentTimeMillis();
+        System.out.format(&amp;quot;Fibonacci from 1 to %s:\n&amp;quot;, N);
+
+        for (int i = 1; i &amp;lt;= N; i++) {
+            System.out.println(i + &amp;quot;: &amp;quot; + fib(i));
+        }
+
+        long stop = System.currentTimeMillis();
+        System.out.println(&amp;quot;time: &amp;quot; + (stop - start) + &amp;quot;ms&amp;quot;);
+
+        System.out.println(&amp;quot;done.&amp;quot;);
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;In JavaScript land:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;var JVM = require(&amp;quot;node-jvm&amp;quot;);
+var jvm = new JVM();
+
+jvm.setLogLevel(7);
+var entryPointClassName = jvm.loadJarFile(&amp;quot;./Main.jar&amp;quot;);
+
+jvm.setEntryPointClassName(entryPointClassName);
+
+jvm.on(&amp;quot;exit&amp;quot;, function(code) {
+    process.exit(code);
+});
+
+jvm.run([15]);
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;There are plenty of examples on the &lt;a href=&quot;https://github.com/YaroslavGaponov/node-jvm&quot;&gt;github page&lt;/a&gt;.&lt;/p&gt;
+</content>
+		</entry>
+	
+		<entry>
+			<title>flake</title>
+			<link href="http://npmawesome.com/posts/2013-11-17-flake"/>
+			<updated>2013-11-17T23:20:01.275Z</updated>
+			<id>http://npmawesome.com/posts/2013-11-17-flake</id>
+			<content type="html">&lt;p&gt;&lt;a href=&quot;https://github.com/chilts/flake&quot;&gt;flake&lt;/a&gt; can generate practically unique
+approximately sortable IDs in a distributed environment, similiar to
+Twitter’s &lt;a href=&quot;https://github.com/twitter/snowflake&quot;&gt;Snowflake&lt;/a&gt;.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;npm install flake
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Use in distributed environments where you don’t have a central service
+which can be a single point of failure - perfect when you want
+everything to be redundant and independent of each other. Flake Id is
+made up of &lt;code&gt;timestamp-counter-pid-macaddress&lt;/code&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;&amp;gt; var flake = require(&amp;#39;flake&amp;#39;)(&amp;#39;eth0&amp;#39;);
+&amp;gt; console.log(flake());
+013b829b1520-0000-18f0-984be1b8b104
+&amp;gt; console.log(flake());
+013b829b1527-0000-18f0-984be1b8b104
+&amp;gt; console.log(flake());
+013b829b1527-0001-18f0-984be1b8b104
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;In the example above, &lt;code&gt;eth0&lt;/code&gt; is used for machine’s network interface,
+but this is not guaranteed to work on your machine. You need to change
+it to something which exists on your machine. It’s easy to find it on
+your machine using &lt;code&gt;ifconfig&lt;/code&gt; or something similiar.&lt;/p&gt;
+&lt;p&gt;There are plenty of examples and information on the &lt;a href=&quot;https://github.com/chilts/flake&quot;&gt;github
+page&lt;/a&gt;.&lt;/p&gt;
+</content>
+		</entry>
+	
+</feed>

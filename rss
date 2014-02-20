@@ -5,10 +5,40 @@
         <description><![CDATA[Daily dose of awesome NPM modules for Node.js, old and new!]]></description>
         <link>http://npmawesome.com</link>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Wed, 19 Feb 2014 18:13:37 GMT</lastBuildDate>
+        <lastBuildDate>Thu, 20 Feb 2014 18:47:05 GMT</lastBuildDate>
         <atom:link href="http://npmawesome.com/rss" rel="self" type="application/rss+xml"/>
         <author><![CDATA[Alex Gorbatchev]]></author>
-        <pubDate>Wed, 19 Feb 2014 18:13:11 GMT</pubDate>
+        <pubDate>Thu, 20 Feb 2014 18:46:33 GMT</pubDate>
+        <item>
+            <title><![CDATA[spritesmith]]></title>
+            <description><![CDATA[<p><img class="hide-on-mobile" src="https://0.gravatar.com/avatar/15927fc52919e9223adc7ed99e125d4d" style="float: right; margin-left: 1em"/>
+<a href="https://github.com/Ensighten/spritesmith">spritesmith</a> is a module by <a href="https://github.com/twolfson">Todd Wolfson</a> that takes image files and generates <a href="http://en.wikipedia.org/wiki/Sprite_%28computer_graphics%29#Sprites_by_CSS">spritesheets</a> and coordinate maps. By itself <a href="https://github.com/Ensighten/spritesmith">spritesmith</a> would be somewhat difficult to utilize in your workflow, that&#39;s why nice people have created <a href="https://github.com/twolfson/gulp.spritesmith">gulp.spritesmith</a> and <a href="https://github.com/Ensighten/grunt-spritesmith">grunt-spritesmith</a> tasks to make build sprites for you with just a few lines of code.</p>
+<pre><code>npm install spritesmith
+</code></pre><h2 id="usage">Usage</h2>
+<p><img class="hide-on-mobile" src="http://upload.wikimedia.org/wikipedia/commons/0/03/Sprite-example.gif" style="float: right; width: 150px; margin-left: 1em; background: white; padding: 1em"/></p>
+<pre><code>var sprites = [
+  &#39;sprite1.png&#39;,
+  &#39;sprite2.jpg&#39;,
+  &#39;sprite3.png&#39;
+];
+
+spritesmith({&#39;src&#39;: sprites}, function (err, result) {
+  // Binary string representation of image
+  result.image;
+
+  // Object mapping filename to {x, y, width, height} of image
+  result.coordinates;
+
+  // Object with metadata about spritesheet {width, height}
+  result.properties;
+});
+</code></pre><p>Converting this structure to image files and CSS now seems like a pretty straightforward task.</p>
+]]></description>
+            <link>http://npmawesome.com/posts/2014-02-20-spritesmith</link>
+            <guid isPermaLink="true">http://npmawesome.com/posts/2014-02-20-spritesmith</guid>
+            <dc:creator><![CDATA[Alex Gorbatchev]]></dc:creator>
+            <pubDate>Thu, 20 Feb 2014 17:58:22 GMT</pubDate>
+        </item>
         <item>
             <title><![CDATA[9 gulp.js plugins for a great build system]]></title>
             <description><![CDATA[<div class="highlight">
@@ -30,8 +60,8 @@ var clean = require(&#39;gulp-clean&#39;);
 gulp.task(&#39;clean&#39;, function () {
   gulp.src(&#39;build&#39;, {read: false})
     .pipe(clean());
-});</code></pre>
-<p>You can now run <code>gulp clean</code> and the <code>build</code> folder in the root of your project will be obliterated.</p>
+});
+</code></pre><p>You can now run <code>gulp clean</code> and the <code>build</code> folder in the root of your project will be obliterated.</p>
 <h2 id="-gulp-concat-"><a href="https://github.com/wearefractal/gulp-concat">gulp-concat</a></h2>
 <p>It&#39;s probably safe to assume that your HTML5 project has a few external dependencies like <a href="http://jquery.com">jQuery</a>, maybe <a href="http://modernizr.com/">Modernizr</a> and such. Instead of having a separate <code>&lt;script&gt;</code> tag for each one of them, it would be nice to concat them together into one file. That&#39;s where <a href="https://github.com/wearefractal/gulp-concat">gulp-concat</a> comes in:</p>
 <pre><code>var concat = require(&#39;gulp-concat&#39;);
@@ -40,8 +70,8 @@ gulp.task(&#39;vendor&#39;, function() {
   gulp.src(&#39;vendor/*.js&#39;)
     .pipe(concat(&#39;vendor.js&#39;))
     .pipe(gulp.dest(&#39;build/vendor.js&#39;))
-});</code></pre>
-<p>Now, running <code>gulp vendor</code> will take all <code>*.js</code> files from the local <code>vendor</code> folder and concat them into <code>build/vendor.js</code>.</p>
+});
+</code></pre><p>Now, running <code>gulp vendor</code> will take all <code>*.js</code> files from the local <code>vendor</code> folder and concat them into <code>build/vendor.js</code>.</p>
 <h2 id="-gulp-uglify-"><a href="https://github.com/terinjokes/gulp-uglify">gulp-uglify</a></h2>
 <p>The next thing to do is to minify our <code>vendor.js</code>. Lets add this to our <code>vendor</code> task.</p>
 <pre><code>var uglify = require(&#39;gulp-uglify&#39;);
@@ -51,8 +81,8 @@ gulp.task(&#39;vendor&#39;, function() {
     .pipe(concat(&#39;vendor.js&#39;))
     .pipe(uglify())
     .pipe(gulp.dest(&#39;build/vendor.js&#39;))
-});</code></pre>
-<p>Notice, that instead of creating a separate task for minifying, we simply added another <code>pipe</code> call. This is essentially what <a href="http://gulpjs.com">gulp.js</a> is all about - applying the right tools!</p>
+});
+</code></pre><p>Notice, that instead of creating a separate task for minifying, we simply added another <code>pipe</code> call. This is essentially what <a href="http://gulpjs.com">gulp.js</a> is all about - applying the right tools!</p>
 <p>This is also where things might start going wrong, because <a href="https://github.com/terinjokes/gulp-uglify">gulp-uglify</a> will throw an error if you have invalid JavaScript syntax. To deal with that lets add a basic error:</p>
 <pre><code>var gutil = require(&#39;gulp-util&#39;);
 
@@ -62,8 +92,8 @@ gulp.task(&#39;vendor&#39;, function() {
     .pipe(uglify())
     .pipe(gulp.dest(&#39;build/vendor.js&#39;))
     .on(&#39;error&#39;, gutil.log)
-});</code></pre>
-<h2 id="-gulp-rename-"><a href="https://github.com/hparra/gulp-rename">gulp-rename</a></h2>
+});
+</code></pre><h2 id="-gulp-rename-"><a href="https://github.com/hparra/gulp-rename">gulp-rename</a></h2>
 <p>Do you want to keep both, minified and source files around? That&#39;s not a problem! Lets extend our <code>vendor</code> task to write out <code>vendor.js</code> and <code>vendor.min.js</code> at the same time.</p>
 <pre><code>var rename = require(&#39;gulp-rename&#39;);
 
@@ -75,8 +105,8 @@ gulp.task(&#39;vendor&#39;, function() {
     .pipe(rename(&#39;vendor.min.js`))
     .pipe(gulp.dest(&#39;build&#39;))
     .on(&#39;error&#39;, gutil.log)
-});</code></pre>
-<p>Notice that <code>gulp.dest</code> is used twice here. This is the cool thing about <a href="http://gulpjs.com">gulp.js</a> - everything is just streams. Adding <code>gulp.dest</code> merely dumps whatever we currently have in the stream to disk, we can then mutate it further and save the new state again. Cool, eh?</p>
+});
+</code></pre><p>Notice that <code>gulp.dest</code> is used twice here. This is the cool thing about <a href="http://gulpjs.com">gulp.js</a> - everything is just streams. Adding <code>gulp.dest</code> merely dumps whatever we currently have in the stream to disk, we can then mutate it further and save the new state again. Cool, eh?</p>
 <h2 id="-gulp-filesize-"><a href="https://github.com/Metrime/gulp-filesize">gulp-filesize</a></h2>
 <p>Don&#39;t know about you, but after minifying JavaScript I always want to know the file size. Guess what - I&#39;m not the only one and there&#39;s a plugin for that.</p>
 <pre><code>var filesize = require(&#39;gulp-filesize&#39;);
@@ -91,8 +121,8 @@ gulp.task(&#39;vendor&#39;, function() {
     .pipe(gulp.dest(&#39;build&#39;))
     .pipe(filesize())
     .on(&#39;error&#39;, gutil.log)
-});</code></pre>
-<p>Again, see how <code>filesize</code> is used twice? It will first print out the size of our source file and then the minified size.</p>
+});
+</code></pre><p>Again, see how <code>filesize</code> is used twice? It will first print out the size of our source file and then the minified size.</p>
 <h2 id="-gulp-less-"><a href="https://github.com/plus3network/gulp-less">gulp-less</a></h2>
 <p>Lets assume you used the amazing <a href="http://lesscss.org/">LESS</a> preprocessor for your generating your CSS files and now want to generate them. <a href="https://github.com/plus3network/gulp-less">gulp-less</a> to the rescue!</p>
 <pre><code>var less = require(&#39;gulp-less&#39;);
@@ -105,8 +135,8 @@ gulp.task(&#39;css&#39;, function () {
     }))
     .pipe(gulp.dest(&#39;build/css&#39;))
     .on(&#39;error&#39;, gutil.log);
-});</code></pre>
-<p>Running <code>gulp css</code> will compile all <a href="http://lesscss.org/">LESS</a> files from the <code>less</code> folder into <code>build/css</code>.</p>
+});
+</code></pre><p>Running <code>gulp css</code> will compile all <a href="http://lesscss.org/">LESS</a> files from the <code>less</code> folder into <code>build/css</code>.</p>
 <h2 id="-gulp-changed-"><a href="https://github.com/sindresorhus/gulp-changed">gulp-changed</a></h2>
 <p>I would be forever unhappy if every time I ran <code>gulp css</code> all of my files would be regenerated regardless if the source <a href="http://lesscss.org/">LESS</a> files have changed or not. Lets use <a href="https://github.com/sindresorhus/gulp-changed">gulp-changed</a> to excluded not modified files.</p>
 <pre><code>var changed = require(&#39;gulp-changed&#39;);
@@ -119,8 +149,8 @@ gulp.task(&#39;css&#39;, function () {
     }))
     .pipe(gulp.dest(&#39;build/css&#39;))
     .on(&#39;error&#39;, gutil.log);
-});</code></pre>
-<h2 id="-gulp-watch-"><a href="https://github.com/floatdrop/gulp-watch">gulp-watch</a></h2>
+});
+</code></pre><h2 id="-gulp-watch-"><a href="https://github.com/floatdrop/gulp-watch">gulp-watch</a></h2>
 <p>It would be really cool if you didn&#39;t have to run <code>gulp css</code> every time you make a change, right? Lets set up a task that will monitor our files for changes and and compile them right away.</p>
 <p><a href="https://github.com/floatdrop/gulp-watch">gulp-watch</a> is a little bit different from the other plugins and we use it instead of <code>gulp.src</code> as the starting point.</p>
 <pre><code>var watch = require(&#39;gulp-watch&#39;);
@@ -138,8 +168,8 @@ gulp.task(&#39;css:watch&#39;, function () {
       .pipe(gulp.dest(&#39;build/css&#39;))
       .on(&#39;error&#39;, gutil.log);
   });
-});</code></pre>
-<p><code>gulp css:watch</code> will being watching all of our LESS files and compile only the changed one.</p>
+});
+</code></pre><p><code>gulp css:watch</code> will being watching all of our LESS files and compile only the changed one.</p>
 <h2 id="all-together">All together</h2>
 <p>Now lets put it all together into <code>gulpfile.js</code></p>
 <pre><code>var path = require(&#39;path&#39;);
@@ -194,8 +224,8 @@ gulp.task(&#39;css:watch&#39;, function () {
       .pipe(gulp.dest(&#39;build/css&#39;))
       .on(&#39;error&#39;, gutil.log);
   });
-});</code></pre>
-<h2 id="summary">Summary</h2>
+});
+</code></pre><h2 id="summary">Summary</h2>
 <p>The thing that I personally really like about <a href="http://gulpjs.com">gulp.js</a> is that it feels to me like a toolbox full of single purpose tools that I can use to assemble almost anything. It&#39;s amazing how in a span of a couple of months community has wrote <a href="http://gulpjs.com/plugins/">over 300 plugins</a>.</p>
 ]]></description>
             <link>http://npmawesome.com/posts/2014-02-19-9-gulp-js-plugins-for-a-great-build-system</link>
@@ -207,10 +237,10 @@ gulp.task(&#39;css:watch&#39;, function () {
             <title><![CDATA[npm-diff]]></title>
             <description><![CDATA[<p><img class="hide-on-mobile" src="https://1.gravatar.com/avatar/a010d5218f2c3d194dbbac9c5d14d0ad" style="float: right; margin-left: 1em"/>
 <a href="https://github.com/segmentio/npm-diff">npm-diff</a> is a utility module by <a href="https://github.com/juliangruber">Julian Gruber</a> to diff two versions of NPM module. I&#39;ve been fascinated recently by all the tools being released to help you manage <code>package.json</code> and module publishing. It&#39;s really cool!</p>
-<pre><code>npm install npm-diff</code></pre>
-<h2 id="usage">Usage</h2>
-<pre><code>$ npm-diff intersect 0.0.0 0.1.0 | colordiff</code></pre>
-<p><img class="hide-on-mobile" src="https://github-camo.global.ssl.fastly.net/304bdd7188c9fea08e87e731790aad980877ce7b/68747470733a2f2f692e636c6f756475702e636f6d2f5267694263634b7664742e706e67" style="width: 100%"/></p>
+<pre><code>npm install npm-diff
+</code></pre><h2 id="usage">Usage</h2>
+<pre><code>$ npm-diff intersect 0.0.0 0.1.0 | colordiff
+</code></pre><p><img class="hide-on-mobile" src="https://github-camo.global.ssl.fastly.net/304bdd7188c9fea08e87e731790aad980877ce7b/68747470733a2f2f692e636c6f756475702e636f6d2f5267694263634b7664742e706e67" style="width: 100%"/></p>
 <p>BOOM! <code>brew install colordiff</code> if you haven&#39;t got it.</p>
 ]]></description>
             <link>http://npmawesome.com/posts/2014-02-18-npm-diff</link>
@@ -222,8 +252,8 @@ gulp.task(&#39;css:watch&#39;, function () {
             <title><![CDATA[NodePDF]]></title>
             <description><![CDATA[<p><img class="hide-on-mobile" src="https://0.gravatar.com/avatar/c0f5a91f71e988a9e2d9c20ffa546f4e" style="float: right; margin-left: 1em"/>
 <a href="https://github.com/TJkrusinski/NodePDF">NodePDF</a> is a module by <a href="https://github.com/TJkrusinski">TJ Krusinski</a> for creating PDF files from web pages. It depends on <a href="http://phantomjs.org/">PhantomJS</a> and works by simply taking a screenshot of a page and stuffing it into a PDF. One the plus side, this makes it really easy to do mostly graphics based PDF files from node. On the down side, the content isn&#39;t scalable at all, so printing quality will suffer.</p>
-<pre><code>npm install nodepdf</code></pre>
-<h2 id="usage">Usage</h2>
+<pre><code>npm install nodepdf
+</code></pre><h2 id="usage">Usage</h2>
 <p><img class="hide-on-mobile" src="/images/posts/nodepdf.jpg" style="width: 300px; float: right; margin: 1em;"/></p>
 <pre><code>var nodepdf = require(&#39;nodepdf&#39;);
 
@@ -247,8 +277,8 @@ pdf.on(&#39;error&#39;, function(msg){
 
 pdf.on(&#39;done&#39;, function(pathToFile){
     console.log(pathToFile);
-});</code></pre>
-<p>I can imagine this being used for something simple, like printing tickets, post cards, photos and so on.</p>
+});
+</code></pre><p>I can imagine this being used for something simple, like printing tickets, post cards, photos and so on.</p>
 ]]></description>
             <link>http://npmawesome.com/posts/2014-02-17-nodepdf</link>
             <guid isPermaLink="true">http://npmawesome.com/posts/2014-02-17-nodepdf</guid>
@@ -259,8 +289,8 @@ pdf.on(&#39;done&#39;, function(pathToFile){
             <title><![CDATA[domain-context]]></title>
             <description><![CDATA[<p><img class="hide-on-mobile" src="/images/posts/domain-context.jpg" style="width: 100%"/></p>
 <p><a href="https://github.com/andreypopp/domain-context">domain-context</a> is a module by <a href="https://github.com/andreypopp">Andrey Popp</a> for dealing with globally accessible domain-bound contexts, connect/express middleware included.</p>
-<pre><code>npm install domain-context</code></pre>
-<h2 id="usage">Usage</h2>
+<pre><code>npm install domain-context
+</code></pre><h2 id="usage">Usage</h2>
 <pre><code>var connectDomain = require(&#39;connect-domain&#39;),
     domainContext = require(&#39;domain-context&#39;),
     express = require(&#39;express&#39;);
@@ -297,8 +327,8 @@ var domainContext = require(&#39;connect-reqcontext&#39;);
 
 function getUserById(id, cb) {
   domainContext.get(&#39;db&#39;).query(&quot;select ...&quot;, cb);
-}</code></pre>
-<p>I feel that this is pretty self-explanatory here. Being able to get request context outside of the <code>express</code> handlers and not having to pass so much context around to API is pretty great.</p>
+}
+</code></pre><p>I feel that this is pretty self-explanatory here. Being able to get request context outside of the <code>express</code> handlers and not having to pass so much context around to API is pretty great.</p>
 ]]></description>
             <link>http://npmawesome.com/posts/2014-02-13-domain-context</link>
             <guid isPermaLink="true">http://npmawesome.com/posts/2014-02-13-domain-context</guid>
@@ -308,8 +338,8 @@ function getUserById(id, cb) {
         <item>
             <title><![CDATA[JSONStream]]></title>
             <description><![CDATA[<p><a href="https://github.com/dominictarr/JSONStream">JSONStream</a> is a module by <a href="https://github.com/dominictarr">Dominic Tarr</a> for streaming <code>JSON.parse</code> and <code>JSON.stringify</code>.</p>
-<pre><code>npm install jsonstream</code></pre>
-<h2 id="usage">Usage</h2>
+<pre><code>npm install jsonstream
+</code></pre><h2 id="usage">Usage</h2>
 <pre><code>var request = require(&#39;request&#39;),
     JSONStream = require(&#39;JSONStream&#39;),
     es = require(&#39;event-stream&#39;)
@@ -327,8 +357,8 @@ request({url: &#39;http://isaacs.couchone.com/registry/_all_docs&#39;})
   .pipe(es.mapSync(function (data) {
     console.error(data);
     return data;
-  }));</code></pre>
-<p><img class="hide-on-mobile" src="/images/posts/json.svg" style="float: right; width: 100px; margin-left: 1em"/>
+  }));
+</code></pre><p><img class="hide-on-mobile" src="/images/posts/json.svg" style="float: right; width: 100px; margin-left: 1em"/>
 I like the idea behind streaming JSON alot because you don&#39;t have to wait for the whole document to come down the pipe, especially if it&#39;s very large. It can also integrate with <a href="http://gulpjs.com">gulp.js</a> very nicely. The really cool thing for me is that you can react to specific nodes in the data structure vs having to seek them out and loop over them manually.</p>
 <p>Are you dealing with large JSON structures on your project?</p>
 ]]></description>
@@ -341,26 +371,26 @@ I like the idea behind streaming JSON alot because you don&#39;t have to wait fo
             <title><![CDATA[peer.js]]></title>
             <description><![CDATA[<p><img class="hide-on-mobile" src="/images/posts/peerjs.png" style="float: right; margin-left: 1em"/>
 <a href="https://github.com/peers/peerjs">peer.js</a> provides a complete, configurable, and easy-to-use peer-to-peer API built on top of WebRTC, supporting both data channels and media streams. <a href="https://github.com/peers/peerjs">peer.js</a> wraps the browser&#39;s WebRTC implementation to provide a complete, configurable, and easy-to-use peer-to-peer connection API. Equipped with nothing but an ID, a peer can create a P2P data or media stream connection to a remote peer.</p>
-<pre><code>npm install peerjs</code></pre>
-<p>To broker connections, <a href="https://github.com/peers/peerjs">peer.js</a> connects to a PeerServer (<a href="http://peerjs.com/peerserver">free hosted</a> or <a href="https://github.com/peers/peerjs-server">host your own</a>). Note that <strong>no peer-to-peer data goes through the server</strong> - the server acts only as connection broker.</p>
+<pre><code>npm install peerjs
+</code></pre><p>To broker connections, <a href="https://github.com/peers/peerjs">peer.js</a> connects to a PeerServer (<a href="http://peerjs.com/peerserver">free hosted</a> or <a href="https://github.com/peers/peerjs-server">host your own</a>). Note that <strong>no peer-to-peer data goes through the server</strong> - the server acts only as connection broker.</p>
 <h2 id="usage">Usage</h2>
 <pre><code>var Peer = require(&#39;peerjs&#39;).Peer;
 
 // You can pick your own id or omit the id if you want to get a random one from the server.
-var peer = new Peer(&#39;pick-an-id&#39;, { key: &#39;myapikey&#39; });</code></pre>
-<p>Connect</p>
+var peer = new Peer(&#39;pick-an-id&#39;, { key: &#39;myapikey&#39; });
+</code></pre><p>Connect</p>
 <pre><code>var conn = peer.connect(&#39;another-peers-id&#39;);
 conn.on(&#39;open&#39;, function() {
   conn.send(&#39;hi!&#39;);
-});</code></pre>
-<p>Receive</p>
+});
+</code></pre><p>Receive</p>
 <pre><code>peer.on(&#39;connection&#39;, function(conn) {
   conn.on(&#39;data&#39;, function(data) {
     // Will print &#39;hi!&#39;
     console.log(data);
   });
-});</code></pre>
-<p>Checkout the <a href="http://peerjs.com/docs/#api">awesome API docs</a> and take it out for a spin. You can create a video chat with just a few lines of code. Have you done any peer-to-peer stuff?</p>
+});
+</code></pre><p>Checkout the <a href="http://peerjs.com/docs/#api">awesome API docs</a> and take it out for a spin. You can create a video chat with just a few lines of code. Have you done any peer-to-peer stuff?</p>
 ]]></description>
             <link>http://npmawesome.com/posts/2014-02-11-peer-js</link>
             <guid isPermaLink="true">http://npmawesome.com/posts/2014-02-11-peer-js</guid>
@@ -371,8 +401,8 @@ conn.on(&#39;open&#39;, function() {
             <title><![CDATA[node-dependencies]]></title>
             <description><![CDATA[<p><img class="hide-on-mobile" src="https://0.gravatar.com/avatar/91ab609100e96dd5ccb270399e1acab6" style="float: right; margin-left: 1em"/>
 <a href="https://github.com/FogCreek/node-dependencies">node-dependencies</a> is a very basic but incredibly useful command line utility written by <a href="https://github.com/dpatti">Doug Patti</a> of <a href="https://www.fogcreek.com/">Fog Creek</a> that checks and prints out out-of-date dependencies for your Node.js app.</p>
-<pre><code>npm install node-dependencies</code></pre>
-<h2 id="usage">Usage</h2>
+<pre><code>npm install node-dependencies
+</code></pre><h2 id="usage">Usage</h2>
 <pre><code>$ node-dependencies --sort=urgency
 
 Package                   Local      Major      Minor      Patch
@@ -397,8 +427,8 @@ grunt-ember-handleba      0.4.0        ---      0.6.0        ---
 js-yaml                   1.0.3      2.1.0        ---        ---
 ent                       0.0.5        ---        ---        ---
 date-utils               1.2.13        ---        ---        ---
-jquery                    1.8.3        ---        ---        ---</code></pre>
-<p>I came about  trying to update dependencies for a whole bunch of NPM modules. It would be even more useful if it could update <code>package.json</code> for me.</p>
+jquery                    1.8.3        ---        ---        ---
+</code></pre><p>I came about  trying to update dependencies for a whole bunch of NPM modules. It would be even more useful if it could update <code>package.json</code> for me.</p>
 ]]></description>
             <link>http://npmawesome.com/posts/2014-02-10-node-dependencies</link>
             <guid isPermaLink="true">http://npmawesome.com/posts/2014-02-10-node-dependencies</guid>
@@ -410,8 +440,8 @@ jquery                    1.8.3        ---        ---        ---</code></pre>
             <description><![CDATA[<p><img class="hide-on-mobile" src="/images/posts/cucumber-logo.png" style="width: 100%; margin-bottom: 1em"/></p>
 <p><img class="hide-on-mobile" src="https://2.gravatar.com/avatar/cbc1acceddbfaceee4cf3cae24d7c912" style="float: right; margin-left: 1em"/>
 <a href="https://github.com/cucumber/cucumber-js">cucumber.js</a> is a port of the famous Ruby <a href="http://cukes.info/">Cucumber testing framework</a> by <a href="https://github.com/jbpros">Julien Biezemans</a> that lets software development teams describe how software should behave in plain text. The text is written in a business-readable domain-specific language and serves as documentation, automated tests and development-aid - all rolled into one format.</p>
-<pre><code>npm install cucumber</code></pre>
-<h2 id="features">Features</h2>
+<pre><code>npm install cucumber
+</code></pre><h2 id="features">Features</h2>
 <p><a href="https://github.com/cucumber/cucumber-js">cucumber.js</a> implements most of the Ruby counterpart&#39;s feature for feature and has baked in support for CoffeeScript.</p>
 <h2 id="usage">Usage</h2>
 <p>Features are written with the <a href="https://github.com/cucumber/cucumber/wiki/Gherkin">Gherkin syntax</a></p>
@@ -425,8 +455,8 @@ Feature: Example feature
   Scenario: Reading documentation
     Given I am on the Cucumber.js GitHub repository
     When I go to the README file
-    Then I should see &quot;Usage&quot; as the page title</code></pre>
-<p>Then</p>
+    Then I should see &quot;Usage&quot; as the page title
+</code></pre><p>Then</p>
 <pre><code>@Then &quot;I should see \&quot;$title\&quot; as the page title&quot;, (title, callback) -&gt;
   # the above string is converted to the following Regexp by Cucumber:
   # /^I should see &quot;([^&quot;]*)&quot; as the page title$/
@@ -435,8 +465,8 @@ Feature: Example feature
   if title is pageTitle
     callback()
   else
-    callback.fail new Error(&quot;Expected to be on page with title &quot; + title)</code></pre>
-<p>or in JavaScript</p>
+    callback.fail new Error(&quot;Expected to be on page with title &quot; + title)
+</code></pre><p>or in JavaScript</p>
 <pre><code>this.Then(&#39;I should see &quot;$title&quot; as the page title&#39;, function(title, callback) {
   // the above string is converted to the following Regexp by Cucumber:
   // /^I should see &quot;([^&quot;]*)&quot; as the page title$/
@@ -447,8 +477,8 @@ Feature: Example feature
   } else {
     callback.fail(new Error(&quot;Expected to be on page with title &quot; + title));
   }
-});</code></pre>
-<p><img class="hide-on-mobile" src="/images/posts/cucumber-meme.jpg" style="float: right; margin-left: 1em"/>
+});
+</code></pre><p><img class="hide-on-mobile" src="/images/posts/cucumber-meme.jpg" style="float: right; margin-left: 1em"/>
 Writing <a href="https://github.com/cucumber/cucumber/wiki/Feature-Introduction">Cucumber scenarios</a> is pretty straight forward and is very addictive. I currently use <a href="http://visionmedia.github.io/mocha/">Mocha</a> and write <code>describe</code> and <code>it</code> blocks in nearly the same fasion so that they read as a cohesive story. Perhaps I should just use <a href="https://github.com/cucumber/cucumber-js">cucumber.js</a> instead?</p>
 <p><a href="http://www.martinfowler.com/bliki/BusinessReadableDSL.html">The pipe dream</a> is to be let business people to write software rules without involving programmers. I&#39;m on the fence if it&#39;s a good idea, or even if it&#39;s possible, but I used to write Cucumber tests back in my Ruby days and loved it!</p>
 <p>Check out this <a href="http://flippinawesome.org/2014/01/27/bdd-in-javascript-with-cucumberjs/">awesome write up</a> on <a href="https://github.com/cucumber/cucumber-js">cucumber.js</a>. So, what do you think? Is Cucumber a good idea?</p>
@@ -461,8 +491,8 @@ Writing <a href="https://github.com/cucumber/cucumber/wiki/Feature-Introduction"
         <item>
             <title><![CDATA[binary.js]]></title>
             <description><![CDATA[<p><a href="https://github.com/binaryjs/binaryjs">binary.js</a> is a lightweight framework by <a href="https://github.com/binaryjs">Eric Zhang</a> that utilizes websockets to send, stream, and pipe binary data bidirectionally between browser javascript.</p>
-<pre><code>npm install binaryjs</code></pre>
-<p><img class="hide-on-mobile" src="https://pbs.twimg.com/profile_images/1896980487/418999_10151351854540262_653030261_23084074_1065502090_n_bigger.jpg" style="float: right; margin-left: 1em"/></p>
+<pre><code>npm install binaryjs
+</code></pre><p><img class="hide-on-mobile" src="https://pbs.twimg.com/profile_images/1896980487/418999_10151351854540262_653030261_23084074_1065502090_n_bigger.jpg" style="float: right; margin-left: 1em"/></p>
 <h2 id="features">Features</h2>
 <ul>
 <li>BinaryPack serialization format is fast, binary, and JSON-type compatible. Data stays binary end to end</li>
@@ -492,8 +522,8 @@ server.on(&#39;connection&#39;, function(client){
     var file = fs.createWriteStream(meta.file);
     stream.pipe(file);
   });
-});</code></pre>
-<p>Browser:</p>
+});
+</code></pre><p>Browser:</p>
 <pre><code>var client = BinaryClient(&#39;ws://localhost:9000&#39;);
 
 client.on(&#39;open&#39;, function(stream){
@@ -501,85 +531,13 @@ client.on(&#39;open&#39;, function(stream){
   stream.write(&#39;Hello&#39;);
   stream.write(&#39;World!&#39;);
   stream.end();
-});</code></pre>
-<p>Check out <a href="https://github.com/binaryjs/binaryjs/blob/master/doc/start.md">getting started</a> page and <a href="for extensive documentation">binaryjs.com</a>. Thanks <a href="https://github.com/binaryjs">Eric Zhang</a> for making this happen!</p>
+});
+</code></pre><p>Check out <a href="https://github.com/binaryjs/binaryjs/blob/master/doc/start.md">getting started</a> page and <a href="for extensive documentation">binaryjs.com</a>. Thanks <a href="https://github.com/binaryjs">Eric Zhang</a> for making this happen!</p>
 ]]></description>
             <link>http://npmawesome.com/posts/2014-02-04-binary-js</link>
             <guid isPermaLink="true">http://npmawesome.com/posts/2014-02-04-binary-js</guid>
             <dc:creator><![CDATA[Alex Gorbatchev]]></dc:creator>
             <pubDate>Tue, 04 Feb 2014 17:41:51 GMT</pubDate>
-        </item>
-        <item>
-            <title><![CDATA[power-assert]]></title>
-            <description><![CDATA[<p><a href="https://github.com/twada/power-assert">power-assert</a> is a module written by <a href="https://github.com/twada">Takuto Wada</a> that provides pretty damn descriptive assert messages for your tests.</p>
-<pre><code>npm install power-assert</code></pre>
-<h2 id="features">Features</h2>
-<p><a href="https://github.com/twada/power-assert">power-assert</a> transforms your regular boring asserts to this:</p>
-<pre><code>AssertionError: # /path/to/examples/mocha_node.js:10
-
-    assert(this.ary.indexOf(who) === two);
-                |   |       |    |   |
-                |   |       |    |   2
-                |   |       |    false
-                |   -1      &quot;ariya&quot;
-                [1,2,3]</code></pre>
-<h2 id="usages">Usages</h2>
-<p>There are two ways to use <a href="https://github.com/twada/power-assert">power-assert</a>.</p>
-<ol>
-<li><code>power-assert</code> + <code>espower-loader</code> : Only works under Node.</li>
-<li><code>power-assert</code> + <a href="http://github.com/twada/grunt-espower"><code>grunt-espower</code></a> or <a href="http://github.com/twada/gulp-espower"><code>gulp-espower</code></a> : Generates instrumented code so works anywhere.</li>
-</ol>
-<p>To give you an idea what the trasnformed code looks like, for example, it transforms:</p>
-<pre><code>assert(this.ary.indexOf(who) === two);</code></pre>
-<p>into:</p>
-<pre><code>assert(assert._expr(assert._capt(assert._capt(assert._capt(this.ary, &#39;ident&#39;, {
-    start: {
-        line: 9,
-        column: 20
-    }
-}).indexOf(assert._capt(who, &#39;ident&#39;, {
-    start: {
-        line: 9,
-        column: 32
-    }
-})), &#39;funcall&#39;, {
-    start: {
-        line: 9,
-        column: 24
-    }
-}) === assert._capt(two, &#39;ident&#39;, {
-    start: {
-        line: 9,
-        column: 41
-    }
-}), &#39;binary&#39;, {
-    start: {
-        line: 9,
-        column: 37
-    }
-}), {
-    start: {
-        line: 9,
-        column: 15
-    },
-    path: &#39;/Users/alexgorbatchev/1-npmawesome/1/power-assert-demo/test/power_assert/mocha_power_assert_test.js&#39;
-}, &#39;        assert(this.ary.indexOf(who) === two);&#39;));</code></pre>
-<p><a href="https://github.com/twada/power-assert">power-assert</a> also works with CoffeeScript files to produce output:</p>
-<pre><code>AssertionError:
-
-    assert this.ary.indexOf(who) isnt minusOne
-                |   |       |    |    |
-                |   |       |    |    -1
-                |   |       |    false
-                |   -1      &quot;ariya&quot;
-                [1,2,3]</code></pre>
-<p>I&#39;m very tempted to give this a try over my goto <a href="http://chaijs.com/">chai.js</a> library. I&#39;m a little bit worried that it changes number of lines and it might be harder to do certain type of debugging, but the benefit might be worth it!</p>
-<p>There&#39;s a full documentation on the <a href="https://github.com/twada/power-assert">power-assert</a> github page and a <a href="https://github.com/twada/power-assert-demo">demo project</a>. What do you think?</p>
-]]></description>
-            <link>http://npmawesome.com/posts/2014-02-03-power-assert</link>
-            <guid isPermaLink="true">http://npmawesome.com/posts/2014-02-03-power-assert</guid>
-            <dc:creator><![CDATA[Alex Gorbatchev]]></dc:creator>
-            <pubDate>Mon, 03 Feb 2014 18:59:55 GMT</pubDate>
         </item>
     </channel>
 </rss>
