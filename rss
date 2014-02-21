@@ -5,10 +5,56 @@
         <description><![CDATA[Daily dose of awesome NPM modules for Node.js, old and new!]]></description>
         <link>http://npmawesome.com</link>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Thu, 20 Feb 2014 18:47:05 GMT</lastBuildDate>
+        <lastBuildDate>Fri, 21 Feb 2014 18:21:03 GMT</lastBuildDate>
         <atom:link href="http://npmawesome.com/rss" rel="self" type="application/rss+xml"/>
         <author><![CDATA[Alex Gorbatchev]]></author>
-        <pubDate>Thu, 20 Feb 2014 18:46:33 GMT</pubDate>
+        <pubDate>Fri, 21 Feb 2014 18:20:30 GMT</pubDate>
+        <item>
+            <title><![CDATA[supertest]]></title>
+            <description><![CDATA[<p><img class="hide-on-mobile" src="https://2.gravatar.com/avatar/f1e3ab214a976a39cfd713bc93deb10f" style="float: right; margin-left: 1em"/>
+<a href="https://github.com/visionmedia/supertest">supertest</a> is a module by <a href="https://github.com/visionmedia">TJ Holowaychuk</a> that takes testing HTTP easier via <a href="http://github.com/visionmedia/superagent">superagent</a>. The motivation with this module is to provide a high-level abstraction for testing HTTP, while still allowing you to drop down to the lower-level API provided by superagent.</p>
+<pre><code>npm install supertest
+</code></pre><p>You may pass an <code>http.Server</code>, or a <code>Function</code> to <code>request()</code> - if the server is not already listening for connections then it is bound to an ephemeral port for you so there is no need to keep track of ports.</p>
+<h2 id="usage">Usage</h2>
+<p>Here&#39;s a basic GET request to an end point.</p>
+<pre><code>var request = require(&#39;supertest&#39;)
+  , express = require(&#39;express&#39;);
+
+var app = express();
+
+app.get(&#39;/user&#39;, function(req, res) {
+  res.send(200, { name: &#39;tobi&#39; });
+});
+
+request(app)
+  .get(&#39;/user&#39;)
+  .expect(&#39;Content-Type&#39;, /json/)
+  .expect(&#39;Content-Length&#39;, &#39;20&#39;)
+  .expect(200)
+  .end(function(err, res) {
+    if (err) throw err;
+  });
+</code></pre><p>You can also get all fancy and upload files:</p>
+<pre><code>request(app)
+  .post(&#39;/&#39;)
+  .attach(&#39;avatar&#39;, &#39;test/fixtures/homeboy.jpg&#39;)
+</code></pre><p>Passing the app or url each time is not necessary, if you&#39;re testing the same host you may simply re-assign the request variable with the initialization app or url:</p>
+<pre><code>request = request(&#39;http://localhost:5555&#39;);
+
+request.get(&#39;/&#39;).expect(200, function(err) {
+  console.log(err);
+});
+
+request.get(&#39;/&#39;).expect(&#39;heya&#39;, function(err) {
+  console.log(err);
+});
+</code></pre><p>Anything you can do with <a href="http://github.com/visionmedia/superagent">superagent</a>, you can do with <a href="https://github.com/visionmedia/supertest">supertest</a>. For some strange reason I love testing HTTP end points, this is my goto library for this. Thanks TJ!</p>
+]]></description>
+            <link>http://npmawesome.com/posts/2014-02-21-supertest</link>
+            <guid isPermaLink="true">http://npmawesome.com/posts/2014-02-21-supertest</guid>
+            <dc:creator><![CDATA[Alex Gorbatchev]]></dc:creator>
+            <pubDate>Fri, 21 Feb 2014 18:09:41 GMT</pubDate>
+        </item>
         <item>
             <title><![CDATA[spritesmith]]></title>
             <description><![CDATA[<p><img class="hide-on-mobile" src="https://0.gravatar.com/avatar/15927fc52919e9223adc7ed99e125d4d" style="float: right; margin-left: 1em"/>
@@ -487,57 +533,6 @@ Writing <a href="https://github.com/cucumber/cucumber/wiki/Feature-Introduction"
             <guid isPermaLink="true">http://npmawesome.com/posts/2014-02-05-cucumber-js</guid>
             <dc:creator><![CDATA[Alex Gorbatchev]]></dc:creator>
             <pubDate>Wed, 05 Feb 2014 21:06:18 GMT</pubDate>
-        </item>
-        <item>
-            <title><![CDATA[binary.js]]></title>
-            <description><![CDATA[<p><a href="https://github.com/binaryjs/binaryjs">binary.js</a> is a lightweight framework by <a href="https://github.com/binaryjs">Eric Zhang</a> that utilizes websockets to send, stream, and pipe binary data bidirectionally between browser javascript.</p>
-<pre><code>npm install binaryjs
-</code></pre><p><img class="hide-on-mobile" src="https://pbs.twimg.com/profile_images/1896980487/418999_10151351854540262_653030261_23084074_1065502090_n_bigger.jpg" style="float: right; margin-left: 1em"/></p>
-<h2 id="features">Features</h2>
-<ul>
-<li>BinaryPack serialization format is fast, binary, and JSON-type compatible. Data stays binary end to end</li>
-<li>Automatically chunks large binary data buffers for streaming performance</li>
-<li>Send multiple streams of data concurrently over multiplexed websocket connection</li>
-<li>API implements Node.js read/write Streams. You can pipe any stream into BinaryJS streams (and vice-versa)</li>
-<li><code>pause</code>, <code>resume</code>, and <code>end</code> as in the Streams API</li>
-<li>Currently supports Chrome 15+ and Firefox 11+, IE10. Fallbacks that will support Safari, mobile iOS and Android, and older FF/Chrome versions are in the works.</li>
-</ul>
-<h2 id="what-can-you-do-with-this-">What can you do with this?</h2>
-<p>You have just as much flexibility as a full TCP socket between client and server. Here are some ideas by <a href="https://github.com/binaryjs">Eric Zhang</a> that are now possible:</p>
-<ul>
-<li>Realtime multiplayer video games without expensive stringifying</li>
-<li>Streaming FLAC into HTML5 WebAudio api</li>
-<li>Progressive image loading (for retina displays and high-res photorgraphy)</li>
-<li>Streaming file uploads</li>
-<li>Live HTML <code>&lt;video&gt;</code> streaming</li>
-<li>PJAX (pushState + ajax) with no HTTP requests. Not even for image assets</li>
-<li>Video/audio chat over websockets</li>
-</ul>
-<h2 id="usage">Usage</h2>
-<p>Server</p>
-<pre><code>var server = BinaryServer({port: 9000});
-
-server.on(&#39;connection&#39;, function(client){
-  client.on(&#39;stream&#39;, function(stream, meta){
-    var file = fs.createWriteStream(meta.file);
-    stream.pipe(file);
-  });
-});
-</code></pre><p>Browser:</p>
-<pre><code>var client = BinaryClient(&#39;ws://localhost:9000&#39;);
-
-client.on(&#39;open&#39;, function(stream){
-  var stream = client.createStream({file: &#39;hello.txt&#39;});
-  stream.write(&#39;Hello&#39;);
-  stream.write(&#39;World!&#39;);
-  stream.end();
-});
-</code></pre><p>Check out <a href="https://github.com/binaryjs/binaryjs/blob/master/doc/start.md">getting started</a> page and <a href="for extensive documentation">binaryjs.com</a>. Thanks <a href="https://github.com/binaryjs">Eric Zhang</a> for making this happen!</p>
-]]></description>
-            <link>http://npmawesome.com/posts/2014-02-04-binary-js</link>
-            <guid isPermaLink="true">http://npmawesome.com/posts/2014-02-04-binary-js</guid>
-            <dc:creator><![CDATA[Alex Gorbatchev]]></dc:creator>
-            <pubDate>Tue, 04 Feb 2014 17:41:51 GMT</pubDate>
         </item>
     </channel>
 </rss>

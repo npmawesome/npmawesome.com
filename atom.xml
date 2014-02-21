@@ -5,12 +5,58 @@
 	<link href="http://npmawesome.com/atom.xml" rel="self" />
 	<link href="http://npmawesome.com" />
 	<id>http://npmawesome.com</id>
-	<updated>2014-02-20T18:46:33.001Z</updated>
+	<updated>2014-02-21T18:20:30.057Z</updated>
 	<author>
 		<name>Alex Gorbatchev</name>
 		<email></email>
 	</author>
 
+	
+		<entry>
+			<title>supertest</title>
+			<link href="http://npmawesome.com/posts/2014-02-21-supertest"/>
+			<updated>2014-02-21T18:09:41.000Z</updated>
+			<id>http://npmawesome.com/posts/2014-02-21-supertest</id>
+			<content type="html">&lt;p&gt;&lt;img class=&quot;hide-on-mobile&quot; src=&quot;https://2.gravatar.com/avatar/f1e3ab214a976a39cfd713bc93deb10f&quot; style=&quot;float: right; margin-left: 1em&quot;/&gt;
+&lt;a href=&quot;https://github.com/visionmedia/supertest&quot;&gt;supertest&lt;/a&gt; is a module by &lt;a href=&quot;https://github.com/visionmedia&quot;&gt;TJ Holowaychuk&lt;/a&gt; that takes testing HTTP easier via &lt;a href=&quot;http://github.com/visionmedia/superagent&quot;&gt;superagent&lt;/a&gt;. The motivation with this module is to provide a high-level abstraction for testing HTTP, while still allowing you to drop down to the lower-level API provided by superagent.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;npm install supertest
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;You may pass an &lt;code&gt;http.Server&lt;/code&gt;, or a &lt;code&gt;Function&lt;/code&gt; to &lt;code&gt;request()&lt;/code&gt; - if the server is not already listening for connections then it is bound to an ephemeral port for you so there is no need to keep track of ports.&lt;/p&gt;
+&lt;h2 id=&quot;usage&quot;&gt;Usage&lt;/h2&gt;
+&lt;p&gt;Here&amp;#39;s a basic GET request to an end point.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;var request = require(&amp;#39;supertest&amp;#39;)
+  , express = require(&amp;#39;express&amp;#39;);
+
+var app = express();
+
+app.get(&amp;#39;/user&amp;#39;, function(req, res) {
+  res.send(200, { name: &amp;#39;tobi&amp;#39; });
+});
+
+request(app)
+  .get(&amp;#39;/user&amp;#39;)
+  .expect(&amp;#39;Content-Type&amp;#39;, /json/)
+  .expect(&amp;#39;Content-Length&amp;#39;, &amp;#39;20&amp;#39;)
+  .expect(200)
+  .end(function(err, res) {
+    if (err) throw err;
+  });
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;You can also get all fancy and upload files:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;request(app)
+  .post(&amp;#39;/&amp;#39;)
+  .attach(&amp;#39;avatar&amp;#39;, &amp;#39;test/fixtures/homeboy.jpg&amp;#39;)
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Passing the app or url each time is not necessary, if you&amp;#39;re testing the same host you may simply re-assign the request variable with the initialization app or url:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;request = request(&amp;#39;http://localhost:5555&amp;#39;);
+
+request.get(&amp;#39;/&amp;#39;).expect(200, function(err) {
+  console.log(err);
+});
+
+request.get(&amp;#39;/&amp;#39;).expect(&amp;#39;heya&amp;#39;, function(err) {
+  console.log(err);
+});
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Anything you can do with &lt;a href=&quot;http://github.com/visionmedia/superagent&quot;&gt;superagent&lt;/a&gt;, you can do with &lt;a href=&quot;https://github.com/visionmedia/supertest&quot;&gt;supertest&lt;/a&gt;. For some strange reason I love testing HTTP end points, this is my goto library for this. Thanks TJ!&lt;/p&gt;
+</content>
+		</entry>
 	
 		<entry>
 			<title>spritesmith</title>
