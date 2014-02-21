@@ -1,0 +1,68 @@
+---
+layout: post
+date: 2014-02-21T10:09:41-0800
+tags: npm, api, testing
+
+npm:
+  repo: &repo visionmedia/supertest
+  name: &name supertest
+
+  author:
+    name: TJ Holowaychuk
+    github: visionmedia
+
+slug: *name
+title: *name
+description: supertest is a module for easy HTTP assertions.
+---
+<img class="hide-on-mobile" src="https://2.gravatar.com/avatar/f1e3ab214a976a39cfd713bc93deb10f" style="float: right; margin-left: 1em"/>
+<%- @npm() %> is a module by <%- @author() %> that takes testing HTTP easier via [superagent]. The motivation with this module is to provide a high-level abstraction for testing HTTP, while still allowing you to drop down to the lower-level API provided by superagent.
+
+    <%- @install() %>
+
+You may pass an `http.Server`, or a `Function` to `request()` - if the server is not already listening for connections then it is bound to an ephemeral port for you so there is no need to keep track of ports.
+
+## Usage
+
+Here's a basic GET request to an end point.
+
+    var request = require('supertest')
+      , express = require('express');
+
+    var app = express();
+
+    app.get('/user', function(req, res) {
+      res.send(200, { name: 'tobi' });
+    });
+
+    request(app)
+      .get('/user')
+      .expect('Content-Type', /json/)
+      .expect('Content-Length', '20')
+      .expect(200)
+      .end(function(err, res) {
+        if (err) throw err;
+      });
+
+You can also get all fancy and upload files:
+
+    request(app)
+      .post('/')
+      .attach('avatar', 'test/fixtures/homeboy.jpg')
+
+Passing the app or url each time is not necessary, if you're testing the same host you may simply re-assign the request variable with the initialization app or url:
+
+    request = request('http://localhost:5555');
+
+    request.get('/').expect(200, function(err) {
+      console.log(err);
+    });
+
+    request.get('/').expect('heya', function(err) {
+      console.log(err);
+    });
+
+Anything you can do with [superagent], you can do with <%- @npm() %>. For some strange reason I love testing HTTP end points, this is my goto library for this. Thanks TJ!
+
+[superagent]: http://github.com/visionmedia/superagent
+
