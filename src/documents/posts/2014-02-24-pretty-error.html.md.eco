@@ -1,0 +1,75 @@
+---
+layout: post
+date: 2014-02-24T09:55:21-0800
+tags: npm, errors
+
+npm:
+  repo: &repo AriaMinaei/pretty-error
+  name: &name pretty-error
+
+  author:
+    name: Aria Minaei
+    github: AriaMinaei
+
+slug: *name
+title: *name
+description: pretty-errors is a module to render node.js error stack with less clutter.
+---
+<img class="hide-on-mobile" src="https://0.gravatar.com/avatar/8db4bf4bbef66bb91a4f2a0ba3b26e68" style="float: right; margin-left: 1em"/>
+<%- @npm() %> is a module by <%- @author() %> to render node.js error stack in a much more digestable way. This seems like it might a good module to add to your infrastracture if you, like me, constantly having to weed through the ugly stack messages to find relavant lines.
+
+    <%- @install() %>
+
+<img class="hide-on-mobile" src="https://github.com/AriaMinaei/pretty-error/raw/master/docs/images/pretty-error-screenshot.png" style="width: 100%; margin: 1em 0"/>
+
+## Usage
+
+    require('pretty-error').start(function() {
+      startTheApp();
+    });
+
+## How it Works
+
+<%- @npm() %> turns error objects into something similar to an HTML document, and then uses the upcoming [RenderKid] to render the document using simple HTML/CSS-like commands for the console. This allows <%- @npm() %> to be themed using simple CSS-like declarations.
+
+## The cool bits
+
+### Shortening paths
+
+You might want to substitute long paths with shorter, more readable aliases:
+
+    pe.alias('E:/open-source/theatrejs/scripts/js', '(Theare.js)');
+
+    // to remove the alias:
+    pe.removeAlias('E:/open-source/theatrejs/scripts/js');
+
+    // or:
+    pe.removeAllAliases();
+
+### Skipping packages
+
+You might want to skip trace lines that belong to specific packages (chai, when, socket.io):
+
+    pe.skipPackage('chai', 'when', 'socket.io');
+
+    // to unskip:
+    pe.unskipPackage('socket.io');
+    pe.unskipAllPackages();
+
+### Skipping node files
+
+    // this will skip node.js, path.js, event.js, etc.
+    pe.skipNodeFiles();
+
+    // also:
+    pe.unskipNodeFiles();
+
+### Skipping paths
+
+    pe.skipPath('/home/dir/someFile.js');
+
+    // also:
+    pe.unskipPath('/home/dir/someFile.js');
+    pe.unskipAllPaths();
+
+[RenderKid]: https://github.com/AriaMinaei/renderkid
