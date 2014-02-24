@@ -5,10 +5,57 @@
         <description><![CDATA[Daily dose of awesome NPM modules for Node.js, old and new!]]></description>
         <link>http://npmawesome.com</link>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Fri, 21 Feb 2014 18:21:03 GMT</lastBuildDate>
+        <lastBuildDate>Mon, 24 Feb 2014 18:06:28 GMT</lastBuildDate>
         <atom:link href="http://npmawesome.com/rss" rel="self" type="application/rss+xml"/>
         <author><![CDATA[Alex Gorbatchev]]></author>
-        <pubDate>Fri, 21 Feb 2014 18:20:30 GMT</pubDate>
+        <pubDate>Mon, 24 Feb 2014 18:05:58 GMT</pubDate>
+        <item>
+            <title><![CDATA[pretty-error]]></title>
+            <description><![CDATA[<p><img class="hide-on-mobile" src="https://0.gravatar.com/avatar/8db4bf4bbef66bb91a4f2a0ba3b26e68" style="float: right; margin-left: 1em"/>
+<a href="https://github.com/AriaMinaei/pretty-error">pretty-error</a> is a module by <a href="https://github.com/AriaMinaei">Aria Minaei</a> to render node.js error stack in a much more digestable way. This seems like it might a good module to add to your infrastracture if you, like me, constantly having to weed through the ugly stack messages to find relavant lines.</p>
+<pre><code>npm install pretty-error
+</code></pre><p><img class="hide-on-mobile" src="https://github.com/AriaMinaei/pretty-error/raw/master/docs/images/pretty-error-screenshot.png" style="width: 100%; margin: 1em 0"/></p>
+<h2 id="usage">Usage</h2>
+<pre><code>require(&#39;pretty-error&#39;).start(function() {
+  startTheApp();
+});
+</code></pre><h2 id="how-it-works">How it Works</h2>
+<p><a href="https://github.com/AriaMinaei/pretty-error">pretty-error</a> turns error objects into something similar to an HTML document, and then uses the upcoming <a href="https://github.com/AriaMinaei/renderkid">RenderKid</a> to render the document using simple HTML/CSS-like commands for the console. This allows <a href="https://github.com/AriaMinaei/pretty-error">pretty-error</a> to be themed using simple CSS-like declarations.</p>
+<h2 id="the-cool-bits">The cool bits</h2>
+<h3 id="shortening-paths">Shortening paths</h3>
+<p>You might want to substitute long paths with shorter, more readable aliases:</p>
+<pre><code>pe.alias(&#39;E:/open-source/theatrejs/scripts/js&#39;, &#39;(Theare.js)&#39;);
+
+// to remove the alias:
+pe.removeAlias(&#39;E:/open-source/theatrejs/scripts/js&#39;);
+
+// or:
+pe.removeAllAliases();
+</code></pre><h3 id="skipping-packages">Skipping packages</h3>
+<p>You might want to skip trace lines that belong to specific packages (chai, when, socket.io):</p>
+<pre><code>pe.skipPackage(&#39;chai&#39;, &#39;when&#39;, &#39;socket.io&#39;);
+
+// to unskip:
+pe.unskipPackage(&#39;socket.io&#39;);
+pe.unskipAllPackages();
+</code></pre><h3 id="skipping-node-files">Skipping node files</h3>
+<pre><code>// this will skip node.js, path.js, event.js, etc.
+pe.skipNodeFiles();
+
+// also:
+pe.unskipNodeFiles();
+</code></pre><h3 id="skipping-paths">Skipping paths</h3>
+<pre><code>pe.skipPath(&#39;/home/dir/someFile.js&#39;);
+
+// also:
+pe.unskipPath(&#39;/home/dir/someFile.js&#39;);
+pe.unskipAllPaths();
+</code></pre>]]></description>
+            <link>http://npmawesome.com/posts/2014-02-24-pretty-error</link>
+            <guid isPermaLink="true">http://npmawesome.com/posts/2014-02-24-pretty-error</guid>
+            <dc:creator><![CDATA[Alex Gorbatchev]]></dc:creator>
+            <pubDate>Mon, 24 Feb 2014 17:55:21 GMT</pubDate>
+        </item>
         <item>
             <title><![CDATA[supertest]]></title>
             <description><![CDATA[<p><img class="hide-on-mobile" src="https://2.gravatar.com/avatar/f1e3ab214a976a39cfd713bc93deb10f" style="float: right; margin-left: 1em"/>
@@ -480,59 +527,6 @@ jquery                    1.8.3        ---        ---        ---
             <guid isPermaLink="true">http://npmawesome.com/posts/2014-02-10-node-dependencies</guid>
             <dc:creator><![CDATA[Alex Gorbatchev]]></dc:creator>
             <pubDate>Mon, 10 Feb 2014 18:57:16 GMT</pubDate>
-        </item>
-        <item>
-            <title><![CDATA[cucumber.js]]></title>
-            <description><![CDATA[<p><img class="hide-on-mobile" src="/images/posts/cucumber-logo.png" style="width: 100%; margin-bottom: 1em"/></p>
-<p><img class="hide-on-mobile" src="https://2.gravatar.com/avatar/cbc1acceddbfaceee4cf3cae24d7c912" style="float: right; margin-left: 1em"/>
-<a href="https://github.com/cucumber/cucumber-js">cucumber.js</a> is a port of the famous Ruby <a href="http://cukes.info/">Cucumber testing framework</a> by <a href="https://github.com/jbpros">Julien Biezemans</a> that lets software development teams describe how software should behave in plain text. The text is written in a business-readable domain-specific language and serves as documentation, automated tests and development-aid - all rolled into one format.</p>
-<pre><code>npm install cucumber
-</code></pre><h2 id="features">Features</h2>
-<p><a href="https://github.com/cucumber/cucumber-js">cucumber.js</a> implements most of the Ruby counterpart&#39;s feature for feature and has baked in support for CoffeeScript.</p>
-<h2 id="usage">Usage</h2>
-<p>Features are written with the <a href="https://github.com/cucumber/cucumber/wiki/Gherkin">Gherkin syntax</a></p>
-<pre><code># features/myFeature.feature
-
-Feature: Example feature
-  As a user of cucumber.js
-  I want to have documentation on cucumber
-  So that I can concentrate on building awesome applications
-
-  Scenario: Reading documentation
-    Given I am on the Cucumber.js GitHub repository
-    When I go to the README file
-    Then I should see &quot;Usage&quot; as the page title
-</code></pre><p>Then</p>
-<pre><code>@Then &quot;I should see \&quot;$title\&quot; as the page title&quot;, (title, callback) -&gt;
-  # the above string is converted to the following Regexp by Cucumber:
-  # /^I should see &quot;([^&quot;]*)&quot; as the page title$/
-  pageTitle = @browser.text(&quot;title&quot;)
-
-  if title is pageTitle
-    callback()
-  else
-    callback.fail new Error(&quot;Expected to be on page with title &quot; + title)
-</code></pre><p>or in JavaScript</p>
-<pre><code>this.Then(&#39;I should see &quot;$title&quot; as the page title&#39;, function(title, callback) {
-  // the above string is converted to the following Regexp by Cucumber:
-  // /^I should see &quot;([^&quot;]*)&quot; as the page title$/
-
-  var pageTitle = this.browser.text(&#39;title&#39;);
-  if (title === pageTitle) {
-    callback();
-  } else {
-    callback.fail(new Error(&quot;Expected to be on page with title &quot; + title));
-  }
-});
-</code></pre><p><img class="hide-on-mobile" src="/images/posts/cucumber-meme.jpg" style="float: right; margin-left: 1em"/>
-Writing <a href="https://github.com/cucumber/cucumber/wiki/Feature-Introduction">Cucumber scenarios</a> is pretty straight forward and is very addictive. I currently use <a href="http://visionmedia.github.io/mocha/">Mocha</a> and write <code>describe</code> and <code>it</code> blocks in nearly the same fasion so that they read as a cohesive story. Perhaps I should just use <a href="https://github.com/cucumber/cucumber-js">cucumber.js</a> instead?</p>
-<p><a href="http://www.martinfowler.com/bliki/BusinessReadableDSL.html">The pipe dream</a> is to be let business people to write software rules without involving programmers. I&#39;m on the fence if it&#39;s a good idea, or even if it&#39;s possible, but I used to write Cucumber tests back in my Ruby days and loved it!</p>
-<p>Check out this <a href="http://flippinawesome.org/2014/01/27/bdd-in-javascript-with-cucumberjs/">awesome write up</a> on <a href="https://github.com/cucumber/cucumber-js">cucumber.js</a>. So, what do you think? Is Cucumber a good idea?</p>
-]]></description>
-            <link>http://npmawesome.com/posts/2014-02-05-cucumber-js</link>
-            <guid isPermaLink="true">http://npmawesome.com/posts/2014-02-05-cucumber-js</guid>
-            <dc:creator><![CDATA[Alex Gorbatchev]]></dc:creator>
-            <pubDate>Wed, 05 Feb 2014 21:06:18 GMT</pubDate>
         </item>
     </channel>
 </rss>

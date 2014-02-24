@@ -5,12 +5,59 @@
 	<link href="http://npmawesome.com/atom.xml" rel="self" />
 	<link href="http://npmawesome.com" />
 	<id>http://npmawesome.com</id>
-	<updated>2014-02-21T18:20:30.057Z</updated>
+	<updated>2014-02-24T18:05:58.063Z</updated>
 	<author>
 		<name>Alex Gorbatchev</name>
 		<email></email>
 	</author>
 
+	
+		<entry>
+			<title>pretty-error</title>
+			<link href="http://npmawesome.com/posts/2014-02-24-pretty-error"/>
+			<updated>2014-02-24T17:55:21.000Z</updated>
+			<id>http://npmawesome.com/posts/2014-02-24-pretty-error</id>
+			<content type="html">&lt;p&gt;&lt;img class=&quot;hide-on-mobile&quot; src=&quot;https://0.gravatar.com/avatar/8db4bf4bbef66bb91a4f2a0ba3b26e68&quot; style=&quot;float: right; margin-left: 1em&quot;/&gt;
+&lt;a href=&quot;https://github.com/AriaMinaei/pretty-error&quot;&gt;pretty-error&lt;/a&gt; is a module by &lt;a href=&quot;https://github.com/AriaMinaei&quot;&gt;Aria Minaei&lt;/a&gt; to render node.js error stack in a much more digestable way. This seems like it might a good module to add to your infrastracture if you, like me, constantly having to weed through the ugly stack messages to find relavant lines.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;npm install pretty-error
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;img class=&quot;hide-on-mobile&quot; src=&quot;https://github.com/AriaMinaei/pretty-error/raw/master/docs/images/pretty-error-screenshot.png&quot; style=&quot;width: 100%; margin: 1em 0&quot;/&gt;&lt;/p&gt;
+&lt;h2 id=&quot;usage&quot;&gt;Usage&lt;/h2&gt;
+&lt;pre&gt;&lt;code&gt;require(&amp;#39;pretty-error&amp;#39;).start(function() {
+  startTheApp();
+});
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&quot;how-it-works&quot;&gt;How it Works&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&quot;https://github.com/AriaMinaei/pretty-error&quot;&gt;pretty-error&lt;/a&gt; turns error objects into something similar to an HTML document, and then uses the upcoming &lt;a href=&quot;https://github.com/AriaMinaei/renderkid&quot;&gt;RenderKid&lt;/a&gt; to render the document using simple HTML/CSS-like commands for the console. This allows &lt;a href=&quot;https://github.com/AriaMinaei/pretty-error&quot;&gt;pretty-error&lt;/a&gt; to be themed using simple CSS-like declarations.&lt;/p&gt;
+&lt;h2 id=&quot;the-cool-bits&quot;&gt;The cool bits&lt;/h2&gt;
+&lt;h3 id=&quot;shortening-paths&quot;&gt;Shortening paths&lt;/h3&gt;
+&lt;p&gt;You might want to substitute long paths with shorter, more readable aliases:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;pe.alias(&amp;#39;E:/open-source/theatrejs/scripts/js&amp;#39;, &amp;#39;(Theare.js)&amp;#39;);
+
+// to remove the alias:
+pe.removeAlias(&amp;#39;E:/open-source/theatrejs/scripts/js&amp;#39;);
+
+// or:
+pe.removeAllAliases();
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&quot;skipping-packages&quot;&gt;Skipping packages&lt;/h3&gt;
+&lt;p&gt;You might want to skip trace lines that belong to specific packages (chai, when, socket.io):&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;pe.skipPackage(&amp;#39;chai&amp;#39;, &amp;#39;when&amp;#39;, &amp;#39;socket.io&amp;#39;);
+
+// to unskip:
+pe.unskipPackage(&amp;#39;socket.io&amp;#39;);
+pe.unskipAllPackages();
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&quot;skipping-node-files&quot;&gt;Skipping node files&lt;/h3&gt;
+&lt;pre&gt;&lt;code&gt;// this will skip node.js, path.js, event.js, etc.
+pe.skipNodeFiles();
+
+// also:
+pe.unskipNodeFiles();
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&quot;skipping-paths&quot;&gt;Skipping paths&lt;/h3&gt;
+&lt;pre&gt;&lt;code&gt;pe.skipPath(&amp;#39;/home/dir/someFile.js&amp;#39;);
+
+// also:
+pe.unskipPath(&amp;#39;/home/dir/someFile.js&amp;#39;);
+pe.unskipAllPaths();
+&lt;/code&gt;&lt;/pre&gt;</content>
+		</entry>
 	
 		<entry>
 			<title>supertest</title>
