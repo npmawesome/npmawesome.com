@@ -1,5 +1,52 @@
-<!DOCTYPE html><head><link rel="alternate" title="RSS" type="application/rss+xml" href="http://feeds.feedburner.com/npmawesome"><link href="&lt;%= @site.url %&gt;/atom.xml" title="Blog Posts" type="application/atom+xml" rel="alternate"><link rel="stylesheet" type="text/css" media="all" href="/styles.css"><meta name="viewport" content="initial-scale=1, maximum-scale=1"><meta property="twitter:account_id" content="4503599628039784"><meta charset="utf-8"><title>npm awesome</title><meta property="og:image" content="http://npmawesome.com/images/posts/npm.png"><meta property="og:updated_time" content="1393264521000"><meta property="og:site_name" content="npm awesome"><meta property="og:type" content="blog"><meta property="og:url" content="http://npmawesome.com/index.1"><meta name="description" content="Daily dose of awesome NPM modules for Node.js, old and new!"><meta property="og:description" content="Daily dose of awesome NPM modules for Node.js, old and new!"></head><body><div class="container"><div class="row"><h1 id="logo"><a href="/"><span>npmawesome</span><span class="posts-counter">58</span></a></h1><div id="sub-title"><a href="http://npmjs.org">npm</a> picks, old and new.
-<a href="https://github.com/alexgorbatchev/npm-awesome-site">Fork on GitHub to contribute</a></div></div><div class="row"><div class="main col"><article><header><h2><a href="/posts/2014-01-22-autoprefixer">autoprefixer</a></h2><div class="meta"><span>posted by <a href="https://github.com/alexgorbatchev">Alex Gorbatchev</a> on January 22nd 2014</span><a href="http://npmawesome.com/posts/2014-01-22-autoprefixer#disqus_thread" class="comments"></a><div data-github-repo="ai/autoprefixer" class="github-stars"></div></div></header><div class="content"><p><a href="https://github.com/ai/autoprefixer">autoprefixer</a> parses CSS and adds vendor prefixes to rules based on information from the glorious <a href="http://caniuse.com">Can I Use</a>.</p>
+<!DOCTYPE html><head><link rel="alternate" title="RSS" type="application/rss+xml" href="http://feeds.feedburner.com/npmawesome"><link href="&lt;%= @site.url %&gt;/atom.xml" title="Blog Posts" type="application/atom+xml" rel="alternate"><link rel="stylesheet" type="text/css" media="all" href="/styles.css"><meta name="viewport" content="initial-scale=1, maximum-scale=1"><meta property="twitter:account_id" content="4503599628039784"><meta charset="utf-8"><title>npm awesome</title><meta property="og:image" content="http://npmawesome.com/images/posts/npm.png"><meta property="og:updated_time" content="1393348036000"><meta property="og:site_name" content="npm awesome"><meta property="og:type" content="blog"><meta property="og:url" content="http://npmawesome.com/index.1"><meta name="description" content="Daily dose of awesome NPM modules for Node.js, old and new!"><meta property="og:description" content="Daily dose of awesome NPM modules for Node.js, old and new!"></head><body><div class="container"><div class="row"><h1 id="logo"><a href="/"><span>npmawesome</span><span class="posts-counter">59</span></a></h1><div id="sub-title"><a href="http://npmjs.org">npm</a> picks, old and new.
+<a href="https://github.com/alexgorbatchev/npm-awesome-site">Fork on GitHub to contribute</a></div></div><div class="row"><div class="main col"><article><header><h2><a href="/posts/2014-01-23-oboe-js">oboe.js</a></h2><div class="meta"><span>posted by <a href="https://github.com/alexgorbatchev">Alex Gorbatchev</a> on January 23rd 2014</span><a href="http://npmawesome.com/posts/2014-01-23-oboe-js#disqus_thread" class="comments"></a><div data-github-repo="jimhigson/oboe.js" class="github-stars"></div></div></header><div class="content"><p><img class="hide-on-mobile" src="https://2.gravatar.com/avatar/a26d7792bcf2ccd16be185627ce8e37d" style="float: right; margin-left: 1em"/></p>
+<p><a href="https://github.com/jimhigson/oboe.js">oboe.js</a> is written by <a href="https://github.com/jimhigson">Jim Higson</a> and helps web applications respond quicker by wrapping HTTP&#39;s request-response model with a progressively streamed interface. It glues a transport that sits somewhere between streaming and downloading to a JSON parser. It doesn&#39;t have any external dependencies.</p>
+<pre><code>npm install oboe
+</code></pre><h2 id="features">Features</h2>
+<p>The library is extremely feature rich for its 13KB size. I will try to summarize them here and you can get full details with examples on the <a href="https://github.com/jimhigson/oboe.js">oboe.js</a> github page.</p>
+<ul>
+<li>Can hanging up when everything that&#39;s needed was processed</li>
+<li>Can react to field and node names</li>
+<li>Can react to partial arrays</li>
+<li>Can react to specific nodes or to fields located anywhere</li>
+<li>Can use CSS4 style matching patterns</li>
+</ul>
+<blockquote>
+<p>Asynchronous parsing is better if the data is written out progressively from the server side because we&#39;re sending and parsing everything at the earliest possible opportunity. If you can, send small bits of the output asynchronously as soon as it is ready instead of waiting before everything is ready to start sending.</p>
+</blockquote>
+<div style="text-align: center"><img class="hide-on-mobile" src="/images/posts/oboe.png" style="width: 400px; margin: 1em 0" /></div>
+
+<h2 id="usage">Usage</h2>
+<p>Here&#39;s a very <strong>basic</strong> use case:</p>
+<pre><code>{
+   &quot;foods&quot;: [
+      {&quot;colour&quot;:&quot;purple&quot;},
+      {&quot;colour&quot;:&quot;red&quot;},
+      {&quot;colour&quot;:&quot;brown&quot;}
+   ],
+   &quot;badThings&quot;: [
+      {&quot;name&quot;:&quot;poison&quot;},
+      {&quot;name&quot;:&quot;broken_glass&quot;}
+   ]
+}
+
+var oboe = require(&#39;oboe&#39;);
+
+oboe(&#39;http://localhost/myapp/things.json&#39;)
+  .node(&#39;foods.*&#39;, function(foodThing) {
+    // This callback will be called everytime a new object is found in the
+    // foods array. Oboe won&#39;t wait for the download to finish first.
+    console.log(foodThing.name);
+  })
+  .node(&#39;badThings.*&#39;, function(badThing) {
+    console.log(&#39;Danger! stay away from &#39; + badThings.name);
+  })
+  .done(function(things) {
+    console.log(&#39;there are &#39; + things.foods.length + &#39; things you can eat &#39; +
+      &#39;and &#39; + things.badThings.length + &#39; that you shouldn\&#39;t.&#39;);
+  });
+</code></pre><p>Have you used streaming JSON parser before?</p>
+</div></article><article><header><h2><a href="/posts/2014-01-22-autoprefixer">autoprefixer</a></h2><div class="meta"><span>posted by <a href="https://github.com/alexgorbatchev">Alex Gorbatchev</a> on January 22nd 2014</span><a href="http://npmawesome.com/posts/2014-01-22-autoprefixer#disqus_thread" class="comments"></a><div data-github-repo="ai/autoprefixer" class="github-stars"></div></div></header><div class="content"><p><a href="https://github.com/ai/autoprefixer">autoprefixer</a> parses CSS and adds vendor prefixes to rules based on information from the glorious <a href="http://caniuse.com">Can I Use</a>.</p>
 <pre><code>npm install autoprefixer
 </code></pre><p><img class="hide-on-mobile" src="/images/posts/autoprefixer.svg" style="width: 200px; float: right" /></p>
 <p>The best tool is a tool you can&#39;t see and one that does the work for you. This is the main idea behind <a href="https://github.com/ai/autoprefixer">autoprefixer</a>. The interface is simple: just forget about vendor prefixes and write normal CSS according to latest W3C specs. You don’t need a special language (like Sass) or special mixins. Of course, you can still use something like <a href="http://sass-lang.com/">SASS</a>, <a href="http://learnboost.github.io/stylus/">Stylus</a> or <a href="http://www.lesscss.org/">LESS</a> because <a href="https://github.com/ai/autoprefixer">autoprefixer</a> is a postprocessor for CSS.</p>
@@ -707,33 +754,6 @@ box.focus();
 // Render the screen.
 screen.render();
 </code></pre><p>There are plenty of examples and information on the <a href="https://github.com/chjj/blessed">blessed</a>. Check it out!</p>
-</div></article><article><header><h2><a href="/posts/2013-12-05-gm">gm</a></h2><div class="meta"><span>posted by <a href="https://github.com/alexgorbatchev">Alex Gorbatchev</a> on December 5th 2013</span><a href="http://npmawesome.com/posts/2013-12-05-gm#disqus_thread" class="comments"></a><div data-github-repo="aheckmann/gm" class="github-stars"></div></div></header><div class="content"><p><a href="https://github.com/aheckmann/gm">gm</a> is <a href="http://www.imagemagick.org">ImageMagick</a> for node, what else is there to say?</p>
-<pre><code>npm install gm
-</code></pre><p><img class="hide-on-mobile" src="/images/posts/imagemagick.png" style="float: right; width: 100px; margin-left: 1em;" /></p>
-<blockquote>
-<p>ImageMagick is a software suite to create, edit, compose, or convert bitmap images. It can read and write images in a variety of formats (over 100) including DPX, EXR, GIF, JPEG, JPEG-2000, PDF, PNG, Postscript, SVG, and TIFF. Use ImageMagick to resize, flip, mirror, rotate, distort, shear and transform images, adjust image colors, apply various special effects, or draw text, lines, polygons, ellipses and Bézier curves.</p>
-</blockquote>
-<p>The <a href="http://aheckmann.github.io/gm/">demo</a> page has an interactive playground that shows a tiny fraction of what <a href="https://github.com/aheckmann/gm">gm</a> can do.</p>
-<pre><code>var gm = require(&#39;./gm&#39;);
-
-// resize and remove EXIF profile data
-gm(&#39;/path/to/my/img.jpg&#39;)
-  .resize(240, 240)
-  .noProfile()
-  .write(&#39;/path/to/resize.png&#39;, function (err) {
-    if (!err) console.log(&#39;done&#39;);
-  });
-
-// annotate an image
-gm(&#39;/path/to/my/img.jpg&#39;)
-  .stroke(&quot;#ffffff&quot;)
-  .drawCircle(10, 10, 20, 10)
-  .font(&quot;Helvetica.ttf&quot;, 12)
-  .drawText(30, 20, &quot;GMagick!&quot;)
-  .write(&quot;/path/to/drawing.png&quot;, function (err) {
-    if (!err) console.log(&#39;done&#39;);
-  });
-</code></pre><p>There are plenty of examples and information on the <a href="https://github.com/aheckmann/gm">gm</a>. Check it out!</p>
 </div></article><footer class="pagination"><ul><li><a href="/">Prev</a></li><li><a href="/">1</a></li><li class="active"><span>2</span></li><li><a href="/index.2">3</a></li><li><a href="/index.2">Next</a></li></ul></footer><script type="text/javascript">/* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
 var disqus_shortname = 'npmawesome'; // required: replace example with your forum shortname
 
@@ -743,7 +763,7 @@ var disqus_shortname = 'npmawesome'; // required: replace example with your foru
   s.type = 'text/javascript';
   s.src = 'http://' + disqus_shortname + '.disqus.com/count.js';
   (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
-}());</script></div><aside class="col"><div class="feedburner"><a href="http://feeds.feedburner.com/npmawesome"><img src="/images/feed.gif"></a></div><div class="other-posts"><h4>Previously...</h4><div><a href="/posts/2014-02-24-pretty-error">pretty-error</a></div><div><a href="/posts/2014-02-21-supertest">supertest</a></div><div><a href="/posts/2014-02-20-spritesmith">spritesmith</a></div><div><a href="/posts/2014-02-18-npm-diff">npm-diff</a></div><div><a href="/posts/2014-02-17-nodepdf">NodePDF</a></div><div><a href="/posts/2014-02-13-domain-context">domain-context</a></div><div><a href="/posts/2014-02-12-jsonstream">JSONStream</a></div><div><a href="/posts/2014-02-11-peer-js">peer.js</a></div><div><a href="/posts/2014-02-10-node-dependencies">node-dependencies</a></div><div><a href="/posts/2014-02-05-cucumber-js">cucumber.js</a></div><div><a href="/posts/2014-02-04-binary-js">binary.js</a></div><div><a href="/posts/2014-02-03-power-assert">power-assert</a></div><div><a href="/posts/2014-01-31-coupon-code">coupon-code</a></div><div><a href="/posts/2014-01-30-rewire">rewire</a></div><div><a href="/posts/2014-01-29-yarm">yarm</a></div><div><a href="/posts/2014-01-28-modella">modella</a></div><div><a href="/posts/2014-01-27-mversion">mversion</a></div><div><a href="/posts/2014-01-24-schema-inspector">schema-inspector</a></div><div><a href="/posts/2014-01-23-oboe-js">oboe.js</a></div><div><a href="/posts/2014-01-22-autoprefixer">autoprefixer</a></div><div><a href="/posts/2014-01-21-js-yaml">js-yaml</a></div><div><a href="/posts/2014-01-17-gaze">gaze</a></div><div><a href="/posts/2014-01-14-shortid">shortId</a></div><div><a href="/posts/2014-01-13-testium">testium</a></div><div><a href="/posts/2014-01-10-messageformat">messageformat.js</a></div><div><a href="/posts/2014-01-09-gulp">gulp</a></div><div><a href="/posts/2014-01-06-chalk">chalk</a></div><div><a href="/posts/2013-12-31-recluster">recluster</a></div><div><a href="/posts/2013-12-30-rework">rework</a></div><div><a href="/posts/2013-12-27-cheerio">cheerio</a></div><div><a href="/posts/2013-12-19-dat">dat</a></div><div><a href="/posts/2013-12-18-xregexp">xregexp</a></div><div><a href="/posts/2013-12-16-ect">ect</a></div><div><a href="/posts/2013-12-13-chrono">chrono</a></div><div><a href="/posts/2013-12-11-prettyjson">prettyjson</a></div><div><a href="/posts/2013-12-10-state">state</a></div><div><a href="/posts/2013-12-09-blessed">blessed</a></div><div><a href="/posts/2013-12-05-gm">gm</a></div><div><a href="/posts/2013-12-03-nak">nak</a></div><div><a href="/posts/2013-12-03-verymodel">VeryModel</a></div><div><a href="/posts/2013-11-26-rx-js">rx.js</a></div><div><a href="/posts/2013-11-26-docpad">docpad</a></div><div><a href="/posts/2013-11-25-grunt-angular-builder">grunt-angular-builder</a></div><div><a href="/posts/2013-11-22-event-stream">event-stream</a></div><div><a href="/posts/2013-11-21-bacon-js">bacon.js</a></div><div><a href="/posts/2013-11-20-spdy">node-spdy</a></div><div><a href="/posts/2013-11-19-json-mask">json-mask</a></div><div><a href="/posts/2013-11-18-pm2">pm2</a></div><div><a href="/posts/2013-11-18-npmd">npmd</a></div><div><a href="/posts/2013-11-18-nixt">nixt</a></div><div><a href="/posts/2013-11-17-vm-js">vm.js</a></div><div><a href="/posts/2013-11-17-node-jvm">node-jvm</a></div><div><a href="/posts/2013-11-17-flake">flake</a></div></div></aside></div></div><a id="fork-me" href="https://github.com/alexgorbatchev/npm-awesome-site" class="hide-on-mobile">Fork Me</a></body><script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+}());</script></div><aside class="col"><div class="feedburner"><a href="http://feeds.feedburner.com/npmawesome"><img src="/images/feed.gif"></a></div><div class="other-posts"><h4>Previously...</h4><div><a href="/posts/2014-02-25-webdriverjs">webdriver.js</a></div><div><a href="/posts/2014-02-24-pretty-error">pretty-error</a></div><div><a href="/posts/2014-02-21-supertest">supertest</a></div><div><a href="/posts/2014-02-20-spritesmith">spritesmith</a></div><div><a href="/posts/2014-02-18-npm-diff">npm-diff</a></div><div><a href="/posts/2014-02-17-nodepdf">NodePDF</a></div><div><a href="/posts/2014-02-13-domain-context">domain-context</a></div><div><a href="/posts/2014-02-12-jsonstream">JSONStream</a></div><div><a href="/posts/2014-02-11-peer-js">peer.js</a></div><div><a href="/posts/2014-02-10-node-dependencies">node-dependencies</a></div><div><a href="/posts/2014-02-05-cucumber-js">cucumber.js</a></div><div><a href="/posts/2014-02-04-binary-js">binary.js</a></div><div><a href="/posts/2014-02-03-power-assert">power-assert</a></div><div><a href="/posts/2014-01-31-coupon-code">coupon-code</a></div><div><a href="/posts/2014-01-30-rewire">rewire</a></div><div><a href="/posts/2014-01-29-yarm">yarm</a></div><div><a href="/posts/2014-01-28-modella">modella</a></div><div><a href="/posts/2014-01-27-mversion">mversion</a></div><div><a href="/posts/2014-01-24-schema-inspector">schema-inspector</a></div><div><a href="/posts/2014-01-23-oboe-js">oboe.js</a></div><div><a href="/posts/2014-01-22-autoprefixer">autoprefixer</a></div><div><a href="/posts/2014-01-21-js-yaml">js-yaml</a></div><div><a href="/posts/2014-01-17-gaze">gaze</a></div><div><a href="/posts/2014-01-14-shortid">shortId</a></div><div><a href="/posts/2014-01-13-testium">testium</a></div><div><a href="/posts/2014-01-10-messageformat">messageformat.js</a></div><div><a href="/posts/2014-01-09-gulp">gulp</a></div><div><a href="/posts/2014-01-06-chalk">chalk</a></div><div><a href="/posts/2013-12-31-recluster">recluster</a></div><div><a href="/posts/2013-12-30-rework">rework</a></div><div><a href="/posts/2013-12-27-cheerio">cheerio</a></div><div><a href="/posts/2013-12-19-dat">dat</a></div><div><a href="/posts/2013-12-18-xregexp">xregexp</a></div><div><a href="/posts/2013-12-16-ect">ect</a></div><div><a href="/posts/2013-12-13-chrono">chrono</a></div><div><a href="/posts/2013-12-11-prettyjson">prettyjson</a></div><div><a href="/posts/2013-12-10-state">state</a></div><div><a href="/posts/2013-12-09-blessed">blessed</a></div><div><a href="/posts/2013-12-05-gm">gm</a></div><div><a href="/posts/2013-12-03-nak">nak</a></div><div><a href="/posts/2013-12-03-verymodel">VeryModel</a></div><div><a href="/posts/2013-11-26-rx-js">rx.js</a></div><div><a href="/posts/2013-11-26-docpad">docpad</a></div><div><a href="/posts/2013-11-25-grunt-angular-builder">grunt-angular-builder</a></div><div><a href="/posts/2013-11-22-event-stream">event-stream</a></div><div><a href="/posts/2013-11-21-bacon-js">bacon.js</a></div><div><a href="/posts/2013-11-20-spdy">node-spdy</a></div><div><a href="/posts/2013-11-19-json-mask">json-mask</a></div><div><a href="/posts/2013-11-18-pm2">pm2</a></div><div><a href="/posts/2013-11-18-npmd">npmd</a></div><div><a href="/posts/2013-11-18-nixt">nixt</a></div><div><a href="/posts/2013-11-17-vm-js">vm.js</a></div><div><a href="/posts/2013-11-17-node-jvm">node-jvm</a></div><div><a href="/posts/2013-11-17-flake">flake</a></div></div></aside></div></div><a id="fork-me" href="https://github.com/alexgorbatchev/npm-awesome-site" class="hide-on-mobile">Fork Me</a></body><script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
 (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
 m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
 })(window,document,'script','//www.google-analytics.com/analytics.js','ga');

@@ -5,10 +5,78 @@
         <description><![CDATA[Daily dose of awesome NPM modules for Node.js, old and new!]]></description>
         <link>http://npmawesome.com</link>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Mon, 24 Feb 2014 18:06:28 GMT</lastBuildDate>
+        <lastBuildDate>Tue, 25 Feb 2014 17:20:47 GMT</lastBuildDate>
         <atom:link href="http://npmawesome.com/rss" rel="self" type="application/rss+xml"/>
         <author><![CDATA[Alex Gorbatchev]]></author>
-        <pubDate>Mon, 24 Feb 2014 18:05:58 GMT</pubDate>
+        <pubDate>Tue, 25 Feb 2014 17:20:13 GMT</pubDate>
+        <item>
+            <title><![CDATA[webdriver.js]]></title>
+            <description><![CDATA[<p><img class="hide-on-mobile" src="https://2.gravatar.com/avatar/2c405e9d55507036d6cc2aff250c3146" style="float: right; margin-left: 1em"/>
+<a href="https://github.com/camme/webdriverjs">webdriver.js</a> is a module by <a href="https://github.com/camme">Camilo Tapia</a> to render node.js error stack in a much more digestable way. This seems like it might a good module to add to your infrastracture if you, like me, constantly having to weed through the ugly stack messages to find relavant lines. <a href="https://github.com/camme/webdriverjs">webdriver.js</a> is not the &quot;official webdriverjs driver&quot; says <a href="https://github.com/christian-bromann">Christian Bromann</a> in <a href="https://github.com/camme/webdriverjs/issues/138#issuecomment-32051980">this thread</a>:</p>
+<blockquote>
+<p>We&#39;re trying to provide a selenium runner which is easy to use, highly extendable and compatible with all common JavaScript test frameworks. It uses an own chain API to execute all async commands in right order. The specialty of this library is that we wrap all JSONWire protocol commands in useful actions commands. So you don&#39;t have to care about to get an element first and then call the click command; you just execute the click with a selector as parameter.</p>
+</blockquote>
+<pre><code>npm install webdriverjs
+</code></pre><h2 id="usage">Usage</h2>
+<pre><code>var webdriverjs = require(&#39;webdriverjs&#39;);
+
+var options = {
+  desiredCapabilities: {
+    browserName: &#39;chrome&#39;
+  }
+};
+
+webdriverjs
+  .remote(options)
+  .init()
+  .url(&#39;http://www.google.com&#39;)
+  .title(function(err, res) {
+    console.log(&#39;Title was: &#39; + res.value);
+  })
+  .end();
+</code></pre><h2 id="selector-api">Selector API</h2>
+<p>The JsonWireProtocol provides several strategies to query an element. WebdriverJS simplifies these to make it more familiar with the common existing selector libraries like Sizzle. The following selector types are supported:</p>
+<ul>
+<li>CSS query selector</li>
+<li>link text</li>
+<li>partial link text</li>
+<li>tag name</li>
+<li>name attribute</li>
+<li>xPath</li>
+</ul>
+<h2 id="more">More</h2>
+<p>Here is a simplified example of differences between the drivers:</p>
+<p><a href="https://code.google.com/p/selenium/wiki/WebDriverJs">selenium-webdriverjs</a>:</p>
+<pre><code>driver.get(&#39;http://www.google.com&#39;);
+driver.findElement(webdriver.By.id(&#39;q&#39;)).sendKeys(&#39;webdriver&#39;);
+driver.findElement(webdriver.By.id(&#39;btnG&#39;)).click();
+</code></pre><p><a href="https://github.com/admc/wd">WD.js</a>:</p>
+<pre><code>browser
+  .get(&quot;http://www.google.com&quot;)
+  .elementById(&#39;q&#39;)
+  .sendKeys(&#39;webdriver&#39;)
+  .elementById(&#39;btnG&#39;)
+  .click()
+</code></pre><p><a href="https://github.com/camme/webdriverjs">webdriver.js</a>:</p>
+<pre><code>client
+    .url(&#39;http://google.com&#39;)
+    .setValue(&#39;#q&#39;,&#39;webdriver&#39;)
+    .click(&#39;#btnG&#39;)
+</code></pre><p><a href="https://github.com/camme/webdriverjs">webdriver.js</a> has also almost all protocol commands implemented, so you can do the same with the standard JSONWire protocol commands.</p>
+<pre><code>client
+    .url(&#39;http://google.com&#39;)
+    .element(&#39;#q&#39;, function(err,res) {
+        client.elementIdValue(res.value.ELEMENT, &#39;webdriver&#39;);
+    })
+    .element(&#39;#btnG&#39;, function(err,res) {
+        client.elementIdClick(res.value.ELEMENT);
+    });
+</code></pre>]]></description>
+            <link>http://npmawesome.com/posts/2014-02-25-webdriverjs</link>
+            <guid isPermaLink="true">http://npmawesome.com/posts/2014-02-25-webdriverjs</guid>
+            <dc:creator><![CDATA[Alex Gorbatchev]]></dc:creator>
+            <pubDate>Tue, 25 Feb 2014 17:07:16 GMT</pubDate>
+        </item>
         <item>
             <title><![CDATA[pretty-error]]></title>
             <description><![CDATA[<p><img class="hide-on-mobile" src="https://0.gravatar.com/avatar/8db4bf4bbef66bb91a4f2a0ba3b26e68" style="float: right; margin-left: 1em"/>
@@ -489,44 +557,6 @@ conn.on(&#39;open&#39;, function() {
             <guid isPermaLink="true">http://npmawesome.com/posts/2014-02-11-peer-js</guid>
             <dc:creator><![CDATA[Alex Gorbatchev]]></dc:creator>
             <pubDate>Tue, 11 Feb 2014 17:59:37 GMT</pubDate>
-        </item>
-        <item>
-            <title><![CDATA[node-dependencies]]></title>
-            <description><![CDATA[<p><img class="hide-on-mobile" src="https://0.gravatar.com/avatar/91ab609100e96dd5ccb270399e1acab6" style="float: right; margin-left: 1em"/>
-<a href="https://github.com/FogCreek/node-dependencies">node-dependencies</a> is a very basic but incredibly useful command line utility written by <a href="https://github.com/dpatti">Doug Patti</a> of <a href="https://www.fogcreek.com/">Fog Creek</a> that checks and prints out out-of-date dependencies for your Node.js app.</p>
-<pre><code>npm install node-dependencies
-</code></pre><h2 id="usage">Usage</h2>
-<pre><code>$ node-dependencies --sort=urgency
-
-Package                   Local      Major      Minor      Patch
-tedious                   0.1.4        ---        ---      0.1.5
-mongoose                 3.6.11        ---        ---   3.6.0rc1
-optimist                  0.5.0        ---      0.6.0      0.5.2
-redis                     0.8.1        ---        ---      0.8.3
-underscore                1.4.3        ---        ---      1.4.4
-less-middleware          0.1.11        ---        ---     0.1.12
-express                   3.2.4        ---        ---      3.2.6
-grunt                     0.4.1        ---        ---   0.4.0rc8
-coffee-script             1.6.2        ---        ---      1.6.3
-bcrypt                    0.7.5        ---        ---      0.7.6
-knox                      0.8.2        ---        ---      0.8.3
-coffee-backtrace          0.2.0        ---      0.3.4      0.2.1
-socket.io                0.9.14        ---        ---    0.9.1-1
-async                    0.1.22        ---      0.2.9        ---
-mocha                     1.9.0        ---     1.11.0        ---
-less                      1.3.3        ---   1.4.0-b4        ---
-hbs                       2.1.0        ---      2.3.0        ---
-grunt-ember-handleba      0.4.0        ---      0.6.0        ---
-js-yaml                   1.0.3      2.1.0        ---        ---
-ent                       0.0.5        ---        ---        ---
-date-utils               1.2.13        ---        ---        ---
-jquery                    1.8.3        ---        ---        ---
-</code></pre><p>I came about  trying to update dependencies for a whole bunch of NPM modules. It would be even more useful if it could update <code>package.json</code> for me.</p>
-]]></description>
-            <link>http://npmawesome.com/posts/2014-02-10-node-dependencies</link>
-            <guid isPermaLink="true">http://npmawesome.com/posts/2014-02-10-node-dependencies</guid>
-            <dc:creator><![CDATA[Alex Gorbatchev]]></dc:creator>
-            <pubDate>Mon, 10 Feb 2014 18:57:16 GMT</pubDate>
         </item>
     </channel>
 </rss>

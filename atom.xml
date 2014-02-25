@@ -5,12 +5,80 @@
 	<link href="http://npmawesome.com/atom.xml" rel="self" />
 	<link href="http://npmawesome.com" />
 	<id>http://npmawesome.com</id>
-	<updated>2014-02-24T18:05:58.063Z</updated>
+	<updated>2014-02-25T17:20:13.382Z</updated>
 	<author>
 		<name>Alex Gorbatchev</name>
 		<email></email>
 	</author>
 
+	
+		<entry>
+			<title>webdriver.js</title>
+			<link href="http://npmawesome.com/posts/2014-02-25-webdriverjs"/>
+			<updated>2014-02-25T17:07:16.000Z</updated>
+			<id>http://npmawesome.com/posts/2014-02-25-webdriverjs</id>
+			<content type="html">&lt;p&gt;&lt;img class=&quot;hide-on-mobile&quot; src=&quot;https://2.gravatar.com/avatar/2c405e9d55507036d6cc2aff250c3146&quot; style=&quot;float: right; margin-left: 1em&quot;/&gt;
+&lt;a href=&quot;https://github.com/camme/webdriverjs&quot;&gt;webdriver.js&lt;/a&gt; is a module by &lt;a href=&quot;https://github.com/camme&quot;&gt;Camilo Tapia&lt;/a&gt; to render node.js error stack in a much more digestable way. This seems like it might a good module to add to your infrastracture if you, like me, constantly having to weed through the ugly stack messages to find relavant lines. &lt;a href=&quot;https://github.com/camme/webdriverjs&quot;&gt;webdriver.js&lt;/a&gt; is not the &amp;quot;official webdriverjs driver&amp;quot; says &lt;a href=&quot;https://github.com/christian-bromann&quot;&gt;Christian Bromann&lt;/a&gt; in &lt;a href=&quot;https://github.com/camme/webdriverjs/issues/138#issuecomment-32051980&quot;&gt;this thread&lt;/a&gt;:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;We&amp;#39;re trying to provide a selenium runner which is easy to use, highly extendable and compatible with all common JavaScript test frameworks. It uses an own chain API to execute all async commands in right order. The specialty of this library is that we wrap all JSONWire protocol commands in useful actions commands. So you don&amp;#39;t have to care about to get an element first and then call the click command; you just execute the click with a selector as parameter.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;pre&gt;&lt;code&gt;npm install webdriverjs
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&quot;usage&quot;&gt;Usage&lt;/h2&gt;
+&lt;pre&gt;&lt;code&gt;var webdriverjs = require(&amp;#39;webdriverjs&amp;#39;);
+
+var options = {
+  desiredCapabilities: {
+    browserName: &amp;#39;chrome&amp;#39;
+  }
+};
+
+webdriverjs
+  .remote(options)
+  .init()
+  .url(&amp;#39;http://www.google.com&amp;#39;)
+  .title(function(err, res) {
+    console.log(&amp;#39;Title was: &amp;#39; + res.value);
+  })
+  .end();
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&quot;selector-api&quot;&gt;Selector API&lt;/h2&gt;
+&lt;p&gt;The JsonWireProtocol provides several strategies to query an element. WebdriverJS simplifies these to make it more familiar with the common existing selector libraries like Sizzle. The following selector types are supported:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;CSS query selector&lt;/li&gt;
+&lt;li&gt;link text&lt;/li&gt;
+&lt;li&gt;partial link text&lt;/li&gt;
+&lt;li&gt;tag name&lt;/li&gt;
+&lt;li&gt;name attribute&lt;/li&gt;
+&lt;li&gt;xPath&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;more&quot;&gt;More&lt;/h2&gt;
+&lt;p&gt;Here is a simplified example of differences between the drivers:&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://code.google.com/p/selenium/wiki/WebDriverJs&quot;&gt;selenium-webdriverjs&lt;/a&gt;:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;driver.get(&amp;#39;http://www.google.com&amp;#39;);
+driver.findElement(webdriver.By.id(&amp;#39;q&amp;#39;)).sendKeys(&amp;#39;webdriver&amp;#39;);
+driver.findElement(webdriver.By.id(&amp;#39;btnG&amp;#39;)).click();
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;a href=&quot;https://github.com/admc/wd&quot;&gt;WD.js&lt;/a&gt;:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;browser
+  .get(&amp;quot;http://www.google.com&amp;quot;)
+  .elementById(&amp;#39;q&amp;#39;)
+  .sendKeys(&amp;#39;webdriver&amp;#39;)
+  .elementById(&amp;#39;btnG&amp;#39;)
+  .click()
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;a href=&quot;https://github.com/camme/webdriverjs&quot;&gt;webdriver.js&lt;/a&gt;:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;client
+    .url(&amp;#39;http://google.com&amp;#39;)
+    .setValue(&amp;#39;#q&amp;#39;,&amp;#39;webdriver&amp;#39;)
+    .click(&amp;#39;#btnG&amp;#39;)
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;a href=&quot;https://github.com/camme/webdriverjs&quot;&gt;webdriver.js&lt;/a&gt; has also almost all protocol commands implemented, so you can do the same with the standard JSONWire protocol commands.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;client
+    .url(&amp;#39;http://google.com&amp;#39;)
+    .element(&amp;#39;#q&amp;#39;, function(err,res) {
+        client.elementIdValue(res.value.ELEMENT, &amp;#39;webdriver&amp;#39;);
+    })
+    .element(&amp;#39;#btnG&amp;#39;, function(err,res) {
+        client.elementIdClick(res.value.ELEMENT);
+    });
+&lt;/code&gt;&lt;/pre&gt;</content>
+		</entry>
 	
 		<entry>
 			<title>pretty-error</title>
