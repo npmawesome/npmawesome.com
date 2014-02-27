@@ -5,10 +5,118 @@
         <description><![CDATA[Daily dose of awesome NPM modules for Node.js, old and new!]]></description>
         <link>http://npmawesome.com</link>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Tue, 25 Feb 2014 17:20:47 GMT</lastBuildDate>
+        <lastBuildDate>Thu, 27 Feb 2014 18:43:44 GMT</lastBuildDate>
         <atom:link href="http://npmawesome.com/rss" rel="self" type="application/rss+xml"/>
         <author><![CDATA[Alex Gorbatchev]]></author>
-        <pubDate>Tue, 25 Feb 2014 17:20:13 GMT</pubDate>
+        <pubDate>Thu, 27 Feb 2014 18:43:14 GMT</pubDate>
+        <item>
+            <title><![CDATA[qr-image]]></title>
+            <description><![CDATA[<div class="highlight">
+  <img class="hide-on-mobile" src="/images/posts/nodejitsu.png" style="height: 80px"/>
+  This post was written for <a href="https://blog.nodejitsu.com">Nodejitsu</a> blog and is crossposted here. <a href="https://blog.nodejitsu.com">Nodejitsu</a> loved what I was doing at <a href="http://npmawesome.com">npmawesome.com</a> and is now supporting the project.
+</div>
+
+<svg width="150" height="150" viewBox="0 0 27 27" style="float: right; margin-left: 1em;"><path d="M1 1h7v7h-7zM10 1h2v1h-1v1h-1zM13 1h4v1h1v2h-2v1h-1v-2h1v-1h-2v1h-1zM19 1h7v7h-7zM2 2v5h5v-5zM20 2v5h5v-5zM3 3h3v3h-3zM11 3h1v1h-1zM21 3h3v3h-3zM10 4h1v2h-1zM13 4h1v1h1v2h-1v-1h-1v1h-1v-2h1zM16 5h2v3h-1v-1h-1zM9 6h1v2h-1zM11 7h1v1h-1zM13 7h1v1h-1zM15 7h1v1h-1zM12 8h1v2h-1v1h-2v-1h-1v-1h3zM16 8h1v1h-1zM1 9h1v1h-1zM4 9h1v1h-1zM6 9h2v1h-1v1h-2v-1h1zM14 9h2v3h-1v-1h-2v-1h1zM17 9h2v1h1v1h-1v1h1v2h1v1h-1v1h1v1h1v-1h1v1h1v2h-2v1h2v1h-2v2h1v-1h1v2h-1v1h-1v-1h-1v-1h-1v-1h-1v1h-1v1h2v1h-2v1h-2v-2h-1v-1h1v-1h1v-2h-1v-1h-1v-2h-1v1h-2v-1h1v-2h-1v-2h2v-1h1v2h-1v2h1v-2h1v3h1v-1h1v1h1v-2h-1v-1h-1v-1h-1v-1h2v-1h-1zM20 9h1v1h-1zM2 10h2v1h-2zM25 10h1v2h-2v-1h1zM4 11h1v1h1v1h-1v1h1v1h3v1h2v-1h1v2h-1v3h-1v-1h-1v-1h1v-1h-1v1h-8v-1h1v-1h2v1h1v-1h-1v-1h-1v-1h1zM7 11h1v1h-1zM20 11h2v1h-2zM1 12h1v1h1v1h-2zM8 12h1v1h-1zM11 12h1v1h-1zM7 13h1v1h-1zM9 13h1v1h1v1h-2zM22 13h1v1h1v2h-1v-1h-1zM24 13h2v3h-1v-2h-1zM1 15h1v1h-1zM21 15h1v1h-1zM6 16v1h2v-1zM24 16h1v1h-1zM18 18v3h3v-3zM25 18h1v2h-2v-1h1zM1 19h7v7h-7zM14 19h1v1h-1zM19 19h1v1h-1zM2 20v5h5v-5zM9 20h1v1h-1zM12 20h2v1h2v1h-1v1h-2v-2h-1zM3 21h3v3h-3zM10 21h2v1h-1v4h-2v-1h1v-2h-1v-1h1zM24 21h1v1h-1zM25 23h1v1h-1zM12 24h3v2h-3zM20 25h1v1h-1zM24 25h2v1h-2z"/></svg>
+
+<p><a href="http://en.wikipedia.org/wiki/QR_code">QR code</a> is this super cool thing you probably have been seeing all over the place lately. It started appearing in North America a few years ago but the actual standard is close to two decades old. It allows you to embed any small amount of data that could be decoded with a basic camera equipped phone. Most common use case here is embedding URLs in printed adverising so that those who are interested could simply point their phone at the add and go to the site instead of having to type in URLs.</p>
+<p><a href="https://github.com/alexeyten/qr-image">qr-image</a> is a module by <a href="https://github.com/alexeyten">Alexey Ten</a> to render <a href="http://en.wikipedia.org/wiki/QR_code">QR code</a> with node.js and no external dependencies.</p>
+<pre><code>npm install qr-image
+</code></pre><h2 id="overview">Overview</h2>
+<ul>
+<li>No dependecies. This is a really cool bit, if you look at <a href="https://github.com/alexeyten/qr-image/blob/master/package.json"><code>package.json</code></a> there are literally no dependencies there.</li>
+<li>Generate image in <code>png</code>, <code>svg</code>, <code>eps</code> and <code>pdf</code> formats.</li>
+<li>Support UTF-8.</li>
+</ul>
+<h2 id="usage">Usage</h2>
+<pre><code>var qr = require(&#39;qr-image&#39;);
+var fs = require(&#39;fs&#39;);
+
+var code = qr.image(&#39;http://blog.nodejitsu.com&#39;, { type: &#39;svg&#39; });
+var output = fs.createWriteStream(&#39;nodejitsu.svg&#39;)
+
+code.pipe(output);
+</code></pre><p>Because we are dealing with streams here, hooking this up to HTTP server is super easy.</p>
+<pre><code>var qr = require(&#39;qr-image&#39;);
+var express = require(&#39;express&#39;);
+
+var app = express();
+
+app.get(&#39;/&#39;, function(req, res) {
+  var code = qr.image(new Date().toString(), { type: &#39;svg&#39; });
+  res.type(&#39;svg&#39;);
+  code.pipe(res);
+});
+
+app.listen(3000);
+</code></pre><p>Now, going to <code>http://localhost:3000</code> will spit out a QR code with current time. Wicked!</p>
+<h2 id="metadata">Metadata</h2>
+<p><a href="http://en.wikipedia.org/wiki/QR_code">QR code</a> allows you embed pretty much any text, but with some additional formatting you can tell scanning applications about the data and what you want them to do with it. Here are a few most common formats:</p>
+<div class="overflow"><table width="100%" border="0" cellspacing="0px" cellpadding="10px">
+  <thead>
+    <tr>
+      <th>Data Type</th>
+      <th>Data Format</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Website URL</th>
+      <td><a href="http://www.websitename.com">http://www.websitename.com</a> (include the “http://” so it recognizes the data as a website URL)</td>
+    </tr>
+    <tr>
+      <th>Pre-populated email address</th>
+      <td>mailto:name@email.com (include “mailto” so it recognizes the data as an email address)</td>
+    </tr>
+    <tr>
+      <th>Pre-Populated Telephone Number</th>
+      <td>+16365553344 (URI should include the country code to support users outside the country of origin)</td>
+    </tr>
+    <tr>
+      <th>Contact Information</th>
+      <td>LastName,FirstName;ADR:(insert address), (second address line), City, ST (Insert 5-digit zip code);TEL:+16365553344;EMAIL:name@email.com;;<strong>DO NOT</strong> use parenthesis or line breaks in code.<p></p>
+        <p>*For QR Codes, the MECARD standard format shown above is more standard than vCard standard format</p>
+      </td>
+    </tr>
+    <tr>
+      <th>Pre-populated SMS Message</th>
+      <td>smsto:number:message</td>
+    </tr>
+    <tr>
+      <th>Pre-populated MMS Message</th>
+      <td>mms:number:subject</td>
+    </tr>
+    <tr>
+      <th>Map or Location Coordinates</th>
+      <td>latitude, longitude, altitude in meters (a minus sign denotes a South latitude and a West longitude)code for Google offices: 40.71872,-73.98905, 100</td>
+    </tr>
+    <tr>
+      <th>Android Market URI for Android Devices</th>
+      <td>For a QR code you must replace all punctuation with code. For example,market://search?q=pub:”Search Query” becomes:<p></p>
+      <p>market://search?q=pub%3A%22Search%20Query%22</p></td>
+    </tr>
+    <tr>
+      <th>YouTube Video</th>
+      <td>youtube://ID (may work on iPhone, untested, unreleased, not standardized)</td>
+    </tr>
+    <tr>
+      <th>iCal Appointment</th>
+      <td>BEGIN:VEVENT<br>
+          SUMMARY:Test Meeting<br>
+          DTSTART:20110713T190000Z<br>
+          DTEND:20110713T200000Z<br>
+          END:VEVENT<br>
+          (untested, unreleased, not standardized)
+      </td>
+    </tr>
+  </tbody>
+</table></div>
+
+]]></description>
+            <link>http://npmawesome.com/posts/2014-02-27-qr-image</link>
+            <guid isPermaLink="true">http://npmawesome.com/posts/2014-02-27-qr-image</guid>
+            <dc:creator><![CDATA[Alex Gorbatchev]]></dc:creator>
+            <pubDate>Thu, 27 Feb 2014 18:25:57 GMT</pubDate>
+        </item>
         <item>
             <title><![CDATA[webdriver.js]]></title>
             <description><![CDATA[<p><img class="hide-on-mobile" src="https://2.gravatar.com/avatar/2c405e9d55507036d6cc2aff250c3146" style="float: right; margin-left: 1em"/>
@@ -527,36 +635,6 @@ I like the idea behind streaming JSON alot because you don&#39;t have to wait fo
             <guid isPermaLink="true">http://npmawesome.com/posts/2014-02-12-jsonstream</guid>
             <dc:creator><![CDATA[Alex Gorbatchev]]></dc:creator>
             <pubDate>Wed, 12 Feb 2014 18:07:44 GMT</pubDate>
-        </item>
-        <item>
-            <title><![CDATA[peer.js]]></title>
-            <description><![CDATA[<p><img class="hide-on-mobile" src="/images/posts/peerjs.png" style="float: right; margin-left: 1em"/>
-<a href="https://github.com/peers/peerjs">peer.js</a> provides a complete, configurable, and easy-to-use peer-to-peer API built on top of WebRTC, supporting both data channels and media streams. <a href="https://github.com/peers/peerjs">peer.js</a> wraps the browser&#39;s WebRTC implementation to provide a complete, configurable, and easy-to-use peer-to-peer connection API. Equipped with nothing but an ID, a peer can create a P2P data or media stream connection to a remote peer.</p>
-<pre><code>npm install peerjs
-</code></pre><p>To broker connections, <a href="https://github.com/peers/peerjs">peer.js</a> connects to a PeerServer (<a href="http://peerjs.com/peerserver">free hosted</a> or <a href="https://github.com/peers/peerjs-server">host your own</a>). Note that <strong>no peer-to-peer data goes through the server</strong> - the server acts only as connection broker.</p>
-<h2 id="usage">Usage</h2>
-<pre><code>var Peer = require(&#39;peerjs&#39;).Peer;
-
-// You can pick your own id or omit the id if you want to get a random one from the server.
-var peer = new Peer(&#39;pick-an-id&#39;, { key: &#39;myapikey&#39; });
-</code></pre><p>Connect</p>
-<pre><code>var conn = peer.connect(&#39;another-peers-id&#39;);
-conn.on(&#39;open&#39;, function() {
-  conn.send(&#39;hi!&#39;);
-});
-</code></pre><p>Receive</p>
-<pre><code>peer.on(&#39;connection&#39;, function(conn) {
-  conn.on(&#39;data&#39;, function(data) {
-    // Will print &#39;hi!&#39;
-    console.log(data);
-  });
-});
-</code></pre><p>Checkout the <a href="http://peerjs.com/docs/#api">awesome API docs</a> and take it out for a spin. You can create a video chat with just a few lines of code. Have you done any peer-to-peer stuff?</p>
-]]></description>
-            <link>http://npmawesome.com/posts/2014-02-11-peer-js</link>
-            <guid isPermaLink="true">http://npmawesome.com/posts/2014-02-11-peer-js</guid>
-            <dc:creator><![CDATA[Alex Gorbatchev]]></dc:creator>
-            <pubDate>Tue, 11 Feb 2014 17:59:37 GMT</pubDate>
         </item>
     </channel>
 </rss>

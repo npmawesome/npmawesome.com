@@ -5,12 +5,120 @@
 	<link href="http://npmawesome.com/atom.xml" rel="self" />
 	<link href="http://npmawesome.com" />
 	<id>http://npmawesome.com</id>
-	<updated>2014-02-25T17:20:13.382Z</updated>
+	<updated>2014-02-27T18:43:14.153Z</updated>
 	<author>
 		<name>Alex Gorbatchev</name>
 		<email></email>
 	</author>
 
+	
+		<entry>
+			<title>qr-image</title>
+			<link href="http://npmawesome.com/posts/2014-02-27-qr-image"/>
+			<updated>2014-02-27T18:25:57.000Z</updated>
+			<id>http://npmawesome.com/posts/2014-02-27-qr-image</id>
+			<content type="html">&lt;div class=&quot;highlight&quot;&gt;
+  &lt;img class=&quot;hide-on-mobile&quot; src=&quot;/images/posts/nodejitsu.png&quot; style=&quot;height: 80px&quot;/&gt;
+  This post was written for &lt;a href=&quot;https://blog.nodejitsu.com&quot;&gt;Nodejitsu&lt;/a&gt; blog and is crossposted here. &lt;a href=&quot;https://blog.nodejitsu.com&quot;&gt;Nodejitsu&lt;/a&gt; loved what I was doing at &lt;a href=&quot;http://npmawesome.com&quot;&gt;npmawesome.com&lt;/a&gt; and is now supporting the project.
+&lt;/div&gt;
+
+&lt;svg width=&quot;150&quot; height=&quot;150&quot; viewBox=&quot;0 0 27 27&quot; style=&quot;float: right; margin-left: 1em;&quot;&gt;&lt;path d=&quot;M1 1h7v7h-7zM10 1h2v1h-1v1h-1zM13 1h4v1h1v2h-2v1h-1v-2h1v-1h-2v1h-1zM19 1h7v7h-7zM2 2v5h5v-5zM20 2v5h5v-5zM3 3h3v3h-3zM11 3h1v1h-1zM21 3h3v3h-3zM10 4h1v2h-1zM13 4h1v1h1v2h-1v-1h-1v1h-1v-2h1zM16 5h2v3h-1v-1h-1zM9 6h1v2h-1zM11 7h1v1h-1zM13 7h1v1h-1zM15 7h1v1h-1zM12 8h1v2h-1v1h-2v-1h-1v-1h3zM16 8h1v1h-1zM1 9h1v1h-1zM4 9h1v1h-1zM6 9h2v1h-1v1h-2v-1h1zM14 9h2v3h-1v-1h-2v-1h1zM17 9h2v1h1v1h-1v1h1v2h1v1h-1v1h1v1h1v-1h1v1h1v2h-2v1h2v1h-2v2h1v-1h1v2h-1v1h-1v-1h-1v-1h-1v-1h-1v1h-1v1h2v1h-2v1h-2v-2h-1v-1h1v-1h1v-2h-1v-1h-1v-2h-1v1h-2v-1h1v-2h-1v-2h2v-1h1v2h-1v2h1v-2h1v3h1v-1h1v1h1v-2h-1v-1h-1v-1h-1v-1h2v-1h-1zM20 9h1v1h-1zM2 10h2v1h-2zM25 10h1v2h-2v-1h1zM4 11h1v1h1v1h-1v1h1v1h3v1h2v-1h1v2h-1v3h-1v-1h-1v-1h1v-1h-1v1h-8v-1h1v-1h2v1h1v-1h-1v-1h-1v-1h1zM7 11h1v1h-1zM20 11h2v1h-2zM1 12h1v1h1v1h-2zM8 12h1v1h-1zM11 12h1v1h-1zM7 13h1v1h-1zM9 13h1v1h1v1h-2zM22 13h1v1h1v2h-1v-1h-1zM24 13h2v3h-1v-2h-1zM1 15h1v1h-1zM21 15h1v1h-1zM6 16v1h2v-1zM24 16h1v1h-1zM18 18v3h3v-3zM25 18h1v2h-2v-1h1zM1 19h7v7h-7zM14 19h1v1h-1zM19 19h1v1h-1zM2 20v5h5v-5zM9 20h1v1h-1zM12 20h2v1h2v1h-1v1h-2v-2h-1zM3 21h3v3h-3zM10 21h2v1h-1v4h-2v-1h1v-2h-1v-1h1zM24 21h1v1h-1zM25 23h1v1h-1zM12 24h3v2h-3zM20 25h1v1h-1zM24 25h2v1h-2z&quot;/&gt;&lt;/svg&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://en.wikipedia.org/wiki/QR_code&quot;&gt;QR code&lt;/a&gt; is this super cool thing you probably have been seeing all over the place lately. It started appearing in North America a few years ago but the actual standard is close to two decades old. It allows you to embed any small amount of data that could be decoded with a basic camera equipped phone. Most common use case here is embedding URLs in printed adverising so that those who are interested could simply point their phone at the add and go to the site instead of having to type in URLs.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://github.com/alexeyten/qr-image&quot;&gt;qr-image&lt;/a&gt; is a module by &lt;a href=&quot;https://github.com/alexeyten&quot;&gt;Alexey Ten&lt;/a&gt; to render &lt;a href=&quot;http://en.wikipedia.org/wiki/QR_code&quot;&gt;QR code&lt;/a&gt; with node.js and no external dependencies.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;npm install qr-image
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&quot;overview&quot;&gt;Overview&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;No dependecies. This is a really cool bit, if you look at &lt;a href=&quot;https://github.com/alexeyten/qr-image/blob/master/package.json&quot;&gt;&lt;code&gt;package.json&lt;/code&gt;&lt;/a&gt; there are literally no dependencies there.&lt;/li&gt;
+&lt;li&gt;Generate image in &lt;code&gt;png&lt;/code&gt;, &lt;code&gt;svg&lt;/code&gt;, &lt;code&gt;eps&lt;/code&gt; and &lt;code&gt;pdf&lt;/code&gt; formats.&lt;/li&gt;
+&lt;li&gt;Support UTF-8.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;usage&quot;&gt;Usage&lt;/h2&gt;
+&lt;pre&gt;&lt;code&gt;var qr = require(&amp;#39;qr-image&amp;#39;);
+var fs = require(&amp;#39;fs&amp;#39;);
+
+var code = qr.image(&amp;#39;http://blog.nodejitsu.com&amp;#39;, { type: &amp;#39;svg&amp;#39; });
+var output = fs.createWriteStream(&amp;#39;nodejitsu.svg&amp;#39;)
+
+code.pipe(output);
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Because we are dealing with streams here, hooking this up to HTTP server is super easy.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;var qr = require(&amp;#39;qr-image&amp;#39;);
+var express = require(&amp;#39;express&amp;#39;);
+
+var app = express();
+
+app.get(&amp;#39;/&amp;#39;, function(req, res) {
+  var code = qr.image(new Date().toString(), { type: &amp;#39;svg&amp;#39; });
+  res.type(&amp;#39;svg&amp;#39;);
+  code.pipe(res);
+});
+
+app.listen(3000);
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Now, going to &lt;code&gt;http://localhost:3000&lt;/code&gt; will spit out a QR code with current time. Wicked!&lt;/p&gt;
+&lt;h2 id=&quot;metadata&quot;&gt;Metadata&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&quot;http://en.wikipedia.org/wiki/QR_code&quot;&gt;QR code&lt;/a&gt; allows you embed pretty much any text, but with some additional formatting you can tell scanning applications about the data and what you want them to do with it. Here are a few most common formats:&lt;/p&gt;
+&lt;div class=&quot;overflow&quot;&gt;&lt;table width=&quot;100%&quot; border=&quot;0&quot; cellspacing=&quot;0px&quot; cellpadding=&quot;10px&quot;&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;Data Type&lt;/th&gt;
+      &lt;th&gt;Data Format&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;th&gt;Website URL&lt;/th&gt;
+      &lt;td&gt;&lt;a href=&quot;http://www.websitename.com&quot;&gt;http://www.websitename.com&lt;/a&gt; (include the “http://” so it recognizes the data as a website URL)&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;Pre-populated email address&lt;/th&gt;
+      &lt;td&gt;mailto:name@email.com (include “mailto” so it recognizes the data as an email address)&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;Pre-Populated Telephone Number&lt;/th&gt;
+      &lt;td&gt;+16365553344 (URI should include the country code to support users outside the country of origin)&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;Contact Information&lt;/th&gt;
+      &lt;td&gt;LastName,FirstName;ADR:(insert address), (second address line), City, ST (Insert 5-digit zip code);TEL:+16365553344;EMAIL:name@email.com;;&lt;strong&gt;DO NOT&lt;/strong&gt; use parenthesis or line breaks in code.&lt;p&gt;&lt;/p&gt;
+        &lt;p&gt;*For QR Codes, the MECARD standard format shown above is more standard than vCard standard format&lt;/p&gt;
+      &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;Pre-populated SMS Message&lt;/th&gt;
+      &lt;td&gt;smsto:number:message&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;Pre-populated MMS Message&lt;/th&gt;
+      &lt;td&gt;mms:number:subject&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;Map or Location Coordinates&lt;/th&gt;
+      &lt;td&gt;latitude, longitude, altitude in meters (a minus sign denotes a South latitude and a West longitude)code for Google offices: 40.71872,-73.98905, 100&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;Android Market URI for Android Devices&lt;/th&gt;
+      &lt;td&gt;For a QR code you must replace all punctuation with code. For example,market://search?q=pub:”Search Query” becomes:&lt;p&gt;&lt;/p&gt;
+      &lt;p&gt;market://search?q=pub%3A%22Search%20Query%22&lt;/p&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;YouTube Video&lt;/th&gt;
+      &lt;td&gt;youtube://ID (may work on iPhone, untested, unreleased, not standardized)&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;iCal Appointment&lt;/th&gt;
+      &lt;td&gt;BEGIN:VEVENT&lt;br&gt;
+          SUMMARY:Test Meeting&lt;br&gt;
+          DTSTART:20110713T190000Z&lt;br&gt;
+          DTEND:20110713T200000Z&lt;br&gt;
+          END:VEVENT&lt;br&gt;
+          (untested, unreleased, not standardized)
+      &lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;&lt;/div&gt;
+
+</content>
+		</entry>
 	
 		<entry>
 			<title>webdriver.js</title>
