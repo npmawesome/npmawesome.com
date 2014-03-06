@@ -4,7 +4,7 @@ date: 2014-03-06T09:35:58-0800
 tags: npm, express, authentication
 
 npm:
-  repo: &repo zeMicro/lockit
+  repo: &repo zeMirco/lockit
   name: &name lockit
 
   author:
