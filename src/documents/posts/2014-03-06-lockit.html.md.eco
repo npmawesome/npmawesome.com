@@ -1,0 +1,144 @@
+---
+layout: post
+date: 2014-03-06T09:35:58-0800
+tags: npm, express, authentication
+
+npm:
+  repo: &repo zeMicro/lockit
+  name: &name lockit
+
+  author:
+    name: Mirco Zeiss
+    github: zeMirco
+
+slug: *name
+title: *name
+description: Lockit is an authentication solution for Express.
+---
+<div class="highlight">
+  <img class="hide-on-mobile" src="/images/posts/nodejitsu.png" style="height: 80px"/>
+  This post was written for [Nodejitsu] blog and is crossposted here. [Nodejitsu] loved what I was doing at [npmawesome.com] and is now supporting the project.
+</div>
+
+[Nodejitsu]: https://blog.nodejitsu.com
+[npmawesome.com]: http://npmawesome.com
+
+So you got a really cool idea for an app or a service. You get all fired up, talk to your friends about, write down some bullet points and run that exciting `git init` command in an empty folder. One of the first things you are most likely to in the very near future is begin working on some kind of user login and registration process.
+
+<img class="hide-on-mobile" src="https://1.gravatar.com/avatar/5664d023c8ab7b6eb69a93990198432e" style="float: right; margin-left: 1em"/>
+Of course, [passport.js] is great when you can leverage external authentication, but otherwise you are stuck rolling your own system… After a while you find yourself doing it over and over again. How boring! Wouldn't it be nice if somebody finally just wrote a module that you could plugin into your express app that would take care of all this user registration stuff?
+
+Well, look no further than <%- @npm() %>, which is a collection of modules written by <%- @author() %> that helps you with initial user registraion and password management flow.
+
+    <%- @install() %>
+
+## Features
+
+1. Supports multiple database adapters (MongoDB, CouchDB, SQL).
+1. Sends confirmation emails.
+1. Manages email address verification with verification link expiration.
+1. Brings own Bootstrap based views which are easy to customize.
+1. Account locking after too many failed login attempts.
+1. Events for `login`, `logout`, `signup` and `delete`.
+1. Implementation of [lots of](https://www.owasp.org/index.php/Guide_to_Authentication) [best](http://stackoverflow.com/questions/549/the-definitive-guide-to-form-based-website-authentication) [pratices](https://www.owasp.org/index.php/Authentication_Cheat_Sheet).
+1. REST API
+1. [Authentication for SPAs and CSRF support](http://mircozeiss.com/lockit-050-auth-for-single-page-apps-and-csrf/).
+
+## Usage
+
+    var Lockit = require('lockit');
+    var app = express();
+
+    // express middleware
+    // ...
+    // sessions are required
+    app.use(express.cookieParser('your secret here'));
+    app.use(express.cookieSession());
+
+    var config = {
+      db: 'mongodb://127.0.0.1/test',
+      dbCollection: 'users'
+    };
+
+    // use middleware before router so your own routes have access to
+    // req.session.email and req.session.username
+    var lockit = new Lockit(app, config);
+
+    // you now have all the routes like /login, /signup, etc.
+    // and you can listen on events. For example 'signup'
+    lockit.on('signup', function(user, res) {
+      console.log('a new user signed up');
+
+      // set signup.handleResponse to 'false' for this to work
+      res.send('Welcome!');
+    });
+
+    app.use(app.router);
+    // continue with express middleware
+    // ...
+
+## Emails
+
+By default of course emails aren't being sent. That means that you won't receive any signup and password reset tokens. To send emails you need an email server and you have pass the right settings:
+
+With [mailgun](http://www.mailgun.com/pricing) you can send up to 10,000 emails per month for free. `emailSettings` - see [nodemailer](https://github.com/andris9/Nodemailer) for more information.
+
+    config = {
+      emailType: 'SMTP',
+      emailSettings: {
+        service: 'Mailgun',
+        auth: {
+          user: 'postmaster@username.mailgun.org',
+          pass: 'secret-password'
+        }
+      }
+    }
+
+## Custom views
+
+Lockit comes with built-in views which are based on Bootstrap. If you want to use your own custom views you can. It is dead simple. Put them into your `views` folder, for example `views/lockit/myLogin.jade`.
+
+    config = {
+      login: {
+        route: '/login',
+        logoutRoute: '/logout',
+        views: {
+          login: 'lockit/myLogin.jade',
+          loggedOut: 'lockit/myLogoutSuccess.jade'
+        }
+      }
+    }
+
+## Routes included
+
+From [lockit-signup](https://github.com/zeMirco/lockit-signup)
+
+ - GET /signup
+ - POST /signup
+ - GET /signup/:token
+ - GET /signup/resend-verification
+ - POST /signup/resend-verification
+
+From [lockit-login](https://github.com/zeMirco/lockit-login)
+
+ - GET /login
+ - POST /login
+ - GET /logout
+
+From [lockit-forgot-password](https://github.com/zeMirco/lockit-forgot-password)
+
+ - GET /forgot-password
+ - POST /forgot-password
+ - GET /forgot-password/:token
+ - POST /forgot-password/:token
+
+From [lockit-delete-account](https://github.com/zeMirco/lockit-delete-account)
+
+ - GET /delete-account
+ - POST /delete-account
+
+## Closing thoughts
+
+I love how customizable <%- @npm() %> is and yet comes with very reasonable defaults. It's has pretty much everything you need to get started with basic user registration and password management flow. Checkout <%- @npm() %> github page for full set of options as well as its associated modules.
+
+[passport.js]: http://passportjs.org/
