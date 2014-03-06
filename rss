@@ -5,10 +5,10 @@
         <description><![CDATA[Daily dose of awesome NPM modules for Node.js, old and new!]]></description>
         <link>http://npmawesome.com</link>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Thu, 06 Mar 2014 17:41:18 GMT</lastBuildDate>
+        <lastBuildDate>Thu, 06 Mar 2014 18:21:20 GMT</lastBuildDate>
         <atom:link href="http://npmawesome.com/rss" rel="self" type="application/rss+xml"/>
         <author><![CDATA[Alex Gorbatchev]]></author>
-        <pubDate>Thu, 06 Mar 2014 17:40:40 GMT</pubDate>
+        <pubDate>Thu, 06 Mar 2014 18:20:44 GMT</pubDate>
         <item>
             <title><![CDATA[lockit]]></title>
             <description><![CDATA[<div class="highlight">
@@ -19,7 +19,7 @@
 <p>So you got a really cool idea for an app or a service. You get all fired up, talk to your friends about, write down some bullet points and run that exciting <code>git init</code> command in an empty folder. One of the first things you are most likely to in the very near future is begin working on some kind of user login and registration process.</p>
 <p><img class="hide-on-mobile" src="https://1.gravatar.com/avatar/5664d023c8ab7b6eb69a93990198432e" style="float: right; margin-left: 1em"/>
 Of course, <a href="http://passportjs.org/">passport.js</a> is great when you can leverage external authentication, but otherwise you are stuck rolling your own system… After a while you find yourself doing it over and over again. How boring! Wouldn&#39;t it be nice if somebody finally just wrote a module that you could plugin into your express app that would take care of all this user registration stuff?</p>
-<p>Well, look no further than <a href="https://github.com/zeMicro/lockit">lockit</a>, which is a collection of modules written by <a href="https://github.com/zeMirco">Mirco Zeiss</a> that helps you with initial user registraion and password management flow.</p>
+<p>Well, look no further than <a href="https://github.com/zeMirco/lockit">lockit</a>, which is a collection of modules written by <a href="https://github.com/zeMirco">Mirco Zeiss</a> that helps you with initial user registraion and password management flow.</p>
 <pre><code>npm install lockit
 </code></pre><h2 id="features">Features</h2>
 <ol>
@@ -117,7 +117,7 @@ app.use(app.router);
 <li>POST /delete-account</li>
 </ul>
 <h2 id="closing-thoughts">Closing thoughts</h2>
-<p>I love how customizable <a href="https://github.com/zeMicro/lockit">lockit</a> is and yet comes with very reasonable defaults. It&#39;s has pretty much everything you need to get started with basic user registration and password management flow. Checkout <a href="https://github.com/zeMicro/lockit">lockit</a> github page for full set of options as well as its associated modules.</p>
+<p>I love how customizable <a href="https://github.com/zeMirco/lockit">lockit</a> is and yet comes with very reasonable defaults. It&#39;s has pretty much everything you need to get started with basic user registration and password management flow. Checkout <a href="https://github.com/zeMirco/lockit">lockit</a> github page for full set of options as well as its associated modules.</p>
 ]]></description>
             <link>http://npmawesome.com/posts/2014-03-06-lockit</link>
             <guid isPermaLink="true">http://npmawesome.com/posts/2014-03-06-lockit</guid>

@@ -5,7 +5,7 @@
 	<link href="http://npmawesome.com/atom.xml" rel="self" />
 	<link href="http://npmawesome.com" />
 	<id>http://npmawesome.com</id>
-	<updated>2014-03-06T17:40:40.866Z</updated>
+	<updated>2014-03-06T18:20:44.216Z</updated>
 	<author>
 		<name>Alex Gorbatchev</name>
 		<email></email>
@@ -25,7 +25,7 @@
 &lt;p&gt;So you got a really cool idea for an app or a service. You get all fired up, talk to your friends about, write down some bullet points and run that exciting &lt;code&gt;git init&lt;/code&gt; command in an empty folder. One of the first things you are most likely to in the very near future is begin working on some kind of user login and registration process.&lt;/p&gt;
 &lt;p&gt;&lt;img class=&quot;hide-on-mobile&quot; src=&quot;https://1.gravatar.com/avatar/5664d023c8ab7b6eb69a93990198432e&quot; style=&quot;float: right; margin-left: 1em&quot;/&gt;
 Of course, &lt;a href=&quot;http://passportjs.org/&quot;&gt;passport.js&lt;/a&gt; is great when you can leverage external authentication, but otherwise you are stuck rolling your own system… After a while you find yourself doing it over and over again. How boring! Wouldn&amp;#39;t it be nice if somebody finally just wrote a module that you could plugin into your express app that would take care of all this user registration stuff?&lt;/p&gt;
-&lt;p&gt;Well, look no further than &lt;a href=&quot;https://github.com/zeMicro/lockit&quot;&gt;lockit&lt;/a&gt;, which is a collection of modules written by &lt;a href=&quot;https://github.com/zeMirco&quot;&gt;Mirco Zeiss&lt;/a&gt; that helps you with initial user registraion and password management flow.&lt;/p&gt;
+&lt;p&gt;Well, look no further than &lt;a href=&quot;https://github.com/zeMirco/lockit&quot;&gt;lockit&lt;/a&gt;, which is a collection of modules written by &lt;a href=&quot;https://github.com/zeMirco&quot;&gt;Mirco Zeiss&lt;/a&gt; that helps you with initial user registraion and password management flow.&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;npm install lockit
 &lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&quot;features&quot;&gt;Features&lt;/h2&gt;
 &lt;ol&gt;
@@ -123,7 +123,7 @@ app.use(app.router);
 &lt;li&gt;POST /delete-account&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2 id=&quot;closing-thoughts&quot;&gt;Closing thoughts&lt;/h2&gt;
-&lt;p&gt;I love how customizable &lt;a href=&quot;https://github.com/zeMicro/lockit&quot;&gt;lockit&lt;/a&gt; is and yet comes with very reasonable defaults. It&amp;#39;s has pretty much everything you need to get started with basic user registration and password management flow. Checkout &lt;a href=&quot;https://github.com/zeMicro/lockit&quot;&gt;lockit&lt;/a&gt; github page for full set of options as well as its associated modules.&lt;/p&gt;
+&lt;p&gt;I love how customizable &lt;a href=&quot;https://github.com/zeMirco/lockit&quot;&gt;lockit&lt;/a&gt; is and yet comes with very reasonable defaults. It&amp;#39;s has pretty much everything you need to get started with basic user registration and password management flow. Checkout &lt;a href=&quot;https://github.com/zeMirco/lockit&quot;&gt;lockit&lt;/a&gt; github page for full set of options as well as its associated modules.&lt;/p&gt;
 </content>
 		</entry>
 	
