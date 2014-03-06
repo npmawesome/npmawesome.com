@@ -5,10 +5,125 @@
         <description><![CDATA[Daily dose of awesome NPM modules for Node.js, old and new!]]></description>
         <link>http://npmawesome.com</link>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Thu, 27 Feb 2014 18:43:44 GMT</lastBuildDate>
+        <lastBuildDate>Thu, 06 Mar 2014 17:41:18 GMT</lastBuildDate>
         <atom:link href="http://npmawesome.com/rss" rel="self" type="application/rss+xml"/>
         <author><![CDATA[Alex Gorbatchev]]></author>
-        <pubDate>Thu, 27 Feb 2014 18:43:14 GMT</pubDate>
+        <pubDate>Thu, 06 Mar 2014 17:40:40 GMT</pubDate>
+        <item>
+            <title><![CDATA[lockit]]></title>
+            <description><![CDATA[<div class="highlight">
+  <img class="hide-on-mobile" src="/images/posts/nodejitsu.png" style="height: 80px"/>
+  This post was written for <a href="https://blog.nodejitsu.com">Nodejitsu</a> blog and is crossposted here. <a href="https://blog.nodejitsu.com">Nodejitsu</a> loved what I was doing at <a href="http://npmawesome.com">npmawesome.com</a> and is now supporting the project.
+</div>
+
+<p>So you got a really cool idea for an app or a service. You get all fired up, talk to your friends about, write down some bullet points and run that exciting <code>git init</code> command in an empty folder. One of the first things you are most likely to in the very near future is begin working on some kind of user login and registration process.</p>
+<p><img class="hide-on-mobile" src="https://1.gravatar.com/avatar/5664d023c8ab7b6eb69a93990198432e" style="float: right; margin-left: 1em"/>
+Of course, <a href="http://passportjs.org/">passport.js</a> is great when you can leverage external authentication, but otherwise you are stuck rolling your own system… After a while you find yourself doing it over and over again. How boring! Wouldn&#39;t it be nice if somebody finally just wrote a module that you could plugin into your express app that would take care of all this user registration stuff?</p>
+<p>Well, look no further than <a href="https://github.com/zeMicro/lockit">lockit</a>, which is a collection of modules written by <a href="https://github.com/zeMirco">Mirco Zeiss</a> that helps you with initial user registraion and password management flow.</p>
+<pre><code>npm install lockit
+</code></pre><h2 id="features">Features</h2>
+<ol>
+<li>Supports multiple database adapters (MongoDB, CouchDB, SQL).</li>
+<li>Sends confirmation emails.</li>
+<li>Manages email address verification with verification link expiration.</li>
+<li>Brings own Bootstrap based views which are easy to customize.</li>
+<li>Account locking after too many failed login attempts.</li>
+<li>Events for <code>login</code>, <code>logout</code>, <code>signup</code> and <code>delete</code>.</li>
+<li>Implementation of <a href="https://www.owasp.org/index.php/Guide_to_Authentication">lots of</a> <a href="http://stackoverflow.com/questions/549/the-definitive-guide-to-form-based-website-authentication">best</a> <a href="https://www.owasp.org/index.php/Authentication_Cheat_Sheet">pratices</a>.</li>
+<li>REST API</li>
+<li><a href="http://mircozeiss.com/lockit-050-auth-for-single-page-apps-and-csrf/">Authentication for SPAs and CSRF support</a>.</li>
+</ol>
+<h2 id="usage">Usage</h2>
+<pre><code>var Lockit = require(&#39;lockit&#39;);
+var app = express();
+
+// express middleware
+// ...
+// sessions are required
+app.use(express.cookieParser(&#39;your secret here&#39;));
+app.use(express.cookieSession());
+
+var config = {
+  db: &#39;mongodb://127.0.0.1/test&#39;,
+  dbCollection: &#39;users&#39;
+};
+
+// use middleware before router so your own routes have access to
+// req.session.email and req.session.username
+var lockit = new Lockit(app, config);
+
+// you now have all the routes like /login, /signup, etc.
+// and you can listen on events. For example &#39;signup&#39;
+lockit.on(&#39;signup&#39;, function(user, res) {
+  console.log(&#39;a new user signed up&#39;);
+
+  // set signup.handleResponse to &#39;false&#39; for this to work
+  res.send(&#39;Welcome!&#39;);
+});
+
+app.use(app.router);
+// continue with express middleware
+// ...
+</code></pre><h2 id="emails">Emails</h2>
+<p>By default of course emails aren&#39;t being sent. That means that you won&#39;t receive any signup and password reset tokens. To send emails you need an email server and you have pass the right settings:</p>
+<p>With <a href="http://www.mailgun.com/pricing">mailgun</a> you can send up to 10,000 emails per month for free. <code>emailSettings</code> - see <a href="https://github.com/andris9/Nodemailer">nodemailer</a> for more information.</p>
+<pre><code>config = {
+  emailType: &#39;SMTP&#39;,
+  emailSettings: {
+    service: &#39;Mailgun&#39;,
+    auth: {
+      user: &#39;postmaster@username.mailgun.org&#39;,
+      pass: &#39;secret-password&#39;
+    }
+  }
+}
+</code></pre><h2 id="custom-views">Custom views</h2>
+<p>Lockit comes with built-in views which are based on Bootstrap. If you want to use your own custom views you can. It is dead simple. Put them into your <code>views</code> folder, for example <code>views/lockit/myLogin.jade</code>.</p>
+<pre><code>config = {
+  login: {
+    route: &#39;/login&#39;,
+    logoutRoute: &#39;/logout&#39;,
+    views: {
+      login: &#39;lockit/myLogin.jade&#39;,
+      loggedOut: &#39;lockit/myLogoutSuccess.jade&#39;
+    }
+  }
+}
+</code></pre><h2 id="routes-included">Routes included</h2>
+<p>From <a href="https://github.com/zeMirco/lockit-signup">lockit-signup</a></p>
+<ul>
+<li>GET /signup</li>
+<li>POST /signup</li>
+<li>GET /signup/:token</li>
+<li>GET /signup/resend-verification</li>
+<li>POST /signup/resend-verification</li>
+</ul>
+<p>From <a href="https://github.com/zeMirco/lockit-login">lockit-login</a></p>
+<ul>
+<li>GET /login</li>
+<li>POST /login</li>
+<li>GET /logout</li>
+</ul>
+<p>From <a href="https://github.com/zeMirco/lockit-forgot-password">lockit-forgot-password</a></p>
+<ul>
+<li>GET /forgot-password</li>
+<li>POST /forgot-password</li>
+<li>GET /forgot-password/:token</li>
+<li>POST /forgot-password/:token</li>
+</ul>
+<p>From <a href="https://github.com/zeMirco/lockit-delete-account">lockit-delete-account</a></p>
+<ul>
+<li>GET /delete-account</li>
+<li>POST /delete-account</li>
+</ul>
+<h2 id="closing-thoughts">Closing thoughts</h2>
+<p>I love how customizable <a href="https://github.com/zeMicro/lockit">lockit</a> is and yet comes with very reasonable defaults. It&#39;s has pretty much everything you need to get started with basic user registration and password management flow. Checkout <a href="https://github.com/zeMicro/lockit">lockit</a> github page for full set of options as well as its associated modules.</p>
+]]></description>
+            <link>http://npmawesome.com/posts/2014-03-06-lockit</link>
+            <guid isPermaLink="true">http://npmawesome.com/posts/2014-03-06-lockit</guid>
+            <dc:creator><![CDATA[Alex Gorbatchev]]></dc:creator>
+            <pubDate>Thu, 06 Mar 2014 17:35:58 GMT</pubDate>
+        </item>
         <item>
             <title><![CDATA[qr-image]]></title>
             <description><![CDATA[<div class="highlight">
@@ -603,38 +718,6 @@ function getUserById(id, cb) {
             <guid isPermaLink="true">http://npmawesome.com/posts/2014-02-13-domain-context</guid>
             <dc:creator><![CDATA[Alex Gorbatchev]]></dc:creator>
             <pubDate>Thu, 13 Feb 2014 21:20:38 GMT</pubDate>
-        </item>
-        <item>
-            <title><![CDATA[JSONStream]]></title>
-            <description><![CDATA[<p><a href="https://github.com/dominictarr/JSONStream">JSONStream</a> is a module by <a href="https://github.com/dominictarr">Dominic Tarr</a> for streaming <code>JSON.parse</code> and <code>JSON.stringify</code>.</p>
-<pre><code>npm install jsonstream
-</code></pre><h2 id="usage">Usage</h2>
-<pre><code>var request = require(&#39;request&#39;),
-    JSONStream = require(&#39;JSONStream&#39;),
-    es = require(&#39;event-stream&#39;)
-    ;
-
-var parser = JSONStream.parse([&#39;rows&#39;, true]),
-    req = request({url: &#39;http://isaacs.couchone.com/registry/_all_docs&#39;}),
-    logger = es.mapSync(function (data) {
-      console.error(data);
-      return data;
-    })
-
-request({url: &#39;http://isaacs.couchone.com/registry/_all_docs&#39;})
-  .pipe(JSONStream.parse(&#39;rows.*&#39;))
-  .pipe(es.mapSync(function (data) {
-    console.error(data);
-    return data;
-  }));
-</code></pre><p><img class="hide-on-mobile" src="/images/posts/json.svg" style="float: right; width: 100px; margin-left: 1em"/>
-I like the idea behind streaming JSON alot because you don&#39;t have to wait for the whole document to come down the pipe, especially if it&#39;s very large. It can also integrate with <a href="http://gulpjs.com">gulp.js</a> very nicely. The really cool thing for me is that you can react to specific nodes in the data structure vs having to seek them out and loop over them manually.</p>
-<p>Are you dealing with large JSON structures on your project?</p>
-]]></description>
-            <link>http://npmawesome.com/posts/2014-02-12-jsonstream</link>
-            <guid isPermaLink="true">http://npmawesome.com/posts/2014-02-12-jsonstream</guid>
-            <dc:creator><![CDATA[Alex Gorbatchev]]></dc:creator>
-            <pubDate>Wed, 12 Feb 2014 18:07:44 GMT</pubDate>
         </item>
     </channel>
 </rss>

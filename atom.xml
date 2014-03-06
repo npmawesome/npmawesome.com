@@ -5,12 +5,127 @@
 	<link href="http://npmawesome.com/atom.xml" rel="self" />
 	<link href="http://npmawesome.com" />
 	<id>http://npmawesome.com</id>
-	<updated>2014-02-27T18:43:14.153Z</updated>
+	<updated>2014-03-06T17:40:40.866Z</updated>
 	<author>
 		<name>Alex Gorbatchev</name>
 		<email></email>
 	</author>
 
+	
+		<entry>
+			<title>lockit</title>
+			<link href="http://npmawesome.com/posts/2014-03-06-lockit"/>
+			<updated>2014-03-06T17:35:58.000Z</updated>
+			<id>http://npmawesome.com/posts/2014-03-06-lockit</id>
+			<content type="html">&lt;div class=&quot;highlight&quot;&gt;
+  &lt;img class=&quot;hide-on-mobile&quot; src=&quot;/images/posts/nodejitsu.png&quot; style=&quot;height: 80px&quot;/&gt;
+  This post was written for &lt;a href=&quot;https://blog.nodejitsu.com&quot;&gt;Nodejitsu&lt;/a&gt; blog and is crossposted here. &lt;a href=&quot;https://blog.nodejitsu.com&quot;&gt;Nodejitsu&lt;/a&gt; loved what I was doing at &lt;a href=&quot;http://npmawesome.com&quot;&gt;npmawesome.com&lt;/a&gt; and is now supporting the project.
+&lt;/div&gt;
+
+&lt;p&gt;So you got a really cool idea for an app or a service. You get all fired up, talk to your friends about, write down some bullet points and run that exciting &lt;code&gt;git init&lt;/code&gt; command in an empty folder. One of the first things you are most likely to in the very near future is begin working on some kind of user login and registration process.&lt;/p&gt;
+&lt;p&gt;&lt;img class=&quot;hide-on-mobile&quot; src=&quot;https://1.gravatar.com/avatar/5664d023c8ab7b6eb69a93990198432e&quot; style=&quot;float: right; margin-left: 1em&quot;/&gt;
+Of course, &lt;a href=&quot;http://passportjs.org/&quot;&gt;passport.js&lt;/a&gt; is great when you can leverage external authentication, but otherwise you are stuck rolling your own system… After a while you find yourself doing it over and over again. How boring! Wouldn&amp;#39;t it be nice if somebody finally just wrote a module that you could plugin into your express app that would take care of all this user registration stuff?&lt;/p&gt;
+&lt;p&gt;Well, look no further than &lt;a href=&quot;https://github.com/zeMicro/lockit&quot;&gt;lockit&lt;/a&gt;, which is a collection of modules written by &lt;a href=&quot;https://github.com/zeMirco&quot;&gt;Mirco Zeiss&lt;/a&gt; that helps you with initial user registraion and password management flow.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;npm install lockit
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&quot;features&quot;&gt;Features&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;Supports multiple database adapters (MongoDB, CouchDB, SQL).&lt;/li&gt;
+&lt;li&gt;Sends confirmation emails.&lt;/li&gt;
+&lt;li&gt;Manages email address verification with verification link expiration.&lt;/li&gt;
+&lt;li&gt;Brings own Bootstrap based views which are easy to customize.&lt;/li&gt;
+&lt;li&gt;Account locking after too many failed login attempts.&lt;/li&gt;
+&lt;li&gt;Events for &lt;code&gt;login&lt;/code&gt;, &lt;code&gt;logout&lt;/code&gt;, &lt;code&gt;signup&lt;/code&gt; and &lt;code&gt;delete&lt;/code&gt;.&lt;/li&gt;
+&lt;li&gt;Implementation of &lt;a href=&quot;https://www.owasp.org/index.php/Guide_to_Authentication&quot;&gt;lots of&lt;/a&gt; &lt;a href=&quot;http://stackoverflow.com/questions/549/the-definitive-guide-to-form-based-website-authentication&quot;&gt;best&lt;/a&gt; &lt;a href=&quot;https://www.owasp.org/index.php/Authentication_Cheat_Sheet&quot;&gt;pratices&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;REST API&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://mircozeiss.com/lockit-050-auth-for-single-page-apps-and-csrf/&quot;&gt;Authentication for SPAs and CSRF support&lt;/a&gt;.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&quot;usage&quot;&gt;Usage&lt;/h2&gt;
+&lt;pre&gt;&lt;code&gt;var Lockit = require(&amp;#39;lockit&amp;#39;);
+var app = express();
+
+// express middleware
+// ...
+// sessions are required
+app.use(express.cookieParser(&amp;#39;your secret here&amp;#39;));
+app.use(express.cookieSession());
+
+var config = {
+  db: &amp;#39;mongodb://127.0.0.1/test&amp;#39;,
+  dbCollection: &amp;#39;users&amp;#39;
+};
+
+// use middleware before router so your own routes have access to
+// req.session.email and req.session.username
+var lockit = new Lockit(app, config);
+
+// you now have all the routes like /login, /signup, etc.
+// and you can listen on events. For example &amp;#39;signup&amp;#39;
+lockit.on(&amp;#39;signup&amp;#39;, function(user, res) {
+  console.log(&amp;#39;a new user signed up&amp;#39;);
+
+  // set signup.handleResponse to &amp;#39;false&amp;#39; for this to work
+  res.send(&amp;#39;Welcome!&amp;#39;);
+});
+
+app.use(app.router);
+// continue with express middleware
+// ...
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&quot;emails&quot;&gt;Emails&lt;/h2&gt;
+&lt;p&gt;By default of course emails aren&amp;#39;t being sent. That means that you won&amp;#39;t receive any signup and password reset tokens. To send emails you need an email server and you have pass the right settings:&lt;/p&gt;
+&lt;p&gt;With &lt;a href=&quot;http://www.mailgun.com/pricing&quot;&gt;mailgun&lt;/a&gt; you can send up to 10,000 emails per month for free. &lt;code&gt;emailSettings&lt;/code&gt; - see &lt;a href=&quot;https://github.com/andris9/Nodemailer&quot;&gt;nodemailer&lt;/a&gt; for more information.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;config = {
+  emailType: &amp;#39;SMTP&amp;#39;,
+  emailSettings: {
+    service: &amp;#39;Mailgun&amp;#39;,
+    auth: {
+      user: &amp;#39;postmaster@username.mailgun.org&amp;#39;,
+      pass: &amp;#39;secret-password&amp;#39;
+    }
+  }
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&quot;custom-views&quot;&gt;Custom views&lt;/h2&gt;
+&lt;p&gt;Lockit comes with built-in views which are based on Bootstrap. If you want to use your own custom views you can. It is dead simple. Put them into your &lt;code&gt;views&lt;/code&gt; folder, for example &lt;code&gt;views/lockit/myLogin.jade&lt;/code&gt;.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;config = {
+  login: {
+    route: &amp;#39;/login&amp;#39;,
+    logoutRoute: &amp;#39;/logout&amp;#39;,
+    views: {
+      login: &amp;#39;lockit/myLogin.jade&amp;#39;,
+      loggedOut: &amp;#39;lockit/myLogoutSuccess.jade&amp;#39;
+    }
+  }
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&quot;routes-included&quot;&gt;Routes included&lt;/h2&gt;
+&lt;p&gt;From &lt;a href=&quot;https://github.com/zeMirco/lockit-signup&quot;&gt;lockit-signup&lt;/a&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;GET /signup&lt;/li&gt;
+&lt;li&gt;POST /signup&lt;/li&gt;
+&lt;li&gt;GET /signup/:token&lt;/li&gt;
+&lt;li&gt;GET /signup/resend-verification&lt;/li&gt;
+&lt;li&gt;POST /signup/resend-verification&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;From &lt;a href=&quot;https://github.com/zeMirco/lockit-login&quot;&gt;lockit-login&lt;/a&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;GET /login&lt;/li&gt;
+&lt;li&gt;POST /login&lt;/li&gt;
+&lt;li&gt;GET /logout&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;From &lt;a href=&quot;https://github.com/zeMirco/lockit-forgot-password&quot;&gt;lockit-forgot-password&lt;/a&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;GET /forgot-password&lt;/li&gt;
+&lt;li&gt;POST /forgot-password&lt;/li&gt;
+&lt;li&gt;GET /forgot-password/:token&lt;/li&gt;
+&lt;li&gt;POST /forgot-password/:token&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;From &lt;a href=&quot;https://github.com/zeMirco/lockit-delete-account&quot;&gt;lockit-delete-account&lt;/a&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;GET /delete-account&lt;/li&gt;
+&lt;li&gt;POST /delete-account&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;closing-thoughts&quot;&gt;Closing thoughts&lt;/h2&gt;
+&lt;p&gt;I love how customizable &lt;a href=&quot;https://github.com/zeMicro/lockit&quot;&gt;lockit&lt;/a&gt; is and yet comes with very reasonable defaults. It&amp;#39;s has pretty much everything you need to get started with basic user registration and password management flow. Checkout &lt;a href=&quot;https://github.com/zeMicro/lockit&quot;&gt;lockit&lt;/a&gt; github page for full set of options as well as its associated modules.&lt;/p&gt;
+</content>
+		</entry>
 	
 		<entry>
 			<title>qr-image</title>
