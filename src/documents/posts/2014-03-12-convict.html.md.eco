@@ -1,0 +1,152 @@
+---
+layout: post
+date: 2014-12-27T10:25:57-0800
+tags: npm, configuration
+
+npm:
+  repo: &repo mozilla/node-convict
+  name: &name convict
+
+  author:
+    name: Lloyd Hilaiel
+    github: lloyd
+
+slug: *name
+title: *name
+description: convict is a module to manage application configuration.
+---
+<div class="highlight">
+  <img class="hide-on-mobile" src="/images/posts/nodejitsu.png" style="height: 80px"/>
+  This post was written for [Nodejitsu] blog and is crossposted here. [Nodejitsu] loved what I was doing at [npmawesome.com] and is now supporting the project.
+</div>
+
+[Nodejitsu]: https://blog.nodejitsu.com
+[npmawesome.com]: http://npmawesome.com
+
+Managing application configuration is one of the cornerstones to a reducing stress that comes from deploying Node.js applications to production environment. It's pretty easy if all you have to worry about is the port that your web server is listening on and database connection. But what do you do when you have a dozen or so external services, local folders, multiple connections and so on to have to keep track? And to top it off, all of this varies across development workstations, staging and production.
+
+<img class="hide-on-mobile" src="https://0.gravatar.com/avatar/93621c22c5e09b5f980c39e8eedbf68c" style="float: right; margin-left: 1em"/>
+To accomplish this for the last couple of years I've been using <%- @npm() %>, written by <%- @author() %> at Mozilla, with great success. Before diving into <%- @npm() %> lets first take a moment to review a typical setup for configuring Node.js applications:
+
+1. in your application you `require` some settings file
+1. the settings need to vary based on running environment (eg development, staging, production, etc)
+1. you don't want to commit your production credentials into git
+1. make use of environment variables to configure environments
+
+This is the base line, but there are a few things that make our lives easier, such as:
+
+1. configuration validation prevents app execution if invalid parameters are set or missing all together
+1. exceptions are thrown if trying to read non existing configuration variables (to help combat typos)
+
+Lets get started:
+
+    <%- @install() %>
+
+## Features
+
+* **Loading and merging**: configurations are loaded from disk or inline and merged. JSON files are loaded with `cjson` so comments are welcome.
+* **Environmental variables**: values can be derived from environmental variables
+* **Command-line arguments**: values can also be derived from command-line arguments
+* **Validation**: configurations are validated against your schema, generating an error report with all errors that are found
+
+## Usage
+
+First thing we need to do is define our configuration schema. I'm going to provide a bit of an extensive configuration to give you a more realistic example.
+
+    var convict = require('convict');
+
+    var config = convict({
+      env: {
+        doc: 'The applicaton environment.',
+        format: ['production', 'development', 'test'],
+        default: 'development',
+        env: 'NODE_ENV',
+        arg: 'env'
+      },
+      mongo: {
+        main: {
+          doc: 'Main database',
+          format: 'url',
+          default: 'mongodb://...',
+          env: 'MONGO_MAIN'
+        },
+        sessions: {
+          doc: 'Sessions database',
+          format: 'url',
+          default: 'mongodb://...',
+          env: 'MONGO_SESSIONS'
+        }
+      },
+      express: {
+        ip: {
+          doc: 'The IP address to bind.',
+          format: 'ipaddress',
+          default: '127.0.0.1',
+          env: 'IP_ADDRESS',
+        },
+        http: {
+          port: {
+            doc: 'HTTP port to bind.',
+            format: 'port',
+            default: 3080,
+            env: 'HTTP_PORT'
+          }
+        },
+        https: {
+          port: {
+            doc: 'HTTPs port to bind.',
+            format: 'port',
+            default: 3443,
+            env: 'HTTPS_PORT'
+          }
+        }
+      }
+    });
+
+    // load environment dependent configuration
+    config.loadFile('./config/' + config.get('env') + '.json');
+
+    // validate
+    config.validate();
+
+    module.exports = config;
+
+Then in your application:
+
+    var express = require('express');
+    var config = require('./config.js');
+    var app = express();
+
+    if(config.get('env') === 'production') {
+      app.use(express.logger());
+    }
+
+    app.listen(
+      config.get('express.http.port'),
+      config.get('express.http.ip')
+    );
+
+With these two files your can start developing. When it comes time to deploying to production, on your server you can set appropriate environment variables like  `NODE_ENV`, `HTTP_PORT` and so on.
+
+    NODE_ENV=production HTTP_PORT=80 node ./server.js
+
+Also, as per our configuration, you can pass `--env=production` when starting the server.
+
+    HTTP_PORT=80 node ./server.js --env=production
+
+## Alternatives
+
+In the great world of NPM there isn't one package to rule them all and there are various ways of accomplishing what you need. Here are a few alternatives you might want to checkout:
+
+* [nconf](https://github.com/flatiron/nconf) - written and maintained by [Nodejitsu](http://nodejitsu.com) own [Charlie Robbins](https://github.com/indexzero). Very similiar to [convict], but doesn't have the validation feature (if that's important to you) but has better support for overriding and managing order in which settings are pulled in.
+
+* [rc](https://github.com/dominictarr/rc) - written and maintained by [Dominic Tarr](https://github.com/dominictarr). Has support for INI file types and .rc files.
+
+* [figc](https://github.com/substack/node-figc) - written and maintained by [James Halliday](https://github.com/substack). The most minimalist module in the list supports JSON files and argv overrides.
+
+## Closing Thoughts
+
+I found this to be the least frictionless way to manage configuration in Node.js to date. Check out <%- @npm() %> github page for detailed API method description.
+
+What are you using to manage your application settings?
+
