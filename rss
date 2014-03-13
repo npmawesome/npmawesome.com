@@ -5,10 +5,135 @@
         <description><![CDATA[Daily dose of awesome NPM modules for Node.js, old and new!]]></description>
         <link>http://npmawesome.com</link>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Thu, 06 Mar 2014 18:21:20 GMT</lastBuildDate>
+        <lastBuildDate>Thu, 13 Mar 2014 23:46:41 GMT</lastBuildDate>
         <atom:link href="http://npmawesome.com/rss" rel="self" type="application/rss+xml"/>
         <author><![CDATA[Alex Gorbatchev]]></author>
-        <pubDate>Thu, 06 Mar 2014 18:20:44 GMT</pubDate>
+        <pubDate>Thu, 13 Mar 2014 23:46:03 GMT</pubDate>
+        <item>
+            <title><![CDATA[convict]]></title>
+            <description><![CDATA[<div class="highlight">
+  <img class="hide-on-mobile" src="/images/posts/nodejitsu.png" style="height: 80px"/>
+  This post was written for <a href="https://blog.nodejitsu.com">Nodejitsu</a> blog and is crossposted here. <a href="https://blog.nodejitsu.com">Nodejitsu</a> loved what I was doing at <a href="http://npmawesome.com">npmawesome.com</a> and is now supporting the project.
+</div>
+
+<p>Managing application configuration is one of the cornerstones to a reducing stress that comes from deploying Node.js applications to production environment. It&#39;s pretty easy if all you have to worry about is the port that your web server is listening on and database connection. But what do you do when you have a dozen or so external services, local folders, multiple connections and so on to have to keep track? And to top it off, all of this varies across development workstations, staging and production.</p>
+<p><img class="hide-on-mobile" src="https://0.gravatar.com/avatar/93621c22c5e09b5f980c39e8eedbf68c" style="float: right; margin-left: 1em"/>
+To accomplish this for the last couple of years I&#39;ve been using <a href="https://github.com/mozilla/node-convict">convict</a>, written by <a href="https://github.com/lloyd">Lloyd Hilaiel</a> at Mozilla, with great success. Before diving into <a href="https://github.com/mozilla/node-convict">convict</a> lets first take a moment to review a typical setup for configuring Node.js applications:</p>
+<ol>
+<li>in your application you <code>require</code> some settings file</li>
+<li>the settings need to vary based on running environment (eg development, staging, production, etc)</li>
+<li>you don&#39;t want to commit your production credentials into git</li>
+<li>make use of environment variables to configure environments</li>
+</ol>
+<p>This is the base line, but there are a few things that make our lives easier, such as:</p>
+<ol>
+<li>configuration validation prevents app execution if invalid parameters are set or missing all together</li>
+<li>exceptions are thrown if trying to read non existing configuration variables (to help combat typos)</li>
+</ol>
+<p>Lets get started:</p>
+<pre><code>npm install convict
+</code></pre><h2 id="features">Features</h2>
+<ul>
+<li><strong>Loading and merging</strong>: configurations are loaded from disk or inline and merged. JSON files are loaded with <code>cjson</code> so comments are welcome.</li>
+<li><strong>Environmental variables</strong>: values can be derived from environmental variables</li>
+<li><strong>Command-line arguments</strong>: values can also be derived from command-line arguments</li>
+<li><strong>Validation</strong>: configurations are validated against your schema, generating an error report with all errors that are found</li>
+</ul>
+<h2 id="usage">Usage</h2>
+<p>First thing we need to do is define our configuration schema. I&#39;m going to provide a bit of an extensive configuration to give you a more realistic example.</p>
+<pre><code>var convict = require(&#39;convict&#39;);
+
+var config = convict({
+  env: {
+    doc: &#39;The applicaton environment.&#39;,
+    format: [&#39;production&#39;, &#39;development&#39;, &#39;test&#39;],
+    default: &#39;development&#39;,
+    env: &#39;NODE_ENV&#39;,
+    arg: &#39;env&#39;
+  },
+  mongo: {
+    main: {
+      doc: &#39;Main database&#39;,
+      format: &#39;url&#39;,
+      default: &#39;mongodb://...&#39;,
+      env: &#39;MONGO_MAIN&#39;
+    },
+    sessions: {
+      doc: &#39;Sessions database&#39;,
+      format: &#39;url&#39;,
+      default: &#39;mongodb://...&#39;,
+      env: &#39;MONGO_SESSIONS&#39;
+    }
+  },
+  express: {
+    ip: {
+      doc: &#39;The IP address to bind.&#39;,
+      format: &#39;ipaddress&#39;,
+      default: &#39;127.0.0.1&#39;,
+      env: &#39;IP_ADDRESS&#39;,
+    },
+    http: {
+      port: {
+        doc: &#39;HTTP port to bind.&#39;,
+        format: &#39;port&#39;,
+        default: 3080,
+        env: &#39;HTTP_PORT&#39;
+      }
+    },
+    https: {
+      port: {
+        doc: &#39;HTTPs port to bind.&#39;,
+        format: &#39;port&#39;,
+        default: 3443,
+        env: &#39;HTTPS_PORT&#39;
+      }
+    }
+  }
+});
+
+// load environment dependent configuration
+config.loadFile(&#39;./config/&#39; + config.get(&#39;env&#39;) + &#39;.json&#39;);
+
+// validate
+config.validate();
+
+module.exports = config;
+</code></pre><p>Then in your application:</p>
+<pre><code>var express = require(&#39;express&#39;);
+var config = require(&#39;./config.js&#39;);
+var app = express();
+
+if(config.get(&#39;env&#39;) === &#39;production&#39;) {
+  app.use(express.logger());
+}
+
+app.listen(
+  config.get(&#39;express.http.port&#39;),
+  config.get(&#39;express.http.ip&#39;)
+);
+</code></pre><p>With these two files your can start developing. When it comes time to deploying to production, on your server you can set appropriate environment variables like  <code>NODE_ENV</code>, <code>HTTP_PORT</code> and so on.</p>
+<pre><code>NODE_ENV=production HTTP_PORT=80 node ./server.js
+</code></pre><p>Also, as per our configuration, you can pass <code>--env=production</code> when starting the server.</p>
+<pre><code>HTTP_PORT=80 node ./server.js --env=production
+</code></pre><h2 id="alternatives">Alternatives</h2>
+<p>In the great world of NPM there isn&#39;t one package to rule them all and there are various ways of accomplishing what you need. Here are a few alternatives you might want to checkout:</p>
+<ul>
+<li><p><a href="https://github.com/flatiron/nconf">nconf</a> - written and maintained by <a href="http://nodejitsu.com">Nodejitsu</a> own <a href="https://github.com/indexzero">Charlie Robbins</a>. Very similiar to [convict], but doesn&#39;t have the validation feature (if that&#39;s important to you) but has better support for overriding and managing order in which settings are pulled in.</p>
+</li>
+<li><p><a href="https://github.com/dominictarr/rc">rc</a> - written and maintained by <a href="https://github.com/dominictarr">Dominic Tarr</a>. Has support for INI file types and .rc files.</p>
+</li>
+<li><p><a href="https://github.com/substack/node-figc">figc</a> - written and maintained by <a href="https://github.com/substack">James Halliday</a>. The most minimalist module in the list supports JSON files and argv overrides.</p>
+</li>
+</ul>
+<h2 id="closing-thoughts">Closing Thoughts</h2>
+<p>I found this to be the least frictionless way to manage configuration in Node.js to date. Check out <a href="https://github.com/mozilla/node-convict">convict</a> github page for detailed API method description.</p>
+<p>What are you using to manage your application settings?</p>
+]]></description>
+            <link>http://npmawesome.com/posts/2014-03-12-convict</link>
+            <guid isPermaLink="true">http://npmawesome.com/posts/2014-03-12-convict</guid>
+            <dc:creator><![CDATA[Alex Gorbatchev]]></dc:creator>
+            <pubDate>Sat, 27 Dec 2014 18:25:57 GMT</pubDate>
+        </item>
         <item>
             <title><![CDATA[lockit]]></title>
             <description><![CDATA[<div class="highlight">
@@ -668,56 +793,6 @@ pdf.on(&#39;done&#39;, function(pathToFile){
             <guid isPermaLink="true">http://npmawesome.com/posts/2014-02-17-nodepdf</guid>
             <dc:creator><![CDATA[Alex Gorbatchev]]></dc:creator>
             <pubDate>Mon, 17 Feb 2014 17:56:26 GMT</pubDate>
-        </item>
-        <item>
-            <title><![CDATA[domain-context]]></title>
-            <description><![CDATA[<p><img class="hide-on-mobile" src="/images/posts/domain-context.jpg" style="width: 100%"/></p>
-<p><a href="https://github.com/andreypopp/domain-context">domain-context</a> is a module by <a href="https://github.com/andreypopp">Andrey Popp</a> for dealing with globally accessible domain-bound contexts, connect/express middleware included.</p>
-<pre><code>npm install domain-context
-</code></pre><h2 id="usage">Usage</h2>
-<pre><code>var connectDomain = require(&#39;connect-domain&#39;),
-    domainContext = require(&#39;domain-context&#39;),
-    express = require(&#39;express&#39;);
-
-var lifecycle = {
-  context: function() {
-    return {db: new pg.Client(...)}
-  },
-  cleanup: function(context) {
-    context.db.query(&#39;commit&#39;);
-    context.db.end();
-  },
-  onError: function(err, context) {
-    context.db.query(&#39;rollback&#39;);
-    context.db.end();
-  }
-};
-
-app = express();
-app.use(connectDomain());
-app.use(domainContext.middleware(lifecycle));
-
-// Your applicaiton&#39;s middleware goes here
-//
-// Note that because of connect/express design you are required to place two
-// middlewares around your application — domainContext.middleware() and
-// domainContext.middlewareOnError().
-
-app.use(domainContext.middlewareOnError(lifecycle));
-
-// Now you can use domainContext.get() to query data from the currently active domain:
-
-var domainContext = require(&#39;connect-reqcontext&#39;);
-
-function getUserById(id, cb) {
-  domainContext.get(&#39;db&#39;).query(&quot;select ...&quot;, cb);
-}
-</code></pre><p>I feel that this is pretty self-explanatory here. Being able to get request context outside of the <code>express</code> handlers and not having to pass so much context around to API is pretty great.</p>
-]]></description>
-            <link>http://npmawesome.com/posts/2014-02-13-domain-context</link>
-            <guid isPermaLink="true">http://npmawesome.com/posts/2014-02-13-domain-context</guid>
-            <dc:creator><![CDATA[Alex Gorbatchev]]></dc:creator>
-            <pubDate>Thu, 13 Feb 2014 21:20:38 GMT</pubDate>
         </item>
     </channel>
 </rss>

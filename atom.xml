@@ -5,12 +5,137 @@
 	<link href="http://npmawesome.com/atom.xml" rel="self" />
 	<link href="http://npmawesome.com" />
 	<id>http://npmawesome.com</id>
-	<updated>2014-03-06T18:20:44.216Z</updated>
+	<updated>2014-03-13T23:46:03.682Z</updated>
 	<author>
 		<name>Alex Gorbatchev</name>
 		<email></email>
 	</author>
 
+	
+		<entry>
+			<title>convict</title>
+			<link href="http://npmawesome.com/posts/2014-03-12-convict"/>
+			<updated>2014-12-27T18:25:57.000Z</updated>
+			<id>http://npmawesome.com/posts/2014-03-12-convict</id>
+			<content type="html">&lt;div class=&quot;highlight&quot;&gt;
+  &lt;img class=&quot;hide-on-mobile&quot; src=&quot;/images/posts/nodejitsu.png&quot; style=&quot;height: 80px&quot;/&gt;
+  This post was written for &lt;a href=&quot;https://blog.nodejitsu.com&quot;&gt;Nodejitsu&lt;/a&gt; blog and is crossposted here. &lt;a href=&quot;https://blog.nodejitsu.com&quot;&gt;Nodejitsu&lt;/a&gt; loved what I was doing at &lt;a href=&quot;http://npmawesome.com&quot;&gt;npmawesome.com&lt;/a&gt; and is now supporting the project.
+&lt;/div&gt;
+
+&lt;p&gt;Managing application configuration is one of the cornerstones to a reducing stress that comes from deploying Node.js applications to production environment. It&amp;#39;s pretty easy if all you have to worry about is the port that your web server is listening on and database connection. But what do you do when you have a dozen or so external services, local folders, multiple connections and so on to have to keep track? And to top it off, all of this varies across development workstations, staging and production.&lt;/p&gt;
+&lt;p&gt;&lt;img class=&quot;hide-on-mobile&quot; src=&quot;https://0.gravatar.com/avatar/93621c22c5e09b5f980c39e8eedbf68c&quot; style=&quot;float: right; margin-left: 1em&quot;/&gt;
+To accomplish this for the last couple of years I&amp;#39;ve been using &lt;a href=&quot;https://github.com/mozilla/node-convict&quot;&gt;convict&lt;/a&gt;, written by &lt;a href=&quot;https://github.com/lloyd&quot;&gt;Lloyd Hilaiel&lt;/a&gt; at Mozilla, with great success. Before diving into &lt;a href=&quot;https://github.com/mozilla/node-convict&quot;&gt;convict&lt;/a&gt; lets first take a moment to review a typical setup for configuring Node.js applications:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;in your application you &lt;code&gt;require&lt;/code&gt; some settings file&lt;/li&gt;
+&lt;li&gt;the settings need to vary based on running environment (eg development, staging, production, etc)&lt;/li&gt;
+&lt;li&gt;you don&amp;#39;t want to commit your production credentials into git&lt;/li&gt;
+&lt;li&gt;make use of environment variables to configure environments&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;This is the base line, but there are a few things that make our lives easier, such as:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;configuration validation prevents app execution if invalid parameters are set or missing all together&lt;/li&gt;
+&lt;li&gt;exceptions are thrown if trying to read non existing configuration variables (to help combat typos)&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Lets get started:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;npm install convict
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&quot;features&quot;&gt;Features&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Loading and merging&lt;/strong&gt;: configurations are loaded from disk or inline and merged. JSON files are loaded with &lt;code&gt;cjson&lt;/code&gt; so comments are welcome.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Environmental variables&lt;/strong&gt;: values can be derived from environmental variables&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Command-line arguments&lt;/strong&gt;: values can also be derived from command-line arguments&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Validation&lt;/strong&gt;: configurations are validated against your schema, generating an error report with all errors that are found&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;usage&quot;&gt;Usage&lt;/h2&gt;
+&lt;p&gt;First thing we need to do is define our configuration schema. I&amp;#39;m going to provide a bit of an extensive configuration to give you a more realistic example.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;var convict = require(&amp;#39;convict&amp;#39;);
+
+var config = convict({
+  env: {
+    doc: &amp;#39;The applicaton environment.&amp;#39;,
+    format: [&amp;#39;production&amp;#39;, &amp;#39;development&amp;#39;, &amp;#39;test&amp;#39;],
+    default: &amp;#39;development&amp;#39;,
+    env: &amp;#39;NODE_ENV&amp;#39;,
+    arg: &amp;#39;env&amp;#39;
+  },
+  mongo: {
+    main: {
+      doc: &amp;#39;Main database&amp;#39;,
+      format: &amp;#39;url&amp;#39;,
+      default: &amp;#39;mongodb://...&amp;#39;,
+      env: &amp;#39;MONGO_MAIN&amp;#39;
+    },
+    sessions: {
+      doc: &amp;#39;Sessions database&amp;#39;,
+      format: &amp;#39;url&amp;#39;,
+      default: &amp;#39;mongodb://...&amp;#39;,
+      env: &amp;#39;MONGO_SESSIONS&amp;#39;
+    }
+  },
+  express: {
+    ip: {
+      doc: &amp;#39;The IP address to bind.&amp;#39;,
+      format: &amp;#39;ipaddress&amp;#39;,
+      default: &amp;#39;127.0.0.1&amp;#39;,
+      env: &amp;#39;IP_ADDRESS&amp;#39;,
+    },
+    http: {
+      port: {
+        doc: &amp;#39;HTTP port to bind.&amp;#39;,
+        format: &amp;#39;port&amp;#39;,
+        default: 3080,
+        env: &amp;#39;HTTP_PORT&amp;#39;
+      }
+    },
+    https: {
+      port: {
+        doc: &amp;#39;HTTPs port to bind.&amp;#39;,
+        format: &amp;#39;port&amp;#39;,
+        default: 3443,
+        env: &amp;#39;HTTPS_PORT&amp;#39;
+      }
+    }
+  }
+});
+
+// load environment dependent configuration
+config.loadFile(&amp;#39;./config/&amp;#39; + config.get(&amp;#39;env&amp;#39;) + &amp;#39;.json&amp;#39;);
+
+// validate
+config.validate();
+
+module.exports = config;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Then in your application:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;var express = require(&amp;#39;express&amp;#39;);
+var config = require(&amp;#39;./config.js&amp;#39;);
+var app = express();
+
+if(config.get(&amp;#39;env&amp;#39;) === &amp;#39;production&amp;#39;) {
+  app.use(express.logger());
+}
+
+app.listen(
+  config.get(&amp;#39;express.http.port&amp;#39;),
+  config.get(&amp;#39;express.http.ip&amp;#39;)
+);
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;With these two files your can start developing. When it comes time to deploying to production, on your server you can set appropriate environment variables like  &lt;code&gt;NODE_ENV&lt;/code&gt;, &lt;code&gt;HTTP_PORT&lt;/code&gt; and so on.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;NODE_ENV=production HTTP_PORT=80 node ./server.js
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Also, as per our configuration, you can pass &lt;code&gt;--env=production&lt;/code&gt; when starting the server.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;HTTP_PORT=80 node ./server.js --env=production
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&quot;alternatives&quot;&gt;Alternatives&lt;/h2&gt;
+&lt;p&gt;In the great world of NPM there isn&amp;#39;t one package to rule them all and there are various ways of accomplishing what you need. Here are a few alternatives you might want to checkout:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;&lt;a href=&quot;https://github.com/flatiron/nconf&quot;&gt;nconf&lt;/a&gt; - written and maintained by &lt;a href=&quot;http://nodejitsu.com&quot;&gt;Nodejitsu&lt;/a&gt; own &lt;a href=&quot;https://github.com/indexzero&quot;&gt;Charlie Robbins&lt;/a&gt;. Very similiar to [convict], but doesn&amp;#39;t have the validation feature (if that&amp;#39;s important to you) but has better support for overriding and managing order in which settings are pulled in.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a href=&quot;https://github.com/dominictarr/rc&quot;&gt;rc&lt;/a&gt; - written and maintained by &lt;a href=&quot;https://github.com/dominictarr&quot;&gt;Dominic Tarr&lt;/a&gt;. Has support for INI file types and .rc files.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a href=&quot;https://github.com/substack/node-figc&quot;&gt;figc&lt;/a&gt; - written and maintained by &lt;a href=&quot;https://github.com/substack&quot;&gt;James Halliday&lt;/a&gt;. The most minimalist module in the list supports JSON files and argv overrides.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;closing-thoughts&quot;&gt;Closing Thoughts&lt;/h2&gt;
+&lt;p&gt;I found this to be the least frictionless way to manage configuration in Node.js to date. Check out &lt;a href=&quot;https://github.com/mozilla/node-convict&quot;&gt;convict&lt;/a&gt; github page for detailed API method description.&lt;/p&gt;
+&lt;p&gt;What are you using to manage your application settings?&lt;/p&gt;
+</content>
+		</entry>
 	
 		<entry>
 			<title>lockit</title>
