@@ -15,13 +15,7 @@ slug: *name
 title: *name
 description: convict is a module to manage application configuration.
 ---
-<div class="highlight">
-  <img class="hide-on-mobile" src="/images/posts/nodejitsu.png" style="height: 80px"/>
-  This post was written for [Nodejitsu] blog and is crossposted here. [Nodejitsu] loved what I was doing at [npmawesome.com] and is now supporting the project.
-</div>
-
-[Nodejitsu]: https://blog.nodejitsu.com
-[npmawesome.com]: http://npmawesome.com
+<%- @partial('nodejitsu') %>
 
 Managing application configuration is one of the cornerstones to a reducing stress that comes from deploying Node.js applications to production environment. It's pretty easy if all you have to worry about is the port that your web server is listening on and database connection. But what do you do when you have a dozen or so external services, local folders, multiple connections and so on to have to keep track? And to top it off, all of this varies across development workstations, staging and production.
 

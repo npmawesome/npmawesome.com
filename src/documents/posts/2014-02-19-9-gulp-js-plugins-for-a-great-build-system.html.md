@@ -6,10 +6,7 @@ slug: 9-gulp-js-plugins-for-a-great-build-system
 title: 9 gulp.js plugins for a great build system
 description: 9 gulp.js plugins for a great build system
 ---
-<div class="highlight">
-  <img class="hide-on-mobile" src="/images/posts/nodejitsu.png" style="height: 80px"/>
-  This post was written for [Nodejitsu] blog and is crossposted here. [Nodejitsu] loved what I was doing at [npmawesome.com] and is now supporting the project.
-</div>
+<%- @partial('nodejitsu') %>
 
 This article assumes you have experience with node.js, npm and you are pretty familiar with the concept of task runners and command-line interface. It will walk through general steps required to get up and running with [gulp.js].
 
@@ -237,8 +234,6 @@ Now lets put it all together into `gulpfile.js`
 
 The thing that I personally really like about [gulp.js] is that it feels to me like a toolbox full of single purpose tools that I can use to assemble almost anything. It's amazing how in a span of a couple of months community has wrote [over 300 plugins](http://gulpjs.com/plugins/).
 
-[Nodejitsu]: https://blog.nodejitsu.com
-[npmawesome.com]: http://npmawesome.com
 [LESS]: http://lesscss.org/
 [gulp.js]: http://gulpjs.com
 [gulp-util]: https://github.com/gulpjs/gulp-util
