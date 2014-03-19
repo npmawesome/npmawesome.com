@@ -1,0 +1,276 @@
+---
+ignored: true
+
+layout: post
+date: 2014-03-19T10:25:57-0800
+tags: npm, cli, arguments
+
+npm:
+  repo: &repo chevex/yargs
+  name: &name yargs
+
+  author:
+    name: Alex Ford
+    github: chevex
+
+slug: *name
+title: *name
+description: Easy command line argument parsing with yargs.
+---
+<%- @partial('nodejitsu') %>
+
+<img class="hide-on-mobile" src="https://avatars3.githubusercontent.com/u/874394" style="float: right; margin-left: 1em; width: 100px"/>
+This post kicks off a small mini-series of posts about modules which making writing CLI (command line interface) tools in Node.js easier. Typically, when starting a new CLI tool, the first problem that you would encounter is how to read arguments that users pass via command line. Standard library gives us `process.argv` but if you want something a little bit more structured than an array, you have to look elsewhere.
+
+This is where <%- @npm() %> comes in handy. This module was originally written by [James Halliday](https://github.com/substack) and called [optimist]. It is now called <%- @npm() %> and the work is continued by <%- @author() %>. Lets get it installed:
+
+    <%- @install() %>
+
+## Features
+
+<%- @npm() %> covers most of the features you would need to parse out options from command line.
+
+* Named options: `--foo=1 --bar=2`, `--foo 1 --bar 2` or even `-foo 1 -bar 2`
+* Groupped options tarball style: `-x`, `-xz`, `-xzvf`
+* Count options: `-v`, `-vv`, `-vvv`
+* Non-hyphenated options.
+* Usage / requirements.
+* Defaults.
+* Typing (boolean, string, etc).
+
+Lets look at each one:
+
+### Named options
+
+named-options.js
+
+    #!/usr/bin/env node
+    var argv = require('yargs').argv;
+
+    if (argv.a > argv.b) {
+      console.log('a seems bigger than b');
+    } else {
+      console.log('a is not bigger than b');
+    }
+
+---
+
+    $ ./named-options.js --a=55 --b=9.52
+    a seems bigger than b
+
+    $ ./named-options.js --a 1 --b 8.1
+    a is not bigger than b
+
+### Groupped Options `tarball` Style
+
+tar.js
+
+    #!/usr/bin/env node
+    var argv = require('yargs').argv;
+
+    if (argv.x) console.log('Will extract to disk from the archive');
+    if (argv.z) console.log('Will compress the resulting archive with gzip');
+    if (argv.f) console.log('Will read the archive from the archive file');
+
+---
+
+    $ ./tar.js -z
+    Will compress the resulting archive with gzip
+
+    $ ./tar.js -zf
+    Will compress the resulting archive with gzip
+    Will read the archive from the archive file
+
+    $ ./tar.js -zfx
+    Will extract to disk from the archive
+    Will compress the resulting archive with gzip
+    Will read the archive from the archive file
+
+### Count Options
+
+count.js
+
+    #!/usr/bin/env node
+    var argv = require('yargs')
+        .count('verbose')
+        .alias('v', 'verbose')
+        .argv;
+
+    VERBOSE_LEVEL = argv.verbose;
+
+    function WARN()  { VERBOSE_LEVEL >= 0 && console.log.apply(console, arguments); }
+    function INFO()  { VERBOSE_LEVEL >= 1 && console.log.apply(console, arguments); }
+    function DEBUG() { VERBOSE_LEVEL >= 2 && console.log.apply(console, arguments); }
+
+    WARN("Showing only important stuff");
+    INFO("Showing semi-mportant stuff too");
+    DEBUG("Extra chatty mode");
+
+---
+
+    $ ./count.js
+    Showing only important stuff
+
+    $ ./count.js -v
+    Showing only important stuff
+    Showing semi-important stuff too
+
+    $ ./count.js -vv
+    Showing only important stuff
+    Showing semi-important stuff too
+    Extra chatty mode
+
+    $ ./count.js -v --verbose
+    Showing only important stuff
+    Showing semi-important stuff too
+    Extra chatty mode
+
+### Non-hyphenated Options
+
+nonopt.js:
+
+    #!/usr/bin/env node
+    var argv = require('yargs').argv;
+
+    console.log('(%d,%d)', argv.x, argv.y);
+    console.log(argv._);
+
+---
+
+    $ ./nonopt.js -x 6.82 -y 3.35 rum
+    (6.82,3.35)
+    [ 'rum' ]
+
+    $ ./nonopt.js "me hearties" -x 0.54 yo -y 1.12 ho
+    (0.54,1.12)
+    [ 'me hearties', 'yo', 'ho' ]
+
+### Usage / Requirements
+
+divide.js:
+
+    #!/usr/bin/env node
+    var argv = require('yargs')
+      .usage('Usage: $0 -x [num] -y [num]')
+      .demand(['x','y'])
+      .argv;
+
+    console.log(argv.x / argv.y);
+
+---
+
+    $ ./divide.js -x 55 -y 11
+    5
+
+    $ ./divide.js -x 4.91 -z 2.51
+    Usage: node ./divide.js -x [num] -y [num]
+
+    Options:
+      -x  [required]
+      -y  [required]
+
+    Missing required arguments: y
+
+demand_count.js:
+
+    #!/usr/bin/env node
+    var argv = require('yargs')
+      .demand(2)
+      .argv;
+
+    console.dir(argv)
+
+---
+
+    $ ./demand_count.js a
+    Not enough arguments, expected 2, but only found 1
+
+    $ ./demand_count.js a b
+    { _: [ 'a', 'b' ], '$0': './demand_count.js' }
+
+    $ ./demand_count.js a b c
+    { _: [ 'a', 'b', 'c' ], '$0': './demand_count.js' }
+
+### Defaults
+
+default_singles.js:
+
+    #!/usr/bin/env node
+    var argv = require('yargs')
+      .default('x', 10)
+      .default('y', 10)
+      .argv;
+
+    console.log(argv.x + argv.y);
+
+---
+
+    $ ./default_singles.js -x 5
+    15
+
+default_hash.js:
+
+    #!/usr/bin/env node
+    var argv = require('yargs')
+      .default({ x : 10, y : 10 })
+      .argv;
+
+    console.log(argv.x + argv.y);
+
+---
+
+    $ ./default_hash.js -y 7
+    17
+
+### Typing (boolean, string, etc)
+
+boolean_single.js
+
+    #!/usr/bin/env node
+    var argv = require('yargs')
+      .boolean('v')
+      .argv;
+
+    console.dir(argv.v);
+    console.dir(argv._);
+
+---
+
+    $ ./boolean_single.js -v "me hearties" yo ho
+    true
+    [ 'me hearties', 'yo', 'ho' ]
+
+boolean_double.js
+
+    #!/usr/bin/env node
+    var argv = require('yargs')
+      .boolean(['x','y','z'])
+      .argv;
+
+    console.dir([ argv.x, argv.y, argv.z ]);
+    console.dir(argv._);
+
+---
+
+    $ ./boolean_double.js -x -z one two three
+    [ true, false, true ]
+    [ 'one', 'two', 'three' ]
+
+## Putting it all together
+
+Finally, all together this makes a fully functional options parser.
+
+    #!/usr/bin/env node
+    var argv = require('yargs')
+      .usage('Count the lines in a file.\nUsage: $0')
+      .example('$0 -f', 'count the lines in the given file')
+      .demand('f')
+      .alias('f', 'file')
+      .describe('f', 'Load a file')
+      .argv;
+
+## Closing thoughts
+
+I've been using [optimist] for over a year now and is saddened to see James giving it up, but at the same time it's exciting that the idea and implementation lives on in <%- @npm() %>. A problem that seems so simple on the surface, such as collecting arguments, can turn out to be a major headache without proper tools. I'm very glad <%- @npm() %> is here to help us deal with it.
+
+[optimist]: (https://github.com/substack/node-optimist)
