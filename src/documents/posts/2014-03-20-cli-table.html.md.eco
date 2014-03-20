@@ -107,6 +107,14 @@ Pretty cool, right? We can get a little fancy with custom borders and alignments
 
 <div style="padding: 13px 10px 10px; background: black; text-align: center; border-radius: 3px"><img src="/images/posts/cli-tables/usage02.png"/></div>
 
+## Other modules to checkout
+
+[cli-tables] of course isn't the only module that can print out pretty tables in the console. Here are a few alternatives:
+
+* [cliff](https://github.com/flatiron/cliff), Nodejitsu's own module does quite a bit more than just tabular data printing.
+* [text-table](https://github.com/substack/text-table) by James Halliday aka substack can pretty print tabular data with alignment.
+* [easy-table](https://github.com/eldargab/easy-table) by Eldar Gabdullin has some interesting formatting options and can print data with alignment.
+
 ## Closing thoughts
 
 User experience doesn't have to suffer just because the target platform is STDOUT. Put a little bit more effort into it and your users will love you that much more. Checkout <%- @npm() %> github page for more examples and view the source for the full list of options.
