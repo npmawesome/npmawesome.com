@@ -5,7 +5,7 @@
 	<link href="http://npmawesome.com/atom.xml" rel="self" />
 	<link href="http://npmawesome.com" />
 	<id>http://npmawesome.com</id>
-	<updated>2014-03-13T23:46:03.682Z</updated>
+	<updated>2014-03-21T16:44:45.392Z</updated>
 	<author>
 		<name>Alex Gorbatchev</name>
 		<email></email>
@@ -13,15 +13,235 @@
 
 	
 		<entry>
+			<title>yargs</title>
+			<link href="http://npmawesome.com/posts/2014-03-21-yargs"/>
+			<updated>2014-03-21T18:25:57.000Z</updated>
+			<id>http://npmawesome.com/posts/2014-03-21-yargs</id>
+			<content type="html">&lt;p&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;img src=&quot;/images/posts/nodejitsu.png&quot; style=&quot;height: 80px&quot; class=&quot;hide-on-mobile&quot;/&gt;&lt;span&gt;This post was written for &lt;a href=&quot;http://nodejitsu.com&quot;&gt;Nodejitsu&lt;/a&gt; blog and is crossposted here.
+&lt;a href=&quot;http://nodejitsu.com&quot;&gt;Nodejitsu&lt;/a&gt; loved what I was doing at &lt;a href=&quot;http://npmawesome.com&quot;&gt;npmawesome.com&lt;/a&gt;
+and is now supporting the project.&lt;/span&gt;&lt;/div&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img class=&quot;hide-on-mobile&quot; src=&quot;https://avatars3.githubusercontent.com/u/874394&quot; style=&quot;float: right; margin-left: 1em; width: 100px&quot;/&gt;
+This post kicks off a small mini-series of posts about modules which making writing CLI (command line interface) tools in Node.js easier. Typically, when starting a new CLI tool, the first problem that you would encounter is how to read arguments that users pass via command line. Standard library gives us &lt;code&gt;process.argv&lt;/code&gt; but if you want something a little bit more structured than an array, you have to look elsewhere.&lt;/p&gt;
+&lt;p&gt;This is where &lt;a href=&quot;https://github.com/chevex/yargs&quot;&gt;yargs&lt;/a&gt; comes in handy. This module was originally written by &lt;a href=&quot;https://github.com/substack&quot;&gt;James Halliday&lt;/a&gt; and called &lt;a href=&quot;(https://github.com/substack/node-optimist)&quot;&gt;optimist&lt;/a&gt;. It is now called &lt;a href=&quot;https://github.com/chevex/yargs&quot;&gt;yargs&lt;/a&gt; and the work is continued by &lt;a href=&quot;https://github.com/chevex&quot;&gt;Alex Ford&lt;/a&gt;. Lets get it installed:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;npm install yargs
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&quot;features&quot;&gt;Features&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&quot;https://github.com/chevex/yargs&quot;&gt;yargs&lt;/a&gt; covers most of the features you would need to parse out options from command line.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Named options: &lt;code&gt;--foo=1 --bar=2&lt;/code&gt;, &lt;code&gt;--foo 1 --bar 2&lt;/code&gt; or even &lt;code&gt;-foo 1 -bar 2&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Groupped options tarball style: &lt;code&gt;-x&lt;/code&gt;, &lt;code&gt;-xz&lt;/code&gt;, &lt;code&gt;-xzvf&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Count options: &lt;code&gt;-v&lt;/code&gt;, &lt;code&gt;-vv&lt;/code&gt;, &lt;code&gt;-vvv&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Non-hyphenated options.&lt;/li&gt;
+&lt;li&gt;Usage / requirements.&lt;/li&gt;
+&lt;li&gt;Defaults.&lt;/li&gt;
+&lt;li&gt;Typing (boolean, string, etc).&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Lets look at each one:&lt;/p&gt;
+&lt;h3 id=&quot;named-options&quot;&gt;Named options&lt;/h3&gt;
+&lt;p&gt;named-options.js&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;#!/usr/bin/env node
+var argv = require(&amp;#39;yargs&amp;#39;).argv;
+
+if (argv.a &amp;gt; argv.b) {
+  console.log(&amp;#39;a seems bigger than b&amp;#39;);
+} else {
+  console.log(&amp;#39;a is not bigger than b&amp;#39;);
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;hr&gt;
+&lt;pre&gt;&lt;code&gt;$ ./named-options.js --a=55 --b=9.52
+a seems bigger than b
+
+$ ./named-options.js --a 1 --b 8.1
+a is not bigger than b
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&quot;groupped-options-tarball-style&quot;&gt;Groupped Options &lt;code&gt;tarball&lt;/code&gt; Style&lt;/h3&gt;
+&lt;p&gt;tar.js&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;#!/usr/bin/env node
+var argv = require(&amp;#39;yargs&amp;#39;).argv;
+
+if (argv.x) console.log(&amp;#39;Will extract to disk from the archive&amp;#39;);
+if (argv.z) console.log(&amp;#39;Will compress the resulting archive with gzip&amp;#39;);
+if (argv.f) console.log(&amp;#39;Will read the archive from the archive file&amp;#39;);
+&lt;/code&gt;&lt;/pre&gt;&lt;hr&gt;
+&lt;pre&gt;&lt;code&gt;$ ./tar.js -z
+Will compress the resulting archive with gzip
+
+$ ./tar.js -zf
+Will compress the resulting archive with gzip
+Will read the archive from the archive file
+
+$ ./tar.js -zfx
+Will extract to disk from the archive
+Will compress the resulting archive with gzip
+Will read the archive from the archive file
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&quot;count-options&quot;&gt;Count Options&lt;/h3&gt;
+&lt;p&gt;count.js&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;#!/usr/bin/env node
+var argv = require(&amp;#39;yargs&amp;#39;)
+    .count(&amp;#39;verbose&amp;#39;)
+    .alias(&amp;#39;v&amp;#39;, &amp;#39;verbose&amp;#39;)
+    .argv;
+
+VERBOSE_LEVEL = argv.verbose;
+
+function WARN()  { VERBOSE_LEVEL &amp;gt;= 0 &amp;amp;&amp;amp; console.log.apply(console, arguments); }
+function INFO()  { VERBOSE_LEVEL &amp;gt;= 1 &amp;amp;&amp;amp; console.log.apply(console, arguments); }
+function DEBUG() { VERBOSE_LEVEL &amp;gt;= 2 &amp;amp;&amp;amp; console.log.apply(console, arguments); }
+
+WARN(&amp;quot;Showing only important stuff&amp;quot;);
+INFO(&amp;quot;Showing semi-mportant stuff too&amp;quot;);
+DEBUG(&amp;quot;Extra chatty mode&amp;quot;);
+&lt;/code&gt;&lt;/pre&gt;&lt;hr&gt;
+&lt;pre&gt;&lt;code&gt;$ ./count.js
+Showing only important stuff
+
+$ ./count.js -v
+Showing only important stuff
+Showing semi-important stuff too
+
+$ ./count.js -vv
+Showing only important stuff
+Showing semi-important stuff too
+Extra chatty mode
+
+$ ./count.js -v --verbose
+Showing only important stuff
+Showing semi-important stuff too
+Extra chatty mode
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&quot;non-hyphenated-options&quot;&gt;Non-hyphenated Options&lt;/h3&gt;
+&lt;p&gt;nonopt.js:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;#!/usr/bin/env node
+var argv = require(&amp;#39;yargs&amp;#39;).argv;
+
+console.log(&amp;#39;(%d,%d)&amp;#39;, argv.x, argv.y);
+console.log(argv._);
+&lt;/code&gt;&lt;/pre&gt;&lt;hr&gt;
+&lt;pre&gt;&lt;code&gt;$ ./nonopt.js -x 6.82 -y 3.35 rum
+(6.82,3.35)
+[ &amp;#39;rum&amp;#39; ]
+
+$ ./nonopt.js &amp;quot;me hearties&amp;quot; -x 0.54 yo -y 1.12 ho
+(0.54,1.12)
+[ &amp;#39;me hearties&amp;#39;, &amp;#39;yo&amp;#39;, &amp;#39;ho&amp;#39; ]
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&quot;usage-requirements&quot;&gt;Usage / Requirements&lt;/h3&gt;
+&lt;p&gt;divide.js:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;#!/usr/bin/env node
+var argv = require(&amp;#39;yargs&amp;#39;)
+  .usage(&amp;#39;Usage: $0 -x [num] -y [num]&amp;#39;)
+  .demand([&amp;#39;x&amp;#39;,&amp;#39;y&amp;#39;])
+  .argv;
+
+console.log(argv.x / argv.y);
+&lt;/code&gt;&lt;/pre&gt;&lt;hr&gt;
+&lt;pre&gt;&lt;code&gt;$ ./divide.js -x 55 -y 11
+5
+
+$ ./divide.js -x 4.91 -z 2.51
+Usage: node ./divide.js -x [num] -y [num]
+
+Options:
+  -x  [required]
+  -y  [required]
+
+Missing required arguments: y
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;demand_count.js:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;#!/usr/bin/env node
+var argv = require(&amp;#39;yargs&amp;#39;)
+  .demand(2)
+  .argv;
+
+console.dir(argv)
+&lt;/code&gt;&lt;/pre&gt;&lt;hr&gt;
+&lt;pre&gt;&lt;code&gt;$ ./demand_count.js a
+Not enough arguments, expected 2, but only found 1
+
+$ ./demand_count.js a b
+{ _: [ &amp;#39;a&amp;#39;, &amp;#39;b&amp;#39; ], &amp;#39;$0&amp;#39;: &amp;#39;./demand_count.js&amp;#39; }
+
+$ ./demand_count.js a b c
+{ _: [ &amp;#39;a&amp;#39;, &amp;#39;b&amp;#39;, &amp;#39;c&amp;#39; ], &amp;#39;$0&amp;#39;: &amp;#39;./demand_count.js&amp;#39; }
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&quot;defaults&quot;&gt;Defaults&lt;/h3&gt;
+&lt;p&gt;default_singles.js:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;#!/usr/bin/env node
+var argv = require(&amp;#39;yargs&amp;#39;)
+  .default(&amp;#39;x&amp;#39;, 10)
+  .default(&amp;#39;y&amp;#39;, 10)
+  .argv;
+
+console.log(argv.x + argv.y);
+&lt;/code&gt;&lt;/pre&gt;&lt;hr&gt;
+&lt;pre&gt;&lt;code&gt;$ ./default_singles.js -x 5
+15
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;default_hash.js:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;#!/usr/bin/env node
+var argv = require(&amp;#39;yargs&amp;#39;)
+  .default({ x : 10, y : 10 })
+  .argv;
+
+console.log(argv.x + argv.y);
+&lt;/code&gt;&lt;/pre&gt;&lt;hr&gt;
+&lt;pre&gt;&lt;code&gt;$ ./default_hash.js -y 7
+17
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&quot;typing-boolean-string-etc-&quot;&gt;Typing (boolean, string, etc)&lt;/h3&gt;
+&lt;p&gt;boolean_single.js&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;#!/usr/bin/env node
+var argv = require(&amp;#39;yargs&amp;#39;)
+  .boolean(&amp;#39;v&amp;#39;)
+  .argv;
+
+console.dir(argv.v);
+console.dir(argv._);
+&lt;/code&gt;&lt;/pre&gt;&lt;hr&gt;
+&lt;pre&gt;&lt;code&gt;$ ./boolean_single.js -v &amp;quot;me hearties&amp;quot; yo ho
+true
+[ &amp;#39;me hearties&amp;#39;, &amp;#39;yo&amp;#39;, &amp;#39;ho&amp;#39; ]
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;boolean_double.js&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;#!/usr/bin/env node
+var argv = require(&amp;#39;yargs&amp;#39;)
+  .boolean([&amp;#39;x&amp;#39;,&amp;#39;y&amp;#39;,&amp;#39;z&amp;#39;])
+  .argv;
+
+console.dir([ argv.x, argv.y, argv.z ]);
+console.dir(argv._);
+&lt;/code&gt;&lt;/pre&gt;&lt;hr&gt;
+&lt;pre&gt;&lt;code&gt;$ ./boolean_double.js -x -z one two three
+[ true, false, true ]
+[ &amp;#39;one&amp;#39;, &amp;#39;two&amp;#39;, &amp;#39;three&amp;#39; ]
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&quot;putting-it-all-together&quot;&gt;Putting it all together&lt;/h2&gt;
+&lt;p&gt;Finally, all together this makes a fully functional options parser.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;#!/usr/bin/env node
+var argv = require(&amp;#39;yargs&amp;#39;)
+  .usage(&amp;#39;Count the lines in a file.\nUsage: $0&amp;#39;)
+  .example(&amp;#39;$0 -f&amp;#39;, &amp;#39;count the lines in the given file&amp;#39;)
+  .demand(&amp;#39;f&amp;#39;)
+  .alias(&amp;#39;f&amp;#39;, &amp;#39;file&amp;#39;)
+  .describe(&amp;#39;f&amp;#39;, &amp;#39;Load a file&amp;#39;)
+  .argv;
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&quot;other-modules-to-checkout&quot;&gt;Other modules to checkout&lt;/h2&gt;
+&lt;p&gt;There are many other modules that can help you figure out CLI arguments, some do more, others do less.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/substack/minimist&quot;&gt;minimist&lt;/a&gt; by James Halliday aka substack is a light weight module without or usage functionality. James has moved on from &lt;a href=&quot;(https://github.com/substack/node-optimist)&quot;&gt;optimist&lt;/a&gt; to &lt;a href=&quot;https://github.com/substack/minimist&quot;&gt;minimist&lt;/a&gt; probably around the time when community started adopting mantra of smaller modules that do one thing well. It&amp;#39;s a personal preference and I&amp;#39;m glad there are options.&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/chriso/cli&quot;&gt;cli&lt;/a&gt; by Chris O&amp;#39;Hara is a swiss army knife module for writing CLI applications.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;closing-thoughts&quot;&gt;Closing thoughts&lt;/h2&gt;
+&lt;p&gt;I&amp;#39;ve been using &lt;a href=&quot;(https://github.com/substack/node-optimist)&quot;&gt;optimist&lt;/a&gt; for over a year now and is saddened to see James giving it up, but at the same time it&amp;#39;s exciting that the idea and implementation lives on in &lt;a href=&quot;https://github.com/chevex/yargs&quot;&gt;yargs&lt;/a&gt;. A problem that seems so simple on the surface, such as collecting arguments, can turn out to be a major headache without proper tools. I&amp;#39;m very glad &lt;a href=&quot;https://github.com/chevex/yargs&quot;&gt;yargs&lt;/a&gt; is here to help us deal with it.&lt;/p&gt;
+</content>
+		</entry>
+	
+		<entry>
+			<title>cli-table</title>
+			<link href="http://npmawesome.com/posts/2014-03-20-cli-table"/>
+			<updated>2014-03-20T18:25:57.000Z</updated>
+			<id>http://npmawesome.com/posts/2014-03-20-cli-table</id>
+			<content type="html"></content>
+		</entry>
+	
+		<entry>
 			<title>convict</title>
 			<link href="http://npmawesome.com/posts/2014-03-12-convict"/>
-			<updated>2014-12-27T18:25:57.000Z</updated>
+			<updated>2014-03-12T18:25:57.000Z</updated>
 			<id>http://npmawesome.com/posts/2014-03-12-convict</id>
-			<content type="html">&lt;div class=&quot;highlight&quot;&gt;
-  &lt;img class=&quot;hide-on-mobile&quot; src=&quot;/images/posts/nodejitsu.png&quot; style=&quot;height: 80px&quot;/&gt;
-  This post was written for &lt;a href=&quot;https://blog.nodejitsu.com&quot;&gt;Nodejitsu&lt;/a&gt; blog and is crossposted here. &lt;a href=&quot;https://blog.nodejitsu.com&quot;&gt;Nodejitsu&lt;/a&gt; loved what I was doing at &lt;a href=&quot;http://npmawesome.com&quot;&gt;npmawesome.com&lt;/a&gt; and is now supporting the project.
-&lt;/div&gt;
-
+			<content type="html">&lt;p&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;img src=&quot;/images/posts/nodejitsu.png&quot; style=&quot;height: 80px&quot; class=&quot;hide-on-mobile&quot;/&gt;&lt;span&gt;This post was written for &lt;a href=&quot;http://nodejitsu.com&quot;&gt;Nodejitsu&lt;/a&gt; blog and is crossposted here.
+&lt;a href=&quot;http://nodejitsu.com&quot;&gt;Nodejitsu&lt;/a&gt; loved what I was doing at &lt;a href=&quot;http://npmawesome.com&quot;&gt;npmawesome.com&lt;/a&gt;
+and is now supporting the project.&lt;/span&gt;&lt;/div&gt;&lt;/p&gt;
 &lt;p&gt;Managing application configuration is one of the cornerstones to a reducing stress that comes from deploying Node.js applications to production environment. It&amp;#39;s pretty easy if all you have to worry about is the port that your web server is listening on and database connection. But what do you do when you have a dozen or so external services, local folders, multiple connections and so on to have to keep track? And to top it off, all of this varies across development workstations, staging and production.&lt;/p&gt;
 &lt;p&gt;&lt;img class=&quot;hide-on-mobile&quot; src=&quot;https://0.gravatar.com/avatar/93621c22c5e09b5f980c39e8eedbf68c&quot; style=&quot;float: right; margin-left: 1em&quot;/&gt;
 To accomplish this for the last couple of years I&amp;#39;ve been using &lt;a href=&quot;https://github.com/mozilla/node-convict&quot;&gt;convict&lt;/a&gt;, written by &lt;a href=&quot;https://github.com/lloyd&quot;&gt;Lloyd Hilaiel&lt;/a&gt; at Mozilla, with great success. Before diving into &lt;a href=&quot;https://github.com/mozilla/node-convict&quot;&gt;convict&lt;/a&gt; lets first take a moment to review a typical setup for configuring Node.js applications:&lt;/p&gt;
@@ -142,11 +362,9 @@ app.listen(
 			<link href="http://npmawesome.com/posts/2014-03-06-lockit"/>
 			<updated>2014-03-06T17:35:58.000Z</updated>
 			<id>http://npmawesome.com/posts/2014-03-06-lockit</id>
-			<content type="html">&lt;div class=&quot;highlight&quot;&gt;
-  &lt;img class=&quot;hide-on-mobile&quot; src=&quot;/images/posts/nodejitsu.png&quot; style=&quot;height: 80px&quot;/&gt;
-  This post was written for &lt;a href=&quot;https://blog.nodejitsu.com&quot;&gt;Nodejitsu&lt;/a&gt; blog and is crossposted here. &lt;a href=&quot;https://blog.nodejitsu.com&quot;&gt;Nodejitsu&lt;/a&gt; loved what I was doing at &lt;a href=&quot;http://npmawesome.com&quot;&gt;npmawesome.com&lt;/a&gt; and is now supporting the project.
-&lt;/div&gt;
-
+			<content type="html">&lt;p&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;img src=&quot;/images/posts/nodejitsu.png&quot; style=&quot;height: 80px&quot; class=&quot;hide-on-mobile&quot;/&gt;&lt;span&gt;This post was written for &lt;a href=&quot;http://nodejitsu.com&quot;&gt;Nodejitsu&lt;/a&gt; blog and is crossposted here.
+&lt;a href=&quot;http://nodejitsu.com&quot;&gt;Nodejitsu&lt;/a&gt; loved what I was doing at &lt;a href=&quot;http://npmawesome.com&quot;&gt;npmawesome.com&lt;/a&gt;
+and is now supporting the project.&lt;/span&gt;&lt;/div&gt;&lt;/p&gt;
 &lt;p&gt;So you got a really cool idea for an app or a service. You get all fired up, talk to your friends about, write down some bullet points and run that exciting &lt;code&gt;git init&lt;/code&gt; command in an empty folder. One of the first things you are most likely to in the very near future is begin working on some kind of user login and registration process.&lt;/p&gt;
 &lt;p&gt;&lt;img class=&quot;hide-on-mobile&quot; src=&quot;https://1.gravatar.com/avatar/5664d023c8ab7b6eb69a93990198432e&quot; style=&quot;float: right; margin-left: 1em&quot;/&gt;
 Of course, &lt;a href=&quot;http://passportjs.org/&quot;&gt;passport.js&lt;/a&gt; is great when you can leverage external authentication, but otherwise you are stuck rolling your own system… After a while you find yourself doing it over and over again. How boring! Wouldn&amp;#39;t it be nice if somebody finally just wrote a module that you could plugin into your express app that would take care of all this user registration stuff?&lt;/p&gt;
@@ -257,11 +475,9 @@ app.use(app.router);
 			<link href="http://npmawesome.com/posts/2014-02-27-qr-image"/>
 			<updated>2014-02-27T18:25:57.000Z</updated>
 			<id>http://npmawesome.com/posts/2014-02-27-qr-image</id>
-			<content type="html">&lt;div class=&quot;highlight&quot;&gt;
-  &lt;img class=&quot;hide-on-mobile&quot; src=&quot;/images/posts/nodejitsu.png&quot; style=&quot;height: 80px&quot;/&gt;
-  This post was written for &lt;a href=&quot;https://blog.nodejitsu.com&quot;&gt;Nodejitsu&lt;/a&gt; blog and is crossposted here. &lt;a href=&quot;https://blog.nodejitsu.com&quot;&gt;Nodejitsu&lt;/a&gt; loved what I was doing at &lt;a href=&quot;http://npmawesome.com&quot;&gt;npmawesome.com&lt;/a&gt; and is now supporting the project.
-&lt;/div&gt;
-
+			<content type="html">&lt;p&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;img src=&quot;/images/posts/nodejitsu.png&quot; style=&quot;height: 80px&quot; class=&quot;hide-on-mobile&quot;/&gt;&lt;span&gt;This post was written for &lt;a href=&quot;http://nodejitsu.com&quot;&gt;Nodejitsu&lt;/a&gt; blog and is crossposted here.
+&lt;a href=&quot;http://nodejitsu.com&quot;&gt;Nodejitsu&lt;/a&gt; loved what I was doing at &lt;a href=&quot;http://npmawesome.com&quot;&gt;npmawesome.com&lt;/a&gt;
+and is now supporting the project.&lt;/span&gt;&lt;/div&gt;&lt;/p&gt;
 &lt;svg width=&quot;150&quot; height=&quot;150&quot; viewBox=&quot;0 0 27 27&quot; style=&quot;float: right; margin-left: 1em;&quot;&gt;&lt;path d=&quot;M1 1h7v7h-7zM10 1h2v1h-1v1h-1zM13 1h4v1h1v2h-2v1h-1v-2h1v-1h-2v1h-1zM19 1h7v7h-7zM2 2v5h5v-5zM20 2v5h5v-5zM3 3h3v3h-3zM11 3h1v1h-1zM21 3h3v3h-3zM10 4h1v2h-1zM13 4h1v1h1v2h-1v-1h-1v1h-1v-2h1zM16 5h2v3h-1v-1h-1zM9 6h1v2h-1zM11 7h1v1h-1zM13 7h1v1h-1zM15 7h1v1h-1zM12 8h1v2h-1v1h-2v-1h-1v-1h3zM16 8h1v1h-1zM1 9h1v1h-1zM4 9h1v1h-1zM6 9h2v1h-1v1h-2v-1h1zM14 9h2v3h-1v-1h-2v-1h1zM17 9h2v1h1v1h-1v1h1v2h1v1h-1v1h1v1h1v-1h1v1h1v2h-2v1h2v1h-2v2h1v-1h1v2h-1v1h-1v-1h-1v-1h-1v-1h-1v1h-1v1h2v1h-2v1h-2v-2h-1v-1h1v-1h1v-2h-1v-1h-1v-2h-1v1h-2v-1h1v-2h-1v-2h2v-1h1v2h-1v2h1v-2h1v3h1v-1h1v1h1v-2h-1v-1h-1v-1h-1v-1h2v-1h-1zM20 9h1v1h-1zM2 10h2v1h-2zM25 10h1v2h-2v-1h1zM4 11h1v1h1v1h-1v1h1v1h3v1h2v-1h1v2h-1v3h-1v-1h-1v-1h1v-1h-1v1h-8v-1h1v-1h2v1h1v-1h-1v-1h-1v-1h1zM7 11h1v1h-1zM20 11h2v1h-2zM1 12h1v1h1v1h-2zM8 12h1v1h-1zM11 12h1v1h-1zM7 13h1v1h-1zM9 13h1v1h1v1h-2zM22 13h1v1h1v2h-1v-1h-1zM24 13h2v3h-1v-2h-1zM1 15h1v1h-1zM21 15h1v1h-1zM6 16v1h2v-1zM24 16h1v1h-1zM18 18v3h3v-3zM25 18h1v2h-2v-1h1zM1 19h7v7h-7zM14 19h1v1h-1zM19 19h1v1h-1zM2 20v5h5v-5zM9 20h1v1h-1zM12 20h2v1h2v1h-1v1h-2v-2h-1zM3 21h3v3h-3zM10 21h2v1h-1v4h-2v-1h1v-2h-1v-1h1zM24 21h1v1h-1zM25 23h1v1h-1zM12 24h3v2h-3zM20 25h1v1h-1zM24 25h2v1h-2z&quot;/&gt;&lt;/svg&gt;
 
 &lt;p&gt;&lt;a href=&quot;http://en.wikipedia.org/wiki/QR_code&quot;&gt;QR code&lt;/a&gt; is this super cool thing you probably have been seeing all over the place lately. It started appearing in North America a few years ago but the actual standard is close to two decades old. It allows you to embed any small amount of data that could be decoded with a basic camera equipped phone. Most common use case here is embedding URLs in printed adverising so that those who are interested could simply point their phone at the add and go to the site instead of having to type in URLs.&lt;/p&gt;
@@ -556,11 +772,7 @@ spritesmith({&amp;#39;src&amp;#39;: sprites}, function (err, result) {
 			<link href="http://npmawesome.com/posts/2014-02-19-9-gulp-js-plugins-for-a-great-build-system"/>
 			<updated>2014-02-19T17:26:59.000Z</updated>
 			<id>http://npmawesome.com/posts/2014-02-19-9-gulp-js-plugins-for-a-great-build-system</id>
-			<content type="html">&lt;div class=&quot;highlight&quot;&gt;
-  &lt;img class=&quot;hide-on-mobile&quot; src=&quot;/images/posts/nodejitsu.png&quot; style=&quot;height: 80px&quot;/&gt;
-  This post was written for &lt;a href=&quot;https://blog.nodejitsu.com&quot;&gt;Nodejitsu&lt;/a&gt; blog and is crossposted here. &lt;a href=&quot;https://blog.nodejitsu.com&quot;&gt;Nodejitsu&lt;/a&gt; loved what I was doing at &lt;a href=&quot;http://npmawesome.com&quot;&gt;npmawesome.com&lt;/a&gt; and is now supporting the project.
-&lt;/div&gt;
-
+			<content type="html">&lt;p&gt;&amp;lt;%- @partial(&amp;#39;nodejitsu&amp;#39;) %&amp;gt;&lt;/p&gt;
 &lt;p&gt;This article assumes you have experience with node.js, npm and you are pretty familiar with the concept of task runners and command-line interface. It will walk through general steps required to get up and running with &lt;a href=&quot;http://gulpjs.com&quot;&gt;gulp.js&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;Not unlike all the other build systems, it all starts by installing the task runner itself, e.g. &lt;code&gt;npm install gulp&lt;/code&gt; and creating the main file in the root of your project called &lt;code&gt;gulpfile.js&lt;/code&gt;. For those people like myself, who immediately want to know if &lt;a href=&quot;http://gulpjs.com&quot;&gt;gulp.js&lt;/a&gt; supports CoffeeScript - the answer is yes - just &lt;code&gt;require(&amp;#39;./gulpfile.coffee&amp;#39;)&lt;/code&gt; from &lt;code&gt;gulpfile.js&lt;/code&gt;.&lt;/p&gt;
 &lt;p&gt;Now that we have everything sorted out, lets get cracking and make a task runner to support our HTML5 node.js project.&lt;/p&gt;
@@ -1774,7 +1986,7 @@ long random()
 which Groupon wrote in order to communicate using the WebDriver protocol to a Selenium server.&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;npm install testium
 &lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;img class=&quot;hide-on-mobile&quot; src=&quot;https://0.gravatar.com/avatar/f07c4699fa2274d2ad44323331ee8161?d=https%3A%2F%2Fidenticons.github.com%2Fa25772e176c9744a17818d2be63b2c20.png&amp;r=x&amp;s=400&quot; style=&quot;width: 150px; float: right&quot; /&gt;&lt;/p&gt;
-&lt;p&gt;&lt;blockquote class=&quot;twitter-tweet&quot; data-cards=&quot;hidden&quot; lang=&quot;en&quot;&gt;&lt;p&gt;&lt;a href=&quot;https://twitter.com/Groupon&quot;&gt;@Groupon&lt;/a&gt;&amp;#39;s Browser Integration Testing platform &lt;a href=&quot;https://twitter.com/search?q=%23Testium&amp;amp;src=hash&quot;&gt;#Testium&lt;/a&gt; is now open source! &lt;a href=&quot;https://twitter.com/search?q=%23nodejs&amp;amp;src=hash&quot;&gt;#nodejs&lt;/a&gt; + Mocha + Selenium = Happy! &lt;a href=&quot;https://t.co/lgXiRjflx0&quot;&gt;&lt;a href=&quot;https://t.co/lgXiRjflx0&quot;&gt;https://t.co/lgXiRjflx0&lt;/a&gt;&lt;/a&gt;&lt;/p&gt;&amp;mdash; Jess Telford (@jesstelford) &lt;a href=&quot;https://twitter.com/jesstelford/statuses/413382587348811776&quot;&gt;December 18, 2013&lt;/a&gt;&lt;/blockquote&gt;&lt;/p&gt;
+&lt;p&gt;&lt;blockquote class=&quot;twitter-tweet&quot; data-cards=&quot;hidden&quot; lang=&quot;en&quot;&gt;&lt;p&gt;&lt;a href=&quot;https://twitter.com/Groupon&quot;&gt;@Groupon&lt;/a&gt;&amp;#39;s Browser Integration Testing platform &lt;a href=&quot;https://twitter.com/search?q=%23Testium&amp;amp;src=hash&quot;&gt;#Testium&lt;/a&gt; is now open source! &lt;a href=&quot;https://twitter.com/search?q=%23nodejs&amp;amp;src=hash&quot;&gt;#nodejs&lt;/a&gt; + Mocha + Selenium = Happy! &lt;a href=&quot;https://t.co/lgXiRjflx0&quot;&gt;https://t.co/lgXiRjflx0&lt;/a&gt;&lt;/p&gt;&amp;mdash; Jess Telford (@jesstelford) &lt;a href=&quot;https://twitter.com/jesstelford/statuses/413382587348811776&quot;&gt;December 18, 2013&lt;/a&gt;&lt;/blockquote&gt;&lt;/p&gt;
 &lt;script async src=&quot;//platform.twitter.com/widgets.js&quot; charset=&quot;utf-8&quot;&gt;&lt;/script&gt;
 
 &lt;p&gt;From &lt;a href=&quot;https://engineering.groupon.com/2014/misc/i-tier-testium/&quot;&gt;the introductory article&lt;/a&gt;:&lt;/p&gt;

@@ -5,17 +5,236 @@
         <description><![CDATA[Daily dose of awesome NPM modules for Node.js, old and new!]]></description>
         <link>http://npmawesome.com</link>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Thu, 13 Mar 2014 23:46:41 GMT</lastBuildDate>
+        <lastBuildDate>Fri, 21 Mar 2014 16:45:21 GMT</lastBuildDate>
         <atom:link href="http://npmawesome.com/rss" rel="self" type="application/rss+xml"/>
         <author><![CDATA[Alex Gorbatchev]]></author>
-        <pubDate>Thu, 13 Mar 2014 23:46:03 GMT</pubDate>
+        <pubDate>Fri, 21 Mar 2014 16:44:45 GMT</pubDate>
+        <item>
+            <title><![CDATA[yargs]]></title>
+            <description><![CDATA[<p><div class="highlight"><img src="/images/posts/nodejitsu.png" style="height: 80px" class="hide-on-mobile"/><span>This post was written for <a href="http://nodejitsu.com">Nodejitsu</a> blog and is crossposted here.
+<a href="http://nodejitsu.com">Nodejitsu</a> loved what I was doing at <a href="http://npmawesome.com">npmawesome.com</a>
+and is now supporting the project.</span></div></p>
+<p><img class="hide-on-mobile" src="https://avatars3.githubusercontent.com/u/874394" style="float: right; margin-left: 1em; width: 100px"/>
+This post kicks off a small mini-series of posts about modules which making writing CLI (command line interface) tools in Node.js easier. Typically, when starting a new CLI tool, the first problem that you would encounter is how to read arguments that users pass via command line. Standard library gives us <code>process.argv</code> but if you want something a little bit more structured than an array, you have to look elsewhere.</p>
+<p>This is where <a href="https://github.com/chevex/yargs">yargs</a> comes in handy. This module was originally written by <a href="https://github.com/substack">James Halliday</a> and called <a href="(https://github.com/substack/node-optimist)">optimist</a>. It is now called <a href="https://github.com/chevex/yargs">yargs</a> and the work is continued by <a href="https://github.com/chevex">Alex Ford</a>. Lets get it installed:</p>
+<pre><code>npm install yargs
+</code></pre><h2 id="features">Features</h2>
+<p><a href="https://github.com/chevex/yargs">yargs</a> covers most of the features you would need to parse out options from command line.</p>
+<ul>
+<li>Named options: <code>--foo=1 --bar=2</code>, <code>--foo 1 --bar 2</code> or even <code>-foo 1 -bar 2</code></li>
+<li>Groupped options tarball style: <code>-x</code>, <code>-xz</code>, <code>-xzvf</code></li>
+<li>Count options: <code>-v</code>, <code>-vv</code>, <code>-vvv</code></li>
+<li>Non-hyphenated options.</li>
+<li>Usage / requirements.</li>
+<li>Defaults.</li>
+<li>Typing (boolean, string, etc).</li>
+</ul>
+<p>Lets look at each one:</p>
+<h3 id="named-options">Named options</h3>
+<p>named-options.js</p>
+<pre><code>#!/usr/bin/env node
+var argv = require(&#39;yargs&#39;).argv;
+
+if (argv.a &gt; argv.b) {
+  console.log(&#39;a seems bigger than b&#39;);
+} else {
+  console.log(&#39;a is not bigger than b&#39;);
+}
+</code></pre><hr>
+<pre><code>$ ./named-options.js --a=55 --b=9.52
+a seems bigger than b
+
+$ ./named-options.js --a 1 --b 8.1
+a is not bigger than b
+</code></pre><h3 id="groupped-options-tarball-style">Groupped Options <code>tarball</code> Style</h3>
+<p>tar.js</p>
+<pre><code>#!/usr/bin/env node
+var argv = require(&#39;yargs&#39;).argv;
+
+if (argv.x) console.log(&#39;Will extract to disk from the archive&#39;);
+if (argv.z) console.log(&#39;Will compress the resulting archive with gzip&#39;);
+if (argv.f) console.log(&#39;Will read the archive from the archive file&#39;);
+</code></pre><hr>
+<pre><code>$ ./tar.js -z
+Will compress the resulting archive with gzip
+
+$ ./tar.js -zf
+Will compress the resulting archive with gzip
+Will read the archive from the archive file
+
+$ ./tar.js -zfx
+Will extract to disk from the archive
+Will compress the resulting archive with gzip
+Will read the archive from the archive file
+</code></pre><h3 id="count-options">Count Options</h3>
+<p>count.js</p>
+<pre><code>#!/usr/bin/env node
+var argv = require(&#39;yargs&#39;)
+    .count(&#39;verbose&#39;)
+    .alias(&#39;v&#39;, &#39;verbose&#39;)
+    .argv;
+
+VERBOSE_LEVEL = argv.verbose;
+
+function WARN()  { VERBOSE_LEVEL &gt;= 0 &amp;&amp; console.log.apply(console, arguments); }
+function INFO()  { VERBOSE_LEVEL &gt;= 1 &amp;&amp; console.log.apply(console, arguments); }
+function DEBUG() { VERBOSE_LEVEL &gt;= 2 &amp;&amp; console.log.apply(console, arguments); }
+
+WARN(&quot;Showing only important stuff&quot;);
+INFO(&quot;Showing semi-mportant stuff too&quot;);
+DEBUG(&quot;Extra chatty mode&quot;);
+</code></pre><hr>
+<pre><code>$ ./count.js
+Showing only important stuff
+
+$ ./count.js -v
+Showing only important stuff
+Showing semi-important stuff too
+
+$ ./count.js -vv
+Showing only important stuff
+Showing semi-important stuff too
+Extra chatty mode
+
+$ ./count.js -v --verbose
+Showing only important stuff
+Showing semi-important stuff too
+Extra chatty mode
+</code></pre><h3 id="non-hyphenated-options">Non-hyphenated Options</h3>
+<p>nonopt.js:</p>
+<pre><code>#!/usr/bin/env node
+var argv = require(&#39;yargs&#39;).argv;
+
+console.log(&#39;(%d,%d)&#39;, argv.x, argv.y);
+console.log(argv._);
+</code></pre><hr>
+<pre><code>$ ./nonopt.js -x 6.82 -y 3.35 rum
+(6.82,3.35)
+[ &#39;rum&#39; ]
+
+$ ./nonopt.js &quot;me hearties&quot; -x 0.54 yo -y 1.12 ho
+(0.54,1.12)
+[ &#39;me hearties&#39;, &#39;yo&#39;, &#39;ho&#39; ]
+</code></pre><h3 id="usage-requirements">Usage / Requirements</h3>
+<p>divide.js:</p>
+<pre><code>#!/usr/bin/env node
+var argv = require(&#39;yargs&#39;)
+  .usage(&#39;Usage: $0 -x [num] -y [num]&#39;)
+  .demand([&#39;x&#39;,&#39;y&#39;])
+  .argv;
+
+console.log(argv.x / argv.y);
+</code></pre><hr>
+<pre><code>$ ./divide.js -x 55 -y 11
+5
+
+$ ./divide.js -x 4.91 -z 2.51
+Usage: node ./divide.js -x [num] -y [num]
+
+Options:
+  -x  [required]
+  -y  [required]
+
+Missing required arguments: y
+</code></pre><p>demand_count.js:</p>
+<pre><code>#!/usr/bin/env node
+var argv = require(&#39;yargs&#39;)
+  .demand(2)
+  .argv;
+
+console.dir(argv)
+</code></pre><hr>
+<pre><code>$ ./demand_count.js a
+Not enough arguments, expected 2, but only found 1
+
+$ ./demand_count.js a b
+{ _: [ &#39;a&#39;, &#39;b&#39; ], &#39;$0&#39;: &#39;./demand_count.js&#39; }
+
+$ ./demand_count.js a b c
+{ _: [ &#39;a&#39;, &#39;b&#39;, &#39;c&#39; ], &#39;$0&#39;: &#39;./demand_count.js&#39; }
+</code></pre><h3 id="defaults">Defaults</h3>
+<p>default_singles.js:</p>
+<pre><code>#!/usr/bin/env node
+var argv = require(&#39;yargs&#39;)
+  .default(&#39;x&#39;, 10)
+  .default(&#39;y&#39;, 10)
+  .argv;
+
+console.log(argv.x + argv.y);
+</code></pre><hr>
+<pre><code>$ ./default_singles.js -x 5
+15
+</code></pre><p>default_hash.js:</p>
+<pre><code>#!/usr/bin/env node
+var argv = require(&#39;yargs&#39;)
+  .default({ x : 10, y : 10 })
+  .argv;
+
+console.log(argv.x + argv.y);
+</code></pre><hr>
+<pre><code>$ ./default_hash.js -y 7
+17
+</code></pre><h3 id="typing-boolean-string-etc-">Typing (boolean, string, etc)</h3>
+<p>boolean_single.js</p>
+<pre><code>#!/usr/bin/env node
+var argv = require(&#39;yargs&#39;)
+  .boolean(&#39;v&#39;)
+  .argv;
+
+console.dir(argv.v);
+console.dir(argv._);
+</code></pre><hr>
+<pre><code>$ ./boolean_single.js -v &quot;me hearties&quot; yo ho
+true
+[ &#39;me hearties&#39;, &#39;yo&#39;, &#39;ho&#39; ]
+</code></pre><p>boolean_double.js</p>
+<pre><code>#!/usr/bin/env node
+var argv = require(&#39;yargs&#39;)
+  .boolean([&#39;x&#39;,&#39;y&#39;,&#39;z&#39;])
+  .argv;
+
+console.dir([ argv.x, argv.y, argv.z ]);
+console.dir(argv._);
+</code></pre><hr>
+<pre><code>$ ./boolean_double.js -x -z one two three
+[ true, false, true ]
+[ &#39;one&#39;, &#39;two&#39;, &#39;three&#39; ]
+</code></pre><h2 id="putting-it-all-together">Putting it all together</h2>
+<p>Finally, all together this makes a fully functional options parser.</p>
+<pre><code>#!/usr/bin/env node
+var argv = require(&#39;yargs&#39;)
+  .usage(&#39;Count the lines in a file.\nUsage: $0&#39;)
+  .example(&#39;$0 -f&#39;, &#39;count the lines in the given file&#39;)
+  .demand(&#39;f&#39;)
+  .alias(&#39;f&#39;, &#39;file&#39;)
+  .describe(&#39;f&#39;, &#39;Load a file&#39;)
+  .argv;
+</code></pre><h2 id="other-modules-to-checkout">Other modules to checkout</h2>
+<p>There are many other modules that can help you figure out CLI arguments, some do more, others do less.</p>
+<ul>
+<li><a href="https://github.com/substack/minimist">minimist</a> by James Halliday aka substack is a light weight module without or usage functionality. James has moved on from <a href="(https://github.com/substack/node-optimist)">optimist</a> to <a href="https://github.com/substack/minimist">minimist</a> probably around the time when community started adopting mantra of smaller modules that do one thing well. It&#39;s a personal preference and I&#39;m glad there are options.</li>
+<li><a href="https://github.com/chriso/cli">cli</a> by Chris O&#39;Hara is a swiss army knife module for writing CLI applications.</li>
+</ul>
+<h2 id="closing-thoughts">Closing thoughts</h2>
+<p>I&#39;ve been using <a href="(https://github.com/substack/node-optimist)">optimist</a> for over a year now and is saddened to see James giving it up, but at the same time it&#39;s exciting that the idea and implementation lives on in <a href="https://github.com/chevex/yargs">yargs</a>. A problem that seems so simple on the surface, such as collecting arguments, can turn out to be a major headache without proper tools. I&#39;m very glad <a href="https://github.com/chevex/yargs">yargs</a> is here to help us deal with it.</p>
+]]></description>
+            <link>http://npmawesome.com/posts/2014-03-21-yargs</link>
+            <guid isPermaLink="true">http://npmawesome.com/posts/2014-03-21-yargs</guid>
+            <dc:creator><![CDATA[Alex Gorbatchev]]></dc:creator>
+            <pubDate>Fri, 21 Mar 2014 18:25:57 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[cli-table]]></title>
+            <link>http://npmawesome.com/posts/2014-03-20-cli-table</link>
+            <guid isPermaLink="true">http://npmawesome.com/posts/2014-03-20-cli-table</guid>
+            <dc:creator><![CDATA[Alex Gorbatchev]]></dc:creator>
+            <pubDate>Thu, 20 Mar 2014 18:25:57 GMT</pubDate>
+        </item>
         <item>
             <title><![CDATA[convict]]></title>
-            <description><![CDATA[<div class="highlight">
-  <img class="hide-on-mobile" src="/images/posts/nodejitsu.png" style="height: 80px"/>
-  This post was written for <a href="https://blog.nodejitsu.com">Nodejitsu</a> blog and is crossposted here. <a href="https://blog.nodejitsu.com">Nodejitsu</a> loved what I was doing at <a href="http://npmawesome.com">npmawesome.com</a> and is now supporting the project.
-</div>
-
+            <description><![CDATA[<p><div class="highlight"><img src="/images/posts/nodejitsu.png" style="height: 80px" class="hide-on-mobile"/><span>This post was written for <a href="http://nodejitsu.com">Nodejitsu</a> blog and is crossposted here.
+<a href="http://nodejitsu.com">Nodejitsu</a> loved what I was doing at <a href="http://npmawesome.com">npmawesome.com</a>
+and is now supporting the project.</span></div></p>
 <p>Managing application configuration is one of the cornerstones to a reducing stress that comes from deploying Node.js applications to production environment. It&#39;s pretty easy if all you have to worry about is the port that your web server is listening on and database connection. But what do you do when you have a dozen or so external services, local folders, multiple connections and so on to have to keep track? And to top it off, all of this varies across development workstations, staging and production.</p>
 <p><img class="hide-on-mobile" src="https://0.gravatar.com/avatar/93621c22c5e09b5f980c39e8eedbf68c" style="float: right; margin-left: 1em"/>
 To accomplish this for the last couple of years I&#39;ve been using <a href="https://github.com/mozilla/node-convict">convict</a>, written by <a href="https://github.com/lloyd">Lloyd Hilaiel</a> at Mozilla, with great success. Before diving into <a href="https://github.com/mozilla/node-convict">convict</a> lets first take a moment to review a typical setup for configuring Node.js applications:</p>
@@ -132,15 +351,13 @@ app.listen(
             <link>http://npmawesome.com/posts/2014-03-12-convict</link>
             <guid isPermaLink="true">http://npmawesome.com/posts/2014-03-12-convict</guid>
             <dc:creator><![CDATA[Alex Gorbatchev]]></dc:creator>
-            <pubDate>Sat, 27 Dec 2014 18:25:57 GMT</pubDate>
+            <pubDate>Wed, 12 Mar 2014 18:25:57 GMT</pubDate>
         </item>
         <item>
             <title><![CDATA[lockit]]></title>
-            <description><![CDATA[<div class="highlight">
-  <img class="hide-on-mobile" src="/images/posts/nodejitsu.png" style="height: 80px"/>
-  This post was written for <a href="https://blog.nodejitsu.com">Nodejitsu</a> blog and is crossposted here. <a href="https://blog.nodejitsu.com">Nodejitsu</a> loved what I was doing at <a href="http://npmawesome.com">npmawesome.com</a> and is now supporting the project.
-</div>
-
+            <description><![CDATA[<p><div class="highlight"><img src="/images/posts/nodejitsu.png" style="height: 80px" class="hide-on-mobile"/><span>This post was written for <a href="http://nodejitsu.com">Nodejitsu</a> blog and is crossposted here.
+<a href="http://nodejitsu.com">Nodejitsu</a> loved what I was doing at <a href="http://npmawesome.com">npmawesome.com</a>
+and is now supporting the project.</span></div></p>
 <p>So you got a really cool idea for an app or a service. You get all fired up, talk to your friends about, write down some bullet points and run that exciting <code>git init</code> command in an empty folder. One of the first things you are most likely to in the very near future is begin working on some kind of user login and registration process.</p>
 <p><img class="hide-on-mobile" src="https://1.gravatar.com/avatar/5664d023c8ab7b6eb69a93990198432e" style="float: right; margin-left: 1em"/>
 Of course, <a href="http://passportjs.org/">passport.js</a> is great when you can leverage external authentication, but otherwise you are stuck rolling your own system… After a while you find yourself doing it over and over again. How boring! Wouldn&#39;t it be nice if somebody finally just wrote a module that you could plugin into your express app that would take care of all this user registration stuff?</p>
@@ -251,11 +468,9 @@ app.use(app.router);
         </item>
         <item>
             <title><![CDATA[qr-image]]></title>
-            <description><![CDATA[<div class="highlight">
-  <img class="hide-on-mobile" src="/images/posts/nodejitsu.png" style="height: 80px"/>
-  This post was written for <a href="https://blog.nodejitsu.com">Nodejitsu</a> blog and is crossposted here. <a href="https://blog.nodejitsu.com">Nodejitsu</a> loved what I was doing at <a href="http://npmawesome.com">npmawesome.com</a> and is now supporting the project.
-</div>
-
+            <description><![CDATA[<p><div class="highlight"><img src="/images/posts/nodejitsu.png" style="height: 80px" class="hide-on-mobile"/><span>This post was written for <a href="http://nodejitsu.com">Nodejitsu</a> blog and is crossposted here.
+<a href="http://nodejitsu.com">Nodejitsu</a> loved what I was doing at <a href="http://npmawesome.com">npmawesome.com</a>
+and is now supporting the project.</span></div></p>
 <svg width="150" height="150" viewBox="0 0 27 27" style="float: right; margin-left: 1em;"><path d="M1 1h7v7h-7zM10 1h2v1h-1v1h-1zM13 1h4v1h1v2h-2v1h-1v-2h1v-1h-2v1h-1zM19 1h7v7h-7zM2 2v5h5v-5zM20 2v5h5v-5zM3 3h3v3h-3zM11 3h1v1h-1zM21 3h3v3h-3zM10 4h1v2h-1zM13 4h1v1h1v2h-1v-1h-1v1h-1v-2h1zM16 5h2v3h-1v-1h-1zM9 6h1v2h-1zM11 7h1v1h-1zM13 7h1v1h-1zM15 7h1v1h-1zM12 8h1v2h-1v1h-2v-1h-1v-1h3zM16 8h1v1h-1zM1 9h1v1h-1zM4 9h1v1h-1zM6 9h2v1h-1v1h-2v-1h1zM14 9h2v3h-1v-1h-2v-1h1zM17 9h2v1h1v1h-1v1h1v2h1v1h-1v1h1v1h1v-1h1v1h1v2h-2v1h2v1h-2v2h1v-1h1v2h-1v1h-1v-1h-1v-1h-1v-1h-1v1h-1v1h2v1h-2v1h-2v-2h-1v-1h1v-1h1v-2h-1v-1h-1v-2h-1v1h-2v-1h1v-2h-1v-2h2v-1h1v2h-1v2h1v-2h1v3h1v-1h1v1h1v-2h-1v-1h-1v-1h-1v-1h2v-1h-1zM20 9h1v1h-1zM2 10h2v1h-2zM25 10h1v2h-2v-1h1zM4 11h1v1h1v1h-1v1h1v1h3v1h2v-1h1v2h-1v3h-1v-1h-1v-1h1v-1h-1v1h-8v-1h1v-1h2v1h1v-1h-1v-1h-1v-1h1zM7 11h1v1h-1zM20 11h2v1h-2zM1 12h1v1h1v1h-2zM8 12h1v1h-1zM11 12h1v1h-1zM7 13h1v1h-1zM9 13h1v1h1v1h-2zM22 13h1v1h1v2h-1v-1h-1zM24 13h2v3h-1v-2h-1zM1 15h1v1h-1zM21 15h1v1h-1zM6 16v1h2v-1zM24 16h1v1h-1zM18 18v3h3v-3zM25 18h1v2h-2v-1h1zM1 19h7v7h-7zM14 19h1v1h-1zM19 19h1v1h-1zM2 20v5h5v-5zM9 20h1v1h-1zM12 20h2v1h2v1h-1v1h-2v-2h-1zM3 21h3v3h-3zM10 21h2v1h-1v4h-2v-1h1v-2h-1v-1h1zM24 21h1v1h-1zM25 23h1v1h-1zM12 24h3v2h-3zM20 25h1v1h-1zM24 25h2v1h-2z"/></svg>
 
 <p><a href="http://en.wikipedia.org/wiki/QR_code">QR code</a> is this super cool thing you probably have been seeing all over the place lately. It started appearing in North America a few years ago but the actual standard is close to two decades old. It allows you to embed any small amount of data that could be decoded with a basic camera equipped phone. Most common use case here is embedding URLs in printed adverising so that those who are interested could simply point their phone at the add and go to the site instead of having to type in URLs.</p>
@@ -550,11 +765,7 @@ spritesmith({&#39;src&#39;: sprites}, function (err, result) {
         </item>
         <item>
             <title><![CDATA[9 gulp.js plugins for a great build system]]></title>
-            <description><![CDATA[<div class="highlight">
-  <img class="hide-on-mobile" src="/images/posts/nodejitsu.png" style="height: 80px"/>
-  This post was written for <a href="https://blog.nodejitsu.com">Nodejitsu</a> blog and is crossposted here. <a href="https://blog.nodejitsu.com">Nodejitsu</a> loved what I was doing at <a href="http://npmawesome.com">npmawesome.com</a> and is now supporting the project.
-</div>
-
+            <description><![CDATA[<p>&lt;%- @partial(&#39;nodejitsu&#39;) %&gt;</p>
 <p>This article assumes you have experience with node.js, npm and you are pretty familiar with the concept of task runners and command-line interface. It will walk through general steps required to get up and running with <a href="http://gulpjs.com">gulp.js</a>.</p>
 <p>Not unlike all the other build systems, it all starts by installing the task runner itself, e.g. <code>npm install gulp</code> and creating the main file in the root of your project called <code>gulpfile.js</code>. For those people like myself, who immediately want to know if <a href="http://gulpjs.com">gulp.js</a> supports CoffeeScript - the answer is yes - just <code>require(&#39;./gulpfile.coffee&#39;)</code> from <code>gulpfile.js</code>.</p>
 <p>Now that we have everything sorted out, lets get cracking and make a task runner to support our HTML5 node.js project.</p>
@@ -741,58 +952,6 @@ gulp.task(&#39;css:watch&#39;, function () {
             <guid isPermaLink="true">http://npmawesome.com/posts/2014-02-19-9-gulp-js-plugins-for-a-great-build-system</guid>
             <dc:creator><![CDATA[Alex Gorbatchev]]></dc:creator>
             <pubDate>Wed, 19 Feb 2014 17:26:59 GMT</pubDate>
-        </item>
-        <item>
-            <title><![CDATA[npm-diff]]></title>
-            <description><![CDATA[<p><img class="hide-on-mobile" src="https://1.gravatar.com/avatar/a010d5218f2c3d194dbbac9c5d14d0ad" style="float: right; margin-left: 1em"/>
-<a href="https://github.com/segmentio/npm-diff">npm-diff</a> is a utility module by <a href="https://github.com/juliangruber">Julian Gruber</a> to diff two versions of NPM module. I&#39;ve been fascinated recently by all the tools being released to help you manage <code>package.json</code> and module publishing. It&#39;s really cool!</p>
-<pre><code>npm install npm-diff
-</code></pre><h2 id="usage">Usage</h2>
-<pre><code>$ npm-diff intersect 0.0.0 0.1.0 | colordiff
-</code></pre><p><img class="hide-on-mobile" src="https://github-camo.global.ssl.fastly.net/304bdd7188c9fea08e87e731790aad980877ce7b/68747470733a2f2f692e636c6f756475702e636f6d2f5267694263634b7664742e706e67" style="width: 100%"/></p>
-<p>BOOM! <code>brew install colordiff</code> if you haven&#39;t got it.</p>
-]]></description>
-            <link>http://npmawesome.com/posts/2014-02-18-npm-diff</link>
-            <guid isPermaLink="true">http://npmawesome.com/posts/2014-02-18-npm-diff</guid>
-            <dc:creator><![CDATA[Alex Gorbatchev]]></dc:creator>
-            <pubDate>Tue, 18 Feb 2014 19:13:20 GMT</pubDate>
-        </item>
-        <item>
-            <title><![CDATA[NodePDF]]></title>
-            <description><![CDATA[<p><img class="hide-on-mobile" src="https://0.gravatar.com/avatar/c0f5a91f71e988a9e2d9c20ffa546f4e" style="float: right; margin-left: 1em"/>
-<a href="https://github.com/TJkrusinski/NodePDF">NodePDF</a> is a module by <a href="https://github.com/TJkrusinski">TJ Krusinski</a> for creating PDF files from web pages. It depends on <a href="http://phantomjs.org/">PhantomJS</a> and works by simply taking a screenshot of a page and stuffing it into a PDF. One the plus side, this makes it really easy to do mostly graphics based PDF files from node. On the down side, the content isn&#39;t scalable at all, so printing quality will suffer.</p>
-<pre><code>npm install nodepdf
-</code></pre><h2 id="usage">Usage</h2>
-<p><img class="hide-on-mobile" src="/images/posts/nodepdf.jpg" style="width: 300px; float: right; margin: 1em;"/></p>
-<pre><code>var nodepdf = require(&#39;nodepdf&#39;);
-
-// last argument is optional, sets the width and height
-// for the viewport to render the pdf from
-var pdf = new nodepdf(
-  &#39;http://npmawesome.com&#39;,
-  &#39;npmawesome.pdf&#39;,
-  {
-    args: &#39;--debug=true&#39;,
-    viewportSize: {
-      width: 500,
-      height: 300
-    }
-  }
-);
-
-pdf.on(&#39;error&#39;, function(msg){
-    console.log(msg);
-});
-
-pdf.on(&#39;done&#39;, function(pathToFile){
-    console.log(pathToFile);
-});
-</code></pre><p>I can imagine this being used for something simple, like printing tickets, post cards, photos and so on.</p>
-]]></description>
-            <link>http://npmawesome.com/posts/2014-02-17-nodepdf</link>
-            <guid isPermaLink="true">http://npmawesome.com/posts/2014-02-17-nodepdf</guid>
-            <dc:creator><![CDATA[Alex Gorbatchev]]></dc:creator>
-            <pubDate>Mon, 17 Feb 2014 17:56:26 GMT</pubDate>
         </item>
     </channel>
 </rss>
