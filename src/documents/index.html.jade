@@ -7,7 +7,8 @@ pageSize: 20
 //- pre= JSON.stringify(getCollection('documents').toJSON(), null, 2)
 
 each page in getCollection('pagedPosts').toJSON().slice(document.page.startIdx, document.page.endIdx)
-  != partial('post', {post: page})
+  unless page.meta.ignored
+    != partial('post', {post: page})
 
 if document.page.count > 1
   footer.pagination
