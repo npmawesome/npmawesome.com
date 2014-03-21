@@ -1,8 +1,6 @@
 ---
-ignored: true
-
 layout: post
-date: 2014-03-19T10:25:57-0800
+date: 2014-03-21T10:25:57-0800
 tags: npm, cli, arguments
 
 npm:
