@@ -74,16 +74,22 @@ docpadConfig =
 
   collections:
     pagedPosts: (database) ->
-      database.findAllLive {relativeOutDirPath: /^posts/, isPagedAuto: $ne: true}, [date: -1, basename: -1]
+      query =
+        relativeOutDirPath: /^posts/
+        isPagedAuto: $ne: true
+
+      sort = [date: -1, basename: -1]
+
+      database.findAllLive query, sort
 
     posts: (database) ->
-      database.findAllLive {relativeOutDirPath: /^posts/}, [date: -1, basename: -1]
+      query =
+        relativeOutDirPath: /^posts/
+        ignored: $ne: true
 
-  plugins:
-    rss:
-      default:
-        collection: 'posts'
-        url: '/rss'
+      sort = [date: -1, basename: -1]
+
+      database.findAllLive query, sort
 
 # Export the DocPad Configuration
 module.exports = docpadConfig

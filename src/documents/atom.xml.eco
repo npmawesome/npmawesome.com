@@ -11,7 +11,7 @@
 		<email><%= @site.email %></email>
 	</author>
 
-	<% for document in @getCollection('pagedPosts').toJSON() when not document.ignored and not document.draft: %>
+	<% for document in @getCollection('pagedPosts').toJSON() when not document.ignored: %>
 		<entry>
 			<title><%= document.title or document.name or @site.title %></title>
 			<link href="<%= @site.url %><%= document.url %>"/>
