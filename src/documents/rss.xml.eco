@@ -2,10 +2,8 @@
 <rss version="2.0">
   <channel>
     <title><%= @site.title %></title>
-    <subtitle><%= @site.description %></subtitle>
     <link><%= @site.url %></link>
-    <lastBuildDate><%= @site.date.toISOString() %></lastBuildDate>
-    <atom:link href="<%= @site.url %>/rss" rel="self" type="application/rss+xml"/>
+    <lastBuildDate><%= @site.date.toUTCString() %></lastBuildDate>
     <author><%= @site.author %></author>
     <pubDate><%= @site.date.toISOString() %></pubDate>
 
@@ -15,7 +13,7 @@
         <link><%= @site.url %><%= document.url %></link>
         <guid isPermaLink="true"><%= @site.url %><%= document.url %></guid>
         <!-- <dc:creator><![CDATA[Alex Gorbatchev]]></dc:creator> -->
-        <pubDate><%= document.date.toISOString() %></pubDate>
+        <pubDate><%= document.date.toUTCString() %></pubDate>
         <description><![CDATA[<%= document.contentRenderedWithoutLayouts %>]]></description>
       </item>
     <% end %>
