@@ -1,0 +1,12 @@
+---
+draft: true
+
+layout: post
+date: 2014-03-21T10:25:57-0800
+tags: strongloop
+slug: promises-trycatch-zones
+title: promises vs. trycatch vs. zones
+description: Easy command line argument parsing with yargs.
+---
+<%- @partial('strongloop') %>
+
