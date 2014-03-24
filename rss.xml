@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<rss version="2.0">
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>npm awesome</title>
     <link>http://npmawesome.com</link>
-    <lastBuildDate>Mon, 24 Mar 2014 15:34:22 GMT</lastBuildDate>
-    <pubDate>Mon, 24 Mar 2014 15:34:22 GMT</pubDate>
+    <lastBuildDate>Mon, 24 Mar 2014 15:51:00 GMT</lastBuildDate>
+    <pubDate>Mon, 24 Mar 2014 15:51:00 GMT</pubDate>
     <description>Daily dose of awesome NPM modules for Node.js, old and new!</description>
     <atom:link href="http://npmawesome.com/rss" rel="self" type="application/rss+xml"/>
 
@@ -14,7 +14,6 @@
         <author>Alex Gorbatchev</author>
         <link>http://npmawesome.com/posts/2014-03-21-yargs</link>
         <guid isPermaLink="true">http://npmawesome.com/posts/2014-03-21-yargs</guid>
-        <!-- <dc:creator><![CDATA[Alex Gorbatchev]]></dc:creator> -->
         <pubDate>Fri, 21 Mar 2014 18:25:57 GMT</pubDate>
         <description><![CDATA[&lt;p&gt;&lt;div class=&quot;highlight nodejitsu&quot;&gt;&lt;img src=&quot;/images/posts/nodejitsu.png&quot; style=&quot;height: 80px&quot; class=&quot;hide-on-mobile&quot;/&gt;&lt;span&gt;This post was written for &lt;a href=&quot;http://nodejitsu.com&quot;&gt;Nodejitsu&lt;/a&gt; blog and is crossposted here.
 &lt;a href=&quot;http://nodejitsu.com&quot;&gt;Nodejitsu&lt;/a&gt; loved what I was doing at &lt;a href=&quot;http://npmawesome.com&quot;&gt;npmawesome.com&lt;/a&gt;
@@ -230,7 +229,6 @@ var argv = require(&amp;#39;yargs&amp;#39;)
         <author>Alex Gorbatchev</author>
         <link>http://npmawesome.com/posts/2014-03-12-convict</link>
         <guid isPermaLink="true">http://npmawesome.com/posts/2014-03-12-convict</guid>
-        <!-- <dc:creator><![CDATA[Alex Gorbatchev]]></dc:creator> -->
         <pubDate>Wed, 12 Mar 2014 18:25:57 GMT</pubDate>
         <description><![CDATA[&lt;p&gt;&lt;div class=&quot;highlight nodejitsu&quot;&gt;&lt;img src=&quot;/images/posts/nodejitsu.png&quot; style=&quot;height: 80px&quot; class=&quot;hide-on-mobile&quot;/&gt;&lt;span&gt;This post was written for &lt;a href=&quot;http://nodejitsu.com&quot;&gt;Nodejitsu&lt;/a&gt; blog and is crossposted here.
 &lt;a href=&quot;http://nodejitsu.com&quot;&gt;Nodejitsu&lt;/a&gt; loved what I was doing at &lt;a href=&quot;http://npmawesome.com&quot;&gt;npmawesome.com&lt;/a&gt;
@@ -355,7 +353,6 @@ app.listen(
         <author>Alex Gorbatchev</author>
         <link>http://npmawesome.com/posts/2014-03-06-lockit</link>
         <guid isPermaLink="true">http://npmawesome.com/posts/2014-03-06-lockit</guid>
-        <!-- <dc:creator><![CDATA[Alex Gorbatchev]]></dc:creator> -->
         <pubDate>Thu, 06 Mar 2014 17:35:58 GMT</pubDate>
         <description><![CDATA[&lt;p&gt;&lt;div class=&quot;highlight nodejitsu&quot;&gt;&lt;img src=&quot;/images/posts/nodejitsu.png&quot; style=&quot;height: 80px&quot; class=&quot;hide-on-mobile&quot;/&gt;&lt;span&gt;This post was written for &lt;a href=&quot;http://nodejitsu.com&quot;&gt;Nodejitsu&lt;/a&gt; blog and is crossposted here.
 &lt;a href=&quot;http://nodejitsu.com&quot;&gt;Nodejitsu&lt;/a&gt; loved what I was doing at &lt;a href=&quot;http://npmawesome.com&quot;&gt;npmawesome.com&lt;/a&gt;
@@ -470,7 +467,6 @@ app.use(app.router);
         <author>Alex Gorbatchev</author>
         <link>http://npmawesome.com/posts/2014-02-27-qr-image</link>
         <guid isPermaLink="true">http://npmawesome.com/posts/2014-02-27-qr-image</guid>
-        <!-- <dc:creator><![CDATA[Alex Gorbatchev]]></dc:creator> -->
         <pubDate>Thu, 27 Feb 2014 18:25:57 GMT</pubDate>
         <description><![CDATA[&lt;p&gt;&lt;div class=&quot;highlight nodejitsu&quot;&gt;&lt;img src=&quot;/images/posts/nodejitsu.png&quot; style=&quot;height: 80px&quot; class=&quot;hide-on-mobile&quot;/&gt;&lt;span&gt;This post was written for &lt;a href=&quot;http://nodejitsu.com&quot;&gt;Nodejitsu&lt;/a&gt; blog and is crossposted here.
 &lt;a href=&quot;http://nodejitsu.com&quot;&gt;Nodejitsu&lt;/a&gt; loved what I was doing at &lt;a href=&quot;http://npmawesome.com&quot;&gt;npmawesome.com&lt;/a&gt;
@@ -578,7 +574,6 @@ app.listen(3000);
         <author>Alex Gorbatchev</author>
         <link>http://npmawesome.com/posts/2014-02-25-webdriverjs</link>
         <guid isPermaLink="true">http://npmawesome.com/posts/2014-02-25-webdriverjs</guid>
-        <!-- <dc:creator><![CDATA[Alex Gorbatchev]]></dc:creator> -->
         <pubDate>Tue, 25 Feb 2014 17:07:16 GMT</pubDate>
         <description><![CDATA[&lt;p&gt;&lt;img class=&quot;hide-on-mobile&quot; src=&quot;https://2.gravatar.com/avatar/2c405e9d55507036d6cc2aff250c3146&quot; style=&quot;float: right; margin-left: 1em&quot;/&gt;
 &lt;a href=&quot;https://github.com/camme/webdriverjs&quot;&gt;webdriver.js&lt;/a&gt; is a module by &lt;a href=&quot;https://github.com/camme&quot;&gt;Camilo Tapia&lt;/a&gt; to render node.js error stack in a much more digestable way. This seems like it might a good module to add to your infrastracture if you, like me, constantly having to weed through the ugly stack messages to find relavant lines. &lt;a href=&quot;https://github.com/camme/webdriverjs&quot;&gt;webdriver.js&lt;/a&gt; is not the &amp;quot;official webdriverjs driver&amp;quot; says &lt;a href=&quot;https://github.com/christian-bromann&quot;&gt;Christian Bromann&lt;/a&gt; in &lt;a href=&quot;https://github.com/camme/webdriverjs/issues/138#issuecomment-32051980&quot;&gt;this thread&lt;/a&gt;:&lt;/p&gt;
@@ -648,7 +643,6 @@ driver.findElement(webdriver.By.id(&amp;#39;btnG&amp;#39;)).click();
         <author>Alex Gorbatchev</author>
         <link>http://npmawesome.com/posts/2014-02-24-pretty-error</link>
         <guid isPermaLink="true">http://npmawesome.com/posts/2014-02-24-pretty-error</guid>
-        <!-- <dc:creator><![CDATA[Alex Gorbatchev]]></dc:creator> -->
         <pubDate>Mon, 24 Feb 2014 17:55:21 GMT</pubDate>
         <description><![CDATA[&lt;p&gt;&lt;img class=&quot;hide-on-mobile&quot; src=&quot;https://0.gravatar.com/avatar/8db4bf4bbef66bb91a4f2a0ba3b26e68&quot; style=&quot;float: right; margin-left: 1em&quot;/&gt;
 &lt;a href=&quot;https://github.com/AriaMinaei/pretty-error&quot;&gt;pretty-error&lt;/a&gt; is a module by &lt;a href=&quot;https://github.com/AriaMinaei&quot;&gt;Aria Minaei&lt;/a&gt; to render node.js error stack in a much more digestable way. This seems like it might a good module to add to your infrastracture if you, like me, constantly having to weed through the ugly stack messages to find relavant lines.&lt;/p&gt;
@@ -697,7 +691,6 @@ pe.unskipAllPaths();
         <author>Alex Gorbatchev</author>
         <link>http://npmawesome.com/posts/2014-02-21-supertest</link>
         <guid isPermaLink="true">http://npmawesome.com/posts/2014-02-21-supertest</guid>
-        <!-- <dc:creator><![CDATA[Alex Gorbatchev]]></dc:creator> -->
         <pubDate>Fri, 21 Feb 2014 18:09:41 GMT</pubDate>
         <description><![CDATA[&lt;p&gt;&lt;img class=&quot;hide-on-mobile&quot; src=&quot;https://2.gravatar.com/avatar/f1e3ab214a976a39cfd713bc93deb10f&quot; style=&quot;float: right; margin-left: 1em&quot;/&gt;
 &lt;a href=&quot;https://github.com/visionmedia/supertest&quot;&gt;supertest&lt;/a&gt; is a module by &lt;a href=&quot;https://github.com/visionmedia&quot;&gt;TJ Holowaychuk&lt;/a&gt; that takes testing HTTP easier via &lt;a href=&quot;http://github.com/visionmedia/superagent&quot;&gt;superagent&lt;/a&gt;. The motivation with this module is to provide a high-level abstraction for testing HTTP, while still allowing you to drop down to the lower-level API provided by superagent.&lt;/p&gt;
@@ -745,7 +738,6 @@ request.get(&amp;#39;/&amp;#39;).expect(&amp;#39;heya&amp;#39;, function(err) {
         <author>Alex Gorbatchev</author>
         <link>http://npmawesome.com/posts/2014-02-20-spritesmith</link>
         <guid isPermaLink="true">http://npmawesome.com/posts/2014-02-20-spritesmith</guid>
-        <!-- <dc:creator><![CDATA[Alex Gorbatchev]]></dc:creator> -->
         <pubDate>Thu, 20 Feb 2014 17:58:22 GMT</pubDate>
         <description><![CDATA[&lt;p&gt;&lt;img class=&quot;hide-on-mobile&quot; src=&quot;https://0.gravatar.com/avatar/15927fc52919e9223adc7ed99e125d4d&quot; style=&quot;float: right; margin-left: 1em&quot;/&gt;
 &lt;a href=&quot;https://github.com/Ensighten/spritesmith&quot;&gt;spritesmith&lt;/a&gt; is a module by &lt;a href=&quot;https://github.com/twolfson&quot;&gt;Todd Wolfson&lt;/a&gt; that takes image files and generates &lt;a href=&quot;http://en.wikipedia.org/wiki/Sprite_%28computer_graphics%29#Sprites_by_CSS&quot;&gt;spritesheets&lt;/a&gt; and coordinate maps. By itself &lt;a href=&quot;https://github.com/Ensighten/spritesmith&quot;&gt;spritesmith&lt;/a&gt; would be somewhat difficult to utilize in your workflow, that&amp;#39;s why nice people have created &lt;a href=&quot;https://github.com/twolfson/gulp.spritesmith&quot;&gt;gulp.spritesmith&lt;/a&gt; and &lt;a href=&quot;https://github.com/Ensighten/grunt-spritesmith&quot;&gt;grunt-spritesmith&lt;/a&gt; tasks to make build sprites for you with just a few lines of code.&lt;/p&gt;
@@ -777,7 +769,6 @@ spritesmith({&amp;#39;src&amp;#39;: sprites}, function (err, result) {
         <author>Alex Gorbatchev</author>
         <link>http://npmawesome.com/posts/2014-02-19-9-gulp-js-plugins-for-a-great-build-system</link>
         <guid isPermaLink="true">http://npmawesome.com/posts/2014-02-19-9-gulp-js-plugins-for-a-great-build-system</guid>
-        <!-- <dc:creator><![CDATA[Alex Gorbatchev]]></dc:creator> -->
         <pubDate>Wed, 19 Feb 2014 17:26:59 GMT</pubDate>
         <description><![CDATA[&lt;p&gt;&amp;lt;%- @partial(&amp;#39;nodejitsu&amp;#39;) %&amp;gt;&lt;/p&gt;
 &lt;p&gt;This article assumes you have experience with node.js, npm and you are pretty familiar with the concept of task runners and command-line interface. It will walk through general steps required to get up and running with &lt;a href=&quot;http://gulpjs.com&quot;&gt;gulp.js&lt;/a&gt;.&lt;/p&gt;
@@ -969,7 +960,6 @@ gulp.task(&amp;#39;css:watch&amp;#39;, function () {
         <author>Alex Gorbatchev</author>
         <link>http://npmawesome.com/posts/2014-02-18-npm-diff</link>
         <guid isPermaLink="true">http://npmawesome.com/posts/2014-02-18-npm-diff</guid>
-        <!-- <dc:creator><![CDATA[Alex Gorbatchev]]></dc:creator> -->
         <pubDate>Tue, 18 Feb 2014 19:13:20 GMT</pubDate>
         <description><![CDATA[&lt;p&gt;&lt;img class=&quot;hide-on-mobile&quot; src=&quot;https://1.gravatar.com/avatar/a010d5218f2c3d194dbbac9c5d14d0ad&quot; style=&quot;float: right; margin-left: 1em&quot;/&gt;
 &lt;a href=&quot;https://github.com/segmentio/npm-diff&quot;&gt;npm-diff&lt;/a&gt; is a utility module by &lt;a href=&quot;https://github.com/juliangruber&quot;&gt;Julian Gruber&lt;/a&gt; to diff two versions of NPM module. I&amp;#39;ve been fascinated recently by all the tools being released to help you manage &lt;code&gt;package.json&lt;/code&gt; and module publishing. It&amp;#39;s really cool!&lt;/p&gt;
@@ -986,7 +976,6 @@ gulp.task(&amp;#39;css:watch&amp;#39;, function () {
         <author>Alex Gorbatchev</author>
         <link>http://npmawesome.com/posts/2014-02-17-nodepdf</link>
         <guid isPermaLink="true">http://npmawesome.com/posts/2014-02-17-nodepdf</guid>
-        <!-- <dc:creator><![CDATA[Alex Gorbatchev]]></dc:creator> -->
         <pubDate>Mon, 17 Feb 2014 17:56:26 GMT</pubDate>
         <description><![CDATA[&lt;p&gt;&lt;img class=&quot;hide-on-mobile&quot; src=&quot;https://0.gravatar.com/avatar/c0f5a91f71e988a9e2d9c20ffa546f4e&quot; style=&quot;float: right; margin-left: 1em&quot;/&gt;
 &lt;a href=&quot;https://github.com/TJkrusinski/NodePDF&quot;&gt;NodePDF&lt;/a&gt; is a module by &lt;a href=&quot;https://github.com/TJkrusinski&quot;&gt;TJ Krusinski&lt;/a&gt; for creating PDF files from web pages. It depends on &lt;a href=&quot;http://phantomjs.org/&quot;&gt;PhantomJS&lt;/a&gt; and works by simply taking a screenshot of a page and stuffing it into a PDF. One the plus side, this makes it really easy to do mostly graphics based PDF files from node. On the down side, the content isn&amp;#39;t scalable at all, so printing quality will suffer.&lt;/p&gt;
@@ -1025,7 +1014,6 @@ pdf.on(&amp;#39;done&amp;#39;, function(pathToFile){
         <author>Alex Gorbatchev</author>
         <link>http://npmawesome.com/posts/2014-02-13-domain-context</link>
         <guid isPermaLink="true">http://npmawesome.com/posts/2014-02-13-domain-context</guid>
-        <!-- <dc:creator><![CDATA[Alex Gorbatchev]]></dc:creator> -->
         <pubDate>Thu, 13 Feb 2014 21:20:38 GMT</pubDate>
         <description><![CDATA[&lt;p&gt;&lt;img class=&quot;hide-on-mobile&quot; src=&quot;/images/posts/domain-context.jpg&quot; style=&quot;width: 100%&quot;/&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;https://github.com/andreypopp/domain-context&quot;&gt;domain-context&lt;/a&gt; is a module by &lt;a href=&quot;https://github.com/andreypopp&quot;&gt;Andrey Popp&lt;/a&gt; for dealing with globally accessible domain-bound contexts, connect/express middleware included.&lt;/p&gt;
@@ -1077,7 +1065,6 @@ function getUserById(id, cb) {
         <author>Alex Gorbatchev</author>
         <link>http://npmawesome.com/posts/2014-02-12-jsonstream</link>
         <guid isPermaLink="true">http://npmawesome.com/posts/2014-02-12-jsonstream</guid>
-        <!-- <dc:creator><![CDATA[Alex Gorbatchev]]></dc:creator> -->
         <pubDate>Wed, 12 Feb 2014 18:07:44 GMT</pubDate>
         <description><![CDATA[&lt;p&gt;&lt;a href=&quot;https://github.com/dominictarr/JSONStream&quot;&gt;JSONStream&lt;/a&gt; is a module by &lt;a href=&quot;https://github.com/dominictarr&quot;&gt;Dominic Tarr&lt;/a&gt; for streaming &lt;code&gt;JSON.parse&lt;/code&gt; and &lt;code&gt;JSON.stringify&lt;/code&gt;.&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;npm install jsonstream
@@ -1111,7 +1098,6 @@ I like the idea behind streaming JSON alot because you don&amp;#39;t have to wai
         <author>Alex Gorbatchev</author>
         <link>http://npmawesome.com/posts/2014-02-11-peer-js</link>
         <guid isPermaLink="true">http://npmawesome.com/posts/2014-02-11-peer-js</guid>
-        <!-- <dc:creator><![CDATA[Alex Gorbatchev]]></dc:creator> -->
         <pubDate>Tue, 11 Feb 2014 17:59:37 GMT</pubDate>
         <description><![CDATA[&lt;p&gt;&lt;img class=&quot;hide-on-mobile&quot; src=&quot;/images/posts/peerjs.png&quot; style=&quot;float: right; margin-left: 1em&quot;/&gt;
 &lt;a href=&quot;https://github.com/peers/peerjs&quot;&gt;peer.js&lt;/a&gt; provides a complete, configurable, and easy-to-use peer-to-peer API built on top of WebRTC, supporting both data channels and media streams. &lt;a href=&quot;https://github.com/peers/peerjs&quot;&gt;peer.js&lt;/a&gt; wraps the browser&amp;#39;s WebRTC implementation to provide a complete, configurable, and easy-to-use peer-to-peer connection API. Equipped with nothing but an ID, a peer can create a P2P data or media stream connection to a remote peer.&lt;/p&gt;
@@ -1143,7 +1129,6 @@ conn.on(&amp;#39;open&amp;#39;, function() {
         <author>Alex Gorbatchev</author>
         <link>http://npmawesome.com/posts/2014-02-10-node-dependencies</link>
         <guid isPermaLink="true">http://npmawesome.com/posts/2014-02-10-node-dependencies</guid>
-        <!-- <dc:creator><![CDATA[Alex Gorbatchev]]></dc:creator> -->
         <pubDate>Mon, 10 Feb 2014 18:57:16 GMT</pubDate>
         <description><![CDATA[&lt;p&gt;&lt;img class=&quot;hide-on-mobile&quot; src=&quot;https://0.gravatar.com/avatar/91ab609100e96dd5ccb270399e1acab6&quot; style=&quot;float: right; margin-left: 1em&quot;/&gt;
 &lt;a href=&quot;https://github.com/FogCreek/node-dependencies&quot;&gt;node-dependencies&lt;/a&gt; is a very basic but incredibly useful command line utility written by &lt;a href=&quot;https://github.com/dpatti&quot;&gt;Doug Patti&lt;/a&gt; of &lt;a href=&quot;https://www.fogcreek.com/&quot;&gt;Fog Creek&lt;/a&gt; that checks and prints out out-of-date dependencies for your Node.js app.&lt;/p&gt;
@@ -1183,7 +1168,6 @@ jquery                    1.8.3        ---        ---        ---
         <author>Alex Gorbatchev</author>
         <link>http://npmawesome.com/posts/2014-02-05-cucumber-js</link>
         <guid isPermaLink="true">http://npmawesome.com/posts/2014-02-05-cucumber-js</guid>
-        <!-- <dc:creator><![CDATA[Alex Gorbatchev]]></dc:creator> -->
         <pubDate>Wed, 05 Feb 2014 21:06:18 GMT</pubDate>
         <description><![CDATA[&lt;p&gt;&lt;img class=&quot;hide-on-mobile&quot; src=&quot;/images/posts/cucumber-logo.png&quot; style=&quot;width: 100%; margin-bottom: 1em&quot;/&gt;&lt;/p&gt;
 &lt;p&gt;&lt;img class=&quot;hide-on-mobile&quot; src=&quot;https://2.gravatar.com/avatar/cbc1acceddbfaceee4cf3cae24d7c912&quot; style=&quot;float: right; margin-left: 1em&quot;/&gt;
@@ -1238,7 +1222,6 @@ Writing &lt;a href=&quot;https://github.com/cucumber/cucumber/wiki/Feature-Intro
         <author>Alex Gorbatchev</author>
         <link>http://npmawesome.com/posts/2014-02-04-binary-js</link>
         <guid isPermaLink="true">http://npmawesome.com/posts/2014-02-04-binary-js</guid>
-        <!-- <dc:creator><![CDATA[Alex Gorbatchev]]></dc:creator> -->
         <pubDate>Tue, 04 Feb 2014 17:41:51 GMT</pubDate>
         <description><![CDATA[&lt;p&gt;&lt;a href=&quot;https://github.com/binaryjs/binaryjs&quot;&gt;binary.js&lt;/a&gt; is a lightweight framework by &lt;a href=&quot;https://github.com/binaryjs&quot;&gt;Eric Zhang&lt;/a&gt; that utilizes websockets to send, stream, and pipe binary data bidirectionally between browser javascript.&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;npm install binaryjs
@@ -1291,7 +1274,6 @@ client.on(&amp;#39;open&amp;#39;, function(stream){
         <author>Alex Gorbatchev</author>
         <link>http://npmawesome.com/posts/2014-02-03-power-assert</link>
         <guid isPermaLink="true">http://npmawesome.com/posts/2014-02-03-power-assert</guid>
-        <!-- <dc:creator><![CDATA[Alex Gorbatchev]]></dc:creator> -->
         <pubDate>Mon, 03 Feb 2014 18:59:55 GMT</pubDate>
         <description><![CDATA[&lt;p&gt;&lt;a href=&quot;https://github.com/twada/power-assert&quot;&gt;power-assert&lt;/a&gt; is a module written by &lt;a href=&quot;https://github.com/twada&quot;&gt;Takuto Wada&lt;/a&gt; that provides pretty damn descriptive assert messages for your tests.&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;npm install power-assert
@@ -1365,7 +1347,6 @@ client.on(&amp;#39;open&amp;#39;, function(stream){
         <author>Alex Gorbatchev</author>
         <link>http://npmawesome.com/posts/2014-01-31-coupon-code</link>
         <guid isPermaLink="true">http://npmawesome.com/posts/2014-01-31-coupon-code</guid>
-        <!-- <dc:creator><![CDATA[Alex Gorbatchev]]></dc:creator> -->
         <pubDate>Fri, 31 Jan 2014 17:35:42 GMT</pubDate>
         <description><![CDATA[&lt;p&gt;&lt;a href=&quot;https://github.com/appsattic/node-coupon-code&quot;&gt;coupon-code&lt;/a&gt; implementation of Perl&amp;#39;s &lt;a href=&quot;https://github.com/grantm/Algorithm-CouponCode&quot;&gt;Algorithm::CouponCode&lt;/a&gt; written by &lt;a href=&quot;https://github.com/appsattic&quot;&gt;Andrew Chilton&lt;/a&gt;. It is meant to solve a what appears on the surface very simple problem - coupon code validation. You would imagine printing codes on paper cups and then having user enter them - pretty straight forward. What happens however when user confuses zero for letter O, or five for S? Should you tell them their code is invalid?&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;npm install coupon-code
@@ -1396,7 +1377,6 @@ cc.generate({ partLen : 6 });
         <author>Alex Gorbatchev</author>
         <link>http://npmawesome.com/posts/2014-01-30-rewire</link>
         <guid isPermaLink="true">http://npmawesome.com/posts/2014-01-30-rewire</guid>
-        <!-- <dc:creator><![CDATA[Alex Gorbatchev]]></dc:creator> -->
         <pubDate>Thu, 30 Jan 2014 17:49:19 GMT</pubDate>
         <description><![CDATA[&lt;p&gt;&lt;a href=&quot;https://github.com/jhnns/rewire&quot;&gt;rewire&lt;/a&gt; is a dependency injection module for node.js applications written by &lt;a href=&quot;https://github.com/jhnns&quot;&gt;Johannes Ewald&lt;/a&gt;. It adds a special setter and getter to modules so you can modify their behaviour for better unit testing.&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;npm install rewire
@@ -1455,7 +1435,6 @@ myModule.__set__({
         <author>Alex Gorbatchev</author>
         <link>http://npmawesome.com/posts/2014-01-29-yarm</link>
         <guid isPermaLink="true">http://npmawesome.com/posts/2014-01-29-yarm</guid>
-        <!-- <dc:creator><![CDATA[Alex Gorbatchev]]></dc:creator> -->
         <pubDate>Wed, 29 Jan 2014 17:37:23 GMT</pubDate>
         <description><![CDATA[&lt;p&gt;&lt;img class=&quot;hide-on-mobile&quot; src=&quot;https://0.gravatar.com/avatar/b928accd038cf24ef3f14cb5dd758b04&quot; style=&quot;float: right; margin-left: 1em&quot;/&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;https://github.com/njoyard/yarm&quot;&gt;yarm&lt;/a&gt; is Yet Another REST Middleware for node.js and Express written by &lt;a href=&quot;https://github.com/njoyard&quot;&gt;Nicolas Joyard&lt;/a&gt;. It has no dependencies, however it is intended to be used with &lt;a href=&quot;http://expressjs.com/&quot;&gt;Express&lt;/a&gt; and will have additional features if &lt;a href=&quot;http://mongoosejs.com/&quot;&gt;Mongoose&lt;/a&gt; is present.&lt;/p&gt;
@@ -1547,7 +1526,6 @@ $ curl http://localhost/rest/posts/first-post/comments/3/foo/bar
         <author>Alex Gorbatchev</author>
         <link>http://npmawesome.com/posts/2014-01-28-modella</link>
         <guid isPermaLink="true">http://npmawesome.com/posts/2014-01-28-modella</guid>
-        <!-- <dc:creator><![CDATA[Alex Gorbatchev]]></dc:creator> -->
         <pubDate>Tue, 28 Jan 2014 17:56:33 GMT</pubDate>
         <description><![CDATA[&lt;p&gt;&lt;img class=&quot;hide-on-mobile&quot; src=&quot;https://2.gravatar.com/avatar/824b41e6108a22c4c96f50ee23419369&quot; style=&quot;float: right; margin-left: 1em&quot;/&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;https://github.com/modella/modella&quot;&gt;modella&lt;/a&gt; is a bare bones model framework written by &lt;a href=&quot;https://github.com/matthewmueller&quot;&gt;Matthew Mueller&lt;/a&gt; of the &lt;a href=&quot;/posts/2013-12-27-cheerio/&quot;&gt;cheerio&lt;/a&gt; fame. It exposes a few APIs on which plugins can be built to enhance functionality. The core module and select plugins work on the client and server.&lt;/p&gt;
@@ -1619,7 +1597,6 @@ user.save(function(err) {
         <author>Alex Gorbatchev</author>
         <link>http://npmawesome.com/posts/2014-01-27-mversion</link>
         <guid isPermaLink="true">http://npmawesome.com/posts/2014-01-27-mversion</guid>
-        <!-- <dc:creator><![CDATA[Alex Gorbatchev]]></dc:creator> -->
         <pubDate>Tue, 28 Jan 2014 01:47:14 GMT</pubDate>
         <description><![CDATA[&lt;p&gt;&lt;img class=&quot;hide-on-mobile&quot; src=&quot;https://0.gravatar.com/avatar/c1ad8925b70df4f6665315865511eafc&quot; style=&quot;float: right; margin-left: 1em&quot;/&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;https://github.com/mikaelbr/mversion&quot;&gt;mversion&lt;/a&gt; is an NPM, Bower, Jam, Ender module version handler. It imitates &lt;a href=&quot;https://npmjs.org/doc/version.html&quot;&gt;&lt;code&gt;npm version&lt;/code&gt;&lt;/a&gt; to also work on other packaging files. For those times you have either have multiple packaging files (like &lt;code&gt;bower.json&lt;/code&gt;, &lt;code&gt;component.json&lt;/code&gt;, &lt;code&gt;manifest.json&lt;/code&gt;) or just not a &lt;code&gt;package.json&lt;/code&gt; file. &lt;code&gt;mversion&lt;/code&gt; can easily bump your version and optionally commit and create a tag.&lt;/p&gt;
@@ -1670,7 +1647,6 @@ mversion.update(&amp;#39;v1.0.1-010988&amp;#39;, function (err, data) { })
         <author>Alex Gorbatchev</author>
         <link>http://npmawesome.com/posts/2014-01-24-schema-inspector</link>
         <guid isPermaLink="true">http://npmawesome.com/posts/2014-01-24-schema-inspector</guid>
-        <!-- <dc:creator><![CDATA[Alex Gorbatchev]]></dc:creator> -->
         <pubDate>Fri, 24 Jan 2014 17:17:24 GMT</pubDate>
         <description><![CDATA[&lt;div style=&quot;text-align: center&quot;&gt;&lt;img class=&quot;hide-on-mobile&quot; src=&quot;/images/posts/schema-inspector.png&quot; style=&quot;margin-bottom: 1em&quot; /&gt;&lt;/div&gt;
 
@@ -1779,7 +1755,6 @@ describe(&amp;#39;POST /api&amp;#39;, function()
         <author>Alex Gorbatchev</author>
         <link>http://npmawesome.com/posts/2014-01-23-oboe-js</link>
         <guid isPermaLink="true">http://npmawesome.com/posts/2014-01-23-oboe-js</guid>
-        <!-- <dc:creator><![CDATA[Alex Gorbatchev]]></dc:creator> -->
         <pubDate>Thu, 23 Jan 2014 17:46:38 GMT</pubDate>
         <description><![CDATA[&lt;p&gt;&lt;img class=&quot;hide-on-mobile&quot; src=&quot;https://2.gravatar.com/avatar/a26d7792bcf2ccd16be185627ce8e37d&quot; style=&quot;float: right; margin-left: 1em&quot;/&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;https://github.com/jimhigson/oboe.js&quot;&gt;oboe.js&lt;/a&gt; is written by &lt;a href=&quot;https://github.com/jimhigson&quot;&gt;Jim Higson&lt;/a&gt; and helps web applications respond quicker by wrapping HTTP&amp;#39;s request-response model with a progressively streamed interface. It glues a transport that sits somewhere between streaming and downloading to a JSON parser. It doesn&amp;#39;t have any external dependencies.&lt;/p&gt;
@@ -1836,7 +1811,6 @@ oboe(&amp;#39;http://localhost/myapp/things.json&amp;#39;)
         <author>Alex Gorbatchev</author>
         <link>http://npmawesome.com/posts/2014-01-22-autoprefixer</link>
         <guid isPermaLink="true">http://npmawesome.com/posts/2014-01-22-autoprefixer</guid>
-        <!-- <dc:creator><![CDATA[Alex Gorbatchev]]></dc:creator> -->
         <pubDate>Wed, 22 Jan 2014 17:35:00 GMT</pubDate>
         <description><![CDATA[&lt;p&gt;&lt;a href=&quot;https://github.com/ai/autoprefixer&quot;&gt;autoprefixer&lt;/a&gt; parses CSS and adds vendor prefixes to rules based on information from the glorious &lt;a href=&quot;http://caniuse.com&quot;&gt;Can I Use&lt;/a&gt;.&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;npm install autoprefixer
@@ -1872,7 +1846,6 @@ oboe(&amp;#39;http://localhost/myapp/things.json&amp;#39;)
         <author>Alex Gorbatchev</author>
         <link>http://npmawesome.com/posts/2014-01-21-js-yaml</link>
         <guid isPermaLink="true">http://npmawesome.com/posts/2014-01-21-js-yaml</guid>
-        <!-- <dc:creator><![CDATA[Alex Gorbatchev]]></dc:creator> -->
         <pubDate>Tue, 21 Jan 2014 17:11:30 GMT</pubDate>
         <description><![CDATA[&lt;p&gt;&lt;a href=&quot;https://github.com/nodeca/js-yaml&quot;&gt;js-yaml&lt;/a&gt; is an implementation of &lt;a href=&quot;http://yaml.org/&quot;&gt;YAML&lt;/a&gt; written by &lt;a href=&quot;https://github.com/nodeca&quot;&gt;Dervus Grim&lt;/a&gt; and is a human friendly data serialization language. It started as &lt;a href=&quot;http://pyyaml.org/&quot;&gt;PyYAML&lt;/a&gt; port, but was completely rewritten from scratch. Full support for 1.2 spec.&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;npm install js-yaml
@@ -1899,7 +1872,6 @@ title: *name
         <author>Alex Gorbatchev</author>
         <link>http://npmawesome.com/posts/2014-01-17-gaze</link>
         <guid isPermaLink="true">http://npmawesome.com/posts/2014-01-17-gaze</guid>
-        <!-- <dc:creator><![CDATA[Alex Gorbatchev]]></dc:creator> -->
         <pubDate>Sat, 18 Jan 2014 01:50:40 GMT</pubDate>
         <description><![CDATA[&lt;p&gt;&lt;a href=&quot;https://github.com/shama/gaze&quot;&gt;gaze&lt;/a&gt; a globbing &lt;code&gt;fs.watch&lt;/code&gt; wrapper written by &lt;a href=&quot;https://github.com/shama&quot;&gt;Kyle Robinson Young&lt;/a&gt; and built from the best parts of other fine watch libs. Compatible with Node.js 0.10/0.8, Windows, OSX and Linux. There&amp;#39;s a &lt;a href=&quot;https://npmjs.org/browse/depended/gaze&quot;&gt;pretty long list&lt;/a&gt; of other great modules that are built on top of &lt;a href=&quot;https://github.com/shama/gaze&quot;&gt;gaze&lt;/a&gt;.&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;npm install gaze
@@ -1954,7 +1926,6 @@ gaze([&amp;#39;stylesheets/*.css&amp;#39;, &amp;#39;images/**/*.png&amp;#39;], f
         <author>Alex Gorbatchev</author>
         <link>http://npmawesome.com/posts/2014-01-14-shortid</link>
         <guid isPermaLink="true">http://npmawesome.com/posts/2014-01-14-shortid</guid>
-        <!-- <dc:creator><![CDATA[Alex Gorbatchev]]></dc:creator> -->
         <pubDate>Wed, 15 Jan 2014 00:33:38 GMT</pubDate>
         <description><![CDATA[&lt;p&gt;&lt;a href=&quot;https://github.com/dylang/shortid&quot;&gt;shortId&lt;/a&gt; creates amazingly short non-sequential url-friendly unique IDs. Perfect for url shorteners, MongoDB and Redis as well as any other ID users might see.&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;npm install shortId
@@ -2029,7 +2000,6 @@ long random()
         <author>Alex Gorbatchev</author>
         <link>http://npmawesome.com/posts/2014-01-13-testium</link>
         <guid isPermaLink="true">http://npmawesome.com/posts/2014-01-13-testium</guid>
-        <!-- <dc:creator><![CDATA[Alex Gorbatchev]]></dc:creator> -->
         <pubDate>Mon, 13 Jan 2014 20:49:41 GMT</pubDate>
         <description><![CDATA[&lt;p&gt;&lt;a href=&quot;https://github.com/groupon/testium&quot;&gt;testium&lt;/a&gt; is a testing platform focused on providing a simple, but effective, platform for testing your code in different browsers (via Selenium) and headlessly (via PhantomJS). It uses &lt;a href=&quot;https://github.com/groupon/webdriver-http-sync&quot;&gt;webdriver-http-sync&lt;/a&gt;
 which Groupon wrote in order to communicate using the WebDriver protocol to a Selenium server.&lt;/p&gt;
@@ -2079,7 +2049,6 @@ describe &amp;#39;browse&amp;#39;, -&amp;gt;
         <author>Alex Gorbatchev</author>
         <link>http://npmawesome.com/posts/2014-01-10-messageformat</link>
         <guid isPermaLink="true">http://npmawesome.com/posts/2014-01-10-messageformat</guid>
-        <!-- <dc:creator><![CDATA[Alex Gorbatchev]]></dc:creator> -->
         <pubDate>Fri, 10 Jan 2014 18:24:37 GMT</pubDate>
         <description><![CDATA[&lt;p&gt;&lt;a href=&quot;https://github.com/SlexAxton/messageformat.js&quot;&gt;messageformat.js&lt;/a&gt; is a module by &lt;a href=&quot;https://github.com/SlexAxton&quot;&gt;Alex Sexton&lt;/a&gt; (&lt;a href=&quot;https://twitter.com/SlexAxton&quot;&gt;@SlexAxton&lt;/a&gt;) for handling both &lt;em&gt;pluralization&lt;/em&gt; and &lt;em&gt;gender&lt;/em&gt; in your applications. It can also lead to much better translations, as it was built by &lt;a href=&quot;http://icu-project.org/apiref/icu4j/com/ibm/icu/text/MessageFormat.html&quot;&gt;ICU&lt;/a&gt; to help solve those two problems for all known &lt;a href=&quot;http://cldr.unicode.org/&quot;&gt;CLDR&lt;/a&gt; languages - likely all the ones you care about.&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;npm install messageformat
@@ -2119,7 +2088,6 @@ message({ &amp;quot;NAME&amp;quot; : &amp;quot;Jed&amp;quot; });
         <author>Alex Gorbatchev</author>
         <link>http://npmawesome.com/posts/2014-01-09-gulp</link>
         <guid isPermaLink="true">http://npmawesome.com/posts/2014-01-09-gulp</guid>
-        <!-- <dc:creator><![CDATA[Alex Gorbatchev]]></dc:creator> -->
         <pubDate>Thu, 09 Jan 2014 17:57:52 GMT</pubDate>
         <description><![CDATA[&lt;p&gt;&lt;a href=&quot;https://github.com/gulpjs/gulp&quot;&gt;gulp&lt;/a&gt; is a streaming build and task runner system. It&amp;#39;s an alternative to the ever prelific &lt;a href=&quot;http://gruntjs.com/&quot;&gt;grunt.js&lt;/a&gt;. There&amp;#39;s been quite &lt;a href=&quot;https://twitter.com/search?q=gulp%20grunt&amp;amp;src=typd&quot;&gt;a bit of buzz on the twitters&lt;/a&gt;.&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;npm install gulp
@@ -2171,7 +2139,6 @@ gulp.task(&amp;#39;default&amp;#39;, function() {
         <author>Alex Gorbatchev</author>
         <link>http://npmawesome.com/posts/2014-01-06-chalk</link>
         <guid isPermaLink="true">http://npmawesome.com/posts/2014-01-06-chalk</guid>
-        <!-- <dc:creator><![CDATA[Alex Gorbatchev]]></dc:creator> -->
         <pubDate>Tue, 07 Jan 2014 00:17:02 GMT</pubDate>
         <description><![CDATA[&lt;p&gt;&lt;a href=&quot;https://github.com/sindresorhus/chalk&quot;&gt;chalk&lt;/a&gt; is a clean and focused alternative to &lt;a href=&quot;https://github.com/Marak/colors.js&quot;&gt;colors.js&lt;/a&gt;, which is currently the most popular string styling module, but it has serious deficiencies like extending String.prototype which causes all kinds of &lt;a href=&quot;https://github.com/yeoman/yo/issues/68&quot;&gt;problems&lt;/a&gt;. Although there are other ones, they either do too much or not enough.&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;npm install chalk
@@ -2211,7 +2178,6 @@ console.log(  chalk.blue(&amp;#39;Hello&amp;#39;, &amp;#39;World!&amp;#39;, &amp
         <author>Alex Gorbatchev</author>
         <link>http://npmawesome.com/posts/2013-12-31-recluster</link>
         <guid isPermaLink="true">http://npmawesome.com/posts/2013-12-31-recluster</guid>
-        <!-- <dc:creator><![CDATA[Alex Gorbatchev]]></dc:creator> -->
         <pubDate>Tue, 31 Dec 2013 18:45:13 GMT</pubDate>
         <description><![CDATA[&lt;p&gt;&lt;a href=&quot;https://github.com/doxout/recluster&quot;&gt;recluster&lt;/a&gt; is a clustering library with support for zero-downtime reloading.&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;npm install recluster
@@ -2263,7 +2229,6 @@ console.log(&amp;quot;spawned cluster, kill -s SIGUSR2&amp;quot;, process.pid, &
         <author>Alex Gorbatchev</author>
         <link>http://npmawesome.com/posts/2013-12-30-rework</link>
         <guid isPermaLink="true">http://npmawesome.com/posts/2013-12-30-rework</guid>
-        <!-- <dc:creator><![CDATA[Alex Gorbatchev]]></dc:creator> -->
         <pubDate>Mon, 30 Dec 2013 18:27:29 GMT</pubDate>
         <description><![CDATA[&lt;p&gt;&lt;a href=&quot;https://github.com/reworkcss/rework&quot;&gt;rework&lt;/a&gt; is a tool for CSS manipulations built on css, allowing you to automate vendor prefixing, create your own properties, inline images, anything you can imagine! Also works in the browser.&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;npm install rework
@@ -2301,7 +2266,6 @@ var css = rework(str)
         <author>Alex Gorbatchev</author>
         <link>http://npmawesome.com/posts/2013-12-27-cheerio</link>
         <guid isPermaLink="true">http://npmawesome.com/posts/2013-12-27-cheerio</guid>
-        <!-- <dc:creator><![CDATA[Alex Gorbatchev]]></dc:creator> -->
         <pubDate>Fri, 27 Dec 2013 17:19:30 GMT</pubDate>
         <description><![CDATA[&lt;p&gt;&lt;img class=&quot;hide-on-mobile&quot; src=&quot;https://2.gravatar.com/avatar/824b41e6108a22c4c96f50ee23419369&quot; style=&quot;float: right; margin-left: 1em&quot;/&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;https://github.com/MatthewMueller/cheerio&quot;&gt;cheerio&lt;/a&gt; is a fast, flexible, and lean implementation of core jQuery written by &lt;a href=&quot;https://github.com/matthewmueller&quot;&gt;Matthew Mueller&lt;/a&gt; and designed specifically for the server.&lt;/p&gt;
@@ -2334,7 +2298,6 @@ $.html();
         <author>Alex Gorbatchev</author>
         <link>http://npmawesome.com/posts/2013-12-19-dat</link>
         <guid isPermaLink="true">http://npmawesome.com/posts/2013-12-19-dat</guid>
-        <!-- <dc:creator><![CDATA[Alex Gorbatchev]]></dc:creator> -->
         <pubDate>Thu, 19 Dec 2013 18:08:03 GMT</pubDate>
         <description><![CDATA[&lt;p&gt;&lt;a href=&quot;https://github.com/maxogden/dat&quot;&gt;dat&lt;/a&gt; is a project that seeks providing better tools for data collaboration.&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;npm install dat
@@ -2360,7 +2323,6 @@ $.html();
         <author>Alex Gorbatchev</author>
         <link>http://npmawesome.com/posts/2013-12-18-xregexp</link>
         <guid isPermaLink="true">http://npmawesome.com/posts/2013-12-18-xregexp</guid>
-        <!-- <dc:creator><![CDATA[Alex Gorbatchev]]></dc:creator> -->
         <pubDate>Thu, 19 Dec 2013 01:27:16 GMT</pubDate>
         <description><![CDATA[&lt;p&gt;&lt;a href=&quot;https://github.com/slevithan/xregexp&quot;&gt;xregexp&lt;/a&gt; provides augmented and extensible JavaScript regular expressions. You get new syntax, flags, and methods beyond what browsers support natively. XRegExp is also a regex utility belt with tools to make your client-side grepping simpler and more powerful, while freeing you from worrying about pesky cross-browser inconsistencies and the dubious lastIndex property.&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;npm install xregexp
@@ -2437,7 +2399,6 @@ XRegExp.matchRecursive(str, &amp;#39;&amp;lt;&amp;#39;, &amp;#39;&amp;gt;&amp;#3
         <author>Alex Gorbatchev</author>
         <link>http://npmawesome.com/posts/2013-12-17-npm</link>
         <guid isPermaLink="true">http://npmawesome.com/posts/2013-12-17-npm</guid>
-        <!-- <dc:creator><![CDATA[Alex Gorbatchev]]></dc:creator> -->
         <pubDate>Tue, 17 Dec 2013 18:41:23 GMT</pubDate>
         <description><![CDATA[&lt;p&gt;NPM v1.3.18 release notes:&lt;/p&gt;
 &lt;ul&gt;
@@ -2457,7 +2418,6 @@ XRegExp.matchRecursive(str, &amp;#39;&amp;lt;&amp;#39;, &amp;#39;&amp;gt;&amp;#3
         <author>Alex Gorbatchev</author>
         <link>http://npmawesome.com/posts/2013-12-16-ect</link>
         <guid isPermaLink="true">http://npmawesome.com/posts/2013-12-16-ect</guid>
-        <!-- <dc:creator><![CDATA[Alex Gorbatchev]]></dc:creator> -->
         <pubDate>Tue, 17 Dec 2013 00:57:39 GMT</pubDate>
         <description><![CDATA[&lt;p&gt;&lt;a href=&quot;https://github.com/baryshev/ect&quot;&gt;ect&lt;/a&gt; is a &lt;a href=&quot;http://ectjs.com/#benchmark&quot;&gt;performance focused&lt;/a&gt; JavaScript template engine with embedded CoffeeScript syntax. &lt;a href=&quot;http://ectjs.com&quot;&gt;Just try demo&lt;/a&gt; to check all features.&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;npm install ect
@@ -2509,7 +2469,6 @@ console.log &amp;quot;Listening on port 3000&amp;quot;
         <author>Alex Gorbatchev</author>
         <link>http://npmawesome.com/posts/2013-12-13-chrono</link>
         <guid isPermaLink="true">http://npmawesome.com/posts/2013-12-13-chrono</guid>
-        <!-- <dc:creator><![CDATA[Alex Gorbatchev]]></dc:creator> -->
         <pubDate>Sat, 14 Dec 2013 01:14:45 GMT</pubDate>
         <description><![CDATA[&lt;p&gt;&lt;a href=&quot;https://github.com/wanasit/chrono&quot;&gt;chrono&lt;/a&gt; is a natural language date parser in Javascript. It is designed to extract date informations from any given text. Works in node and browser. Check out the &lt;a href=&quot;http://wanasit.github.io/pages/chrono/&quot;&gt;nifty test page&lt;/a&gt;.&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;npm install chrono
@@ -2571,7 +2530,6 @@ Thu Sep 12 2013 12:00:00 GMT+0900 (JST)
         <author>Alex Gorbatchev</author>
         <link>http://npmawesome.com/posts/2013-12-11-prettyjson</link>
         <guid isPermaLink="true">http://npmawesome.com/posts/2013-12-11-prettyjson</guid>
-        <!-- <dc:creator><![CDATA[Alex Gorbatchev]]></dc:creator> -->
         <pubDate>Thu, 12 Dec 2013 01:27:02 GMT</pubDate>
         <description><![CDATA[&lt;p&gt;&lt;a href=&quot;https://github.com/rafeca/prettyjson&quot;&gt;prettyjson&lt;/a&gt; is package for formatting JSON data in a coloured YAML-style, perfect for CLI output.&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;npm install prettyjson
@@ -2602,7 +2560,6 @@ console.log(prettyjson.render(data));
         <author>Alex Gorbatchev</author>
         <link>http://npmawesome.com/posts/2013-12-10-state</link>
         <guid isPermaLink="true">http://npmawesome.com/posts/2013-12-10-state</guid>
-        <!-- <dc:creator><![CDATA[Alex Gorbatchev]]></dc:creator> -->
         <pubDate>Wed, 11 Dec 2013 00:08:10 GMT</pubDate>
         <description><![CDATA[&lt;p&gt;&lt;a href=&quot;https://github.com/nickfargo/state&quot;&gt;state&lt;/a&gt; is a library for implementing &lt;a href=&quot;http://statejs.org/docs/#concepts--states&quot;&gt;first-class states&lt;/a&gt; on arbitrary owner objects.&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;npm install state
@@ -2663,7 +2620,6 @@ jr.waver();  // log &amp;lt;&amp;lt;&amp;lt; &amp;quot;I hate chocolate, I want 
         <author>Alex Gorbatchev</author>
         <link>http://npmawesome.com/posts/2013-12-09-blessed</link>
         <guid isPermaLink="true">http://npmawesome.com/posts/2013-12-09-blessed</guid>
-        <!-- <dc:creator><![CDATA[Alex Gorbatchev]]></dc:creator> -->
         <pubDate>Mon, 09 Dec 2013 22:17:51 GMT</pubDate>
         <description><![CDATA[&lt;p&gt;&lt;a href=&quot;https://github.com/chjj/blessed&quot;&gt;blessed&lt;/a&gt; is a terminal control library for Unix-like systems, enabling the construction of text user interface (TUI) applications. In other words it&amp;#39;s a curses-like library for node.js&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;npm install blessed
@@ -2734,7 +2690,6 @@ screen.render();
         <author>Alex Gorbatchev</author>
         <link>http://npmawesome.com/posts/2013-12-05-gm</link>
         <guid isPermaLink="true">http://npmawesome.com/posts/2013-12-05-gm</guid>
-        <!-- <dc:creator><![CDATA[Alex Gorbatchev]]></dc:creator> -->
         <pubDate>Thu, 05 Dec 2013 17:44:35 GMT</pubDate>
         <description><![CDATA[&lt;p&gt;&lt;a href=&quot;https://github.com/aheckmann/gm&quot;&gt;gm&lt;/a&gt; is &lt;a href=&quot;http://www.imagemagick.org&quot;&gt;ImageMagick&lt;/a&gt; for node, what else is there to say?&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;npm install gm
@@ -2771,7 +2726,6 @@ gm(&amp;#39;/path/to/my/img.jpg&amp;#39;)
         <author>Alex Gorbatchev</author>
         <link>http://npmawesome.com/posts/2013-12-03-nak</link>
         <guid isPermaLink="true">http://npmawesome.com/posts/2013-12-03-nak</guid>
-        <!-- <dc:creator><![CDATA[Alex Gorbatchev]]></dc:creator> -->
         <pubDate>Tue, 03 Dec 2013 19:00:17 GMT</pubDate>
         <description><![CDATA[&lt;p&gt;&lt;a href=&quot;https://github.com/gjtorikian/nak&quot;&gt;nak&lt;/a&gt; is an ack/ag clone written in Node.js. The focus here is on speed and performance, rather than trying to 100% mimic all the functionality of ack.&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;npm install nak
@@ -2797,7 +2751,6 @@ gm(&amp;#39;/path/to/my/img.jpg&amp;#39;)
         <author>Alex Gorbatchev</author>
         <link>http://npmawesome.com/posts/2013-12-03-verymodel</link>
         <guid isPermaLink="true">http://npmawesome.com/posts/2013-12-03-verymodel</guid>
-        <!-- <dc:creator><![CDATA[Alex Gorbatchev]]></dc:creator> -->
         <pubDate>Tue, 03 Dec 2013 17:57:46 GMT</pubDate>
         <description><![CDATA[&lt;p&gt;&lt;a href=&quot;https://github.com/fritzy/VeryModel&quot;&gt;VeryModel&lt;/a&gt; is a system for validation, creation, and editing of models. VeryModel is not tied to a framework, and it implements a full purpose Model system.&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;npm install VeryModel
@@ -2831,7 +2784,6 @@ var User = new VeryModel({
         <author>Alex Gorbatchev</author>
         <link>http://npmawesome.com/posts/2013-11-30-scala-js</link>
         <guid isPermaLink="true">http://npmawesome.com/posts/2013-11-30-scala-js</guid>
-        <!-- <dc:creator><![CDATA[Alex Gorbatchev]]></dc:creator> -->
         <pubDate>Sat, 30 Nov 2013 16:52:13 GMT</pubDate>
         <description><![CDATA[&lt;p&gt;&lt;img class=&quot;hide-on-mobile&quot; src=&quot;/images/posts/scala.png&quot; style=&quot;float: right; width: 200px; margin-left: 1em;&quot; /&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;http://www.scala-js.org/&quot;&gt;Scala.js&lt;/a&gt;, a Scala to JavaScript compiler.&lt;/p&gt;
@@ -2853,7 +2805,6 @@ var User = new VeryModel({
         <author>Alex Gorbatchev</author>
         <link>http://npmawesome.com/posts/2013-11-27-scale-npm</link>
         <guid isPermaLink="true">http://npmawesome.com/posts/2013-11-27-scale-npm</guid>
-        <!-- <dc:creator><![CDATA[Alex Gorbatchev]]></dc:creator> -->
         <pubDate>Wed, 27 Nov 2013 19:27:43 GMT</pubDate>
         <description><![CDATA[&lt;p&gt;&lt;img class=&quot;hide-on-mobile&quot; src=&quot;/images/posts/npm.png&quot; style=&quot;float: right; width: 200px; margin-left: 1em;&quot; /&gt;&lt;/p&gt;
 &lt;p&gt;The &lt;a href=&quot;http://npmjs.org&quot;&gt;NPM&lt;/a&gt; registry recently got crashy, and it was incredibly painful. Here at &lt;a href=&quot;http://www.goodeggs.com&quot;&gt;Good Eggs&lt;/a&gt; we were affected as much as any other node shop - we couldn&amp;#39;t push a build out.&lt;/p&gt;
@@ -2867,7 +2818,6 @@ var User = new VeryModel({
         <author>Alex Gorbatchev</author>
         <link>http://npmawesome.com/posts/2013-11-26-rx-js</link>
         <guid isPermaLink="true">http://npmawesome.com/posts/2013-11-26-rx-js</guid>
-        <!-- <dc:creator><![CDATA[Alex Gorbatchev]]></dc:creator> -->
         <pubDate>Wed, 27 Nov 2013 00:40:43 GMT</pubDate>
         <description><![CDATA[&lt;p&gt;&lt;a href=&quot;https://github.com/Reactive-Extensions/RxJS&quot;&gt;rx.js&lt;/a&gt; is a set of libraries to compose asynchronous and event-based programs using observable collections and Array#extras style composition in JavaScript.&lt;/p&gt;
 &lt;p&gt;Using RxJS, you can represent multiple asynchronous data streams (that come from diverse sources, e.g., stock quote, tweets, computer events, web service requests, etc.), and subscribe to the event stream using the Observer object. The Observable notifies the subscribed Observer instance whenever an event occurs.&lt;/p&gt;
@@ -2917,7 +2867,6 @@ out!&lt;/p&gt;
         <author>Alex Gorbatchev</author>
         <link>http://npmawesome.com/posts/2013-11-26-docpad</link>
         <guid isPermaLink="true">http://npmawesome.com/posts/2013-11-26-docpad</guid>
-        <!-- <dc:creator><![CDATA[Alex Gorbatchev]]></dc:creator> -->
         <pubDate>Tue, 26 Nov 2013 23:18:56 GMT</pubDate>
         <description><![CDATA[&lt;p&gt;&lt;a href=&quot;https://github.com/bevry/docpad&quot;&gt;docpad&lt;/a&gt; is a static web site generator that is has been used in production by big and small companies for over a year and a half now to create &lt;a href=&quot;http://docpad.org/docs/showcase&quot;&gt;plenty of amazing and powerful web sites and applications&lt;/a&gt; quicker than ever before. What makes it different is instead of being a box to cram yourself into and hold you back, it is freeway to what you want to accomplish, just getting out of your way and allowing you to create stuff quicker than ever before without limits. Leave the redudant stuff up to me, so you can focus on the awesome stuff.&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;npm install docpad
@@ -2945,7 +2894,6 @@ out!&lt;/p&gt;
         <author>Alex Gorbatchev</author>
         <link>http://npmawesome.com/posts/2013-11-25-grunt-angular-builder</link>
         <guid isPermaLink="true">http://npmawesome.com/posts/2013-11-25-grunt-angular-builder</guid>
-        <!-- <dc:creator><![CDATA[Alex Gorbatchev]]></dc:creator> -->
         <pubDate>Mon, 25 Nov 2013 23:19:48 GMT</pubDate>
         <description><![CDATA[&lt;p&gt;&lt;a href=&quot;https://github.com/claudio-silva/grunt-angular-builder&quot;&gt;angular-builder&lt;/a&gt;
 is a specialized Grunt plugin to handle all of AngularJS related assets
@@ -3012,7 +2960,6 @@ out!&lt;/p&gt;
         <author>Alex Gorbatchev</author>
         <link>http://npmawesome.com/posts/2013-11-22-videoconverter-js</link>
         <guid isPermaLink="true">http://npmawesome.com/posts/2013-11-22-videoconverter-js</guid>
-        <!-- <dc:creator><![CDATA[Alex Gorbatchev]]></dc:creator> -->
         <pubDate>Fri, 22 Nov 2013 23:20:01 GMT</pubDate>
         <description><![CDATA[&lt;p&gt;&lt;a href=&quot;https://github.com/bgrins/videoconverter.js&quot;&gt;videoconverter.js&lt;/a&gt;
 is not really an NPM module, but is a library that allows you to convert
@@ -3037,7 +2984,6 @@ page&lt;/a&gt;.&lt;/p&gt;
         <author>Alex Gorbatchev</author>
         <link>http://npmawesome.com/posts/2013-11-22-event-stream</link>
         <guid isPermaLink="true">http://npmawesome.com/posts/2013-11-22-event-stream</guid>
-        <!-- <dc:creator><![CDATA[Alex Gorbatchev]]></dc:creator> -->
         <pubDate>Fri, 22 Nov 2013 23:20:01 GMT</pubDate>
         <description><![CDATA[&lt;p&gt;&lt;img class=&quot;hide-on-mobile&quot; src=&quot;/images/posts/event-stream.gif&quot; style=&quot;width: 200px; float: right&quot;/&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;https://github.com/dominictarr/event-stream&quot;&gt;event-stream&lt;/a&gt; is a toolkit to make creating and working with streams easy..&lt;/p&gt;
@@ -3064,7 +3010,6 @@ es.pipeline(                         // connect streams together with `pipe`
         <author>Alex Gorbatchev</author>
         <link>http://npmawesome.com/posts/2013-11-21-bacon-js</link>
         <guid isPermaLink="true">http://npmawesome.com/posts/2013-11-21-bacon-js</guid>
-        <!-- <dc:creator><![CDATA[Alex Gorbatchev]]></dc:creator> -->
         <pubDate>Thu, 21 Nov 2013 23:20:01 GMT</pubDate>
         <description><![CDATA[&lt;p&gt;&lt;a href=&quot;https://github.com/baconjs/bacon.js&quot;&gt;bacon.js&lt;/a&gt; is a library for
 functional reactive programming. Or let’s say it’s a library for working
@@ -3124,7 +3069,6 @@ Scott part.&lt;/p&gt;
         <author>Alex Gorbatchev</author>
         <link>http://npmawesome.com/posts/2013-11-20-spdy</link>
         <guid isPermaLink="true">http://npmawesome.com/posts/2013-11-20-spdy</guid>
-        <!-- <dc:creator><![CDATA[Alex Gorbatchev]]></dc:creator> -->
         <pubDate>Wed, 20 Nov 2013 23:20:01 GMT</pubDate>
         <description><![CDATA[&lt;p&gt;&lt;a href=&quot;https://github.com/indutny/node-spdy&quot;&gt;spdy&lt;/a&gt; lets you create &lt;a href=&quot;http://www.chromium.org/spdy&quot;&gt;SPDY
 servers&lt;/a&gt; in node.js with natural http
@@ -3170,7 +3114,6 @@ server.listen(443);
         <author>Alex Gorbatchev</author>
         <link>http://npmawesome.com/posts/2013-11-19-json-mask</link>
         <guid isPermaLink="true">http://npmawesome.com/posts/2013-11-19-json-mask</guid>
-        <!-- <dc:creator><![CDATA[Alex Gorbatchev]]></dc:creator> -->
         <pubDate>Tue, 19 Nov 2013 23:20:01 GMT</pubDate>
         <description><![CDATA[&lt;p&gt;&lt;a href=&quot;https://github.com/nemtsov/json-mask&quot;&gt;json-mask&lt;/a&gt; is a tiny language and
 an engine for selecting specific parts of a JavaScript object.&lt;/p&gt;
@@ -3206,7 +3149,6 @@ fields were masked / filtered.&lt;/p&gt;
         <author>Alex Gorbatchev</author>
         <link>http://npmawesome.com/posts/2013-11-18-pm2</link>
         <guid isPermaLink="true">http://npmawesome.com/posts/2013-11-18-pm2</guid>
-        <!-- <dc:creator><![CDATA[Alex Gorbatchev]]></dc:creator> -->
         <pubDate>Mon, 18 Nov 2013 23:20:01 GMT</pubDate>
         <description><![CDATA[&lt;p&gt;&lt;a href=&quot;https://github.com/Unitech/pm2&quot;&gt;pm2&lt;/a&gt; is a process manager for Node apps with a builtin load-balancer.&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;npm install pm2
@@ -3254,7 +3196,6 @@ solutions (a solution for PaaS will be developed later).&lt;/p&gt;
         <author>Alex Gorbatchev</author>
         <link>http://npmawesome.com/posts/2013-11-18-npmd</link>
         <guid isPermaLink="true">http://npmawesome.com/posts/2013-11-18-npmd</guid>
-        <!-- <dc:creator><![CDATA[Alex Gorbatchev]]></dc:creator> -->
         <pubDate>Mon, 18 Nov 2013 23:20:01 GMT</pubDate>
         <description><![CDATA[&lt;p&gt;&lt;a href=&quot;https://github.com/dominictarr/npmd&quot;&gt;npmd&lt;/a&gt; is an alternative npm
 client, based around a local replication of the npm metadata
@@ -3286,7 +3227,6 @@ page&lt;/a&gt;.&lt;/p&gt;
         <author>Alex Gorbatchev</author>
         <link>http://npmawesome.com/posts/2013-11-18-nixt</link>
         <guid isPermaLink="true">http://npmawesome.com/posts/2013-11-18-nixt</guid>
-        <!-- <dc:creator><![CDATA[Alex Gorbatchev]]></dc:creator> -->
         <pubDate>Mon, 18 Nov 2013 23:20:01 GMT</pubDate>
         <description><![CDATA[&lt;p&gt;&lt;img class=&quot;hide-on-mobile&quot; src=&quot;/images/posts/nixt.jpg&quot; style=&quot;width: 200px; float: right&quot;/&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;https://github.com/vesln/nixt&quot;&gt;nixt&lt;/a&gt; is aiming to make testing of
@@ -3314,7 +3254,6 @@ page&lt;/a&gt;.&lt;/p&gt;
         <author>Alex Gorbatchev</author>
         <link>http://npmawesome.com/posts/2013-11-17-vm-js</link>
         <guid isPermaLink="true">http://npmawesome.com/posts/2013-11-17-vm-js</guid>
-        <!-- <dc:creator><![CDATA[Alex Gorbatchev]]></dc:creator> -->
         <pubDate>Sun, 17 Nov 2013 23:20:01 GMT</pubDate>
         <description><![CDATA[&lt;p&gt;&lt;a href=&quot;https://github.com/tarruda/vm.js&quot;&gt;vm.js&lt;/a&gt; is a pretty impressive fully
 functional ECMAScript virtual machine that can be used from any
@@ -3389,7 +3328,6 @@ fiber.run()
         <author>Alex Gorbatchev</author>
         <link>http://npmawesome.com/posts/2013-11-17-node-jvm</link>
         <guid isPermaLink="true">http://npmawesome.com/posts/2013-11-17-node-jvm</guid>
-        <!-- <dc:creator><![CDATA[Alex Gorbatchev]]></dc:creator> -->
         <pubDate>Sun, 17 Nov 2013 23:20:01 GMT</pubDate>
         <description><![CDATA[&lt;p&gt;&lt;a href=&quot;https://github.com/YaroslavGaponov/node-jvm&quot;&gt;node-jvm&lt;/a&gt; is a complete
 JVM virtual machine written in JavaScript written by Yaroslav Gaponov
@@ -3445,7 +3383,6 @@ jvm.run([15]);
         <author>Alex Gorbatchev</author>
         <link>http://npmawesome.com/posts/2013-11-17-flake</link>
         <guid isPermaLink="true">http://npmawesome.com/posts/2013-11-17-flake</guid>
-        <!-- <dc:creator><![CDATA[Alex Gorbatchev]]></dc:creator> -->
         <pubDate>Sun, 17 Nov 2013 23:20:01 GMT</pubDate>
         <description><![CDATA[&lt;p&gt;&lt;a href=&quot;https://github.com/chilts/flake&quot;&gt;flake&lt;/a&gt; can generate practically unique
 approximately sortable IDs in a distributed environment, similiar to
