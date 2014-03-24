@@ -3,13 +3,15 @@
   <channel>
     <title>npm awesome</title>
     <link>http://npmawesome.com</link>
-    <lastBuildDate>Sun, 23 Mar 2014 17:45:51 GMT</lastBuildDate>
-    <author>Alex Gorbatchev</author>
-    <pubDate>2014-03-23T17:45:51.311Z</pubDate>
+    <lastBuildDate>Mon, 24 Mar 2014 15:34:22 GMT</lastBuildDate>
+    <pubDate>Mon, 24 Mar 2014 15:34:22 GMT</pubDate>
+    <description>Daily dose of awesome NPM modules for Node.js, old and new!</description>
+    <atom:link href="http://npmawesome.com/rss" rel="self" type="application/rss+xml"/>
 
     
       <item>
         <title>yargs</title>
+        <author>Alex Gorbatchev</author>
         <link>http://npmawesome.com/posts/2014-03-21-yargs</link>
         <guid isPermaLink="true">http://npmawesome.com/posts/2014-03-21-yargs</guid>
         <!-- <dc:creator><![CDATA[Alex Gorbatchev]]></dc:creator> -->
@@ -225,6 +227,7 @@ var argv = require(&amp;#39;yargs&amp;#39;)
     
       <item>
         <title>convict</title>
+        <author>Alex Gorbatchev</author>
         <link>http://npmawesome.com/posts/2014-03-12-convict</link>
         <guid isPermaLink="true">http://npmawesome.com/posts/2014-03-12-convict</guid>
         <!-- <dc:creator><![CDATA[Alex Gorbatchev]]></dc:creator> -->
@@ -349,6 +352,7 @@ app.listen(
     
       <item>
         <title>lockit</title>
+        <author>Alex Gorbatchev</author>
         <link>http://npmawesome.com/posts/2014-03-06-lockit</link>
         <guid isPermaLink="true">http://npmawesome.com/posts/2014-03-06-lockit</guid>
         <!-- <dc:creator><![CDATA[Alex Gorbatchev]]></dc:creator> -->
@@ -463,6 +467,7 @@ app.use(app.router);
     
       <item>
         <title>qr-image</title>
+        <author>Alex Gorbatchev</author>
         <link>http://npmawesome.com/posts/2014-02-27-qr-image</link>
         <guid isPermaLink="true">http://npmawesome.com/posts/2014-02-27-qr-image</guid>
         <!-- <dc:creator><![CDATA[Alex Gorbatchev]]></dc:creator> -->
@@ -570,6 +575,7 @@ app.listen(3000);
     
       <item>
         <title>webdriver.js</title>
+        <author>Alex Gorbatchev</author>
         <link>http://npmawesome.com/posts/2014-02-25-webdriverjs</link>
         <guid isPermaLink="true">http://npmawesome.com/posts/2014-02-25-webdriverjs</guid>
         <!-- <dc:creator><![CDATA[Alex Gorbatchev]]></dc:creator> -->
@@ -639,6 +645,7 @@ driver.findElement(webdriver.By.id(&amp;#39;btnG&amp;#39;)).click();
     
       <item>
         <title>pretty-error</title>
+        <author>Alex Gorbatchev</author>
         <link>http://npmawesome.com/posts/2014-02-24-pretty-error</link>
         <guid isPermaLink="true">http://npmawesome.com/posts/2014-02-24-pretty-error</guid>
         <!-- <dc:creator><![CDATA[Alex Gorbatchev]]></dc:creator> -->
@@ -687,6 +694,7 @@ pe.unskipAllPaths();
     
       <item>
         <title>supertest</title>
+        <author>Alex Gorbatchev</author>
         <link>http://npmawesome.com/posts/2014-02-21-supertest</link>
         <guid isPermaLink="true">http://npmawesome.com/posts/2014-02-21-supertest</guid>
         <!-- <dc:creator><![CDATA[Alex Gorbatchev]]></dc:creator> -->
@@ -734,6 +742,7 @@ request.get(&amp;#39;/&amp;#39;).expect(&amp;#39;heya&amp;#39;, function(err) {
     
       <item>
         <title>spritesmith</title>
+        <author>Alex Gorbatchev</author>
         <link>http://npmawesome.com/posts/2014-02-20-spritesmith</link>
         <guid isPermaLink="true">http://npmawesome.com/posts/2014-02-20-spritesmith</guid>
         <!-- <dc:creator><![CDATA[Alex Gorbatchev]]></dc:creator> -->
@@ -765,6 +774,7 @@ spritesmith({&amp;#39;src&amp;#39;: sprites}, function (err, result) {
     
       <item>
         <title>9 gulp.js plugins for a great build system</title>
+        <author>Alex Gorbatchev</author>
         <link>http://npmawesome.com/posts/2014-02-19-9-gulp-js-plugins-for-a-great-build-system</link>
         <guid isPermaLink="true">http://npmawesome.com/posts/2014-02-19-9-gulp-js-plugins-for-a-great-build-system</guid>
         <!-- <dc:creator><![CDATA[Alex Gorbatchev]]></dc:creator> -->
@@ -956,6 +966,7 @@ gulp.task(&amp;#39;css:watch&amp;#39;, function () {
     
       <item>
         <title>npm-diff</title>
+        <author>Alex Gorbatchev</author>
         <link>http://npmawesome.com/posts/2014-02-18-npm-diff</link>
         <guid isPermaLink="true">http://npmawesome.com/posts/2014-02-18-npm-diff</guid>
         <!-- <dc:creator><![CDATA[Alex Gorbatchev]]></dc:creator> -->
@@ -972,6 +983,7 @@ gulp.task(&amp;#39;css:watch&amp;#39;, function () {
     
       <item>
         <title>NodePDF</title>
+        <author>Alex Gorbatchev</author>
         <link>http://npmawesome.com/posts/2014-02-17-nodepdf</link>
         <guid isPermaLink="true">http://npmawesome.com/posts/2014-02-17-nodepdf</guid>
         <!-- <dc:creator><![CDATA[Alex Gorbatchev]]></dc:creator> -->
@@ -1010,6 +1022,7 @@ pdf.on(&amp;#39;done&amp;#39;, function(pathToFile){
     
       <item>
         <title>domain-context</title>
+        <author>Alex Gorbatchev</author>
         <link>http://npmawesome.com/posts/2014-02-13-domain-context</link>
         <guid isPermaLink="true">http://npmawesome.com/posts/2014-02-13-domain-context</guid>
         <!-- <dc:creator><![CDATA[Alex Gorbatchev]]></dc:creator> -->
@@ -1061,6 +1074,7 @@ function getUserById(id, cb) {
     
       <item>
         <title>JSONStream</title>
+        <author>Alex Gorbatchev</author>
         <link>http://npmawesome.com/posts/2014-02-12-jsonstream</link>
         <guid isPermaLink="true">http://npmawesome.com/posts/2014-02-12-jsonstream</guid>
         <!-- <dc:creator><![CDATA[Alex Gorbatchev]]></dc:creator> -->
@@ -1094,6 +1108,7 @@ I like the idea behind streaming JSON alot because you don&amp;#39;t have to wai
     
       <item>
         <title>peer.js</title>
+        <author>Alex Gorbatchev</author>
         <link>http://npmawesome.com/posts/2014-02-11-peer-js</link>
         <guid isPermaLink="true">http://npmawesome.com/posts/2014-02-11-peer-js</guid>
         <!-- <dc:creator><![CDATA[Alex Gorbatchev]]></dc:creator> -->
@@ -1125,6 +1140,7 @@ conn.on(&amp;#39;open&amp;#39;, function() {
     
       <item>
         <title>node-dependencies</title>
+        <author>Alex Gorbatchev</author>
         <link>http://npmawesome.com/posts/2014-02-10-node-dependencies</link>
         <guid isPermaLink="true">http://npmawesome.com/posts/2014-02-10-node-dependencies</guid>
         <!-- <dc:creator><![CDATA[Alex Gorbatchev]]></dc:creator> -->
@@ -1164,6 +1180,7 @@ jquery                    1.8.3        ---        ---        ---
     
       <item>
         <title>cucumber.js</title>
+        <author>Alex Gorbatchev</author>
         <link>http://npmawesome.com/posts/2014-02-05-cucumber-js</link>
         <guid isPermaLink="true">http://npmawesome.com/posts/2014-02-05-cucumber-js</guid>
         <!-- <dc:creator><![CDATA[Alex Gorbatchev]]></dc:creator> -->
@@ -1218,6 +1235,7 @@ Writing &lt;a href=&quot;https://github.com/cucumber/cucumber/wiki/Feature-Intro
     
       <item>
         <title>binary.js</title>
+        <author>Alex Gorbatchev</author>
         <link>http://npmawesome.com/posts/2014-02-04-binary-js</link>
         <guid isPermaLink="true">http://npmawesome.com/posts/2014-02-04-binary-js</guid>
         <!-- <dc:creator><![CDATA[Alex Gorbatchev]]></dc:creator> -->
@@ -1270,6 +1288,7 @@ client.on(&amp;#39;open&amp;#39;, function(stream){
     
       <item>
         <title>power-assert</title>
+        <author>Alex Gorbatchev</author>
         <link>http://npmawesome.com/posts/2014-02-03-power-assert</link>
         <guid isPermaLink="true">http://npmawesome.com/posts/2014-02-03-power-assert</guid>
         <!-- <dc:creator><![CDATA[Alex Gorbatchev]]></dc:creator> -->
@@ -1343,6 +1362,7 @@ client.on(&amp;#39;open&amp;#39;, function(stream){
     
       <item>
         <title>coupon-code</title>
+        <author>Alex Gorbatchev</author>
         <link>http://npmawesome.com/posts/2014-01-31-coupon-code</link>
         <guid isPermaLink="true">http://npmawesome.com/posts/2014-01-31-coupon-code</guid>
         <!-- <dc:creator><![CDATA[Alex Gorbatchev]]></dc:creator> -->
@@ -1373,6 +1393,7 @@ cc.generate({ partLen : 6 });
     
       <item>
         <title>rewire</title>
+        <author>Alex Gorbatchev</author>
         <link>http://npmawesome.com/posts/2014-01-30-rewire</link>
         <guid isPermaLink="true">http://npmawesome.com/posts/2014-01-30-rewire</guid>
         <!-- <dc:creator><![CDATA[Alex Gorbatchev]]></dc:creator> -->
@@ -1431,6 +1452,7 @@ myModule.__set__({
     
       <item>
         <title>yarm</title>
+        <author>Alex Gorbatchev</author>
         <link>http://npmawesome.com/posts/2014-01-29-yarm</link>
         <guid isPermaLink="true">http://npmawesome.com/posts/2014-01-29-yarm</guid>
         <!-- <dc:creator><![CDATA[Alex Gorbatchev]]></dc:creator> -->
@@ -1522,6 +1544,7 @@ $ curl http://localhost/rest/posts/first-post/comments/3/foo/bar
     
       <item>
         <title>modella</title>
+        <author>Alex Gorbatchev</author>
         <link>http://npmawesome.com/posts/2014-01-28-modella</link>
         <guid isPermaLink="true">http://npmawesome.com/posts/2014-01-28-modella</guid>
         <!-- <dc:creator><![CDATA[Alex Gorbatchev]]></dc:creator> -->
@@ -1593,6 +1616,7 @@ user.save(function(err) {
     
       <item>
         <title>mversion</title>
+        <author>Alex Gorbatchev</author>
         <link>http://npmawesome.com/posts/2014-01-27-mversion</link>
         <guid isPermaLink="true">http://npmawesome.com/posts/2014-01-27-mversion</guid>
         <!-- <dc:creator><![CDATA[Alex Gorbatchev]]></dc:creator> -->
@@ -1643,6 +1667,7 @@ mversion.update(&amp;#39;v1.0.1-010988&amp;#39;, function (err, data) { })
     
       <item>
         <title>schema-inspector</title>
+        <author>Alex Gorbatchev</author>
         <link>http://npmawesome.com/posts/2014-01-24-schema-inspector</link>
         <guid isPermaLink="true">http://npmawesome.com/posts/2014-01-24-schema-inspector</guid>
         <!-- <dc:creator><![CDATA[Alex Gorbatchev]]></dc:creator> -->
@@ -1751,6 +1776,7 @@ describe(&amp;#39;POST /api&amp;#39;, function()
     
       <item>
         <title>oboe.js</title>
+        <author>Alex Gorbatchev</author>
         <link>http://npmawesome.com/posts/2014-01-23-oboe-js</link>
         <guid isPermaLink="true">http://npmawesome.com/posts/2014-01-23-oboe-js</guid>
         <!-- <dc:creator><![CDATA[Alex Gorbatchev]]></dc:creator> -->
@@ -1807,6 +1833,7 @@ oboe(&amp;#39;http://localhost/myapp/things.json&amp;#39;)
     
       <item>
         <title>autoprefixer</title>
+        <author>Alex Gorbatchev</author>
         <link>http://npmawesome.com/posts/2014-01-22-autoprefixer</link>
         <guid isPermaLink="true">http://npmawesome.com/posts/2014-01-22-autoprefixer</guid>
         <!-- <dc:creator><![CDATA[Alex Gorbatchev]]></dc:creator> -->
@@ -1842,6 +1869,7 @@ oboe(&amp;#39;http://localhost/myapp/things.json&amp;#39;)
     
       <item>
         <title>js-yaml</title>
+        <author>Alex Gorbatchev</author>
         <link>http://npmawesome.com/posts/2014-01-21-js-yaml</link>
         <guid isPermaLink="true">http://npmawesome.com/posts/2014-01-21-js-yaml</guid>
         <!-- <dc:creator><![CDATA[Alex Gorbatchev]]></dc:creator> -->
@@ -1868,6 +1896,7 @@ title: *name
     
       <item>
         <title>gaze</title>
+        <author>Alex Gorbatchev</author>
         <link>http://npmawesome.com/posts/2014-01-17-gaze</link>
         <guid isPermaLink="true">http://npmawesome.com/posts/2014-01-17-gaze</guid>
         <!-- <dc:creator><![CDATA[Alex Gorbatchev]]></dc:creator> -->
@@ -1922,6 +1951,7 @@ gaze([&amp;#39;stylesheets/*.css&amp;#39;, &amp;#39;images/**/*.png&amp;#39;], f
     
       <item>
         <title>shortId</title>
+        <author>Alex Gorbatchev</author>
         <link>http://npmawesome.com/posts/2014-01-14-shortid</link>
         <guid isPermaLink="true">http://npmawesome.com/posts/2014-01-14-shortid</guid>
         <!-- <dc:creator><![CDATA[Alex Gorbatchev]]></dc:creator> -->
@@ -1996,6 +2026,7 @@ long random()
     
       <item>
         <title>testium</title>
+        <author>Alex Gorbatchev</author>
         <link>http://npmawesome.com/posts/2014-01-13-testium</link>
         <guid isPermaLink="true">http://npmawesome.com/posts/2014-01-13-testium</guid>
         <!-- <dc:creator><![CDATA[Alex Gorbatchev]]></dc:creator> -->
@@ -2045,6 +2076,7 @@ describe &amp;#39;browse&amp;#39;, -&amp;gt;
     
       <item>
         <title>messageformat.js</title>
+        <author>Alex Gorbatchev</author>
         <link>http://npmawesome.com/posts/2014-01-10-messageformat</link>
         <guid isPermaLink="true">http://npmawesome.com/posts/2014-01-10-messageformat</guid>
         <!-- <dc:creator><![CDATA[Alex Gorbatchev]]></dc:creator> -->
@@ -2084,6 +2116,7 @@ message({ &amp;quot;NAME&amp;quot; : &amp;quot;Jed&amp;quot; });
     
       <item>
         <title>gulp</title>
+        <author>Alex Gorbatchev</author>
         <link>http://npmawesome.com/posts/2014-01-09-gulp</link>
         <guid isPermaLink="true">http://npmawesome.com/posts/2014-01-09-gulp</guid>
         <!-- <dc:creator><![CDATA[Alex Gorbatchev]]></dc:creator> -->
@@ -2135,6 +2168,7 @@ gulp.task(&amp;#39;default&amp;#39;, function() {
     
       <item>
         <title>chalk</title>
+        <author>Alex Gorbatchev</author>
         <link>http://npmawesome.com/posts/2014-01-06-chalk</link>
         <guid isPermaLink="true">http://npmawesome.com/posts/2014-01-06-chalk</guid>
         <!-- <dc:creator><![CDATA[Alex Gorbatchev]]></dc:creator> -->
@@ -2174,6 +2208,7 @@ console.log(  chalk.blue(&amp;#39;Hello&amp;#39;, &amp;#39;World!&amp;#39;, &amp
     
       <item>
         <title>recluster</title>
+        <author>Alex Gorbatchev</author>
         <link>http://npmawesome.com/posts/2013-12-31-recluster</link>
         <guid isPermaLink="true">http://npmawesome.com/posts/2013-12-31-recluster</guid>
         <!-- <dc:creator><![CDATA[Alex Gorbatchev]]></dc:creator> -->
@@ -2225,6 +2260,7 @@ console.log(&amp;quot;spawned cluster, kill -s SIGUSR2&amp;quot;, process.pid, &
     
       <item>
         <title>rework</title>
+        <author>Alex Gorbatchev</author>
         <link>http://npmawesome.com/posts/2013-12-30-rework</link>
         <guid isPermaLink="true">http://npmawesome.com/posts/2013-12-30-rework</guid>
         <!-- <dc:creator><![CDATA[Alex Gorbatchev]]></dc:creator> -->
@@ -2262,6 +2298,7 @@ var css = rework(str)
     
       <item>
         <title>cheerio</title>
+        <author>Alex Gorbatchev</author>
         <link>http://npmawesome.com/posts/2013-12-27-cheerio</link>
         <guid isPermaLink="true">http://npmawesome.com/posts/2013-12-27-cheerio</guid>
         <!-- <dc:creator><![CDATA[Alex Gorbatchev]]></dc:creator> -->
@@ -2294,6 +2331,7 @@ $.html();
     
       <item>
         <title>dat</title>
+        <author>Alex Gorbatchev</author>
         <link>http://npmawesome.com/posts/2013-12-19-dat</link>
         <guid isPermaLink="true">http://npmawesome.com/posts/2013-12-19-dat</guid>
         <!-- <dc:creator><![CDATA[Alex Gorbatchev]]></dc:creator> -->
@@ -2319,6 +2357,7 @@ $.html();
     
       <item>
         <title>xregexp</title>
+        <author>Alex Gorbatchev</author>
         <link>http://npmawesome.com/posts/2013-12-18-xregexp</link>
         <guid isPermaLink="true">http://npmawesome.com/posts/2013-12-18-xregexp</guid>
         <!-- <dc:creator><![CDATA[Alex Gorbatchev]]></dc:creator> -->
@@ -2395,6 +2434,7 @@ XRegExp.matchRecursive(str, &amp;#39;&amp;lt;&amp;#39;, &amp;#39;&amp;gt;&amp;#3
     
       <item>
         <title>npm v1.3.18</title>
+        <author>Alex Gorbatchev</author>
         <link>http://npmawesome.com/posts/2013-12-17-npm</link>
         <guid isPermaLink="true">http://npmawesome.com/posts/2013-12-17-npm</guid>
         <!-- <dc:creator><![CDATA[Alex Gorbatchev]]></dc:creator> -->
@@ -2414,6 +2454,7 @@ XRegExp.matchRecursive(str, &amp;#39;&amp;lt;&amp;#39;, &amp;#39;&amp;gt;&amp;#3
     
       <item>
         <title>ect</title>
+        <author>Alex Gorbatchev</author>
         <link>http://npmawesome.com/posts/2013-12-16-ect</link>
         <guid isPermaLink="true">http://npmawesome.com/posts/2013-12-16-ect</guid>
         <!-- <dc:creator><![CDATA[Alex Gorbatchev]]></dc:creator> -->
@@ -2465,6 +2506,7 @@ console.log &amp;quot;Listening on port 3000&amp;quot;
     
       <item>
         <title>chrono</title>
+        <author>Alex Gorbatchev</author>
         <link>http://npmawesome.com/posts/2013-12-13-chrono</link>
         <guid isPermaLink="true">http://npmawesome.com/posts/2013-12-13-chrono</guid>
         <!-- <dc:creator><![CDATA[Alex Gorbatchev]]></dc:creator> -->
@@ -2526,6 +2568,7 @@ Thu Sep 12 2013 12:00:00 GMT+0900 (JST)
     
       <item>
         <title>prettyjson</title>
+        <author>Alex Gorbatchev</author>
         <link>http://npmawesome.com/posts/2013-12-11-prettyjson</link>
         <guid isPermaLink="true">http://npmawesome.com/posts/2013-12-11-prettyjson</guid>
         <!-- <dc:creator><![CDATA[Alex Gorbatchev]]></dc:creator> -->
@@ -2556,6 +2599,7 @@ console.log(prettyjson.render(data));
     
       <item>
         <title>state</title>
+        <author>Alex Gorbatchev</author>
         <link>http://npmawesome.com/posts/2013-12-10-state</link>
         <guid isPermaLink="true">http://npmawesome.com/posts/2013-12-10-state</guid>
         <!-- <dc:creator><![CDATA[Alex Gorbatchev]]></dc:creator> -->
@@ -2616,6 +2660,7 @@ jr.waver();  // log &amp;lt;&amp;lt;&amp;lt; &amp;quot;I hate chocolate, I want 
     
       <item>
         <title>blessed</title>
+        <author>Alex Gorbatchev</author>
         <link>http://npmawesome.com/posts/2013-12-09-blessed</link>
         <guid isPermaLink="true">http://npmawesome.com/posts/2013-12-09-blessed</guid>
         <!-- <dc:creator><![CDATA[Alex Gorbatchev]]></dc:creator> -->
@@ -2686,6 +2731,7 @@ screen.render();
     
       <item>
         <title>gm</title>
+        <author>Alex Gorbatchev</author>
         <link>http://npmawesome.com/posts/2013-12-05-gm</link>
         <guid isPermaLink="true">http://npmawesome.com/posts/2013-12-05-gm</guid>
         <!-- <dc:creator><![CDATA[Alex Gorbatchev]]></dc:creator> -->
@@ -2722,6 +2768,7 @@ gm(&amp;#39;/path/to/my/img.jpg&amp;#39;)
     
       <item>
         <title>nak</title>
+        <author>Alex Gorbatchev</author>
         <link>http://npmawesome.com/posts/2013-12-03-nak</link>
         <guid isPermaLink="true">http://npmawesome.com/posts/2013-12-03-nak</guid>
         <!-- <dc:creator><![CDATA[Alex Gorbatchev]]></dc:creator> -->
@@ -2747,6 +2794,7 @@ gm(&amp;#39;/path/to/my/img.jpg&amp;#39;)
     
       <item>
         <title>VeryModel</title>
+        <author>Alex Gorbatchev</author>
         <link>http://npmawesome.com/posts/2013-12-03-verymodel</link>
         <guid isPermaLink="true">http://npmawesome.com/posts/2013-12-03-verymodel</guid>
         <!-- <dc:creator><![CDATA[Alex Gorbatchev]]></dc:creator> -->
@@ -2780,6 +2828,7 @@ var User = new VeryModel({
     
       <item>
         <title>scala.js</title>
+        <author>Alex Gorbatchev</author>
         <link>http://npmawesome.com/posts/2013-11-30-scala-js</link>
         <guid isPermaLink="true">http://npmawesome.com/posts/2013-11-30-scala-js</guid>
         <!-- <dc:creator><![CDATA[Alex Gorbatchev]]></dc:creator> -->
@@ -2801,6 +2850,7 @@ var User = new VeryModel({
     
       <item>
         <title>scalenpm.org</title>
+        <author>Alex Gorbatchev</author>
         <link>http://npmawesome.com/posts/2013-11-27-scale-npm</link>
         <guid isPermaLink="true">http://npmawesome.com/posts/2013-11-27-scale-npm</guid>
         <!-- <dc:creator><![CDATA[Alex Gorbatchev]]></dc:creator> -->
@@ -2814,6 +2864,7 @@ var User = new VeryModel({
     
       <item>
         <title>rx.js</title>
+        <author>Alex Gorbatchev</author>
         <link>http://npmawesome.com/posts/2013-11-26-rx-js</link>
         <guid isPermaLink="true">http://npmawesome.com/posts/2013-11-26-rx-js</guid>
         <!-- <dc:creator><![CDATA[Alex Gorbatchev]]></dc:creator> -->
@@ -2863,6 +2914,7 @@ out!&lt;/p&gt;
     
       <item>
         <title>docpad</title>
+        <author>Alex Gorbatchev</author>
         <link>http://npmawesome.com/posts/2013-11-26-docpad</link>
         <guid isPermaLink="true">http://npmawesome.com/posts/2013-11-26-docpad</guid>
         <!-- <dc:creator><![CDATA[Alex Gorbatchev]]></dc:creator> -->
@@ -2890,6 +2942,7 @@ out!&lt;/p&gt;
     
       <item>
         <title>grunt-angular-builder</title>
+        <author>Alex Gorbatchev</author>
         <link>http://npmawesome.com/posts/2013-11-25-grunt-angular-builder</link>
         <guid isPermaLink="true">http://npmawesome.com/posts/2013-11-25-grunt-angular-builder</guid>
         <!-- <dc:creator><![CDATA[Alex Gorbatchev]]></dc:creator> -->
@@ -2956,6 +3009,7 @@ out!&lt;/p&gt;
     
       <item>
         <title>videoconverter.js</title>
+        <author>Alex Gorbatchev</author>
         <link>http://npmawesome.com/posts/2013-11-22-videoconverter-js</link>
         <guid isPermaLink="true">http://npmawesome.com/posts/2013-11-22-videoconverter-js</guid>
         <!-- <dc:creator><![CDATA[Alex Gorbatchev]]></dc:creator> -->
@@ -2980,6 +3034,7 @@ page&lt;/a&gt;.&lt;/p&gt;
     
       <item>
         <title>event-stream</title>
+        <author>Alex Gorbatchev</author>
         <link>http://npmawesome.com/posts/2013-11-22-event-stream</link>
         <guid isPermaLink="true">http://npmawesome.com/posts/2013-11-22-event-stream</guid>
         <!-- <dc:creator><![CDATA[Alex Gorbatchev]]></dc:creator> -->
@@ -3006,6 +3061,7 @@ es.pipeline(                         // connect streams together with `pipe`
     
       <item>
         <title>bacon.js</title>
+        <author>Alex Gorbatchev</author>
         <link>http://npmawesome.com/posts/2013-11-21-bacon-js</link>
         <guid isPermaLink="true">http://npmawesome.com/posts/2013-11-21-bacon-js</guid>
         <!-- <dc:creator><![CDATA[Alex Gorbatchev]]></dc:creator> -->
@@ -3065,6 +3121,7 @@ Scott part.&lt;/p&gt;
     
       <item>
         <title>node-spdy</title>
+        <author>Alex Gorbatchev</author>
         <link>http://npmawesome.com/posts/2013-11-20-spdy</link>
         <guid isPermaLink="true">http://npmawesome.com/posts/2013-11-20-spdy</guid>
         <!-- <dc:creator><![CDATA[Alex Gorbatchev]]></dc:creator> -->
@@ -3110,6 +3167,7 @@ server.listen(443);
     
       <item>
         <title>json-mask</title>
+        <author>Alex Gorbatchev</author>
         <link>http://npmawesome.com/posts/2013-11-19-json-mask</link>
         <guid isPermaLink="true">http://npmawesome.com/posts/2013-11-19-json-mask</guid>
         <!-- <dc:creator><![CDATA[Alex Gorbatchev]]></dc:creator> -->
@@ -3145,6 +3203,7 @@ fields were masked / filtered.&lt;/p&gt;
     
       <item>
         <title>pm2</title>
+        <author>Alex Gorbatchev</author>
         <link>http://npmawesome.com/posts/2013-11-18-pm2</link>
         <guid isPermaLink="true">http://npmawesome.com/posts/2013-11-18-pm2</guid>
         <!-- <dc:creator><![CDATA[Alex Gorbatchev]]></dc:creator> -->
@@ -3192,6 +3251,7 @@ solutions (a solution for PaaS will be developed later).&lt;/p&gt;
     
       <item>
         <title>npmd</title>
+        <author>Alex Gorbatchev</author>
         <link>http://npmawesome.com/posts/2013-11-18-npmd</link>
         <guid isPermaLink="true">http://npmawesome.com/posts/2013-11-18-npmd</guid>
         <!-- <dc:creator><![CDATA[Alex Gorbatchev]]></dc:creator> -->
@@ -3223,6 +3283,7 @@ page&lt;/a&gt;.&lt;/p&gt;
     
       <item>
         <title>nixt</title>
+        <author>Alex Gorbatchev</author>
         <link>http://npmawesome.com/posts/2013-11-18-nixt</link>
         <guid isPermaLink="true">http://npmawesome.com/posts/2013-11-18-nixt</guid>
         <!-- <dc:creator><![CDATA[Alex Gorbatchev]]></dc:creator> -->
@@ -3250,6 +3311,7 @@ page&lt;/a&gt;.&lt;/p&gt;
     
       <item>
         <title>vm.js</title>
+        <author>Alex Gorbatchev</author>
         <link>http://npmawesome.com/posts/2013-11-17-vm-js</link>
         <guid isPermaLink="true">http://npmawesome.com/posts/2013-11-17-vm-js</guid>
         <!-- <dc:creator><![CDATA[Alex Gorbatchev]]></dc:creator> -->
@@ -3324,6 +3386,7 @@ fiber.run()
     
       <item>
         <title>node-jvm</title>
+        <author>Alex Gorbatchev</author>
         <link>http://npmawesome.com/posts/2013-11-17-node-jvm</link>
         <guid isPermaLink="true">http://npmawesome.com/posts/2013-11-17-node-jvm</guid>
         <!-- <dc:creator><![CDATA[Alex Gorbatchev]]></dc:creator> -->
@@ -3379,6 +3442,7 @@ jvm.run([15]);
     
       <item>
         <title>flake</title>
+        <author>Alex Gorbatchev</author>
         <link>http://npmawesome.com/posts/2013-11-17-flake</link>
         <guid isPermaLink="true">http://npmawesome.com/posts/2013-11-17-flake</guid>
         <!-- <dc:creator><![CDATA[Alex Gorbatchev]]></dc:creator> -->
