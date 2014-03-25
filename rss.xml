@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!-- hey there! -->
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>npm awesome</title>
     <link>http://npmawesome.com</link>
-    <lastBuildDate>Mon, 24 Mar 2014 15:51:00 GMT</lastBuildDate>
-    <pubDate>Mon, 24 Mar 2014 15:51:00 GMT</pubDate>
+    <lastBuildDate>Tue, 25 Mar 2014 03:38:43 GMT</lastBuildDate>
+    <pubDate>Tue, 25 Mar 2014 03:38:43 GMT</pubDate>
     <description>Daily dose of awesome NPM modules for Node.js, old and new!</description>
     <atom:link href="http://npmawesome.com/rss" rel="self" type="application/rss+xml"/>
 
