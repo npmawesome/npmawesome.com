@@ -1,5 +1,6 @@
 ---
 layout: post
+partner: nodejitsu
 date: 2014-03-21T10:25:57-0800
 tags: npm, cli, arguments
 
@@ -15,8 +16,6 @@ slug: *name
 title: *name
 description: Easy command line argument parsing with yargs.
 ---
-<%- @partial('nodejitsu') %>
-
 <img class="hide-on-mobile" src="https://avatars3.githubusercontent.com/u/874394" style="float: right; margin-left: 1em; width: 100px"/>
 This post kicks off a small mini-series of posts about modules which making writing CLI (command line interface) tools in Node.js easier. Typically, when starting a new CLI tool, the first problem that you would encounter is how to read arguments that users pass via command line. Standard library gives us `process.argv` but if you want something a little bit more structured than an array, you have to look elsewhere.
 

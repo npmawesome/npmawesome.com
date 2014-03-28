@@ -1,5 +1,6 @@
 ---
 layout: post
+partner: nodejitsu
 date: 2014-03-06T09:35:58-0800
 tags: npm, express, authentication
 
@@ -15,8 +16,6 @@ slug: *name
 title: *name
 description: Lockit is an authentication solution for Express.
 ---
-<%- @partial('nodejitsu') %>
-
 So you got a really cool idea for an app or a service. You get all fired up, talk to your friends about, write down some bullet points and run that exciting `git init` command in an empty folder. One of the first things you are most likely to in the very near future is begin working on some kind of user login and registration process.
 
 <img class="hide-on-mobile" src="https://1.gravatar.com/avatar/5664d023c8ab7b6eb69a93990198432e" style="float: right; margin-left: 1em"/>

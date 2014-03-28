@@ -9,4 +9,8 @@ article
       - if(post.npm)
         .github-stars(data-github-repo=post.npm.repo)
 
-  .content!= post.contentRenderedWithoutLayouts
+  .content
+    if post.partner
+      != partial(post.partner)
+
+    != post.contentRenderedWithoutLayouts

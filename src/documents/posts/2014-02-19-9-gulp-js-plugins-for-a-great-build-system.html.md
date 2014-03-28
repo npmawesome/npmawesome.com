@@ -1,13 +1,12 @@
 ---
 layout: post
+partner: nodejitsu
 date: 2014-02-19T09:26:59-0800
 tags: gulp.js
 slug: 9-gulp-js-plugins-for-a-great-build-system
 title: 9 gulp.js plugins for a great build system
 description: 9 gulp.js plugins for a great build system
 ---
-<%- @partial('nodejitsu') %>
-
 This article assumes you have experience with node.js, npm and you are pretty familiar with the concept of task runners and command-line interface. It will walk through general steps required to get up and running with [gulp.js].
 
 Not unlike all the other build systems, it all starts by installing the task runner itself, e.g. `npm install gulp` and creating the main file in the root of your project called `gulpfile.js`. For those people like myself, who immediately want to know if [gulp.js] supports CoffeeScript - the answer is yes - just `require('./gulpfile.coffee')` from `gulpfile.js`.
