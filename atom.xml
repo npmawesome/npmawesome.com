@@ -5,7 +5,7 @@
 	<link href="http://npmawesome.com/atom.xml" rel="self" />
 	<link href="http://npmawesome.com" />
 	<id>http://npmawesome.com</id>
-	<updated>2014-03-25T03:38:43.787Z</updated>
+	<updated>2014-03-28T02:01:45.486Z</updated>
 	<author>
 		<name>Alex Gorbatchev</name>
 		<email></email>
@@ -17,10 +17,7 @@
 			<link href="http://npmawesome.com/posts/2014-03-21-yargs"/>
 			<updated>2014-03-21T18:25:57.000Z</updated>
 			<id>http://npmawesome.com/posts/2014-03-21-yargs</id>
-			<content type="html">&lt;p&gt;&lt;div class=&quot;highlight nodejitsu&quot;&gt;&lt;img src=&quot;/images/posts/nodejitsu.png&quot; style=&quot;height: 80px&quot; class=&quot;hide-on-mobile&quot;/&gt;&lt;span&gt;This post was written for &lt;a href=&quot;http://nodejitsu.com&quot;&gt;Nodejitsu&lt;/a&gt; blog and is crossposted here.
-&lt;a href=&quot;http://nodejitsu.com&quot;&gt;Nodejitsu&lt;/a&gt; loved what I was doing at &lt;a href=&quot;http://npmawesome.com&quot;&gt;npmawesome.com&lt;/a&gt;
-and is now supporting the project.&lt;/span&gt;&lt;/div&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img class=&quot;hide-on-mobile&quot; src=&quot;https://avatars3.githubusercontent.com/u/874394&quot; style=&quot;float: right; margin-left: 1em; width: 100px&quot;/&gt;
+			<content type="html">&lt;p&gt;&lt;img class=&quot;hide-on-mobile&quot; src=&quot;https://avatars3.githubusercontent.com/u/874394&quot; style=&quot;float: right; margin-left: 1em; width: 100px&quot;/&gt;
 This post kicks off a small mini-series of posts about modules which making writing CLI (command line interface) tools in Node.js easier. Typically, when starting a new CLI tool, the first problem that you would encounter is how to read arguments that users pass via command line. Standard library gives us &lt;code&gt;process.argv&lt;/code&gt; but if you want something a little bit more structured than an array, you have to look elsewhere.&lt;/p&gt;
 &lt;p&gt;This is where &lt;a href=&quot;https://github.com/chevex/yargs&quot;&gt;yargs&lt;/a&gt; comes in handy. This module was originally written by &lt;a href=&quot;https://github.com/substack&quot;&gt;James Halliday&lt;/a&gt; and called &lt;a href=&quot;(https://github.com/substack/node-optimist)&quot;&gt;optimist&lt;/a&gt;. It is now called &lt;a href=&quot;https://github.com/chevex/yargs&quot;&gt;yargs&lt;/a&gt; and the work is continued by &lt;a href=&quot;https://github.com/chevex&quot;&gt;Alex Ford&lt;/a&gt;. Lets get it installed:&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;npm install yargs
@@ -231,10 +228,7 @@ var argv = require(&amp;#39;yargs&amp;#39;)
 			<link href="http://npmawesome.com/posts/2014-03-12-convict"/>
 			<updated>2014-03-12T18:25:57.000Z</updated>
 			<id>http://npmawesome.com/posts/2014-03-12-convict</id>
-			<content type="html">&lt;p&gt;&lt;div class=&quot;highlight nodejitsu&quot;&gt;&lt;img src=&quot;/images/posts/nodejitsu.png&quot; style=&quot;height: 80px&quot; class=&quot;hide-on-mobile&quot;/&gt;&lt;span&gt;This post was written for &lt;a href=&quot;http://nodejitsu.com&quot;&gt;Nodejitsu&lt;/a&gt; blog and is crossposted here.
-&lt;a href=&quot;http://nodejitsu.com&quot;&gt;Nodejitsu&lt;/a&gt; loved what I was doing at &lt;a href=&quot;http://npmawesome.com&quot;&gt;npmawesome.com&lt;/a&gt;
-and is now supporting the project.&lt;/span&gt;&lt;/div&gt;&lt;/p&gt;
-&lt;p&gt;Managing application configuration is one of the cornerstones to a reducing stress that comes from deploying Node.js applications to production environment. It&amp;#39;s pretty easy if all you have to worry about is the port that your web server is listening on and database connection. But what do you do when you have a dozen or so external services, local folders, multiple connections and so on to have to keep track? And to top it off, all of this varies across development workstations, staging and production.&lt;/p&gt;
+			<content type="html">&lt;p&gt;Managing application configuration is one of the cornerstones to a reducing stress that comes from deploying Node.js applications to production environment. It&amp;#39;s pretty easy if all you have to worry about is the port that your web server is listening on and database connection. But what do you do when you have a dozen or so external services, local folders, multiple connections and so on to have to keep track? And to top it off, all of this varies across development workstations, staging and production.&lt;/p&gt;
 &lt;p&gt;&lt;img class=&quot;hide-on-mobile&quot; src=&quot;https://0.gravatar.com/avatar/93621c22c5e09b5f980c39e8eedbf68c&quot; style=&quot;float: right; margin-left: 1em&quot;/&gt;
 To accomplish this for the last couple of years I&amp;#39;ve been using &lt;a href=&quot;https://github.com/mozilla/node-convict&quot;&gt;convict&lt;/a&gt;, written by &lt;a href=&quot;https://github.com/lloyd&quot;&gt;Lloyd Hilaiel&lt;/a&gt; at Mozilla, with great success. Before diving into &lt;a href=&quot;https://github.com/mozilla/node-convict&quot;&gt;convict&lt;/a&gt; lets first take a moment to review a typical setup for configuring Node.js applications:&lt;/p&gt;
 &lt;ol&gt;
@@ -354,10 +348,7 @@ app.listen(
 			<link href="http://npmawesome.com/posts/2014-03-06-lockit"/>
 			<updated>2014-03-06T17:35:58.000Z</updated>
 			<id>http://npmawesome.com/posts/2014-03-06-lockit</id>
-			<content type="html">&lt;p&gt;&lt;div class=&quot;highlight nodejitsu&quot;&gt;&lt;img src=&quot;/images/posts/nodejitsu.png&quot; style=&quot;height: 80px&quot; class=&quot;hide-on-mobile&quot;/&gt;&lt;span&gt;This post was written for &lt;a href=&quot;http://nodejitsu.com&quot;&gt;Nodejitsu&lt;/a&gt; blog and is crossposted here.
-&lt;a href=&quot;http://nodejitsu.com&quot;&gt;Nodejitsu&lt;/a&gt; loved what I was doing at &lt;a href=&quot;http://npmawesome.com&quot;&gt;npmawesome.com&lt;/a&gt;
-and is now supporting the project.&lt;/span&gt;&lt;/div&gt;&lt;/p&gt;
-&lt;p&gt;So you got a really cool idea for an app or a service. You get all fired up, talk to your friends about, write down some bullet points and run that exciting &lt;code&gt;git init&lt;/code&gt; command in an empty folder. One of the first things you are most likely to in the very near future is begin working on some kind of user login and registration process.&lt;/p&gt;
+			<content type="html">&lt;p&gt;So you got a really cool idea for an app or a service. You get all fired up, talk to your friends about, write down some bullet points and run that exciting &lt;code&gt;git init&lt;/code&gt; command in an empty folder. One of the first things you are most likely to in the very near future is begin working on some kind of user login and registration process.&lt;/p&gt;
 &lt;p&gt;&lt;img class=&quot;hide-on-mobile&quot; src=&quot;https://1.gravatar.com/avatar/5664d023c8ab7b6eb69a93990198432e&quot; style=&quot;float: right; margin-left: 1em&quot;/&gt;
 Of course, &lt;a href=&quot;http://passportjs.org/&quot;&gt;passport.js&lt;/a&gt; is great when you can leverage external authentication, but otherwise you are stuck rolling your own system… After a while you find yourself doing it over and over again. How boring! Wouldn&amp;#39;t it be nice if somebody finally just wrote a module that you could plugin into your express app that would take care of all this user registration stuff?&lt;/p&gt;
 &lt;p&gt;Well, look no further than &lt;a href=&quot;https://github.com/zeMirco/lockit&quot;&gt;lockit&lt;/a&gt;, which is a collection of modules written by &lt;a href=&quot;https://github.com/zeMirco&quot;&gt;Mirco Zeiss&lt;/a&gt; that helps you with initial user registraion and password management flow.&lt;/p&gt;
@@ -467,10 +458,7 @@ app.use(app.router);
 			<link href="http://npmawesome.com/posts/2014-02-27-qr-image"/>
 			<updated>2014-02-27T18:25:57.000Z</updated>
 			<id>http://npmawesome.com/posts/2014-02-27-qr-image</id>
-			<content type="html">&lt;p&gt;&lt;div class=&quot;highlight nodejitsu&quot;&gt;&lt;img src=&quot;/images/posts/nodejitsu.png&quot; style=&quot;height: 80px&quot; class=&quot;hide-on-mobile&quot;/&gt;&lt;span&gt;This post was written for &lt;a href=&quot;http://nodejitsu.com&quot;&gt;Nodejitsu&lt;/a&gt; blog and is crossposted here.
-&lt;a href=&quot;http://nodejitsu.com&quot;&gt;Nodejitsu&lt;/a&gt; loved what I was doing at &lt;a href=&quot;http://npmawesome.com&quot;&gt;npmawesome.com&lt;/a&gt;
-and is now supporting the project.&lt;/span&gt;&lt;/div&gt;&lt;/p&gt;
-&lt;svg width=&quot;150&quot; height=&quot;150&quot; viewBox=&quot;0 0 27 27&quot; style=&quot;float: right; margin-left: 1em;&quot;&gt;&lt;path d=&quot;M1 1h7v7h-7zM10 1h2v1h-1v1h-1zM13 1h4v1h1v2h-2v1h-1v-2h1v-1h-2v1h-1zM19 1h7v7h-7zM2 2v5h5v-5zM20 2v5h5v-5zM3 3h3v3h-3zM11 3h1v1h-1zM21 3h3v3h-3zM10 4h1v2h-1zM13 4h1v1h1v2h-1v-1h-1v1h-1v-2h1zM16 5h2v3h-1v-1h-1zM9 6h1v2h-1zM11 7h1v1h-1zM13 7h1v1h-1zM15 7h1v1h-1zM12 8h1v2h-1v1h-2v-1h-1v-1h3zM16 8h1v1h-1zM1 9h1v1h-1zM4 9h1v1h-1zM6 9h2v1h-1v1h-2v-1h1zM14 9h2v3h-1v-1h-2v-1h1zM17 9h2v1h1v1h-1v1h1v2h1v1h-1v1h1v1h1v-1h1v1h1v2h-2v1h2v1h-2v2h1v-1h1v2h-1v1h-1v-1h-1v-1h-1v-1h-1v1h-1v1h2v1h-2v1h-2v-2h-1v-1h1v-1h1v-2h-1v-1h-1v-2h-1v1h-2v-1h1v-2h-1v-2h2v-1h1v2h-1v2h1v-2h1v3h1v-1h1v1h1v-2h-1v-1h-1v-1h-1v-1h2v-1h-1zM20 9h1v1h-1zM2 10h2v1h-2zM25 10h1v2h-2v-1h1zM4 11h1v1h1v1h-1v1h1v1h3v1h2v-1h1v2h-1v3h-1v-1h-1v-1h1v-1h-1v1h-8v-1h1v-1h2v1h1v-1h-1v-1h-1v-1h1zM7 11h1v1h-1zM20 11h2v1h-2zM1 12h1v1h1v1h-2zM8 12h1v1h-1zM11 12h1v1h-1zM7 13h1v1h-1zM9 13h1v1h1v1h-2zM22 13h1v1h1v2h-1v-1h-1zM24 13h2v3h-1v-2h-1zM1 15h1v1h-1zM21 15h1v1h-1zM6 16v1h2v-1zM24 16h1v1h-1zM18 18v3h3v-3zM25 18h1v2h-2v-1h1zM1 19h7v7h-7zM14 19h1v1h-1zM19 19h1v1h-1zM2 20v5h5v-5zM9 20h1v1h-1zM12 20h2v1h2v1h-1v1h-2v-2h-1zM3 21h3v3h-3zM10 21h2v1h-1v4h-2v-1h1v-2h-1v-1h1zM24 21h1v1h-1zM25 23h1v1h-1zM12 24h3v2h-3zM20 25h1v1h-1zM24 25h2v1h-2z&quot;/&gt;&lt;/svg&gt;
+			<content type="html">&lt;svg width=&quot;150&quot; height=&quot;150&quot; viewBox=&quot;0 0 27 27&quot; style=&quot;float: right; margin-left: 1em;&quot;&gt;&lt;path d=&quot;M1 1h7v7h-7zM10 1h2v1h-1v1h-1zM13 1h4v1h1v2h-2v1h-1v-2h1v-1h-2v1h-1zM19 1h7v7h-7zM2 2v5h5v-5zM20 2v5h5v-5zM3 3h3v3h-3zM11 3h1v1h-1zM21 3h3v3h-3zM10 4h1v2h-1zM13 4h1v1h1v2h-1v-1h-1v1h-1v-2h1zM16 5h2v3h-1v-1h-1zM9 6h1v2h-1zM11 7h1v1h-1zM13 7h1v1h-1zM15 7h1v1h-1zM12 8h1v2h-1v1h-2v-1h-1v-1h3zM16 8h1v1h-1zM1 9h1v1h-1zM4 9h1v1h-1zM6 9h2v1h-1v1h-2v-1h1zM14 9h2v3h-1v-1h-2v-1h1zM17 9h2v1h1v1h-1v1h1v2h1v1h-1v1h1v1h1v-1h1v1h1v2h-2v1h2v1h-2v2h1v-1h1v2h-1v1h-1v-1h-1v-1h-1v-1h-1v1h-1v1h2v1h-2v1h-2v-2h-1v-1h1v-1h1v-2h-1v-1h-1v-2h-1v1h-2v-1h1v-2h-1v-2h2v-1h1v2h-1v2h1v-2h1v3h1v-1h1v1h1v-2h-1v-1h-1v-1h-1v-1h2v-1h-1zM20 9h1v1h-1zM2 10h2v1h-2zM25 10h1v2h-2v-1h1zM4 11h1v1h1v1h-1v1h1v1h3v1h2v-1h1v2h-1v3h-1v-1h-1v-1h1v-1h-1v1h-8v-1h1v-1h2v1h1v-1h-1v-1h-1v-1h1zM7 11h1v1h-1zM20 11h2v1h-2zM1 12h1v1h1v1h-2zM8 12h1v1h-1zM11 12h1v1h-1zM7 13h1v1h-1zM9 13h1v1h1v1h-2zM22 13h1v1h1v2h-1v-1h-1zM24 13h2v3h-1v-2h-1zM1 15h1v1h-1zM21 15h1v1h-1zM6 16v1h2v-1zM24 16h1v1h-1zM18 18v3h3v-3zM25 18h1v2h-2v-1h1zM1 19h7v7h-7zM14 19h1v1h-1zM19 19h1v1h-1zM2 20v5h5v-5zM9 20h1v1h-1zM12 20h2v1h2v1h-1v1h-2v-2h-1zM3 21h3v3h-3zM10 21h2v1h-1v4h-2v-1h1v-2h-1v-1h1zM24 21h1v1h-1zM25 23h1v1h-1zM12 24h3v2h-3zM20 25h1v1h-1zM24 25h2v1h-2z&quot;/&gt;&lt;/svg&gt;
 
 &lt;p&gt;&lt;a href=&quot;http://en.wikipedia.org/wiki/QR_code&quot;&gt;QR code&lt;/a&gt; is this super cool thing you probably have been seeing all over the place lately. It started appearing in North America a few years ago but the actual standard is close to two decades old. It allows you to embed any small amount of data that could be decoded with a basic camera equipped phone. Most common use case here is embedding URLs in printed adverising so that those who are interested could simply point their phone at the add and go to the site instead of having to type in URLs.&lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;https://github.com/alexeyten/qr-image&quot;&gt;qr-image&lt;/a&gt; is a module by &lt;a href=&quot;https://github.com/alexeyten&quot;&gt;Alexey Ten&lt;/a&gt; to render &lt;a href=&quot;http://en.wikipedia.org/wiki/QR_code&quot;&gt;QR code&lt;/a&gt; with node.js and no external dependencies.&lt;/p&gt;
@@ -764,8 +752,7 @@ spritesmith({&amp;#39;src&amp;#39;: sprites}, function (err, result) {
 			<link href="http://npmawesome.com/posts/2014-02-19-9-gulp-js-plugins-for-a-great-build-system"/>
 			<updated>2014-02-19T17:26:59.000Z</updated>
 			<id>http://npmawesome.com/posts/2014-02-19-9-gulp-js-plugins-for-a-great-build-system</id>
-			<content type="html">&lt;p&gt;&amp;lt;%- @partial(&amp;#39;nodejitsu&amp;#39;) %&amp;gt;&lt;/p&gt;
-&lt;p&gt;This article assumes you have experience with node.js, npm and you are pretty familiar with the concept of task runners and command-line interface. It will walk through general steps required to get up and running with &lt;a href=&quot;http://gulpjs.com&quot;&gt;gulp.js&lt;/a&gt;.&lt;/p&gt;
+			<content type="html">&lt;p&gt;This article assumes you have experience with node.js, npm and you are pretty familiar with the concept of task runners and command-line interface. It will walk through general steps required to get up and running with &lt;a href=&quot;http://gulpjs.com&quot;&gt;gulp.js&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;Not unlike all the other build systems, it all starts by installing the task runner itself, e.g. &lt;code&gt;npm install gulp&lt;/code&gt; and creating the main file in the root of your project called &lt;code&gt;gulpfile.js&lt;/code&gt;. For those people like myself, who immediately want to know if &lt;a href=&quot;http://gulpjs.com&quot;&gt;gulp.js&lt;/a&gt; supports CoffeeScript - the answer is yes - just &lt;code&gt;require(&amp;#39;./gulpfile.coffee&amp;#39;)&lt;/code&gt; from &lt;code&gt;gulpfile.js&lt;/code&gt;.&lt;/p&gt;
 &lt;p&gt;Now that we have everything sorted out, lets get cracking and make a task runner to support our HTML5 node.js project.&lt;/p&gt;
 &lt;h2 id=&quot;-gulp-util-&quot;&gt;&lt;a href=&quot;https://github.com/gulpjs/gulp-util&quot;&gt;gulp-util&lt;/a&gt;&lt;/h2&gt;
@@ -777,7 +764,7 @@ spritesmith({&amp;#39;src&amp;#39;: sprites}, function (err, result) {
 var clean = require(&amp;#39;gulp-clean&amp;#39;);
 
 gulp.task(&amp;#39;clean&amp;#39;, function () {
-  gulp.src(&amp;#39;build&amp;#39;, {read: false})
+  return gulp.src(&amp;#39;build&amp;#39;, {read: false})
     .pipe(clean());
 });
 &lt;/code&gt;&lt;/pre&gt;&lt;p&gt;You can now run &lt;code&gt;gulp clean&lt;/code&gt; and the &lt;code&gt;build&lt;/code&gt; folder in the root of your project will be obliterated.&lt;/p&gt;
@@ -786,7 +773,7 @@ gulp.task(&amp;#39;clean&amp;#39;, function () {
 &lt;pre&gt;&lt;code&gt;var concat = require(&amp;#39;gulp-concat&amp;#39;);
 
 gulp.task(&amp;#39;vendor&amp;#39;, function() {
-  gulp.src(&amp;#39;vendor/*.js&amp;#39;)
+  return gulp.src(&amp;#39;vendor/*.js&amp;#39;)
     .pipe(concat(&amp;#39;vendor.js&amp;#39;))
     .pipe(gulp.dest(&amp;#39;build/vendor.js&amp;#39;))
 });
@@ -796,7 +783,7 @@ gulp.task(&amp;#39;vendor&amp;#39;, function() {
 &lt;pre&gt;&lt;code&gt;var uglify = require(&amp;#39;gulp-uglify&amp;#39;);
 
 gulp.task(&amp;#39;vendor&amp;#39;, function() {
-  gulp.src(&amp;#39;vendor/*.js&amp;#39;)
+  return gulp.src(&amp;#39;vendor/*.js&amp;#39;)
     .pipe(concat(&amp;#39;vendor.js&amp;#39;))
     .pipe(uglify())
     .pipe(gulp.dest(&amp;#39;build/vendor.js&amp;#39;))
@@ -806,7 +793,7 @@ gulp.task(&amp;#39;vendor&amp;#39;, function() {
 &lt;pre&gt;&lt;code&gt;var gutil = require(&amp;#39;gulp-util&amp;#39;);
 
 gulp.task(&amp;#39;vendor&amp;#39;, function() {
-  gulp.src(&amp;#39;vendor/*.js&amp;#39;)
+  return gulp.src(&amp;#39;vendor/*.js&amp;#39;)
     .pipe(concat(&amp;#39;vendor.js&amp;#39;))
     .pipe(uglify())
     .pipe(gulp.dest(&amp;#39;build/vendor.js&amp;#39;))
@@ -817,7 +804,7 @@ gulp.task(&amp;#39;vendor&amp;#39;, function() {
 &lt;pre&gt;&lt;code&gt;var rename = require(&amp;#39;gulp-rename&amp;#39;);
 
 gulp.task(&amp;#39;vendor&amp;#39;, function() {
-  gulp.src(&amp;#39;vendor/*.js&amp;#39;)
+  return gulp.src(&amp;#39;vendor/*.js&amp;#39;)
     .pipe(concat(&amp;#39;vendor.js&amp;#39;))
     .pipe(gulp.dest(&amp;#39;build&amp;#39;))
     .pipe(uglify())
@@ -831,7 +818,7 @@ gulp.task(&amp;#39;vendor&amp;#39;, function() {
 &lt;pre&gt;&lt;code&gt;var filesize = require(&amp;#39;gulp-filesize&amp;#39;);
 
 gulp.task(&amp;#39;vendor&amp;#39;, function() {
-  gulp.src(&amp;#39;vendor/*.js&amp;#39;)
+  return gulp.src(&amp;#39;vendor/*.js&amp;#39;)
     .pipe(concat(&amp;#39;vendor.js&amp;#39;))
     .pipe(gulp.dest(&amp;#39;build&amp;#39;))
     .pipe(filesize())
@@ -848,7 +835,7 @@ gulp.task(&amp;#39;vendor&amp;#39;, function() {
 var path = require(&amp;#39;path&amp;#39;);
 
 gulp.task(&amp;#39;css&amp;#39;, function () {
-  gulp.src(&amp;#39;less/**/*.less&amp;#39;)
+  return gulp.src(&amp;#39;less/**/*.less&amp;#39;)
     .pipe(less({
       paths: [ path.join(__dirname, &amp;#39;less&amp;#39;, &amp;#39;includes&amp;#39;) ]
     }))
@@ -861,7 +848,7 @@ gulp.task(&amp;#39;css&amp;#39;, function () {
 &lt;pre&gt;&lt;code&gt;var changed = require(&amp;#39;gulp-changed&amp;#39;);
 
 gulp.task(&amp;#39;css&amp;#39;, function () {
-  gulp.src(&amp;#39;less/**/*.less&amp;#39;)
+  return gulp.src(&amp;#39;less/**/*.less&amp;#39;)
     .pipe(changed(&amp;#39;build/css&amp;#39;))
     .pipe(less({
       paths: [ path.join(__dirname, &amp;#39;less&amp;#39;, &amp;#39;includes&amp;#39;) ]
@@ -909,7 +896,7 @@ gulp.task(&amp;#39;clean&amp;#39;, function () {
 });
 
 gulp.task(&amp;#39;vendor&amp;#39;, function() {
-  gulp.src(&amp;#39;vendor/*.js&amp;#39;)
+  return gulp.src(&amp;#39;vendor/*.js&amp;#39;)
     .pipe(concat(&amp;#39;vendor.js&amp;#39;))
     .pipe(gulp.dest(&amp;#39;build&amp;#39;))
     .pipe(filesize())
@@ -921,7 +908,7 @@ gulp.task(&amp;#39;vendor&amp;#39;, function() {
 });
 
 gulp.task(&amp;#39;css&amp;#39;, function () {
-  gulp.src(&amp;#39;less/**/*.less&amp;#39;)
+  return gulp.src(&amp;#39;less/**/*.less&amp;#39;)
     .pipe(changed(&amp;#39;build/css&amp;#39;))
     .pipe(less({
       paths: [ path.join(__dirname, &amp;#39;less&amp;#39;, &amp;#39;includes&amp;#39;) ]
