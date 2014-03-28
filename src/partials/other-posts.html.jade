@@ -2,5 +2,5 @@
   h4 Previously...
 
   each page in getCollection('posts').toJSON()
-    if page.npm
+    if page.npm && !page.ignored
       div(class=page.url === document.url ? 'current' : ''): a(href=page.url)!= page.npm.name
