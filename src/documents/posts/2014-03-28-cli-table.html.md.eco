@@ -1,8 +1,7 @@
 ---
-ignored: true
-
 layout: post
-date: 2014-03-20T10:25:57-0800
+partner: nodejitsu
+date: 2014-03-28T10:25:57-0800
 tags: npm, cli, formatting
 
 npm:
@@ -14,11 +13,9 @@ npm:
     github: guille
 
 slug: *name
-title: *name
+title: *namllbie
 description: Easy tables in the terminal output with cli-table module.
 ---
-<%- @partial('nodejitsu') %>
-
 In this post we continue the small mini-series of posts about modules for writing CLI (command line interface) tools in Node.js. In the [first post](/npmawesome-parsing-command-line-options-with-yargs/) we talked about parsing arguments supplied via the command line.
 
 <img class="hide-on-mobile" src="https://avatars3.githubusercontent.com/u/13041" style="float: right; margin-left: 1em; width: 100px"/>
@@ -109,7 +106,7 @@ Pretty cool, right? We can get a little fancy with custom borders and alignments
 
 ## Other modules to checkout
 
-[cli-tables] of course isn't the only module that can print out pretty tables in the console. Here are a few alternatives:
+<%- @npm() %> of course isn't the only module that can print out pretty tables in the console. Here are a few alternatives:
 
 * [cliff](https://github.com/flatiron/cliff), Nodejitsu's own module does quite a bit more than just tabular data printing.
 * [text-table](https://github.com/substack/text-table) by James Halliday aka substack can pretty print tabular data with alignment.
