@@ -1,0 +1,117 @@
+---
+ignored: true
+
+layout: post
+partner: nodejitsu
+date: 2014-03-28T10:25:57-0800
+tags: npm, cli, progress
+
+npm:
+  repo: &repo visionmedia/node-progress
+  name: &name progress
+
+  author:
+    name: TJ Holowaychuk
+    github: visionmedia
+
+slug: *name
+title: *name
+description: Progress indication for CLI applications with progress module.
+---
+Lets talk about long running CLI (command line interface) applications. When you have a finite process that is expected to take some time, the best thing to do is to let your users know about it. A typical application that for example downloads a file might look like this
+
+    var
+      request = require('request'),
+      fs = require('fs')
+      ;
+
+    process.stdout.write('Downloading... ');
+
+    request('http://nodejs.org/dist/node-0.0.1.tar.gz')
+      .pipe(fs.createWriteStream(__dirname + '/node.tar.gz'))
+      .on('close', function (err) {
+        process.stdout.write('done!\n');
+      });
+
+The user experience is hardly a great one. It's clear that something is happening, or at least expected to be happening.
+
+<div style="padding: 13px 10px 10px; background: black; text-align: center; border-radius: 3px"><img src="./images/progress01.gif"/></div>
+
+It's not really clear if it's still happening. Is it time for `ctrl+c` yet? How about an indicator that something is actually going on?
+
+    process.stdout.write('Downloading...');
+    intervalId = setInterval(function() { process.stdout.write('.'); }, 1000);
+
+    request('http://nodejs.org/dist/node-0.0.1.tar.gz')
+      .pipe(fs.createWriteStream(__dirname + '/node.tar.gz'))
+      .on('close', function (err) {
+        process.stdout.write(' done!\n');
+        clearInterval(intervalId);
+      });
+
+<div style="padding: 13px 10px 10px; background: black; text-align: center; border-radius: 3px"><img src="./images/progress02.gif"/></div>
+
+A little better. But still, there's no way of telling how long the process will actually take. Lets just do a real progress bar, shall we? This is where <%- @npm() %> module that was originally started by <%- @author() %> comes into play! Due to the awesomeness of open source, <%- @npm() %> is now pretty much a community effort.
+
+    <%- @install() %>
+
+## Features
+
+<%- @npm() %> supports a wide range of options via the format string and options. In the end will get a good looking ASCII progress bar and that will let everyone know about the true progress in your CLI application.
+
+These are the tokens you can use to format your progress bar:
+
+- `:bar` the progress bar itself
+- `:current` current tick number
+- `:total` total ticks
+- `:elapsed` time elapsed in seconds
+- `:percent` completion percentage
+- `:eta` estimated completion time in seconds
+
+## Usage
+
+Lets modify our original example and put <%- @npm() %> to a good use:
+
+    var
+      request = require('request'),
+      ProgressBar = require('progress'),
+      fs = require('fs')
+      ;
+
+    var
+      req = request('http://nodejs.org/dist/node-0.0.1.tar.gz'),
+      bar
+      ;
+
+    req
+      .on('data', function (chunk) {
+        bar = bar || new ProgressBar('Downloading... [:bar] :percent :etas', {
+          complete: '=',
+          incomplete: ' ',
+          width: 25,
+          total: parseInt(req.response.headers['content-length'])
+        });
+
+        bar.tick(chunk.length);
+      })
+      .pipe(fs.createWriteStream(__dirname + '/node.tar.gz'))
+      .on('close', function (err) {
+        bar.tick(bar.total - bar.curr);
+      })
+      ;
+
+<div style="padding: 13px 10px 10px; background: black; text-align: center; border-radius: 3px"><img src="./images/progress03.gif"/></div>
+
+We even get ETA estimate for free. That's what I'm talking about!
+
+## Other modules to checkout
+
+Here are a few other modules to check out:
+
+* [progbar](https://github.com/jclulow/node-progbar) by [Joshua M. Clulow](https://github.com/jclulow) is a straight up alternative.
+* [progressbar](https://github.com/bevry/progressbar) by [Benjamin Arthur Lupton](https://github.com/balupton) extends <%- @npm() %> with chaining, domains, and steps.
+* [pm2-multimeter](https://github.com/Unitech/node-multimeter) originally by [James Halliday](https://github.com/substack) and now up kept by [Alexandre Strzelewicz](https://github.com/Unitech) can display multiple progress bars at the same time.
+
+## Closing thoughts
+
+It's really cool to see a CLI application giving meaningful progress feedback. Please don't forget about user experience when building tools.
