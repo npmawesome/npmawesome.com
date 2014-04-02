@@ -609,7 +609,7 @@ app.listen(3000);
 </table></div>
 
 </div></article><article><header><h2><a href="/posts/2014-02-25-webdriverjs">webdriver.js</a></h2><div class="meta"><span>posted by <a href="https://github.com/alexgorbatchev">Alex Gorbatchev</a> on February 25th 2014</span><a href="http://npmawesome.com/posts/2014-02-25-webdriverjs#disqus_thread" class="comments"></a><div data-github-repo="camme/webdriverjs" class="github-stars"></div></div></header><div class="content"><p><img class="hide-on-mobile" src="https://2.gravatar.com/avatar/2c405e9d55507036d6cc2aff250c3146" style="float: right; margin-left: 1em"/>
-<a href="https://github.com/camme/webdriverjs">webdriver.js</a> is a module by <a href="https://github.com/camme">Camilo Tapia</a> to render node.js error stack in a much more digestable way. This seems like it might a good module to add to your infrastracture if you, like me, constantly having to weed through the ugly stack messages to find relavant lines. <a href="https://github.com/camme/webdriverjs">webdriver.js</a> is not the &quot;official webdriverjs driver&quot; says <a href="https://github.com/christian-bromann">Christian Bromann</a> in <a href="https://github.com/camme/webdriverjs/issues/138#issuecomment-32051980">this thread</a>:</p>
+<a href="https://github.com/camme/webdriverjs">webdriver.js</a> is a module by <a href="https://github.com/camme">Camilo Tapia</a> that makes it possible to write super easy selenium tests in your favorite BDD or TDD test framework. <a href="https://github.com/camme/webdriverjs">webdriver.js</a> is not the &quot;official webdriverjs driver&quot; says <a href="https://github.com/christian-bromann">Christian Bromann</a> in <a href="https://github.com/camme/webdriverjs/issues/138#issuecomment-32051980">this thread</a>:</p>
 <blockquote>
 <p>We&#39;re trying to provide a selenium runner which is easy to use, highly extendable and compatible with all common JavaScript test frameworks. It uses an own chain API to execute all async commands in right order. The specialty of this library is that we wrap all JSONWire protocol commands in useful actions commands. So you don&#39;t have to care about to get an element first and then call the click command; you just execute the click with a selector as parameter.</p>
 </blockquote>
@@ -632,7 +632,7 @@ webdriverjs
   })
   .end();
 </code></pre><h2 id="selector-api">Selector API</h2>
-<p>The JsonWireProtocol provides several strategies to query an element. WebdriverJS simplifies these to make it more familiar with the common existing selector libraries like Sizzle. The following selector types are supported:</p>
+<p>The <code>JsonWireProtocol</code> provides several strategies to query an element. <a href="https://github.com/camme/webdriverjs">webdriver.js</a> simplifies these to make it more familiar with the common existing selector libraries like Sizzle. The following selector types are supported:</p>
 <ul>
 <li>CSS query selector</li>
 <li>link text</li>
