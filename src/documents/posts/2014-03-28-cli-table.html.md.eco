@@ -13,7 +13,7 @@ npm:
     github: guille
 
 slug: *name
-title: *namllbie
+title: *name
 description: Easy tables in the terminal output with cli-table module.
 ---
 In this post we continue the small mini-series of posts about modules for writing CLI (command line interface) tools in Node.js. In the [first post](/npmawesome-parsing-command-line-options-with-yargs/) we talked about parsing arguments supplied via the command line.
