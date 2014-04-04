@@ -15,7 +15,7 @@
         <link><%= @site.url %><%= document.url %></link>
         <guid isPermaLink="true"><%= @site.url %><%= document.url %></guid>
         <pubDate><%= document.date.toUTCString() %></pubDate>
-        <description><![CDATA[<%= document.contentRenderedWithoutLayouts %>]]></description>
+        <description><![CDATA[<%- document.contentRenderedWithoutLayouts %>]]></description>
       </item>
     <% end %>
   </channel>
