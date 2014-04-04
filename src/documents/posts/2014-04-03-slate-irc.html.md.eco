@@ -1,6 +1,6 @@
 ---
 layout: post
-date: 2014-02-25T09:07:16-0800
+date: 2014-04-04T06:43:39-0700
 tags: npm, webdriver, selenium, testing
 
 npm:
@@ -13,11 +13,10 @@ npm:
 
 slug: *name
 title: *name
-description: ...
+description: General purpose IRC client with simple plugin system.
 ---
-<img class="hide-on-mobile" src="https://2.gravatar.com/avatar/2c405e9d55507036d6cc2aff250c3146" style="float: right; margin-left: 1em"/>
-<%- @npm() %> is a module by <%- @author() %> that...
-
+<img class="hide-on-mobile" src="https://avatars2.githubusercontent.com/u/25254" style="float: right; margin-left: 1em; width: 100px"/>
+<%- @npm() %> is a module by <%- @author() %> that part of the recently released open source IRC client called [Slate] and is a general purpose IRC client with simple plugin system.
 
     <%- @install() %>
 
@@ -31,20 +30,50 @@ description: ...
       host: 'irc.freenode.org'
     });
 
-    stream.on('error', function() { console.log(arguments); });
-    stream.on('end', function() { console.log(arguments); });
-
     var client = irc(stream);
 
-    client.pass('pass');
-    client.nick('tobi');
-    client.user('tobi', 'Tobi Ferret');
-
-    console.log("fooo")
-    client.join('#express');
-
-    client.names('#express', function(err, names){
-      console.log(names);
+    client.on('notice', function(notice) {
+      console.log(notice.message);
     });
 
+    client.nick('npmawesome-test');
+    client.user('npmawesome-test', 'Alex Gorbatchev');
+    client.join('#flood');
 
+    client.names('#flood', function(err, names) {
+      if (err) throw err;
+
+      names.sort();
+      console.log(names.join('\n'));
+
+      client.quit();
+    });
+
+## Plugins
+
+Plugins are simply functions that accept the IRC client as an argument. With this you can define methods, listen on events and interact with the client. For example here's a logger plugin that outputs to stdout:
+
+    function logger() {
+      return function(irc) {
+        irc.stream.pipe(process.stdout);
+      }
+    }
+
+    client.use(logger());
+
+Here's a slightly more complex example of a PONG plugin responding to PING messages:
+
+    function pong() {
+      return function(irc) {
+        irc.on('data', function(msg) {
+          if ('PING' === msg.command)
+            irc.write('PONG :' + msg.trailing);
+        });
+      }
+    }
+
+## Closing Thoughts
+
+<%- @npm() %> can serve as a core of a regular IRC client or you can write an IRC bot for your team chat. Checkout the [github page](https://github.com/slate/slate-irc) for full documentation.
+
+[Slate]: https://github.com/slate/slate

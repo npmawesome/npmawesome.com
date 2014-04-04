@@ -16,7 +16,7 @@ client.nick('npmawesome-test');
 client.user('npmawesome-test', 'Alex Gorbatchev');
 client.join('#flood');
 
-client.names('#flood', function(err, names){
+client.names('#flood', function(err, names) {
   if (err) throw err;
 
   names.sort();
