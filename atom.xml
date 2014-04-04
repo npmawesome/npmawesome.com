@@ -5,12 +5,106 @@
 	<link href="http://npmawesome.com/atom.xml" rel="self" />
 	<link href="http://npmawesome.com" />
 	<id>http://npmawesome.com</id>
-	<updated>2014-04-02T05:19:30.100Z</updated>
+	<updated>2014-04-04T14:07:14.976Z</updated>
 	<author>
 		<name>Alex Gorbatchev</name>
 		<email></email>
 	</author>
 
+	
+		<entry>
+			<title>slate-irc</title>
+			<link href="http://npmawesome.com/posts/2014-04-04-slate-irc"/>
+			<updated>2014-04-04T13:43:39.000Z</updated>
+			<id>http://npmawesome.com/posts/2014-04-04-slate-irc</id>
+			<content type="html">&lt;p&gt;&lt;img class=&quot;hide-on-mobile&quot; src=&quot;https://avatars2.githubusercontent.com/u/25254&quot; style=&quot;float: right; margin-left: 1em; width: 100px&quot;/&gt;
+&lt;a href=&quot;https://github.com/slate/slate-irc&quot;&gt;slate-irc&lt;/a&gt; is a module by &lt;a href=&quot;https://github.com/visionmedia&quot;&gt;TJ Holowaychuk&lt;/a&gt; that part of the recently released open source IRC client called &lt;a href=&quot;https://github.com/slate/slate&quot;&gt;Slate&lt;/a&gt; and is a general purpose IRC client with simple plugin system.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;npm install slate-irc
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&quot;usage&quot;&gt;Usage&lt;/h2&gt;
+&lt;pre&gt;&lt;code&gt;var irc = require(&amp;#39;slate-irc&amp;#39;);
+var net = require(&amp;#39;net&amp;#39;);
+
+var stream = net.connect({
+  port: 6667,
+  host: &amp;#39;irc.freenode.org&amp;#39;
+});
+
+var client = irc(stream);
+
+client.on(&amp;#39;notice&amp;#39;, function(notice) {
+  console.log(notice.message);
+});
+
+client.nick(&amp;#39;npmawesome-test&amp;#39;);
+client.user(&amp;#39;npmawesome-test&amp;#39;, &amp;#39;Alex Gorbatchev&amp;#39;);
+client.join(&amp;#39;#flood&amp;#39;);
+
+client.names(&amp;#39;#flood&amp;#39;, function(err, names) {
+  if (err) throw err;
+
+  names.sort();
+  console.log(names.join(&amp;#39;\n&amp;#39;));
+
+  client.quit();
+});
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&quot;plugins&quot;&gt;Plugins&lt;/h2&gt;
+&lt;p&gt;Plugins are simply functions that accept the IRC client as an argument. With this you can define methods, listen on events and interact with the client. For example here&amp;#39;s a logger plugin that outputs to stdout:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;function logger() {
+  return function(irc) {
+    irc.stream.pipe(process.stdout);
+  }
+}
+
+client.use(logger());
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Here&amp;#39;s a slightly more complex example of a PONG plugin responding to PING messages:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;function pong() {
+  return function(irc) {
+    irc.on(&amp;#39;data&amp;#39;, function(msg) {
+      if (&amp;#39;PING&amp;#39; === msg.command)
+        irc.write(&amp;#39;PONG :&amp;#39; + msg.trailing);
+    });
+  }
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&quot;closing-thoughts&quot;&gt;Closing Thoughts&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&quot;https://github.com/slate/slate-irc&quot;&gt;slate-irc&lt;/a&gt; can serve as a core of a regular IRC client or you can write an IRC bot for your team chat. Checkout the &lt;a href=&quot;https://github.com/slate/slate-irc&quot;&gt;github page&lt;/a&gt; for full documentation.&lt;/p&gt;
+</content>
+		</entry>
+	
+		<entry>
+			<title>Links for Apr 4, 2014</title>
+			<link href="http://npmawesome.com/posts/2014-04-03-links"/>
+			<updated>2014-04-04T03:00:00.000Z</updated>
+			<id>http://npmawesome.com/posts/2014-04-03-links</id>
+			<content type="html">&lt;h2 id=&quot;npm-inc&quot;&gt;NPM Inc&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;http://blog.npmjs.org/post/80997676347/nebulous-profit-meditations&quot;&gt;Nebulous Profit Meditations&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://blog.modulus.io/isaac-interview&quot;&gt;Meet the face behind NPM&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;apps&quot;&gt;Apps&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;http://koala-app.com/&quot;&gt;Koala&lt;/a&gt; is a GUI application for Less, Sass, Compass and CoffeeScript compilation, to help web developers to use them more efficiently. Koala can run in windows, linux and mac.&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://zedapp.org/&quot;&gt;Zed&lt;/a&gt; is a fully offline-capable, open source, keyboard-focused, Chrome-based text and code editor you can use to edit local files as well as remote files on any server.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;articles-slides&quot;&gt;Articles &amp;amp; Slides&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://speakerdeck.com/ckarande/top-overlooked-security-threats-to-node-dot-js-web-applications&quot;&gt;Top Overlooked Security Threats to Node.js Web Applications&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://www.sitepoint.com/testing-across-node-js-versions-using-docker/&quot;&gt;Testing Across Node.js Versions Using Docker&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://www.codefellows.org/blogs/complete-list-of-javascript-tools&quot;&gt;A List of Foundational JavaScript Tools&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;github&quot;&gt;GitHub&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/ShiftForward/mucuchies&quot;&gt;mucuchies&lt;/a&gt; - A neat looking pluggable client-side dashboard.&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/wagerfield/parallax&quot;&gt;parallax&lt;/a&gt; - Parallax Engine that reacts to the orientation of a smart device.&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/soygul/koan&quot;&gt;KOAN&lt;/a&gt; stack (Koa, Angular, Node, Mongo, WebSockets) for real-time full-stack JavaScript web development.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;misc&quot;&gt;Misc&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://developer.forecast.io/docs/v2&quot;&gt;forecast.io weather API&lt;/a&gt; is open and has a pretty high free rate limit.&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://www.crypto101.io/&quot;&gt;Crypto 101&lt;/a&gt; is an introductory course on cryptography, freely available for programmers of all ages and skill levels.&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://www.gitbook.io/&quot;&gt;GitBook&lt;/a&gt; is a webapp to build beautiful programming books and exercises using GitHub/Git and Markdown.&lt;/li&gt;
+&lt;/ul&gt;
+</content>
+		</entry>
 	
 		<entry>
 			<title>cli-table</title>
