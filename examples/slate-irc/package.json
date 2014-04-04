@@ -1,0 +1,9 @@
+{
+  "name": "npmawesome-slate-irc",
+  "author": "Alex Gorbatchev",
+  "version": "1.0.0",
+  "dependencies": {
+    "slate-irc": "0.4.0"
+   },
+  "engine": "node 0.10.x"
+}

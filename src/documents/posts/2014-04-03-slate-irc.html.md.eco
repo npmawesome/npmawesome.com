@@ -1,0 +1,50 @@
+---
+layout: post
+date: 2014-02-25T09:07:16-0800
+tags: npm, webdriver, selenium, testing
+
+npm:
+  repo: &repo slate/slate-irc
+  name: &name slate-irc
+
+  author:
+    name: TJ Holowaychuk
+    github: visionmedia
+
+slug: *name
+title: *name
+description: ...
+---
+<img class="hide-on-mobile" src="https://2.gravatar.com/avatar/2c405e9d55507036d6cc2aff250c3146" style="float: right; margin-left: 1em"/>
+<%- @npm() %> is a module by <%- @author() %> that...
+
+
+    <%- @install() %>
+
+## Usage
+
+    var irc = require('slate-irc');
+    var net = require('net');
+
+    var stream = net.connect({
+      port: 6667,
+      host: 'irc.freenode.org'
+    });
+
+    stream.on('error', function() { console.log(arguments); });
+    stream.on('end', function() { console.log(arguments); });
+
+    var client = irc(stream);
+
+    client.pass('pass');
+    client.nick('tobi');
+    client.user('tobi', 'Tobi Ferret');
+
+    console.log("fooo")
+    client.join('#express');
+
+    client.names('#express', function(err, names){
+      console.log(names);
+    });
+
+
