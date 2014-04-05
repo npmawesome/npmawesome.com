@@ -1,9 +1,7 @@
 ---
-ignored: true
-
 layout: post
 partner: nodejitsu
-date: 2014-03-28T10:25:57-0800
+date: 2014-04-04T10:25:57-0800
 tags: npm, cli, progress
 
 npm:
@@ -35,7 +33,7 @@ Lets talk about long running CLI (command line interface) applications. When you
 
 The user experience is hardly a great one. It's clear that something is happening, or at least expected to be happening.
 
-<div style="padding: 13px 10px 10px; background: black; text-align: center; border-radius: 3px"><img src="./images/progress01.gif"/></div>
+<div style="padding: 13px 10px 10px; background: black; text-align: center; border-radius: 3px"><img src="/images/posts/progress/progress01.gif"/></div>
 
 It's not really clear if it's still happening. Is it time for `ctrl+c` yet? How about an indicator that something is actually going on?
 
@@ -49,7 +47,7 @@ It's not really clear if it's still happening. Is it time for `ctrl+c` yet? How 
         clearInterval(intervalId);
       });
 
-<div style="padding: 13px 10px 10px; background: black; text-align: center; border-radius: 3px"><img src="./images/progress02.gif"/></div>
+<div style="padding: 13px 10px 10px; background: black; text-align: center; border-radius: 3px"><img src="/images/posts/progress/progress02.gif"/></div>
 
 <img class="hide-on-mobile" src="https://avatars2.githubusercontent.com/u/25254" style="float: right; margin-left: 1em; width: 100px"/>
 A little better. But still, there's no way of telling how long the process will actually take. Lets just do a real progress bar, shall we? This is where <%- @npm() %> module that was originally started by <%- @author() %> comes into play! Due to the awesomeness of open source, <%- @npm() %> is now pretty much a community effort.
@@ -101,7 +99,7 @@ Lets modify our original example and put <%- @npm() %> to a good use:
       })
       ;
 
-<div style="padding: 13px 10px 10px; background: black; text-align: center; border-radius: 3px"><img src="./images/progress03.gif"/></div>
+<div style="padding: 13px 10px 10px; background: black; text-align: center; border-radius: 3px"><img src="/images/posts/progress/progress03.gif"/></div>
 
 We even get ETA estimate for free. That's what I'm talking about!
 
