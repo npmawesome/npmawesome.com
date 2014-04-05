@@ -5,12 +5,141 @@
 	<link href="http://npmawesome.com/atom.xml" rel="self" />
 	<link href="http://npmawesome.com" />
 	<id>http://npmawesome.com</id>
-	<updated>2014-04-04T14:07:14.976Z</updated>
+	<updated>2014-04-05T03:21:06.685Z</updated>
 	<author>
 		<name>Alex Gorbatchev</name>
 		<email></email>
 	</author>
 
+	
+		<entry>
+			<title>Links for Apr 5, 2014</title>
+			<link href="http://npmawesome.com/posts/2014-04-04-links"/>
+			<updated>2014-04-05T03:00:00.000Z</updated>
+			<id>http://npmawesome.com/posts/2014-04-04-links</id>
+			<content type="html">&lt;h2 id=&quot;apps&quot;&gt;Apps&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://ghost.org&quot;&gt;Ghost&lt;/a&gt; is an Open Source application which allows you to write and publish your own blog, giving you the tools to make it easy and even fun to do. It&amp;#39;s simple, elegant, and designed so that you can spend less time making your blog work and more time blogging.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;articles-slides&quot;&gt;Articles &amp;amp; Slides&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;http://strongloop.com/strongblog/practical-examples-of-the-new-node-js-streams-api/&quot;&gt;Practical Examples of the New Node.js Streams API&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://strongloop.com/strongblog/how-to-compose-node-js-promises-with-q/&quot;&gt;How-to Compose Node.js Promises with Q&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;github&quot;&gt;GitHub&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;http://kdzwinel.github.io/JS-OCR-demo/&quot;&gt;JavaScript OCR demo&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;startups&quot;&gt;Startups&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;http://www.shyp.com/&quot;&gt;Shyp&lt;/a&gt; is the easiest way to ship anything.&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://www.spoonrocket.com/&quot;&gt;Spoon Rocket&lt;/a&gt; is the most convinient meal ever.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;misc&quot;&gt;Misc&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://www.codeschool.com/courses#all&quot;&gt;Code School Courses&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://www.kickstarter.com/projects/guardyen/metawear-production-ready-wearables-in-30-minutes&quot;&gt;MetaWear: Production Ready Wearables in 30 Minutes or Less!&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;twitter&quot;&gt;Twitter&lt;/h2&gt;
+&lt;blockquote class=&quot;twitter-tweet&quot; data-partner=&quot;tweetdeck&quot;&gt;&lt;p&gt;New &lt;a href=&quot;https://twitter.com/search?q=%23npmawesome&amp;amp;src=hash&quot;&gt;#npmawesome&lt;/a&gt; from &lt;a href=&quot;https://twitter.com/alexgorbatchev&quot;&gt;@alexgorbatchev&lt;/a&gt;: &amp;quot;Progress reporting in CLI applications&amp;quot; || &lt;a href=&quot;http://t.co/FymiGMBy3F&quot;&gt;http://t.co/FymiGMBy3F&lt;/a&gt;&lt;/p&gt;&amp;mdash; Nodejitsu (@nodejitsu) &lt;a href=&quot;https://twitter.com/nodejitsu/statuses/452163004638179328&quot;&gt;April 4, 2014&lt;/a&gt;&lt;/blockquote&gt;
+
+&lt;blockquote class=&quot;twitter-tweet&quot; data-cards=&quot;hidden&quot; data-partner=&quot;tweetdeck&quot;&gt;&lt;p&gt;If you want a super pimped VM with linux kernel upgraded and easy &lt;a href=&quot;https://twitter.com/search?q=%23docker&amp;amp;src=hash&quot;&gt;#docker&lt;/a&gt; install, you are welcome:&amp;#10;&lt;a href=&quot;https://t.co/53GaGshUXs&quot;&gt;https://t.co/53GaGshUXs&lt;/a&gt;&lt;/p&gt;&amp;mdash; Thorsten Lorenz (@thlorenz) &lt;a href=&quot;https://twitter.com/thlorenz/statuses/452149651723264001&quot;&gt;April 4, 2014&lt;/a&gt;&lt;/blockquote&gt;
+
+&lt;blockquote class=&quot;twitter-tweet&quot; data-partner=&quot;tweetdeck&quot;&gt;&lt;p&gt;Never thought I&amp;#39;d say this, but CoffeeScript is quite nice&lt;/p&gt;&amp;mdash; David Tang (@skaterdav85) &lt;a href=&quot;https://twitter.com/skaterdav85/statuses/452121943496347648&quot;&gt;April 4, 2014&lt;/a&gt;&lt;/blockquote&gt;
+
+&lt;script async src=&quot;//platform.twitter.com/widgets.js&quot; charset=&quot;utf-8&quot;&gt;&lt;/script&gt;</content>
+		</entry>
+	
+		<entry>
+			<title>progress</title>
+			<link href="http://npmawesome.com/posts/2014-04-04-progress"/>
+			<updated>2014-04-04T18:25:57.000Z</updated>
+			<id>http://npmawesome.com/posts/2014-04-04-progress</id>
+			<content type="html">&lt;p&gt;Lets talk about long running CLI (command line interface) applications. When you have a finite process that is expected to take some time, the best thing to do is to let your users know about it. A typical application that for example downloads a file might look like this&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;var
+  request = require(&amp;#39;request&amp;#39;),
+  fs = require(&amp;#39;fs&amp;#39;)
+  ;
+
+process.stdout.write(&amp;#39;Downloading... &amp;#39;);
+
+request(&amp;#39;http://nodejs.org/dist/node-0.0.1.tar.gz&amp;#39;)
+  .pipe(fs.createWriteStream(__dirname + &amp;#39;/node.tar.gz&amp;#39;))
+  .on(&amp;#39;close&amp;#39;, function (err) {
+    process.stdout.write(&amp;#39;done!\n&amp;#39;);
+  });
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;The user experience is hardly a great one. It&amp;#39;s clear that something is happening, or at least expected to be happening.&lt;/p&gt;
+&lt;div style=&quot;padding: 13px 10px 10px; background: black; text-align: center; border-radius: 3px&quot;&gt;&lt;img src=&quot;/images/posts/progress/progress01.gif&quot;/&gt;&lt;/div&gt;
+
+&lt;p&gt;It&amp;#39;s not really clear if it&amp;#39;s still happening. Is it time for &lt;code&gt;ctrl+c&lt;/code&gt; yet? How about an indicator that something is actually going on?&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;process.stdout.write(&amp;#39;Downloading...&amp;#39;);
+intervalId = setInterval(function() { process.stdout.write(&amp;#39;.&amp;#39;); }, 1000);
+
+request(&amp;#39;http://nodejs.org/dist/node-0.0.1.tar.gz&amp;#39;)
+  .pipe(fs.createWriteStream(__dirname + &amp;#39;/node.tar.gz&amp;#39;))
+  .on(&amp;#39;close&amp;#39;, function (err) {
+    process.stdout.write(&amp;#39; done!\n&amp;#39;);
+    clearInterval(intervalId);
+  });
+&lt;/code&gt;&lt;/pre&gt;&lt;div style=&quot;padding: 13px 10px 10px; background: black; text-align: center; border-radius: 3px&quot;&gt;&lt;img src=&quot;/images/posts/progress/progress02.gif&quot;/&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;img class=&quot;hide-on-mobile&quot; src=&quot;https://avatars2.githubusercontent.com/u/25254&quot; style=&quot;float: right; margin-left: 1em; width: 100px&quot;/&gt;
+A little better. But still, there&amp;#39;s no way of telling how long the process will actually take. Lets just do a real progress bar, shall we? This is where &lt;a href=&quot;https://github.com/visionmedia/node-progress&quot;&gt;progress&lt;/a&gt; module that was originally started by &lt;a href=&quot;https://github.com/visionmedia&quot;&gt;TJ Holowaychuk&lt;/a&gt; comes into play! Due to the awesomeness of open source, &lt;a href=&quot;https://github.com/visionmedia/node-progress&quot;&gt;progress&lt;/a&gt; is now pretty much a community effort.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;npm install progress
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&quot;features&quot;&gt;Features&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&quot;https://github.com/visionmedia/node-progress&quot;&gt;progress&lt;/a&gt; supports a wide range of options via the format string and options. In the end will get a good looking ASCII progress bar and that will let everyone know about the true progress in your CLI application.&lt;/p&gt;
+&lt;p&gt;These are the tokens you can use to format your progress bar:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;:bar&lt;/code&gt; the progress bar itself&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;:current&lt;/code&gt; current tick number&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;:total&lt;/code&gt; total ticks&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;:elapsed&lt;/code&gt; time elapsed in seconds&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;:percent&lt;/code&gt; completion percentage&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;:eta&lt;/code&gt; estimated completion time in seconds&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;usage&quot;&gt;Usage&lt;/h2&gt;
+&lt;p&gt;Lets modify our original example and put &lt;a href=&quot;https://github.com/visionmedia/node-progress&quot;&gt;progress&lt;/a&gt; to a good use:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;var
+  request = require(&amp;#39;request&amp;#39;),
+  ProgressBar = require(&amp;#39;progress&amp;#39;),
+  fs = require(&amp;#39;fs&amp;#39;)
+  ;
+
+var
+  req = request(&amp;#39;http://nodejs.org/dist/node-0.0.1.tar.gz&amp;#39;),
+  bar
+  ;
+
+req
+  .on(&amp;#39;data&amp;#39;, function (chunk) {
+    bar = bar || new ProgressBar(&amp;#39;Downloading... [:bar] :percent :etas&amp;#39;, {
+      complete: &amp;#39;=&amp;#39;,
+      incomplete: &amp;#39; &amp;#39;,
+      width: 25,
+      total: parseInt(req.response.headers[&amp;#39;content-length&amp;#39;])
+    });
+
+    bar.tick(chunk.length);
+  })
+  .pipe(fs.createWriteStream(__dirname + &amp;#39;/node.tar.gz&amp;#39;))
+  .on(&amp;#39;close&amp;#39;, function (err) {
+    bar.tick(bar.total - bar.curr);
+  })
+  ;
+&lt;/code&gt;&lt;/pre&gt;&lt;div style=&quot;padding: 13px 10px 10px; background: black; text-align: center; border-radius: 3px&quot;&gt;&lt;img src=&quot;/images/posts/progress/progress03.gif&quot;/&gt;&lt;/div&gt;
+
+&lt;p&gt;We even get ETA estimate for free. That&amp;#39;s what I&amp;#39;m talking about!&lt;/p&gt;
+&lt;h2 id=&quot;other-modules-to-checkout&quot;&gt;Other modules to checkout&lt;/h2&gt;
+&lt;p&gt;Here are a few other modules to check out:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/jclulow/node-progbar&quot;&gt;progbar&lt;/a&gt; by &lt;a href=&quot;https://github.com/jclulow&quot;&gt;Joshua M. Clulow&lt;/a&gt; is a straight up alternative.&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/bevry/progressbar&quot;&gt;progressbar&lt;/a&gt; by &lt;a href=&quot;https://github.com/balupton&quot;&gt;Benjamin Arthur Lupton&lt;/a&gt; extends &lt;a href=&quot;https://github.com/visionmedia/node-progress&quot;&gt;progress&lt;/a&gt; with chaining, domains, and steps.&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/Unitech/node-multimeter&quot;&gt;pm2-multimeter&lt;/a&gt; originally by &lt;a href=&quot;https://github.com/substack&quot;&gt;James Halliday&lt;/a&gt; and now up kept by &lt;a href=&quot;https://github.com/Unitech&quot;&gt;Alexandre Strzelewicz&lt;/a&gt; can display multiple progress bars at the same time.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;closing-thoughts&quot;&gt;Closing thoughts&lt;/h2&gt;
+&lt;p&gt;It&amp;#39;s really cool to see a CLI application giving meaningful progress feedback. Please don&amp;#39;t forget about user experience when building tools.&lt;/p&gt;
+</content>
+		</entry>
 	
 		<entry>
 			<title>slate-irc</title>

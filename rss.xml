@@ -3,11 +3,142 @@
   <channel>
     <title>npm awesome</title>
     <link>http://npmawesome.com</link>
-    <lastBuildDate>Fri, 04 Apr 2014 14:07:14 GMT</lastBuildDate>
-    <pubDate>Fri, 04 Apr 2014 14:07:14 GMT</pubDate>
+    <lastBuildDate>Sat, 05 Apr 2014 03:21:06 GMT</lastBuildDate>
+    <pubDate>Sat, 05 Apr 2014 03:21:06 GMT</pubDate>
     <description>Daily dose of awesome NPM modules for Node.js, old and new!</description>
     <atom:link href="http://npmawesome.com/rss" rel="self" type="application/rss+xml"/>
 
+    
+      <item>
+        <title>Links for Apr 5, 2014</title>
+        <author>Alex Gorbatchev</author>
+        <link>http://npmawesome.com/posts/2014-04-04-links</link>
+        <guid isPermaLink="true">http://npmawesome.com/posts/2014-04-04-links</guid>
+        <pubDate>Sat, 05 Apr 2014 03:00:00 GMT</pubDate>
+        <description><![CDATA[<h2 id="apps">Apps</h2>
+<ul>
+<li><a href="https://ghost.org">Ghost</a> is an Open Source application which allows you to write and publish your own blog, giving you the tools to make it easy and even fun to do. It&#39;s simple, elegant, and designed so that you can spend less time making your blog work and more time blogging.</li>
+</ul>
+<h2 id="articles-slides">Articles &amp; Slides</h2>
+<ul>
+<li><a href="http://strongloop.com/strongblog/practical-examples-of-the-new-node-js-streams-api/">Practical Examples of the New Node.js Streams API</a></li>
+<li><a href="http://strongloop.com/strongblog/how-to-compose-node-js-promises-with-q/">How-to Compose Node.js Promises with Q</a></li>
+</ul>
+<h2 id="github">GitHub</h2>
+<ul>
+<li><a href="http://kdzwinel.github.io/JS-OCR-demo/">JavaScript OCR demo</a></li>
+</ul>
+<h2 id="startups">Startups</h2>
+<ul>
+<li><a href="http://www.shyp.com/">Shyp</a> is the easiest way to ship anything.</li>
+<li><a href="https://www.spoonrocket.com/">Spoon Rocket</a> is the most convinient meal ever.</li>
+</ul>
+<h2 id="misc">Misc</h2>
+<ul>
+<li><a href="https://www.codeschool.com/courses#all">Code School Courses</a></li>
+<li><a href="https://www.kickstarter.com/projects/guardyen/metawear-production-ready-wearables-in-30-minutes">MetaWear: Production Ready Wearables in 30 Minutes or Less!</a></li>
+</ul>
+<h2 id="twitter">Twitter</h2>
+<blockquote class="twitter-tweet" data-partner="tweetdeck"><p>New <a href="https://twitter.com/search?q=%23npmawesome&amp;src=hash">#npmawesome</a> from <a href="https://twitter.com/alexgorbatchev">@alexgorbatchev</a>: &quot;Progress reporting in CLI applications&quot; || <a href="http://t.co/FymiGMBy3F">http://t.co/FymiGMBy3F</a></p>&mdash; Nodejitsu (@nodejitsu) <a href="https://twitter.com/nodejitsu/statuses/452163004638179328">April 4, 2014</a></blockquote>
+
+<blockquote class="twitter-tweet" data-cards="hidden" data-partner="tweetdeck"><p>If you want a super pimped VM with linux kernel upgraded and easy <a href="https://twitter.com/search?q=%23docker&amp;src=hash">#docker</a> install, you are welcome:&#10;<a href="https://t.co/53GaGshUXs">https://t.co/53GaGshUXs</a></p>&mdash; Thorsten Lorenz (@thlorenz) <a href="https://twitter.com/thlorenz/statuses/452149651723264001">April 4, 2014</a></blockquote>
+
+<blockquote class="twitter-tweet" data-partner="tweetdeck"><p>Never thought I&#39;d say this, but CoffeeScript is quite nice</p>&mdash; David Tang (@skaterdav85) <a href="https://twitter.com/skaterdav85/statuses/452121943496347648">April 4, 2014</a></blockquote>
+
+<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>]]></description>
+      </item>
+    
+      <item>
+        <title>progress</title>
+        <author>Alex Gorbatchev</author>
+        <link>http://npmawesome.com/posts/2014-04-04-progress</link>
+        <guid isPermaLink="true">http://npmawesome.com/posts/2014-04-04-progress</guid>
+        <pubDate>Fri, 04 Apr 2014 18:25:57 GMT</pubDate>
+        <description><![CDATA[<p>Lets talk about long running CLI (command line interface) applications. When you have a finite process that is expected to take some time, the best thing to do is to let your users know about it. A typical application that for example downloads a file might look like this</p>
+<pre><code>var
+  request = require(&#39;request&#39;),
+  fs = require(&#39;fs&#39;)
+  ;
+
+process.stdout.write(&#39;Downloading... &#39;);
+
+request(&#39;http://nodejs.org/dist/node-0.0.1.tar.gz&#39;)
+  .pipe(fs.createWriteStream(__dirname + &#39;/node.tar.gz&#39;))
+  .on(&#39;close&#39;, function (err) {
+    process.stdout.write(&#39;done!\n&#39;);
+  });
+</code></pre><p>The user experience is hardly a great one. It&#39;s clear that something is happening, or at least expected to be happening.</p>
+<div style="padding: 13px 10px 10px; background: black; text-align: center; border-radius: 3px"><img src="/images/posts/progress/progress01.gif"/></div>
+
+<p>It&#39;s not really clear if it&#39;s still happening. Is it time for <code>ctrl+c</code> yet? How about an indicator that something is actually going on?</p>
+<pre><code>process.stdout.write(&#39;Downloading...&#39;);
+intervalId = setInterval(function() { process.stdout.write(&#39;.&#39;); }, 1000);
+
+request(&#39;http://nodejs.org/dist/node-0.0.1.tar.gz&#39;)
+  .pipe(fs.createWriteStream(__dirname + &#39;/node.tar.gz&#39;))
+  .on(&#39;close&#39;, function (err) {
+    process.stdout.write(&#39; done!\n&#39;);
+    clearInterval(intervalId);
+  });
+</code></pre><div style="padding: 13px 10px 10px; background: black; text-align: center; border-radius: 3px"><img src="/images/posts/progress/progress02.gif"/></div>
+
+<p><img class="hide-on-mobile" src="https://avatars2.githubusercontent.com/u/25254" style="float: right; margin-left: 1em; width: 100px"/>
+A little better. But still, there&#39;s no way of telling how long the process will actually take. Lets just do a real progress bar, shall we? This is where <a href="https://github.com/visionmedia/node-progress">progress</a> module that was originally started by <a href="https://github.com/visionmedia">TJ Holowaychuk</a> comes into play! Due to the awesomeness of open source, <a href="https://github.com/visionmedia/node-progress">progress</a> is now pretty much a community effort.</p>
+<pre><code>npm install progress
+</code></pre><h2 id="features">Features</h2>
+<p><a href="https://github.com/visionmedia/node-progress">progress</a> supports a wide range of options via the format string and options. In the end will get a good looking ASCII progress bar and that will let everyone know about the true progress in your CLI application.</p>
+<p>These are the tokens you can use to format your progress bar:</p>
+<ul>
+<li><code>:bar</code> the progress bar itself</li>
+<li><code>:current</code> current tick number</li>
+<li><code>:total</code> total ticks</li>
+<li><code>:elapsed</code> time elapsed in seconds</li>
+<li><code>:percent</code> completion percentage</li>
+<li><code>:eta</code> estimated completion time in seconds</li>
+</ul>
+<h2 id="usage">Usage</h2>
+<p>Lets modify our original example and put <a href="https://github.com/visionmedia/node-progress">progress</a> to a good use:</p>
+<pre><code>var
+  request = require(&#39;request&#39;),
+  ProgressBar = require(&#39;progress&#39;),
+  fs = require(&#39;fs&#39;)
+  ;
+
+var
+  req = request(&#39;http://nodejs.org/dist/node-0.0.1.tar.gz&#39;),
+  bar
+  ;
+
+req
+  .on(&#39;data&#39;, function (chunk) {
+    bar = bar || new ProgressBar(&#39;Downloading... [:bar] :percent :etas&#39;, {
+      complete: &#39;=&#39;,
+      incomplete: &#39; &#39;,
+      width: 25,
+      total: parseInt(req.response.headers[&#39;content-length&#39;])
+    });
+
+    bar.tick(chunk.length);
+  })
+  .pipe(fs.createWriteStream(__dirname + &#39;/node.tar.gz&#39;))
+  .on(&#39;close&#39;, function (err) {
+    bar.tick(bar.total - bar.curr);
+  })
+  ;
+</code></pre><div style="padding: 13px 10px 10px; background: black; text-align: center; border-radius: 3px"><img src="/images/posts/progress/progress03.gif"/></div>
+
+<p>We even get ETA estimate for free. That&#39;s what I&#39;m talking about!</p>
+<h2 id="other-modules-to-checkout">Other modules to checkout</h2>
+<p>Here are a few other modules to check out:</p>
+<ul>
+<li><a href="https://github.com/jclulow/node-progbar">progbar</a> by <a href="https://github.com/jclulow">Joshua M. Clulow</a> is a straight up alternative.</li>
+<li><a href="https://github.com/bevry/progressbar">progressbar</a> by <a href="https://github.com/balupton">Benjamin Arthur Lupton</a> extends <a href="https://github.com/visionmedia/node-progress">progress</a> with chaining, domains, and steps.</li>
+<li><a href="https://github.com/Unitech/node-multimeter">pm2-multimeter</a> originally by <a href="https://github.com/substack">James Halliday</a> and now up kept by <a href="https://github.com/Unitech">Alexandre Strzelewicz</a> can display multiple progress bars at the same time.</li>
+</ul>
+<h2 id="closing-thoughts">Closing thoughts</h2>
+<p>It&#39;s really cool to see a CLI application giving meaningful progress feedback. Please don&#39;t forget about user experience when building tools.</p>
+]]></description>
+      </item>
     
       <item>
         <title>slate-irc</title>
