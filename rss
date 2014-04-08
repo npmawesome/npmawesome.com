@@ -1,0 +1,959 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title><![CDATA[npm awesome]]></title>
+        <description><![CDATA[Daily dose of awesome NPM modules for Node.js, old and new!]]></description>
+        <link>http://npmawesome.com</link>
+        <generator>RSS for Node</generator>
+        <lastBuildDate>Fri, 28 Mar 2014 00:57:50 GMT</lastBuildDate>
+        <atom:link href="http://npmawesome.com/rss" rel="self" type="application/rss+xml"/>
+        <author><![CDATA[Alex Gorbatchev]]></author>
+        <pubDate>Fri, 28 Mar 2014 00:57:09 GMT</pubDate>
+        <item>
+            <title><![CDATA[yargs]]></title>
+            <description><![CDATA[<p><div class="highlight"><img src="/images/posts/nodejitsu.png" style="height: 80px" class="hide-on-mobile"/><span>This post was written for <a href="http://nodejitsu.com">Nodejitsu</a> blog and is crossposted here.
+<a href="http://nodejitsu.com">Nodejitsu</a> loved what I was doing at <a href="http://npmawesome.com">npmawesome.com</a>
+and is now supporting the project.</span></div></p>
+<p><img class="hide-on-mobile" src="https://avatars3.githubusercontent.com/u/874394" style="float: right; margin-left: 1em; width: 100px"/>
+This post kicks off a small mini-series of posts about modules which making writing CLI (command line interface) tools in Node.js easier. Typically, when starting a new CLI tool, the first problem that you would encounter is how to read arguments that users pass via command line. Standard library gives us <code>process.argv</code> but if you want something a little bit more structured than an array, you have to look elsewhere.</p>
+<p>This is where <a href="https://github.com/chevex/yargs">yargs</a> comes in handy. This module was originally written by <a href="https://github.com/substack">James Halliday</a> and called <a href="(https://github.com/substack/node-optimist)">optimist</a>. It is now called <a href="https://github.com/chevex/yargs">yargs</a> and the work is continued by <a href="https://github.com/chevex">Alex Ford</a>. Lets get it installed:</p>
+<pre><code>npm install yargs
+</code></pre><h2 id="features">Features</h2>
+<p><a href="https://github.com/chevex/yargs">yargs</a> covers most of the features you would need to parse out options from command line.</p>
+<ul>
+<li>Named options: <code>--foo=1 --bar=2</code>, <code>--foo 1 --bar 2</code> or even <code>-foo 1 -bar 2</code></li>
+<li>Groupped options tarball style: <code>-x</code>, <code>-xz</code>, <code>-xzvf</code></li>
+<li>Count options: <code>-v</code>, <code>-vv</code>, <code>-vvv</code></li>
+<li>Non-hyphenated options.</li>
+<li>Usage / requirements.</li>
+<li>Defaults.</li>
+<li>Typing (boolean, string, etc).</li>
+</ul>
+<p>Lets look at each one:</p>
+<h3 id="named-options">Named options</h3>
+<p>named-options.js</p>
+<pre><code>#!/usr/bin/env node
+var argv = require(&#39;yargs&#39;).argv;
+
+if (argv.a &gt; argv.b) {
+  console.log(&#39;a seems bigger than b&#39;);
+} else {
+  console.log(&#39;a is not bigger than b&#39;);
+}
+</code></pre><hr>
+<pre><code>$ ./named-options.js --a=55 --b=9.52
+a seems bigger than b
+
+$ ./named-options.js --a 1 --b 8.1
+a is not bigger than b
+</code></pre><h3 id="groupped-options-tarball-style">Groupped Options <code>tarball</code> Style</h3>
+<p>tar.js</p>
+<pre><code>#!/usr/bin/env node
+var argv = require(&#39;yargs&#39;).argv;
+
+if (argv.x) console.log(&#39;Will extract to disk from the archive&#39;);
+if (argv.z) console.log(&#39;Will compress the resulting archive with gzip&#39;);
+if (argv.f) console.log(&#39;Will read the archive from the archive file&#39;);
+</code></pre><hr>
+<pre><code>$ ./tar.js -z
+Will compress the resulting archive with gzip
+
+$ ./tar.js -zf
+Will compress the resulting archive with gzip
+Will read the archive from the archive file
+
+$ ./tar.js -zfx
+Will extract to disk from the archive
+Will compress the resulting archive with gzip
+Will read the archive from the archive file
+</code></pre><h3 id="count-options">Count Options</h3>
+<p>count.js</p>
+<pre><code>#!/usr/bin/env node
+var argv = require(&#39;yargs&#39;)
+    .count(&#39;verbose&#39;)
+    .alias(&#39;v&#39;, &#39;verbose&#39;)
+    .argv;
+
+VERBOSE_LEVEL = argv.verbose;
+
+function WARN()  { VERBOSE_LEVEL &gt;= 0 &amp;&amp; console.log.apply(console, arguments); }
+function INFO()  { VERBOSE_LEVEL &gt;= 1 &amp;&amp; console.log.apply(console, arguments); }
+function DEBUG() { VERBOSE_LEVEL &gt;= 2 &amp;&amp; console.log.apply(console, arguments); }
+
+WARN(&quot;Showing only important stuff&quot;);
+INFO(&quot;Showing semi-mportant stuff too&quot;);
+DEBUG(&quot;Extra chatty mode&quot;);
+</code></pre><hr>
+<pre><code>$ ./count.js
+Showing only important stuff
+
+$ ./count.js -v
+Showing only important stuff
+Showing semi-important stuff too
+
+$ ./count.js -vv
+Showing only important stuff
+Showing semi-important stuff too
+Extra chatty mode
+
+$ ./count.js -v --verbose
+Showing only important stuff
+Showing semi-important stuff too
+Extra chatty mode
+</code></pre><h3 id="non-hyphenated-options">Non-hyphenated Options</h3>
+<p>nonopt.js:</p>
+<pre><code>#!/usr/bin/env node
+var argv = require(&#39;yargs&#39;).argv;
+
+console.log(&#39;(%d,%d)&#39;, argv.x, argv.y);
+console.log(argv._);
+</code></pre><hr>
+<pre><code>$ ./nonopt.js -x 6.82 -y 3.35 rum
+(6.82,3.35)
+[ &#39;rum&#39; ]
+
+$ ./nonopt.js &quot;me hearties&quot; -x 0.54 yo -y 1.12 ho
+(0.54,1.12)
+[ &#39;me hearties&#39;, &#39;yo&#39;, &#39;ho&#39; ]
+</code></pre><h3 id="usage-requirements">Usage / Requirements</h3>
+<p>divide.js:</p>
+<pre><code>#!/usr/bin/env node
+var argv = require(&#39;yargs&#39;)
+  .usage(&#39;Usage: $0 -x [num] -y [num]&#39;)
+  .demand([&#39;x&#39;,&#39;y&#39;])
+  .argv;
+
+console.log(argv.x / argv.y);
+</code></pre><hr>
+<pre><code>$ ./divide.js -x 55 -y 11
+5
+
+$ ./divide.js -x 4.91 -z 2.51
+Usage: node ./divide.js -x [num] -y [num]
+
+Options:
+  -x  [required]
+  -y  [required]
+
+Missing required arguments: y
+</code></pre><p>demand_count.js:</p>
+<pre><code>#!/usr/bin/env node
+var argv = require(&#39;yargs&#39;)
+  .demand(2)
+  .argv;
+
+console.dir(argv)
+</code></pre><hr>
+<pre><code>$ ./demand_count.js a
+Not enough arguments, expected 2, but only found 1
+
+$ ./demand_count.js a b
+{ _: [ &#39;a&#39;, &#39;b&#39; ], &#39;$0&#39;: &#39;./demand_count.js&#39; }
+
+$ ./demand_count.js a b c
+{ _: [ &#39;a&#39;, &#39;b&#39;, &#39;c&#39; ], &#39;$0&#39;: &#39;./demand_count.js&#39; }
+</code></pre><h3 id="defaults">Defaults</h3>
+<p>default_singles.js:</p>
+<pre><code>#!/usr/bin/env node
+var argv = require(&#39;yargs&#39;)
+  .default(&#39;x&#39;, 10)
+  .default(&#39;y&#39;, 10)
+  .argv;
+
+console.log(argv.x + argv.y);
+</code></pre><hr>
+<pre><code>$ ./default_singles.js -x 5
+15
+</code></pre><p>default_hash.js:</p>
+<pre><code>#!/usr/bin/env node
+var argv = require(&#39;yargs&#39;)
+  .default({ x : 10, y : 10 })
+  .argv;
+
+console.log(argv.x + argv.y);
+</code></pre><hr>
+<pre><code>$ ./default_hash.js -y 7
+17
+</code></pre><h3 id="typing-boolean-string-etc-">Typing (boolean, string, etc)</h3>
+<p>boolean_single.js</p>
+<pre><code>#!/usr/bin/env node
+var argv = require(&#39;yargs&#39;)
+  .boolean(&#39;v&#39;)
+  .argv;
+
+console.dir(argv.v);
+console.dir(argv._);
+</code></pre><hr>
+<pre><code>$ ./boolean_single.js -v &quot;me hearties&quot; yo ho
+true
+[ &#39;me hearties&#39;, &#39;yo&#39;, &#39;ho&#39; ]
+</code></pre><p>boolean_double.js</p>
+<pre><code>#!/usr/bin/env node
+var argv = require(&#39;yargs&#39;)
+  .boolean([&#39;x&#39;,&#39;y&#39;,&#39;z&#39;])
+  .argv;
+
+console.dir([ argv.x, argv.y, argv.z ]);
+console.dir(argv._);
+</code></pre><hr>
+<pre><code>$ ./boolean_double.js -x -z one two three
+[ true, false, true ]
+[ &#39;one&#39;, &#39;two&#39;, &#39;three&#39; ]
+</code></pre><h2 id="putting-it-all-together">Putting it all together</h2>
+<p>Finally, all together this makes a fully functional options parser.</p>
+<pre><code>#!/usr/bin/env node
+var argv = require(&#39;yargs&#39;)
+  .usage(&#39;Count the lines in a file.\nUsage: $0&#39;)
+  .example(&#39;$0 -f&#39;, &#39;count the lines in the given file&#39;)
+  .demand(&#39;f&#39;)
+  .alias(&#39;f&#39;, &#39;file&#39;)
+  .describe(&#39;f&#39;, &#39;Load a file&#39;)
+  .argv;
+</code></pre><h2 id="other-modules-to-checkout">Other modules to checkout</h2>
+<p>There are many other modules that can help you figure out CLI arguments, some do more, others do less.</p>
+<ul>
+<li><a href="https://github.com/substack/minimist">minimist</a> by James Halliday aka substack is a light weight module without or usage functionality. James has moved on from <a href="(https://github.com/substack/node-optimist)">optimist</a> to <a href="https://github.com/substack/minimist">minimist</a> probably around the time when community started adopting mantra of smaller modules that do one thing well. It&#39;s a personal preference and I&#39;m glad there are options.</li>
+<li><a href="https://github.com/chriso/cli">cli</a> by Chris O&#39;Hara is a swiss army knife module for writing CLI applications.</li>
+</ul>
+<h2 id="closing-thoughts">Closing thoughts</h2>
+<p>I&#39;ve been using <a href="(https://github.com/substack/node-optimist)">optimist</a> for over a year now and is saddened to see James giving it up, but at the same time it&#39;s exciting that the idea and implementation lives on in <a href="https://github.com/chevex/yargs">yargs</a>. A problem that seems so simple on the surface, such as collecting arguments, can turn out to be a major headache without proper tools. I&#39;m very glad <a href="https://github.com/chevex/yargs">yargs</a> is here to help us deal with it.</p>
+]]></description>
+            <link>http://npmawesome.com/posts/2014-03-21-yargs</link>
+            <guid isPermaLink="true">http://npmawesome.com/posts/2014-03-21-yargs</guid>
+            <dc:creator><![CDATA[Alex Gorbatchev]]></dc:creator>
+            <pubDate>Fri, 21 Mar 2014 18:25:57 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[cli-table]]></title>
+            <link>http://npmawesome.com/posts/2014-03-20-cli-table</link>
+            <guid isPermaLink="true">http://npmawesome.com/posts/2014-03-20-cli-table</guid>
+            <dc:creator><![CDATA[Alex Gorbatchev]]></dc:creator>
+            <pubDate>Thu, 20 Mar 2014 18:25:57 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[convict]]></title>
+            <description><![CDATA[<p><div class="highlight"><img src="/images/posts/nodejitsu.png" style="height: 80px" class="hide-on-mobile"/><span>This post was written for <a href="http://nodejitsu.com">Nodejitsu</a> blog and is crossposted here.
+<a href="http://nodejitsu.com">Nodejitsu</a> loved what I was doing at <a href="http://npmawesome.com">npmawesome.com</a>
+and is now supporting the project.</span></div></p>
+<p>Managing application configuration is one of the cornerstones to a reducing stress that comes from deploying Node.js applications to production environment. It&#39;s pretty easy if all you have to worry about is the port that your web server is listening on and database connection. But what do you do when you have a dozen or so external services, local folders, multiple connections and so on to have to keep track? And to top it off, all of this varies across development workstations, staging and production.</p>
+<p><img class="hide-on-mobile" src="https://0.gravatar.com/avatar/93621c22c5e09b5f980c39e8eedbf68c" style="float: right; margin-left: 1em"/>
+To accomplish this for the last couple of years I&#39;ve been using <a href="https://github.com/mozilla/node-convict">convict</a>, written by <a href="https://github.com/lloyd">Lloyd Hilaiel</a> at Mozilla, with great success. Before diving into <a href="https://github.com/mozilla/node-convict">convict</a> lets first take a moment to review a typical setup for configuring Node.js applications:</p>
+<ol>
+<li>in your application you <code>require</code> some settings file</li>
+<li>the settings need to vary based on running environment (eg development, staging, production, etc)</li>
+<li>you don&#39;t want to commit your production credentials into git</li>
+<li>make use of environment variables to configure environments</li>
+</ol>
+<p>This is the base line, but there are a few things that make our lives easier, such as:</p>
+<ol>
+<li>configuration validation prevents app execution if invalid parameters are set or missing all together</li>
+<li>exceptions are thrown if trying to read non existing configuration variables (to help combat typos)</li>
+</ol>
+<p>Lets get started:</p>
+<pre><code>npm install convict
+</code></pre><h2 id="features">Features</h2>
+<ul>
+<li><strong>Loading and merging</strong>: configurations are loaded from disk or inline and merged. JSON files are loaded with <code>cjson</code> so comments are welcome.</li>
+<li><strong>Environmental variables</strong>: values can be derived from environmental variables</li>
+<li><strong>Command-line arguments</strong>: values can also be derived from command-line arguments</li>
+<li><strong>Validation</strong>: configurations are validated against your schema, generating an error report with all errors that are found</li>
+</ul>
+<h2 id="usage">Usage</h2>
+<p>First thing we need to do is define our configuration schema. I&#39;m going to provide a bit of an extensive configuration to give you a more realistic example.</p>
+<pre><code>var convict = require(&#39;convict&#39;);
+
+var config = convict({
+  env: {
+    doc: &#39;The applicaton environment.&#39;,
+    format: [&#39;production&#39;, &#39;development&#39;, &#39;test&#39;],
+    default: &#39;development&#39;,
+    env: &#39;NODE_ENV&#39;,
+    arg: &#39;env&#39;
+  },
+  mongo: {
+    main: {
+      doc: &#39;Main database&#39;,
+      format: &#39;url&#39;,
+      default: &#39;mongodb://...&#39;,
+      env: &#39;MONGO_MAIN&#39;
+    },
+    sessions: {
+      doc: &#39;Sessions database&#39;,
+      format: &#39;url&#39;,
+      default: &#39;mongodb://...&#39;,
+      env: &#39;MONGO_SESSIONS&#39;
+    }
+  },
+  express: {
+    ip: {
+      doc: &#39;The IP address to bind.&#39;,
+      format: &#39;ipaddress&#39;,
+      default: &#39;127.0.0.1&#39;,
+      env: &#39;IP_ADDRESS&#39;,
+    },
+    http: {
+      port: {
+        doc: &#39;HTTP port to bind.&#39;,
+        format: &#39;port&#39;,
+        default: 3080,
+        env: &#39;HTTP_PORT&#39;
+      }
+    },
+    https: {
+      port: {
+        doc: &#39;HTTPs port to bind.&#39;,
+        format: &#39;port&#39;,
+        default: 3443,
+        env: &#39;HTTPS_PORT&#39;
+      }
+    }
+  }
+});
+
+// load environment dependent configuration
+config.loadFile(&#39;./config/&#39; + config.get(&#39;env&#39;) + &#39;.json&#39;);
+
+// validate
+config.validate();
+
+module.exports = config;
+</code></pre><p>Then in your application:</p>
+<pre><code>var express = require(&#39;express&#39;);
+var config = require(&#39;./config.js&#39;);
+var app = express();
+
+if(config.get(&#39;env&#39;) === &#39;production&#39;) {
+  app.use(express.logger());
+}
+
+app.listen(
+  config.get(&#39;express.http.port&#39;),
+  config.get(&#39;express.http.ip&#39;)
+);
+</code></pre><p>With these two files your can start developing. When it comes time to deploying to production, on your server you can set appropriate environment variables like  <code>NODE_ENV</code>, <code>HTTP_PORT</code> and so on.</p>
+<pre><code>NODE_ENV=production HTTP_PORT=80 node ./server.js
+</code></pre><p>Also, as per our configuration, you can pass <code>--env=production</code> when starting the server.</p>
+<pre><code>HTTP_PORT=80 node ./server.js --env=production
+</code></pre><h2 id="alternatives">Alternatives</h2>
+<p>In the great world of NPM there isn&#39;t one package to rule them all and there are various ways of accomplishing what you need. Here are a few alternatives you might want to checkout:</p>
+<ul>
+<li><p><a href="https://github.com/flatiron/nconf">nconf</a> - written and maintained by <a href="http://nodejitsu.com">Nodejitsu</a> own <a href="https://github.com/indexzero">Charlie Robbins</a>. Very similiar to [convict], but doesn&#39;t have the validation feature (if that&#39;s important to you) but has better support for overriding and managing order in which settings are pulled in.</p>
+</li>
+<li><p><a href="https://github.com/dominictarr/rc">rc</a> - written and maintained by <a href="https://github.com/dominictarr">Dominic Tarr</a>. Has support for INI file types and .rc files.</p>
+</li>
+<li><p><a href="https://github.com/substack/node-figc">figc</a> - written and maintained by <a href="https://github.com/substack">James Halliday</a>. The most minimalist module in the list supports JSON files and argv overrides.</p>
+</li>
+</ul>
+<h2 id="closing-thoughts">Closing Thoughts</h2>
+<p>I found this to be the least frictionless way to manage configuration in Node.js to date. Check out <a href="https://github.com/mozilla/node-convict">convict</a> github page for detailed API method description.</p>
+<p>What are you using to manage your application settings?</p>
+]]></description>
+            <link>http://npmawesome.com/posts/2014-03-12-convict</link>
+            <guid isPermaLink="true">http://npmawesome.com/posts/2014-03-12-convict</guid>
+            <dc:creator><![CDATA[Alex Gorbatchev]]></dc:creator>
+            <pubDate>Wed, 12 Mar 2014 18:25:57 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[lockit]]></title>
+            <description><![CDATA[<p><div class="highlight"><img src="/images/posts/nodejitsu.png" style="height: 80px" class="hide-on-mobile"/><span>This post was written for <a href="http://nodejitsu.com">Nodejitsu</a> blog and is crossposted here.
+<a href="http://nodejitsu.com">Nodejitsu</a> loved what I was doing at <a href="http://npmawesome.com">npmawesome.com</a>
+and is now supporting the project.</span></div></p>
+<p>So you got a really cool idea for an app or a service. You get all fired up, talk to your friends about, write down some bullet points and run that exciting <code>git init</code> command in an empty folder. One of the first things you are most likely to in the very near future is begin working on some kind of user login and registration process.</p>
+<p><img class="hide-on-mobile" src="https://1.gravatar.com/avatar/5664d023c8ab7b6eb69a93990198432e" style="float: right; margin-left: 1em"/>
+Of course, <a href="http://passportjs.org/">passport.js</a> is great when you can leverage external authentication, but otherwise you are stuck rolling your own system… After a while you find yourself doing it over and over again. How boring! Wouldn&#39;t it be nice if somebody finally just wrote a module that you could plugin into your express app that would take care of all this user registration stuff?</p>
+<p>Well, look no further than <a href="https://github.com/zeMirco/lockit">lockit</a>, which is a collection of modules written by <a href="https://github.com/zeMirco">Mirco Zeiss</a> that helps you with initial user registraion and password management flow.</p>
+<pre><code>npm install lockit
+</code></pre><h2 id="features">Features</h2>
+<ol>
+<li>Supports multiple database adapters (MongoDB, CouchDB, SQL).</li>
+<li>Sends confirmation emails.</li>
+<li>Manages email address verification with verification link expiration.</li>
+<li>Brings own Bootstrap based views which are easy to customize.</li>
+<li>Account locking after too many failed login attempts.</li>
+<li>Events for <code>login</code>, <code>logout</code>, <code>signup</code> and <code>delete</code>.</li>
+<li>Implementation of <a href="https://www.owasp.org/index.php/Guide_to_Authentication">lots of</a> <a href="http://stackoverflow.com/questions/549/the-definitive-guide-to-form-based-website-authentication">best</a> <a href="https://www.owasp.org/index.php/Authentication_Cheat_Sheet">pratices</a>.</li>
+<li>REST API</li>
+<li><a href="http://mircozeiss.com/lockit-050-auth-for-single-page-apps-and-csrf/">Authentication for SPAs and CSRF support</a>.</li>
+</ol>
+<h2 id="usage">Usage</h2>
+<pre><code>var Lockit = require(&#39;lockit&#39;);
+var app = express();
+
+// express middleware
+// ...
+// sessions are required
+app.use(express.cookieParser(&#39;your secret here&#39;));
+app.use(express.cookieSession());
+
+var config = {
+  db: &#39;mongodb://127.0.0.1/test&#39;,
+  dbCollection: &#39;users&#39;
+};
+
+// use middleware before router so your own routes have access to
+// req.session.email and req.session.username
+var lockit = new Lockit(app, config);
+
+// you now have all the routes like /login, /signup, etc.
+// and you can listen on events. For example &#39;signup&#39;
+lockit.on(&#39;signup&#39;, function(user, res) {
+  console.log(&#39;a new user signed up&#39;);
+
+  // set signup.handleResponse to &#39;false&#39; for this to work
+  res.send(&#39;Welcome!&#39;);
+});
+
+app.use(app.router);
+// continue with express middleware
+// ...
+</code></pre><h2 id="emails">Emails</h2>
+<p>By default of course emails aren&#39;t being sent. That means that you won&#39;t receive any signup and password reset tokens. To send emails you need an email server and you have pass the right settings:</p>
+<p>With <a href="http://www.mailgun.com/pricing">mailgun</a> you can send up to 10,000 emails per month for free. <code>emailSettings</code> - see <a href="https://github.com/andris9/Nodemailer">nodemailer</a> for more information.</p>
+<pre><code>config = {
+  emailType: &#39;SMTP&#39;,
+  emailSettings: {
+    service: &#39;Mailgun&#39;,
+    auth: {
+      user: &#39;postmaster@username.mailgun.org&#39;,
+      pass: &#39;secret-password&#39;
+    }
+  }
+}
+</code></pre><h2 id="custom-views">Custom views</h2>
+<p>Lockit comes with built-in views which are based on Bootstrap. If you want to use your own custom views you can. It is dead simple. Put them into your <code>views</code> folder, for example <code>views/lockit/myLogin.jade</code>.</p>
+<pre><code>config = {
+  login: {
+    route: &#39;/login&#39;,
+    logoutRoute: &#39;/logout&#39;,
+    views: {
+      login: &#39;lockit/myLogin.jade&#39;,
+      loggedOut: &#39;lockit/myLogoutSuccess.jade&#39;
+    }
+  }
+}
+</code></pre><h2 id="routes-included">Routes included</h2>
+<p>From <a href="https://github.com/zeMirco/lockit-signup">lockit-signup</a></p>
+<ul>
+<li>GET /signup</li>
+<li>POST /signup</li>
+<li>GET /signup/:token</li>
+<li>GET /signup/resend-verification</li>
+<li>POST /signup/resend-verification</li>
+</ul>
+<p>From <a href="https://github.com/zeMirco/lockit-login">lockit-login</a></p>
+<ul>
+<li>GET /login</li>
+<li>POST /login</li>
+<li>GET /logout</li>
+</ul>
+<p>From <a href="https://github.com/zeMirco/lockit-forgot-password">lockit-forgot-password</a></p>
+<ul>
+<li>GET /forgot-password</li>
+<li>POST /forgot-password</li>
+<li>GET /forgot-password/:token</li>
+<li>POST /forgot-password/:token</li>
+</ul>
+<p>From <a href="https://github.com/zeMirco/lockit-delete-account">lockit-delete-account</a></p>
+<ul>
+<li>GET /delete-account</li>
+<li>POST /delete-account</li>
+</ul>
+<h2 id="closing-thoughts">Closing thoughts</h2>
+<p>I love how customizable <a href="https://github.com/zeMirco/lockit">lockit</a> is and yet comes with very reasonable defaults. It&#39;s has pretty much everything you need to get started with basic user registration and password management flow. Checkout <a href="https://github.com/zeMirco/lockit">lockit</a> github page for full set of options as well as its associated modules.</p>
+]]></description>
+            <link>http://npmawesome.com/posts/2014-03-06-lockit</link>
+            <guid isPermaLink="true">http://npmawesome.com/posts/2014-03-06-lockit</guid>
+            <dc:creator><![CDATA[Alex Gorbatchev]]></dc:creator>
+            <pubDate>Thu, 06 Mar 2014 17:35:58 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[qr-image]]></title>
+            <description><![CDATA[<p><div class="highlight"><img src="/images/posts/nodejitsu.png" style="height: 80px" class="hide-on-mobile"/><span>This post was written for <a href="http://nodejitsu.com">Nodejitsu</a> blog and is crossposted here.
+<a href="http://nodejitsu.com">Nodejitsu</a> loved what I was doing at <a href="http://npmawesome.com">npmawesome.com</a>
+and is now supporting the project.</span></div></p>
+<svg width="150" height="150" viewBox="0 0 27 27" style="float: right; margin-left: 1em;"><path d="M1 1h7v7h-7zM10 1h2v1h-1v1h-1zM13 1h4v1h1v2h-2v1h-1v-2h1v-1h-2v1h-1zM19 1h7v7h-7zM2 2v5h5v-5zM20 2v5h5v-5zM3 3h3v3h-3zM11 3h1v1h-1zM21 3h3v3h-3zM10 4h1v2h-1zM13 4h1v1h1v2h-1v-1h-1v1h-1v-2h1zM16 5h2v3h-1v-1h-1zM9 6h1v2h-1zM11 7h1v1h-1zM13 7h1v1h-1zM15 7h1v1h-1zM12 8h1v2h-1v1h-2v-1h-1v-1h3zM16 8h1v1h-1zM1 9h1v1h-1zM4 9h1v1h-1zM6 9h2v1h-1v1h-2v-1h1zM14 9h2v3h-1v-1h-2v-1h1zM17 9h2v1h1v1h-1v1h1v2h1v1h-1v1h1v1h1v-1h1v1h1v2h-2v1h2v1h-2v2h1v-1h1v2h-1v1h-1v-1h-1v-1h-1v-1h-1v1h-1v1h2v1h-2v1h-2v-2h-1v-1h1v-1h1v-2h-1v-1h-1v-2h-1v1h-2v-1h1v-2h-1v-2h2v-1h1v2h-1v2h1v-2h1v3h1v-1h1v1h1v-2h-1v-1h-1v-1h-1v-1h2v-1h-1zM20 9h1v1h-1zM2 10h2v1h-2zM25 10h1v2h-2v-1h1zM4 11h1v1h1v1h-1v1h1v1h3v1h2v-1h1v2h-1v3h-1v-1h-1v-1h1v-1h-1v1h-8v-1h1v-1h2v1h1v-1h-1v-1h-1v-1h1zM7 11h1v1h-1zM20 11h2v1h-2zM1 12h1v1h1v1h-2zM8 12h1v1h-1zM11 12h1v1h-1zM7 13h1v1h-1zM9 13h1v1h1v1h-2zM22 13h1v1h1v2h-1v-1h-1zM24 13h2v3h-1v-2h-1zM1 15h1v1h-1zM21 15h1v1h-1zM6 16v1h2v-1zM24 16h1v1h-1zM18 18v3h3v-3zM25 18h1v2h-2v-1h1zM1 19h7v7h-7zM14 19h1v1h-1zM19 19h1v1h-1zM2 20v5h5v-5zM9 20h1v1h-1zM12 20h2v1h2v1h-1v1h-2v-2h-1zM3 21h3v3h-3zM10 21h2v1h-1v4h-2v-1h1v-2h-1v-1h1zM24 21h1v1h-1zM25 23h1v1h-1zM12 24h3v2h-3zM20 25h1v1h-1zM24 25h2v1h-2z"/></svg>
+
+<p><a href="http://en.wikipedia.org/wiki/QR_code">QR code</a> is this super cool thing you probably have been seeing all over the place lately. It started appearing in North America a few years ago but the actual standard is close to two decades old. It allows you to embed any small amount of data that could be decoded with a basic camera equipped phone. Most common use case here is embedding URLs in printed adverising so that those who are interested could simply point their phone at the add and go to the site instead of having to type in URLs.</p>
+<p><a href="https://github.com/alexeyten/qr-image">qr-image</a> is a module by <a href="https://github.com/alexeyten">Alexey Ten</a> to render <a href="http://en.wikipedia.org/wiki/QR_code">QR code</a> with node.js and no external dependencies.</p>
+<pre><code>npm install qr-image
+</code></pre><h2 id="overview">Overview</h2>
+<ul>
+<li>No dependecies. This is a really cool bit, if you look at <a href="https://github.com/alexeyten/qr-image/blob/master/package.json"><code>package.json</code></a> there are literally no dependencies there.</li>
+<li>Generate image in <code>png</code>, <code>svg</code>, <code>eps</code> and <code>pdf</code> formats.</li>
+<li>Support UTF-8.</li>
+</ul>
+<h2 id="usage">Usage</h2>
+<pre><code>var qr = require(&#39;qr-image&#39;);
+var fs = require(&#39;fs&#39;);
+
+var code = qr.image(&#39;http://blog.nodejitsu.com&#39;, { type: &#39;svg&#39; });
+var output = fs.createWriteStream(&#39;nodejitsu.svg&#39;)
+
+code.pipe(output);
+</code></pre><p>Because we are dealing with streams here, hooking this up to HTTP server is super easy.</p>
+<pre><code>var qr = require(&#39;qr-image&#39;);
+var express = require(&#39;express&#39;);
+
+var app = express();
+
+app.get(&#39;/&#39;, function(req, res) {
+  var code = qr.image(new Date().toString(), { type: &#39;svg&#39; });
+  res.type(&#39;svg&#39;);
+  code.pipe(res);
+});
+
+app.listen(3000);
+</code></pre><p>Now, going to <code>http://localhost:3000</code> will spit out a QR code with current time. Wicked!</p>
+<h2 id="metadata">Metadata</h2>
+<p><a href="http://en.wikipedia.org/wiki/QR_code">QR code</a> allows you embed pretty much any text, but with some additional formatting you can tell scanning applications about the data and what you want them to do with it. Here are a few most common formats:</p>
+<div class="overflow"><table width="100%" border="0" cellspacing="0px" cellpadding="10px">
+  <thead>
+    <tr>
+      <th>Data Type</th>
+      <th>Data Format</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Website URL</th>
+      <td><a href="http://www.websitename.com">http://www.websitename.com</a> (include the “http://” so it recognizes the data as a website URL)</td>
+    </tr>
+    <tr>
+      <th>Pre-populated email address</th>
+      <td>mailto:name@email.com (include “mailto” so it recognizes the data as an email address)</td>
+    </tr>
+    <tr>
+      <th>Pre-Populated Telephone Number</th>
+      <td>+16365553344 (URI should include the country code to support users outside the country of origin)</td>
+    </tr>
+    <tr>
+      <th>Contact Information</th>
+      <td>LastName,FirstName;ADR:(insert address), (second address line), City, ST (Insert 5-digit zip code);TEL:+16365553344;EMAIL:name@email.com;;<strong>DO NOT</strong> use parenthesis or line breaks in code.<p></p>
+        <p>*For QR Codes, the MECARD standard format shown above is more standard than vCard standard format</p>
+      </td>
+    </tr>
+    <tr>
+      <th>Pre-populated SMS Message</th>
+      <td>smsto:number:message</td>
+    </tr>
+    <tr>
+      <th>Pre-populated MMS Message</th>
+      <td>mms:number:subject</td>
+    </tr>
+    <tr>
+      <th>Map or Location Coordinates</th>
+      <td>latitude, longitude, altitude in meters (a minus sign denotes a South latitude and a West longitude)code for Google offices: 40.71872,-73.98905, 100</td>
+    </tr>
+    <tr>
+      <th>Android Market URI for Android Devices</th>
+      <td>For a QR code you must replace all punctuation with code. For example,market://search?q=pub:”Search Query” becomes:<p></p>
+      <p>market://search?q=pub%3A%22Search%20Query%22</p></td>
+    </tr>
+    <tr>
+      <th>YouTube Video</th>
+      <td>youtube://ID (may work on iPhone, untested, unreleased, not standardized)</td>
+    </tr>
+    <tr>
+      <th>iCal Appointment</th>
+      <td>BEGIN:VEVENT<br>
+          SUMMARY:Test Meeting<br>
+          DTSTART:20110713T190000Z<br>
+          DTEND:20110713T200000Z<br>
+          END:VEVENT<br>
+          (untested, unreleased, not standardized)
+      </td>
+    </tr>
+  </tbody>
+</table></div>
+
+]]></description>
+            <link>http://npmawesome.com/posts/2014-02-27-qr-image</link>
+            <guid isPermaLink="true">http://npmawesome.com/posts/2014-02-27-qr-image</guid>
+            <dc:creator><![CDATA[Alex Gorbatchev]]></dc:creator>
+            <pubDate>Thu, 27 Feb 2014 18:25:57 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[webdriver.js]]></title>
+            <description><![CDATA[<p><img class="hide-on-mobile" src="https://2.gravatar.com/avatar/2c405e9d55507036d6cc2aff250c3146" style="float: right; margin-left: 1em"/>
+<a href="https://github.com/camme/webdriverjs">webdriver.js</a> is a module by <a href="https://github.com/camme">Camilo Tapia</a> to render node.js error stack in a much more digestable way. This seems like it might a good module to add to your infrastracture if you, like me, constantly having to weed through the ugly stack messages to find relavant lines. <a href="https://github.com/camme/webdriverjs">webdriver.js</a> is not the &quot;official webdriverjs driver&quot; says <a href="https://github.com/christian-bromann">Christian Bromann</a> in <a href="https://github.com/camme/webdriverjs/issues/138#issuecomment-32051980">this thread</a>:</p>
+<blockquote>
+<p>We&#39;re trying to provide a selenium runner which is easy to use, highly extendable and compatible with all common JavaScript test frameworks. It uses an own chain API to execute all async commands in right order. The specialty of this library is that we wrap all JSONWire protocol commands in useful actions commands. So you don&#39;t have to care about to get an element first and then call the click command; you just execute the click with a selector as parameter.</p>
+</blockquote>
+<pre><code>npm install webdriverjs
+</code></pre><h2 id="usage">Usage</h2>
+<pre><code>var webdriverjs = require(&#39;webdriverjs&#39;);
+
+var options = {
+  desiredCapabilities: {
+    browserName: &#39;chrome&#39;
+  }
+};
+
+webdriverjs
+  .remote(options)
+  .init()
+  .url(&#39;http://www.google.com&#39;)
+  .title(function(err, res) {
+    console.log(&#39;Title was: &#39; + res.value);
+  })
+  .end();
+</code></pre><h2 id="selector-api">Selector API</h2>
+<p>The JsonWireProtocol provides several strategies to query an element. WebdriverJS simplifies these to make it more familiar with the common existing selector libraries like Sizzle. The following selector types are supported:</p>
+<ul>
+<li>CSS query selector</li>
+<li>link text</li>
+<li>partial link text</li>
+<li>tag name</li>
+<li>name attribute</li>
+<li>xPath</li>
+</ul>
+<h2 id="more">More</h2>
+<p>Here is a simplified example of differences between the drivers:</p>
+<p><a href="https://code.google.com/p/selenium/wiki/WebDriverJs">selenium-webdriverjs</a>:</p>
+<pre><code>driver.get(&#39;http://www.google.com&#39;);
+driver.findElement(webdriver.By.id(&#39;q&#39;)).sendKeys(&#39;webdriver&#39;);
+driver.findElement(webdriver.By.id(&#39;btnG&#39;)).click();
+</code></pre><p><a href="https://github.com/admc/wd">WD.js</a>:</p>
+<pre><code>browser
+  .get(&quot;http://www.google.com&quot;)
+  .elementById(&#39;q&#39;)
+  .sendKeys(&#39;webdriver&#39;)
+  .elementById(&#39;btnG&#39;)
+  .click()
+</code></pre><p><a href="https://github.com/camme/webdriverjs">webdriver.js</a>:</p>
+<pre><code>client
+    .url(&#39;http://google.com&#39;)
+    .setValue(&#39;#q&#39;,&#39;webdriver&#39;)
+    .click(&#39;#btnG&#39;)
+</code></pre><p><a href="https://github.com/camme/webdriverjs">webdriver.js</a> has also almost all protocol commands implemented, so you can do the same with the standard JSONWire protocol commands.</p>
+<pre><code>client
+    .url(&#39;http://google.com&#39;)
+    .element(&#39;#q&#39;, function(err,res) {
+        client.elementIdValue(res.value.ELEMENT, &#39;webdriver&#39;);
+    })
+    .element(&#39;#btnG&#39;, function(err,res) {
+        client.elementIdClick(res.value.ELEMENT);
+    });
+</code></pre>]]></description>
+            <link>http://npmawesome.com/posts/2014-02-25-webdriverjs</link>
+            <guid isPermaLink="true">http://npmawesome.com/posts/2014-02-25-webdriverjs</guid>
+            <dc:creator><![CDATA[Alex Gorbatchev]]></dc:creator>
+            <pubDate>Tue, 25 Feb 2014 17:07:16 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[pretty-error]]></title>
+            <description><![CDATA[<p><img class="hide-on-mobile" src="https://0.gravatar.com/avatar/8db4bf4bbef66bb91a4f2a0ba3b26e68" style="float: right; margin-left: 1em"/>
+<a href="https://github.com/AriaMinaei/pretty-error">pretty-error</a> is a module by <a href="https://github.com/AriaMinaei">Aria Minaei</a> to render node.js error stack in a much more digestable way. This seems like it might a good module to add to your infrastracture if you, like me, constantly having to weed through the ugly stack messages to find relavant lines.</p>
+<pre><code>npm install pretty-error
+</code></pre><p><img class="hide-on-mobile" src="https://github.com/AriaMinaei/pretty-error/raw/master/docs/images/pretty-error-screenshot.png" style="width: 100%; margin: 1em 0"/></p>
+<h2 id="usage">Usage</h2>
+<pre><code>require(&#39;pretty-error&#39;).start(function() {
+  startTheApp();
+});
+</code></pre><h2 id="how-it-works">How it Works</h2>
+<p><a href="https://github.com/AriaMinaei/pretty-error">pretty-error</a> turns error objects into something similar to an HTML document, and then uses the upcoming <a href="https://github.com/AriaMinaei/renderkid">RenderKid</a> to render the document using simple HTML/CSS-like commands for the console. This allows <a href="https://github.com/AriaMinaei/pretty-error">pretty-error</a> to be themed using simple CSS-like declarations.</p>
+<h2 id="the-cool-bits">The cool bits</h2>
+<h3 id="shortening-paths">Shortening paths</h3>
+<p>You might want to substitute long paths with shorter, more readable aliases:</p>
+<pre><code>pe.alias(&#39;E:/open-source/theatrejs/scripts/js&#39;, &#39;(Theare.js)&#39;);
+
+// to remove the alias:
+pe.removeAlias(&#39;E:/open-source/theatrejs/scripts/js&#39;);
+
+// or:
+pe.removeAllAliases();
+</code></pre><h3 id="skipping-packages">Skipping packages</h3>
+<p>You might want to skip trace lines that belong to specific packages (chai, when, socket.io):</p>
+<pre><code>pe.skipPackage(&#39;chai&#39;, &#39;when&#39;, &#39;socket.io&#39;);
+
+// to unskip:
+pe.unskipPackage(&#39;socket.io&#39;);
+pe.unskipAllPackages();
+</code></pre><h3 id="skipping-node-files">Skipping node files</h3>
+<pre><code>// this will skip node.js, path.js, event.js, etc.
+pe.skipNodeFiles();
+
+// also:
+pe.unskipNodeFiles();
+</code></pre><h3 id="skipping-paths">Skipping paths</h3>
+<pre><code>pe.skipPath(&#39;/home/dir/someFile.js&#39;);
+
+// also:
+pe.unskipPath(&#39;/home/dir/someFile.js&#39;);
+pe.unskipAllPaths();
+</code></pre>]]></description>
+            <link>http://npmawesome.com/posts/2014-02-24-pretty-error</link>
+            <guid isPermaLink="true">http://npmawesome.com/posts/2014-02-24-pretty-error</guid>
+            <dc:creator><![CDATA[Alex Gorbatchev]]></dc:creator>
+            <pubDate>Mon, 24 Feb 2014 17:55:21 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[supertest]]></title>
+            <description><![CDATA[<p><img class="hide-on-mobile" src="https://2.gravatar.com/avatar/f1e3ab214a976a39cfd713bc93deb10f" style="float: right; margin-left: 1em"/>
+<a href="https://github.com/visionmedia/supertest">supertest</a> is a module by <a href="https://github.com/visionmedia">TJ Holowaychuk</a> that takes testing HTTP easier via <a href="http://github.com/visionmedia/superagent">superagent</a>. The motivation with this module is to provide a high-level abstraction for testing HTTP, while still allowing you to drop down to the lower-level API provided by superagent.</p>
+<pre><code>npm install supertest
+</code></pre><p>You may pass an <code>http.Server</code>, or a <code>Function</code> to <code>request()</code> - if the server is not already listening for connections then it is bound to an ephemeral port for you so there is no need to keep track of ports.</p>
+<h2 id="usage">Usage</h2>
+<p>Here&#39;s a basic GET request to an end point.</p>
+<pre><code>var request = require(&#39;supertest&#39;)
+  , express = require(&#39;express&#39;);
+
+var app = express();
+
+app.get(&#39;/user&#39;, function(req, res) {
+  res.send(200, { name: &#39;tobi&#39; });
+});
+
+request(app)
+  .get(&#39;/user&#39;)
+  .expect(&#39;Content-Type&#39;, /json/)
+  .expect(&#39;Content-Length&#39;, &#39;20&#39;)
+  .expect(200)
+  .end(function(err, res) {
+    if (err) throw err;
+  });
+</code></pre><p>You can also get all fancy and upload files:</p>
+<pre><code>request(app)
+  .post(&#39;/&#39;)
+  .attach(&#39;avatar&#39;, &#39;test/fixtures/homeboy.jpg&#39;)
+</code></pre><p>Passing the app or url each time is not necessary, if you&#39;re testing the same host you may simply re-assign the request variable with the initialization app or url:</p>
+<pre><code>request = request(&#39;http://localhost:5555&#39;);
+
+request.get(&#39;/&#39;).expect(200, function(err) {
+  console.log(err);
+});
+
+request.get(&#39;/&#39;).expect(&#39;heya&#39;, function(err) {
+  console.log(err);
+});
+</code></pre><p>Anything you can do with <a href="http://github.com/visionmedia/superagent">superagent</a>, you can do with <a href="https://github.com/visionmedia/supertest">supertest</a>. For some strange reason I love testing HTTP end points, this is my goto library for this. Thanks TJ!</p>
+]]></description>
+            <link>http://npmawesome.com/posts/2014-02-21-supertest</link>
+            <guid isPermaLink="true">http://npmawesome.com/posts/2014-02-21-supertest</guid>
+            <dc:creator><![CDATA[Alex Gorbatchev]]></dc:creator>
+            <pubDate>Fri, 21 Feb 2014 18:09:41 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[spritesmith]]></title>
+            <description><![CDATA[<p><img class="hide-on-mobile" src="https://0.gravatar.com/avatar/15927fc52919e9223adc7ed99e125d4d" style="float: right; margin-left: 1em"/>
+<a href="https://github.com/Ensighten/spritesmith">spritesmith</a> is a module by <a href="https://github.com/twolfson">Todd Wolfson</a> that takes image files and generates <a href="http://en.wikipedia.org/wiki/Sprite_%28computer_graphics%29#Sprites_by_CSS">spritesheets</a> and coordinate maps. By itself <a href="https://github.com/Ensighten/spritesmith">spritesmith</a> would be somewhat difficult to utilize in your workflow, that&#39;s why nice people have created <a href="https://github.com/twolfson/gulp.spritesmith">gulp.spritesmith</a> and <a href="https://github.com/Ensighten/grunt-spritesmith">grunt-spritesmith</a> tasks to make build sprites for you with just a few lines of code.</p>
+<pre><code>npm install spritesmith
+</code></pre><h2 id="usage">Usage</h2>
+<p><img class="hide-on-mobile" src="http://upload.wikimedia.org/wikipedia/commons/0/03/Sprite-example.gif" style="float: right; width: 150px; margin-left: 1em; background: white; padding: 1em"/></p>
+<pre><code>var sprites = [
+  &#39;sprite1.png&#39;,
+  &#39;sprite2.jpg&#39;,
+  &#39;sprite3.png&#39;
+];
+
+spritesmith({&#39;src&#39;: sprites}, function (err, result) {
+  // Binary string representation of image
+  result.image;
+
+  // Object mapping filename to {x, y, width, height} of image
+  result.coordinates;
+
+  // Object with metadata about spritesheet {width, height}
+  result.properties;
+});
+</code></pre><p>Converting this structure to image files and CSS now seems like a pretty straightforward task.</p>
+]]></description>
+            <link>http://npmawesome.com/posts/2014-02-20-spritesmith</link>
+            <guid isPermaLink="true">http://npmawesome.com/posts/2014-02-20-spritesmith</guid>
+            <dc:creator><![CDATA[Alex Gorbatchev]]></dc:creator>
+            <pubDate>Thu, 20 Feb 2014 17:58:22 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[9 gulp.js plugins for a great build system]]></title>
+            <description><![CDATA[<p><div class="highlight"><img src="/images/posts/nodejitsu.png" style="height: 80px" class="hide-on-mobile"/><span>This post was written for <a href="http://nodejitsu.com">Nodejitsu</a> blog and is crossposted here.
+<a href="http://nodejitsu.com">Nodejitsu</a> loved what I was doing at <a href="http://npmawesome.com">npmawesome.com</a>
+and is now supporting the project.</span></div></p>
+<p>This article assumes you have experience with node.js, npm and you are pretty familiar with the concept of task runners and command-line interface. It will walk through general steps required to get up and running with <a href="http://gulpjs.com">gulp.js</a>.</p>
+<p>Not unlike all the other build systems, it all starts by installing the task runner itself, e.g. <code>npm install gulp</code> and creating the main file in the root of your project called <code>gulpfile.js</code>. For those people like myself, who immediately want to know if <a href="http://gulpjs.com">gulp.js</a> supports CoffeeScript - the answer is yes - just <code>require(&#39;./gulpfile.coffee&#39;)</code> from <code>gulpfile.js</code>.</p>
+<p>Now that we have everything sorted out, lets get cracking and make a task runner to support our HTML5 node.js project.</p>
+<h2 id="-gulp-util-"><a href="https://github.com/gulpjs/gulp-util">gulp-util</a></h2>
+<p>This is the official tool belt for <a href="http://gulpjs.com">gulp.js</a>. The authors decided to split up helpers into a separate module which you basically end up requiring every time. This module brings in functionality for logging, coloring console output, and so on. Check out the <a href="https://github.com/gulpjs/gulp-util">gulp-util</a> github page for the full list.</p>
+<p>Since this is a utility module, there isn&#39;t a specific place to get started with it, so we will use it throughout instead.</p>
+<h2 id="-gulp-clean-"><a href="https://github.com/peter-vilja/gulp-clean">gulp-clean</a></h2>
+<p>The first thing any self-respecting build system should do is clean the space and remove everything that&#39;s in the way.</p>
+<pre><code>var gulp = require(&#39;gulp&#39;);
+var clean = require(&#39;gulp-clean&#39;);
+
+gulp.task(&#39;clean&#39;, function () {
+  return gulp.src(&#39;build&#39;, {read: false})
+    .pipe(clean());
+});
+</code></pre><p>You can now run <code>gulp clean</code> and the <code>build</code> folder in the root of your project will be obliterated.</p>
+<h2 id="-gulp-concat-"><a href="https://github.com/wearefractal/gulp-concat">gulp-concat</a></h2>
+<p>It&#39;s probably safe to assume that your HTML5 project has a few external dependencies like <a href="http://jquery.com">jQuery</a>, maybe <a href="http://modernizr.com/">Modernizr</a> and such. Instead of having a separate <code>&lt;script&gt;</code> tag for each one of them, it would be nice to concat them together into one file. That&#39;s where <a href="https://github.com/wearefractal/gulp-concat">gulp-concat</a> comes in:</p>
+<pre><code>var concat = require(&#39;gulp-concat&#39;);
+
+gulp.task(&#39;vendor&#39;, function() {
+  return gulp.src(&#39;vendor/*.js&#39;)
+    .pipe(concat(&#39;vendor.js&#39;))
+    .pipe(gulp.dest(&#39;build/vendor.js&#39;))
+});
+</code></pre><p>Now, running <code>gulp vendor</code> will take all <code>*.js</code> files from the local <code>vendor</code> folder and concat them into <code>build/vendor.js</code>.</p>
+<h2 id="-gulp-uglify-"><a href="https://github.com/terinjokes/gulp-uglify">gulp-uglify</a></h2>
+<p>The next thing to do is to minify our <code>vendor.js</code>. Lets add this to our <code>vendor</code> task.</p>
+<pre><code>var uglify = require(&#39;gulp-uglify&#39;);
+
+gulp.task(&#39;vendor&#39;, function() {
+  return gulp.src(&#39;vendor/*.js&#39;)
+    .pipe(concat(&#39;vendor.js&#39;))
+    .pipe(uglify())
+    .pipe(gulp.dest(&#39;build/vendor.js&#39;))
+});
+</code></pre><p>Notice, that instead of creating a separate task for minifying, we simply added another <code>pipe</code> call. This is essentially what <a href="http://gulpjs.com">gulp.js</a> is all about - applying the right tools!</p>
+<p>This is also where things might start going wrong, because <a href="https://github.com/terinjokes/gulp-uglify">gulp-uglify</a> will throw an error if you have invalid JavaScript syntax. To deal with that lets add a basic error:</p>
+<pre><code>var gutil = require(&#39;gulp-util&#39;);
+
+gulp.task(&#39;vendor&#39;, function() {
+  return gulp.src(&#39;vendor/*.js&#39;)
+    .pipe(concat(&#39;vendor.js&#39;))
+    .pipe(uglify())
+    .pipe(gulp.dest(&#39;build/vendor.js&#39;))
+    .on(&#39;error&#39;, gutil.log)
+});
+</code></pre><h2 id="-gulp-rename-"><a href="https://github.com/hparra/gulp-rename">gulp-rename</a></h2>
+<p>Do you want to keep both, minified and source files around? That&#39;s not a problem! Lets extend our <code>vendor</code> task to write out <code>vendor.js</code> and <code>vendor.min.js</code> at the same time.</p>
+<pre><code>var rename = require(&#39;gulp-rename&#39;);
+
+gulp.task(&#39;vendor&#39;, function() {
+  return gulp.src(&#39;vendor/*.js&#39;)
+    .pipe(concat(&#39;vendor.js&#39;))
+    .pipe(gulp.dest(&#39;build&#39;))
+    .pipe(uglify())
+    .pipe(rename(&#39;vendor.min.js`))
+    .pipe(gulp.dest(&#39;build&#39;))
+    .on(&#39;error&#39;, gutil.log)
+});
+</code></pre><p>Notice that <code>gulp.dest</code> is used twice here. This is the cool thing about <a href="http://gulpjs.com">gulp.js</a> - everything is just streams. Adding <code>gulp.dest</code> merely dumps whatever we currently have in the stream to disk, we can then mutate it further and save the new state again. Cool, eh?</p>
+<h2 id="-gulp-filesize-"><a href="https://github.com/Metrime/gulp-filesize">gulp-filesize</a></h2>
+<p>Don&#39;t know about you, but after minifying JavaScript I always want to know the file size. Guess what - I&#39;m not the only one and there&#39;s a plugin for that.</p>
+<pre><code>var filesize = require(&#39;gulp-filesize&#39;);
+
+gulp.task(&#39;vendor&#39;, function() {
+  return gulp.src(&#39;vendor/*.js&#39;)
+    .pipe(concat(&#39;vendor.js&#39;))
+    .pipe(gulp.dest(&#39;build&#39;))
+    .pipe(filesize())
+    .pipe(uglify())
+    .pipe(rename(&#39;vendor.min.js`))
+    .pipe(gulp.dest(&#39;build&#39;))
+    .pipe(filesize())
+    .on(&#39;error&#39;, gutil.log)
+});
+</code></pre><p>Again, see how <code>filesize</code> is used twice? It will first print out the size of our source file and then the minified size.</p>
+<h2 id="-gulp-less-"><a href="https://github.com/plus3network/gulp-less">gulp-less</a></h2>
+<p>Lets assume you used the amazing <a href="http://lesscss.org/">LESS</a> preprocessor for your generating your CSS files and now want to generate them. <a href="https://github.com/plus3network/gulp-less">gulp-less</a> to the rescue!</p>
+<pre><code>var less = require(&#39;gulp-less&#39;);
+var path = require(&#39;path&#39;);
+
+gulp.task(&#39;css&#39;, function () {
+  return gulp.src(&#39;less/**/*.less&#39;)
+    .pipe(less({
+      paths: [ path.join(__dirname, &#39;less&#39;, &#39;includes&#39;) ]
+    }))
+    .pipe(gulp.dest(&#39;build/css&#39;))
+    .on(&#39;error&#39;, gutil.log);
+});
+</code></pre><p>Running <code>gulp css</code> will compile all <a href="http://lesscss.org/">LESS</a> files from the <code>less</code> folder into <code>build/css</code>.</p>
+<h2 id="-gulp-changed-"><a href="https://github.com/sindresorhus/gulp-changed">gulp-changed</a></h2>
+<p>I would be forever unhappy if every time I ran <code>gulp css</code> all of my files would be regenerated regardless if the source <a href="http://lesscss.org/">LESS</a> files have changed or not. Lets use <a href="https://github.com/sindresorhus/gulp-changed">gulp-changed</a> to excluded not modified files.</p>
+<pre><code>var changed = require(&#39;gulp-changed&#39;);
+
+gulp.task(&#39;css&#39;, function () {
+  return gulp.src(&#39;less/**/*.less&#39;)
+    .pipe(changed(&#39;build/css&#39;))
+    .pipe(less({
+      paths: [ path.join(__dirname, &#39;less&#39;, &#39;includes&#39;) ]
+    }))
+    .pipe(gulp.dest(&#39;build/css&#39;))
+    .on(&#39;error&#39;, gutil.log);
+});
+</code></pre><h2 id="-gulp-watch-"><a href="https://github.com/floatdrop/gulp-watch">gulp-watch</a></h2>
+<p>It would be really cool if you didn&#39;t have to run <code>gulp css</code> every time you make a change, right? Lets set up a task that will monitor our files for changes and and compile them right away.</p>
+<p><a href="https://github.com/floatdrop/gulp-watch">gulp-watch</a> is a little bit different from the other plugins and we use it instead of <code>gulp.src</code> as the starting point.</p>
+<pre><code>var watch = require(&#39;gulp-watch&#39;);
+
+gulp.task(&#39;css:watch&#39;, function () {
+  watch({
+    glob: &#39;less/**/*.less&#39;,
+    emit: &#39;one&#39;,
+    emitOnGlob: false
+  }, function(files) {
+    return files
+      .pipe(less({
+        paths: [ path.join(__dirname, &#39;less&#39;, &#39;includes&#39;) ]
+      }))
+      .pipe(gulp.dest(&#39;build/css&#39;))
+      .on(&#39;error&#39;, gutil.log);
+  });
+});
+</code></pre><p><code>gulp css:watch</code> will being watching all of our LESS files and compile only the changed one.</p>
+<h2 id="all-together">All together</h2>
+<p>Now lets put it all together into <code>gulpfile.js</code></p>
+<pre><code>var path = require(&#39;path&#39;);
+var gulp = require(&#39;gulp&#39;);
+var gutil = require(&#39;gulp-util&#39;);
+var clean = require(&#39;gulp-clean&#39;);
+var concat = require(&#39;gulp-concat&#39;);
+var uglify = require(&#39;gulp-uglify&#39;);
+var rename = require(&#39;gulp-rename&#39;);
+var filesize = require(&#39;gulp-filesize&#39;);
+var less = require(&#39;gulp-less&#39;);
+var changed = require(&#39;gulp-changed&#39;);
+var watch = require(&#39;gulp-watch&#39;);
+
+gulp.task(&#39;clean&#39;, function () {
+  gulp.src(&#39;build&#39;, {read: false})
+    .pipe(clean());
+});
+
+gulp.task(&#39;vendor&#39;, function() {
+  return gulp.src(&#39;vendor/*.js&#39;)
+    .pipe(concat(&#39;vendor.js&#39;))
+    .pipe(gulp.dest(&#39;build&#39;))
+    .pipe(filesize())
+    .pipe(uglify())
+    .pipe(rename(&#39;vendor.min.js`))
+    .pipe(gulp.dest(&#39;build&#39;))
+    .pipe(filesize())
+    .on(&#39;error&#39;, gutil.log)
+});
+
+gulp.task(&#39;css&#39;, function () {
+  return gulp.src(&#39;less/**/*.less&#39;)
+    .pipe(changed(&#39;build/css&#39;))
+    .pipe(less({
+      paths: [ path.join(__dirname, &#39;less&#39;, &#39;includes&#39;) ]
+    }))
+    .pipe(gulp.dest(&#39;build/css&#39;))
+    .on(&#39;error&#39;, gutil.log);
+});
+
+gulp.task(&#39;css:watch&#39;, function () {
+  watch({
+    glob: &#39;less/**/*.less&#39;,
+    emit: &#39;one&#39;,
+    emitOnGlob: false
+  }, function(files) {
+    return files
+      .pipe(less({
+        paths: [ path.join(__dirname, &#39;less&#39;, &#39;includes&#39;) ]
+      }))
+      .pipe(gulp.dest(&#39;build/css&#39;))
+      .on(&#39;error&#39;, gutil.log);
+  });
+});
+</code></pre><h2 id="summary">Summary</h2>
+<p>The thing that I personally really like about <a href="http://gulpjs.com">gulp.js</a> is that it feels to me like a toolbox full of single purpose tools that I can use to assemble almost anything. It&#39;s amazing how in a span of a couple of months community has wrote <a href="http://gulpjs.com/plugins/">over 300 plugins</a>.</p>
+]]></description>
+            <link>http://npmawesome.com/posts/2014-02-19-9-gulp-js-plugins-for-a-great-build-system</link>
+            <guid isPermaLink="true">http://npmawesome.com/posts/2014-02-19-9-gulp-js-plugins-for-a-great-build-system</guid>
+            <dc:creator><![CDATA[Alex Gorbatchev]]></dc:creator>
+            <pubDate>Wed, 19 Feb 2014 17:26:59 GMT</pubDate>
+        </item>
+    </channel>
+</rss>

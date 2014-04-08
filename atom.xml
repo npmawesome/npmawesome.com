@@ -5,12 +5,71 @@
 	<link href="http://npmawesome.com/atom.xml" rel="self" />
 	<link href="http://npmawesome.com" />
 	<id>http://npmawesome.com</id>
-	<updated>2014-04-05T03:21:06.685Z</updated>
+	<updated>2014-04-08T00:19:58.379Z</updated>
 	<author>
 		<name>Alex Gorbatchev</name>
 		<email></email>
 	</author>
 
+	
+		<entry>
+			<title>Links for Apr 7, 2014</title>
+			<link href="http://npmawesome.com/posts/2014-04-07-links"/>
+			<updated>2014-04-08T03:00:00.000Z</updated>
+			<id>http://npmawesome.com/posts/2014-04-07-links</id>
+			<content type="html">&lt;h2 id=&quot;articles-slides&quot;&gt;Articles &amp;amp; Slides&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;&lt;a href=&quot;http://bjk5.com/post/71887196490/email-transparency-at-khan-academy&quot;&gt;Email transparency at Khan Academy&lt;/a&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Whenever we mention that almost all Khan Academy email is visible to everybody on the team, people always wanna know more... Here’s the how and why of “radical email transparency” at Khan.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a href=&quot;http://www.sfgate.com/bayarea/article/S-F-cracks-down-on-Airbnb-rentals-5381237.php&quot;&gt;S.F. cracks down on Airbnb rentals&lt;/a&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;As Katz discovered, San Francisco&amp;#39;s ban on short-term rentals is turning out to have teeth. People who rent out space on Airbnb, VRBO and other markets for temporary housing are facing fines by the City Planning Department and eviction on the grounds of illegally operating hotels.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a href=&quot;http://www.glintech.com/blog/link-tablet-your-meeting-room-calendar&quot;&gt;Link a tablet to your meeting room calendar&lt;/a&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;They reasoned that by linking our online calendars to a tablet mounted neatly next to the door, it’d be much easier to see, at a glance, whether the room was being used - without poking your head in and possibly interrupting someone.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a href=&quot;http://behindthescenesrecruiter.com/post/82005145232/the-single-most-sure-fire-hiring-desion-you-will-ever&quot;&gt;The Single Most Sure-Fire Hiring Decision You Will Ever Make&lt;/a&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;“One good way to snag the great people who are never in the job market is to get them before they even realize there is a job market: when they’re in college.” All the way back in 2006, Joel Spolsky knew that a competitive and rewarding internship program was the best way to acquire top engineering talent. Yet even in 2014, in the midst of a talent crunch, surprisingly few technical companies have internship programs.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a href=&quot;http://brianmcd.com/2014/03/27/a-tip-for-angular-unit-tests-with-promises.html&quot;&gt;A Tip for Angular Unit Tests with Promises&lt;/a&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;tl;dr: Don&amp;#39;t put assertions inside promise callbacks.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;github&quot;&gt;GitHub&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/OpenRA/OpenRA&quot;&gt;Open Red Alert&lt;/a&gt; - I played this game to death when it came out originally. Crazy that somebody&amp;#39;s rewriting it in C# (mono).&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/ZoneMinder/ZoneMinder&quot;&gt;ZoneMinder&lt;/a&gt; is a free, open source Closed-circuit television software application developed for Linux which supports IP, USB and Analog cameras.&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/GitbookIO/javascript&quot;&gt;JavaScript GitBook&lt;/a&gt; - teaching programming basics with JavaScript.&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://gudh.github.io/ihover/dist/index.html&quot;&gt;iHover&lt;/a&gt; is an impressive hover effects collection, powered by pure CSS3, no dependency, work well with Bootstrap 3!&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;services&quot;&gt;Services&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://keybase.io&quot;&gt;Keybase&lt;/a&gt; will be a public directory of publicly auditable public keys. All paired, for convenience, with unique usernames.&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://asciinema.org/&quot;&gt;ASCIInema&lt;/a&gt; - record and share your terminal sessions, the right way.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;misc&quot;&gt;Misc&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;http://allrecipes.com/recipe/how-to-make-cronuts-part-i/&quot;&gt;How to Make Cronuts&lt;/a&gt; - I&amp;#39;m kind of obsessed with these.&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://www.raspberrypi.org/raspberry-pi-compute-module-new-product/&quot;&gt;Raspberry Pi compute module: new product!&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://www.instructables.com/id/Colorful-Countdown-Clock-for-tight-timeline-manage/&quot;&gt;Colorful Countdown Clock for tight timeline management&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;twitter&quot;&gt;Twitter&lt;/h2&gt;
+&lt;blockquote class=&quot;twitter-tweet&quot; data-partner=&quot;tweetdeck&quot;&gt;&lt;p&gt;&lt;a href=&quot;https://twitter.com/search?q=%23Trello&amp;amp;src=hash&quot;&gt;#Trello&lt;/a&gt; is written in &lt;a href=&quot;https://twitter.com/search?q=%23CoffeeScript&amp;amp;src=hash&quot;&gt;#CoffeeScript&lt;/a&gt;!! Holy Fuck! That&amp;#39;s amazing!!&lt;/p&gt;&amp;mdash; Juan Jose Ramirez U. (@whoisjuan) &lt;a href=&quot;https://twitter.com/whoisjuan/statuses/453308127036047360&quot;&gt;April 7, 2014&lt;/a&gt;&lt;/blockquote&gt;
+
+&lt;blockquote class=&quot;twitter-tweet&quot; data-partner=&quot;tweetdeck&quot;&gt;&lt;p&gt;CoffeeScript has “unless”? SOLD&lt;/p&gt;&amp;mdash; David R. Poindexter (@mtheoryx) &lt;a href=&quot;https://twitter.com/mtheoryx/statuses/453260810731548672&quot;&gt;April 7, 2014&lt;/a&gt;&lt;/blockquote&gt;
+
+&lt;script async src=&quot;//platform.twitter.com/widgets.js&quot; charset=&quot;utf-8&quot;&gt;&lt;/script&gt;</content>
+		</entry>
 	
 		<entry>
 			<title>Links for Apr 5, 2014</title>
@@ -233,6 +292,14 @@ client.use(logger());
 &lt;li&gt;&lt;a href=&quot;http://www.gitbook.io/&quot;&gt;GitBook&lt;/a&gt; is a webapp to build beautiful programming books and exercises using GitHub/Git and Markdown.&lt;/li&gt;
 &lt;/ul&gt;
 </content>
+		</entry>
+	
+		<entry>
+			<title>package.json</title>
+			<link href="http://npmawesome.com/posts/package.json"/>
+			<updated>2014-04-03T16:55:24.000Z</updated>
+			<id>http://npmawesome.com/posts/package.json</id>
+			<content type="html"></content>
 		</entry>
 	
 		<entry>
