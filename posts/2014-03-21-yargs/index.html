@@ -3,7 +3,7 @@
 <a href="http://nodejitsu.com">Nodejitsu</a> loved what I was doing at <a href="http://npmawesome.com">npmawesome.com</a>
 and is now supporting the project.</span></div><p><img class="hide-on-mobile" src="https://avatars3.githubusercontent.com/u/874394" style="float: right; margin-left: 1em; width: 100px"/>
 This post kicks off a small mini-series of posts about modules which making writing CLI (command line interface) tools in Node.js easier. Typically, when starting a new CLI tool, the first problem that you would encounter is how to read arguments that users pass via command line. Standard library gives us <code>process.argv</code> but if you want something a little bit more structured than an array, you have to look elsewhere.</p>
-<p>This is where <a href="https://github.com/chevex/yargs">yargs</a> comes in handy. This module was originally written by <a href="https://github.com/substack">James Halliday</a> and called <a href="(https://github.com/substack/node-optimist)">optimist</a>. It is now called <a href="https://github.com/chevex/yargs">yargs</a> and the work is continued by <a href="https://github.com/chevex">Alex Ford</a>. Lets get it installed:</p>
+<p>This is where <a href="https://github.com/chevex/yargs">yargs</a> comes in handy. This module was originally written by <a href="https://github.com/substack">James Halliday</a> and called <a href="https://github.com/substack/node-optimist">optimist</a>. It is now called <a href="https://github.com/chevex/yargs">yargs</a> and the work is continued by <a href="https://github.com/chevex">Alex Ford</a>. Lets get it installed:</p>
 <pre><code>npm install yargs
 </code></pre><h2 id="features">Features</h2>
 <p><a href="https://github.com/chevex/yargs">yargs</a> covers most of the features you would need to parse out options from command line.</p>
@@ -199,11 +199,11 @@ var argv = require(&#39;yargs&#39;)
 </code></pre><h2 id="other-modules-to-checkout">Other modules to checkout</h2>
 <p>There are many other modules that can help you figure out CLI arguments, some do more, others do less.</p>
 <ul>
-<li><a href="https://github.com/substack/minimist">minimist</a> by James Halliday aka substack is a light weight module without or usage functionality. James has moved on from <a href="(https://github.com/substack/node-optimist)">optimist</a> to <a href="https://github.com/substack/minimist">minimist</a> probably around the time when community started adopting mantra of smaller modules that do one thing well. It&#39;s a personal preference and I&#39;m glad there are options.</li>
+<li><a href="https://github.com/substack/minimist">minimist</a> by James Halliday aka substack is a light weight module without or usage functionality. James has moved on from <a href="https://github.com/substack/node-optimist">optimist</a> to <a href="https://github.com/substack/minimist">minimist</a> probably around the time when community started adopting mantra of smaller modules that do one thing well. It&#39;s a personal preference and I&#39;m glad there are options.</li>
 <li><a href="https://github.com/chriso/cli">cli</a> by Chris O&#39;Hara is a swiss army knife module for writing CLI applications.</li>
 </ul>
 <h2 id="closing-thoughts">Closing thoughts</h2>
-<p>I&#39;ve been using <a href="(https://github.com/substack/node-optimist)">optimist</a> for over a year now and is saddened to see James giving it up, but at the same time it&#39;s exciting that the idea and implementation lives on in <a href="https://github.com/chevex/yargs">yargs</a>. A problem that seems so simple on the surface, such as collecting arguments, can turn out to be a major headache without proper tools. I&#39;m very glad <a href="https://github.com/chevex/yargs">yargs</a> is here to help us deal with it.</p>
+<p>I&#39;ve been using <a href="https://github.com/substack/node-optimist">optimist</a> for over a year now and is saddened to see James giving it up, but at the same time it&#39;s exciting that the idea and implementation lives on in <a href="https://github.com/chevex/yargs">yargs</a>. A problem that seems so simple on the surface, such as collecting arguments, can turn out to be a major headache without proper tools. I&#39;m very glad <a href="https://github.com/chevex/yargs">yargs</a> is here to help us deal with it.</p>
 </div></article><div id="disqus_thread"></div><script type="text/javascript">/* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
 var disqus_shortname = 'npmawesome'; // required: replace example with your forum shortname
 
@@ -224,4 +224,4 @@ setTimeout(function() { ga('send', 'event', 'read', 'auto generated'); }, 5000);
 
 ga('create', 'UA-46164085-1', 'npmawesome.com');
 ga('send', 'pageview');
-</script><script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script><script src="/scripts/npmawesome.bundle.js"></script>
+</script><script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script><script src="/scripts/npmawesome.bundle.js"></script><script async src="//platform.twitter.com/widgets.js"></script>

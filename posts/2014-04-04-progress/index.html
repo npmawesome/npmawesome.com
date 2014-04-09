@@ -15,7 +15,7 @@ request(&#39;http://nodejs.org/dist/node-0.0.1.tar.gz&#39;)
     process.stdout.write(&#39;done!\n&#39;);
   });
 </code></pre><p>The user experience is hardly a great one. It&#39;s clear that something is happening, or at least expected to be happening.</p>
-<div style="padding: 13px 10px 10px; background: black; text-align: center; border-radius: 3px"><img src="/images/posts/progress/progress01.gif"/></div>
+<div style="padding: 13px 10px 10px; background: black; text-align: center; border-radius: 3px"><img src="http://npmawesome.com/images/posts//progress/progress01.gif"/></div>
 
 <p>It&#39;s not really clear if it&#39;s still happening. Is it time for <code>ctrl+c</code> yet? How about an indicator that something is actually going on?</p>
 <pre><code>process.stdout.write(&#39;Downloading...&#39;);
@@ -27,7 +27,7 @@ request(&#39;http://nodejs.org/dist/node-0.0.1.tar.gz&#39;)
     process.stdout.write(&#39; done!\n&#39;);
     clearInterval(intervalId);
   });
-</code></pre><div style="padding: 13px 10px 10px; background: black; text-align: center; border-radius: 3px"><img src="/images/posts/progress/progress02.gif"/></div>
+</code></pre><div style="padding: 13px 10px 10px; background: black; text-align: center; border-radius: 3px"><img src="http://npmawesome.com/images/posts//progress/progress02.gif"/></div>
 
 <p><img class="hide-on-mobile" src="https://avatars2.githubusercontent.com/u/25254" style="float: right; margin-left: 1em; width: 100px"/>
 A little better. But still, there&#39;s no way of telling how long the process will actually take. Lets just do a real progress bar, shall we? This is where <a href="https://github.com/visionmedia/node-progress">progress</a> module that was originally started by <a href="https://github.com/visionmedia">TJ Holowaychuk</a> comes into play! Due to the awesomeness of open source, <a href="https://github.com/visionmedia/node-progress">progress</a> is now pretty much a community effort.</p>
@@ -72,7 +72,7 @@ req
     bar.tick(bar.total - bar.curr);
   })
   ;
-</code></pre><div style="padding: 13px 10px 10px; background: black; text-align: center; border-radius: 3px"><img src="/images/posts/progress/progress03.gif"/></div>
+</code></pre><div style="padding: 13px 10px 10px; background: black; text-align: center; border-radius: 3px"><img src="http://npmawesome.com/images/posts//progress/progress03.gif"/></div>
 
 <p>We even get ETA estimate for free. That&#39;s what I&#39;m talking about!</p>
 <h2 id="other-modules-to-checkout">Other modules to checkout</h2>
@@ -104,4 +104,4 @@ setTimeout(function() { ga('send', 'event', 'read', 'auto generated'); }, 5000);
 
 ga('create', 'UA-46164085-1', 'npmawesome.com');
 ga('send', 'pageview');
-</script><script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script><script src="/scripts/npmawesome.bundle.js"></script>
+</script><script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script><script src="/scripts/npmawesome.bundle.js"></script><script async src="//platform.twitter.com/widgets.js"></script>

@@ -20,7 +20,7 @@ request({url: &#39;http://isaacs.couchone.com/registry/_all_docs&#39;})
     console.error(data);
     return data;
   }));
-</code></pre><p><img class="hide-on-mobile" src="/images/posts/json.svg" style="float: right; width: 100px; margin-left: 1em"/>
+</code></pre><p><img class="hide-on-mobile" src="http://npmawesome.com/images/posts//json.svg" style="float: right; width: 100px; margin-left: 1em"/>
 I like the idea behind streaming JSON alot because you don&#39;t have to wait for the whole document to come down the pipe, especially if it&#39;s very large. It can also integrate with <a href="http://gulpjs.com">gulp.js</a> very nicely. The really cool thing for me is that you can react to specific nodes in the data structure vs having to seek them out and loop over them manually.</p>
 <p>Are you dealing with large JSON structures on your project?</p>
 </div></article><article><header><h2><a href="/posts/2014-02-11-peer-js">peer.js</a></h2><div class="meta"><span>posted by <a href="https://github.com/alexgorbatchev">Alex Gorbatchev</a> on February 11th 2014</span><a href="http://npmawesome.com/posts/2014-02-11-peer-js#disqus_thread" class="comments"></a><div data-github-repo="peers/peerjs" class="github-stars"></div></div></header><div class="content"><p><img class="hide-on-mobile" src="/images/posts/peerjs.png" style="float: right; margin-left: 1em"/>
@@ -75,7 +75,7 @@ ent                       0.0.5        ---        ---        ---
 date-utils               1.2.13        ---        ---        ---
 jquery                    1.8.3        ---        ---        ---
 </code></pre><p>I came about  trying to update dependencies for a whole bunch of NPM modules. It would be even more useful if it could update <code>package.json</code> for me.</p>
-</div></article><article><header><h2><a href="/posts/2014-02-05-cucumber-js">cucumber.js</a></h2><div class="meta"><span>posted by <a href="https://github.com/alexgorbatchev">Alex Gorbatchev</a> on February 5th 2014</span><a href="http://npmawesome.com/posts/2014-02-05-cucumber-js#disqus_thread" class="comments"></a><div data-github-repo="cucumber/cucumber-js" class="github-stars"></div></div></header><div class="content"><p><img class="hide-on-mobile" src="/images/posts/cucumber-logo.png" style="width: 100%; margin-bottom: 1em"/></p>
+</div></article><article><header><h2><a href="/posts/2014-02-05-cucumber-js">cucumber.js</a></h2><div class="meta"><span>posted by <a href="https://github.com/alexgorbatchev">Alex Gorbatchev</a> on February 5th 2014</span><a href="http://npmawesome.com/posts/2014-02-05-cucumber-js#disqus_thread" class="comments"></a><div data-github-repo="cucumber/cucumber-js" class="github-stars"></div></div></header><div class="content"><p><img class="hide-on-mobile" src="http://npmawesome.com/images/posts//cucumber-logo.png" style="width: 100%; margin-bottom: 1em"/></p>
 <p><img class="hide-on-mobile" src="https://2.gravatar.com/avatar/cbc1acceddbfaceee4cf3cae24d7c912" style="float: right; margin-left: 1em"/>
 <a href="https://github.com/cucumber/cucumber-js">cucumber.js</a> is a port of the famous Ruby <a href="http://cukes.info/">Cucumber testing framework</a> by <a href="https://github.com/jbpros">Julien Biezemans</a> that lets software development teams describe how software should behave in plain text. The text is written in a business-readable domain-specific language and serves as documentation, automated tests and development-aid - all rolled into one format.</p>
 <pre><code>npm install cucumber
@@ -116,7 +116,7 @@ Feature: Example feature
     callback.fail(new Error(&quot;Expected to be on page with title &quot; + title));
   }
 });
-</code></pre><p><img class="hide-on-mobile" src="/images/posts/cucumber-meme.jpg" style="float: right; margin-left: 1em"/>
+</code></pre><p><img class="hide-on-mobile" src="http://npmawesome.com/images/posts//cucumber-meme.jpg" style="float: right; margin-left: 1em"/>
 Writing <a href="https://github.com/cucumber/cucumber/wiki/Feature-Introduction">Cucumber scenarios</a> is pretty straight forward and is very addictive. I currently use <a href="http://visionmedia.github.io/mocha/">Mocha</a> and write <code>describe</code> and <code>it</code> blocks in nearly the same fasion so that they read as a cohesive story. Perhaps I should just use <a href="https://github.com/cucumber/cucumber-js">cucumber.js</a> instead?</p>
 <p><a href="http://www.martinfowler.com/bliki/BusinessReadableDSL.html">The pipe dream</a> is to be let business people to write software rules without involving programmers. I&#39;m on the fence if it&#39;s a good idea, or even if it&#39;s possible, but I used to write Cucumber tests back in my Ruby days and loved it!</p>
 <p>Check out this <a href="http://flippinawesome.org/2014/01/27/bdd-in-javascript-with-cucumberjs/">awesome write up</a> on <a href="https://github.com/cucumber/cucumber-js">cucumber.js</a>. So, what do you think? Is Cucumber a good idea?</p>
@@ -162,7 +162,7 @@ client.on(&#39;open&#39;, function(stream){
   stream.write(&#39;World!&#39;);
   stream.end();
 });
-</code></pre><p>Check out <a href="https://github.com/binaryjs/binaryjs/blob/master/doc/start.md">getting started</a> page and <a href="for extensive documentation">binaryjs.com</a>. Thanks <a href="https://github.com/binaryjs">Eric Zhang</a> for making this happen!</p>
+</code></pre><p>Check out <a href="https://github.com/binaryjs/binaryjs/blob/master/doc/start.md">getting started</a> page and <a href="http://binaryjs.com">binaryjs.com</a> for extensive documentation. Thanks <a href="https://github.com/binaryjs">Eric Zhang</a> for making this happen!</p>
 </div></article><article><header><h2><a href="/posts/2014-02-03-power-assert">power-assert</a></h2><div class="meta"><span>posted by <a href="https://github.com/alexgorbatchev">Alex Gorbatchev</a> on February 3rd 2014</span><a href="http://npmawesome.com/posts/2014-02-03-power-assert#disqus_thread" class="comments"></a><div data-github-repo="twada/power-assert" class="github-stars"></div></div></header><div class="content"><p><a href="https://github.com/twada/power-assert">power-assert</a> is a module written by <a href="https://github.com/twada">Takuto Wada</a> that provides pretty damn descriptive assert messages for your tests.</p>
 <pre><code>npm install power-assert
 </code></pre><h2 id="features">Features</h2>
@@ -482,7 +482,7 @@ mversion.update(&#39;v1.0.1-beta&#39;, function (err, data) { })
 mversion.update(&#39;v1.0.1-010988&#39;, function (err, data) { })
 </code></pre><h2 id="gulp">Gulp</h2>
 <p>Of course, <a href="https://github.com/mikaelbr">Mikael Brevik</a> has <a href="https://github.com/mikaelbr/gulp-mversion">gulp.js plugin</a> to help you with automate build and deploy process.</p>
-</div></article><article><header><h2><a href="/posts/2014-01-24-schema-inspector">schema-inspector</a></h2><div class="meta"><span>posted by <a href="https://github.com/alexgorbatchev">Alex Gorbatchev</a> on January 24th 2014</span><a href="http://npmawesome.com/posts/2014-01-24-schema-inspector#disqus_thread" class="comments"></a><div data-github-repo="Atinux/schema-inspector" class="github-stars"></div></div></header><div class="content"><div style="text-align: center"><img class="hide-on-mobile" src="/images/posts/schema-inspector.png" style="margin-bottom: 1em" /></div>
+</div></article><article><header><h2><a href="/posts/2014-01-24-schema-inspector">schema-inspector</a></h2><div class="meta"><span>posted by <a href="https://github.com/alexgorbatchev">Alex Gorbatchev</a> on January 24th 2014</span><a href="http://npmawesome.com/posts/2014-01-24-schema-inspector#disqus_thread" class="comments"></a><div data-github-repo="Atinux/schema-inspector" class="github-stars"></div></div></header><div class="content"><div style="text-align: center"><img class="hide-on-mobile" src="http://npmawesome.com/images/posts//schema-inspector.png" style="margin-bottom: 1em" /></div>
 
 <p><img class="hide-on-mobile" src="https://0.gravatar.com/avatar/16c362a6f8dbbedbc3bf13d001c6b286" style="float: right; margin-left: 1em"/></p>
 <p><a href="https://github.com/Atinux/schema-inspector">schema-inspector</a> is a powerful tool to sanitize and validate JS objects written by <a href="https://github.com/Atinux">Sébastien Chopin</a>. It&#39;s disigned to work both client-side and server-side and to be scalable with allowing asynchronous and synchronous calls. There&#39;s support for object validation and sanitazation with a very simple schema definition.</p>
@@ -596,7 +596,7 @@ describe(&#39;POST /api&#39;, function()
 <blockquote>
 <p>Asynchronous parsing is better if the data is written out progressively from the server side because we&#39;re sending and parsing everything at the earliest possible opportunity. If you can, send small bits of the output asynchronously as soon as it is ready instead of waiting before everything is ready to start sending.</p>
 </blockquote>
-<div style="text-align: center"><img class="hide-on-mobile" src="/images/posts/oboe.png" style="width: 400px; margin: 1em 0" /></div>
+<div style="text-align: center"><img class="hide-on-mobile" src="http://npmawesome.com/images/posts//oboe.png" style="width: 400px; margin: 1em 0" /></div>
 
 <h2 id="usage">Usage</h2>
 <p>Here&#39;s a very <strong>basic</strong> use case:</p>
@@ -630,7 +630,7 @@ oboe(&#39;http://localhost/myapp/things.json&#39;)
 </code></pre><p>Have you used streaming JSON parser before?</p>
 </div></article><article><header><h2><a href="/posts/2014-01-22-autoprefixer">autoprefixer</a></h2><div class="meta"><span>posted by <a href="https://github.com/alexgorbatchev">Alex Gorbatchev</a> on January 22nd 2014</span><a href="http://npmawesome.com/posts/2014-01-22-autoprefixer#disqus_thread" class="comments"></a><div data-github-repo="ai/autoprefixer" class="github-stars"></div></div></header><div class="content"><p><a href="https://github.com/ai/autoprefixer">autoprefixer</a> parses CSS and adds vendor prefixes to rules based on information from the glorious <a href="http://caniuse.com">Can I Use</a>.</p>
 <pre><code>npm install autoprefixer
-</code></pre><p><img class="hide-on-mobile" src="/images/posts/autoprefixer.svg" style="width: 200px; float: right" /></p>
+</code></pre><p><img class="hide-on-mobile" src="http://npmawesome.com/images/posts//autoprefixer.svg" style="width: 200px; float: right" /></p>
 <p>The best tool is a tool you can&#39;t see and one that does the work for you. This is the main idea behind <a href="https://github.com/ai/autoprefixer">autoprefixer</a>. The interface is simple: just forget about vendor prefixes and write normal CSS according to latest W3C specs. You don’t need a special language (like Sass) or special mixins. Of course, you can still use something like <a href="http://sass-lang.com/">SASS</a>, <a href="http://learnboost.github.io/stylus/">Stylus</a> or <a href="http://www.lesscss.org/">LESS</a> because <a href="https://github.com/ai/autoprefixer">autoprefixer</a> is a postprocessor for CSS.</p>
 <h2 id="features">Features</h2>
 <ul>
@@ -785,8 +785,7 @@ long random()
 which Groupon wrote in order to communicate using the WebDriver protocol to a Selenium server.</p>
 <pre><code>npm install testium
 </code></pre><p><img class="hide-on-mobile" src="https://0.gravatar.com/avatar/f07c4699fa2274d2ad44323331ee8161?d=https%3A%2F%2Fidenticons.github.com%2Fa25772e176c9744a17818d2be63b2c20.png&r=x&s=400" style="width: 150px; float: right" /></p>
-<p><blockquote class="twitter-tweet" data-cards="hidden" lang="en"><p><a href="https://twitter.com/Groupon">@Groupon</a>&#39;s Browser Integration Testing platform <a href="https://twitter.com/search?q=%23Testium&amp;src=hash">#Testium</a> is now open source! <a href="https://twitter.com/search?q=%23nodejs&amp;src=hash">#nodejs</a> + Mocha + Selenium = Happy! <a href="https://t.co/lgXiRjflx0">https://t.co/lgXiRjflx0</a></p>&mdash; Jess Telford (@jesstelford) <a href="https://twitter.com/jesstelford/statuses/413382587348811776">December 18, 2013</a></blockquote></p>
-<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+<blockquote class="twitter-tweet" data-cards="hidden" lang="en"><p><a href="https://twitter.com/Groupon">@Groupon</a>&#39;s Browser Integration Testing platform <a href="https://twitter.com/search?q=%23Testium&amp;src=hash">#Testium</a> is now open source! <a href="https://twitter.com/search?q=%23nodejs&amp;src=hash">#nodejs</a> + Mocha + Selenium = Happy! <a href="https://t.co/lgXiRjflx0">https://t.co/lgXiRjflx0</a></p>&mdash; Jess Telford (@jesstelford) <a href="https://twitter.com/jesstelford/statuses/413382587348811776">December 18, 2013</a></blockquote>
 
 <p>From <a href="https://engineering.groupon.com/2014/misc/i-tier-testium/">the introductory article</a>:</p>
 <blockquote>
@@ -824,7 +823,7 @@ describe &#39;browse&#39;, -&gt;
 </div></article><article><header><h2><a href="/posts/2014-01-10-messageformat">messageformat.js</a></h2><div class="meta"><span>posted by <a href="https://github.com/alexgorbatchev">Alex Gorbatchev</a> on January 10th 2014</span><a href="http://npmawesome.com/posts/2014-01-10-messageformat#disqus_thread" class="comments"></a><div data-github-repo="SlexAxton/messageformat.js" class="github-stars"></div></div></header><div class="content"><p><a href="https://github.com/SlexAxton/messageformat.js">messageformat.js</a> is a module by <a href="https://github.com/SlexAxton">Alex Sexton</a> (<a href="https://twitter.com/SlexAxton">@SlexAxton</a>) for handling both <em>pluralization</em> and <em>gender</em> in your applications. It can also lead to much better translations, as it was built by <a href="http://icu-project.org/apiref/icu4j/com/ibm/icu/text/MessageFormat.html">ICU</a> to help solve those two problems for all known <a href="http://cldr.unicode.org/">CLDR</a> languages - likely all the ones you care about.</p>
 <pre><code>npm install messageformat
 </code></pre><h2 id="features">Features</h2>
-<p><img class="hide-on-mobile" src="/images/posts/messageformat.png" style="width: 150px; float: right" /></p>
+<p><img class="hide-on-mobile" src="http://npmawesome.com/images/posts//messageformat.png" style="width: 150px; float: right" /></p>
 <p>MessageFormat in Java-land technically incorporates all other type formatting (and the older ChoiceFormat) directly into its messages, however, in the name of filesize, messageformat.js only strives to implement <strong>SelectFormat</strong> and <strong>PluralFormat</strong>. There are plans to pull in locale-aware <strong>NumberFormat</strong> parsing as a &quot;plugin&quot; to this library, but as of right now, it&#39;s best to pass things in preformatted (as suggested in the ICU docs).</p>
 <ul>
 <li>Handles arbitrary nesting of pluralization and select rules.</li>
@@ -886,7 +885,7 @@ gulp.task(&#39;default&#39;, function() {
     gulp.run(&#39;images&#39;);
   });
 });
-</code></pre><p><img class="hide-on-mobile" src="/images/posts/gulp.png" style="width: 150px; float: right" /></p>
+</code></pre><p><img class="hide-on-mobile" src="http://npmawesome.com/images/posts//gulp.png" style="width: 150px; float: right" /></p>
 <h2 id="opinion">Opinion</h2>
 <p>There&#39;s always a lot of excitement when a new thing comes out that promises to be better than the current thing. It seems to be especially true when the current thing is already pretty solid and just works. What gets to people are the edge cases and they feel annoyed and frustrated easily forgetting how smoothly the rest of the system works.</p>
 <p><a href="https://github.com/bevacqua">Nicolas Bevacqua</a> has written a <a href="http://blog.ponyfoo.com/2014/01/09/gulp-grunt-whatever">very interesting article</a> on the subject. My favorite quote:</p>
@@ -913,4 +912,4 @@ setTimeout(function() { ga('send', 'event', 'read', 'auto generated'); }, 5000);
 
 ga('create', 'UA-46164085-1', 'npmawesome.com');
 ga('send', 'pageview');
-</script><script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script><script src="/scripts/npmawesome.bundle.js"></script>
+</script><script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script><script src="/scripts/npmawesome.bundle.js"></script><script async src="//platform.twitter.com/widgets.js"></script>
