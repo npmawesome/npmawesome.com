@@ -12,7 +12,7 @@
   >
   <channel>
     <title><%= @site.title %></title>
-    <atom:link href="<%= @site.url %>/rss" rel="self" type="application/rss+xml"/>
+    <atom:link href="http://feeds.feedburner.com/npmawesome" rel="self" type="application/rss+xml"/>
     <link><%= @site.url %></link>
     <description><%= @site.description %></description>
     <lastBuildDate><%= @site.date.toUTCString() %></lastBuildDate>
@@ -22,7 +22,12 @@
     <generator>awesomeness</generator>
     <pubDate><%= @site.date.toUTCString() %></pubDate>
 
-    <% for document in @getCollection('pagedPosts').toJSON() when not document.ignored: %>
+    <% posts = @getCollection('pagedPosts').toJSON() %>
+    <% published = 0 %>
+    <% while published < 5 && posts.length: %>
+      <% document = posts.shift() %>
+      <% continue if document.ignored %>
+      <% published++ %>
       <item>
         <title><![CDATA[<%- document.title or document.name or @site.title %>]]></title>
         <link><![CDATA[<%- @site.url %><%- document.url %>]]></link>

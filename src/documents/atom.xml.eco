@@ -8,10 +8,14 @@
 	<updated><%= @site.date.toISOString() %></updated>
 	<author>
 		<name><%= @site.author %></name>
-		<email><%= @site.email %></email>
 	</author>
 
-	<% for document in @getCollection('pagedPosts').toJSON() when not document.ignored: %>
+  <% posts = @getCollection('pagedPosts').toJSON() %>
+  <% published = 0 %>
+  <% while published < 5 && posts.length: %>
+    <% document = posts.shift() %>
+    <% continue if document.ignored %>
+    <% published++ %>
 		<entry>
 			<title><%= document.title or document.name or @site.title %></title>
 			<link href="<%= @site.url %><%= document.url %>"/>
