@@ -5,10 +5,9 @@
 	<link href="http://npmawesome.com/atom.xml" rel="self" />
 	<link href="http://npmawesome.com" />
 	<id>http://npmawesome.com</id>
-	<updated>2014-04-09T21:46:54.270Z</updated>
+	<updated>2014-04-09T22:22:46.013Z</updated>
 	<author>
 		<name>Alex Gorbatchev</name>
-		<email></email>
 	</author>
 
   
@@ -16,6 +15,40 @@
   
     
     
+    
+		<entry>
+			<title>Links for Apr 8, 2014</title>
+			<link href="http://npmawesome.com/posts/2014-04-09-links"/>
+			<updated>2014-04-10T03:00:00.000Z</updated>
+			<id>http://npmawesome.com/posts/2014-04-09-links</id>
+			<content type="html">&lt;h2 id=&quot;articles-slides&quot;&gt;Articles &amp;amp; Slides&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;http://serversforhackers.com/articles/2014/03/20/getting-started-with-docker/&quot;&gt;Getting Started with Docker&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://engineering.gosquared.com/optimising-nginx-node-js-and-networking-for-heavy-workloads&quot;&gt;Optimising NginX, Node.JS and networking for heavy workloads&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;github&quot;&gt;GitHub&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;http://sokra.github.io/source-map-visualization/&quot;&gt;ource-map-visualization&lt;/a&gt; for various flavors. Pretty cool to see how the mapping works.&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://mgcrea.github.io/angular-strap/&quot;&gt;angular-strap&lt;/a&gt; - AngularJS 1.2+ native directives for Twitter Bootstrap 3.&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://lipis.github.io/flag-icon-css/&quot;&gt;flag-icon-css&lt;/a&gt; - CSS for vector based country flags.&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/daraosn/oculus-drone&quot;&gt;oculus-drone&lt;/a&gt; - Oculus Rift + AR Drone 2.0 controller with live video feed and head-motion controller written for Node.js in CoffeeScript.&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/schaermu/node-fluent-ffmpeg&quot;&gt;node-fluent-ffmpeg&lt;/a&gt; abstracts the complex command-line usage of ffmpeg into a fluent, easy to use Node.js module.&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://jasperproject.github.io/&quot;&gt;Jasper&lt;/a&gt; is an open source platform for developing always-on, voice-controlled applications.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;startups&quot;&gt;Startups&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://slack.com/&quot;&gt;Slack&lt;/a&gt; brings all your communication together in one place. It’s real-time messaging, archiving and search for modern teams.&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://zerocater.com/&quot;&gt;ZeroCater&lt;/a&gt; is the easiest way to feed your team.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;vidoes&quot;&gt;Vidoes&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;http://2013.jsconf.eu/speakers/videos.html&quot;&gt;JSConf 2013 conference videos&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://vimeo.com/ndcoslo/videos/sort:plays/format:thumbnail&quot;&gt;NDC conference videos&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://www.youtube.com/playlist?list=PL055Epbe6d5bab7rZ3i83OtMmD-d9uq2K&quot;&gt;Fluent 2014 conference videos&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</content>
+		</entry>
+	
     
     
     
@@ -267,45 +300,6 @@ client.use(logger());
 }
 &lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&quot;closing-thoughts&quot;&gt;Closing Thoughts&lt;/h2&gt;
 &lt;p&gt;&lt;a href=&quot;https://github.com/slate/slate-irc&quot;&gt;slate-irc&lt;/a&gt; can serve as a core of a regular IRC client or you can write an IRC bot for your team chat. Checkout the &lt;a href=&quot;https://github.com/slate/slate-irc&quot;&gt;github page&lt;/a&gt; for full documentation.&lt;/p&gt;
-</content>
-		</entry>
-	
-    
-    
-    
-		<entry>
-			<title>Links for Apr 4, 2014</title>
-			<link href="http://npmawesome.com/posts/2014-04-03-links"/>
-			<updated>2014-04-04T03:00:00.000Z</updated>
-			<id>http://npmawesome.com/posts/2014-04-03-links</id>
-			<content type="html">&lt;h2 id=&quot;npm-inc&quot;&gt;NPM Inc&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;http://blog.npmjs.org/post/80997676347/nebulous-profit-meditations&quot;&gt;Nebulous Profit Meditations&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://blog.modulus.io/isaac-interview&quot;&gt;Meet the face behind NPM&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&quot;apps&quot;&gt;Apps&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;http://koala-app.com/&quot;&gt;Koala&lt;/a&gt; is a GUI application for Less, Sass, Compass and CoffeeScript compilation, to help web developers to use them more efficiently. Koala can run in windows, linux and mac.&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://zedapp.org/&quot;&gt;Zed&lt;/a&gt; is a fully offline-capable, open source, keyboard-focused, Chrome-based text and code editor you can use to edit local files as well as remote files on any server.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&quot;articles-slides&quot;&gt;Articles &amp;amp; Slides&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://speakerdeck.com/ckarande/top-overlooked-security-threats-to-node-dot-js-web-applications&quot;&gt;Top Overlooked Security Threats to Node.js Web Applications&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://www.sitepoint.com/testing-across-node-js-versions-using-docker/&quot;&gt;Testing Across Node.js Versions Using Docker&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://www.codefellows.org/blogs/complete-list-of-javascript-tools&quot;&gt;A List of Foundational JavaScript Tools&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&quot;github&quot;&gt;GitHub&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://github.com/ShiftForward/mucuchies&quot;&gt;mucuchies&lt;/a&gt; - A neat looking pluggable client-side dashboard.&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://github.com/wagerfield/parallax&quot;&gt;parallax&lt;/a&gt; - Parallax Engine that reacts to the orientation of a smart device.&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://github.com/soygul/koan&quot;&gt;KOAN&lt;/a&gt; stack (Koa, Angular, Node, Mongo, WebSockets) for real-time full-stack JavaScript web development.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&quot;misc&quot;&gt;Misc&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://developer.forecast.io/docs/v2&quot;&gt;forecast.io weather API&lt;/a&gt; is open and has a pretty high free rate limit.&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://www.crypto101.io/&quot;&gt;Crypto 101&lt;/a&gt; is an introductory course on cryptography, freely available for programmers of all ages and skill levels.&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://www.gitbook.io/&quot;&gt;GitBook&lt;/a&gt; is a webapp to build beautiful programming books and exercises using GitHub/Git and Markdown.&lt;/li&gt;
-&lt;/ul&gt;
 </content>
 		</entry>
 	
