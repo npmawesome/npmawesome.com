@@ -15,27 +15,13 @@
     <atom:link href="http://feeds.feedburner.com/npmawesome" rel="self" type="application/rss+xml"/>
     <link>http://npmawesome.com</link>
     <description>Daily dose of awesome NPM modules for Node.js, old and new!</description>
-    <lastBuildDate>Wed, 09 Apr 2014 21:03:57 GMT</lastBuildDate>
+    <lastBuildDate>Wed, 09 Apr 2014 21:33:27 GMT</lastBuildDate>
     <language>en</language>
     <sy:updatePeriod>daily</sy:updatePeriod>
     <sy:updateFrequency>2</sy:updateFrequency>
     <generator>awesomeness</generator>
-    <pubDate>Wed, 09 Apr 2014 21:03:57 GMT</pubDate>
+    <pubDate>Wed, 09 Apr 2014 21:33:27 GMT</pubDate>
 
-    
-      <item>
-        <title><![CDATA[Links for Apr 8, 2014]]></title>
-        <link><![CDATA[http://npmawesome.com/posts/2014-04-09-links]]></link>
-        <dc:creator><![CDATA[Alex Gorbatchev]]></dc:creator>
-        <guid isPermaLink="true"><![CDATA[http://npmawesome.com/posts/2014-04-09-links]]></guid>
-        <pubDate><![CDATA[Thu, 10 Apr 2014 03:00:00 GMT]]></pubDate>
-        <description><![CDATA[<h2 id="articles-slides">Articles &amp; Slides</h2>
-<h2 id="github">GitHub</h2>
-<h2 id="services">Services</h2>
-<h2 id="misc">Misc</h2>
-<h2 id="twitter">Twitter</h2>
-]]></description>
-      </item>
     
       <item>
         <title><![CDATA[Links for Apr 7, 2014]]></title>
