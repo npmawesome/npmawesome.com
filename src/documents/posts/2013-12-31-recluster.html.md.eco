@@ -13,7 +13,7 @@ description: Clustering library with support for zero-downtime reloading.
 
     npm install <%= @document.npm.name %>
 
-<img class="hide-on-mobile" src="/images/posts/recluster.jpg" style="width: 250px; float: right" />
+<img class="hide-on-mobile" src="<%- @image '/recluster.jpg' %>" style="width: 250px; float: right" />
 
 Delivering that 100% uptime for web apps can be a tricky business. Errors and new code rollouts are the things we have to deal with on a daily basis and if you run continuous integration, your app is probably restarting many times a day. What kind of experience this might be creating for your users?
 

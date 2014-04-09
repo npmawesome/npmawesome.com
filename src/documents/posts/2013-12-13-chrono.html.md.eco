@@ -13,7 +13,7 @@ title: *name
 
     npm install <%= @document.npm.name %>
 
-<img class="hide-on-mobile" src="/images/posts/clock.gif" style="float: right; width: 100px; margin-left: 1em" />
+<img class="hide-on-mobile" src="<%- @image '/clock.gif' %>" style="float: right; width: 100px; margin-left: 1em" />
 
 <%- @npm() %> supports a number of date and time formats, including:
 

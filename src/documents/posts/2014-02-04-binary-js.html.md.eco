@@ -67,4 +67,4 @@ Browser:
       stream.end();
     });
 
-Check out [getting started](https://github.com/binaryjs/binaryjs/blob/master/doc/start.md) page and [binaryjs.com](for extensive documentation). Thanks <%- @author() %> for making this happen!
+Check out [getting started](https://github.com/binaryjs/binaryjs/blob/master/doc/start.md) page and [binaryjs.com](http://binaryjs.com) for extensive documentation. Thanks <%- @author() %> for making this happen!

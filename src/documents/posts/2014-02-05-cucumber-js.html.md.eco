@@ -16,7 +16,7 @@ slug: *name
 title: *name
 description: cucumber.js is a port of the famous Ruby Cucumber testing framework that lets software development teams describe how software should behave in plain text.
 ---
-<img class="hide-on-mobile" src="/images/posts/cucumber-logo.png" style="width: 100%; margin-bottom: 1em"/>
+<img class="hide-on-mobile" src="<%- @image '/cucumber-logo.png' %>" style="width: 100%; margin-bottom: 1em"/>
 
 <img class="hide-on-mobile" src="https://2.gravatar.com/avatar/cbc1acceddbfaceee4cf3cae24d7c912" style="float: right; margin-left: 1em"/>
 <%- @npm() %> is a port of the famous Ruby [Cucumber testing framework](http://cukes.info/) by <%- @author() %> that lets software development teams describe how software should behave in plain text. The text is written in a business-readable domain-specific language and serves as documentation, automated tests and development-aid - all rolled into one format.
@@ -69,7 +69,7 @@ or in JavaScript
       }
     });
 
-<img class="hide-on-mobile" src="/images/posts/cucumber-meme.jpg" style="float: right; margin-left: 1em"/>
+<img class="hide-on-mobile" src="<%- @image '/cucumber-meme.jpg' %>" style="float: right; margin-left: 1em"/>
 Writing [Cucumber scenarios](https://github.com/cucumber/cucumber/wiki/Feature-Introduction) is pretty straight forward and is very addictive. I currently use [Mocha](http://visionmedia.github.io/mocha/) and write `describe` and `it` blocks in nearly the same fasion so that they read as a cohesive story. Perhaps I should just use <%- @npm() %> instead?
 
 [The pipe dream](http://www.martinfowler.com/bliki/BusinessReadableDSL.html) is to be let business people to write software rules without involving programmers. I'm on the fence if it's a good idea, or even if it's possible, but I used to write Cucumber tests back in my Ruby days and loved it!

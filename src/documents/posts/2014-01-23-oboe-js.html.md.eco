@@ -34,7 +34,7 @@ The library is extremely feature rich for its 13KB size. I will try to summarize
 
 > Asynchronous parsing is better if the data is written out progressively from the server side because we're sending and parsing everything at the earliest possible opportunity. If you can, send small bits of the output asynchronously as soon as it is ready instead of waiting before everything is ready to start sending.
 
-<div style="text-align: center"><img class="hide-on-mobile" src="/images/posts/oboe.png" style="width: 400px; margin: 1em 0" /></div>
+<div style="text-align: center"><img class="hide-on-mobile" src="<%- @image '/oboe.png' %>" style="width: 400px; margin: 1em 0" /></div>
 
 ## Usage
 

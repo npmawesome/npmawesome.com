@@ -49,7 +49,7 @@ This file is just a quick sample to give you a taste of what gulp does.
       });
     });
 
-<img class="hide-on-mobile" src="/images/posts/gulp.png" style="width: 150px; float: right" />
+<img class="hide-on-mobile" src="<%- @image '/gulp.png' %>" style="width: 150px; float: right" />
 
 ## Opinion
 

@@ -277,4 +277,4 @@ There are many other modules that can help you figure out CLI arguments, some do
 
 I've been using [optimist] for over a year now and is saddened to see James giving it up, but at the same time it's exciting that the idea and implementation lives on in <%- @npm() %>. A problem that seems so simple on the surface, such as collecting arguments, can turn out to be a major headache without proper tools. I'm very glad <%- @npm() %> is here to help us deal with it.
 
-[optimist]: (https://github.com/substack/node-optimist)
+[optimist]: https://github.com/substack/node-optimist

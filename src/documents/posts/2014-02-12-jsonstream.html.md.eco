@@ -41,7 +41,7 @@ description: JSONStream is a module for streaming JSON.parse and JSON.stringify.
         return data;
       }));
 
-<img class="hide-on-mobile" src="/images/posts/json.svg" style="float: right; width: 100px; margin-left: 1em"/>
+<img class="hide-on-mobile" src="<%- @image '/json.svg" style="float: right; width: 100px; margin-left: 1em' %>"/>
 I like the idea behind streaming JSON alot because you don't have to wait for the whole document to come down the pipe, especially if it's very large. It can also integrate with [gulp.js](http://gulpjs.com) very nicely. The really cool thing for me is that you can react to specific nodes in the data structure vs having to seek them out and loop over them manually.
 
 Are you dealing with large JSON structures on your project?

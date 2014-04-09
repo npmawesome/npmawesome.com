@@ -13,7 +13,7 @@ description: Chalk is a clean and focused alternative to colors.js
 
     npm install <%= @document.npm.name %>
 
-<img class="hide-on-mobile" src="/images/posts/chalk.png" style="width: 250px; float: right" />
+<img class="hide-on-mobile" src="<%- @image '/chalk.png' %>" style="width: 250px; float: right" />
 
 ## Why
 

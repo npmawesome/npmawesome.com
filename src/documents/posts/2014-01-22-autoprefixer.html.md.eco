@@ -13,7 +13,7 @@ description: Autoprefixer parses CSS and adds vendor prefixes to rules using `Ca
 
     npm install <%= @document.npm.name %>
 
-<img class="hide-on-mobile" src="/images/posts/autoprefixer.svg" style="width: 200px; float: right" />
+<img class="hide-on-mobile" src="<%- @image '/autoprefixer.svg' %>" style="width: 200px; float: right" />
 
 The best tool is a tool you can't see and one that does the work for you. This is the main idea behind <%- @npm() %>. The interface is simple: just forget about vendor prefixes and write normal CSS according to latest W3C specs. You don’t need a special language (like Sass) or special mixins. Of course, you can still use something like [SASS](http://sass-lang.com/), [Stylus](http://learnboost.github.io/stylus/) or [LESS](http://www.lesscss.org/) because <%- @npm() %> is a postprocessor for CSS.
 

@@ -14,7 +14,7 @@ description: ect is a performance focused JavaScript template engine with embedd
 
     npm install <%= @document.npm.name %>
 
-<img class="hide-on-mobile" src="/images/posts/coffeescript.png" style="float: right" />
+<img class="hide-on-mobile" src="<%- @image '/coffeescript.png' %>" style="float: right" />
 
 ## Features
 

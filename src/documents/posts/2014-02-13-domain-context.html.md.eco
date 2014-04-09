@@ -15,7 +15,7 @@ slug: *name
 title: *name
 description: domain-context is a module for dealing with globally accessible domain-bound contexts, connect/express middleware included.
 ---
-<img class="hide-on-mobile" src="/images/posts/domain-context.jpg" style="width: 100%"/>
+<img class="hide-on-mobile" src="<%- @image '/domain-context.jpg" style="width: 100%' %>"/>
 
 <%- @npm() %> is a module by <%- @author() %> for dealing with globally accessible domain-bound contexts, connect/express middleware included.
 

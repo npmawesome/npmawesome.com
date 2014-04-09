@@ -4,7 +4,7 @@ tags: javascript, scala, compiler
 layout: post
 title: scala.js
 ---
-<img class="hide-on-mobile" src="/images/posts/scala.png" style="float: right; width: 200px; margin-left: 1em;" />
+<img class="hide-on-mobile" src="<%- @image '/scala.png' %>" style="float: right; width: 200px; margin-left: 1em;" />
 
 [Scala.js](http://www.scala-js.org/), a Scala to JavaScript compiler.
 

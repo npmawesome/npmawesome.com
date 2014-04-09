@@ -25,7 +25,7 @@ Here's an example of a model definition:
 
 Model defintions are recursive Javascript object. At each layer, you can have the following fields:
 
-<img class="hide-on-mobile" src="/images/posts/orm.png" style="width: 200px; float: right; margin-left: 1em;"/>
+<img class="hide-on-mobile" src="<%- @image '/orm.png' %>" style="width: 200px; float: right; margin-left: 1em;"/>
 
 * `required` (boolean): Error on validation if this field isn't set.
 * `type` (VeryType): VeryType chain to validate field against if set.

@@ -42,6 +42,12 @@ docpadConfig =
       throw "Unknown author `#{slug}`" unless author?
       "<a href=\"https://github.com/#{author.github}\">#{author.name}</a>"
 
+    url: (href) ->
+      @site.url + href
+
+    image: (href) ->
+      @url "/images/posts/#{href}"
+
     pageTitle: ->
       title = @preparedTitle()
       title = "#{title} | " if title?

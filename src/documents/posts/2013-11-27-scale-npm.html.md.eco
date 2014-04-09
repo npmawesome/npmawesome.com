@@ -4,7 +4,7 @@ tags: community
 layout: post
 title: scalenpm.org
 ---
-<img class="hide-on-mobile" src="/images/posts/npm.png" style="float: right; width: 200px; margin-left: 1em;" />
+<img class="hide-on-mobile" src="<%- @image '/npm.png' %>" style="float: right; width: 200px; margin-left: 1em;" />
 
 The [NPM](http://npmjs.org) registry recently got crashy, and it was incredibly painful. Here at [Good Eggs](http://www.goodeggs.com) we were affected as much as any other node shop - we couldn't push a build out.
 
