@@ -5,12 +5,25 @@
 	<link href="http://npmawesome.com/atom.xml" rel="self" />
 	<link href="http://npmawesome.com" />
 	<id>http://npmawesome.com</id>
-	<updated>2014-04-09T00:17:23.499Z</updated>
+	<updated>2014-04-09T21:03:57.379Z</updated>
 	<author>
 		<name>Alex Gorbatchev</name>
 		<email></email>
 	</author>
 
+	
+		<entry>
+			<title>Links for Apr 8, 2014</title>
+			<link href="http://npmawesome.com/posts/2014-04-09-links"/>
+			<updated>2014-04-10T03:00:00.000Z</updated>
+			<id>http://npmawesome.com/posts/2014-04-09-links</id>
+			<content type="html">&lt;h2 id=&quot;articles-slides&quot;&gt;Articles &amp;amp; Slides&lt;/h2&gt;
+&lt;h2 id=&quot;github&quot;&gt;GitHub&lt;/h2&gt;
+&lt;h2 id=&quot;services&quot;&gt;Services&lt;/h2&gt;
+&lt;h2 id=&quot;misc&quot;&gt;Misc&lt;/h2&gt;
+&lt;h2 id=&quot;twitter&quot;&gt;Twitter&lt;/h2&gt;
+</content>
+		</entry>
 	
 		<entry>
 			<title>Links for Apr 7, 2014</title>
@@ -288,14 +301,6 @@ client.use(logger());
 &lt;li&gt;&lt;a href=&quot;http://www.gitbook.io/&quot;&gt;GitBook&lt;/a&gt; is a webapp to build beautiful programming books and exercises using GitHub/Git and Markdown.&lt;/li&gt;
 &lt;/ul&gt;
 </content>
-		</entry>
-	
-		<entry>
-			<title>package.json</title>
-			<link href="http://npmawesome.com/posts/package.json"/>
-			<updated>2014-04-03T16:55:24.000Z</updated>
-			<id>http://npmawesome.com/posts/package.json</id>
-			<content type="html"></content>
 		</entry>
 	
 		<entry>
