@@ -15,14 +15,21 @@
     <atom:link href="http://feeds.feedburner.com/npmawesome" rel="self" type="application/rss+xml"/>
     <link>http://npmawesome.com</link>
     <description>Daily dose of awesome NPM modules for Node.js, old and new!</description>
-    <lastBuildDate>Wed, 09 Apr 2014 21:38:16 GMT</lastBuildDate>
+    <lastBuildDate>Wed, 09 Apr 2014 21:46:54 GMT</lastBuildDate>
     <language>en</language>
     <sy:updatePeriod>daily</sy:updatePeriod>
     <sy:updateFrequency>2</sy:updateFrequency>
     <generator>awesomeness</generator>
-    <pubDate>Wed, 09 Apr 2014 21:38:16 GMT</pubDate>
+    <pubDate>Wed, 09 Apr 2014 21:46:54 GMT</pubDate>
 
     
+    
+    
+      
+      
+      
+      
+      
       <item>
         <title><![CDATA[Links for Apr 7, 2014]]></title>
         <link><![CDATA[http://npmawesome.com/posts/2014-04-07-links]]></link>
@@ -81,6 +88,9 @@
 <blockquote class="twitter-tweet"><p>CoffeeScript has “unless”? SOLD</p>&mdash; David R. Poindexter (@mtheoryx) <a href="https://twitter.com/mtheoryx/statuses/453260810731548672">April 7, 2014</a></blockquote>]]></description>
       </item>
     
+      
+      
+      
       <item>
         <title><![CDATA[Links for Apr 5, 2014]]></title>
         <link><![CDATA[http://npmawesome.com/posts/2014-04-04-links]]></link>
@@ -118,6 +128,9 @@
 <blockquote class="twitter-tweet"><p>Never thought I&#39;d say this, but CoffeeScript is quite nice</p>&mdash; David Tang (@skaterdav85) <a href="https://twitter.com/skaterdav85/statuses/452121943496347648">April 4, 2014</a></blockquote>]]></description>
       </item>
     
+      
+      
+      
       <item>
         <title><![CDATA[progress]]></title>
         <link><![CDATA[http://npmawesome.com/posts/2014-04-04-progress]]></link>
@@ -210,6 +223,9 @@ req
 ]]></description>
       </item>
     
+      
+      
+      
       <item>
         <title><![CDATA[slate-irc]]></title>
         <link><![CDATA[http://npmawesome.com/posts/2014-04-04-slate-irc]]></link>
@@ -266,6 +282,46 @@ client.use(logger());
 }
 </code></pre><h2 id="closing-thoughts">Closing Thoughts</h2>
 <p><a href="https://github.com/slate/slate-irc">slate-irc</a> can serve as a core of a regular IRC client or you can write an IRC bot for your team chat. Checkout the <a href="https://github.com/slate/slate-irc">github page</a> for full documentation.</p>
+]]></description>
+      </item>
+    
+      
+      
+      
+      <item>
+        <title><![CDATA[Links for Apr 4, 2014]]></title>
+        <link><![CDATA[http://npmawesome.com/posts/2014-04-03-links]]></link>
+        <dc:creator><![CDATA[Alex Gorbatchev]]></dc:creator>
+        <guid isPermaLink="true"><![CDATA[http://npmawesome.com/posts/2014-04-03-links]]></guid>
+        <pubDate><![CDATA[Fri, 04 Apr 2014 03:00:00 GMT]]></pubDate>
+        <description><![CDATA[<h2 id="npm-inc">NPM Inc</h2>
+<ul>
+<li><a href="http://blog.npmjs.org/post/80997676347/nebulous-profit-meditations">Nebulous Profit Meditations</a></li>
+<li><a href="http://blog.modulus.io/isaac-interview">Meet the face behind NPM</a></li>
+</ul>
+<h2 id="apps">Apps</h2>
+<ul>
+<li><a href="http://koala-app.com/">Koala</a> is a GUI application for Less, Sass, Compass and CoffeeScript compilation, to help web developers to use them more efficiently. Koala can run in windows, linux and mac.</li>
+<li><a href="http://zedapp.org/">Zed</a> is a fully offline-capable, open source, keyboard-focused, Chrome-based text and code editor you can use to edit local files as well as remote files on any server.</li>
+</ul>
+<h2 id="articles-slides">Articles &amp; Slides</h2>
+<ul>
+<li><a href="https://speakerdeck.com/ckarande/top-overlooked-security-threats-to-node-dot-js-web-applications">Top Overlooked Security Threats to Node.js Web Applications</a></li>
+<li><a href="http://www.sitepoint.com/testing-across-node-js-versions-using-docker/">Testing Across Node.js Versions Using Docker</a></li>
+<li><a href="https://www.codefellows.org/blogs/complete-list-of-javascript-tools">A List of Foundational JavaScript Tools</a></li>
+</ul>
+<h2 id="github">GitHub</h2>
+<ul>
+<li><a href="https://github.com/ShiftForward/mucuchies">mucuchies</a> - A neat looking pluggable client-side dashboard.</li>
+<li><a href="https://github.com/wagerfield/parallax">parallax</a> - Parallax Engine that reacts to the orientation of a smart device.</li>
+<li><a href="https://github.com/soygul/koan">KOAN</a> stack (Koa, Angular, Node, Mongo, WebSockets) for real-time full-stack JavaScript web development.</li>
+</ul>
+<h2 id="misc">Misc</h2>
+<ul>
+<li><a href="https://developer.forecast.io/docs/v2">forecast.io weather API</a> is open and has a pretty high free rate limit.</li>
+<li><a href="https://www.crypto101.io/">Crypto 101</a> is an introductory course on cryptography, freely available for programmers of all ages and skill levels.</li>
+<li><a href="http://www.gitbook.io/">GitBook</a> is a webapp to build beautiful programming books and exercises using GitHub/Git and Markdown.</li>
+</ul>
 ]]></description>
       </item>
     
