@@ -5,7 +5,7 @@
 	<link href="http://npmawesome.com/atom.xml" rel="self" />
 	<link href="http://npmawesome.com" />
 	<id>http://npmawesome.com</id>
-	<updated>2014-04-09T22:22:46.013Z</updated>
+	<updated>2014-04-10T17:15:06.376Z</updated>
 	<author>
 		<name>Alex Gorbatchev</name>
 	</author>
@@ -13,6 +13,45 @@
   
   
   
+    
+    
+    
+		<entry>
+			<title>shmock</title>
+			<link href="http://npmawesome.com/posts/2014-04-10-shmock"/>
+			<updated>2014-04-10T16:45:06.000Z</updated>
+			<id>http://npmawesome.com/posts/2014-04-10-shmock</id>
+			<content type="html">&lt;p&gt;&lt;img class=&quot;hide-on-mobile&quot; src=&quot;https://avatars0.githubusercontent.com/u/139687?s=400&quot; style=&quot;float: right; margin-left: 1em; width: 100px&quot;/&gt;
+&lt;a href=&quot;https://github.com/xetorthio/shmock&quot;&gt;shmock&lt;/a&gt; is a module by &lt;a href=&quot;https://github.com/xetorthio&quot;&gt;Jonathan Leibiusky&lt;/a&gt; provides a super nice API, like the one of &lt;a href=&quot;https://github.com/visionmedia/superagent&quot;&gt;superagent&lt;/a&gt; but it creates a real http server (using &lt;a href=&quot;https://github.com/visionmedia/express&quot;&gt;express&lt;/a&gt;). The nice thing about this is that you don&amp;#39;t really care about the implementation, which http client is being used, or even if nodes native http api changes.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;npm install shmock
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&quot;usage&quot;&gt;Usage&lt;/h2&gt;
+&lt;pre&gt;&lt;code&gt;var
+  shmock = require(&amp;#39;shmock&amp;#39;),
+  request = require(&amp;#39;request&amp;#39;),
+  assert = require(&amp;#39;assert&amp;#39;)
+  ;
+
+var mock = shmock(9000);
+
+mock
+  .get(&amp;#39;/foo&amp;#39;)
+  .query(&amp;#39;a=1&amp;amp;b=2&amp;#39;)
+  .reply(200, &amp;#39;Hello npmawesome.com&amp;#39;)
+  ;
+
+request(&amp;quot;http://localhost:9000/foo?b=2&amp;amp;a=1&amp;quot;, function(err, response) {
+  assert.equal(response.statusCode, 200);
+  assert.equal(response.body, &amp;#39;Hello npmawesome.com&amp;#39;);
+  mock.close();
+
+  console.log(&amp;#39;It worked!&amp;#39;);
+});
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Checkout &lt;a href=&quot;http://runnable.com/U0bPQd2Mi8VtE_Vi/shmock-example-for-node-js-and-npmawesome&quot;&gt;runnable example&lt;/a&gt;.&lt;/p&gt;
+&lt;h2 id=&quot;closing-thoughts&quot;&gt;Closing Thoughts&lt;/h2&gt;
+&lt;p&gt;Being able to mock APIs is a very powerful tool for &lt;a href=&quot;http://en.wikipedia.org/wiki/Behavior-driven_development&quot;&gt;BDD&lt;/a&gt;. You can prototype, design and test your consumer before implementing a line of code. Check out &lt;a href=&quot;https://github.com/xetorthio/shmock&quot;&gt;shmock&lt;/a&gt; github page for full documentation and test for examples of usage.&lt;/p&gt;
+</content>
+		</entry>
+	
     
     
     
@@ -49,6 +88,8 @@
 </content>
 		</entry>
 	
+    
+    
     
     
     
@@ -239,67 +280,6 @@ req
 &lt;/ul&gt;
 &lt;h2 id=&quot;closing-thoughts&quot;&gt;Closing thoughts&lt;/h2&gt;
 &lt;p&gt;It&amp;#39;s really cool to see a CLI application giving meaningful progress feedback. Please don&amp;#39;t forget about user experience when building tools.&lt;/p&gt;
-</content>
-		</entry>
-	
-    
-    
-    
-		<entry>
-			<title>slate-irc</title>
-			<link href="http://npmawesome.com/posts/2014-04-04-slate-irc"/>
-			<updated>2014-04-04T13:43:39.000Z</updated>
-			<id>http://npmawesome.com/posts/2014-04-04-slate-irc</id>
-			<content type="html">&lt;p&gt;&lt;img class=&quot;hide-on-mobile&quot; src=&quot;https://avatars2.githubusercontent.com/u/25254&quot; style=&quot;float: right; margin-left: 1em; width: 100px&quot;/&gt;
-&lt;a href=&quot;https://github.com/slate/slate-irc&quot;&gt;slate-irc&lt;/a&gt; is a module by &lt;a href=&quot;https://github.com/visionmedia&quot;&gt;TJ Holowaychuk&lt;/a&gt; that part of the recently released open source IRC client called &lt;a href=&quot;https://github.com/slate/slate&quot;&gt;Slate&lt;/a&gt; and is a general purpose IRC client with simple plugin system.&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;npm install slate-irc
-&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&quot;usage&quot;&gt;Usage&lt;/h2&gt;
-&lt;pre&gt;&lt;code&gt;var irc = require(&amp;#39;slate-irc&amp;#39;);
-var net = require(&amp;#39;net&amp;#39;);
-
-var stream = net.connect({
-  port: 6667,
-  host: &amp;#39;irc.freenode.org&amp;#39;
-});
-
-var client = irc(stream);
-
-client.on(&amp;#39;notice&amp;#39;, function(notice) {
-  console.log(notice.message);
-});
-
-client.nick(&amp;#39;npmawesome-test&amp;#39;);
-client.user(&amp;#39;npmawesome-test&amp;#39;, &amp;#39;Alex Gorbatchev&amp;#39;);
-client.join(&amp;#39;#flood&amp;#39;);
-
-client.names(&amp;#39;#flood&amp;#39;, function(err, names) {
-  if (err) throw err;
-
-  names.sort();
-  console.log(names.join(&amp;#39;\n&amp;#39;));
-
-  client.quit();
-});
-&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&quot;plugins&quot;&gt;Plugins&lt;/h2&gt;
-&lt;p&gt;Plugins are simply functions that accept the IRC client as an argument. With this you can define methods, listen on events and interact with the client. For example here&amp;#39;s a logger plugin that outputs to stdout:&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;function logger() {
-  return function(irc) {
-    irc.stream.pipe(process.stdout);
-  }
-}
-
-client.use(logger());
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Here&amp;#39;s a slightly more complex example of a PONG plugin responding to PING messages:&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;function pong() {
-  return function(irc) {
-    irc.on(&amp;#39;data&amp;#39;, function(msg) {
-      if (&amp;#39;PING&amp;#39; === msg.command)
-        irc.write(&amp;#39;PONG :&amp;#39; + msg.trailing);
-    });
-  }
-}
-&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&quot;closing-thoughts&quot;&gt;Closing Thoughts&lt;/h2&gt;
-&lt;p&gt;&lt;a href=&quot;https://github.com/slate/slate-irc&quot;&gt;slate-irc&lt;/a&gt; can serve as a core of a regular IRC client or you can write an IRC bot for your team chat. Checkout the &lt;a href=&quot;https://github.com/slate/slate-irc&quot;&gt;github page&lt;/a&gt; for full documentation.&lt;/p&gt;
 </content>
 		</entry>
 	

@@ -1,0 +1,65 @@
+Lets continue building out awesome CLI (command line interface) tool. Previously we have discussed how to [take in command line arguments][1], [output tabular data][2] and [display progress of long running tasks][3].
+
+<img class="hide-on-mobile" src="https://avatars2.githubusercontent.com/u/12631?s=400" style="float: right; margin-left: 1em; width: 100px;"/>
+Prompting a user with options and asking to pick one is a fairly common scenario. Most of the time you get to read the options and press associated key. That works, but we are human and like pretty interfaces. Same thing can be achieved with a common menu interface. This is where <%- @npm() %> by <%- @author() %> comes in.
+
+    <%- @install() %>
+
+## Features
+
+There are a few options available to customize the menu such as:
+
+* Background color
+* Foreground color
+* Position
+* Width
+* Padding
+
+## Usage
+
+    var terminalMenu = require('terminal-menu');
+
+    var menu = terminalMenu({
+      width: 60,
+      x: 4,
+      y: 2
+    });
+
+    menu.reset();
+    menu.write('Recently on our blog\n');
+    menu.write('-------------------------\n');
+
+    menu.add('How to setup a multi-user Ghost blog');
+    menu.add('Patched PaaS Vulnerability');
+    menu.add('npmawesome: Progress reporting in CLI applications');
+    menu.add('Improved SSL experience for private npm');
+    menu.add('npmawesome: Table formatting in the terminal with...');
+
+    menu.on('select', function (label, index) {
+      menu.close();
+      console.log('You selected:');
+      console.log(index, label);
+    });
+
+    menu.createStream().pipe(process.stdout);
+
+<div style="padding: 13px 10px 10px; background: black; text-align: center; border-radius: 3px"><img src="<%- @image '/terminal-menu/terminal-menu01.gif' %>"/></div>
+
+Check out interactive example on [runnable](http://runnable.com/U0YDx3Bx9a1ntoDb/terminal-menu-example-for-npm-awesome-nodejitsu-node-js-and-cli).
+
+## Other modules to checkout
+
+Generally there is a list of alternative modules here, but as strange as it sounds, I couldn't find any. If you know of one, please drop us a line.
+
+## Closing thoughts
+
+Over the last couple of CLI related posts we've progressively been improving user experience of our terminal application. I feel that you can never spend too much time doing this, but you can definetely spend too little. I love little things that feel good. <%- @npm() %> was created for [stream-adventure], an educational terminal based stream adventure game for Node.js and [stream-adventure] in turn inspired [browser based version](http://nodestreams.com/) written by John Resig of the jQuery fame. Both are pretty cool and fun!
+
+<blockquote class="twitter-tweet" lang="en"><p>everybody going to nodeconf should make sure to npm install -g stream-adventure</p>&mdash; James Halliday (@substack) <a href="https://twitter.com/substack/statuses/350097531730006017">June 27, 2013</a></blockquote>
+
+<blockquote class="twitter-tweet" lang="en"><p><a href="https://twitter.com/maxogden">@maxogden</a> <a href="https://twitter.com/substack">@substack</a> Would love your feedback on <a href="http://t.co/PX0oG8CtB7">http://t.co/PX0oG8CtB7</a> was inspired by stream adventure! More info: <a href="http://t.co/c1eQGB53Lm">http://t.co/c1eQGB53Lm</a></p>&mdash; John Resig (@jeresig) <a href="https://twitter.com/jeresig/statuses/401419183230951424">November 15, 2013</a></blockquote>
+
+[1]: /npmawesome-parsing-command-line-options-with-yargs/
+[2]: /npmawesome-table-formatting-in-the-terminal-with-cli-tables/
+[3]: /npmawesome-progress-reporting-in-cli-applications/
+[stream-adventure]: https://github.com/substack/stream-adventure

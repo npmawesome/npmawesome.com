@@ -15,15 +15,55 @@
     <atom:link href="http://feeds.feedburner.com/npmawesome" rel="self" type="application/rss+xml"/>
     <link>http://npmawesome.com</link>
     <description>Daily dose of awesome NPM modules for Node.js, old and new!</description>
-    <lastBuildDate>Wed, 09 Apr 2014 22:22:46 GMT</lastBuildDate>
+    <lastBuildDate>Thu, 10 Apr 2014 17:15:06 GMT</lastBuildDate>
     <language>en</language>
     <sy:updatePeriod>daily</sy:updatePeriod>
     <sy:updateFrequency>2</sy:updateFrequency>
     <generator>awesomeness</generator>
-    <pubDate>Wed, 09 Apr 2014 22:22:46 GMT</pubDate>
+    <pubDate>Thu, 10 Apr 2014 17:15:06 GMT</pubDate>
 
     
     
+    
+      
+      
+      
+      <item>
+        <title><![CDATA[shmock]]></title>
+        <link><![CDATA[http://npmawesome.com/posts/2014-04-10-shmock]]></link>
+        <dc:creator><![CDATA[Alex Gorbatchev]]></dc:creator>
+        <guid isPermaLink="true"><![CDATA[http://npmawesome.com/posts/2014-04-10-shmock]]></guid>
+        <pubDate><![CDATA[Thu, 10 Apr 2014 16:45:06 GMT]]></pubDate>
+        <description><![CDATA[<p><img class="hide-on-mobile" src="https://avatars0.githubusercontent.com/u/139687?s=400" style="float: right; margin-left: 1em; width: 100px"/>
+<a href="https://github.com/xetorthio/shmock">shmock</a> is a module by <a href="https://github.com/xetorthio">Jonathan Leibiusky</a> provides a super nice API, like the one of <a href="https://github.com/visionmedia/superagent">superagent</a> but it creates a real http server (using <a href="https://github.com/visionmedia/express">express</a>). The nice thing about this is that you don&#39;t really care about the implementation, which http client is being used, or even if nodes native http api changes.</p>
+<pre><code>npm install shmock
+</code></pre><h2 id="usage">Usage</h2>
+<pre><code>var
+  shmock = require(&#39;shmock&#39;),
+  request = require(&#39;request&#39;),
+  assert = require(&#39;assert&#39;)
+  ;
+
+var mock = shmock(9000);
+
+mock
+  .get(&#39;/foo&#39;)
+  .query(&#39;a=1&amp;b=2&#39;)
+  .reply(200, &#39;Hello npmawesome.com&#39;)
+  ;
+
+request(&quot;http://localhost:9000/foo?b=2&amp;a=1&quot;, function(err, response) {
+  assert.equal(response.statusCode, 200);
+  assert.equal(response.body, &#39;Hello npmawesome.com&#39;);
+  mock.close();
+
+  console.log(&#39;It worked!&#39;);
+});
+</code></pre><p>Checkout <a href="http://runnable.com/U0bPQd2Mi8VtE_Vi/shmock-example-for-node-js-and-npmawesome">runnable example</a>.</p>
+<h2 id="closing-thoughts">Closing Thoughts</h2>
+<p>Being able to mock APIs is a very powerful tool for <a href="http://en.wikipedia.org/wiki/Behavior-driven_development">BDD</a>. You can prototype, design and test your consumer before implementing a line of code. Check out <a href="https://github.com/xetorthio/shmock">shmock</a> github page for full documentation and test for examples of usage.</p>
+]]></description>
+      </item>
     
       
       
@@ -62,6 +102,8 @@
 ]]></description>
       </item>
     
+      
+      
       
       
       
@@ -255,68 +297,6 @@ req
 </ul>
 <h2 id="closing-thoughts">Closing thoughts</h2>
 <p>It&#39;s really cool to see a CLI application giving meaningful progress feedback. Please don&#39;t forget about user experience when building tools.</p>
-]]></description>
-      </item>
-    
-      
-      
-      
-      <item>
-        <title><![CDATA[slate-irc]]></title>
-        <link><![CDATA[http://npmawesome.com/posts/2014-04-04-slate-irc]]></link>
-        <dc:creator><![CDATA[Alex Gorbatchev]]></dc:creator>
-        <guid isPermaLink="true"><![CDATA[http://npmawesome.com/posts/2014-04-04-slate-irc]]></guid>
-        <pubDate><![CDATA[Fri, 04 Apr 2014 13:43:39 GMT]]></pubDate>
-        <description><![CDATA[<p><img class="hide-on-mobile" src="https://avatars2.githubusercontent.com/u/25254" style="float: right; margin-left: 1em; width: 100px"/>
-<a href="https://github.com/slate/slate-irc">slate-irc</a> is a module by <a href="https://github.com/visionmedia">TJ Holowaychuk</a> that part of the recently released open source IRC client called <a href="https://github.com/slate/slate">Slate</a> and is a general purpose IRC client with simple plugin system.</p>
-<pre><code>npm install slate-irc
-</code></pre><h2 id="usage">Usage</h2>
-<pre><code>var irc = require(&#39;slate-irc&#39;);
-var net = require(&#39;net&#39;);
-
-var stream = net.connect({
-  port: 6667,
-  host: &#39;irc.freenode.org&#39;
-});
-
-var client = irc(stream);
-
-client.on(&#39;notice&#39;, function(notice) {
-  console.log(notice.message);
-});
-
-client.nick(&#39;npmawesome-test&#39;);
-client.user(&#39;npmawesome-test&#39;, &#39;Alex Gorbatchev&#39;);
-client.join(&#39;#flood&#39;);
-
-client.names(&#39;#flood&#39;, function(err, names) {
-  if (err) throw err;
-
-  names.sort();
-  console.log(names.join(&#39;\n&#39;));
-
-  client.quit();
-});
-</code></pre><h2 id="plugins">Plugins</h2>
-<p>Plugins are simply functions that accept the IRC client as an argument. With this you can define methods, listen on events and interact with the client. For example here&#39;s a logger plugin that outputs to stdout:</p>
-<pre><code>function logger() {
-  return function(irc) {
-    irc.stream.pipe(process.stdout);
-  }
-}
-
-client.use(logger());
-</code></pre><p>Here&#39;s a slightly more complex example of a PONG plugin responding to PING messages:</p>
-<pre><code>function pong() {
-  return function(irc) {
-    irc.on(&#39;data&#39;, function(msg) {
-      if (&#39;PING&#39; === msg.command)
-        irc.write(&#39;PONG :&#39; + msg.trailing);
-    });
-  }
-}
-</code></pre><h2 id="closing-thoughts">Closing Thoughts</h2>
-<p><a href="https://github.com/slate/slate-irc">slate-irc</a> can serve as a core of a regular IRC client or you can write an IRC bot for your team chat. Checkout the <a href="https://github.com/slate/slate-irc">github page</a> for full documentation.</p>
 ]]></description>
       </item>
     
