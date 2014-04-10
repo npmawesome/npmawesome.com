@@ -1,0 +1,52 @@
+---
+date: 2014-04-10T09:45:06-0700
+title: Links for Apr 8, 2014
+layout: post
+tags: npm, testing, api
+
+npm:
+  repo: &repo xetorthio/shmock
+  name: &name shmock
+
+  author:
+    name: Jonathan Leibiusky
+    github: xetorthio
+
+slug: *name
+title: *name
+description: General purpose IRC client with simple plugin system.
+---
+<img class="hide-on-mobile" src="https://avatars0.githubusercontent.com/u/139687?s=400" style="float: right; margin-left: 1em; width: 100px"/>
+<%- @npm() %> is a module by <%- @author() %> provides a super nice API, like the one of [superagent](https://github.com/visionmedia/superagent) but it creates a real http server (using [express](https://github.com/visionmedia/express)). The nice thing about this is that you don't really care about the implementation, which http client is being used, or even if nodes native http api changes.
+
+    <%- @install() %>
+
+## Usage
+
+    var
+      shmock = require('shmock'),
+      request = require('request'),
+      assert = require('assert')
+      ;
+
+    var mock = shmock(9000);
+
+    mock
+      .get('/foo')
+      .query('a=1&b=2')
+      .reply(200, 'Hello npmawesome.com')
+      ;
+
+    request("http://localhost:9000/foo?b=2&a=1", function(err, response) {
+      assert.equal(response.statusCode, 200);
+      assert.equal(response.body, 'Hello npmawesome.com');
+      mock.close();
+
+      console.log('It worked!');
+    });
+
+Checkout [runnable example](http://runnable.com/U0bPQd2Mi8VtE_Vi/shmock-example-for-node-js-and-npmawesome).
+
+## Closing Thoughts
+
+Being able to mock APIs is a very powerful tool for [BDD](http://en.wikipedia.org/wiki/Behavior-driven_development). You can prototype, design and test your consumer before implementing a line of code. Check out <%- @npm() %> github page for full documentation and test for examples of usage.

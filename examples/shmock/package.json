@@ -1,0 +1,11 @@
+{
+  "name": "npmawesome-shmock",
+  "author": "Alex Gorbatchev",
+  "version": "1.0.0",
+  "dependencies": {
+    "shmock": "~0.6.0",
+    "request": "~2.34.0",
+    "supertest": "~0.10.0"
+  },
+  "engine": "node 0.10.x"
+}
