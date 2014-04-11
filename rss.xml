@@ -15,15 +15,68 @@
     <atom:link href="http://feeds.feedburner.com/npmawesome" rel="self" type="application/rss+xml"/>
     <link>http://npmawesome.com</link>
     <description>Daily dose of awesome NPM modules for Node.js, old and new!</description>
-    <lastBuildDate>Thu, 10 Apr 2014 17:15:06 GMT</lastBuildDate>
+    <lastBuildDate>Fri, 11 Apr 2014 16:53:27 GMT</lastBuildDate>
     <language>en</language>
     <sy:updatePeriod>daily</sy:updatePeriod>
     <sy:updateFrequency>2</sy:updateFrequency>
     <generator>awesomeness</generator>
-    <pubDate>Thu, 10 Apr 2014 17:15:06 GMT</pubDate>
+    <pubDate>Fri, 11 Apr 2014 16:53:27 GMT</pubDate>
 
     
     
+    
+      
+      
+      
+      <item>
+        <title><![CDATA[Links for Apr 10, 2014]]></title>
+        <link><![CDATA[http://npmawesome.com/posts/2014-04-11-links]]></link>
+        <dc:creator><![CDATA[Alex Gorbatchev]]></dc:creator>
+        <guid isPermaLink="true"><![CDATA[http://npmawesome.com/posts/2014-04-11-links]]></guid>
+        <pubDate><![CDATA[Sat, 12 Apr 2014 03:00:00 GMT]]></pubDate>
+        <description><![CDATA[<h2 id="articles-slides">Articles &amp; Slides</h2>
+<ul>
+<li><p><a href="http://ejohn.org/blog/write-code-every-day/">Write Code Every Day</a></p>
+<blockquote>
+<p>Minimum viable code. I was forced to write code for no less than 30 minutes a day. (It’s really hard to write meaningful code in less time, especially after remembering where you left off the day before.) Some week days I work a little bit more (usually no more than an hour) and on weekends I’m sometimes able to work a full day.</p>
+</blockquote>
+</li>
+<li><p><a href="http://hmarr.com/2013/oct/16/codecube-runnable-gists/">Docker-powered Runnable Gists</a></p>
+<blockquote>
+<p>There are a number of ways of achieving each of these objectives (virtual machines, chroot, cgroups, etc), but Docker emerged as a pretty great solution that covers each of the points mentioned. Built on LXC and cgroups, it enables creation and teardown of relatively secure sandboxed environments in a fraction of a second. Each time a code snippet is run, a docker container can be created, started, used to run the untrusted code, then killed and destroyed. It’s incredible that all this can happen in a matter of milliseconds.</p>
+</blockquote>
+</li>
+<li><p><a href="http://blog.dcxn.com/2013/10/27/js-everywhere-my-first-conference-talk/">JS Everywhere - My First Conference Talk</a></p>
+<blockquote>
+<p>I started working on this 15-minute talk about a month ago and that felt like the right amount of time. The talk went through several incarnations as I got feedback from a number of different people. Fairly early on I knew that I wanted to argue that code is fashion but in early talks, someone pointed out to me that I was really saying that fashion is nothing but fads. That was great feedback and because I still had quite a bit of time I was able to think about it and come to a better understanding of what fashion means to me.</p>
+</blockquote>
+</li>
+<li><p><a href="http://strongloop.com/strongblog/whats-new-nodejs-v0-12-debugging-clusters/">Debugging Clustered Apps with Node-Inspector</a></p>
+<blockquote>
+<p>Debugging a clustered Node application is not without some idiosyncrasies, particularly if you are running Node v0.10. But, it does work well enough if you understand what’s going on behind the scenes. Now, before you embark on this debugging adventure, you should probably ask yourself, “Can I run my app un-clustered and debug it in that mode or is the issue I am trying to track down, only seen when running my app in a clustered configuration?”</p>
+</blockquote>
+</li>
+<li><p><a href="http://www.quora.com/Time-Travel/Why-are-people-from-the-future-not-time-traveling-to-our-period">Why are people from the future not time traveling to our period?</a></p>
+<blockquote>
+<p><img src="http://qph.is.quoracdn.net/main-qimg-aff38ac936d19039781773b5bdbac2d4?convert_to_webp=true" alt=""></p>
+<p>So the likely reason that time travelers from the future aren&#39;t visiting our period is (other than time travel perhaps being physically impossible) that we&#39;re just not that interesting, and we&#39;re not really that large.  It&#39;s only temporal-centric egotism that makes us believe otherwise.</p>
+</blockquote>
+</li>
+<li><p><a href="http://javascriptjabber.com/103-jsj-robots-with-raquel-velez/">JSJ Robots with Raquel Vélez Podcast</a></p>
+</li>
+</ul>
+<h2 id="github">GitHub</h2>
+<ul>
+<li><a href="https://kiwiirc.com">Kiwi IRC</a> makes Web IRC easy. A hand-crafted IRC client that you canenjoy. Designed to be used easily and freely.</li>
+<li><a href="https://github.com/famous/famous">Famo.us</a> provides a powerful JavaScript framework and developer tools designed to build rich, fast web applications. Famo.us takes an opinionated approach to developing with web technology, maintaining tight control of rendering to achieve maximum UI performance. Check out the <a href="http://demo.famo.us/">demos</a>.</li>
+</ul>
+<h2 id="twitter">Twitter</h2>
+<blockquote class="twitter-tweet"><p>You should write code every day: <a href="http://t.co/M0MmaZn15O">http://t.co/M0MmaZn15O</a></p>&mdash; John Resig (@jeresig) <a href="https://twitter.com/jeresig/statuses/454325606432645120">April 10, 2014</a></blockquote>
+
+<blockquote class="twitter-tweet"><p>JavaScript robots and other topics: <a href="https://twitter.com/rockbot">@rockbot</a> interviewed by <a href="https://twitter.com/JSJabber">@JSJabber</a> <a href="http://t.co/lt3ZTCyfZe">http://t.co/lt3ZTCyfZe</a></p>&mdash; Technical Machine (@technicalhumans) <a href="https://twitter.com/technicalhumans/statuses/454320117682569216">April 10, 2014</a></blockquote>
+
+<blockquote class="twitter-tweet"><p>Design strategies for JavaScript API: <a href="http://t.co/gkcZGtnFj3">http://t.co/gkcZGtnFj3</a> - great tips by <a href="https://twitter.com/AriyaHidayat">@AriyaHidayat</a>!</p>&mdash; Ilya Grigorik (@igrigorik) <a href="https://twitter.com/igrigorik/statuses/454357649178390528">April 10, 2014</a></blockquote>]]></description>
+      </item>
     
       
       
@@ -203,101 +256,6 @@ request(&quot;http://localhost:9000/foo?b=2&amp;a=1&quot;, function(err, respons
 <blockquote class="twitter-tweet" data-cards="hidden"><p>If you want a super pimped VM with linux kernel upgraded and easy <a href="https://twitter.com/search?q=%23docker&amp;src=hash">#docker</a> install, you are welcome:&#10;<a href="https://t.co/53GaGshUXs">https://t.co/53GaGshUXs</a></p>&mdash; Thorsten Lorenz (@thlorenz) <a href="https://twitter.com/thlorenz/statuses/452149651723264001">April 4, 2014</a></blockquote>
 
 <blockquote class="twitter-tweet"><p>Never thought I&#39;d say this, but CoffeeScript is quite nice</p>&mdash; David Tang (@skaterdav85) <a href="https://twitter.com/skaterdav85/statuses/452121943496347648">April 4, 2014</a></blockquote>]]></description>
-      </item>
-    
-      
-      
-      
-      <item>
-        <title><![CDATA[progress]]></title>
-        <link><![CDATA[http://npmawesome.com/posts/2014-04-04-progress]]></link>
-        <dc:creator><![CDATA[Alex Gorbatchev]]></dc:creator>
-        <guid isPermaLink="true"><![CDATA[http://npmawesome.com/posts/2014-04-04-progress]]></guid>
-        <pubDate><![CDATA[Fri, 04 Apr 2014 18:25:57 GMT]]></pubDate>
-        <description><![CDATA[<p>Lets talk about long running CLI (command line interface) applications. When you have a finite process that is expected to take some time, the best thing to do is to let your users know about it. A typical application that for example downloads a file might look like this</p>
-<pre><code>var
-  request = require(&#39;request&#39;),
-  fs = require(&#39;fs&#39;)
-  ;
-
-process.stdout.write(&#39;Downloading... &#39;);
-
-request(&#39;http://nodejs.org/dist/node-0.0.1.tar.gz&#39;)
-  .pipe(fs.createWriteStream(__dirname + &#39;/node.tar.gz&#39;))
-  .on(&#39;close&#39;, function (err) {
-    process.stdout.write(&#39;done!\n&#39;);
-  });
-</code></pre><p>The user experience is hardly a great one. It&#39;s clear that something is happening, or at least expected to be happening.</p>
-<div style="padding: 13px 10px 10px; background: black; text-align: center; border-radius: 3px"><img src="http://npmawesome.com/images/posts//progress/progress01.gif"/></div>
-
-<p>It&#39;s not really clear if it&#39;s still happening. Is it time for <code>ctrl+c</code> yet? How about an indicator that something is actually going on?</p>
-<pre><code>process.stdout.write(&#39;Downloading...&#39;);
-intervalId = setInterval(function() { process.stdout.write(&#39;.&#39;); }, 1000);
-
-request(&#39;http://nodejs.org/dist/node-0.0.1.tar.gz&#39;)
-  .pipe(fs.createWriteStream(__dirname + &#39;/node.tar.gz&#39;))
-  .on(&#39;close&#39;, function (err) {
-    process.stdout.write(&#39; done!\n&#39;);
-    clearInterval(intervalId);
-  });
-</code></pre><div style="padding: 13px 10px 10px; background: black; text-align: center; border-radius: 3px"><img src="http://npmawesome.com/images/posts//progress/progress02.gif"/></div>
-
-<p><img class="hide-on-mobile" src="https://avatars2.githubusercontent.com/u/25254" style="float: right; margin-left: 1em; width: 100px"/>
-A little better. But still, there&#39;s no way of telling how long the process will actually take. Lets just do a real progress bar, shall we? This is where <a href="https://github.com/visionmedia/node-progress">progress</a> module that was originally started by <a href="https://github.com/visionmedia">TJ Holowaychuk</a> comes into play! Due to the awesomeness of open source, <a href="https://github.com/visionmedia/node-progress">progress</a> is now pretty much a community effort.</p>
-<pre><code>npm install progress
-</code></pre><h2 id="features">Features</h2>
-<p><a href="https://github.com/visionmedia/node-progress">progress</a> supports a wide range of options via the format string and options. In the end will get a good looking ASCII progress bar and that will let everyone know about the true progress in your CLI application.</p>
-<p>These are the tokens you can use to format your progress bar:</p>
-<ul>
-<li><code>:bar</code> the progress bar itself</li>
-<li><code>:current</code> current tick number</li>
-<li><code>:total</code> total ticks</li>
-<li><code>:elapsed</code> time elapsed in seconds</li>
-<li><code>:percent</code> completion percentage</li>
-<li><code>:eta</code> estimated completion time in seconds</li>
-</ul>
-<h2 id="usage">Usage</h2>
-<p>Lets modify our original example and put <a href="https://github.com/visionmedia/node-progress">progress</a> to a good use:</p>
-<pre><code>var
-  request = require(&#39;request&#39;),
-  ProgressBar = require(&#39;progress&#39;),
-  fs = require(&#39;fs&#39;)
-  ;
-
-var
-  req = request(&#39;http://nodejs.org/dist/node-0.0.1.tar.gz&#39;),
-  bar
-  ;
-
-req
-  .on(&#39;data&#39;, function (chunk) {
-    bar = bar || new ProgressBar(&#39;Downloading... [:bar] :percent :etas&#39;, {
-      complete: &#39;=&#39;,
-      incomplete: &#39; &#39;,
-      width: 25,
-      total: parseInt(req.response.headers[&#39;content-length&#39;])
-    });
-
-    bar.tick(chunk.length);
-  })
-  .pipe(fs.createWriteStream(__dirname + &#39;/node.tar.gz&#39;))
-  .on(&#39;close&#39;, function (err) {
-    bar.tick(bar.total - bar.curr);
-  })
-  ;
-</code></pre><div style="padding: 13px 10px 10px; background: black; text-align: center; border-radius: 3px"><img src="http://npmawesome.com/images/posts//progress/progress03.gif"/></div>
-
-<p>We even get ETA estimate for free. That&#39;s what I&#39;m talking about!</p>
-<h2 id="other-modules-to-checkout">Other modules to checkout</h2>
-<p>Here are a few other modules to check out:</p>
-<ul>
-<li><a href="https://github.com/jclulow/node-progbar">progbar</a> by <a href="https://github.com/jclulow">Joshua M. Clulow</a> is a straight up alternative.</li>
-<li><a href="https://github.com/bevry/progressbar">progressbar</a> by <a href="https://github.com/balupton">Benjamin Arthur Lupton</a> extends <a href="https://github.com/visionmedia/node-progress">progress</a> with chaining, domains, and steps.</li>
-<li><a href="https://github.com/Unitech/node-multimeter">pm2-multimeter</a> originally by <a href="https://github.com/substack">James Halliday</a> and now up kept by <a href="https://github.com/Unitech">Alexandre Strzelewicz</a> can display multiple progress bars at the same time.</li>
-</ul>
-<h2 id="closing-thoughts">Closing thoughts</h2>
-<p>It&#39;s really cool to see a CLI application giving meaningful progress feedback. Please don&#39;t forget about user experience when building tools.</p>
-]]></description>
       </item>
     
   </channel>
