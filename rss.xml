@@ -15,15 +15,51 @@
     <atom:link href="http://feeds.feedburner.com/npmawesome" rel="self" type="application/rss+xml"/>
     <link>http://npmawesome.com</link>
     <description>Daily dose of awesome NPM modules for Node.js, old and new!</description>
-    <lastBuildDate>Fri, 11 Apr 2014 16:53:27 GMT</lastBuildDate>
+    <lastBuildDate>Tue, 15 Apr 2014 16:53:37 GMT</lastBuildDate>
     <language>en</language>
     <sy:updatePeriod>daily</sy:updatePeriod>
     <sy:updateFrequency>2</sy:updateFrequency>
     <generator>awesomeness</generator>
-    <pubDate>Fri, 11 Apr 2014 16:53:27 GMT</pubDate>
+    <pubDate>Tue, 15 Apr 2014 16:53:37 GMT</pubDate>
 
     
     
+    
+      
+      
+      
+      <item>
+        <title><![CDATA[Links for Apr 15, 2014]]></title>
+        <link><![CDATA[http://npmawesome.com/posts/2014-04-15-links]]></link>
+        <dc:creator><![CDATA[Alex Gorbatchev]]></dc:creator>
+        <guid isPermaLink="true"><![CDATA[http://npmawesome.com/posts/2014-04-15-links]]></guid>
+        <pubDate><![CDATA[Wed, 16 Apr 2014 03:00:00 GMT]]></pubDate>
+        <description><![CDATA[<h2 id="articles-slides">Articles &amp; Slides</h2>
+<ul>
+<li><a href="http://scotch.io/bar-talk/expressjs-4-0-new-features-and-upgrading-from-3-0">ExpressJS 4.0: New Features and Upgrading from 3.0</a></li>
+<li><a href="https://github.com/visionmedia/express/wiki/Migrating-from-3.x-to-4.x">Express 3.x to 4.0 migration guide</a></li>
+<li><a href="http://www.2ality.com/2014/04/call-stack-size.html">The maximum call stack size</a></li>
+<li><p><a href="http://www.wired.com/2014/04/amazon-delivery-drones/">Jeff Bezos Says Amazon Is Seriously Serious About Drone Deliveries</a></p>
+<blockquote>
+<p>On a per customer basis, Prime members are ordering more items, across more categories, than ever before</p>
+</blockquote>
+<p>No kidding :) I basically buy everything on Amazon now.</p>
+</li>
+</ul>
+<h2 id="github">GitHub</h2>
+<ul>
+<li><a href="http://opensource.box.com/">Box &lt;3 Open Source</a>. Our open source projects represent the best of Box. They are all hosted on GitHub. We hope you&#39;ll find them helpful and we invite you to contribute.</li>
+<li><a href="https://github.com/Fluidbyte/avow-ci">Avow CI</a> is a simple yet powerful open-source CI system for individual developers, small teams and dev shops, specifically designed for JavaScript projects.</li>
+</ul>
+<h2 id="startups">Startups</h2>
+<ul>
+<li><a href="https://redpen.io">Red Pen</a> is the fastest feedback tool for visual teams.</li>
+</ul>
+<h2 id="twitter">Twitter</h2>
+<blockquote class="twitter-tweet"><p>BREAKING: NSA said to have used Heartbleed bug to gather intelligence for two years, reports Bloomberg. <a href="https://t.co/wbHhucX7Pq">https://t.co/wbHhucX7Pq</a></p>&mdash; EFF (@EFF) <a href="https://twitter.com/EFF/statuses/454699447797026816">April 11, 2014</a></blockquote>
+
+<blockquote class="twitter-tweet"><p>Talk to me, Twitter. <a href="http://t.co/7skFm6Ffhn">pic.twitter.com/7skFm6Ffhn</a></p>&mdash; Robert Downey Jr (@RobertDowneyJr) <a href="https://twitter.com/RobertDowneyJr/statuses/454733271650144256">April 11, 2014</a></blockquote>]]></description>
+      </item>
     
       
       
@@ -216,46 +252,6 @@ request(&quot;http://localhost:9000/foo?b=2&amp;a=1&quot;, function(err, respons
 <blockquote class="twitter-tweet"><p><a href="https://twitter.com/search?q=%23Trello&amp;src=hash">#Trello</a> is written in <a href="https://twitter.com/search?q=%23CoffeeScript&amp;src=hash">#CoffeeScript</a>!! Holy Fuck! That&#39;s amazing!!</p>&mdash; Juan Jose Ramirez U. (@whoisjuan) <a href="https://twitter.com/whoisjuan/statuses/453308127036047360">April 7, 2014</a></blockquote>
 
 <blockquote class="twitter-tweet"><p>CoffeeScript has “unless”? SOLD</p>&mdash; David R. Poindexter (@mtheoryx) <a href="https://twitter.com/mtheoryx/statuses/453260810731548672">April 7, 2014</a></blockquote>]]></description>
-      </item>
-    
-      
-      
-      
-      <item>
-        <title><![CDATA[Links for Apr 5, 2014]]></title>
-        <link><![CDATA[http://npmawesome.com/posts/2014-04-04-links]]></link>
-        <dc:creator><![CDATA[Alex Gorbatchev]]></dc:creator>
-        <guid isPermaLink="true"><![CDATA[http://npmawesome.com/posts/2014-04-04-links]]></guid>
-        <pubDate><![CDATA[Sat, 05 Apr 2014 03:00:00 GMT]]></pubDate>
-        <description><![CDATA[<h2 id="apps">Apps</h2>
-<ul>
-<li><a href="https://ghost.org">Ghost</a> is an Open Source application which allows you to write and publish your own blog, giving you the tools to make it easy and even fun to do. It&#39;s simple, elegant, and designed so that you can spend less time making your blog work and more time blogging.</li>
-</ul>
-<h2 id="articles-slides">Articles &amp; Slides</h2>
-<ul>
-<li><a href="http://strongloop.com/strongblog/practical-examples-of-the-new-node-js-streams-api/">Practical Examples of the New Node.js Streams API</a></li>
-<li><a href="http://strongloop.com/strongblog/how-to-compose-node-js-promises-with-q/">How-to Compose Node.js Promises with Q</a></li>
-</ul>
-<h2 id="github">GitHub</h2>
-<ul>
-<li><a href="http://kdzwinel.github.io/JS-OCR-demo/">JavaScript OCR demo</a></li>
-</ul>
-<h2 id="startups">Startups</h2>
-<ul>
-<li><a href="http://www.shyp.com/">Shyp</a> is the easiest way to ship anything.</li>
-<li><a href="https://www.spoonrocket.com/">Spoon Rocket</a> is the most convinient meal ever.</li>
-</ul>
-<h2 id="misc">Misc</h2>
-<ul>
-<li><a href="https://www.codeschool.com/courses#all">Code School Courses</a></li>
-<li><a href="https://www.kickstarter.com/projects/guardyen/metawear-production-ready-wearables-in-30-minutes">MetaWear: Production Ready Wearables in 30 Minutes or Less!</a></li>
-</ul>
-<h2 id="twitter">Twitter</h2>
-<blockquote class="twitter-tweet"><p>New <a href="https://twitter.com/search?q=%23npmawesome&amp;src=hash">#npmawesome</a> from <a href="https://twitter.com/alexgorbatchev">@alexgorbatchev</a>: &quot;Progress reporting in CLI applications&quot; || <a href="http://t.co/FymiGMBy3F">http://t.co/FymiGMBy3F</a></p>&mdash; Nodejitsu (@nodejitsu) <a href="https://twitter.com/nodejitsu/statuses/452163004638179328">April 4, 2014</a></blockquote>
-
-<blockquote class="twitter-tweet" data-cards="hidden"><p>If you want a super pimped VM with linux kernel upgraded and easy <a href="https://twitter.com/search?q=%23docker&amp;src=hash">#docker</a> install, you are welcome:&#10;<a href="https://t.co/53GaGshUXs">https://t.co/53GaGshUXs</a></p>&mdash; Thorsten Lorenz (@thlorenz) <a href="https://twitter.com/thlorenz/statuses/452149651723264001">April 4, 2014</a></blockquote>
-
-<blockquote class="twitter-tweet"><p>Never thought I&#39;d say this, but CoffeeScript is quite nice</p>&mdash; David Tang (@skaterdav85) <a href="https://twitter.com/skaterdav85/statuses/452121943496347648">April 4, 2014</a></blockquote>]]></description>
       </item>
     
   </channel>

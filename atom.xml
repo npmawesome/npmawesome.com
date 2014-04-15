@@ -5,7 +5,7 @@
 	<link href="http://npmawesome.com/atom.xml" rel="self" />
 	<link href="http://npmawesome.com" />
 	<id>http://npmawesome.com</id>
-	<updated>2014-04-11T16:53:27.683Z</updated>
+	<updated>2014-04-15T16:53:37.387Z</updated>
 	<author>
 		<name>Alex Gorbatchev</name>
 	</author>
@@ -13,6 +13,41 @@
   
   
   
+    
+    
+    
+		<entry>
+			<title>Links for Apr 15, 2014</title>
+			<link href="http://npmawesome.com/posts/2014-04-15-links"/>
+			<updated>2014-04-16T03:00:00.000Z</updated>
+			<id>http://npmawesome.com/posts/2014-04-15-links</id>
+			<content type="html">&lt;h2 id=&quot;articles-slides&quot;&gt;Articles &amp;amp; Slides&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;http://scotch.io/bar-talk/expressjs-4-0-new-features-and-upgrading-from-3-0&quot;&gt;ExpressJS 4.0: New Features and Upgrading from 3.0&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/visionmedia/express/wiki/Migrating-from-3.x-to-4.x&quot;&gt;Express 3.x to 4.0 migration guide&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://www.2ality.com/2014/04/call-stack-size.html&quot;&gt;The maximum call stack size&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a href=&quot;http://www.wired.com/2014/04/amazon-delivery-drones/&quot;&gt;Jeff Bezos Says Amazon Is Seriously Serious About Drone Deliveries&lt;/a&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;On a per customer basis, Prime members are ordering more items, across more categories, than ever before&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;No kidding :) I basically buy everything on Amazon now.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;github&quot;&gt;GitHub&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;http://opensource.box.com/&quot;&gt;Box &amp;lt;3 Open Source&lt;/a&gt;. Our open source projects represent the best of Box. They are all hosted on GitHub. We hope you&amp;#39;ll find them helpful and we invite you to contribute.&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/Fluidbyte/avow-ci&quot;&gt;Avow CI&lt;/a&gt; is a simple yet powerful open-source CI system for individual developers, small teams and dev shops, specifically designed for JavaScript projects.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;startups&quot;&gt;Startups&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://redpen.io&quot;&gt;Red Pen&lt;/a&gt; is the fastest feedback tool for visual teams.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;twitter&quot;&gt;Twitter&lt;/h2&gt;
+&lt;blockquote class=&quot;twitter-tweet&quot;&gt;&lt;p&gt;BREAKING: NSA said to have used Heartbleed bug to gather intelligence for two years, reports Bloomberg. &lt;a href=&quot;https://t.co/wbHhucX7Pq&quot;&gt;https://t.co/wbHhucX7Pq&lt;/a&gt;&lt;/p&gt;&amp;mdash; EFF (@EFF) &lt;a href=&quot;https://twitter.com/EFF/statuses/454699447797026816&quot;&gt;April 11, 2014&lt;/a&gt;&lt;/blockquote&gt;
+
+&lt;blockquote class=&quot;twitter-tweet&quot;&gt;&lt;p&gt;Talk to me, Twitter. &lt;a href=&quot;http://t.co/7skFm6Ffhn&quot;&gt;pic.twitter.com/7skFm6Ffhn&lt;/a&gt;&lt;/p&gt;&amp;mdash; Robert Downey Jr (@RobertDowneyJr) &lt;a href=&quot;https://twitter.com/RobertDowneyJr/statuses/454733271650144256&quot;&gt;April 11, 2014&lt;/a&gt;&lt;/blockquote&gt;</content>
+		</entry>
+	
     
     
     
@@ -200,45 +235,6 @@ request(&amp;quot;http://localhost:9000/foo?b=2&amp;amp;a=1&amp;quot;, function(
 &lt;blockquote class=&quot;twitter-tweet&quot;&gt;&lt;p&gt;&lt;a href=&quot;https://twitter.com/search?q=%23Trello&amp;amp;src=hash&quot;&gt;#Trello&lt;/a&gt; is written in &lt;a href=&quot;https://twitter.com/search?q=%23CoffeeScript&amp;amp;src=hash&quot;&gt;#CoffeeScript&lt;/a&gt;!! Holy Fuck! That&amp;#39;s amazing!!&lt;/p&gt;&amp;mdash; Juan Jose Ramirez U. (@whoisjuan) &lt;a href=&quot;https://twitter.com/whoisjuan/statuses/453308127036047360&quot;&gt;April 7, 2014&lt;/a&gt;&lt;/blockquote&gt;
 
 &lt;blockquote class=&quot;twitter-tweet&quot;&gt;&lt;p&gt;CoffeeScript has “unless”? SOLD&lt;/p&gt;&amp;mdash; David R. Poindexter (@mtheoryx) &lt;a href=&quot;https://twitter.com/mtheoryx/statuses/453260810731548672&quot;&gt;April 7, 2014&lt;/a&gt;&lt;/blockquote&gt;</content>
-		</entry>
-	
-    
-    
-    
-		<entry>
-			<title>Links for Apr 5, 2014</title>
-			<link href="http://npmawesome.com/posts/2014-04-04-links"/>
-			<updated>2014-04-05T03:00:00.000Z</updated>
-			<id>http://npmawesome.com/posts/2014-04-04-links</id>
-			<content type="html">&lt;h2 id=&quot;apps&quot;&gt;Apps&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://ghost.org&quot;&gt;Ghost&lt;/a&gt; is an Open Source application which allows you to write and publish your own blog, giving you the tools to make it easy and even fun to do. It&amp;#39;s simple, elegant, and designed so that you can spend less time making your blog work and more time blogging.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&quot;articles-slides&quot;&gt;Articles &amp;amp; Slides&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;http://strongloop.com/strongblog/practical-examples-of-the-new-node-js-streams-api/&quot;&gt;Practical Examples of the New Node.js Streams API&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://strongloop.com/strongblog/how-to-compose-node-js-promises-with-q/&quot;&gt;How-to Compose Node.js Promises with Q&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&quot;github&quot;&gt;GitHub&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;http://kdzwinel.github.io/JS-OCR-demo/&quot;&gt;JavaScript OCR demo&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&quot;startups&quot;&gt;Startups&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;http://www.shyp.com/&quot;&gt;Shyp&lt;/a&gt; is the easiest way to ship anything.&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://www.spoonrocket.com/&quot;&gt;Spoon Rocket&lt;/a&gt; is the most convinient meal ever.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&quot;misc&quot;&gt;Misc&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://www.codeschool.com/courses#all&quot;&gt;Code School Courses&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://www.kickstarter.com/projects/guardyen/metawear-production-ready-wearables-in-30-minutes&quot;&gt;MetaWear: Production Ready Wearables in 30 Minutes or Less!&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&quot;twitter&quot;&gt;Twitter&lt;/h2&gt;
-&lt;blockquote class=&quot;twitter-tweet&quot;&gt;&lt;p&gt;New &lt;a href=&quot;https://twitter.com/search?q=%23npmawesome&amp;amp;src=hash&quot;&gt;#npmawesome&lt;/a&gt; from &lt;a href=&quot;https://twitter.com/alexgorbatchev&quot;&gt;@alexgorbatchev&lt;/a&gt;: &amp;quot;Progress reporting in CLI applications&amp;quot; || &lt;a href=&quot;http://t.co/FymiGMBy3F&quot;&gt;http://t.co/FymiGMBy3F&lt;/a&gt;&lt;/p&gt;&amp;mdash; Nodejitsu (@nodejitsu) &lt;a href=&quot;https://twitter.com/nodejitsu/statuses/452163004638179328&quot;&gt;April 4, 2014&lt;/a&gt;&lt;/blockquote&gt;
-
-&lt;blockquote class=&quot;twitter-tweet&quot; data-cards=&quot;hidden&quot;&gt;&lt;p&gt;If you want a super pimped VM with linux kernel upgraded and easy &lt;a href=&quot;https://twitter.com/search?q=%23docker&amp;amp;src=hash&quot;&gt;#docker&lt;/a&gt; install, you are welcome:&amp;#10;&lt;a href=&quot;https://t.co/53GaGshUXs&quot;&gt;https://t.co/53GaGshUXs&lt;/a&gt;&lt;/p&gt;&amp;mdash; Thorsten Lorenz (@thlorenz) &lt;a href=&quot;https://twitter.com/thlorenz/statuses/452149651723264001&quot;&gt;April 4, 2014&lt;/a&gt;&lt;/blockquote&gt;
-
-&lt;blockquote class=&quot;twitter-tweet&quot;&gt;&lt;p&gt;Never thought I&amp;#39;d say this, but CoffeeScript is quite nice&lt;/p&gt;&amp;mdash; David Tang (@skaterdav85) &lt;a href=&quot;https://twitter.com/skaterdav85/statuses/452121943496347648&quot;&gt;April 4, 2014&lt;/a&gt;&lt;/blockquote&gt;</content>
 		</entry>
 	
 </feed>
