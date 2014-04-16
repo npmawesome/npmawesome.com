@@ -46,7 +46,7 @@ docpadConfig =
       @site.url + href
 
     image: (href) ->
-      @url "/images/posts/#{href}"
+      @url "/images/posts#{href}"
 
     pageTitle: ->
       title = @preparedTitle()
