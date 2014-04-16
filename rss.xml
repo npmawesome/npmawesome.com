@@ -15,15 +15,192 @@
     <atom:link href="http://feeds.feedburner.com/npmawesome" rel="self" type="application/rss+xml"/>
     <link>http://npmawesome.com</link>
     <description>Daily dose of awesome NPM modules for Node.js, old and new!</description>
-    <lastBuildDate>Tue, 15 Apr 2014 16:53:37 GMT</lastBuildDate>
+    <lastBuildDate>Wed, 16 Apr 2014 17:00:58 GMT</lastBuildDate>
     <language>en</language>
     <sy:updatePeriod>daily</sy:updatePeriod>
     <sy:updateFrequency>2</sy:updateFrequency>
     <generator>awesomeness</generator>
-    <pubDate>Tue, 15 Apr 2014 16:53:37 GMT</pubDate>
+    <pubDate>Wed, 16 Apr 2014 17:00:58 GMT</pubDate>
 
     
     
+    
+      
+      
+      
+      <item>
+        <title><![CDATA[Comparing Node.js Promises, Try/Catch, Angular Zone.js and yes, Zone]]></title>
+        <link><![CDATA[http://npmawesome.com/posts/2014-04-16-promises-trycatch-zones]]></link>
+        <dc:creator><![CDATA[Alex Gorbatchev]]></dc:creator>
+        <guid isPermaLink="true"><![CDATA[http://npmawesome.com/posts/2014-04-16-promises-trycatch-zones]]></guid>
+        <pubDate><![CDATA[Wed, 16 Apr 2014 17:01:54 GMT]]></pubDate>
+        <description><![CDATA[<h1 id="handling-errors-in-async-flow">Handling errors in async flow</h1>
+<p>In the <a href="http://strongloop.com/strongblog/node-js-callback-hell-promises-generators/">previous article</a> we&#39;ve talked about managing async flow and escaping the <a href="http://callbackhell.com/">callback hell</a>.</p>
+<h2 id="the-problem">The problem</h2>
+<p>Handling errors in asynchronous flow is pretty straightforward and easy. Handling errors in asynchronous flow in a clean and easy to follow manner - not so much.</p>
+<p>Lets look at the following code:</p>
+<pre><code>function updateDependencies(packageName, done) {
+  findPackage(packageName, function(err, content) {
+    if (err) {
+      done(err);
+    }
+    else {
+      try {
+        package = JSON.parse(content);
+      }
+      catch (e) {
+        done(e);
+      }
+
+      findDependencies(package, function(err, dependencies)) {
+        if (err) {
+          done(err);
+        }
+        else {
+          processDependencies(dependencies, function(err) {
+            if (err) {
+              done(err);
+            }
+            else {
+              done(null, dependencies);
+            }
+          });
+        }
+      });
+    }
+  });
+}
+</code></pre><p>We are covering all possible failure cases here using combination of <code>try/catch</code> and callback error handling, but boy do we repeat ourselves over and over again. Lets try and rewrite this!</p>
+<h2 id="error-handling-using-try-catch">Error handling using try/catch</h2>
+<pre><code>function updateDependencies(packageName, done) {
+  try {
+    findPackage(packageName, function(err, content) {
+      if (err) throw err;
+
+      findDependencies(JSON.parse(content), function(err, dependencies)) {
+        if (err) throw err;
+
+        processDependencies(dependencies, function(err) {
+          if (err) throw err;
+
+          done(null, dependencies);
+        });
+      });
+    });
+  } catch (e) {
+    done(e);
+  }
+}
+</code></pre><p>Nice! That&#39;s much better. However, if we run this now, no errors will be caught. What&#39;s going on here?</p>
+<p><code>try/catch</code> idiom works very well when you have fully synchronous code, but asynchronous operations render it useless.</p>
+<p>The outer <code>try/catch</code> block will never catch anything because <code>findPackage</code> is asynchronous. The function will begin its course while the outer stack runs through and gets to the last line without any errors.</p>
+<p>If an error occurs at some point in the future inside asynchronous <code>findPackage</code> - <strong>nothing will be caught</strong>.</p>
+<p><img src="http://npmawesome.com/images/posts/promises-trycatch-zones/catch-fail.gif"/></p>
+<p>Not useful.</p>
+<h2 id="error-handling-using-promises">Error handling using promises</h2>
+<p>In the <a href="http://strongloop.com/strongblog/node-js-callback-hell-promises-generators/">previous article</a> we&#39;ve talked about managing asynchronous flow and escaping the <a href="http://callbackhell.com/">callback hell</a> with promises. Lets put this promises to work here and rewrite this function.</p>
+<p>For the sake of moving forward quicker lets assume we are using <a href="https://github.com/petkaantonov/bluebird">Bluebird</a> promises library and that all our APIs now return promises instead of taking callbacks:</p>
+<pre><code>function updateDependencies(packageName) {
+  return findPackage(packageName)
+    .then(JSON.parse)
+    .then(findDependencies)
+    .then(processDependencies)
+    .then(res.send)
+    ;
+}
+</code></pre><p>Oh wow, that is so much nicer! Right? Right!</p>
+<p>But Alex, &quot;we&#39;ve lost our error handling&quot;, you might say. That&#39;s right, we don&#39;t need to do anything special here to propagate error because we return a promise and there&#39;s built in support for error flow. Lets see how error handling might look like with promises:</p>
+<pre><code>button.addEventListener(&quot;click&quot;, function() {
+  updateDependencies(&quot;packageName&quot;)
+    .then(function(dependencies) {
+      output.innerHTML = dependencies.join(&quot;\n&quot;);
+    })
+    .catch(function(err) {
+      output.innerHTML = &quot;There was an error&quot;;
+    });
+});
+</code></pre><p>Very slick, I&#39;m a fan!</p>
+<h2 id="error-using-zones">Error using Zones</h2>
+<p>Handling rejected promises works really well when we are in full control of the flow. But what happens if some third-party code throws an error during an asynchronous operation? Lets look at another example:</p>
+<pre><code>function thirdPartyFunction() {
+  function fakeXHR() {
+    throw new Error(&quot;Invalid dependencies&quot;);
+  }
+
+  setTimeout(fakeXHR, 100);
+}
+
+function main() {
+  button.on(&quot;click&quot;, function onClick() {
+    thirdPartyFunction();
+  });
+}
+
+main();
+</code></pre><p>In this case, we wouldn&#39;t have a chance to catch and process the error. Generally, the only recourse here is using half baked <code>window.onerror</code> that doesn&#39;t give you any stack information at all. At least you can log something, right? Not that there&#39;s much to log:</p>
+<pre><code>Uncaught Error: Invalid dependencies
+    fakeXHR
+</code></pre><p>Up until recently that was pretty much all we had. However, this january <a href="https://github.com/btford">Brian Ford</a> of the <a href="http://angularjs.org">angular.js</a> fame has released <a href="https://github.com/btford/zone.js/">Zone.js</a> which aims to help tackle this.</p>
+<p>Basically, <a href="https://github.com/btford/zone.js/">Zone.js</a> <strong>overrides all asynchronous functions in the browser</strong> with custom implementations which allows it to keep track of the context. Dangerous? Yes! But as we say in Soviet Russia, &quot;he who doesn&#39;t risk never gets to drink champagne&quot; (or in English &quot;nothing ventured, nothing gained&quot;).</p>
+<p>Anyways, lets look at how this works. Assuming you have included <code>zones.js</code> and <code>long-stack-trace-zone.js</code> as per the docs, we just change <code>main()</code> call to:</p>
+<pre><code>zone.fork(Zone.longStackTraceZone).run(main);
+</code></pre><p>Refresh, click the button, and now our stack looks like this:</p>
+<pre><code>Error: Invalid dependencies
+    at fakeXHR (script.js:7:11)
+    at Zone.run (zones.js:41:19)
+    at zoneBoundFn (zones.js:27:19)
+--- Tue Mar 25 2014 21:20:32 GMT-0700 (PDT) - 106ms ago
+Error
+    at Function.getStacktraceWithUncaughtError (long-stack-trace-zone.js:24:32)
+    at Zone.longStackTraceZone.fork (long-stack-trace-zone.js:70:43)
+    at Zone.bind (zones.js:25:21)
+    at zone.(anonymous function) (zones.js:61:27)
+    at marker (zones.js:66:25)
+    at thirdPartyFunction (script.js:10:3)
+    at HTMLButtonElement.onClick (script.js:15:5)
+    at HTMLButtonElement.x.event.dispatch (jquery.js:5:10006)
+    at HTMLButtonElement.y.handle (jquery.js:5:6789)
+    at Zone.run (zones.js:41:19)
+--- Tue Mar 25 2014 21:20:32 GMT-0700 (PDT) - 1064ms ago
+Error
+    at getStacktraceWithUncaughtError (long-stack-trace-zone.js:24:32)
+    at Function.Zone.getStacktrace (long-stack-trace-zone.js:37:15)
+    at Zone.longStackTraceZone.fork (long-stack-trace-zone.js:70:43)
+    at Zone.bind (zones.js:25:21)
+    at HTMLButtonElement.obj.addEventListener (zones.js:132:37)
+    at Object.x.event.add (jquery.js:5:7262)
+    at HTMLButtonElement.&lt;anonymous&gt; (jquery.js:5:14336)
+    at Function.x.extend.each (jquery.js:4:4575)
+    at x.fn.x.each (jquery.js:4:1626)
+    at x.fn.extend.on (jquery.js:5:14312)
+</code></pre><p>What the what?? Cool! We can now see that the relevant code path started in our <code>onClick</code> method and went into <code>thirdPartyFunction</code>.</p>
+<p>The cool part is, since <a href="https://github.com/btford/zone.js/">Zone.js</a> overrides browser methods, it doesn&#39;t matter what libraries you use. It just works.</p>
+<h2 id="another-async-flow-control-project-called-zones-">Another async flow control project called Zones?</h2>
+<p>Yep, StrongLoop’s <a href="https://github.com/piscisaureus">Bert Belder</a> has been working on a similar idea called “<a href="https://www.npmjs.org/package/zone">Zone</a>“ for a few months now. (Not to be confused with the Angular <a href="https://github.com/btford/zone.js/">Zone.js</a> project we&#39;ve just been discussing, which shares the same name and some technical characteristics. Yeah, it’s a little confusing, but we are actively working with <a href="https://github.com/btford">Brian Ford</a> on how to potentially bring together these two projects for the mutual benefit of the JavaScript and Node communities. Stay tuned!)</p>
+<h2 id="why-a-node-specific-zones-project-">Why a Node-specific Zones project?</h2>
+<p>Currently, there are a couple of problems that make it really hard to deal with asynchronous control flow in Node that Zones looks to address. Specifically:</p>
+<ul>
+<li>Stack traces are useless when an asynchronous function fails.</li>
+<li>Asynchronous functions are hard to compose into more high-level APIs. Imagine implementing a simple asynchronous API like bar(arg1, arg2, cb) where cb is the error-first callback that the user of the API specifies. To implement this correctly you must take care:<ul>
+<li>to always call the callback</li>
+<li>don’t call the callback more than once</li>
+<li>don’t synchronously throw and also call the callback</li>
+<li>don’t call the callback synchronously</li>
+</ul>
+</li>
+<li>It is difficult to handle errors that are raised asynchronously. Typically node will crash. If the uses chooses to ignore the error, resources may leak. Zones should make it easy to handle errors and to avoid resource leaks.</li>
+<li>Sometimes there is a need to associate user data to an asynchronous flow. There is currently no way to do this.</li>
+</ul>
+<p>Want to learn more about Zones? Stay tuned for more information in the coming weeks. Follow us on <a href="https://twitter.com/StrongLoop">Twitter</a> or subscribe to our <a href="http://strongloop.com/newsletter-registration/">newsletter</a> to make sure you don’t miss the announcements.</p>
+<h2 id="what-s-next-">What&#39;s next?</h2>
+<ul>
+<li>Watch <a href="http://www.youtube.com/watch?v=3IqtmUscE_U">Brian&#39;s presentation</a> from ngconf 2014, it&#39;s pretty cool!</li>
+<li>Add <a href="https://github.com/btford/zone.js/">Zone.js</a> to your application.</li>
+<li>Profit!</li>
+</ul>
+<p><img src="http://npmawesome.com/images/posts/promises-trycatch-zones/party.gif"/></p>
+]]></description>
+      </item>
     
       
       
@@ -189,69 +366,6 @@ request(&quot;http://localhost:9000/foo?b=2&amp;a=1&quot;, function(err, respons
 <li><a href="https://www.youtube.com/playlist?list=PL055Epbe6d5bab7rZ3i83OtMmD-d9uq2K">Fluent 2014 conference videos</a></li>
 </ul>
 ]]></description>
-      </item>
-    
-      
-      
-      
-      
-      
-      <item>
-        <title><![CDATA[Links for Apr 7, 2014]]></title>
-        <link><![CDATA[http://npmawesome.com/posts/2014-04-07-links]]></link>
-        <dc:creator><![CDATA[Alex Gorbatchev]]></dc:creator>
-        <guid isPermaLink="true"><![CDATA[http://npmawesome.com/posts/2014-04-07-links]]></guid>
-        <pubDate><![CDATA[Tue, 08 Apr 2014 03:00:00 GMT]]></pubDate>
-        <description><![CDATA[<h2 id="articles-slides">Articles &amp; Slides</h2>
-<ul>
-<li><p><a href="http://bjk5.com/post/71887196490/email-transparency-at-khan-academy">Email transparency at Khan Academy</a></p>
-<blockquote>
-<p>Whenever we mention that almost all Khan Academy email is visible to everybody on the team, people always wanna know more... Here’s the how and why of “radical email transparency” at Khan.</p>
-</blockquote>
-</li>
-<li><p><a href="http://www.sfgate.com/bayarea/article/S-F-cracks-down-on-Airbnb-rentals-5381237.php">S.F. cracks down on Airbnb rentals</a></p>
-<blockquote>
-<p>As Katz discovered, San Francisco&#39;s ban on short-term rentals is turning out to have teeth. People who rent out space on Airbnb, VRBO and other markets for temporary housing are facing fines by the City Planning Department and eviction on the grounds of illegally operating hotels.</p>
-</blockquote>
-</li>
-<li><p><a href="http://www.glintech.com/blog/link-tablet-your-meeting-room-calendar">Link a tablet to your meeting room calendar</a></p>
-<blockquote>
-<p>They reasoned that by linking our online calendars to a tablet mounted neatly next to the door, it’d be much easier to see, at a glance, whether the room was being used - without poking your head in and possibly interrupting someone.</p>
-</blockquote>
-</li>
-<li><p><a href="http://behindthescenesrecruiter.com/post/82005145232/the-single-most-sure-fire-hiring-desion-you-will-ever">The Single Most Sure-Fire Hiring Decision You Will Ever Make</a></p>
-<blockquote>
-<p>“One good way to snag the great people who are never in the job market is to get them before they even realize there is a job market: when they’re in college.” All the way back in 2006, Joel Spolsky knew that a competitive and rewarding internship program was the best way to acquire top engineering talent. Yet even in 2014, in the midst of a talent crunch, surprisingly few technical companies have internship programs.</p>
-</blockquote>
-</li>
-<li><p><a href="http://brianmcd.com/2014/03/27/a-tip-for-angular-unit-tests-with-promises.html">A Tip for Angular Unit Tests with Promises</a></p>
-<blockquote>
-<p>tl;dr: Don&#39;t put assertions inside promise callbacks.</p>
-</blockquote>
-</li>
-</ul>
-<h2 id="github">GitHub</h2>
-<ul>
-<li><a href="https://github.com/OpenRA/OpenRA">Open Red Alert</a> - I played this game to death when it came out originally. Crazy that somebody&#39;s rewriting it in C# (mono).</li>
-<li><a href="https://github.com/ZoneMinder/ZoneMinder">ZoneMinder</a> is a free, open source Closed-circuit television software application developed for Linux which supports IP, USB and Analog cameras.</li>
-<li><a href="https://github.com/GitbookIO/javascript">JavaScript GitBook</a> - teaching programming basics with JavaScript.</li>
-<li><a href="http://gudh.github.io/ihover/dist/index.html">iHover</a> is an impressive hover effects collection, powered by pure CSS3, no dependency, work well with Bootstrap 3!</li>
-</ul>
-<h2 id="services">Services</h2>
-<ul>
-<li><a href="https://keybase.io">Keybase</a> will be a public directory of publicly auditable public keys. All paired, for convenience, with unique usernames.</li>
-<li><a href="https://asciinema.org/">ASCIInema</a> - record and share your terminal sessions, the right way.</li>
-</ul>
-<h2 id="misc">Misc</h2>
-<ul>
-<li><a href="http://allrecipes.com/recipe/how-to-make-cronuts-part-i/">How to Make Cronuts</a> - I&#39;m kind of obsessed with these.</li>
-<li><a href="http://www.raspberrypi.org/raspberry-pi-compute-module-new-product/">Raspberry Pi compute module: new product!</a></li>
-<li><a href="http://www.instructables.com/id/Colorful-Countdown-Clock-for-tight-timeline-manage/">Colorful Countdown Clock for tight timeline management</a></li>
-</ul>
-<h2 id="twitter">Twitter</h2>
-<blockquote class="twitter-tweet"><p><a href="https://twitter.com/search?q=%23Trello&amp;src=hash">#Trello</a> is written in <a href="https://twitter.com/search?q=%23CoffeeScript&amp;src=hash">#CoffeeScript</a>!! Holy Fuck! That&#39;s amazing!!</p>&mdash; Juan Jose Ramirez U. (@whoisjuan) <a href="https://twitter.com/whoisjuan/statuses/453308127036047360">April 7, 2014</a></blockquote>
-
-<blockquote class="twitter-tweet"><p>CoffeeScript has “unless”? SOLD</p>&mdash; David R. Poindexter (@mtheoryx) <a href="https://twitter.com/mtheoryx/statuses/453260810731548672">April 7, 2014</a></blockquote>]]></description>
       </item>
     
   </channel>

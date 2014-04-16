@@ -1,5 +1,171 @@
-<!DOCTYPE html><head><link rel="alternate" title="RSS" type="application/rss+xml" href="http://feeds.feedburner.com/npmawesome"><link href="&lt;%= @site.url %&gt;/atom.xml" title="Blog Posts" type="application/atom+xml" rel="alternate"><link rel="stylesheet" type="text/css" media="all" href="/styles.css"><meta name="viewport" content="initial-scale=1, maximum-scale=1"><meta property="twitter:account_id" content="4503599628039784"><meta charset="utf-8"><title>npm awesome</title><meta property="og:image" content="http://npmawesome.com/images/posts/npm.png"><meta property="og:updated_time" content="1397617200000"><meta property="og:site_name" content="npm awesome"><meta property="og:type" content="blog"><meta property="og:url" content="http://npmawesome.com/"><meta name="description" content="Daily dose of awesome NPM modules for Node.js, old and new!"><meta property="og:description" content="Daily dose of awesome NPM modules for Node.js, old and new!"></head><body><div class="container"><div class="row"><h1 id="logo"><a href="/"><span>npmawesome</span><span class="posts-counter">73</span></a></h1><div id="sub-title"><a href="http://npmjs.org">npm</a> picks, old and new.
-<a href="https://github.com/alexgorbatchev/npm-awesome-site">Fork on GitHub to contribute</a></div></div><div class="row"><div class="main col"><article><header><h2><a href="/posts/2014-04-15-links">Links for Apr 15, 2014</a></h2><div class="meta"><span>posted by <a href="https://github.com/alexgorbatchev">Alex Gorbatchev</a> on April 15th 2014</span><a href="http://npmawesome.com/posts/2014-04-15-links#disqus_thread" class="comments"></a></div></header><div class="content"><h2 id="articles-slides">Articles &amp; Slides</h2>
+<!DOCTYPE html><head><link rel="alternate" title="RSS" type="application/rss+xml" href="http://feeds.feedburner.com/npmawesome"><link href="&lt;%= @site.url %&gt;/atom.xml" title="Blog Posts" type="application/atom+xml" rel="alternate"><link rel="stylesheet" type="text/css" media="all" href="/styles.css"><meta name="viewport" content="initial-scale=1, maximum-scale=1"><meta property="twitter:account_id" content="4503599628039784"><meta charset="utf-8"><title>npm awesome</title><meta property="og:image" content="http://npmawesome.com/images/posts/npm.png"><meta property="og:updated_time" content="1397667714000"><meta property="og:site_name" content="npm awesome"><meta property="og:type" content="blog"><meta property="og:url" content="http://npmawesome.com/"><meta name="description" content="Daily dose of awesome NPM modules for Node.js, old and new!"><meta property="og:description" content="Daily dose of awesome NPM modules for Node.js, old and new!"></head><body><div class="container"><div class="row"><h1 id="logo"><a href="/"><span>npmawesome</span><span class="posts-counter">74</span></a></h1><div id="sub-title"><a href="http://npmjs.org">npm</a> picks, old and new.
+<a href="https://github.com/alexgorbatchev/npm-awesome-site">Fork on GitHub to contribute</a></div></div><div class="row"><div class="main col"><article><header><h2><a href="/posts/2014-04-16-promises-trycatch-zones">Comparing Node.js Promises, Try/Catch, Angular Zone.js and yes, Zone</a></h2><div class="meta"><span>posted by <a href="https://github.com/alexgorbatchev">Alex Gorbatchev</a> on April 16th 2014</span><a href="http://npmawesome.com/posts/2014-04-16-promises-trycatch-zones#disqus_thread" class="comments"></a></div></header><div class="content"><div class="highlight strongloop"><img src="/images/posts/strongloop.png" style="height: 80px" class="hide-on-mobile"/><span><p><a href="http://strongloop.com/">StrongLoop</a> makes it easy to <a href="http://strongloop.com/mobile-application-development/loopback/">develop APIs</a> in Node, plus get <a href="http://strongloop.com/node-js-performance/strongops/">DevOps capabilities</a> like monitoring, debugging and clustering.</p>
+</span></div><h1 id="handling-errors-in-async-flow">Handling errors in async flow</h1>
+<p>In the <a href="http://strongloop.com/strongblog/node-js-callback-hell-promises-generators/">previous article</a> we&#39;ve talked about managing async flow and escaping the <a href="http://callbackhell.com/">callback hell</a>.</p>
+<h2 id="the-problem">The problem</h2>
+<p>Handling errors in asynchronous flow is pretty straightforward and easy. Handling errors in asynchronous flow in a clean and easy to follow manner - not so much.</p>
+<p>Lets look at the following code:</p>
+<pre><code>function updateDependencies(packageName, done) {
+  findPackage(packageName, function(err, content) {
+    if (err) {
+      done(err);
+    }
+    else {
+      try {
+        package = JSON.parse(content);
+      }
+      catch (e) {
+        done(e);
+      }
+
+      findDependencies(package, function(err, dependencies)) {
+        if (err) {
+          done(err);
+        }
+        else {
+          processDependencies(dependencies, function(err) {
+            if (err) {
+              done(err);
+            }
+            else {
+              done(null, dependencies);
+            }
+          });
+        }
+      });
+    }
+  });
+}
+</code></pre><p>We are covering all possible failure cases here using combination of <code>try/catch</code> and callback error handling, but boy do we repeat ourselves over and over again. Lets try and rewrite this!</p>
+<h2 id="error-handling-using-try-catch">Error handling using try/catch</h2>
+<pre><code>function updateDependencies(packageName, done) {
+  try {
+    findPackage(packageName, function(err, content) {
+      if (err) throw err;
+
+      findDependencies(JSON.parse(content), function(err, dependencies)) {
+        if (err) throw err;
+
+        processDependencies(dependencies, function(err) {
+          if (err) throw err;
+
+          done(null, dependencies);
+        });
+      });
+    });
+  } catch (e) {
+    done(e);
+  }
+}
+</code></pre><p>Nice! That&#39;s much better. However, if we run this now, no errors will be caught. What&#39;s going on here?</p>
+<p><code>try/catch</code> idiom works very well when you have fully synchronous code, but asynchronous operations render it useless.</p>
+<p>The outer <code>try/catch</code> block will never catch anything because <code>findPackage</code> is asynchronous. The function will begin its course while the outer stack runs through and gets to the last line without any errors.</p>
+<p>If an error occurs at some point in the future inside asynchronous <code>findPackage</code> - <strong>nothing will be caught</strong>.</p>
+<p><img src="http://npmawesome.com/images/posts/promises-trycatch-zones/catch-fail.gif"/></p>
+<p>Not useful.</p>
+<h2 id="error-handling-using-promises">Error handling using promises</h2>
+<p>In the <a href="http://strongloop.com/strongblog/node-js-callback-hell-promises-generators/">previous article</a> we&#39;ve talked about managing asynchronous flow and escaping the <a href="http://callbackhell.com/">callback hell</a> with promises. Lets put this promises to work here and rewrite this function.</p>
+<p>For the sake of moving forward quicker lets assume we are using <a href="https://github.com/petkaantonov/bluebird">Bluebird</a> promises library and that all our APIs now return promises instead of taking callbacks:</p>
+<pre><code>function updateDependencies(packageName) {
+  return findPackage(packageName)
+    .then(JSON.parse)
+    .then(findDependencies)
+    .then(processDependencies)
+    .then(res.send)
+    ;
+}
+</code></pre><p>Oh wow, that is so much nicer! Right? Right!</p>
+<p>But Alex, &quot;we&#39;ve lost our error handling&quot;, you might say. That&#39;s right, we don&#39;t need to do anything special here to propagate error because we return a promise and there&#39;s built in support for error flow. Lets see how error handling might look like with promises:</p>
+<pre><code>button.addEventListener(&quot;click&quot;, function() {
+  updateDependencies(&quot;packageName&quot;)
+    .then(function(dependencies) {
+      output.innerHTML = dependencies.join(&quot;\n&quot;);
+    })
+    .catch(function(err) {
+      output.innerHTML = &quot;There was an error&quot;;
+    });
+});
+</code></pre><p>Very slick, I&#39;m a fan!</p>
+<h2 id="error-using-zones">Error using Zones</h2>
+<p>Handling rejected promises works really well when we are in full control of the flow. But what happens if some third-party code throws an error during an asynchronous operation? Lets look at another example:</p>
+<pre><code>function thirdPartyFunction() {
+  function fakeXHR() {
+    throw new Error(&quot;Invalid dependencies&quot;);
+  }
+
+  setTimeout(fakeXHR, 100);
+}
+
+function main() {
+  button.on(&quot;click&quot;, function onClick() {
+    thirdPartyFunction();
+  });
+}
+
+main();
+</code></pre><p>In this case, we wouldn&#39;t have a chance to catch and process the error. Generally, the only recourse here is using half baked <code>window.onerror</code> that doesn&#39;t give you any stack information at all. At least you can log something, right? Not that there&#39;s much to log:</p>
+<pre><code>Uncaught Error: Invalid dependencies
+    fakeXHR
+</code></pre><p>Up until recently that was pretty much all we had. However, this january <a href="https://github.com/btford">Brian Ford</a> of the <a href="http://angularjs.org">angular.js</a> fame has released <a href="https://github.com/btford/zone.js/">Zone.js</a> which aims to help tackle this.</p>
+<p>Basically, <a href="https://github.com/btford/zone.js/">Zone.js</a> <strong>overrides all asynchronous functions in the browser</strong> with custom implementations which allows it to keep track of the context. Dangerous? Yes! But as we say in Soviet Russia, &quot;he who doesn&#39;t risk never gets to drink champagne&quot; (or in English &quot;nothing ventured, nothing gained&quot;).</p>
+<p>Anyways, lets look at how this works. Assuming you have included <code>zones.js</code> and <code>long-stack-trace-zone.js</code> as per the docs, we just change <code>main()</code> call to:</p>
+<pre><code>zone.fork(Zone.longStackTraceZone).run(main);
+</code></pre><p>Refresh, click the button, and now our stack looks like this:</p>
+<pre><code>Error: Invalid dependencies
+    at fakeXHR (script.js:7:11)
+    at Zone.run (zones.js:41:19)
+    at zoneBoundFn (zones.js:27:19)
+--- Tue Mar 25 2014 21:20:32 GMT-0700 (PDT) - 106ms ago
+Error
+    at Function.getStacktraceWithUncaughtError (long-stack-trace-zone.js:24:32)
+    at Zone.longStackTraceZone.fork (long-stack-trace-zone.js:70:43)
+    at Zone.bind (zones.js:25:21)
+    at zone.(anonymous function) (zones.js:61:27)
+    at marker (zones.js:66:25)
+    at thirdPartyFunction (script.js:10:3)
+    at HTMLButtonElement.onClick (script.js:15:5)
+    at HTMLButtonElement.x.event.dispatch (jquery.js:5:10006)
+    at HTMLButtonElement.y.handle (jquery.js:5:6789)
+    at Zone.run (zones.js:41:19)
+--- Tue Mar 25 2014 21:20:32 GMT-0700 (PDT) - 1064ms ago
+Error
+    at getStacktraceWithUncaughtError (long-stack-trace-zone.js:24:32)
+    at Function.Zone.getStacktrace (long-stack-trace-zone.js:37:15)
+    at Zone.longStackTraceZone.fork (long-stack-trace-zone.js:70:43)
+    at Zone.bind (zones.js:25:21)
+    at HTMLButtonElement.obj.addEventListener (zones.js:132:37)
+    at Object.x.event.add (jquery.js:5:7262)
+    at HTMLButtonElement.&lt;anonymous&gt; (jquery.js:5:14336)
+    at Function.x.extend.each (jquery.js:4:4575)
+    at x.fn.x.each (jquery.js:4:1626)
+    at x.fn.extend.on (jquery.js:5:14312)
+</code></pre><p>What the what?? Cool! We can now see that the relevant code path started in our <code>onClick</code> method and went into <code>thirdPartyFunction</code>.</p>
+<p>The cool part is, since <a href="https://github.com/btford/zone.js/">Zone.js</a> overrides browser methods, it doesn&#39;t matter what libraries you use. It just works.</p>
+<h2 id="another-async-flow-control-project-called-zones-">Another async flow control project called Zones?</h2>
+<p>Yep, StrongLoop’s <a href="https://github.com/piscisaureus">Bert Belder</a> has been working on a similar idea called “<a href="https://www.npmjs.org/package/zone">Zone</a>“ for a few months now. (Not to be confused with the Angular <a href="https://github.com/btford/zone.js/">Zone.js</a> project we&#39;ve just been discussing, which shares the same name and some technical characteristics. Yeah, it’s a little confusing, but we are actively working with <a href="https://github.com/btford">Brian Ford</a> on how to potentially bring together these two projects for the mutual benefit of the JavaScript and Node communities. Stay tuned!)</p>
+<h2 id="why-a-node-specific-zones-project-">Why a Node-specific Zones project?</h2>
+<p>Currently, there are a couple of problems that make it really hard to deal with asynchronous control flow in Node that Zones looks to address. Specifically:</p>
+<ul>
+<li>Stack traces are useless when an asynchronous function fails.</li>
+<li>Asynchronous functions are hard to compose into more high-level APIs. Imagine implementing a simple asynchronous API like bar(arg1, arg2, cb) where cb is the error-first callback that the user of the API specifies. To implement this correctly you must take care:<ul>
+<li>to always call the callback</li>
+<li>don’t call the callback more than once</li>
+<li>don’t synchronously throw and also call the callback</li>
+<li>don’t call the callback synchronously</li>
+</ul>
+</li>
+<li>It is difficult to handle errors that are raised asynchronously. Typically node will crash. If the uses chooses to ignore the error, resources may leak. Zones should make it easy to handle errors and to avoid resource leaks.</li>
+<li>Sometimes there is a need to associate user data to an asynchronous flow. There is currently no way to do this.</li>
+</ul>
+<p>Want to learn more about Zones? Stay tuned for more information in the coming weeks. Follow us on <a href="https://twitter.com/StrongLoop">Twitter</a> or subscribe to our <a href="http://strongloop.com/newsletter-registration/">newsletter</a> to make sure you don’t miss the announcements.</p>
+<h2 id="what-s-next-">What&#39;s next?</h2>
+<ul>
+<li>Watch <a href="http://www.youtube.com/watch?v=3IqtmUscE_U">Brian&#39;s presentation</a> from ngconf 2014, it&#39;s pretty cool!</li>
+<li>Add <a href="https://github.com/btford/zone.js/">Zone.js</a> to your application.</li>
+<li>Profit!</li>
+</ul>
+<p><img src="http://npmawesome.com/images/posts/promises-trycatch-zones/party.gif"/></p>
+</div></article><article><header><h2><a href="/posts/2014-04-15-links">Links for Apr 15, 2014</a></h2><div class="meta"><span>posted by <a href="https://github.com/alexgorbatchev">Alex Gorbatchev</a> on April 15th 2014</span><a href="http://npmawesome.com/posts/2014-04-15-links#disqus_thread" class="comments"></a></div></header><div class="content"><h2 id="articles-slides">Articles &amp; Slides</h2>
 <ul>
 <li><a href="http://scotch.io/bar-talk/expressjs-4-0-new-features-and-upgrading-from-3-0">ExpressJS 4.0: New Features and Upgrading from 3.0</a></li>
 <li><a href="https://github.com/visionmedia/express/wiki/Migrating-from-3.x-to-4.x">Express 3.x to 4.0 migration guide</a></li>
@@ -210,7 +376,7 @@ request(&#39;http://nodejs.org/dist/node-0.0.1.tar.gz&#39;)
     process.stdout.write(&#39;done!\n&#39;);
   });
 </code></pre><p>The user experience is hardly a great one. It&#39;s clear that something is happening, or at least expected to be happening.</p>
-<div style="padding: 13px 10px 10px; background: black; text-align: center; border-radius: 3px"><img src="http://npmawesome.com/images/posts//progress/progress01.gif"/></div>
+<div style="padding: 13px 10px 10px; background: black; text-align: center; border-radius: 3px"><img src="http://npmawesome.com/images/posts/progress/progress01.gif"/></div>
 
 <p>It&#39;s not really clear if it&#39;s still happening. Is it time for <code>ctrl+c</code> yet? How about an indicator that something is actually going on?</p>
 <pre><code>process.stdout.write(&#39;Downloading...&#39;);
@@ -222,7 +388,7 @@ request(&#39;http://nodejs.org/dist/node-0.0.1.tar.gz&#39;)
     process.stdout.write(&#39; done!\n&#39;);
     clearInterval(intervalId);
   });
-</code></pre><div style="padding: 13px 10px 10px; background: black; text-align: center; border-radius: 3px"><img src="http://npmawesome.com/images/posts//progress/progress02.gif"/></div>
+</code></pre><div style="padding: 13px 10px 10px; background: black; text-align: center; border-radius: 3px"><img src="http://npmawesome.com/images/posts/progress/progress02.gif"/></div>
 
 <p><img class="hide-on-mobile" src="https://avatars2.githubusercontent.com/u/25254" style="float: right; margin-left: 1em; width: 100px"/>
 A little better. But still, there&#39;s no way of telling how long the process will actually take. Lets just do a real progress bar, shall we? This is where <a href="https://github.com/visionmedia/node-progress">progress</a> module that was originally started by <a href="https://github.com/visionmedia">TJ Holowaychuk</a> comes into play! Due to the awesomeness of open source, <a href="https://github.com/visionmedia/node-progress">progress</a> is now pretty much a community effort.</p>
@@ -267,7 +433,7 @@ req
     bar.tick(bar.total - bar.curr);
   })
   ;
-</code></pre><div style="padding: 13px 10px 10px; background: black; text-align: center; border-radius: 3px"><img src="http://npmawesome.com/images/posts//progress/progress03.gif"/></div>
+</code></pre><div style="padding: 13px 10px 10px; background: black; text-align: center; border-radius: 3px"><img src="http://npmawesome.com/images/posts/progress/progress03.gif"/></div>
 
 <p>We even get ETA estimate for free. That&#39;s what I&#39;m talking about!</p>
 <h2 id="other-modules-to-checkout">Other modules to checkout</h2>
@@ -400,7 +566,7 @@ csv().from.string(data).to.array(function(data) {
   table.push.apply(table, values);
   console.log(table.toString());
 });
-</code></pre><div style="padding: 13px 10px 10px; background: black; text-align: center; border-radius: 3px"><img src="http://npmawesome.com/images/posts//cli-tables/usage01.png"/></div>
+</code></pre><div style="padding: 13px 10px 10px; background: black; text-align: center; border-radius: 3px"><img src="http://npmawesome.com/images/posts/cli-tables/usage01.png"/></div>
 
 <p>Pretty cool, right? We can get a little fancy with custom borders and alignments:</p>
 <pre><code>var
@@ -435,7 +601,7 @@ csv().from.string(data).to.array(function(data) {
   table.push.apply(table, values);
   console.log(table.toString());
 });
-</code></pre><div style="padding: 13px 10px 10px; background: black; text-align: center; border-radius: 3px"><img src="http://npmawesome.com/images/posts//cli-tables/usage02.png"/></div>
+</code></pre><div style="padding: 13px 10px 10px; background: black; text-align: center; border-radius: 3px"><img src="http://npmawesome.com/images/posts/cli-tables/usage02.png"/></div>
 
 <h2 id="other-modules-to-checkout">Other modules to checkout</h2>
 <p><a href="https://github.com/LearnBoost/cli-table">cli-table</a> of course isn&#39;t the only module that can print out pretty tables in the console. Here are a few alternatives:</p>
@@ -1134,7 +1300,7 @@ var disqus_shortname = 'npmawesome'; // required: replace example with your foru
   s.type = 'text/javascript';
   s.src = 'http://' + disqus_shortname + '.disqus.com/count.js';
   (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
-}());</script></div><aside class="col"><div class="feedburner"><a href="http://feeds.feedburner.com/npmawesome"><img src="/images/feed.gif"></a></div><div class="other-posts"><h4>Previously...</h4><div><a href="/posts/2014-04-15-links">Links for Apr 15, 2014</a></div><div><a href="/posts/2014-04-11-links">Links for Apr 10, 2014</a></div><div><a href="/posts/2014-04-10-shmock">shmock</a></div><div><a href="/posts/2014-04-09-links">Links for Apr 8, 2014</a></div><div><a href="/posts/2014-04-07-links">Links for Apr 7, 2014</a></div><div><a href="/posts/2014-04-04-links">Links for Apr 5, 2014</a></div><div><a href="/posts/2014-04-04-progress" class="partner nodejitsu">progress</a></div><div><a href="/posts/2014-04-04-slate-irc">slate-irc</a></div><div><a href="/posts/2014-04-03-links">Links for Apr 4, 2014</a></div><div><a href="/posts/2014-03-28-cli-table" class="partner nodejitsu">cli-table</a></div><div><a href="/posts/2014-03-21-yargs" class="partner nodejitsu">yargs</a></div><div><a href="/posts/2014-03-12-convict" class="partner nodejitsu">convict</a></div><div><a href="/posts/2014-03-06-lockit" class="partner nodejitsu">lockit</a></div><div><a href="/posts/2014-02-27-qr-image" class="partner nodejitsu">qr-image</a></div><div><a href="/posts/2014-02-25-webdriverjs">webdriver.js</a></div><div><a href="/posts/2014-02-24-pretty-error">pretty-error</a></div><div><a href="/posts/2014-02-21-supertest">supertest</a></div><div><a href="/posts/2014-02-20-spritesmith">spritesmith</a></div><div><a href="/posts/2014-02-19-9-gulp-js-plugins-for-a-great-build-system" class="partner nodejitsu">9 gulp.js plugins for a great build system</a></div><div><a href="/posts/2014-02-18-npm-diff">npm-diff</a></div><div><a href="/posts/2014-02-17-nodepdf">NodePDF</a></div><div><a href="/posts/2014-02-13-domain-context">domain-context</a></div><div><a href="/posts/2014-02-12-jsonstream">JSONStream</a></div><div><a href="/posts/2014-02-11-peer-js">peer.js</a></div><div><a href="/posts/2014-02-10-node-dependencies">node-dependencies</a></div><div><a href="/posts/2014-02-05-cucumber-js">cucumber.js</a></div><div><a href="/posts/2014-02-04-binary-js">binary.js</a></div><div><a href="/posts/2014-02-03-power-assert">power-assert</a></div><div><a href="/posts/2014-01-31-coupon-code">coupon-code</a></div><div><a href="/posts/2014-01-30-rewire">rewire</a></div><div><a href="/posts/2014-01-29-yarm">yarm</a></div><div><a href="/posts/2014-01-28-modella">modella</a></div><div><a href="/posts/2014-01-27-mversion">mversion</a></div><div><a href="/posts/2014-01-24-schema-inspector">schema-inspector</a></div><div><a href="/posts/2014-01-23-oboe-js">oboe.js</a></div><div><a href="/posts/2014-01-22-autoprefixer">autoprefixer</a></div><div><a href="/posts/2014-01-21-js-yaml">js-yaml</a></div><div><a href="/posts/2014-01-17-gaze">gaze</a></div><div><a href="/posts/2014-01-14-shortid">shortId</a></div><div><a href="/posts/2014-01-13-testium">testium</a></div><div><a href="/posts/2014-01-10-messageformat">messageformat.js</a></div><div><a href="/posts/2014-01-09-gulp">gulp</a></div><div><a href="/posts/2014-01-06-chalk">chalk</a></div><div><a href="/posts/2013-12-31-recluster">recluster</a></div><div><a href="/posts/2013-12-30-rework">rework</a></div><div><a href="/posts/2013-12-27-cheerio">cheerio</a></div><div><a href="/posts/2013-12-19-dat">dat</a></div><div><a href="/posts/2013-12-18-xregexp">xregexp</a></div><div><a href="/posts/2013-12-17-npm">npm v1.3.18</a></div><div><a href="/posts/2013-12-16-ect">ect</a></div><div><a href="/posts/2013-12-13-chrono">chrono</a></div><div><a href="/posts/2013-12-11-prettyjson">prettyjson</a></div><div><a href="/posts/2013-12-10-state">state</a></div><div><a href="/posts/2013-12-09-blessed">blessed</a></div><div><a href="/posts/2013-12-05-gm">gm</a></div><div><a href="/posts/2013-12-03-nak">nak</a></div><div><a href="/posts/2013-12-03-verymodel">VeryModel</a></div><div><a href="/posts/2013-11-30-scala-js">scala.js</a></div><div><a href="/posts/2013-11-27-scale-npm">scalenpm.org</a></div><div><a href="/posts/2013-11-26-rx-js">rx.js</a></div><div><a href="/posts/2013-11-26-docpad">docpad</a></div><div><a href="/posts/2013-11-25-grunt-angular-builder">grunt-angular-builder</a></div><div><a href="/posts/2013-11-22-videoconverter-js">videoconverter.js</a></div><div><a href="/posts/2013-11-22-event-stream">event-stream</a></div><div><a href="/posts/2013-11-21-bacon-js">bacon.js</a></div><div><a href="/posts/2013-11-20-spdy">node-spdy</a></div><div><a href="/posts/2013-11-19-json-mask">json-mask</a></div><div><a href="/posts/2013-11-18-pm2">pm2</a></div><div><a href="/posts/2013-11-18-npmd">npmd</a></div><div><a href="/posts/2013-11-18-nixt">nixt</a></div><div><a href="/posts/2013-11-17-vm-js">vm.js</a></div><div><a href="/posts/2013-11-17-node-jvm">node-jvm</a></div><div><a href="/posts/2013-11-17-flake">flake</a></div></div></aside></div></div><a id="fork-me" href="https://github.com/alexgorbatchev/npm-awesome-site" class="hide-on-mobile">Fork Me</a></body><script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+}());</script></div><aside class="col"><div class="feedburner"><a href="http://feeds.feedburner.com/npmawesome"><img src="/images/feed.gif"></a></div><div class="other-posts"><h4>Previously...</h4><div><a href="/posts/2014-04-16-promises-trycatch-zones" class="partner strongloop">Comparing Node.js Promises, Try/Catch, Angular Zone.js and yes, Zone</a></div><div><a href="/posts/2014-04-15-links">Links for Apr 15, 2014</a></div><div><a href="/posts/2014-04-11-links">Links for Apr 10, 2014</a></div><div><a href="/posts/2014-04-10-shmock">shmock</a></div><div><a href="/posts/2014-04-09-links">Links for Apr 8, 2014</a></div><div><a href="/posts/2014-04-07-links">Links for Apr 7, 2014</a></div><div><a href="/posts/2014-04-04-links">Links for Apr 5, 2014</a></div><div><a href="/posts/2014-04-04-progress" class="partner nodejitsu">progress</a></div><div><a href="/posts/2014-04-04-slate-irc">slate-irc</a></div><div><a href="/posts/2014-04-03-links">Links for Apr 4, 2014</a></div><div><a href="/posts/2014-03-28-cli-table" class="partner nodejitsu">cli-table</a></div><div><a href="/posts/2014-03-21-yargs" class="partner nodejitsu">yargs</a></div><div><a href="/posts/2014-03-12-convict" class="partner nodejitsu">convict</a></div><div><a href="/posts/2014-03-06-lockit" class="partner nodejitsu">lockit</a></div><div><a href="/posts/2014-02-27-qr-image" class="partner nodejitsu">qr-image</a></div><div><a href="/posts/2014-02-25-webdriverjs">webdriver.js</a></div><div><a href="/posts/2014-02-24-pretty-error">pretty-error</a></div><div><a href="/posts/2014-02-21-supertest">supertest</a></div><div><a href="/posts/2014-02-20-spritesmith">spritesmith</a></div><div><a href="/posts/2014-02-19-9-gulp-js-plugins-for-a-great-build-system" class="partner nodejitsu">9 gulp.js plugins for a great build system</a></div><div><a href="/posts/2014-02-18-npm-diff">npm-diff</a></div><div><a href="/posts/2014-02-17-nodepdf">NodePDF</a></div><div><a href="/posts/2014-02-13-domain-context">domain-context</a></div><div><a href="/posts/2014-02-12-jsonstream">JSONStream</a></div><div><a href="/posts/2014-02-11-peer-js">peer.js</a></div><div><a href="/posts/2014-02-10-node-dependencies">node-dependencies</a></div><div><a href="/posts/2014-02-05-cucumber-js">cucumber.js</a></div><div><a href="/posts/2014-02-04-binary-js">binary.js</a></div><div><a href="/posts/2014-02-03-power-assert">power-assert</a></div><div><a href="/posts/2014-01-31-coupon-code">coupon-code</a></div><div><a href="/posts/2014-01-30-rewire">rewire</a></div><div><a href="/posts/2014-01-29-yarm">yarm</a></div><div><a href="/posts/2014-01-28-modella">modella</a></div><div><a href="/posts/2014-01-27-mversion">mversion</a></div><div><a href="/posts/2014-01-24-schema-inspector">schema-inspector</a></div><div><a href="/posts/2014-01-23-oboe-js">oboe.js</a></div><div><a href="/posts/2014-01-22-autoprefixer">autoprefixer</a></div><div><a href="/posts/2014-01-21-js-yaml">js-yaml</a></div><div><a href="/posts/2014-01-17-gaze">gaze</a></div><div><a href="/posts/2014-01-14-shortid">shortId</a></div><div><a href="/posts/2014-01-13-testium">testium</a></div><div><a href="/posts/2014-01-10-messageformat">messageformat.js</a></div><div><a href="/posts/2014-01-09-gulp">gulp</a></div><div><a href="/posts/2014-01-06-chalk">chalk</a></div><div><a href="/posts/2013-12-31-recluster">recluster</a></div><div><a href="/posts/2013-12-30-rework">rework</a></div><div><a href="/posts/2013-12-27-cheerio">cheerio</a></div><div><a href="/posts/2013-12-19-dat">dat</a></div><div><a href="/posts/2013-12-18-xregexp">xregexp</a></div><div><a href="/posts/2013-12-17-npm">npm v1.3.18</a></div><div><a href="/posts/2013-12-16-ect">ect</a></div><div><a href="/posts/2013-12-13-chrono">chrono</a></div><div><a href="/posts/2013-12-11-prettyjson">prettyjson</a></div><div><a href="/posts/2013-12-10-state">state</a></div><div><a href="/posts/2013-12-09-blessed">blessed</a></div><div><a href="/posts/2013-12-05-gm">gm</a></div><div><a href="/posts/2013-12-03-nak">nak</a></div><div><a href="/posts/2013-12-03-verymodel">VeryModel</a></div><div><a href="/posts/2013-11-30-scala-js">scala.js</a></div><div><a href="/posts/2013-11-27-scale-npm">scalenpm.org</a></div><div><a href="/posts/2013-11-26-rx-js">rx.js</a></div><div><a href="/posts/2013-11-26-docpad">docpad</a></div><div><a href="/posts/2013-11-25-grunt-angular-builder">grunt-angular-builder</a></div><div><a href="/posts/2013-11-22-videoconverter-js">videoconverter.js</a></div><div><a href="/posts/2013-11-22-event-stream">event-stream</a></div><div><a href="/posts/2013-11-21-bacon-js">bacon.js</a></div><div><a href="/posts/2013-11-20-spdy">node-spdy</a></div><div><a href="/posts/2013-11-19-json-mask">json-mask</a></div><div><a href="/posts/2013-11-18-pm2">pm2</a></div><div><a href="/posts/2013-11-18-npmd">npmd</a></div><div><a href="/posts/2013-11-18-nixt">nixt</a></div><div><a href="/posts/2013-11-17-vm-js">vm.js</a></div><div><a href="/posts/2013-11-17-node-jvm">node-jvm</a></div><div><a href="/posts/2013-11-17-flake">flake</a></div></div></aside></div></div><a id="fork-me" href="https://github.com/alexgorbatchev/npm-awesome-site" class="hide-on-mobile">Fork Me</a></body><script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
 (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
 m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
 })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
