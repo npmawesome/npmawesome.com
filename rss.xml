@@ -15,12 +15,12 @@
     <atom:link href="http://feeds.feedburner.com/npmawesome" rel="self" type="application/rss+xml"/>
     <link>http://npmawesome.com</link>
     <description>Daily dose of awesome NPM modules for Node.js, old and new!</description>
-    <lastBuildDate>Wed, 16 Apr 2014 17:00:58 GMT</lastBuildDate>
+    <lastBuildDate>Thu, 17 Apr 2014 05:22:14 GMT</lastBuildDate>
     <language>en</language>
     <sy:updatePeriod>daily</sy:updatePeriod>
     <sy:updateFrequency>2</sy:updateFrequency>
     <generator>awesomeness</generator>
-    <pubDate>Wed, 16 Apr 2014 17:00:58 GMT</pubDate>
+    <pubDate>Thu, 17 Apr 2014 05:22:14 GMT</pubDate>
 
     
     
@@ -71,6 +71,8 @@
   });
 }
 </code></pre><p>We are covering all possible failure cases here using combination of <code>try/catch</code> and callback error handling, but boy do we repeat ourselves over and over again. Lets try and rewrite this!</p>
+<div class="read-more"/>
+
 <h2 id="error-handling-using-try-catch">Error handling using try/catch</h2>
 <pre><code>function updateDependencies(packageName, done) {
   try {
@@ -232,6 +234,8 @@ Error
 <ul>
 <li><a href="https://redpen.io">Red Pen</a> is the fastest feedback tool for visual teams.</li>
 </ul>
+<div class="read-more"/>
+
 <h2 id="twitter">Twitter</h2>
 <blockquote class="twitter-tweet"><p>BREAKING: NSA said to have used Heartbleed bug to gather intelligence for two years, reports Bloomberg. <a href="https://t.co/wbHhucX7Pq">https://t.co/wbHhucX7Pq</a></p>&mdash; EFF (@EFF) <a href="https://twitter.com/EFF/statuses/454699447797026816">April 11, 2014</a></blockquote>
 
@@ -283,6 +287,8 @@ Error
 <li><a href="https://kiwiirc.com">Kiwi IRC</a> makes Web IRC easy. A hand-crafted IRC client that you canenjoy. Designed to be used easily and freely.</li>
 <li><a href="https://github.com/famous/famous">Famo.us</a> provides a powerful JavaScript framework and developer tools designed to build rich, fast web applications. Famo.us takes an opinionated approach to developing with web technology, maintaining tight control of rendering to achieve maximum UI performance. Check out the <a href="http://demo.famo.us/">demos</a>.</li>
 </ul>
+<div class="read-more"/>
+
 <h2 id="twitter">Twitter</h2>
 <blockquote class="twitter-tweet"><p>You should write code every day: <a href="http://t.co/M0MmaZn15O">http://t.co/M0MmaZn15O</a></p>&mdash; John Resig (@jeresig) <a href="https://twitter.com/jeresig/statuses/454325606432645120">April 10, 2014</a></blockquote>
 
@@ -302,6 +308,8 @@ Error
         <pubDate><![CDATA[Thu, 10 Apr 2014 16:45:06 GMT]]></pubDate>
         <description><![CDATA[<p><img class="hide-on-mobile" src="https://avatars0.githubusercontent.com/u/139687?s=400" style="float: right; margin-left: 1em; width: 100px"/>
 <a href="https://github.com/xetorthio/shmock">shmock</a> is a module by <a href="https://github.com/xetorthio">Jonathan Leibiusky</a> provides a super nice API, like the one of <a href="https://github.com/visionmedia/superagent">superagent</a> but it creates a real http server (using <a href="https://github.com/visionmedia/express">express</a>). The nice thing about this is that you don&#39;t really care about the implementation, which http client is being used, or even if nodes native http api changes.</p>
+<div class="read-more"/>
+
 <pre><code>npm install shmock
 </code></pre><h2 id="usage">Usage</h2>
 <pre><code>var

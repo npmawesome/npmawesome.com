@@ -5,7 +5,7 @@
 	<link href="http://npmawesome.com/atom.xml" rel="self" />
 	<link href="http://npmawesome.com" />
 	<id>http://npmawesome.com</id>
-	<updated>2014-04-16T17:00:58.257Z</updated>
+	<updated>2014-04-17T05:22:14.900Z</updated>
 	<author>
 		<name>Alex Gorbatchev</name>
 	</author>
@@ -58,6 +58,8 @@
   });
 }
 &lt;/code&gt;&lt;/pre&gt;&lt;p&gt;We are covering all possible failure cases here using combination of &lt;code&gt;try/catch&lt;/code&gt; and callback error handling, but boy do we repeat ourselves over and over again. Lets try and rewrite this!&lt;/p&gt;
+&lt;div class=&quot;read-more&quot;/&gt;
+
 &lt;h2 id=&quot;error-handling-using-try-catch&quot;&gt;Error handling using try/catch&lt;/h2&gt;
 &lt;pre&gt;&lt;code&gt;function updateDependencies(packageName, done) {
   try {
@@ -218,6 +220,8 @@ Error
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&quot;https://redpen.io&quot;&gt;Red Pen&lt;/a&gt; is the fastest feedback tool for visual teams.&lt;/li&gt;
 &lt;/ul&gt;
+&lt;div class=&quot;read-more&quot;/&gt;
+
 &lt;h2 id=&quot;twitter&quot;&gt;Twitter&lt;/h2&gt;
 &lt;blockquote class=&quot;twitter-tweet&quot;&gt;&lt;p&gt;BREAKING: NSA said to have used Heartbleed bug to gather intelligence for two years, reports Bloomberg. &lt;a href=&quot;https://t.co/wbHhucX7Pq&quot;&gt;https://t.co/wbHhucX7Pq&lt;/a&gt;&lt;/p&gt;&amp;mdash; EFF (@EFF) &lt;a href=&quot;https://twitter.com/EFF/statuses/454699447797026816&quot;&gt;April 11, 2014&lt;/a&gt;&lt;/blockquote&gt;
 
@@ -268,6 +272,8 @@ Error
 &lt;li&gt;&lt;a href=&quot;https://kiwiirc.com&quot;&gt;Kiwi IRC&lt;/a&gt; makes Web IRC easy. A hand-crafted IRC client that you canenjoy. Designed to be used easily and freely.&lt;/li&gt;
 &lt;li&gt;&lt;a href=&quot;https://github.com/famous/famous&quot;&gt;Famo.us&lt;/a&gt; provides a powerful JavaScript framework and developer tools designed to build rich, fast web applications. Famo.us takes an opinionated approach to developing with web technology, maintaining tight control of rendering to achieve maximum UI performance. Check out the &lt;a href=&quot;http://demo.famo.us/&quot;&gt;demos&lt;/a&gt;.&lt;/li&gt;
 &lt;/ul&gt;
+&lt;div class=&quot;read-more&quot;/&gt;
+
 &lt;h2 id=&quot;twitter&quot;&gt;Twitter&lt;/h2&gt;
 &lt;blockquote class=&quot;twitter-tweet&quot;&gt;&lt;p&gt;You should write code every day: &lt;a href=&quot;http://t.co/M0MmaZn15O&quot;&gt;http://t.co/M0MmaZn15O&lt;/a&gt;&lt;/p&gt;&amp;mdash; John Resig (@jeresig) &lt;a href=&quot;https://twitter.com/jeresig/statuses/454325606432645120&quot;&gt;April 10, 2014&lt;/a&gt;&lt;/blockquote&gt;
 
@@ -286,6 +292,8 @@ Error
 			<id>http://npmawesome.com/posts/2014-04-10-shmock</id>
 			<content type="html">&lt;p&gt;&lt;img class=&quot;hide-on-mobile&quot; src=&quot;https://avatars0.githubusercontent.com/u/139687?s=400&quot; style=&quot;float: right; margin-left: 1em; width: 100px&quot;/&gt;
 &lt;a href=&quot;https://github.com/xetorthio/shmock&quot;&gt;shmock&lt;/a&gt; is a module by &lt;a href=&quot;https://github.com/xetorthio&quot;&gt;Jonathan Leibiusky&lt;/a&gt; provides a super nice API, like the one of &lt;a href=&quot;https://github.com/visionmedia/superagent&quot;&gt;superagent&lt;/a&gt; but it creates a real http server (using &lt;a href=&quot;https://github.com/visionmedia/express&quot;&gt;express&lt;/a&gt;). The nice thing about this is that you don&amp;#39;t really care about the implementation, which http client is being used, or even if nodes native http api changes.&lt;/p&gt;
+&lt;div class=&quot;read-more&quot;/&gt;
+
 &lt;pre&gt;&lt;code&gt;npm install shmock
 &lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&quot;usage&quot;&gt;Usage&lt;/h2&gt;
 &lt;pre&gt;&lt;code&gt;var
