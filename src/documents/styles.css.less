@@ -62,11 +62,19 @@ article {
     margin: 3em 0 1em 0;
 
     h2 {
-      font-family: @code-font;
-      font-weight: normal;
-      font-size: 3em;
-      margin: 0;
       display: inline-block;
+      font-weight: normal;
+      margin: 0;
+
+      &.article {
+        margin-bottom: 10px;
+        font-size: 2em;
+      }
+
+      &.npm {
+        font-family: @code-font;
+        font-size: 3em;
+      }
 
       a {
         text-decoration: none;
@@ -105,6 +113,10 @@ article {
 
   .content {
     line-height: 150%;
+
+    h1, h2, h3, h4 {
+      font-weight: normal;
+    }
 
     table {
       border-collapse: collapse;

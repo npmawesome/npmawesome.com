@@ -24,6 +24,8 @@ description: Daily link dump.
 
 * [Red Pen](https://redpen.io) is the fastest feedback tool for visual teams.
 
+<%- @readMore() %>
+
 ## Twitter
 
 <blockquote class="twitter-tweet"><p>BREAKING: NSA said to have used Heartbleed bug to gather intelligence for two years, reports Bloomberg. <a href="https://t.co/wbHhucX7Pq">https://t.co/wbHhucX7Pq</a></p>&mdash; EFF (@EFF) <a href="https://twitter.com/EFF/statuses/454699447797026816">April 11, 2014</a></blockquote>

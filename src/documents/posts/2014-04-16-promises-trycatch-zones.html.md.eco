@@ -51,6 +51,8 @@ Lets look at the following code:
 
 We are covering all possible failure cases here using combination of `try/catch` and callback error handling, but boy do we repeat ourselves over and over again. Lets try and rewrite this!
 
+<%- @readMore() %>
+
 ## Error handling using try/catch
 
     function updateDependencies(packageName, done) {

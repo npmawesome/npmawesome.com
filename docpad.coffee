@@ -53,6 +53,20 @@ docpadConfig =
       title = "#{title} | " if title?
       (title or '') + @site.title
 
+    readMore: ->
+      '<div class="read-more"/>'
+
+    getPreview: (doc = @document) ->
+      body = doc.contentRenderedWithoutLayouts
+      return '' unless body?
+
+      split = body.indexOf @readMore()
+
+      if split >= 0
+        body = body.substr(0, split) + """<p class="read-more"><a href="#{@site.url}#{doc.url}">Continue reading</a></p>"""
+
+      body
+
   events:
     parseAfter: ({collection}, done) ->
       # @docpad.collections.posts.forEach (post) ->

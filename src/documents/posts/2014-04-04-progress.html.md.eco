@@ -33,6 +33,8 @@ Lets talk about long running CLI (command line interface) applications. When you
 
 The user experience is hardly a great one. It's clear that something is happening, or at least expected to be happening.
 
+<%- @readMore() %>
+
 <div style="padding: 13px 10px 10px; background: black; text-align: center; border-radius: 3px"><img src="<%- @image '/progress/progress01.gif' %>"/></div>
 
 It's not really clear if it's still happening. Is it time for `ctrl+c` yet? How about an indicator that something is actually going on?

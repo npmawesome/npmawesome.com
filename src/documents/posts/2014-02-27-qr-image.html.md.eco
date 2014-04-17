@@ -22,6 +22,8 @@ description: qr-code is yet another QR Code generator.
 
 <%- @npm() %> is a module by <%- @author() %> to render [QR code] with node.js and no external dependencies.
 
+<%- @readMore() %>
+
     <%- @install() %>
 
 ## Overview

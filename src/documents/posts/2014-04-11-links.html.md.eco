@@ -36,6 +36,8 @@ description: Daily link dump.
 * [Kiwi IRC](https://kiwiirc.com) makes Web IRC easy. A hand-crafted IRC client that you canenjoy. Designed to be used easily and freely.
 * [Famo.us](https://github.com/famous/famous) provides a powerful JavaScript framework and developer tools designed to build rich, fast web applications. Famo.us takes an opinionated approach to developing with web technology, maintaining tight control of rendering to achieve maximum UI performance. Check out the [demos](http://demo.famo.us/).
 
+<%- @readMore() %>
+
 ## Twitter
 
 <blockquote class="twitter-tweet"><p>You should write code every day: <a href="http://t.co/M0MmaZn15O">http://t.co/M0MmaZn15O</a></p>&mdash; John Resig (@jeresig) <a href="https://twitter.com/jeresig/statuses/454325606432645120">April 10, 2014</a></blockquote>

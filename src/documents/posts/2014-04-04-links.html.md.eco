@@ -28,6 +28,8 @@ description: Daily link dump.
 * [Code School Courses](https://www.codeschool.com/courses#all)
 * [MetaWear: Production Ready Wearables in 30 Minutes or Less!](https://www.kickstarter.com/projects/guardyen/metawear-production-ready-wearables-in-30-minutes)
 
+<%- @readMore() %>
+
 ## Twitter
 
 <blockquote class="twitter-tweet"><p>New <a href="https://twitter.com/search?q=%23npmawesome&amp;src=hash">#npmawesome</a> from <a href="https://twitter.com/alexgorbatchev">@alexgorbatchev</a>: &quot;Progress reporting in CLI applications&quot; || <a href="http://t.co/FymiGMBy3F">http://t.co/FymiGMBy3F</a></p>&mdash; Nodejitsu (@nodejitsu) <a href="https://twitter.com/nodejitsu/statuses/452163004638179328">April 4, 2014</a></blockquote>

@@ -45,6 +45,8 @@ description: Daily link dump.
 * [Raspberry Pi compute module: new product!](http://www.raspberrypi.org/raspberry-pi-compute-module-new-product/)
 * [Colorful Countdown Clock for tight timeline management](http://www.instructables.com/id/Colorful-Countdown-Clock-for-tight-timeline-manage/)
 
+<%- @readMore() %>
+
 ## Twitter
 
 <blockquote class="twitter-tweet"><p><a href="https://twitter.com/search?q=%23Trello&amp;src=hash">#Trello</a> is written in <a href="https://twitter.com/search?q=%23CoffeeScript&amp;src=hash">#CoffeeScript</a>!! Holy Fuck! That&#39;s amazing!!</p>&mdash; Juan Jose Ramirez U. (@whoisjuan) <a href="https://twitter.com/whoisjuan/statuses/453308127036047360">April 7, 2014</a></blockquote>

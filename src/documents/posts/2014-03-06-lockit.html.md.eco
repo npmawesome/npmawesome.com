@@ -18,6 +18,8 @@ description: Lockit is an authentication solution for Express.
 ---
 So you got a really cool idea for an app or a service. You get all fired up, talk to your friends about, write down some bullet points and run that exciting `git init` command in an empty folder. One of the first things you are most likely to in the very near future is begin working on some kind of user login and registration process.
 
+<%- @readMore() %>
+
 <img class="hide-on-mobile" src="https://1.gravatar.com/avatar/5664d023c8ab7b6eb69a93990198432e" style="float: right; margin-left: 1em"/>
 Of course, [passport.js] is great when you can leverage external authentication, but otherwise you are stuck rolling your own system… After a while you find yourself doing it over and over again. How boring! Wouldn't it be nice if somebody finally just wrote a module that you could plugin into your express app that would take care of all this user registration stuff?
 

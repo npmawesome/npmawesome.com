@@ -1,6 +1,6 @@
 article
   header
-    h2
+    h2(class=post.npm && 'npm' || 'article')
       a(href="#{post.url}")= preparedTitle(post)
     .meta
       span posted by !{by()} on #{moment(post.date).format("MMMM Do YYYY")}
@@ -13,4 +13,4 @@ article
     if post.partner
       != partial(post.partner)
 
-    != post.contentRenderedWithoutLayouts
+    != isPreview && getPreview(post) || post.contentRenderedWithoutLayouts

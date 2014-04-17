@@ -13,6 +13,8 @@ Not unlike all the other build systems, it all starts by installing the task run
 
 Now that we have everything sorted out, lets get cracking and make a task runner to support our HTML5 node.js project.
 
+<%- @readMore() %>
+
 ## [gulp-util]
 
 This is the official tool belt for [gulp.js]. The authors decided to split up helpers into a separate module which you basically end up requiring every time. This module brings in functionality for logging, coloring console output, and so on. Check out the [gulp-util] github page for the full list.

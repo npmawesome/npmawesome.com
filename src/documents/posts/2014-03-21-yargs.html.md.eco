@@ -19,6 +19,8 @@ description: Easy command line argument parsing with yargs.
 <img class="hide-on-mobile" src="https://avatars3.githubusercontent.com/u/874394" style="float: right; margin-left: 1em; width: 100px"/>
 This post kicks off a small mini-series of posts about modules which making writing CLI (command line interface) tools in Node.js easier. Typically, when starting a new CLI tool, the first problem that you would encounter is how to read arguments that users pass via command line. Standard library gives us `process.argv` but if you want something a little bit more structured than an array, you have to look elsewhere.
 
+<%- @readMore() %>
+
 This is where <%- @npm() %> comes in handy. This module was originally written by [James Halliday](https://github.com/substack) and called [optimist]. It is now called <%- @npm() %> and the work is continued by <%- @author() %>. Lets get it installed:
 
     <%- @install() %>
