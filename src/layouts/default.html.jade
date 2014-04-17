@@ -24,16 +24,18 @@ head
   meta(name="description" content=document.description || site.description)
   meta(property="og:description" content=document.description || site.description)
 body
+  header#page-header
+    .container
+      .row
+        h1#logo: a(href="/")
+          span.name npmawesome
+          span.posts-counter=getCollection('posts').length
+
+        #sub-title
+          | <a href="http://npmjs.org">npm</a> picks, old and new.
+          | <a href="https://github.com/alexgorbatchev/npm-awesome-site">Fork on GitHub to contribute</a>
+
   .container
-    .row
-      h1#logo: a(href="/")
-        span npmawesome
-        span.posts-counter=getCollection('posts').length
-
-      #sub-title
-        | <a href="http://npmjs.org">npm</a> picks, old and new.
-        | <a href="https://github.com/alexgorbatchev/npm-awesome-site">Fork on GitHub to contribute</a>
-
     .row
       .main.col
         block content
