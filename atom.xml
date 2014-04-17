@@ -5,7 +5,7 @@
 	<link href="http://npmawesome.com/atom.xml" rel="self" />
 	<link href="http://npmawesome.com" />
 	<id>http://npmawesome.com</id>
-	<updated>2014-04-17T05:57:06.420Z</updated>
+	<updated>2014-04-17T13:59:28.061Z</updated>
 	<author>
 		<name>Alex Gorbatchev</name>
 	</author>
@@ -13,6 +13,54 @@
   
   
   
+    
+    
+    
+		<entry>
+			<title>Links for Apr 17, 2014</title>
+			<link href="http://npmawesome.com/posts/2014-04-17-links"/>
+			<updated>2014-04-18T03:00:00.000Z</updated>
+			<id>http://npmawesome.com/posts/2014-04-17-links</id>
+			<content type="html">&lt;h2 id=&quot;articles-slides&quot;&gt;Articles &amp;amp; Slides&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;&lt;a href=&quot;http://techcrunch.com/2014/04/14/sf-housing/&quot;&gt;How Burrowing Owls Lead To Vomiting Anarchists (Or SF’s Housing Crisis Explained)&lt;/a&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Homeowners have a strong economic incentive to restrict supply because it supports price appreciation of their own homes.
+…
+Then the rent-controlled tenants care far more about eviction protections than increasing supply. That’s because their most vulnerable constituents are paying rents that are so far below market-rate, that only an ungodly amount of construction could possibly help them. Plus, that construction wouldn’t happen fast enough — especially for elderly tenants.&lt;/p&gt;
+&lt;p&gt;So we’re looking at as much as 80 percent of the city that isn’t naturally oriented to add to the housing stock.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a href=&quot;http://insights.ubuntu.com/news/ubuntu-14-04-lts-the-cloud-platform-of-choice/&quot;&gt;Ubuntu 14.04 LTS: the cloud platform of choice&lt;/a&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Canonical today announces Ubuntu 14.04 LTS will be released on 17th April 2014, bringing a new level of reliability, performance and interoperability to cloud and scale out environments with support and maintenance for five years.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a href=&quot;https://blog.indutny.com/9.heartbleed&quot;&gt;Cracking Cloudflare&amp;#39;s heartbleed challenge&lt;/a&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;… it won&amp;#39;t produce any result immediately, it took me 3 hours and a certain amount of luck to obtain the key in a Cloudflare&amp;#39;s challenge.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a href=&quot;http://theory.stanford.edu/~amitp/GameProgramming/AStarComparison.html&quot;&gt;Introduction to A*&lt;/a&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Movement for a single object seems easy. Pathfinding is complex.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a href=&quot;http://codecondo.com/10-web-application-frameworks-for-node-js/&quot;&gt;12 Web Application Frameworks for Node.js&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a href=&quot;https://tails.boum.org/&quot;&gt;Tails&lt;/a&gt; is a live operating system, that you can start on almost any computer from a DVD, USB stick, or SD card. It aims at preserving your privacy and anonymity.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&quot;read-more&quot;/&gt;
+
+&lt;h2 id=&quot;twitter&quot;&gt;Twitter&lt;/h2&gt;
+&lt;blockquote class=&quot;twitter-tweet&quot;&gt;&lt;p&gt;Hello. My name is Ethan Welborn, and I am a &lt;a href=&quot;https://twitter.com/gulpjs&quot;&gt;@gulpjs&lt;/a&gt;-aholic. Please contact me if you can provide assistance... or badass tasks. &lt;a href=&quot;https://twitter.com/search?q=%23wtfwow&amp;amp;src=hash&quot;&gt;#wtfwow&lt;/a&gt;&lt;/p&gt;&amp;mdash; Ethan Welborn (@WelbornEthan) &lt;a href=&quot;https://twitter.com/WelbornEthan/statuses/456171513905831937&quot;&gt;April 15, 2014&lt;/a&gt;&lt;/blockquote&gt;
+
+&lt;blockquote class=&quot;twitter-tweet&quot;&gt;&lt;p&gt;Our &lt;a href=&quot;https://twitter.com/gulpjs&quot;&gt;@gulpjs&lt;/a&gt; webapp generator just got another round of updates: &lt;a href=&quot;https://t.co/soUQV3bnNl&quot;&gt;https://t.co/soUQV3bnNl&lt;/a&gt;. &lt;a href=&quot;http://t.co/S1nduFgVGJ&quot;&gt;pic.twitter.com/S1nduFgVGJ&lt;/a&gt; via &lt;a href=&quot;https://twitter.com/yeoman&quot;&gt;@yeoman&lt;/a&gt;&lt;/p&gt;&amp;mdash; Siancore (@siancore) &lt;a href=&quot;https://twitter.com/siancore/statuses/456463584835665920&quot;&gt;April 16, 2014&lt;/a&gt;&lt;/blockquote&gt;
+
+&lt;blockquote class=&quot;twitter-tweet&quot;&gt;&lt;p&gt;Comparing async control flow tools: &lt;a href=&quot;https://twitter.com/search?q=%23nodejs&amp;amp;src=hash&quot;&gt;#nodejs&lt;/a&gt; Promises, Try/Catch and &lt;a href=&quot;https://twitter.com/angularjs&quot;&gt;@angularjs&lt;/a&gt; Zone.js by &lt;a href=&quot;https://twitter.com/alexgorbatchev&quot;&gt;@alexgorbatchev&lt;/a&gt; - &lt;a href=&quot;http://t.co/5BrNEisgH7&quot;&gt;http://t.co/5BrNEisgH7&lt;/a&gt;&lt;/p&gt;&amp;mdash; StrongLoop (@StrongLoop) &lt;a href=&quot;https://twitter.com/StrongLoop/statuses/456453560532606976&quot;&gt;April 16, 2014&lt;/a&gt;&lt;/blockquote&gt;</content>
+		</entry>
+	
     
     
     
@@ -320,42 +368,6 @@ request(&amp;quot;http://localhost:9000/foo?b=2&amp;amp;a=1&amp;quot;, function(
 &lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Checkout &lt;a href=&quot;http://runnable.com/U0bPQd2Mi8VtE_Vi/shmock-example-for-node-js-and-npmawesome&quot;&gt;runnable example&lt;/a&gt;.&lt;/p&gt;
 &lt;h2 id=&quot;closing-thoughts&quot;&gt;Closing Thoughts&lt;/h2&gt;
 &lt;p&gt;Being able to mock APIs is a very powerful tool for &lt;a href=&quot;http://en.wikipedia.org/wiki/Behavior-driven_development&quot;&gt;BDD&lt;/a&gt;. You can prototype, design and test your consumer before implementing a line of code. Check out &lt;a href=&quot;https://github.com/xetorthio/shmock&quot;&gt;shmock&lt;/a&gt; github page for full documentation and test for examples of usage.&lt;/p&gt;
-</content>
-		</entry>
-	
-    
-    
-    
-		<entry>
-			<title>Links for Apr 8, 2014</title>
-			<link href="http://npmawesome.com/posts/2014-04-09-links"/>
-			<updated>2014-04-10T03:00:00.000Z</updated>
-			<id>http://npmawesome.com/posts/2014-04-09-links</id>
-			<content type="html">&lt;h2 id=&quot;articles-slides&quot;&gt;Articles &amp;amp; Slides&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;http://serversforhackers.com/articles/2014/03/20/getting-started-with-docker/&quot;&gt;Getting Started with Docker&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://engineering.gosquared.com/optimising-nginx-node-js-and-networking-for-heavy-workloads&quot;&gt;Optimising NginX, Node.JS and networking for heavy workloads&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&quot;github&quot;&gt;GitHub&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;http://sokra.github.io/source-map-visualization/&quot;&gt;ource-map-visualization&lt;/a&gt; for various flavors. Pretty cool to see how the mapping works.&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://mgcrea.github.io/angular-strap/&quot;&gt;angular-strap&lt;/a&gt; - AngularJS 1.2+ native directives for Twitter Bootstrap 3.&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://lipis.github.io/flag-icon-css/&quot;&gt;flag-icon-css&lt;/a&gt; - CSS for vector based country flags.&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://github.com/daraosn/oculus-drone&quot;&gt;oculus-drone&lt;/a&gt; - Oculus Rift + AR Drone 2.0 controller with live video feed and head-motion controller written for Node.js in CoffeeScript.&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://github.com/schaermu/node-fluent-ffmpeg&quot;&gt;node-fluent-ffmpeg&lt;/a&gt; abstracts the complex command-line usage of ffmpeg into a fluent, easy to use Node.js module.&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://jasperproject.github.io/&quot;&gt;Jasper&lt;/a&gt; is an open source platform for developing always-on, voice-controlled applications.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&quot;startups&quot;&gt;Startups&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://slack.com/&quot;&gt;Slack&lt;/a&gt; brings all your communication together in one place. It’s real-time messaging, archiving and search for modern teams.&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://zerocater.com/&quot;&gt;ZeroCater&lt;/a&gt; is the easiest way to feed your team.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&quot;vidoes&quot;&gt;Vidoes&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;http://2013.jsconf.eu/speakers/videos.html&quot;&gt;JSConf 2013 conference videos&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://vimeo.com/ndcoslo/videos/sort:plays/format:thumbnail&quot;&gt;NDC conference videos&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://www.youtube.com/playlist?list=PL055Epbe6d5bab7rZ3i83OtMmD-d9uq2K&quot;&gt;Fluent 2014 conference videos&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
 </content>
 		</entry>
 	

@@ -15,15 +15,64 @@
     <atom:link href="http://feeds.feedburner.com/npmawesome" rel="self" type="application/rss+xml"/>
     <link>http://npmawesome.com</link>
     <description>Daily dose of awesome NPM modules for Node.js, old and new!</description>
-    <lastBuildDate>Thu, 17 Apr 2014 05:57:06 GMT</lastBuildDate>
+    <lastBuildDate>Thu, 17 Apr 2014 13:59:28 GMT</lastBuildDate>
     <language>en</language>
     <sy:updatePeriod>daily</sy:updatePeriod>
     <sy:updateFrequency>2</sy:updateFrequency>
     <generator>awesomeness</generator>
-    <pubDate>Thu, 17 Apr 2014 05:57:06 GMT</pubDate>
+    <pubDate>Thu, 17 Apr 2014 13:59:28 GMT</pubDate>
 
     
     
+    
+      
+      
+      
+      <item>
+        <title><![CDATA[Links for Apr 17, 2014]]></title>
+        <link><![CDATA[http://npmawesome.com/posts/2014-04-17-links]]></link>
+        <dc:creator><![CDATA[Alex Gorbatchev]]></dc:creator>
+        <guid isPermaLink="true"><![CDATA[http://npmawesome.com/posts/2014-04-17-links]]></guid>
+        <pubDate><![CDATA[Fri, 18 Apr 2014 03:00:00 GMT]]></pubDate>
+        <description><![CDATA[<h2 id="articles-slides">Articles &amp; Slides</h2>
+<ul>
+<li><p><a href="http://techcrunch.com/2014/04/14/sf-housing/">How Burrowing Owls Lead To Vomiting Anarchists (Or SF’s Housing Crisis Explained)</a></p>
+<blockquote>
+<p>Homeowners have a strong economic incentive to restrict supply because it supports price appreciation of their own homes.
+…
+Then the rent-controlled tenants care far more about eviction protections than increasing supply. That’s because their most vulnerable constituents are paying rents that are so far below market-rate, that only an ungodly amount of construction could possibly help them. Plus, that construction wouldn’t happen fast enough — especially for elderly tenants.</p>
+<p>So we’re looking at as much as 80 percent of the city that isn’t naturally oriented to add to the housing stock.</p>
+</blockquote>
+</li>
+<li><p><a href="http://insights.ubuntu.com/news/ubuntu-14-04-lts-the-cloud-platform-of-choice/">Ubuntu 14.04 LTS: the cloud platform of choice</a></p>
+<blockquote>
+<p>Canonical today announces Ubuntu 14.04 LTS will be released on 17th April 2014, bringing a new level of reliability, performance and interoperability to cloud and scale out environments with support and maintenance for five years.</p>
+</blockquote>
+</li>
+<li><p><a href="https://blog.indutny.com/9.heartbleed">Cracking Cloudflare&#39;s heartbleed challenge</a></p>
+<blockquote>
+<p>… it won&#39;t produce any result immediately, it took me 3 hours and a certain amount of luck to obtain the key in a Cloudflare&#39;s challenge.</p>
+</blockquote>
+</li>
+<li><p><a href="http://theory.stanford.edu/~amitp/GameProgramming/AStarComparison.html">Introduction to A*</a></p>
+<blockquote>
+<p>Movement for a single object seems easy. Pathfinding is complex.</p>
+</blockquote>
+</li>
+<li><p><a href="http://codecondo.com/10-web-application-frameworks-for-node-js/">12 Web Application Frameworks for Node.js</a></p>
+</li>
+<li><p><a href="https://tails.boum.org/">Tails</a> is a live operating system, that you can start on almost any computer from a DVD, USB stick, or SD card. It aims at preserving your privacy and anonymity.</p>
+</li>
+</ul>
+<div class="read-more"/>
+
+<h2 id="twitter">Twitter</h2>
+<blockquote class="twitter-tweet"><p>Hello. My name is Ethan Welborn, and I am a <a href="https://twitter.com/gulpjs">@gulpjs</a>-aholic. Please contact me if you can provide assistance... or badass tasks. <a href="https://twitter.com/search?q=%23wtfwow&amp;src=hash">#wtfwow</a></p>&mdash; Ethan Welborn (@WelbornEthan) <a href="https://twitter.com/WelbornEthan/statuses/456171513905831937">April 15, 2014</a></blockquote>
+
+<blockquote class="twitter-tweet"><p>Our <a href="https://twitter.com/gulpjs">@gulpjs</a> webapp generator just got another round of updates: <a href="https://t.co/soUQV3bnNl">https://t.co/soUQV3bnNl</a>. <a href="http://t.co/S1nduFgVGJ">pic.twitter.com/S1nduFgVGJ</a> via <a href="https://twitter.com/yeoman">@yeoman</a></p>&mdash; Siancore (@siancore) <a href="https://twitter.com/siancore/statuses/456463584835665920">April 16, 2014</a></blockquote>
+
+<blockquote class="twitter-tweet"><p>Comparing async control flow tools: <a href="https://twitter.com/search?q=%23nodejs&amp;src=hash">#nodejs</a> Promises, Try/Catch and <a href="https://twitter.com/angularjs">@angularjs</a> Zone.js by <a href="https://twitter.com/alexgorbatchev">@alexgorbatchev</a> - <a href="http://t.co/5BrNEisgH7">http://t.co/5BrNEisgH7</a></p>&mdash; StrongLoop (@StrongLoop) <a href="https://twitter.com/StrongLoop/statuses/456453560532606976">April 16, 2014</a></blockquote>]]></description>
+      </item>
     
       
       
@@ -336,43 +385,6 @@ request(&quot;http://localhost:9000/foo?b=2&amp;a=1&quot;, function(err, respons
 </code></pre><p>Checkout <a href="http://runnable.com/U0bPQd2Mi8VtE_Vi/shmock-example-for-node-js-and-npmawesome">runnable example</a>.</p>
 <h2 id="closing-thoughts">Closing Thoughts</h2>
 <p>Being able to mock APIs is a very powerful tool for <a href="http://en.wikipedia.org/wiki/Behavior-driven_development">BDD</a>. You can prototype, design and test your consumer before implementing a line of code. Check out <a href="https://github.com/xetorthio/shmock">shmock</a> github page for full documentation and test for examples of usage.</p>
-]]></description>
-      </item>
-    
-      
-      
-      
-      <item>
-        <title><![CDATA[Links for Apr 8, 2014]]></title>
-        <link><![CDATA[http://npmawesome.com/posts/2014-04-09-links]]></link>
-        <dc:creator><![CDATA[Alex Gorbatchev]]></dc:creator>
-        <guid isPermaLink="true"><![CDATA[http://npmawesome.com/posts/2014-04-09-links]]></guid>
-        <pubDate><![CDATA[Thu, 10 Apr 2014 03:00:00 GMT]]></pubDate>
-        <description><![CDATA[<h2 id="articles-slides">Articles &amp; Slides</h2>
-<ul>
-<li><a href="http://serversforhackers.com/articles/2014/03/20/getting-started-with-docker/">Getting Started with Docker</a></li>
-<li><a href="https://engineering.gosquared.com/optimising-nginx-node-js-and-networking-for-heavy-workloads">Optimising NginX, Node.JS and networking for heavy workloads</a></li>
-</ul>
-<h2 id="github">GitHub</h2>
-<ul>
-<li><a href="http://sokra.github.io/source-map-visualization/">ource-map-visualization</a> for various flavors. Pretty cool to see how the mapping works.</li>
-<li><a href="http://mgcrea.github.io/angular-strap/">angular-strap</a> - AngularJS 1.2+ native directives for Twitter Bootstrap 3.</li>
-<li><a href="http://lipis.github.io/flag-icon-css/">flag-icon-css</a> - CSS for vector based country flags.</li>
-<li><a href="https://github.com/daraosn/oculus-drone">oculus-drone</a> - Oculus Rift + AR Drone 2.0 controller with live video feed and head-motion controller written for Node.js in CoffeeScript.</li>
-<li><a href="https://github.com/schaermu/node-fluent-ffmpeg">node-fluent-ffmpeg</a> abstracts the complex command-line usage of ffmpeg into a fluent, easy to use Node.js module.</li>
-<li><a href="http://jasperproject.github.io/">Jasper</a> is an open source platform for developing always-on, voice-controlled applications.</li>
-</ul>
-<h2 id="startups">Startups</h2>
-<ul>
-<li><a href="https://slack.com/">Slack</a> brings all your communication together in one place. It’s real-time messaging, archiving and search for modern teams.</li>
-<li><a href="https://zerocater.com/">ZeroCater</a> is the easiest way to feed your team.</li>
-</ul>
-<h2 id="vidoes">Vidoes</h2>
-<ul>
-<li><a href="http://2013.jsconf.eu/speakers/videos.html">JSConf 2013 conference videos</a></li>
-<li><a href="http://vimeo.com/ndcoslo/videos/sort:plays/format:thumbnail">NDC conference videos</a></li>
-<li><a href="https://www.youtube.com/playlist?list=PL055Epbe6d5bab7rZ3i83OtMmD-d9uq2K">Fluent 2014 conference videos</a></li>
-</ul>
 ]]></description>
       </item>
     
