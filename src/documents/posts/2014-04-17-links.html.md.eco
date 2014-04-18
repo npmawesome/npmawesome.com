@@ -1,0 +1,42 @@
+---
+date: 2014-04-17T20:00:00-0700
+title: Links for Apr 17, 2014
+layout: post-links
+tags: javascript, links
+description: Daily link dump.
+---
+## Articles & Slides
+
+* [How Burrowing Owls Lead To Vomiting Anarchists (Or SF’s Housing Crisis Explained)](http://techcrunch.com/2014/04/14/sf-housing/)
+
+  > Homeowners have a strong economic incentive to restrict supply because it supports price appreciation of their own homes.
+  > …
+  > Then the rent-controlled tenants care far more about eviction protections than increasing supply. That’s because their most vulnerable constituents are paying rents that are so far below market-rate, that only an ungodly amount of construction could possibly help them. Plus, that construction wouldn’t happen fast enough — especially for elderly tenants.
+  >
+  > So we’re looking at as much as 80 percent of the city that isn’t naturally oriented to add to the housing stock.
+
+* [Ubuntu 14.04 LTS: the cloud platform of choice](http://insights.ubuntu.com/news/ubuntu-14-04-lts-the-cloud-platform-of-choice/)
+
+  > Canonical today announces Ubuntu 14.04 LTS will be released on 17th April 2014, bringing a new level of reliability, performance and interoperability to cloud and scale out environments with support and maintenance for five years.
+
+* [Cracking Cloudflare's heartbleed challenge](https://blog.indutny.com/9.heartbleed)
+
+  > … it won't produce any result immediately, it took me 3 hours and a certain amount of luck to obtain the key in a Cloudflare's challenge.
+
+* [Introduction to A*](http://theory.stanford.edu/~amitp/GameProgramming/AStarComparison.html)
+
+  > Movement for a single object seems easy. Pathfinding is complex.
+
+* [12 Web Application Frameworks for Node.js](http://codecondo.com/10-web-application-frameworks-for-node-js/)
+
+* [Tails](https://tails.boum.org/) is a live operating system, that you can start on almost any computer from a DVD, USB stick, or SD card. It aims at preserving your privacy and anonymity.
+
+<%- @readMore() %>
+
+## Twitter
+
+<blockquote class="twitter-tweet"><p>Hello. My name is Ethan Welborn, and I am a <a href="https://twitter.com/gulpjs">@gulpjs</a>-aholic. Please contact me if you can provide assistance... or badass tasks. <a href="https://twitter.com/search?q=%23wtfwow&amp;src=hash">#wtfwow</a></p>&mdash; Ethan Welborn (@WelbornEthan) <a href="https://twitter.com/WelbornEthan/statuses/456171513905831937">April 15, 2014</a></blockquote>
+
+<blockquote class="twitter-tweet"><p>Our <a href="https://twitter.com/gulpjs">@gulpjs</a> webapp generator just got another round of updates: <a href="https://t.co/soUQV3bnNl">https://t.co/soUQV3bnNl</a>. <a href="http://t.co/S1nduFgVGJ">pic.twitter.com/S1nduFgVGJ</a> via <a href="https://twitter.com/yeoman">@yeoman</a></p>&mdash; Siancore (@siancore) <a href="https://twitter.com/siancore/statuses/456463584835665920">April 16, 2014</a></blockquote>
+
+<blockquote class="twitter-tweet"><p>Comparing async control flow tools: <a href="https://twitter.com/search?q=%23nodejs&amp;src=hash">#nodejs</a> Promises, Try/Catch and <a href="https://twitter.com/angularjs">@angularjs</a> Zone.js by <a href="https://twitter.com/alexgorbatchev">@alexgorbatchev</a> - <a href="http://t.co/5BrNEisgH7">http://t.co/5BrNEisgH7</a></p>&mdash; StrongLoop (@StrongLoop) <a href="https://twitter.com/StrongLoop/statuses/456453560532606976">April 16, 2014</a></blockquote>
