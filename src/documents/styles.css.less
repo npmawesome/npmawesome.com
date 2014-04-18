@@ -75,7 +75,7 @@ article {
   max-width: 100%;
   padding-bottom: 50px;
   border-bottom: 1px solid silver;
-  overflow: hidden;
+  overflow-x: hidden;
 
   > header {
     margin: 3em 0 1em 0;
@@ -127,6 +127,19 @@ article {
           content: '★';
           margin: 0 .2em 0;
         }
+      }
+    }
+
+    .social {
+      margin-top: 20px;
+      height: 20px;
+
+      > *, .fb_iframe_widget > span {
+        vertical-align: top !important;
+      }
+
+      > * {
+        margin-right: 10px;
       }
     }
   }
