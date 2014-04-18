@@ -54,7 +54,7 @@ docpadConfig =
       (title or '') + @site.title
 
     readMore: ->
-      '<div class="read-more"/>'
+      '<div class="read-more"></div>'
 
     getPreview: (doc = @document) ->
       body = doc.contentRenderedWithoutLayouts
