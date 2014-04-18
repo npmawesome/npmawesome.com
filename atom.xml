@@ -5,7 +5,7 @@
 	<link href="http://npmawesome.com/atom.xml" rel="self" />
 	<link href="http://npmawesome.com" />
 	<id>http://npmawesome.com</id>
-	<updated>2014-04-17T13:59:28.061Z</updated>
+	<updated>2014-04-18T17:17:32.803Z</updated>
 	<author>
 		<name>Alex Gorbatchev</name>
 	</author>
@@ -13,6 +13,112 @@
   
   
   
+    
+    
+    
+		<entry>
+			<title>Links for Apr 18, 2014</title>
+			<link href="http://npmawesome.com/posts/2014-04-18-links"/>
+			<updated>2014-04-18T17:00:00.000Z</updated>
+			<id>http://npmawesome.com/posts/2014-04-18-links</id>
+			<content type="html">&lt;p&gt;&lt;img src=&quot;http://npmawesome.com/images/posts/html5.svg&quot; style=&quot;float: right; width: 150px;&quot;/&gt;&lt;/p&gt;
+&lt;h2 id=&quot;articles-slides&quot;&gt;Articles &amp;amp; Slides&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;&lt;a href=&quot;http://googleresearch.blogspot.co.uk/2014/04/lens-blur-in-new-google-camera-app.html&quot;&gt;Lens Blur in the new Google Camera app&lt;/a&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Having computed the depth map, we can re-render the photo, blurring pixels by differing amounts depending on the pixel’s depth, aperture and location relative to the focal plane. The focal plane determines which pixels to blur, with the amount of blur increasing proportionally with the distance of each pixel to that focal plane. This is all achieved by simulating a physical lens using the thin lens approximation.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a href=&quot;http://www.sitepoint.com/controlling-arduino-nodejs-johnny-five/&quot;&gt;Controlling an Arduino with NodeJS and Johnny-Five&lt;/a&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;This video aims to help those new to Arduinos and NodeJS understand the basics of getting started. I’ll provide an overview of what you’ll need to do in order to get a Node application speaking to an Arduino using the Johnny-Five JavaScript framework. By the end we will have used the power of JavaScript to turn an LED light on and off!&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&quot;read-more&quot;&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;github&quot;&gt;Github&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;http://chieffancypants.github.io/angular-hotkeys/&quot;&gt;AngularHotkeys.js&lt;/a&gt; - configuration-centric keyboard shortcuts for your angular apps.&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/lukasz-zak/disqus-here&quot;&gt;disqusHere&lt;/a&gt; - Angular directive for embeding Disqus comments on your site.&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/flowjs/ng-flow&quot;&gt;Flow.js&lt;/a&gt; is a JavaScript library providing multiple simultaneous, stable and resumable uploads via the HTML5 File API. Library does not require third party dependencies.&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/AlexNisnevich/untrusted&quot;&gt;Untrusted —or— the Continuing Adventures of Dr. Eval&lt;/a&gt; is an exciting Meta-Javascript Adventure Game wherein you guide the dashing, steadfast Dr. Eval through a mysterious MACHINE CONTINUUM, wherein, using only his trusty computer and the TURING-COMPLETE power of Javascript, he must literally ALTER HIS REALITY in order to find his freedom! You must literally edit and re-execute the very Javascript running the game in your browser to save Dr. Eval from this dark and confusing reality!&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;unix&quot;&gt;Unix&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;openssl rand -base64 32&lt;/code&gt; to generate a “random” string.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;misc&quot;&gt;Misc&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;http://character-code.com/arrows-html-codes.php&quot;&gt;Arrows HTML Code and Unicode Hexadecimal&lt;/a&gt; ↑↑↓↓←→←→&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;twitter&quot;&gt;Twitter&lt;/h2&gt;
+&lt;blockquote class=&quot;twitter-tweet&quot;&gt;&lt;p&gt;Can’t wait until gulp 4 for non-dependent task support? Try run-sequence! &lt;a href=&quot;https://t.co/PPyJnjA4Jz&quot;&gt;https://t.co/PPyJnjA4Jz&lt;/a&gt;&lt;/p&gt;&amp;mdash; gulp (@gulpjs) &lt;a href=&quot;https://twitter.com/gulpjs/statuses/457120895102754816&quot;&gt;April 18, 2014&lt;/a&gt;&lt;/blockquote&gt;</content>
+		</entry>
+	
+    
+    
+    
+		<entry>
+			<title>terminal-menu</title>
+			<link href="http://npmawesome.com/posts/2014-04-18-terminal-menu"/>
+			<updated>2014-04-18T16:52:03.000Z</updated>
+			<id>http://npmawesome.com/posts/2014-04-18-terminal-menu</id>
+			<content type="html">&lt;p&gt;Lets continue building out awesome CLI (command line interface) tool. Previously we have discussed how to &lt;a href=&quot;/npmawesome-parsing-command-line-options-with-yargs/&quot;&gt;take in command line arguments&lt;/a&gt;, &lt;a href=&quot;/npmawesome-table-formatting-in-the-terminal-with-cli-tables/&quot;&gt;output tabular data&lt;/a&gt; and &lt;a href=&quot;/npmawesome-progress-reporting-in-cli-applications/&quot;&gt;display progress of long running tasks&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;img class=&quot;hide-on-mobile&quot; src=&quot;https://avatars2.githubusercontent.com/u/12631?s=400&quot; style=&quot;float: right; margin-left: 1em; width: 100px;&quot;/&gt;
+Prompting a user with options and asking to pick one is a fairly common scenario. Most of the time you get to read the options and press associated key. That works, but we are human and like pretty interfaces. Same thing can be achieved with a common menu interface. This is where &lt;a href=&quot;https://github.com/substack/terminal-menu&quot;&gt;terminal-menu&lt;/a&gt; by &lt;a href=&quot;https://github.com/substack&quot;&gt;James Halliday&lt;/a&gt; comes in.&lt;/p&gt;
+&lt;div class=&quot;read-more&quot;&gt;&lt;/div&gt;
+
+&lt;pre&gt;&lt;code&gt;npm install terminal-menu
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&quot;features&quot;&gt;Features&lt;/h2&gt;
+&lt;p&gt;There are a few options available to customize the menu such as:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Background color&lt;/li&gt;
+&lt;li&gt;Foreground color&lt;/li&gt;
+&lt;li&gt;Position&lt;/li&gt;
+&lt;li&gt;Width&lt;/li&gt;
+&lt;li&gt;Padding&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;usage&quot;&gt;Usage&lt;/h2&gt;
+&lt;pre&gt;&lt;code&gt;var terminalMenu = require(&amp;#39;terminal-menu&amp;#39;);
+
+var menu = terminalMenu({
+  width: 60,
+  x: 4,
+  y: 2
+});
+
+menu.reset();
+menu.write(&amp;#39;Recently on our blog\n&amp;#39;);
+menu.write(&amp;#39;-------------------------\n&amp;#39;);
+
+menu.add(&amp;#39;How to setup a multi-user Ghost blog&amp;#39;);
+menu.add(&amp;#39;Patched PaaS Vulnerability&amp;#39;);
+menu.add(&amp;#39;npmawesome: Progress reporting in CLI applications&amp;#39;);
+menu.add(&amp;#39;Improved SSL experience for private npm&amp;#39;);
+menu.add(&amp;#39;npmawesome: Table formatting in the terminal with...&amp;#39;);
+
+menu.on(&amp;#39;select&amp;#39;, function (label, index) {
+  menu.close();
+  console.log(&amp;#39;You selected:&amp;#39;);
+  console.log(index, label);
+});
+
+menu.createStream().pipe(process.stdout);
+&lt;/code&gt;&lt;/pre&gt;&lt;div style=&quot;padding: 13px 10px 10px; background: black; text-align: center; border-radius: 3px&quot;&gt;&lt;img src=&quot;http://npmawesome.com/images/posts/terminal-menu/terminal-menu01.gif&quot;/&gt;&lt;/div&gt;
+
+&lt;p&gt;Check out interactive example on &lt;a href=&quot;http://runnable.com/U0YDx3Bx9a1ntoDb/terminal-menu-example-for-npm-awesome-nodejitsu-node-js-and-cli&quot;&gt;runnable&lt;/a&gt;.&lt;/p&gt;
+&lt;h2 id=&quot;other-modules-to-checkout&quot;&gt;Other modules to checkout&lt;/h2&gt;
+&lt;p&gt;Generally there is a list of alternative modules here, but as strange as it sounds, I couldn&amp;#39;t find any. If you know of one, please drop us a line.&lt;/p&gt;
+&lt;h2 id=&quot;closing-thoughts&quot;&gt;Closing thoughts&lt;/h2&gt;
+&lt;p&gt;Over the last couple of CLI related posts we&amp;#39;ve progressively been improving user experience of our terminal application. I feel that you can never spend too much time doing this, but you can definetely spend too little. I love little things that feel good. &lt;a href=&quot;https://github.com/substack/terminal-menu&quot;&gt;terminal-menu&lt;/a&gt; was created for &lt;a href=&quot;https://github.com/substack/stream-adventure&quot;&gt;stream-adventure&lt;/a&gt;, an educational terminal based stream adventure game for Node.js and &lt;a href=&quot;https://github.com/substack/stream-adventure&quot;&gt;stream-adventure&lt;/a&gt; in turn inspired &lt;a href=&quot;http://nodestreams.com/&quot;&gt;browser based version&lt;/a&gt; written by John Resig of the jQuery fame. Both are pretty cool and fun!&lt;/p&gt;
+&lt;blockquote class=&quot;twitter-tweet&quot; lang=&quot;en&quot;&gt;&lt;p&gt;everybody going to nodeconf should make sure to npm install -g stream-adventure&lt;/p&gt;&amp;mdash; James Halliday (@substack) &lt;a href=&quot;https://twitter.com/substack/statuses/350097531730006017&quot;&gt;June 27, 2013&lt;/a&gt;&lt;/blockquote&gt;
+
+&lt;blockquote class=&quot;twitter-tweet&quot; lang=&quot;en&quot;&gt;&lt;p&gt;&lt;a href=&quot;https://twitter.com/maxogden&quot;&gt;@maxogden&lt;/a&gt; &lt;a href=&quot;https://twitter.com/substack&quot;&gt;@substack&lt;/a&gt; Would love your feedback on &lt;a href=&quot;http://t.co/PX0oG8CtB7&quot;&gt;http://t.co/PX0oG8CtB7&lt;/a&gt; was inspired by stream adventure! More info: &lt;a href=&quot;http://t.co/c1eQGB53Lm&quot;&gt;http://t.co/c1eQGB53Lm&lt;/a&gt;&lt;/p&gt;&amp;mdash; John Resig (@jeresig) &lt;a href=&quot;https://twitter.com/jeresig/statuses/401419183230951424&quot;&gt;November 15, 2013&lt;/a&gt;&lt;/blockquote&gt;
+
+</content>
+		</entry>
+	
     
     
     
@@ -51,7 +157,7 @@ Then the rent-controlled tenants care far more about eviction protections than i
 &lt;li&gt;&lt;p&gt;&lt;a href=&quot;https://tails.boum.org/&quot;&gt;Tails&lt;/a&gt; is a live operating system, that you can start on almost any computer from a DVD, USB stick, or SD card. It aims at preserving your privacy and anonymity.&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
-&lt;div class=&quot;read-more&quot;/&gt;
+&lt;div class=&quot;read-more&quot;&gt;&lt;/div&gt;
 
 &lt;h2 id=&quot;twitter&quot;&gt;Twitter&lt;/h2&gt;
 &lt;blockquote class=&quot;twitter-tweet&quot;&gt;&lt;p&gt;Hello. My name is Ethan Welborn, and I am a &lt;a href=&quot;https://twitter.com/gulpjs&quot;&gt;@gulpjs&lt;/a&gt;-aholic. Please contact me if you can provide assistance... or badass tasks. &lt;a href=&quot;https://twitter.com/search?q=%23wtfwow&amp;amp;src=hash&quot;&gt;#wtfwow&lt;/a&gt;&lt;/p&gt;&amp;mdash; Ethan Welborn (@WelbornEthan) &lt;a href=&quot;https://twitter.com/WelbornEthan/statuses/456171513905831937&quot;&gt;April 15, 2014&lt;/a&gt;&lt;/blockquote&gt;
@@ -106,7 +212,7 @@ Then the rent-controlled tenants care far more about eviction protections than i
   });
 }
 &lt;/code&gt;&lt;/pre&gt;&lt;p&gt;We are covering all possible failure cases here using combination of &lt;code&gt;try/catch&lt;/code&gt; and callback error handling, but boy do we repeat ourselves over and over again. Lets try and rewrite this!&lt;/p&gt;
-&lt;div class=&quot;read-more&quot;/&gt;
+&lt;div class=&quot;read-more&quot;&gt;&lt;/div&gt;
 
 &lt;h2 id=&quot;error-handling-using-try-catch&quot;&gt;Error handling using try/catch&lt;/h2&gt;
 &lt;pre&gt;&lt;code&gt;function updateDependencies(packageName, done) {
@@ -268,107 +374,12 @@ Error
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&quot;https://redpen.io&quot;&gt;Red Pen&lt;/a&gt; is the fastest feedback tool for visual teams.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;div class=&quot;read-more&quot;/&gt;
+&lt;div class=&quot;read-more&quot;&gt;&lt;/div&gt;
 
 &lt;h2 id=&quot;twitter&quot;&gt;Twitter&lt;/h2&gt;
 &lt;blockquote class=&quot;twitter-tweet&quot;&gt;&lt;p&gt;BREAKING: NSA said to have used Heartbleed bug to gather intelligence for two years, reports Bloomberg. &lt;a href=&quot;https://t.co/wbHhucX7Pq&quot;&gt;https://t.co/wbHhucX7Pq&lt;/a&gt;&lt;/p&gt;&amp;mdash; EFF (@EFF) &lt;a href=&quot;https://twitter.com/EFF/statuses/454699447797026816&quot;&gt;April 11, 2014&lt;/a&gt;&lt;/blockquote&gt;
 
 &lt;blockquote class=&quot;twitter-tweet&quot;&gt;&lt;p&gt;Talk to me, Twitter. &lt;a href=&quot;http://t.co/7skFm6Ffhn&quot;&gt;pic.twitter.com/7skFm6Ffhn&lt;/a&gt;&lt;/p&gt;&amp;mdash; Robert Downey Jr (@RobertDowneyJr) &lt;a href=&quot;https://twitter.com/RobertDowneyJr/statuses/454733271650144256&quot;&gt;April 11, 2014&lt;/a&gt;&lt;/blockquote&gt;</content>
-		</entry>
-	
-    
-    
-    
-		<entry>
-			<title>Links for Apr 10, 2014</title>
-			<link href="http://npmawesome.com/posts/2014-04-11-links"/>
-			<updated>2014-04-12T03:00:00.000Z</updated>
-			<id>http://npmawesome.com/posts/2014-04-11-links</id>
-			<content type="html">&lt;h2 id=&quot;articles-slides&quot;&gt;Articles &amp;amp; Slides&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;&lt;a href=&quot;http://ejohn.org/blog/write-code-every-day/&quot;&gt;Write Code Every Day&lt;/a&gt;&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;Minimum viable code. I was forced to write code for no less than 30 minutes a day. (It’s really hard to write meaningful code in less time, especially after remembering where you left off the day before.) Some week days I work a little bit more (usually no more than an hour) and on weekends I’m sometimes able to work a full day.&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;&lt;a href=&quot;http://hmarr.com/2013/oct/16/codecube-runnable-gists/&quot;&gt;Docker-powered Runnable Gists&lt;/a&gt;&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;There are a number of ways of achieving each of these objectives (virtual machines, chroot, cgroups, etc), but Docker emerged as a pretty great solution that covers each of the points mentioned. Built on LXC and cgroups, it enables creation and teardown of relatively secure sandboxed environments in a fraction of a second. Each time a code snippet is run, a docker container can be created, started, used to run the untrusted code, then killed and destroyed. It’s incredible that all this can happen in a matter of milliseconds.&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;&lt;a href=&quot;http://blog.dcxn.com/2013/10/27/js-everywhere-my-first-conference-talk/&quot;&gt;JS Everywhere - My First Conference Talk&lt;/a&gt;&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;I started working on this 15-minute talk about a month ago and that felt like the right amount of time. The talk went through several incarnations as I got feedback from a number of different people. Fairly early on I knew that I wanted to argue that code is fashion but in early talks, someone pointed out to me that I was really saying that fashion is nothing but fads. That was great feedback and because I still had quite a bit of time I was able to think about it and come to a better understanding of what fashion means to me.&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;&lt;a href=&quot;http://strongloop.com/strongblog/whats-new-nodejs-v0-12-debugging-clusters/&quot;&gt;Debugging Clustered Apps with Node-Inspector&lt;/a&gt;&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;Debugging a clustered Node application is not without some idiosyncrasies, particularly if you are running Node v0.10. But, it does work well enough if you understand what’s going on behind the scenes. Now, before you embark on this debugging adventure, you should probably ask yourself, “Can I run my app un-clustered and debug it in that mode or is the issue I am trying to track down, only seen when running my app in a clustered configuration?”&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;&lt;a href=&quot;http://www.quora.com/Time-Travel/Why-are-people-from-the-future-not-time-traveling-to-our-period&quot;&gt;Why are people from the future not time traveling to our period?&lt;/a&gt;&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;&lt;img src=&quot;http://qph.is.quoracdn.net/main-qimg-aff38ac936d19039781773b5bdbac2d4?convert_to_webp=true&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
-&lt;p&gt;So the likely reason that time travelers from the future aren&amp;#39;t visiting our period is (other than time travel perhaps being physically impossible) that we&amp;#39;re just not that interesting, and we&amp;#39;re not really that large.  It&amp;#39;s only temporal-centric egotism that makes us believe otherwise.&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;&lt;a href=&quot;http://javascriptjabber.com/103-jsj-robots-with-raquel-velez/&quot;&gt;JSJ Robots with Raquel Vélez Podcast&lt;/a&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&quot;github&quot;&gt;GitHub&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://kiwiirc.com&quot;&gt;Kiwi IRC&lt;/a&gt; makes Web IRC easy. A hand-crafted IRC client that you canenjoy. Designed to be used easily and freely.&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://github.com/famous/famous&quot;&gt;Famo.us&lt;/a&gt; provides a powerful JavaScript framework and developer tools designed to build rich, fast web applications. Famo.us takes an opinionated approach to developing with web technology, maintaining tight control of rendering to achieve maximum UI performance. Check out the &lt;a href=&quot;http://demo.famo.us/&quot;&gt;demos&lt;/a&gt;.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;div class=&quot;read-more&quot;/&gt;
-
-&lt;h2 id=&quot;twitter&quot;&gt;Twitter&lt;/h2&gt;
-&lt;blockquote class=&quot;twitter-tweet&quot;&gt;&lt;p&gt;You should write code every day: &lt;a href=&quot;http://t.co/M0MmaZn15O&quot;&gt;http://t.co/M0MmaZn15O&lt;/a&gt;&lt;/p&gt;&amp;mdash; John Resig (@jeresig) &lt;a href=&quot;https://twitter.com/jeresig/statuses/454325606432645120&quot;&gt;April 10, 2014&lt;/a&gt;&lt;/blockquote&gt;
-
-&lt;blockquote class=&quot;twitter-tweet&quot;&gt;&lt;p&gt;JavaScript robots and other topics: &lt;a href=&quot;https://twitter.com/rockbot&quot;&gt;@rockbot&lt;/a&gt; interviewed by &lt;a href=&quot;https://twitter.com/JSJabber&quot;&gt;@JSJabber&lt;/a&gt; &lt;a href=&quot;http://t.co/lt3ZTCyfZe&quot;&gt;http://t.co/lt3ZTCyfZe&lt;/a&gt;&lt;/p&gt;&amp;mdash; Technical Machine (@technicalhumans) &lt;a href=&quot;https://twitter.com/technicalhumans/statuses/454320117682569216&quot;&gt;April 10, 2014&lt;/a&gt;&lt;/blockquote&gt;
-
-&lt;blockquote class=&quot;twitter-tweet&quot;&gt;&lt;p&gt;Design strategies for JavaScript API: &lt;a href=&quot;http://t.co/gkcZGtnFj3&quot;&gt;http://t.co/gkcZGtnFj3&lt;/a&gt; - great tips by &lt;a href=&quot;https://twitter.com/AriyaHidayat&quot;&gt;@AriyaHidayat&lt;/a&gt;!&lt;/p&gt;&amp;mdash; Ilya Grigorik (@igrigorik) &lt;a href=&quot;https://twitter.com/igrigorik/statuses/454357649178390528&quot;&gt;April 10, 2014&lt;/a&gt;&lt;/blockquote&gt;</content>
-		</entry>
-	
-    
-    
-    
-		<entry>
-			<title>shmock</title>
-			<link href="http://npmawesome.com/posts/2014-04-10-shmock"/>
-			<updated>2014-04-10T16:45:06.000Z</updated>
-			<id>http://npmawesome.com/posts/2014-04-10-shmock</id>
-			<content type="html">&lt;p&gt;&lt;img class=&quot;hide-on-mobile&quot; src=&quot;https://avatars0.githubusercontent.com/u/139687?s=400&quot; style=&quot;float: right; margin-left: 1em; width: 100px&quot;/&gt;
-&lt;a href=&quot;https://github.com/xetorthio/shmock&quot;&gt;shmock&lt;/a&gt; is a module by &lt;a href=&quot;https://github.com/xetorthio&quot;&gt;Jonathan Leibiusky&lt;/a&gt; provides a super nice API, like the one of &lt;a href=&quot;https://github.com/visionmedia/superagent&quot;&gt;superagent&lt;/a&gt; but it creates a real http server (using &lt;a href=&quot;https://github.com/visionmedia/express&quot;&gt;express&lt;/a&gt;). The nice thing about this is that you don&amp;#39;t really care about the implementation, which http client is being used, or even if nodes native http api changes.&lt;/p&gt;
-&lt;div class=&quot;read-more&quot;/&gt;
-
-&lt;pre&gt;&lt;code&gt;npm install shmock
-&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&quot;usage&quot;&gt;Usage&lt;/h2&gt;
-&lt;pre&gt;&lt;code&gt;var
-  shmock = require(&amp;#39;shmock&amp;#39;),
-  request = require(&amp;#39;request&amp;#39;),
-  assert = require(&amp;#39;assert&amp;#39;)
-  ;
-
-var mock = shmock(9000);
-
-mock
-  .get(&amp;#39;/foo&amp;#39;)
-  .query(&amp;#39;a=1&amp;amp;b=2&amp;#39;)
-  .reply(200, &amp;#39;Hello npmawesome.com&amp;#39;)
-  ;
-
-request(&amp;quot;http://localhost:9000/foo?b=2&amp;amp;a=1&amp;quot;, function(err, response) {
-  assert.equal(response.statusCode, 200);
-  assert.equal(response.body, &amp;#39;Hello npmawesome.com&amp;#39;);
-  mock.close();
-
-  console.log(&amp;#39;It worked!&amp;#39;);
-});
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Checkout &lt;a href=&quot;http://runnable.com/U0bPQd2Mi8VtE_Vi/shmock-example-for-node-js-and-npmawesome&quot;&gt;runnable example&lt;/a&gt;.&lt;/p&gt;
-&lt;h2 id=&quot;closing-thoughts&quot;&gt;Closing Thoughts&lt;/h2&gt;
-&lt;p&gt;Being able to mock APIs is a very powerful tool for &lt;a href=&quot;http://en.wikipedia.org/wiki/Behavior-driven_development&quot;&gt;BDD&lt;/a&gt;. You can prototype, design and test your consumer before implementing a line of code. Check out &lt;a href=&quot;https://github.com/xetorthio/shmock&quot;&gt;shmock&lt;/a&gt; github page for full documentation and test for examples of usage.&lt;/p&gt;
-</content>
 		</entry>
 	
 </feed>
