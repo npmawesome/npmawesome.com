@@ -15,15 +15,73 @@
     <atom:link href="http://feeds.feedburner.com/npmawesome" rel="self" type="application/rss+xml"/>
     <link>http://npmawesome.com</link>
     <description>Daily dose of awesome NPM modules for Node.js, old and new!</description>
-    <lastBuildDate>Fri, 18 Apr 2014 17:17:32 GMT</lastBuildDate>
+    <lastBuildDate>Sat, 19 Apr 2014 18:06:27 GMT</lastBuildDate>
     <language>en</language>
     <sy:updatePeriod>daily</sy:updatePeriod>
     <sy:updateFrequency>2</sy:updateFrequency>
     <generator>awesomeness</generator>
-    <pubDate>Fri, 18 Apr 2014 17:17:32 GMT</pubDate>
+    <pubDate>Sat, 19 Apr 2014 18:06:27 GMT</pubDate>
 
     
     
+    
+      
+      
+      
+      <item>
+        <title><![CDATA[Links for Apr 19, 2014]]></title>
+        <link><![CDATA[http://npmawesome.com/posts/2014-04-19-links]]></link>
+        <dc:creator><![CDATA[Alex Gorbatchev]]></dc:creator>
+        <guid isPermaLink="true"><![CDATA[http://npmawesome.com/posts/2014-04-19-links]]></guid>
+        <pubDate><![CDATA[Sat, 19 Apr 2014 17:00:00 GMT]]></pubDate>
+        <description><![CDATA[<p><img src="http://npmawesome.com/images/posts/html5.svg" style="float: right; width: 150px;"/></p>
+<h2 id="articles-slides">Articles &amp; Slides</h2>
+<ul>
+<li><p><a href="http://scotch.io/tutorials/javascript/build-a-restful-api-using-node-and-express-4">Build a RESTful API Using Node and Express 4</a></p>
+<blockquote>
+<p>With the release of Express 4.0 just a few days ago, lots of our Node apps will have some changes in how they handle routing. With the changes in the Express Router, we have more flexibility in how we can define the routes for our applications.</p>
+</blockquote>
+</li>
+<li><p><a href="http://www.sitepoint.com/controlling-arduino-nodejs-johnny-five/">Controlling an Arduino with NodeJS and Johnny-Five</a></p>
+<blockquote>
+<p>Firmata and Johnny-Five make it a lot easier for JavaScript developers to get more involved and develop applications that can interact with, respond to and control Arduino powered technology.</p>
+</blockquote>
+</li>
+<li><p><a href="http://alxhill.com/blog/articles/brunch-coffeescript-angular/">Brunch - A build system without the Grunt-work</a></p>
+<blockquote>
+<p>Brunch compiles, concats and (optionally) minifies your scripts and styles. It can also package JavaScript files into AMDor CommonJS modules. Brunch automatically applies plugins in the correct order to the right files - so with the right plugins, a .coffee file would be converted into a .js file and then minified, with no explicit setup necessary.</p>
+</blockquote>
+</li>
+<li><p><a href="https://www.youtube.com/watch?v=HY4d-0Kzp68">EmberConf 2014 HTMLBars: The Next-Generation of Templating in Ember.js by Erik Bryn and Kris Selden</a></p>
+<blockquote>
+<p><img src="https://i1.ytimg.com/vi/HY4d-0Kzp68/maxresdefault.jpg" style="width: 400px" /></p>
+</blockquote>
+</li>
+<li><p><a href="https://www.youtube.com/watch?v=2awbKQ2DLRE#t=211">Pyro Board: 2D Rubens&#39; Tube!</a></p>
+<blockquote>
+<p><img src="https://i1.ytimg.com/vi/2awbKQ2DLRE/maxresdefault.jpg" style="width: 400px" /></p>
+</blockquote>
+</li>
+<li><p><a href="http://www.buzzfeed.com/mjs538/completely-surreal-pictures-of-americas-abandoned-malls">Completely Surreal Photos Of America’s Abandoned Malls</a> and a <a href="https://www.youtube.com/watch?v=ZAo2ue6s5Bc">video</a></p>
+<blockquote>
+<p><img src="http://s3-ec.buzzfed.com/static/2014-04/enhanced/webdr06/2/10/enhanced-29364-1396450428-10.jpg" style="width: 400px" /></p>
+</blockquote>
+</li>
+<li><p><a href="http://www.buzzfeed.com/ryanhatesthis/all-hail-the-mighty-pizza-cake">Pizza Cake</a></p>
+<blockquote>
+<p><img src="http://s3-ec.buzzfed.com/static/2014-04/enhanced/webdr03/18/12/enhanced-buzz-wide-14629-1397837404-8.jpg" style="width: 400px" /></p>
+</blockquote>
+</li>
+</ul>
+<h2 id="github">Github</h2>
+<ul>
+<li><a href="https://github.com/salomvary/soundcleod">SoundCleod</a> is a Mac OS X application which brings SoundCloud to the desktop without using a browser.</li>
+</ul>
+<h2 id="twitter">Twitter</h2>
+<blockquote class="twitter-tweet" data-partner="tweetdeck"><p>A NodeJS Perspective on What’s New in MongoDB 2.6, Part I: Text Search <a href="http://t.co/RCjrLHd2u0">http://t.co/RCjrLHd2u0</a></p>&mdash; MongoDB (@MongoDB) <a href="https://twitter.com/MongoDB/statuses/457562812223852545">April 19, 2014</a></blockquote>
+
+<blockquote class="twitter-tweet"><p>omg shut up and take my money! <a href="https://t.co/UCVqDsakuJ">https://t.co/UCVqDsakuJ</a></p>&mdash; Alex Gorbatchev (@alexgorbatchev) <a href="https://twitter.com/alexgorbatchev/statuses/457219682164940800">April 18, 2014</a></blockquote>]]></description>
+      </item>
     
       
       
@@ -359,44 +417,6 @@ Error
 </ul>
 <p><img src="http://npmawesome.com/images/posts/promises-trycatch-zones/party.gif"/></p>
 ]]></description>
-      </item>
-    
-      
-      
-      
-      <item>
-        <title><![CDATA[Links for Apr 15, 2014]]></title>
-        <link><![CDATA[http://npmawesome.com/posts/2014-04-15-links]]></link>
-        <dc:creator><![CDATA[Alex Gorbatchev]]></dc:creator>
-        <guid isPermaLink="true"><![CDATA[http://npmawesome.com/posts/2014-04-15-links]]></guid>
-        <pubDate><![CDATA[Wed, 16 Apr 2014 03:00:00 GMT]]></pubDate>
-        <description><![CDATA[<h2 id="articles-slides">Articles &amp; Slides</h2>
-<ul>
-<li><a href="http://scotch.io/bar-talk/expressjs-4-0-new-features-and-upgrading-from-3-0">ExpressJS 4.0: New Features and Upgrading from 3.0</a></li>
-<li><a href="https://github.com/visionmedia/express/wiki/Migrating-from-3.x-to-4.x">Express 3.x to 4.0 migration guide</a></li>
-<li><a href="http://www.2ality.com/2014/04/call-stack-size.html">The maximum call stack size</a></li>
-<li><p><a href="http://www.wired.com/2014/04/amazon-delivery-drones/">Jeff Bezos Says Amazon Is Seriously Serious About Drone Deliveries</a></p>
-<blockquote>
-<p>On a per customer basis, Prime members are ordering more items, across more categories, than ever before</p>
-</blockquote>
-<p>No kidding :) I basically buy everything on Amazon now.</p>
-</li>
-</ul>
-<h2 id="github">GitHub</h2>
-<ul>
-<li><a href="http://opensource.box.com/">Box &lt;3 Open Source</a>. Our open source projects represent the best of Box. They are all hosted on GitHub. We hope you&#39;ll find them helpful and we invite you to contribute.</li>
-<li><a href="https://github.com/Fluidbyte/avow-ci">Avow CI</a> is a simple yet powerful open-source CI system for individual developers, small teams and dev shops, specifically designed for JavaScript projects.</li>
-</ul>
-<h2 id="startups">Startups</h2>
-<ul>
-<li><a href="https://redpen.io">Red Pen</a> is the fastest feedback tool for visual teams.</li>
-</ul>
-<div class="read-more"></div>
-
-<h2 id="twitter">Twitter</h2>
-<blockquote class="twitter-tweet"><p>BREAKING: NSA said to have used Heartbleed bug to gather intelligence for two years, reports Bloomberg. <a href="https://t.co/wbHhucX7Pq">https://t.co/wbHhucX7Pq</a></p>&mdash; EFF (@EFF) <a href="https://twitter.com/EFF/statuses/454699447797026816">April 11, 2014</a></blockquote>
-
-<blockquote class="twitter-tweet"><p>Talk to me, Twitter. <a href="http://t.co/7skFm6Ffhn">pic.twitter.com/7skFm6Ffhn</a></p>&mdash; Robert Downey Jr (@RobertDowneyJr) <a href="https://twitter.com/RobertDowneyJr/statuses/454733271650144256">April 11, 2014</a></blockquote>]]></description>
       </item>
     
   </channel>

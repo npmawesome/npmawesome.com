@@ -5,7 +5,7 @@
 	<link href="http://npmawesome.com/atom.xml" rel="self" />
 	<link href="http://npmawesome.com" />
 	<id>http://npmawesome.com</id>
-	<updated>2014-04-18T17:17:32.803Z</updated>
+	<updated>2014-04-19T18:06:27.146Z</updated>
 	<author>
 		<name>Alex Gorbatchev</name>
 	</author>
@@ -13,6 +13,63 @@
   
   
   
+    
+    
+    
+		<entry>
+			<title>Links for Apr 19, 2014</title>
+			<link href="http://npmawesome.com/posts/2014-04-19-links"/>
+			<updated>2014-04-19T17:00:00.000Z</updated>
+			<id>http://npmawesome.com/posts/2014-04-19-links</id>
+			<content type="html">&lt;p&gt;&lt;img src=&quot;http://npmawesome.com/images/posts/html5.svg&quot; style=&quot;float: right; width: 150px;&quot;/&gt;&lt;/p&gt;
+&lt;h2 id=&quot;articles-slides&quot;&gt;Articles &amp;amp; Slides&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;&lt;a href=&quot;http://scotch.io/tutorials/javascript/build-a-restful-api-using-node-and-express-4&quot;&gt;Build a RESTful API Using Node and Express 4&lt;/a&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;With the release of Express 4.0 just a few days ago, lots of our Node apps will have some changes in how they handle routing. With the changes in the Express Router, we have more flexibility in how we can define the routes for our applications.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a href=&quot;http://www.sitepoint.com/controlling-arduino-nodejs-johnny-five/&quot;&gt;Controlling an Arduino with NodeJS and Johnny-Five&lt;/a&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Firmata and Johnny-Five make it a lot easier for JavaScript developers to get more involved and develop applications that can interact with, respond to and control Arduino powered technology.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a href=&quot;http://alxhill.com/blog/articles/brunch-coffeescript-angular/&quot;&gt;Brunch - A build system without the Grunt-work&lt;/a&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Brunch compiles, concats and (optionally) minifies your scripts and styles. It can also package JavaScript files into AMDor CommonJS modules. Brunch automatically applies plugins in the correct order to the right files - so with the right plugins, a .coffee file would be converted into a .js file and then minified, with no explicit setup necessary.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a href=&quot;https://www.youtube.com/watch?v=HY4d-0Kzp68&quot;&gt;EmberConf 2014 HTMLBars: The Next-Generation of Templating in Ember.js by Erik Bryn and Kris Selden&lt;/a&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;img src=&quot;https://i1.ytimg.com/vi/HY4d-0Kzp68/maxresdefault.jpg&quot; style=&quot;width: 400px&quot; /&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a href=&quot;https://www.youtube.com/watch?v=2awbKQ2DLRE#t=211&quot;&gt;Pyro Board: 2D Rubens&amp;#39; Tube!&lt;/a&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;img src=&quot;https://i1.ytimg.com/vi/2awbKQ2DLRE/maxresdefault.jpg&quot; style=&quot;width: 400px&quot; /&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a href=&quot;http://www.buzzfeed.com/mjs538/completely-surreal-pictures-of-americas-abandoned-malls&quot;&gt;Completely Surreal Photos Of America’s Abandoned Malls&lt;/a&gt; and a &lt;a href=&quot;https://www.youtube.com/watch?v=ZAo2ue6s5Bc&quot;&gt;video&lt;/a&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;img src=&quot;http://s3-ec.buzzfed.com/static/2014-04/enhanced/webdr06/2/10/enhanced-29364-1396450428-10.jpg&quot; style=&quot;width: 400px&quot; /&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a href=&quot;http://www.buzzfeed.com/ryanhatesthis/all-hail-the-mighty-pizza-cake&quot;&gt;Pizza Cake&lt;/a&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;img src=&quot;http://s3-ec.buzzfed.com/static/2014-04/enhanced/webdr03/18/12/enhanced-buzz-wide-14629-1397837404-8.jpg&quot; style=&quot;width: 400px&quot; /&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;github&quot;&gt;Github&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/salomvary/soundcleod&quot;&gt;SoundCleod&lt;/a&gt; is a Mac OS X application which brings SoundCloud to the desktop without using a browser.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;twitter&quot;&gt;Twitter&lt;/h2&gt;
+&lt;blockquote class=&quot;twitter-tweet&quot; data-partner=&quot;tweetdeck&quot;&gt;&lt;p&gt;A NodeJS Perspective on What’s New in MongoDB 2.6, Part I: Text Search &lt;a href=&quot;http://t.co/RCjrLHd2u0&quot;&gt;http://t.co/RCjrLHd2u0&lt;/a&gt;&lt;/p&gt;&amp;mdash; MongoDB (@MongoDB) &lt;a href=&quot;https://twitter.com/MongoDB/statuses/457562812223852545&quot;&gt;April 19, 2014&lt;/a&gt;&lt;/blockquote&gt;
+
+&lt;blockquote class=&quot;twitter-tweet&quot;&gt;&lt;p&gt;omg shut up and take my money! &lt;a href=&quot;https://t.co/UCVqDsakuJ&quot;&gt;https://t.co/UCVqDsakuJ&lt;/a&gt;&lt;/p&gt;&amp;mdash; Alex Gorbatchev (@alexgorbatchev) &lt;a href=&quot;https://twitter.com/alexgorbatchev/statuses/457219682164940800&quot;&gt;April 18, 2014&lt;/a&gt;&lt;/blockquote&gt;</content>
+		</entry>
+	
     
     
     
@@ -343,43 +400,6 @@ Error
 &lt;/ul&gt;
 &lt;p&gt;&lt;img src=&quot;http://npmawesome.com/images/posts/promises-trycatch-zones/party.gif&quot;/&gt;&lt;/p&gt;
 </content>
-		</entry>
-	
-    
-    
-    
-		<entry>
-			<title>Links for Apr 15, 2014</title>
-			<link href="http://npmawesome.com/posts/2014-04-15-links"/>
-			<updated>2014-04-16T03:00:00.000Z</updated>
-			<id>http://npmawesome.com/posts/2014-04-15-links</id>
-			<content type="html">&lt;h2 id=&quot;articles-slides&quot;&gt;Articles &amp;amp; Slides&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;http://scotch.io/bar-talk/expressjs-4-0-new-features-and-upgrading-from-3-0&quot;&gt;ExpressJS 4.0: New Features and Upgrading from 3.0&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://github.com/visionmedia/express/wiki/Migrating-from-3.x-to-4.x&quot;&gt;Express 3.x to 4.0 migration guide&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://www.2ality.com/2014/04/call-stack-size.html&quot;&gt;The maximum call stack size&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;&lt;a href=&quot;http://www.wired.com/2014/04/amazon-delivery-drones/&quot;&gt;Jeff Bezos Says Amazon Is Seriously Serious About Drone Deliveries&lt;/a&gt;&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;On a per customer basis, Prime members are ordering more items, across more categories, than ever before&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;No kidding :) I basically buy everything on Amazon now.&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&quot;github&quot;&gt;GitHub&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;http://opensource.box.com/&quot;&gt;Box &amp;lt;3 Open Source&lt;/a&gt;. Our open source projects represent the best of Box. They are all hosted on GitHub. We hope you&amp;#39;ll find them helpful and we invite you to contribute.&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://github.com/Fluidbyte/avow-ci&quot;&gt;Avow CI&lt;/a&gt; is a simple yet powerful open-source CI system for individual developers, small teams and dev shops, specifically designed for JavaScript projects.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&quot;startups&quot;&gt;Startups&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://redpen.io&quot;&gt;Red Pen&lt;/a&gt; is the fastest feedback tool for visual teams.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;div class=&quot;read-more&quot;&gt;&lt;/div&gt;
-
-&lt;h2 id=&quot;twitter&quot;&gt;Twitter&lt;/h2&gt;
-&lt;blockquote class=&quot;twitter-tweet&quot;&gt;&lt;p&gt;BREAKING: NSA said to have used Heartbleed bug to gather intelligence for two years, reports Bloomberg. &lt;a href=&quot;https://t.co/wbHhucX7Pq&quot;&gt;https://t.co/wbHhucX7Pq&lt;/a&gt;&lt;/p&gt;&amp;mdash; EFF (@EFF) &lt;a href=&quot;https://twitter.com/EFF/statuses/454699447797026816&quot;&gt;April 11, 2014&lt;/a&gt;&lt;/blockquote&gt;
-
-&lt;blockquote class=&quot;twitter-tweet&quot;&gt;&lt;p&gt;Talk to me, Twitter. &lt;a href=&quot;http://t.co/7skFm6Ffhn&quot;&gt;pic.twitter.com/7skFm6Ffhn&lt;/a&gt;&lt;/p&gt;&amp;mdash; Robert Downey Jr (@RobertDowneyJr) &lt;a href=&quot;https://twitter.com/RobertDowneyJr/statuses/454733271650144256&quot;&gt;April 11, 2014&lt;/a&gt;&lt;/blockquote&gt;</content>
 		</entry>
 	
 </feed>
