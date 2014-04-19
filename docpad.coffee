@@ -79,8 +79,8 @@ docpadConfig =
       # Bundle the scripts the editor uses together
       command = """
         cd #{rootPath} &&
-        #{rootPath}/node_modules/.bin/browserify #{outPath}/scripts/npmawesome.js
-        | #{rootPath}/node_modules/.bin/uglifyjs > #{outPath}/scripts/npmawesome.bundle.js
+        #{rootPath}/node_modules/.bin/browserify #{outPath}/scripts/npmawesome.js | #{rootPath}/node_modules/.bin/uglifyjs > #{outPath}/scripts/npmawesome.min.js &&
+        rm #{outPath}/scripts/npmawesome.js
       """.replace(/\n/g,' ')
 
       # Execute
