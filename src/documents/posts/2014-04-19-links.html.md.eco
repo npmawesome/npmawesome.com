@@ -1,0 +1,48 @@
+---
+date: 2014-04-19T10:00:00-0700
+title: Links for Apr 19, 2014
+layout: post-links
+tags: javascript, links
+description: Daily link dump.
+---
+<img src="<%- @image '/html5.svg' %>" style="float: right; width: 150px;"/>
+
+## Articles & Slides
+
+* [Build a RESTful API Using Node and Express 4](http://scotch.io/tutorials/javascript/build-a-restful-api-using-node-and-express-4)
+
+  > With the release of Express 4.0 just a few days ago, lots of our Node apps will have some changes in how they handle routing. With the changes in the Express Router, we have more flexibility in how we can define the routes for our applications.
+
+* [Controlling an Arduino with NodeJS and Johnny-Five](http://www.sitepoint.com/controlling-arduino-nodejs-johnny-five/)
+
+  > Firmata and Johnny-Five make it a lot easier for JavaScript developers to get more involved and develop applications that can interact with, respond to and control Arduino powered technology.
+
+* [Brunch - A build system without the Grunt-work](http://alxhill.com/blog/articles/brunch-coffeescript-angular/)
+
+  > Brunch compiles, concats and (optionally) minifies your scripts and styles. It can also package JavaScript files into AMDor CommonJS modules. Brunch automatically applies plugins in the correct order to the right files - so with the right plugins, a .coffee file would be converted into a .js file and then minified, with no explicit setup necessary.
+
+* [EmberConf 2014 HTMLBars: The Next-Generation of Templating in Ember.js by Erik Bryn and Kris Selden](https://www.youtube.com/watch?v=HY4d-0Kzp68)
+
+  > <img src="https://i1.ytimg.com/vi/HY4d-0Kzp68/maxresdefault.jpg" style="width: 400px" />
+
+* [Pyro Board: 2D Rubens' Tube!](https://www.youtube.com/watch?v=2awbKQ2DLRE#t=211)
+
+  > <img src="https://i1.ytimg.com/vi/2awbKQ2DLRE/maxresdefault.jpg" style="width: 400px" />
+
+* [Completely Surreal Photos Of America’s Abandoned Malls](http://www.buzzfeed.com/mjs538/completely-surreal-pictures-of-americas-abandoned-malls) and a [video](https://www.youtube.com/watch?v=ZAo2ue6s5Bc)
+
+  > <img src="http://s3-ec.buzzfed.com/static/2014-04/enhanced/webdr06/2/10/enhanced-29364-1396450428-10.jpg" style="width: 400px" />
+
+* [Pizza Cake](http://www.buzzfeed.com/ryanhatesthis/all-hail-the-mighty-pizza-cake)
+
+  > <img src="http://s3-ec.buzzfed.com/static/2014-04/enhanced/webdr03/18/12/enhanced-buzz-wide-14629-1397837404-8.jpg" style="width: 400px" />
+
+## Github
+
+* [SoundCleod](https://github.com/salomvary/soundcleod) is a Mac OS X application which brings SoundCloud to the desktop without using a browser.
+
+## Twitter
+
+<blockquote class="twitter-tweet" data-partner="tweetdeck"><p>A NodeJS Perspective on What’s New in MongoDB 2.6, Part I: Text Search <a href="http://t.co/RCjrLHd2u0">http://t.co/RCjrLHd2u0</a></p>&mdash; MongoDB (@MongoDB) <a href="https://twitter.com/MongoDB/statuses/457562812223852545">April 19, 2014</a></blockquote>
+
+<blockquote class="twitter-tweet"><p>omg shut up and take my money! <a href="https://t.co/UCVqDsakuJ">https://t.co/UCVqDsakuJ</a></p>&mdash; Alex Gorbatchev (@alexgorbatchev) <a href="https://twitter.com/alexgorbatchev/statuses/457219682164940800">April 18, 2014</a></blockquote>
