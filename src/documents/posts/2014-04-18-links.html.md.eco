@@ -3,7 +3,7 @@ date: 2014-04-18T10:00:00-0700
 title: Links for Apr 18, 2014
 layout: post-links
 tags: javascript, links
-description: Daily link dump.
+description: Nerd links for the day, videos, GitHub projects, talks, articles and other stuff.
 ---
 <img src="<%- @image '/html5.svg' %>" style="float: right; width: 150px;"/>
 
