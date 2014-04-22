@@ -21,6 +21,8 @@ description: Nerd links for the day, videos, GitHub projects, talks, articles an
 
   > Brunch compiles, concats and (optionally) minifies your scripts and styles. It can also package JavaScript files into AMDor CommonJS modules. Brunch automatically applies plugins in the correct order to the right files - so with the right plugins, a .coffee file would be converted into a .js file and then minified, with no explicit setup necessary.
 
+<%- @readMore() %>
+
 * [EmberConf 2014 HTMLBars: The Next-Generation of Templating in Ember.js by Erik Bryn and Kris Selden](https://www.youtube.com/watch?v=HY4d-0Kzp68)
 
   > <img src="https://i1.ytimg.com/vi/HY4d-0Kzp68/maxresdefault.jpg" style="width: 400px" />
