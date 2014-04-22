@@ -22,7 +22,7 @@ initSocial = ->
   social.one 'unveil', (e) ->
     setTimeout ->
       target = $ e.target
-      url = target.data 'url'
+      url = target.data('url') + '/'
 
       target.html """
         <div data-href="#{url}" data-layout="button_count" data-action="like" data-show-faces="false" data-share="false" class="fb-like"></div>

@@ -49,9 +49,7 @@ docpadConfig =
       @url "/images/posts#{href}"
 
     pageTitle: ->
-      title = @preparedTitle()
-      title = "#{title} | " if title?
-      (title or '') + @site.title
+      @preparedTitle() or @site.title
 
     readMore: ->
       '<div class="read-more"></div>'
