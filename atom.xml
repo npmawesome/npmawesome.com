@@ -5,7 +5,7 @@
 	<link href="http://npmawesome.com/atom.xml" rel="self" />
 	<link href="http://npmawesome.com" />
 	<id>http://npmawesome.com</id>
-	<updated>2014-04-19T18:53:29.579Z</updated>
+	<updated>2014-04-22T14:01:09.992Z</updated>
 	<author>
 		<name>Alex Gorbatchev</name>
 	</author>
@@ -39,6 +39,10 @@
 &lt;p&gt;Brunch compiles, concats and (optionally) minifies your scripts and styles. It can also package JavaScript files into AMDor CommonJS modules. Brunch automatically applies plugins in the correct order to the right files - so with the right plugins, a .coffee file would be converted into a .js file and then minified, with no explicit setup necessary.&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&quot;read-more&quot;&gt;&lt;/div&gt;
+
+&lt;ul&gt;
 &lt;li&gt;&lt;p&gt;&lt;a href=&quot;https://www.youtube.com/watch?v=HY4d-0Kzp68&quot;&gt;EmberConf 2014 HTMLBars: The Next-Generation of Templating in Ember.js by Erik Bryn and Kris Selden&lt;/a&gt;&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;&lt;img src=&quot;https://i1.ytimg.com/vi/HY4d-0Kzp68/maxresdefault.jpg&quot; style=&quot;width: 400px&quot; /&gt;&lt;/p&gt;
