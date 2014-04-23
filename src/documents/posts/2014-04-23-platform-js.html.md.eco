@@ -1,0 +1,80 @@
+---
+date: 2014-04-23T17:30:00-0700
+title: platform.js
+author: akoenig
+layout: post
+tags: npm, browser, platform detection
+
+npm:
+  repo: &repo bestiejs/platform.js
+  name: &name platform.js
+
+  author:
+    name: John-David Dalton & Mathias Bynens
+    github: bestiejs
+
+slug: *name
+title: *name
+description: A platform detection library that works on nearly all JavaScript platforms.
+---
+<img class="hide-on-mobile" src="https://avatars2.githubusercontent.com/u/4303?s=400" style="float: right; margin-left: 1em; width: 100px"/>
+<img class="hide-on-mobile" src="https://avatars3.githubusercontent.com/u/81942?s=400" style="float: right; margin-left: 1em; width: 100px"/>
+There are plenty of different runtime environments in JavaScript-land. Whereas this is a good thing there are also situations where the fragmentation is hindrance. Situations in which your application has to gather information about the platform it is running on. This is where <%- @npm() %> by [John-David Dalton](https://github.com/jdalton) and [Mathias Bynens](https://github.com/mathiasbynens) comes to the game.
+
+<%- @readMore() %>
+
+Let's dive into this module with an example. Assume that you have to know if your application runs on [Node.js](http://nodejs.org) or [Rhino](https://developer.mozilla.org/de/docs/Rhino). This could be _easily_ done by checking the type of the `global` variable. In Node.js it is an object whereas Rhino provides a function. Boom! There you go. You can formulate a condition now! But what if you also have to know if your application is running in a browser? Well, game over. Too complicated. The good news is you don't have to do such things anymore.
+
+<%- @npm() %> is a platform detection library which aim is to work on all platforms. It squeeze as much information out of the underlying JavaScript environment as it could and wraps them in a really nice informal abstraction. You are able to grab data like:
+
+- The name of the platform (e.g. Google Chrome, Node.js, etc.)
+- The version of the platform
+- The rendering engine (of the browser; e.g. Gecko, Trident, etc.)
+- The manufacturer of the product (e.g. Apple)
+- The name of the product (e.g. iPhone, Kindle, etc.)
+- The name of the operating system (e.g. iOS 7.0, Mac OS X 10.7.2, etc.)
+- The architecture the operating system is build for (e.g. ia32, etc.)
+
+## Installation
+
+The installation is easy because your package manager flavor is covered. John-David and Mathias provide module descriptors for [Bower](http://bower.io/), [component](https://github.com/component/component) and NPM:
+
+    npm i platform
+
+## Usage
+
+The API for using <%- @npm() %> is consistent. What differs is the module loading procedure. Consider the [README](https://github.com/bestiejs/platform.js/blob/master/README.md) for a brief explanation about how to use the library with an AMD loader for instance. The following usage example refers to Node.js:
+
+    var platform = require('platform');
+
+    console.log(platform.name);  // Node.js
+    console.log(platform.version); // 0.10.26
+    console.log(platform.os.architecture); // 32
+    console.log(platform.os.family); // Linux
+    console.log(platform.description); // Node.js 0.10.26 on Linux
+
+The library provides also a function with which you are able to parse an [user agent string](http://www.useragentstring.com/):
+
+    var platform = require('platform');
+
+    var browser = platform.parse('Mozilla/5.0 (X11; Linux i686; rv:30.0) Gecko/20100101 Firefox/30.0');
+
+    console.log(browser.name); // Firefox
+    console.log(browser.description); // Firefox 30.0 on Linux i686
+    console.log(browser.version); // 30.0
+    console.log(browser.layout); // Gecko
+    console.log(browser.os); // Linux i686
+
+If you curious to see how it performs in a browser environment, check out this [codepen](http://cdpn.io/tjcEd).
+
+## Use cases
+
+I'm pretty sure that you have several use cases in mind where you could use <%- @npm() %>, but one warning: Don't see it as a replacement of feature detection libraries. True to the motto: _If it is a Gecko-based rendering engine (because browsers with this engine have all the shiny new feature) then I could use `navigator.getUserMedia()`._ Never ever make such assumptions. Look at it more in a way to
+
+- display a tailor-made UI.
+- collect statistical data about the devices of your users.
+- lazy import own platform-specific modules (e.g. Node.js modules).
+
+## Closing Thoughts
+
+<%- @npm() %> is a powerful gift when it comes to determining exactly in which environment your application is running. That means, we do not have to write "if-else-if-else-if" statements anymore, folks. We have a rock-solid foundation now!
