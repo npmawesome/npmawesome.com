@@ -8,8 +8,8 @@ Wrote a module? Know of a cool module! Send a PR and it will be published!
 
 ## Installation
 
-    > git clone https://github.com/alexgorbatchev/npm-awesome-site.git
-    > cd npm-awesome-site
+    > git clone https://github.com/npmawesome/npmawesome.com.git
+    > cd npmawesome.com
     > npm install
     ...
 
