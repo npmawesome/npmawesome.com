@@ -5,7 +5,7 @@
 	<link href="http://npmawesome.com/atom.xml" rel="self" />
 	<link href="http://npmawesome.com" />
 	<id>http://npmawesome.com</id>
-	<updated>2014-04-23T18:01:59.989Z</updated>
+	<updated>2014-04-23T18:06:50.263Z</updated>
 	<author>
 		<name>Alex Gorbatchev</name>
 	</author>
@@ -82,7 +82,7 @@ console.log(browser.os); // Linux i686
 			<id>http://npmawesome.com/posts/2014-04-23-links</id>
 			<content type="html">&lt;h2 id=&quot;andr-k-nig&quot;&gt;André König&lt;/h2&gt;
 &lt;p&gt;&lt;img src=&quot;https://avatars0.githubusercontent.com/u/224910?s=400&quot; style=&quot;float: right; width: 250px;&quot;/&gt;
-I&amp;#39;m want to welcome &lt;a href=&quot;https://github.com/akoenig&quot;&gt;André König&lt;/a&gt; to npmawesome! Very excited to publish his first post about &lt;a href=&quot;http://npmawesome.com/posts/2014-04-23-platform-js&quot;&gt;platform.js&lt;/a&gt;! Coming from Bremen, Germany, André is very active on &lt;a href=&quot;https://www.npmjs.org/browse/author/akoenig&quot;&gt;NPM&lt;/a&gt; and better known for &lt;a href=&quot;https://github.com/akoenig/angular-deckgrid&quot;&gt;angular-deckgrid&lt;/a&gt;, &lt;a href=&quot;https://github.com/akoenig/imacss&quot;&gt;imacss&lt;/a&gt; as well as a whole bunch of gulp.js modules. Woot!&lt;/p&gt;
+I&amp;#39;m happy to welcome &lt;a href=&quot;https://github.com/akoenig&quot;&gt;André König&lt;/a&gt; to npmawesome! Very excited to publish his first post about &lt;a href=&quot;http://npmawesome.com/posts/2014-04-23-platform-js&quot;&gt;platform.js&lt;/a&gt;! Coming from Bremen, Germany, André is very active on &lt;a href=&quot;https://www.npmjs.org/browse/author/akoenig&quot;&gt;NPM&lt;/a&gt; and better known for &lt;a href=&quot;https://github.com/akoenig/angular-deckgrid&quot;&gt;angular-deckgrid&lt;/a&gt;, &lt;a href=&quot;https://github.com/akoenig/imacss&quot;&gt;imacss&lt;/a&gt; as well as a whole bunch of gulp.js modules. Woot!&lt;/p&gt;
 &lt;h2 id=&quot;articles-slides&quot;&gt;Articles &amp;amp; Slides&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;p&gt;&lt;a href=&quot;https://groups.google.com/forum/#!msg/nodejs/J59L1AR1lSs/hQfRPDf1Wn0J&quot;&gt;Tim Caswell on history of Node.js callbacks&lt;/a&gt;&lt;/p&gt;
