@@ -2,6 +2,9 @@ CONTRIBUTORS =
   alexgorbatchev:
     name: 'Alex Gorbatchev'
     github: 'alexgorbatchev'
+  akoenig:
+    name: 'André König'
+    github: 'akoenig'
 
 docpadConfig =
   env: 'static'
