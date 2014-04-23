@@ -39,7 +39,7 @@ Let's dive into this module with an example. Assume that you have to know if you
 
 The installation is easy because your package manager flavor is covered. John-David and Mathias provide module descriptors for [Bower](http://bower.io/), [component](https://github.com/component/component) and NPM:
 
-    npm i platform
+    <%- @install() %>
 
 ## Usage
 
