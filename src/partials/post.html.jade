@@ -4,7 +4,7 @@ article
       a(href="#{post.url}")= preparedTitle(post)
 
     .meta
-      span posted by !{by()} on #{moment(post.date).format("MMMM Do YYYY")}
+      span posted by !{by(post)} on #{moment(post.date).format("MMMM Do YYYY")}
       a.comments(href="#{fullUrl(post)}#disqus_thread")
 
       - if(post.npm)
