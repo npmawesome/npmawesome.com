@@ -5,7 +5,7 @@
 	<link href="http://npmawesome.com/atom.xml" rel="self" />
 	<link href="http://npmawesome.com" />
 	<id>http://npmawesome.com</id>
-	<updated>2014-04-22T14:01:09.992Z</updated>
+	<updated>2014-04-23T17:23:20.861Z</updated>
 	<author>
 		<name>Alex Gorbatchev</name>
 	</author>
@@ -13,6 +13,65 @@
   
   
   
+    
+    
+    
+		<entry>
+			<title>platform.js</title>
+			<link href="http://npmawesome.com/posts/2014-04-23-platform-js"/>
+			<updated>2014-04-24T00:30:00.000Z</updated>
+			<id>http://npmawesome.com/posts/2014-04-23-platform-js</id>
+			<content type="html">&lt;p&gt;&lt;img class=&quot;hide-on-mobile&quot; src=&quot;https://avatars2.githubusercontent.com/u/4303?s=400&quot; style=&quot;float: right; margin-left: 1em; width: 100px&quot;/&gt;
+&lt;img class=&quot;hide-on-mobile&quot; src=&quot;https://avatars3.githubusercontent.com/u/81942?s=400&quot; style=&quot;float: right; margin-left: 1em; width: 100px&quot;/&gt;
+There are plenty of different runtime environments in JavaScript-land. Whereas this is a good thing there are also situations where the fragmentation is hindrance. Situations in which your application has to gather information about the platform it is running on. This is where &lt;a href=&quot;https://github.com/bestiejs/platform.js&quot;&gt;platform.js&lt;/a&gt; by &lt;a href=&quot;https://github.com/jdalton&quot;&gt;John-David Dalton&lt;/a&gt; and &lt;a href=&quot;https://github.com/mathiasbynens&quot;&gt;Mathias Bynens&lt;/a&gt; comes to the game.&lt;/p&gt;
+&lt;div class=&quot;read-more&quot;&gt;&lt;/div&gt;
+
+&lt;p&gt;Let&amp;#39;s dive into this module with an example. Assume that you have to know if your application runs on &lt;a href=&quot;http://nodejs.org&quot;&gt;Node.js&lt;/a&gt; or &lt;a href=&quot;https://developer.mozilla.org/de/docs/Rhino&quot;&gt;Rhino&lt;/a&gt;. This could be &lt;em&gt;easily&lt;/em&gt; done by checking the type of the &lt;code&gt;global&lt;/code&gt; variable. In Node.js it is an object whereas Rhino provides a function. Boom! There you go. You can formulate a condition now! But what if you also have to know if your application is running in a browser? Well, game over. Too complicated. The good news is you don&amp;#39;t have to do such things anymore.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://github.com/bestiejs/platform.js&quot;&gt;platform.js&lt;/a&gt; is a platform detection library which aim is to work on all platforms. It squeeze as much information out of the underlying JavaScript environment as it could and wraps them in a really nice informal abstraction. You are able to grab data like:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;The name of the platform (e.g. Google Chrome, Node.js, etc.)&lt;/li&gt;
+&lt;li&gt;The version of the platform&lt;/li&gt;
+&lt;li&gt;The rendering engine (of the browser; e.g. Gecko, Trident, etc.)&lt;/li&gt;
+&lt;li&gt;The manufacturer of the product (e.g. Apple)&lt;/li&gt;
+&lt;li&gt;The name of the product (e.g. iPhone, Kindle, etc.)&lt;/li&gt;
+&lt;li&gt;The name of the operating system (e.g. iOS 7.0, Mac OS X 10.7.2, etc.)&lt;/li&gt;
+&lt;li&gt;The architecture the operating system is build for (e.g. ia32, etc.)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;installation&quot;&gt;Installation&lt;/h2&gt;
+&lt;p&gt;The installation is easy because your package manager flavor is covered. John-David and Mathias provide module descriptors for &lt;a href=&quot;http://bower.io/&quot;&gt;Bower&lt;/a&gt;, &lt;a href=&quot;https://github.com/component/component&quot;&gt;component&lt;/a&gt; and NPM:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;npm install platform.js
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&quot;usage&quot;&gt;Usage&lt;/h2&gt;
+&lt;p&gt;The API for using &lt;a href=&quot;https://github.com/bestiejs/platform.js&quot;&gt;platform.js&lt;/a&gt; is consistent. What differs is the module loading procedure. Consider the &lt;a href=&quot;https://github.com/bestiejs/platform.js/blob/master/README.md&quot;&gt;README&lt;/a&gt; for a brief explanation about how to use the library with an AMD loader for instance. The following usage example refers to Node.js:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;var platform = require(&amp;#39;platform&amp;#39;);
+
+console.log(platform.name);  // Node.js
+console.log(platform.version); // 0.10.26
+console.log(platform.os.architecture); // 32
+console.log(platform.os.family); // Linux
+console.log(platform.description); // Node.js 0.10.26 on Linux
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;The library provides also a function with which you are able to parse an &lt;a href=&quot;http://www.useragentstring.com/&quot;&gt;user agent string&lt;/a&gt;:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;var platform = require(&amp;#39;platform&amp;#39;);
+
+var browser = platform.parse(&amp;#39;Mozilla/5.0 (X11; Linux i686; rv:30.0) Gecko/20100101 Firefox/30.0&amp;#39;);
+
+console.log(browser.name); // Firefox
+console.log(browser.description); // Firefox 30.0 on Linux i686
+console.log(browser.version); // 30.0
+console.log(browser.layout); // Gecko
+console.log(browser.os); // Linux i686
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;If you curious to see how it performs in a browser environment, check out this &lt;a href=&quot;http://cdpn.io/tjcEd&quot;&gt;codepen&lt;/a&gt;.&lt;/p&gt;
+&lt;h2 id=&quot;use-cases&quot;&gt;Use cases&lt;/h2&gt;
+&lt;p&gt;I&amp;#39;m pretty sure that you have several use cases in mind where you could use &lt;a href=&quot;https://github.com/bestiejs/platform.js&quot;&gt;platform.js&lt;/a&gt;, but one warning: Don&amp;#39;t see it as a replacement of feature detection libraries. True to the motto: &lt;em&gt;If it is a Gecko-based rendering engine (because browsers with this engine have all the shiny new feature) then I could use &lt;code&gt;navigator.getUserMedia()&lt;/code&gt;.&lt;/em&gt; Never ever make such assumptions. Look at it more in a way to&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;display a tailor-made UI.&lt;/li&gt;
+&lt;li&gt;collect statistical data about the devices of your users.&lt;/li&gt;
+&lt;li&gt;lazy import own platform-specific modules (e.g. Node.js modules).&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;closing-thoughts&quot;&gt;Closing Thoughts&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&quot;https://github.com/bestiejs/platform.js&quot;&gt;platform.js&lt;/a&gt; is a powerful gift when it comes to determining exactly in which environment your application is running. That means, we do not have to write &amp;quot;if-else-if-else-if&amp;quot; statements anymore, folks. We have a rock-solid foundation now!&lt;/p&gt;
+</content>
+		</entry>
+	
     
     
     
@@ -226,184 +285,6 @@ Then the rent-controlled tenants care far more about eviction protections than i
 &lt;blockquote class=&quot;twitter-tweet&quot;&gt;&lt;p&gt;Our &lt;a href=&quot;https://twitter.com/gulpjs&quot;&gt;@gulpjs&lt;/a&gt; webapp generator just got another round of updates: &lt;a href=&quot;https://t.co/soUQV3bnNl&quot;&gt;https://t.co/soUQV3bnNl&lt;/a&gt;. &lt;a href=&quot;http://t.co/S1nduFgVGJ&quot;&gt;pic.twitter.com/S1nduFgVGJ&lt;/a&gt; via &lt;a href=&quot;https://twitter.com/yeoman&quot;&gt;@yeoman&lt;/a&gt;&lt;/p&gt;&amp;mdash; Siancore (@siancore) &lt;a href=&quot;https://twitter.com/siancore/statuses/456463584835665920&quot;&gt;April 16, 2014&lt;/a&gt;&lt;/blockquote&gt;
 
 &lt;blockquote class=&quot;twitter-tweet&quot;&gt;&lt;p&gt;Comparing async control flow tools: &lt;a href=&quot;https://twitter.com/search?q=%23nodejs&amp;amp;src=hash&quot;&gt;#nodejs&lt;/a&gt; Promises, Try/Catch and &lt;a href=&quot;https://twitter.com/angularjs&quot;&gt;@angularjs&lt;/a&gt; Zone.js by &lt;a href=&quot;https://twitter.com/alexgorbatchev&quot;&gt;@alexgorbatchev&lt;/a&gt; - &lt;a href=&quot;http://t.co/5BrNEisgH7&quot;&gt;http://t.co/5BrNEisgH7&lt;/a&gt;&lt;/p&gt;&amp;mdash; StrongLoop (@StrongLoop) &lt;a href=&quot;https://twitter.com/StrongLoop/statuses/456453560532606976&quot;&gt;April 16, 2014&lt;/a&gt;&lt;/blockquote&gt;</content>
-		</entry>
-	
-    
-    
-    
-		<entry>
-			<title>Comparing Node.js Promises, Try/Catch, Angular Zone.js and yes, Zone</title>
-			<link href="http://npmawesome.com/posts/2014-04-16-promises-trycatch-zones"/>
-			<updated>2014-04-16T17:01:54.000Z</updated>
-			<id>http://npmawesome.com/posts/2014-04-16-promises-trycatch-zones</id>
-			<content type="html">&lt;h1 id=&quot;handling-errors-in-async-flow&quot;&gt;Handling errors in async flow&lt;/h1&gt;
-&lt;p&gt;In the &lt;a href=&quot;http://strongloop.com/strongblog/node-js-callback-hell-promises-generators/&quot;&gt;previous article&lt;/a&gt; we&amp;#39;ve talked about managing async flow and escaping the &lt;a href=&quot;http://callbackhell.com/&quot;&gt;callback hell&lt;/a&gt;.&lt;/p&gt;
-&lt;h2 id=&quot;the-problem&quot;&gt;The problem&lt;/h2&gt;
-&lt;p&gt;Handling errors in asynchronous flow is pretty straightforward and easy. Handling errors in asynchronous flow in a clean and easy to follow manner - not so much.&lt;/p&gt;
-&lt;p&gt;Lets look at the following code:&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;function updateDependencies(packageName, done) {
-  findPackage(packageName, function(err, content) {
-    if (err) {
-      done(err);
-    }
-    else {
-      try {
-        package = JSON.parse(content);
-      }
-      catch (e) {
-        done(e);
-      }
-
-      findDependencies(package, function(err, dependencies)) {
-        if (err) {
-          done(err);
-        }
-        else {
-          processDependencies(dependencies, function(err) {
-            if (err) {
-              done(err);
-            }
-            else {
-              done(null, dependencies);
-            }
-          });
-        }
-      });
-    }
-  });
-}
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;We are covering all possible failure cases here using combination of &lt;code&gt;try/catch&lt;/code&gt; and callback error handling, but boy do we repeat ourselves over and over again. Lets try and rewrite this!&lt;/p&gt;
-&lt;div class=&quot;read-more&quot;&gt;&lt;/div&gt;
-
-&lt;h2 id=&quot;error-handling-using-try-catch&quot;&gt;Error handling using try/catch&lt;/h2&gt;
-&lt;pre&gt;&lt;code&gt;function updateDependencies(packageName, done) {
-  try {
-    findPackage(packageName, function(err, content) {
-      if (err) throw err;
-
-      findDependencies(JSON.parse(content), function(err, dependencies)) {
-        if (err) throw err;
-
-        processDependencies(dependencies, function(err) {
-          if (err) throw err;
-
-          done(null, dependencies);
-        });
-      });
-    });
-  } catch (e) {
-    done(e);
-  }
-}
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Nice! That&amp;#39;s much better. However, if we run this now, no errors will be caught. What&amp;#39;s going on here?&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;try/catch&lt;/code&gt; idiom works very well when you have fully synchronous code, but asynchronous operations render it useless.&lt;/p&gt;
-&lt;p&gt;The outer &lt;code&gt;try/catch&lt;/code&gt; block will never catch anything because &lt;code&gt;findPackage&lt;/code&gt; is asynchronous. The function will begin its course while the outer stack runs through and gets to the last line without any errors.&lt;/p&gt;
-&lt;p&gt;If an error occurs at some point in the future inside asynchronous &lt;code&gt;findPackage&lt;/code&gt; - &lt;strong&gt;nothing will be caught&lt;/strong&gt;.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;http://npmawesome.com/images/posts/promises-trycatch-zones/catch-fail.gif&quot;/&gt;&lt;/p&gt;
-&lt;p&gt;Not useful.&lt;/p&gt;
-&lt;h2 id=&quot;error-handling-using-promises&quot;&gt;Error handling using promises&lt;/h2&gt;
-&lt;p&gt;In the &lt;a href=&quot;http://strongloop.com/strongblog/node-js-callback-hell-promises-generators/&quot;&gt;previous article&lt;/a&gt; we&amp;#39;ve talked about managing asynchronous flow and escaping the &lt;a href=&quot;http://callbackhell.com/&quot;&gt;callback hell&lt;/a&gt; with promises. Lets put this promises to work here and rewrite this function.&lt;/p&gt;
-&lt;p&gt;For the sake of moving forward quicker lets assume we are using &lt;a href=&quot;https://github.com/petkaantonov/bluebird&quot;&gt;Bluebird&lt;/a&gt; promises library and that all our APIs now return promises instead of taking callbacks:&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;function updateDependencies(packageName) {
-  return findPackage(packageName)
-    .then(JSON.parse)
-    .then(findDependencies)
-    .then(processDependencies)
-    .then(res.send)
-    ;
-}
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Oh wow, that is so much nicer! Right? Right!&lt;/p&gt;
-&lt;p&gt;But Alex, &amp;quot;we&amp;#39;ve lost our error handling&amp;quot;, you might say. That&amp;#39;s right, we don&amp;#39;t need to do anything special here to propagate error because we return a promise and there&amp;#39;s built in support for error flow. Lets see how error handling might look like with promises:&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;button.addEventListener(&amp;quot;click&amp;quot;, function() {
-  updateDependencies(&amp;quot;packageName&amp;quot;)
-    .then(function(dependencies) {
-      output.innerHTML = dependencies.join(&amp;quot;\n&amp;quot;);
-    })
-    .catch(function(err) {
-      output.innerHTML = &amp;quot;There was an error&amp;quot;;
-    });
-});
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Very slick, I&amp;#39;m a fan!&lt;/p&gt;
-&lt;h2 id=&quot;error-using-zones&quot;&gt;Error using Zones&lt;/h2&gt;
-&lt;p&gt;Handling rejected promises works really well when we are in full control of the flow. But what happens if some third-party code throws an error during an asynchronous operation? Lets look at another example:&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;function thirdPartyFunction() {
-  function fakeXHR() {
-    throw new Error(&amp;quot;Invalid dependencies&amp;quot;);
-  }
-
-  setTimeout(fakeXHR, 100);
-}
-
-function main() {
-  button.on(&amp;quot;click&amp;quot;, function onClick() {
-    thirdPartyFunction();
-  });
-}
-
-main();
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;In this case, we wouldn&amp;#39;t have a chance to catch and process the error. Generally, the only recourse here is using half baked &lt;code&gt;window.onerror&lt;/code&gt; that doesn&amp;#39;t give you any stack information at all. At least you can log something, right? Not that there&amp;#39;s much to log:&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;Uncaught Error: Invalid dependencies
-    fakeXHR
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Up until recently that was pretty much all we had. However, this january &lt;a href=&quot;https://github.com/btford&quot;&gt;Brian Ford&lt;/a&gt; of the &lt;a href=&quot;http://angularjs.org&quot;&gt;angular.js&lt;/a&gt; fame has released &lt;a href=&quot;https://github.com/btford/zone.js/&quot;&gt;Zone.js&lt;/a&gt; which aims to help tackle this.&lt;/p&gt;
-&lt;p&gt;Basically, &lt;a href=&quot;https://github.com/btford/zone.js/&quot;&gt;Zone.js&lt;/a&gt; &lt;strong&gt;overrides all asynchronous functions in the browser&lt;/strong&gt; with custom implementations which allows it to keep track of the context. Dangerous? Yes! But as we say in Soviet Russia, &amp;quot;he who doesn&amp;#39;t risk never gets to drink champagne&amp;quot; (or in English &amp;quot;nothing ventured, nothing gained&amp;quot;).&lt;/p&gt;
-&lt;p&gt;Anyways, lets look at how this works. Assuming you have included &lt;code&gt;zones.js&lt;/code&gt; and &lt;code&gt;long-stack-trace-zone.js&lt;/code&gt; as per the docs, we just change &lt;code&gt;main()&lt;/code&gt; call to:&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;zone.fork(Zone.longStackTraceZone).run(main);
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Refresh, click the button, and now our stack looks like this:&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;Error: Invalid dependencies
-    at fakeXHR (script.js:7:11)
-    at Zone.run (zones.js:41:19)
-    at zoneBoundFn (zones.js:27:19)
---- Tue Mar 25 2014 21:20:32 GMT-0700 (PDT) - 106ms ago
-Error
-    at Function.getStacktraceWithUncaughtError (long-stack-trace-zone.js:24:32)
-    at Zone.longStackTraceZone.fork (long-stack-trace-zone.js:70:43)
-    at Zone.bind (zones.js:25:21)
-    at zone.(anonymous function) (zones.js:61:27)
-    at marker (zones.js:66:25)
-    at thirdPartyFunction (script.js:10:3)
-    at HTMLButtonElement.onClick (script.js:15:5)
-    at HTMLButtonElement.x.event.dispatch (jquery.js:5:10006)
-    at HTMLButtonElement.y.handle (jquery.js:5:6789)
-    at Zone.run (zones.js:41:19)
---- Tue Mar 25 2014 21:20:32 GMT-0700 (PDT) - 1064ms ago
-Error
-    at getStacktraceWithUncaughtError (long-stack-trace-zone.js:24:32)
-    at Function.Zone.getStacktrace (long-stack-trace-zone.js:37:15)
-    at Zone.longStackTraceZone.fork (long-stack-trace-zone.js:70:43)
-    at Zone.bind (zones.js:25:21)
-    at HTMLButtonElement.obj.addEventListener (zones.js:132:37)
-    at Object.x.event.add (jquery.js:5:7262)
-    at HTMLButtonElement.&amp;lt;anonymous&amp;gt; (jquery.js:5:14336)
-    at Function.x.extend.each (jquery.js:4:4575)
-    at x.fn.x.each (jquery.js:4:1626)
-    at x.fn.extend.on (jquery.js:5:14312)
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;What the what?? Cool! We can now see that the relevant code path started in our &lt;code&gt;onClick&lt;/code&gt; method and went into &lt;code&gt;thirdPartyFunction&lt;/code&gt;.&lt;/p&gt;
-&lt;p&gt;The cool part is, since &lt;a href=&quot;https://github.com/btford/zone.js/&quot;&gt;Zone.js&lt;/a&gt; overrides browser methods, it doesn&amp;#39;t matter what libraries you use. It just works.&lt;/p&gt;
-&lt;h2 id=&quot;another-async-flow-control-project-called-zones-&quot;&gt;Another async flow control project called Zones?&lt;/h2&gt;
-&lt;p&gt;Yep, StrongLoop’s &lt;a href=&quot;https://github.com/piscisaureus&quot;&gt;Bert Belder&lt;/a&gt; has been working on a similar idea called “&lt;a href=&quot;https://www.npmjs.org/package/zone&quot;&gt;Zone&lt;/a&gt;“ for a few months now. (Not to be confused with the Angular &lt;a href=&quot;https://github.com/btford/zone.js/&quot;&gt;Zone.js&lt;/a&gt; project we&amp;#39;ve just been discussing, which shares the same name and some technical characteristics. Yeah, it’s a little confusing, but we are actively working with &lt;a href=&quot;https://github.com/btford&quot;&gt;Brian Ford&lt;/a&gt; on how to potentially bring together these two projects for the mutual benefit of the JavaScript and Node communities. Stay tuned!)&lt;/p&gt;
-&lt;h2 id=&quot;why-a-node-specific-zones-project-&quot;&gt;Why a Node-specific Zones project?&lt;/h2&gt;
-&lt;p&gt;Currently, there are a couple of problems that make it really hard to deal with asynchronous control flow in Node that Zones looks to address. Specifically:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Stack traces are useless when an asynchronous function fails.&lt;/li&gt;
-&lt;li&gt;Asynchronous functions are hard to compose into more high-level APIs. Imagine implementing a simple asynchronous API like bar(arg1, arg2, cb) where cb is the error-first callback that the user of the API specifies. To implement this correctly you must take care:&lt;ul&gt;
-&lt;li&gt;to always call the callback&lt;/li&gt;
-&lt;li&gt;don’t call the callback more than once&lt;/li&gt;
-&lt;li&gt;don’t synchronously throw and also call the callback&lt;/li&gt;
-&lt;li&gt;don’t call the callback synchronously&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;It is difficult to handle errors that are raised asynchronously. Typically node will crash. If the uses chooses to ignore the error, resources may leak. Zones should make it easy to handle errors and to avoid resource leaks.&lt;/li&gt;
-&lt;li&gt;Sometimes there is a need to associate user data to an asynchronous flow. There is currently no way to do this.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;Want to learn more about Zones? Stay tuned for more information in the coming weeks. Follow us on &lt;a href=&quot;https://twitter.com/StrongLoop&quot;&gt;Twitter&lt;/a&gt; or subscribe to our &lt;a href=&quot;http://strongloop.com/newsletter-registration/&quot;&gt;newsletter&lt;/a&gt; to make sure you don’t miss the announcements.&lt;/p&gt;
-&lt;h2 id=&quot;what-s-next-&quot;&gt;What&amp;#39;s next?&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;Watch &lt;a href=&quot;http://www.youtube.com/watch?v=3IqtmUscE_U&quot;&gt;Brian&amp;#39;s presentation&lt;/a&gt; from ngconf 2014, it&amp;#39;s pretty cool!&lt;/li&gt;
-&lt;li&gt;Add &lt;a href=&quot;https://github.com/btford/zone.js/&quot;&gt;Zone.js&lt;/a&gt; to your application.&lt;/li&gt;
-&lt;li&gt;Profit!&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;&lt;img src=&quot;http://npmawesome.com/images/posts/promises-trycatch-zones/party.gif&quot;/&gt;&lt;/p&gt;
-</content>
 		</entry>
 	
 </feed>
