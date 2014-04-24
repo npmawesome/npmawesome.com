@@ -5,7 +5,7 @@
 	<link href="http://npmawesome.com/atom.xml" rel="self" />
 	<link href="http://npmawesome.com" />
 	<id>http://npmawesome.com</id>
-	<updated>2014-04-23T18:06:50.263Z</updated>
+	<updated>2014-04-24T13:11:42.796Z</updated>
 	<author>
 		<name>Alex Gorbatchev</name>
 	</author>
@@ -39,7 +39,7 @@ There are plenty of different runtime environments in JavaScript-land. Whereas t
 &lt;/ul&gt;
 &lt;h2 id=&quot;installation&quot;&gt;Installation&lt;/h2&gt;
 &lt;p&gt;The installation is easy because your package manager flavor is covered. John-David and Mathias provide module descriptors for &lt;a href=&quot;http://bower.io/&quot;&gt;Bower&lt;/a&gt;, &lt;a href=&quot;https://github.com/component/component&quot;&gt;component&lt;/a&gt; and NPM:&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;npm install platform.js
+&lt;pre&gt;&lt;code&gt;npm install platform
 &lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&quot;usage&quot;&gt;Usage&lt;/h2&gt;
 &lt;p&gt;The API for using &lt;a href=&quot;https://github.com/bestiejs/platform.js&quot;&gt;platform.js&lt;/a&gt; is consistent. What differs is the module loading procedure. Consider the &lt;a href=&quot;https://github.com/bestiejs/platform.js/blob/master/README.md&quot;&gt;README&lt;/a&gt; for a brief explanation about how to use the library with an AMD loader for instance. The following usage example refers to Node.js:&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;var platform = require(&amp;#39;platform&amp;#39;);

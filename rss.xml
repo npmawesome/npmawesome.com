@@ -15,12 +15,12 @@
     <atom:link href="http://feeds.feedburner.com/npmawesome" rel="self" type="application/rss+xml"/>
     <link>http://npmawesome.com</link>
     <description>Daily dose of awesome NPM modules for Node.js, old and new!</description>
-    <lastBuildDate>Wed, 23 Apr 2014 18:06:50 GMT</lastBuildDate>
+    <lastBuildDate>Thu, 24 Apr 2014 13:11:42 GMT</lastBuildDate>
     <language>en</language>
     <sy:updatePeriod>daily</sy:updatePeriod>
     <sy:updateFrequency>2</sy:updateFrequency>
     <generator>awesomeness</generator>
-    <pubDate>Wed, 23 Apr 2014 18:06:50 GMT</pubDate>
+    <pubDate>Thu, 24 Apr 2014 13:11:42 GMT</pubDate>
 
     
     
@@ -52,7 +52,7 @@ There are plenty of different runtime environments in JavaScript-land. Whereas t
 </ul>
 <h2 id="installation">Installation</h2>
 <p>The installation is easy because your package manager flavor is covered. John-David and Mathias provide module descriptors for <a href="http://bower.io/">Bower</a>, <a href="https://github.com/component/component">component</a> and NPM:</p>
-<pre><code>npm install platform.js
+<pre><code>npm install platform
 </code></pre><h2 id="usage">Usage</h2>
 <p>The API for using <a href="https://github.com/bestiejs/platform.js">platform.js</a> is consistent. What differs is the module loading procedure. Consider the <a href="https://github.com/bestiejs/platform.js/blob/master/README.md">README</a> for a brief explanation about how to use the library with an AMD loader for instance. The following usage example refers to Node.js:</p>
 <pre><code>var platform = require(&#39;platform&#39;);
