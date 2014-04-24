@@ -70,7 +70,7 @@ If you curious to see how it performs in a browser environment, check out this [
 
 ## Use cases
 
-I'm pretty sure that you have several use cases in mind where you could use <%- @npm() %>, but one warning: Don't see it as a replacement of feature detection libraries. True to the motto: _If it is a Gecko-based rendering engine (because browsers with this engine have all the shiny new feature) then I could use `navigator.getUserMedia()`._ Never ever make such assumptions. Look at it more in a way to
+I'm pretty sure that you have several use cases in mind where you could use <%- @npm() %>, but one warning: Don't see it as a replacement of feature detection libraries. True to the motto: _If it is a Gecko-based rendering engine (because browsers with this engine have all the shiny new features) then I could use `navigator.getUserMedia()`._ Never ever make such assumptions. Look at it more in a way to
 
 - display a tailor-made UI.
 - collect statistical data about the devices of your users.
