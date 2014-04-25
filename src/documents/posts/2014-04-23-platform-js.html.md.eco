@@ -24,7 +24,7 @@ There are plenty of different runtime environments in JavaScript-land. Whereas t
 
 <%- @readMore() %>
 
-Let's dive into this module with an example. Assume that you have to know if your application runs on [Node.js](http://nodejs.org) or [Rhino](https://developer.mozilla.org/de/docs/Rhino). This could be _easily_ done by checking the type of the `global` variable. In Node.js it is an object whereas Rhino provides a function. Boom! There you go. You can formulate a condition now! But what if you also have to know if your application is running in a browser? Well, game over. Too complicated. The good news is you don't have to do such things anymore.
+Let's dive into this module with an example. Assume that you have to know if your application runs on [Node.js](http://nodejs.org) or [Rhino](https://developer.mozilla.org/de/docs/Rhino). This could be _easily_ done by checking the type of the `global` variable. In Node.js it is an object whereas Rhino provides a function. Boom! There you go. You can formulate a condition now! But what if you also need to know if your application is running in a browser? Well, game over. Too complicated. The good news is you don't have to do such things anymore.
 
 <%- @npm() %> is a platform detection library which aim is to work on all platforms. It squeeze as much information out of the underlying JavaScript environment as it could and wraps them in a really nice informal abstraction. You are able to grab data like:
 
