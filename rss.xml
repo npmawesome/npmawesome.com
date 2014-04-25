@@ -15,12 +15,12 @@
     <atom:link href="http://feeds.feedburner.com/npmawesome" rel="self" type="application/rss+xml"/>
     <link>http://npmawesome.com</link>
     <description>Daily dose of awesome NPM modules for Node.js, old and new!</description>
-    <lastBuildDate>Thu, 24 Apr 2014 13:11:42 GMT</lastBuildDate>
+    <lastBuildDate>Fri, 25 Apr 2014 18:07:39 GMT</lastBuildDate>
     <language>en</language>
     <sy:updatePeriod>daily</sy:updatePeriod>
     <sy:updateFrequency>2</sy:updateFrequency>
     <generator>awesomeness</generator>
-    <pubDate>Thu, 24 Apr 2014 13:11:42 GMT</pubDate>
+    <pubDate>Fri, 25 Apr 2014 18:07:39 GMT</pubDate>
 
     
     
@@ -39,7 +39,7 @@
 There are plenty of different runtime environments in JavaScript-land. Whereas this is a good thing there are also situations where the fragmentation is hindrance. Situations in which your application has to gather information about the platform it is running on. This is where <a href="https://github.com/bestiejs/platform.js">platform.js</a> by <a href="https://github.com/jdalton">John-David Dalton</a> and <a href="https://github.com/mathiasbynens">Mathias Bynens</a> comes to the game.</p>
 <div class="read-more"></div>
 
-<p>Let&#39;s dive into this module with an example. Assume that you have to know if your application runs on <a href="http://nodejs.org">Node.js</a> or <a href="https://developer.mozilla.org/de/docs/Rhino">Rhino</a>. This could be <em>easily</em> done by checking the type of the <code>global</code> variable. In Node.js it is an object whereas Rhino provides a function. Boom! There you go. You can formulate a condition now! But what if you also have to know if your application is running in a browser? Well, game over. Too complicated. The good news is you don&#39;t have to do such things anymore.</p>
+<p>Let&#39;s dive into this module with an example. Assume that you have to know if your application runs on <a href="http://nodejs.org">Node.js</a> or <a href="https://developer.mozilla.org/de/docs/Rhino">Rhino</a>. This could be <em>easily</em> done by checking the type of the <code>global</code> variable. In Node.js it is an object whereas Rhino provides a function. Boom! There you go. You can formulate a condition now! But what if you also need to know if your application is running in a browser? Well, game over. Too complicated. The good news is you don&#39;t have to do such things anymore.</p>
 <p><a href="https://github.com/bestiejs/platform.js">platform.js</a> is a platform detection library which aim is to work on all platforms. It squeeze as much information out of the underlying JavaScript environment as it could and wraps them in a really nice informal abstraction. You are able to grab data like:</p>
 <ul>
 <li>The name of the platform (e.g. Google Chrome, Node.js, etc.)</li>
@@ -74,7 +74,7 @@ console.log(browser.layout); // Gecko
 console.log(browser.os); // Linux i686
 </code></pre><p>If you curious to see how it performs in a browser environment, check out this <a href="http://cdpn.io/tjcEd">codepen</a>.</p>
 <h2 id="use-cases">Use cases</h2>
-<p>I&#39;m pretty sure that you have several use cases in mind where you could use <a href="https://github.com/bestiejs/platform.js">platform.js</a>, but one warning: Don&#39;t see it as a replacement of feature detection libraries. True to the motto: <em>If it is a Gecko-based rendering engine (because browsers with this engine have all the shiny new feature) then I could use <code>navigator.getUserMedia()</code>.</em> Never ever make such assumptions. Look at it more in a way to</p>
+<p>I&#39;m pretty sure that you have several use cases in mind where you could use <a href="https://github.com/bestiejs/platform.js">platform.js</a>, but one warning: Don&#39;t see it as a replacement of feature detection libraries. True to the motto: <em>If it is a Gecko-based rendering engine (because browsers with this engine have all the shiny new features) then I could use <code>navigator.getUserMedia()</code>.</em> Never ever make such assumptions. Look at it more in a way to</p>
 <ul>
 <li>display a tailor-made UI.</li>
 <li>collect statistical data about the devices of your users.</li>

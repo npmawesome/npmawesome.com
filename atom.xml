@@ -5,7 +5,7 @@
 	<link href="http://npmawesome.com/atom.xml" rel="self" />
 	<link href="http://npmawesome.com" />
 	<id>http://npmawesome.com</id>
-	<updated>2014-04-24T13:11:42.796Z</updated>
+	<updated>2014-04-25T18:07:39.094Z</updated>
 	<author>
 		<name>Alex Gorbatchev</name>
 	</author>
@@ -26,7 +26,7 @@
 There are plenty of different runtime environments in JavaScript-land. Whereas this is a good thing there are also situations where the fragmentation is hindrance. Situations in which your application has to gather information about the platform it is running on. This is where &lt;a href=&quot;https://github.com/bestiejs/platform.js&quot;&gt;platform.js&lt;/a&gt; by &lt;a href=&quot;https://github.com/jdalton&quot;&gt;John-David Dalton&lt;/a&gt; and &lt;a href=&quot;https://github.com/mathiasbynens&quot;&gt;Mathias Bynens&lt;/a&gt; comes to the game.&lt;/p&gt;
 &lt;div class=&quot;read-more&quot;&gt;&lt;/div&gt;
 
-&lt;p&gt;Let&amp;#39;s dive into this module with an example. Assume that you have to know if your application runs on &lt;a href=&quot;http://nodejs.org&quot;&gt;Node.js&lt;/a&gt; or &lt;a href=&quot;https://developer.mozilla.org/de/docs/Rhino&quot;&gt;Rhino&lt;/a&gt;. This could be &lt;em&gt;easily&lt;/em&gt; done by checking the type of the &lt;code&gt;global&lt;/code&gt; variable. In Node.js it is an object whereas Rhino provides a function. Boom! There you go. You can formulate a condition now! But what if you also have to know if your application is running in a browser? Well, game over. Too complicated. The good news is you don&amp;#39;t have to do such things anymore.&lt;/p&gt;
+&lt;p&gt;Let&amp;#39;s dive into this module with an example. Assume that you have to know if your application runs on &lt;a href=&quot;http://nodejs.org&quot;&gt;Node.js&lt;/a&gt; or &lt;a href=&quot;https://developer.mozilla.org/de/docs/Rhino&quot;&gt;Rhino&lt;/a&gt;. This could be &lt;em&gt;easily&lt;/em&gt; done by checking the type of the &lt;code&gt;global&lt;/code&gt; variable. In Node.js it is an object whereas Rhino provides a function. Boom! There you go. You can formulate a condition now! But what if you also need to know if your application is running in a browser? Well, game over. Too complicated. The good news is you don&amp;#39;t have to do such things anymore.&lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;https://github.com/bestiejs/platform.js&quot;&gt;platform.js&lt;/a&gt; is a platform detection library which aim is to work on all platforms. It squeeze as much information out of the underlying JavaScript environment as it could and wraps them in a really nice informal abstraction. You are able to grab data like:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;The name of the platform (e.g. Google Chrome, Node.js, etc.)&lt;/li&gt;
@@ -61,7 +61,7 @@ console.log(browser.layout); // Gecko
 console.log(browser.os); // Linux i686
 &lt;/code&gt;&lt;/pre&gt;&lt;p&gt;If you curious to see how it performs in a browser environment, check out this &lt;a href=&quot;http://cdpn.io/tjcEd&quot;&gt;codepen&lt;/a&gt;.&lt;/p&gt;
 &lt;h2 id=&quot;use-cases&quot;&gt;Use cases&lt;/h2&gt;
-&lt;p&gt;I&amp;#39;m pretty sure that you have several use cases in mind where you could use &lt;a href=&quot;https://github.com/bestiejs/platform.js&quot;&gt;platform.js&lt;/a&gt;, but one warning: Don&amp;#39;t see it as a replacement of feature detection libraries. True to the motto: &lt;em&gt;If it is a Gecko-based rendering engine (because browsers with this engine have all the shiny new feature) then I could use &lt;code&gt;navigator.getUserMedia()&lt;/code&gt;.&lt;/em&gt; Never ever make such assumptions. Look at it more in a way to&lt;/p&gt;
+&lt;p&gt;I&amp;#39;m pretty sure that you have several use cases in mind where you could use &lt;a href=&quot;https://github.com/bestiejs/platform.js&quot;&gt;platform.js&lt;/a&gt;, but one warning: Don&amp;#39;t see it as a replacement of feature detection libraries. True to the motto: &lt;em&gt;If it is a Gecko-based rendering engine (because browsers with this engine have all the shiny new features) then I could use &lt;code&gt;navigator.getUserMedia()&lt;/code&gt;.&lt;/em&gt; Never ever make such assumptions. Look at it more in a way to&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;display a tailor-made UI.&lt;/li&gt;
 &lt;li&gt;collect statistical data about the devices of your users.&lt;/li&gt;
