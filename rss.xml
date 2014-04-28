@@ -15,15 +15,57 @@
     <atom:link href="http://feeds.feedburner.com/npmawesome" rel="self" type="application/rss+xml"/>
     <link>http://npmawesome.com</link>
     <description>Daily dose of awesome NPM modules for Node.js, old and new!</description>
-    <lastBuildDate>Fri, 25 Apr 2014 18:07:39 GMT</lastBuildDate>
+    <lastBuildDate>Mon, 28 Apr 2014 17:09:11 GMT</lastBuildDate>
     <language>en</language>
     <sy:updatePeriod>daily</sy:updatePeriod>
     <sy:updateFrequency>2</sy:updateFrequency>
     <generator>awesomeness</generator>
-    <pubDate>Fri, 25 Apr 2014 18:07:39 GMT</pubDate>
+    <pubDate>Mon, 28 Apr 2014 17:09:11 GMT</pubDate>
 
     
     
+    
+      
+      
+      
+      
+      
+      <item>
+        <title><![CDATA[angular-injector]]></title>
+        <link><![CDATA[http://npmawesome.com/posts/2014-04-28-angular-injector]]></link>
+        <dc:creator><![CDATA[Alex Gorbatchev]]></dc:creator>
+        <guid isPermaLink="true"><![CDATA[http://npmawesome.com/posts/2014-04-28-angular-injector]]></guid>
+        <pubDate><![CDATA[Mon, 28 Apr 2014 16:24:35 GMT]]></pubDate>
+        <description><![CDATA[<p><img class="hide-on-mobile" src="http://npmawesome.com/images/posts/../authors/alexgorbatchev.jpg" style="float: right; margin-left: 1em; width: 100px"/>
+<a href="https://github.com/alexgorbatchev/angular-injector">angular-injector</a> module by <a href="https://github.com/alexgorbatchev">Alex Gorbatchev</a> (me) is meant to address minification problem with <a href="https://www.angularjs.org/">angular.js</a> dependency injection that <a href="https://www.npmjs.org/package/ngmin">ngmin</a> does not - work with any dependency injection syntax.</p>
+<div class="read-more"></div>
+
+<pre><code>npm install angular-injector
+</code></pre><h2 id="features">Features</h2>
+<p><a href="https://github.com/alexgorbatchev/angular-injector">angular-injector</a> works exactly the same way as <a href="https://www.npmjs.org/package/ngmin">ngmin</a> meaning that it modifies the source during build time. Unlike <a href="https://www.npmjs.org/package/ngmin">ngmin</a> however, it&#39;s less dependent on the syntax. In fact, any function wrapped in a <code>ng(func)</code> call will be escaped with <code>[&#39;dep1&#39;, &#39;dep2&#39;, func]</code> injector style.</p>
+<h2 id="usage">Usage</h2>
+<p>Write your angular functions like so:</p>
+<pre><code>someModule.factory(&#39;greeter&#39;, ng(function($window) {
+  // ...
+}));
+</code></pre><p>Then run them through angular-injector and it will become:</p>
+<pre><code>someModule.factory(&#39;greeter&#39;, [&#39;$window&#39;, function($window) {
+  // ...
+}]);
+</code></pre><p>You don&#39;t need to declare ng function anywhere and it could be customized to anything. If you wanted to get fancy, use something like <code>ƒ</code> or <code>∑</code> to never have any naming conflicts. Or even an emoji if you feeling wild.</p>
+<p>This syntax works particularly well in CoffeeScript and is literally 2-3 extra characters:</p>
+<pre><code>someModule.factory &#39;greeter&#39;, ng ($window) -&gt;
+  # ...
+</code></pre><h2 id="build-plugins">Build Plugins</h2>
+<p>Of course, I wouldn&#39;t just write this module without supporting <a href="http://gulpjs.com/">gulp.js</a> and <a href="http://gruntjs.com/">grunt.js</a>.</p>
+<ul>
+<li><a href="https://github.com/alexgorbatchev/gulp-angular-injector">gulp-angular-injector</a></li>
+<li><a href="https://github.com/alexgorbatchev/grunt-angular-injector">grunt-angular-injector</a></li>
+</ul>
+<h2 id="closing-thoughts">Closing thoughts</h2>
+<p>The biggest downside of this method is basically remembering to add the <code>ng()</code> wrapper. I found that after about half a day that becomes a habit and not an issue. Check out the plugins and let me know what you think!</p>
+]]></description>
+      </item>
     
       
       
@@ -39,7 +81,7 @@
 There are plenty of different runtime environments in JavaScript-land. Whereas this is a good thing there are also situations where the fragmentation is hindrance. Situations in which your application has to gather information about the platform it is running on. This is where <a href="https://github.com/bestiejs/platform.js">platform.js</a> by <a href="https://github.com/jdalton">John-David Dalton</a> and <a href="https://github.com/mathiasbynens">Mathias Bynens</a> comes to the game.</p>
 <div class="read-more"></div>
 
-<p>Let&#39;s dive into this module with an example. Assume that you have to know if your application runs on <a href="http://nodejs.org">Node.js</a> or <a href="https://developer.mozilla.org/de/docs/Rhino">Rhino</a>. This could be <em>easily</em> done by checking the type of the <code>global</code> variable. In Node.js it is an object whereas Rhino provides a function. Boom! There you go. You can formulate a condition now! But what if you also need to know if your application is running in a browser? Well, game over. Too complicated. The good news is you don&#39;t have to do such things anymore.</p>
+<p>Let&#39;s dive into this module with an example. Assume that you have to know if your application runs on <a href="http://nodejs.org">Node.js</a> or <a href="https://developer.mozilla.org/de/docs/Rhino">Rhino</a>. This could be <em>easily</em> done by checking the type of the <code>global</code> variable. In Node.js it is an object whereas Rhino provides a function. Boom! There you go. You can formulate a condition now! But what if you also have to know if your application is running in a browser? Well, game over. Too complicated. The good news is you don&#39;t have to do such things anymore.</p>
 <p><a href="https://github.com/bestiejs/platform.js">platform.js</a> is a platform detection library which aim is to work on all platforms. It squeeze as much information out of the underlying JavaScript environment as it could and wraps them in a really nice informal abstraction. You are able to grab data like:</p>
 <ul>
 <li>The name of the platform (e.g. Google Chrome, Node.js, etc.)</li>
@@ -74,7 +116,7 @@ console.log(browser.layout); // Gecko
 console.log(browser.os); // Linux i686
 </code></pre><p>If you curious to see how it performs in a browser environment, check out this <a href="http://cdpn.io/tjcEd">codepen</a>.</p>
 <h2 id="use-cases">Use cases</h2>
-<p>I&#39;m pretty sure that you have several use cases in mind where you could use <a href="https://github.com/bestiejs/platform.js">platform.js</a>, but one warning: Don&#39;t see it as a replacement of feature detection libraries. True to the motto: <em>If it is a Gecko-based rendering engine (because browsers with this engine have all the shiny new features) then I could use <code>navigator.getUserMedia()</code>.</em> Never ever make such assumptions. Look at it more in a way to</p>
+<p>I&#39;m pretty sure that you have several use cases in mind where you could use <a href="https://github.com/bestiejs/platform.js">platform.js</a>, but one warning: Don&#39;t see it as a replacement of feature detection libraries. True to the motto: <em>If it is a Gecko-based rendering engine (because browsers with this engine have all the shiny new feature) then I could use <code>navigator.getUserMedia()</code>.</em> Never ever make such assumptions. Look at it more in a way to</p>
 <ul>
 <li>display a tailor-made UI.</li>
 <li>collect statistical data about the devices of your users.</li>
@@ -238,70 +280,6 @@ I&#39;m happy to welcome <a href="https://github.com/akoenig">André König</a> 
 </ul>
 <h2 id="twitter">Twitter</h2>
 <blockquote class="twitter-tweet"><p>Can’t wait until gulp 4 for non-dependent task support? Try run-sequence! <a href="https://t.co/PPyJnjA4Jz">https://t.co/PPyJnjA4Jz</a></p>&mdash; gulp (@gulpjs) <a href="https://twitter.com/gulpjs/statuses/457120895102754816">April 18, 2014</a></blockquote>]]></description>
-      </item>
-    
-      
-      
-      
-      <item>
-        <title><![CDATA[terminal-menu]]></title>
-        <link><![CDATA[http://npmawesome.com/posts/2014-04-18-terminal-menu]]></link>
-        <dc:creator><![CDATA[Alex Gorbatchev]]></dc:creator>
-        <guid isPermaLink="true"><![CDATA[http://npmawesome.com/posts/2014-04-18-terminal-menu]]></guid>
-        <pubDate><![CDATA[Fri, 18 Apr 2014 16:52:03 GMT]]></pubDate>
-        <description><![CDATA[<p>Lets continue building out awesome CLI (command line interface) tool. Previously we have discussed how to <a href="/npmawesome-parsing-command-line-options-with-yargs/">take in command line arguments</a>, <a href="/npmawesome-table-formatting-in-the-terminal-with-cli-tables/">output tabular data</a> and <a href="/npmawesome-progress-reporting-in-cli-applications/">display progress of long running tasks</a>.</p>
-<p><img class="hide-on-mobile" src="https://avatars2.githubusercontent.com/u/12631?s=400" style="float: right; margin-left: 1em; width: 100px;"/>
-Prompting a user with options and asking to pick one is a fairly common scenario. Most of the time you get to read the options and press associated key. That works, but we are human and like pretty interfaces. Same thing can be achieved with a common menu interface. This is where <a href="https://github.com/substack/terminal-menu">terminal-menu</a> by <a href="https://github.com/substack">James Halliday</a> comes in.</p>
-<div class="read-more"></div>
-
-<pre><code>npm install terminal-menu
-</code></pre><h2 id="features">Features</h2>
-<p>There are a few options available to customize the menu such as:</p>
-<ul>
-<li>Background color</li>
-<li>Foreground color</li>
-<li>Position</li>
-<li>Width</li>
-<li>Padding</li>
-</ul>
-<h2 id="usage">Usage</h2>
-<pre><code>var terminalMenu = require(&#39;terminal-menu&#39;);
-
-var menu = terminalMenu({
-  width: 60,
-  x: 4,
-  y: 2
-});
-
-menu.reset();
-menu.write(&#39;Recently on our blog\n&#39;);
-menu.write(&#39;-------------------------\n&#39;);
-
-menu.add(&#39;How to setup a multi-user Ghost blog&#39;);
-menu.add(&#39;Patched PaaS Vulnerability&#39;);
-menu.add(&#39;npmawesome: Progress reporting in CLI applications&#39;);
-menu.add(&#39;Improved SSL experience for private npm&#39;);
-menu.add(&#39;npmawesome: Table formatting in the terminal with...&#39;);
-
-menu.on(&#39;select&#39;, function (label, index) {
-  menu.close();
-  console.log(&#39;You selected:&#39;);
-  console.log(index, label);
-});
-
-menu.createStream().pipe(process.stdout);
-</code></pre><div style="padding: 13px 10px 10px; background: black; text-align: center; border-radius: 3px"><img src="http://npmawesome.com/images/posts/terminal-menu/terminal-menu01.gif"/></div>
-
-<p>Check out interactive example on <a href="http://runnable.com/U0YDx3Bx9a1ntoDb/terminal-menu-example-for-npm-awesome-nodejitsu-node-js-and-cli">runnable</a>.</p>
-<h2 id="other-modules-to-checkout">Other modules to checkout</h2>
-<p>Generally there is a list of alternative modules here, but as strange as it sounds, I couldn&#39;t find any. If you know of one, please drop us a line.</p>
-<h2 id="closing-thoughts">Closing thoughts</h2>
-<p>Over the last couple of CLI related posts we&#39;ve progressively been improving user experience of our terminal application. I feel that you can never spend too much time doing this, but you can definetely spend too little. I love little things that feel good. <a href="https://github.com/substack/terminal-menu">terminal-menu</a> was created for <a href="https://github.com/substack/stream-adventure">stream-adventure</a>, an educational terminal based stream adventure game for Node.js and <a href="https://github.com/substack/stream-adventure">stream-adventure</a> in turn inspired <a href="http://nodestreams.com/">browser based version</a> written by John Resig of the jQuery fame. Both are pretty cool and fun!</p>
-<blockquote class="twitter-tweet" lang="en"><p>everybody going to nodeconf should make sure to npm install -g stream-adventure</p>&mdash; James Halliday (@substack) <a href="https://twitter.com/substack/statuses/350097531730006017">June 27, 2013</a></blockquote>
-
-<blockquote class="twitter-tweet" lang="en"><p><a href="https://twitter.com/maxogden">@maxogden</a> <a href="https://twitter.com/substack">@substack</a> Would love your feedback on <a href="http://t.co/PX0oG8CtB7">http://t.co/PX0oG8CtB7</a> was inspired by stream adventure! More info: <a href="http://t.co/c1eQGB53Lm">http://t.co/c1eQGB53Lm</a></p>&mdash; John Resig (@jeresig) <a href="https://twitter.com/jeresig/statuses/401419183230951424">November 15, 2013</a></blockquote>
-
-]]></description>
       </item>
     
   </channel>

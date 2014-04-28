@@ -5,7 +5,7 @@
 	<link href="http://npmawesome.com/atom.xml" rel="self" />
 	<link href="http://npmawesome.com" />
 	<id>http://npmawesome.com</id>
-	<updated>2014-04-25T18:07:39.094Z</updated>
+	<updated>2014-04-28T17:09:11.776Z</updated>
 	<author>
 		<name>Alex Gorbatchev</name>
 	</author>
@@ -13,6 +13,47 @@
   
   
   
+    
+    
+    
+    
+    
+		<entry>
+			<title>angular-injector</title>
+			<link href="http://npmawesome.com/posts/2014-04-28-angular-injector"/>
+			<updated>2014-04-28T16:24:35.000Z</updated>
+			<id>http://npmawesome.com/posts/2014-04-28-angular-injector</id>
+			<content type="html">&lt;p&gt;&lt;img class=&quot;hide-on-mobile&quot; src=&quot;http://npmawesome.com/images/posts/../authors/alexgorbatchev.jpg&quot; style=&quot;float: right; margin-left: 1em; width: 100px&quot;/&gt;
+&lt;a href=&quot;https://github.com/alexgorbatchev/angular-injector&quot;&gt;angular-injector&lt;/a&gt; module by &lt;a href=&quot;https://github.com/alexgorbatchev&quot;&gt;Alex Gorbatchev&lt;/a&gt; (me) is meant to address minification problem with &lt;a href=&quot;https://www.angularjs.org/&quot;&gt;angular.js&lt;/a&gt; dependency injection that &lt;a href=&quot;https://www.npmjs.org/package/ngmin&quot;&gt;ngmin&lt;/a&gt; does not - work with any dependency injection syntax.&lt;/p&gt;
+&lt;div class=&quot;read-more&quot;&gt;&lt;/div&gt;
+
+&lt;pre&gt;&lt;code&gt;npm install angular-injector
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&quot;features&quot;&gt;Features&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&quot;https://github.com/alexgorbatchev/angular-injector&quot;&gt;angular-injector&lt;/a&gt; works exactly the same way as &lt;a href=&quot;https://www.npmjs.org/package/ngmin&quot;&gt;ngmin&lt;/a&gt; meaning that it modifies the source during build time. Unlike &lt;a href=&quot;https://www.npmjs.org/package/ngmin&quot;&gt;ngmin&lt;/a&gt; however, it&amp;#39;s less dependent on the syntax. In fact, any function wrapped in a &lt;code&gt;ng(func)&lt;/code&gt; call will be escaped with &lt;code&gt;[&amp;#39;dep1&amp;#39;, &amp;#39;dep2&amp;#39;, func]&lt;/code&gt; injector style.&lt;/p&gt;
+&lt;h2 id=&quot;usage&quot;&gt;Usage&lt;/h2&gt;
+&lt;p&gt;Write your angular functions like so:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;someModule.factory(&amp;#39;greeter&amp;#39;, ng(function($window) {
+  // ...
+}));
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Then run them through angular-injector and it will become:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;someModule.factory(&amp;#39;greeter&amp;#39;, [&amp;#39;$window&amp;#39;, function($window) {
+  // ...
+}]);
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;You don&amp;#39;t need to declare ng function anywhere and it could be customized to anything. If you wanted to get fancy, use something like &lt;code&gt;ƒ&lt;/code&gt; or &lt;code&gt;∑&lt;/code&gt; to never have any naming conflicts. Or even an emoji if you feeling wild.&lt;/p&gt;
+&lt;p&gt;This syntax works particularly well in CoffeeScript and is literally 2-3 extra characters:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;someModule.factory &amp;#39;greeter&amp;#39;, ng ($window) -&amp;gt;
+  # ...
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&quot;build-plugins&quot;&gt;Build Plugins&lt;/h2&gt;
+&lt;p&gt;Of course, I wouldn&amp;#39;t just write this module without supporting &lt;a href=&quot;http://gulpjs.com/&quot;&gt;gulp.js&lt;/a&gt; and &lt;a href=&quot;http://gruntjs.com/&quot;&gt;grunt.js&lt;/a&gt;.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/alexgorbatchev/gulp-angular-injector&quot;&gt;gulp-angular-injector&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/alexgorbatchev/grunt-angular-injector&quot;&gt;grunt-angular-injector&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;closing-thoughts&quot;&gt;Closing thoughts&lt;/h2&gt;
+&lt;p&gt;The biggest downside of this method is basically remembering to add the &lt;code&gt;ng()&lt;/code&gt; wrapper. I found that after about half a day that becomes a habit and not an issue. Check out the plugins and let me know what you think!&lt;/p&gt;
+</content>
+		</entry>
+	
     
     
     
@@ -26,7 +67,7 @@
 There are plenty of different runtime environments in JavaScript-land. Whereas this is a good thing there are also situations where the fragmentation is hindrance. Situations in which your application has to gather information about the platform it is running on. This is where &lt;a href=&quot;https://github.com/bestiejs/platform.js&quot;&gt;platform.js&lt;/a&gt; by &lt;a href=&quot;https://github.com/jdalton&quot;&gt;John-David Dalton&lt;/a&gt; and &lt;a href=&quot;https://github.com/mathiasbynens&quot;&gt;Mathias Bynens&lt;/a&gt; comes to the game.&lt;/p&gt;
 &lt;div class=&quot;read-more&quot;&gt;&lt;/div&gt;
 
-&lt;p&gt;Let&amp;#39;s dive into this module with an example. Assume that you have to know if your application runs on &lt;a href=&quot;http://nodejs.org&quot;&gt;Node.js&lt;/a&gt; or &lt;a href=&quot;https://developer.mozilla.org/de/docs/Rhino&quot;&gt;Rhino&lt;/a&gt;. This could be &lt;em&gt;easily&lt;/em&gt; done by checking the type of the &lt;code&gt;global&lt;/code&gt; variable. In Node.js it is an object whereas Rhino provides a function. Boom! There you go. You can formulate a condition now! But what if you also need to know if your application is running in a browser? Well, game over. Too complicated. The good news is you don&amp;#39;t have to do such things anymore.&lt;/p&gt;
+&lt;p&gt;Let&amp;#39;s dive into this module with an example. Assume that you have to know if your application runs on &lt;a href=&quot;http://nodejs.org&quot;&gt;Node.js&lt;/a&gt; or &lt;a href=&quot;https://developer.mozilla.org/de/docs/Rhino&quot;&gt;Rhino&lt;/a&gt;. This could be &lt;em&gt;easily&lt;/em&gt; done by checking the type of the &lt;code&gt;global&lt;/code&gt; variable. In Node.js it is an object whereas Rhino provides a function. Boom! There you go. You can formulate a condition now! But what if you also have to know if your application is running in a browser? Well, game over. Too complicated. The good news is you don&amp;#39;t have to do such things anymore.&lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;https://github.com/bestiejs/platform.js&quot;&gt;platform.js&lt;/a&gt; is a platform detection library which aim is to work on all platforms. It squeeze as much information out of the underlying JavaScript environment as it could and wraps them in a really nice informal abstraction. You are able to grab data like:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;The name of the platform (e.g. Google Chrome, Node.js, etc.)&lt;/li&gt;
@@ -61,7 +102,7 @@ console.log(browser.layout); // Gecko
 console.log(browser.os); // Linux i686
 &lt;/code&gt;&lt;/pre&gt;&lt;p&gt;If you curious to see how it performs in a browser environment, check out this &lt;a href=&quot;http://cdpn.io/tjcEd&quot;&gt;codepen&lt;/a&gt;.&lt;/p&gt;
 &lt;h2 id=&quot;use-cases&quot;&gt;Use cases&lt;/h2&gt;
-&lt;p&gt;I&amp;#39;m pretty sure that you have several use cases in mind where you could use &lt;a href=&quot;https://github.com/bestiejs/platform.js&quot;&gt;platform.js&lt;/a&gt;, but one warning: Don&amp;#39;t see it as a replacement of feature detection libraries. True to the motto: &lt;em&gt;If it is a Gecko-based rendering engine (because browsers with this engine have all the shiny new features) then I could use &lt;code&gt;navigator.getUserMedia()&lt;/code&gt;.&lt;/em&gt; Never ever make such assumptions. Look at it more in a way to&lt;/p&gt;
+&lt;p&gt;I&amp;#39;m pretty sure that you have several use cases in mind where you could use &lt;a href=&quot;https://github.com/bestiejs/platform.js&quot;&gt;platform.js&lt;/a&gt;, but one warning: Don&amp;#39;t see it as a replacement of feature detection libraries. True to the motto: &lt;em&gt;If it is a Gecko-based rendering engine (because browsers with this engine have all the shiny new feature) then I could use &lt;code&gt;navigator.getUserMedia()&lt;/code&gt;.&lt;/em&gt; Never ever make such assumptions. Look at it more in a way to&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;display a tailor-made UI.&lt;/li&gt;
 &lt;li&gt;collect statistical data about the devices of your users.&lt;/li&gt;
@@ -222,69 +263,6 @@ I&amp;#39;m happy to welcome &lt;a href=&quot;https://github.com/akoenig&quot;&g
 &lt;/ul&gt;
 &lt;h2 id=&quot;twitter&quot;&gt;Twitter&lt;/h2&gt;
 &lt;blockquote class=&quot;twitter-tweet&quot;&gt;&lt;p&gt;Can’t wait until gulp 4 for non-dependent task support? Try run-sequence! &lt;a href=&quot;https://t.co/PPyJnjA4Jz&quot;&gt;https://t.co/PPyJnjA4Jz&lt;/a&gt;&lt;/p&gt;&amp;mdash; gulp (@gulpjs) &lt;a href=&quot;https://twitter.com/gulpjs/statuses/457120895102754816&quot;&gt;April 18, 2014&lt;/a&gt;&lt;/blockquote&gt;</content>
-		</entry>
-	
-    
-    
-    
-		<entry>
-			<title>terminal-menu</title>
-			<link href="http://npmawesome.com/posts/2014-04-18-terminal-menu"/>
-			<updated>2014-04-18T16:52:03.000Z</updated>
-			<id>http://npmawesome.com/posts/2014-04-18-terminal-menu</id>
-			<content type="html">&lt;p&gt;Lets continue building out awesome CLI (command line interface) tool. Previously we have discussed how to &lt;a href=&quot;/npmawesome-parsing-command-line-options-with-yargs/&quot;&gt;take in command line arguments&lt;/a&gt;, &lt;a href=&quot;/npmawesome-table-formatting-in-the-terminal-with-cli-tables/&quot;&gt;output tabular data&lt;/a&gt; and &lt;a href=&quot;/npmawesome-progress-reporting-in-cli-applications/&quot;&gt;display progress of long running tasks&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;&lt;img class=&quot;hide-on-mobile&quot; src=&quot;https://avatars2.githubusercontent.com/u/12631?s=400&quot; style=&quot;float: right; margin-left: 1em; width: 100px;&quot;/&gt;
-Prompting a user with options and asking to pick one is a fairly common scenario. Most of the time you get to read the options and press associated key. That works, but we are human and like pretty interfaces. Same thing can be achieved with a common menu interface. This is where &lt;a href=&quot;https://github.com/substack/terminal-menu&quot;&gt;terminal-menu&lt;/a&gt; by &lt;a href=&quot;https://github.com/substack&quot;&gt;James Halliday&lt;/a&gt; comes in.&lt;/p&gt;
-&lt;div class=&quot;read-more&quot;&gt;&lt;/div&gt;
-
-&lt;pre&gt;&lt;code&gt;npm install terminal-menu
-&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&quot;features&quot;&gt;Features&lt;/h2&gt;
-&lt;p&gt;There are a few options available to customize the menu such as:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Background color&lt;/li&gt;
-&lt;li&gt;Foreground color&lt;/li&gt;
-&lt;li&gt;Position&lt;/li&gt;
-&lt;li&gt;Width&lt;/li&gt;
-&lt;li&gt;Padding&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&quot;usage&quot;&gt;Usage&lt;/h2&gt;
-&lt;pre&gt;&lt;code&gt;var terminalMenu = require(&amp;#39;terminal-menu&amp;#39;);
-
-var menu = terminalMenu({
-  width: 60,
-  x: 4,
-  y: 2
-});
-
-menu.reset();
-menu.write(&amp;#39;Recently on our blog\n&amp;#39;);
-menu.write(&amp;#39;-------------------------\n&amp;#39;);
-
-menu.add(&amp;#39;How to setup a multi-user Ghost blog&amp;#39;);
-menu.add(&amp;#39;Patched PaaS Vulnerability&amp;#39;);
-menu.add(&amp;#39;npmawesome: Progress reporting in CLI applications&amp;#39;);
-menu.add(&amp;#39;Improved SSL experience for private npm&amp;#39;);
-menu.add(&amp;#39;npmawesome: Table formatting in the terminal with...&amp;#39;);
-
-menu.on(&amp;#39;select&amp;#39;, function (label, index) {
-  menu.close();
-  console.log(&amp;#39;You selected:&amp;#39;);
-  console.log(index, label);
-});
-
-menu.createStream().pipe(process.stdout);
-&lt;/code&gt;&lt;/pre&gt;&lt;div style=&quot;padding: 13px 10px 10px; background: black; text-align: center; border-radius: 3px&quot;&gt;&lt;img src=&quot;http://npmawesome.com/images/posts/terminal-menu/terminal-menu01.gif&quot;/&gt;&lt;/div&gt;
-
-&lt;p&gt;Check out interactive example on &lt;a href=&quot;http://runnable.com/U0YDx3Bx9a1ntoDb/terminal-menu-example-for-npm-awesome-nodejitsu-node-js-and-cli&quot;&gt;runnable&lt;/a&gt;.&lt;/p&gt;
-&lt;h2 id=&quot;other-modules-to-checkout&quot;&gt;Other modules to checkout&lt;/h2&gt;
-&lt;p&gt;Generally there is a list of alternative modules here, but as strange as it sounds, I couldn&amp;#39;t find any. If you know of one, please drop us a line.&lt;/p&gt;
-&lt;h2 id=&quot;closing-thoughts&quot;&gt;Closing thoughts&lt;/h2&gt;
-&lt;p&gt;Over the last couple of CLI related posts we&amp;#39;ve progressively been improving user experience of our terminal application. I feel that you can never spend too much time doing this, but you can definetely spend too little. I love little things that feel good. &lt;a href=&quot;https://github.com/substack/terminal-menu&quot;&gt;terminal-menu&lt;/a&gt; was created for &lt;a href=&quot;https://github.com/substack/stream-adventure&quot;&gt;stream-adventure&lt;/a&gt;, an educational terminal based stream adventure game for Node.js and &lt;a href=&quot;https://github.com/substack/stream-adventure&quot;&gt;stream-adventure&lt;/a&gt; in turn inspired &lt;a href=&quot;http://nodestreams.com/&quot;&gt;browser based version&lt;/a&gt; written by John Resig of the jQuery fame. Both are pretty cool and fun!&lt;/p&gt;
-&lt;blockquote class=&quot;twitter-tweet&quot; lang=&quot;en&quot;&gt;&lt;p&gt;everybody going to nodeconf should make sure to npm install -g stream-adventure&lt;/p&gt;&amp;mdash; James Halliday (@substack) &lt;a href=&quot;https://twitter.com/substack/statuses/350097531730006017&quot;&gt;June 27, 2013&lt;/a&gt;&lt;/blockquote&gt;
-
-&lt;blockquote class=&quot;twitter-tweet&quot; lang=&quot;en&quot;&gt;&lt;p&gt;&lt;a href=&quot;https://twitter.com/maxogden&quot;&gt;@maxogden&lt;/a&gt; &lt;a href=&quot;https://twitter.com/substack&quot;&gt;@substack&lt;/a&gt; Would love your feedback on &lt;a href=&quot;http://t.co/PX0oG8CtB7&quot;&gt;http://t.co/PX0oG8CtB7&lt;/a&gt; was inspired by stream adventure! More info: &lt;a href=&quot;http://t.co/c1eQGB53Lm&quot;&gt;http://t.co/c1eQGB53Lm&lt;/a&gt;&lt;/p&gt;&amp;mdash; John Resig (@jeresig) &lt;a href=&quot;https://twitter.com/jeresig/statuses/401419183230951424&quot;&gt;November 15, 2013&lt;/a&gt;&lt;/blockquote&gt;
-
-</content>
 		</entry>
 	
 </feed>
