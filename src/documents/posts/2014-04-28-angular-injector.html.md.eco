@@ -1,0 +1,62 @@
+---
+date: 2014-04-28T09:24:35-0700
+author: alexgorbatchev
+layout: post
+tags: npm, angular, build
+
+npm:
+  repo: &repo alexgorbatchev/angular-injector
+  name: &name angular-injector
+
+  author:
+    name: Alex Gorbatchev
+    github: alexgorbatchev
+
+slug: *name
+title: *name
+description: Solving minification problem with angular.js dependency injection.
+---
+<img class="hide-on-mobile" src="<%- @image('/../authors/alexgorbatchev.jpg') %>" style="float: right; margin-left: 1em; width: 100px"/>
+<%- @npm() %> module by <%- @author() %> (me) is meant to address minification problem with [angular.js](https://www.angularjs.org/) dependency injection that [ngmin](https://www.npmjs.org/package/ngmin) does not - work with any dependency injection syntax.
+
+<%- @readMore() %>
+
+    <%- @install() %>
+
+## Features
+
+<%- @npm() %> works exactly the same way as [ngmin] meaning that it modifies the source during build time. Unlike [ngmin] however, it's less dependent on the syntax. In fact, any function wrapped in a `ng(func)` call will be escaped with `['dep1', 'dep2', func]` injector style.
+
+## Usage
+
+Write your angular functions like so:
+
+    someModule.factory('greeter', ng(function($window) {
+      // ...
+    }));
+
+Then run them through angular-injector and it will become:
+
+    someModule.factory('greeter', ['$window', function($window) {
+      // ...
+    }]);
+
+You don't need to declare ng function anywhere and it could be customized to anything. If you wanted to get fancy, use something like `ƒ` or `∑` to never have any naming conflicts. Or even an emoji if you feeling wild.
+
+This syntax works particularly well in CoffeeScript and is literally 2-3 extra characters:
+
+    someModule.factory 'greeter', ng ($window) ->
+      # ...
+
+## Build Plugins
+
+Of course, I wouldn't just write this module without supporting [gulp.js](http://gulpjs.com/) and [grunt.js](http://gruntjs.com/).
+
+* [gulp-angular-injector](https://github.com/alexgorbatchev/gulp-angular-injector)
+* [grunt-angular-injector](https://github.com/alexgorbatchev/grunt-angular-injector)
+
+## Closing thoughts
+
+The biggest downside of this method is basically remembering to add the `ng()` wrapper. I found that after about half a day that becomes a habit and not an issue. Check out the plugins and let me know what you think!
+
+[ngmin]: https://www.npmjs.org/package/ngmin
