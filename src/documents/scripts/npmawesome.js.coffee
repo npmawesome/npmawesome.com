@@ -17,11 +17,11 @@ initGithubStars = ->
   stars.unveil()
 
 initSocial = ->
-  social = $ 'article > header > .social'
+  social = $ 'article > header > .social-box'
 
   social.one 'unveil', (e) ->
     setTimeout ->
-      target = $ e.target
+      target = $(e.target).find('> .social')
       url = target.data('url') + '/'
 
       target.html """
