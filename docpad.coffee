@@ -64,7 +64,7 @@ docpadConfig =
       split = body.indexOf @readMore()
 
       if split >= 0
-        body = body.substr(0, split) + """<p class="read-more"><a href="#{@site.url}#{doc.url}">Continue...</a></p>"""
+        body = body.substr(0, split) + """<p class="read-more"><a href="#{doc.url}">Continue...</a></p>"""
 
       body
 
