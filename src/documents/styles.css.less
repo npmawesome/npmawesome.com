@@ -130,22 +130,27 @@ article {
       }
     }
 
-    .social {
+    .social-box {
       margin-top: 20px;
       height: 20px;
+      position: relative;
 
-      > *, .fb_iframe_widget > span {
-        vertical-align: top !important;
-      }
+      .social {
+        position: absolute;
 
-      > .fb-like {
-        width: auto !important;
-      }
+        > *, .fb_iframe_widget > span {
+          vertical-align: top !important;
+        }
 
-      > * {
-        height: 20px !important;
-        display: inline-block !important;
-        margin-right: 10px;
+        > .fb-like {
+          width: auto !important;
+        }
+
+        > * {
+          height: 20px !important;
+          display: inline-block !important;
+          margin-right: 10px;
+        }
       }
     }
   }
