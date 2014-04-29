@@ -1,0 +1,310 @@
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" xmlns:og="http://ogp.me/ns#" xmlns:fb="https://www.facebook.com/2008/fbml"><head><meta charset="utf-8"><link rel="alternate" title="RSS" type="application/rss+xml" href="http://feeds.feedburner.com/npmawesome"><link href="http://npmawesome.com/atom.xml" title="Blog Posts" type="application/atom+xml" rel="alternate"><link rel="stylesheet" type="text/css" media="all" href="/styles.css"><meta name="viewport" content="initial-scale=1, maximum-scale=1"><meta property="twitter:account_id" content="4503599628039784"><meta property="fb:app_id" content="1425631694354948"><title>Comparing Express, Restify, hapi and LoopBack for building RESTful APIs</title><meta property="og:title" content="npm awesome"><meta property="og:image" content="http://npmawesome.com/images/default-share-image.jpg"><meta property="og:updated_time" content="1398790914000"><meta property="og:site_name" content="npm awesome"><meta property="og:type" content="article"><meta property="og:url" content="http://npmawesome.com/posts/2014-04-29-compare-express-restify-hapi-loopback"><meta property="og:description" content="Comparing Express, Restify, hapi and LoopBack for building RESTful APIs"><link rel="canonical" href="http://npmawesome.com/posts/2014-04-29-compare-express-restify-hapi-loopback"><meta name="description" content="Comparing Express, Restify, hapi and LoopBack for building RESTful APIs"></head></html><body><header id="page-header"><div class="container"><div class="row"><h1 id="logo"><a href="/"><span class="name">npmawesome</span><span class="posts-counter">82</span></a></h1><div id="sub-title"><a href="http://npmjs.org">npm</a> picks, old and new.
+<a href="https://github.com/alexgorbatchev/npm-awesome-site">Fork on GitHub to contribute</a></div></div></div></header><div class="container"><div class="row"><div class="main col"><article><header><h2 class="article"><a href="/posts/2014-04-29-compare-express-restify-hapi-loopback">Comparing Express, Restify, hapi and LoopBack for building RESTful APIs</a></h2><div class="meta"><span>posted by <a href="https://github.com/alexgorbatchev">Alex Gorbatchev</a> on April 29th 2014</span><a href="http://npmawesome.com/posts/2014-04-29-compare-express-restify-hapi-loopback#disqus_thread" class="comments"></a></div><div class="social-box"><div data-url="http://npmawesome.com/posts/2014-04-29-compare-express-restify-hapi-loopback" class="social"></div></div></header><div class="content"><div class="highlight strongloop"><img src="/images/posts/strongloop.png" style="height: 80px" class="hide-on-mobile"/><span><p><a href="http://strongloop.com/">StrongLoop</a> makes it easy to <a href="http://strongloop.com/mobile-application-development/loopback/">develop APIs</a> in Node, plus get <a href="http://strongloop.com/node-js-performance/strongops/">DevOps capabilities</a> like monitoring, debugging and clustering.</p>
+</span></div><p>If you are writing a Node.js application, chances are you going to have some kind of API end points to be consumed by your frond end or expose data for others to take in. This is where <a href="http://en.wikipedia.org/wiki/Representational_state_transfer">RESTful APIs</a> come in. And now you have a dilemma - what tools to use and what approach to take? So many choices...</p>
+<p><img src="http://npmawesome.com/images/posts/compare-express-restify-hapi-loopback/confused.gif"/></p>
+<p>Thanks to the incredibly active Node.js community, the amount of results for a <a href="https://www.npmjs.org/search?q=rest">&quot;rest&quot; search on NPM</a> is pretty overwhelming. Everyone has their own implementation and approach, but few seem to agree on a common way to go about implementing RESTful APIs in Node.js.</p>
+<div class="read-more"></div>
+
+<h2 id="restful-apis-with-express">RESTful APIs with Express</h2>
+<p>The most common approach is to just roll your own end points with <a href="http://expressjs.com">Express</a>. This practice allows you to get started quickly, but it becomes burdensome in the long run. Lets look at pros and cons:</p>
+<h3 id="example">Example</h3>
+<p>Here&#39;s what a typical end point might look like in <a href="http://expressjs.com">Express</a> using the latest 4.x <code>Router</code> feature:</p>
+<pre><code>var express = require(&#39;express&#39;);
+var Item = require(&#39;models&#39;).Item;
+var app = express();
+var itemRoute = express.Router();
+
+itemRoute.param(&#39;itemId&#39;, function(req, res, next, id) {
+  Item.findById(req.params.itemId, function(err, item) {
+    req.item = item;
+    next();
+  });
+});
+
+itemRoute.route(&#39;/:itemId&#39;)
+  .get(function(req, res, next) {
+    res.json(req.item);
+  })
+  .put(function(req, res, next) {
+    req.item.set(req.body);
+    req.item.save(function(err, item) {
+      res.json(item);
+    });
+  })
+  .post(function(req, res, next) {
+    var item = new Item(req.body);
+    item.save(function(err, item) {
+      res.json(item);
+    });
+  })
+  .delete(function(req, res, next) {
+    req.item.remove(function(err) {
+      res.json({});
+    });
+  })
+  ;
+
+app.use(&#39;/api/items&#39;, itemRoute);
+app.listen(8080);
+</code></pre><h3 id="pros">Pros</h3>
+<ol>
+<li>Little learning curve, <a href="http://expressjs.com">Express</a> is nearly a standard for Node.js web application</li>
+<li>Fully customizable</li>
+</ol>
+<h3 id="cons">Cons</h3>
+<ol>
+<li>All end points need to be created manually, you end up doing a lot of the same code (or worse, start rolling your own libraries after a while)</li>
+<li>Every end point needs to be tested (or at the very least I recommend that you hit the end points with HTTP consumer to make sure they are actually there and don&#39;t throw 500s)</li>
+<li>Refactoring becomes painful because everything needs to be updated everywhere</li>
+<li>Doesn&#39;t come with anything &quot;standard&quot;, have to figure out your own approach</li>
+</ol>
+<p><a href="http://expressjs.com">Express</a> is a great starting point, but eventually you will feel the pain of &quot;roll your own&quot; approach.</p>
+<h2 id="restful-apis-with-restify">RESTful APIs with Restify</h2>
+<p><a href="http://mcavage.me/node-restify">Restify</a> is a relatively old player in the Node.js API field, very stable and being actively developed. It is built specifically to enable you to build correct REST web services and intentionally borrows heavily from <a href="http://expressjs.com">Express</a>.</p>
+<h3 id="example">Example</h3>
+<p>Because <a href="http://mcavage.me/node-restify">Restify</a> borrows from <a href="http://expressjs.com">Express</a>, the syntax is nearly identical:</p>
+<pre><code>var restify = require(&#39;restify&#39;);
+var Item = require(&#39;models&#39;).Item;
+var app = restify.createServer()
+
+app.use(function(req, res, next) {
+  if (req.params.itemId) {
+    Item.findById(req.params.itemId, function(err, item) {
+      req.item = item;
+      next();
+    });
+  }
+  else {
+    next();
+  }
+});
+
+app.get(&#39;/api/items/:itemId&#39;, function(req, res, next) {
+  res.send(200, req.item);
+});
+
+app.put(&#39;/api/items/:itemId&#39;, function(req, res, next) {
+  req.item.set(req.body);
+  req.item.save(function(err, item) {
+    res.send(204, item);
+  });
+});
+
+app.post(&#39;/api/items/:itemId&#39;, function(req, res, next) {
+  var item = new Item(req.body);
+  item.save(function(err, item) {
+    res.send(201, item);
+  });
+});
+
+app.delete(&#39;/api/items/:itemId&#39;, function(req, res, next) {
+  req.item.remove(function(err) {
+    res.send(204, {});
+  });
+});
+
+app.listen(8080);
+</code></pre><h3 id="pros">Pros</h3>
+<ul>
+<li>Automatic DTrace support for all your handlers (if you&#39;re running on a platform that supports DTrace)</li>
+<li>Doesn&#39;t have unnecessary functionality like templating and rendering</li>
+<li>Built in throttling</li>
+<li>Built in <a href="http://en.wikipedia.org/wiki/SPDY">SPDY</a> support</li>
+</ul>
+<h3 id="cons">Cons</h3>
+<p>The cons are all the same with <a href="http://mcavage.me/node-restify">Restify</a> as they are with <a href="http://expressjs.com">Express</a>, lots of manual labor.</p>
+<h2 id="restful-apis-with-hapi">RESTful APIs with hapi</h2>
+<p><a href="http://spumko.github.io/">hapi</a> is a lesser known Node.js framework that is getting momentum thanks to fulltime support of the Walmart Labs team. It takes a somewhat different approach from <a href="http://expressjs.com">Express</a> and <a href="http://mcavage.me/node-restify">Restify</a> by providing significantly more functionality out of the box for building web servers.</p>
+<h3 id="example">Example</h3>
+<p>Here&#39;s the same example re-written using <a href="http://spumko.github.io/">hapi</a>:</p>
+<pre><code>var Hapi = require(&#39;hapi&#39;);
+var Item = require(&#39;models&#39;).Item;
+var server = Hapi.createServer(&#39;0.0.0.0&#39;, 8080);
+
+server.ext(&#39;onPreHandler&#39;, function(req, next) {
+  if (req.params.itemId) {
+    Item.findById(req.params.itemId, function(err, item) {
+      req.item = item;
+      next();
+    });
+  }
+  else {
+    next();
+  }
+});
+
+server.route([
+  {
+    path: &#39;/api/items/{itemId}&#39;,
+    method: &#39;GET&#39;,
+    config: {
+      handler: function(req, reply) {
+        reply(req.item);
+      }
+    }
+  },
+  {
+    path: &#39;/api/items&#39;,
+    method: &#39;PUT&#39;,
+    config: {
+      handler: function(req, reply) {
+        req.item.set(req.body);
+        req.item.save(function(err, item) {
+          res.send(204, item);
+        });
+      }
+    }
+  },
+  {
+    path: &#39;/api/items&#39;,
+    method: &#39;POST&#39;,
+    config: {
+      handler: function(req, reply) {
+        var item = new Item(req.body);
+        item.save(function(err, item) {
+          res.send(201, item);
+        });
+      }
+    }
+  },
+  {
+    path: &#39;/api/items/{itemId}&#39;,
+    method: &#39;DELETE&#39;,
+    config: {
+      handler: function(req, reply) {
+        req.item.remove(function(err) {
+          res.send(204, {});
+        });
+      }
+    }
+  }
+]);
+
+server.start();
+</code></pre><h3 id="pros">Pros</h3>
+<ol>
+<li>Very granular control over request handling</li>
+<li>Detailed API <a href="https://github.com/spumko/hapi/blob/master/docs/Reference.md">reference</a> with support for documentation generation</li>
+</ol>
+<h3 id="cons">Cons</h3>
+<p>As with <a href="http://expressjs.com">Express</a> and <a href="http://mcavage.me/node-restify">Restify</a>, <a href="http://spumko.github.io/">hapi</a> gives you great construction blocks, but you are left to your own devices figuring out how to use them.</p>
+<h2 id="what-else-is-there-">What else is there?</h2>
+<p><a href="http://expressjs.com">Express</a>, <a href="http://mcavage.me/node-restify">Restify</a> and <a href="http://spumko.github.io/">hapi</a> are all great starting points, but in the long run it might not be the right choice if you plan on investing heavily into APIs.</p>
+<h2 id="loopback">LoopBack</h2>
+<p><a href="http://strongloop.com/mobile-application-development/loopback/">LoopBack</a> by <a href="http://strongloop.com">StrongLoop</a> is a fully featured Node.js backend framework to connect your consumer applications with data. It adopts <a href="http://en.wikipedia.org/wiki/Convention_over_configuration">convention over configuration</a> mantra popularized by Ruby on Rails.</p>
+<h3 id="example">Example</h3>
+<pre><code>var loopback = require(&#39;loopback&#39;);
+var Item = require(&#39;./models&#39;).Item;
+var app = module.exports = loopback();
+
+app.model(Item);
+app.use(&#39;/api&#39;, loopback.rest());
+app.listen(8080);
+</code></pre><p>There&#39;s a lot of &quot;magic&quot; happening in the background. But with just 6 lines of code you now have the following end points:</p>
+<pre><code>DELETE /items/{id}
+GET /items
+GET /items/count
+GET /items/findOne
+GET /items/{id}
+GET /items/{id}/exists
+POST /items
+PUT /items
+PUT /items/{id}
+</code></pre><p><img src="http://npmawesome.com/images/posts/compare-express-restify-hapi-loopback/mind-blowing-nph.gif"/></p>
+<p>To start exploring your own APIs right away, there&#39;s a bundled <code>explorer</code> module that you can attach to your application:</p>
+<pre><code>var explorer = require(&#39;loopback-explorer&#39;);
+app.use(&#39;/explorer&#39;, explorer(app, {basePath: &#39;/api&#39;}));
+</code></pre><p>And now opening <code>http://localhost:8080/explorer</code> you get this:</p>
+<p><img src="http://npmawesome.com/images/posts/compare-express-restify-hapi-loopback/screenshot.png"/></p>
+<p>Seriously cool stuff!</p>
+<h3 id="pros">Pros</h3>
+<ol>
+<li>Very quick RESTful API development</li>
+<li>Convention over configuration</li>
+<li>Built in models ready to use</li>
+<li>RPC support</li>
+<li>Fully configurable when needed</li>
+<li>Extensive documentation</li>
+<li>Fulltime team working on the project</li>
+<li>Available commercial support</li>
+</ol>
+<h3 id="cons">Cons</h3>
+<ol>
+<li>Learning curve can be pretty steep because there are so many moving parts</li>
+</ol>
+<h2 id="rpc">RPC</h2>
+<p>The <a href="http://strongloop.com/mobile-application-development/loopback/">LoopBack</a> example above is so tiny, I feel bad about it. How about we extend it with a quick RPC endpoint to balance things out?</p>
+<pre><code>var loopback = require(&#39;loopback&#39;);
+var explorer = require(&#39;loopback-explorer&#39;);
+var remoting = require(&#39;strong-remoting&#39;);
+var Item = require(&#39;./models&#39;).Item;
+var app = module.exports = loopback();
+var rpc = remoting.create();
+
+function echo(ping, callback) {
+  callback(null, ping);
+}
+
+echo.shared = true;
+echo.accepts = {arg: &#39;ping&#39;};
+echo.returns = {arg: &#39;echo&#39;};
+
+rpc.exports.system = {
+  echo: echo
+};
+
+app.model(Item);
+app.use(&#39;/api&#39;, loopback.rest());
+app.use(&#39;/explorer&#39;, explorer(app, {basePath: &#39;/api&#39;}));
+app.use(&#39;/rpc&#39;, rpc.handler(&#39;rest&#39;));
+app.listen(8080);
+</code></pre><p>And now you can do this:</p>
+<pre><code>$ curl &quot;http://localhost:8080/rpc/system/echo?ping=hello&quot;
+{
+  &quot;echo&quot;: &quot;hello&quot;
+}
+</code></pre><p><img src="http://npmawesome.com/images/posts/compare-express-restify-hapi-loopback/thumbs-up-nph.gif"/></p>
+<h2 id="what-s-next-">What&#39;s next?</h2>
+<ul>
+<li>Install LoopBack with a <a href="http://strongloop.com/get-started/">simple npm command</a>.</li>
+<li>Read <a href="http://docs.strongloop.com/display/DOC/LoopBack">LoopBack documentation</a>.</li>
+<li>Need performance monitoring, profiling and cluster capabilites for your Node apps? Check out <a href="http://strongloop.com/node-js-performance/strongops/">StrongOps</a>.</li>
+</ul>
+</div></article><div id="disqus_thread"></div><script type="text/javascript">/* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+var disqus_shortname = 'npmawesome'; // required: replace example with your forum shortname
+
+/* * * DON'T EDIT BELOW THIS LINE * * */
+(function() {
+    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+})();
+</script></div><aside class="col"><div class="feedburner"><a href="http://feeds.feedburner.com/npmawesome"><img src="/images/feed.gif"></a></div><div class="other-posts"><h4>Previously...</h4><div><a href="/posts/2014-04-29-compare-express-restify-hapi-loopback" class="current partner strongloop">Comparing Express, Restify, hapi and LoopBack for building RESTful APIs</a></div><div><a href="/posts/2014-04-28-angular-injector">angular-injector</a></div><div><a href="/posts/2014-04-23-platform-js">platform.js</a></div><div><a href="/posts/2014-04-23-links">Links for Apr 23, 2014</a></div><div><a href="/posts/2014-04-19-links">Links for Apr 19, 2014</a></div><div><a href="/posts/2014-04-18-links">Links for Apr 18, 2014</a></div><div><a href="/posts/2014-04-18-terminal-menu" class="partner nodejitsu">terminal-menu</a></div><div><a href="/posts/2014-04-17-links">Links for Apr 17, 2014</a></div><div><a href="/posts/2014-04-16-promises-trycatch-zones" class="partner strongloop">Comparing Node.js Promises, Try/Catch, Angular Zone.js and yes, Zone</a></div><div><a href="/posts/2014-04-15-links">Links for Apr 15, 2014</a></div><div><a href="/posts/2014-04-11-links">Links for Apr 10, 2014</a></div><div><a href="/posts/2014-04-10-shmock">shmock</a></div><div><a href="/posts/2014-04-09-links">Links for Apr 8, 2014</a></div><div><a href="/posts/2014-04-07-links">Links for Apr 7, 2014</a></div><div><a href="/posts/2014-04-04-links">Links for Apr 5, 2014</a></div><div><a href="/posts/2014-04-04-progress" class="partner nodejitsu">progress</a></div><div><a href="/posts/2014-04-04-slate-irc">slate-irc</a></div><div><a href="/posts/2014-04-03-links">Links for Apr 4, 2014</a></div><div><a href="/posts/2014-03-28-cli-table" class="partner nodejitsu">cli-table</a></div><div><a href="/posts/2014-03-21-yargs" class="partner nodejitsu">yargs</a></div><div><a href="/posts/2014-03-12-convict" class="partner nodejitsu">convict</a></div><div><a href="/posts/2014-03-06-lockit" class="partner nodejitsu">lockit</a></div><div><a href="/posts/2014-02-27-qr-image" class="partner nodejitsu">qr-image</a></div><div><a href="/posts/2014-02-25-webdriverjs">webdriver.js</a></div><div><a href="/posts/2014-02-24-pretty-error">pretty-error</a></div><div><a href="/posts/2014-02-21-supertest">supertest</a></div><div><a href="/posts/2014-02-20-spritesmith">spritesmith</a></div><div><a href="/posts/2014-02-19-9-gulp-js-plugins-for-a-great-build-system" class="partner nodejitsu">9 gulp.js plugins for a great build system</a></div><div><a href="/posts/2014-02-18-npm-diff">npm-diff</a></div><div><a href="/posts/2014-02-17-nodepdf">NodePDF</a></div><div><a href="/posts/2014-02-13-domain-context">domain-context</a></div><div><a href="/posts/2014-02-12-jsonstream">JSONStream</a></div><div><a href="/posts/2014-02-11-peer-js">peer.js</a></div><div><a href="/posts/2014-02-10-node-dependencies">node-dependencies</a></div><div><a href="/posts/2014-02-05-cucumber-js">cucumber.js</a></div><div><a href="/posts/2014-02-04-binary-js">binary.js</a></div><div><a href="/posts/2014-02-03-power-assert">power-assert</a></div><div><a href="/posts/2014-01-31-coupon-code">coupon-code</a></div><div><a href="/posts/2014-01-30-rewire">rewire</a></div><div><a href="/posts/2014-01-29-yarm">yarm</a></div><div><a href="/posts/2014-01-28-modella">modella</a></div><div><a href="/posts/2014-01-27-mversion">mversion</a></div><div><a href="/posts/2014-01-24-schema-inspector">schema-inspector</a></div><div><a href="/posts/2014-01-23-oboe-js">oboe.js</a></div><div><a href="/posts/2014-01-22-autoprefixer">autoprefixer</a></div><div><a href="/posts/2014-01-21-js-yaml">js-yaml</a></div><div><a href="/posts/2014-01-17-gaze">gaze</a></div><div><a href="/posts/2014-01-14-shortid">shortId</a></div><div><a href="/posts/2014-01-13-testium">testium</a></div><div><a href="/posts/2014-01-10-messageformat">messageformat.js</a></div><div><a href="/posts/2014-01-09-gulp">gulp</a></div><div><a href="/posts/2014-01-06-chalk">chalk</a></div><div><a href="/posts/2013-12-31-recluster">recluster</a></div><div><a href="/posts/2013-12-30-rework">rework</a></div><div><a href="/posts/2013-12-27-cheerio">cheerio</a></div><div><a href="/posts/2013-12-19-dat">dat</a></div><div><a href="/posts/2013-12-18-xregexp">xregexp</a></div><div><a href="/posts/2013-12-17-npm">npm v1.3.18</a></div><div><a href="/posts/2013-12-16-ect">ect</a></div><div><a href="/posts/2013-12-13-chrono">chrono</a></div><div><a href="/posts/2013-12-11-prettyjson">prettyjson</a></div><div><a href="/posts/2013-12-10-state">state</a></div><div><a href="/posts/2013-12-09-blessed">blessed</a></div><div><a href="/posts/2013-12-05-gm">gm</a></div><div><a href="/posts/2013-12-03-nak">nak</a></div><div><a href="/posts/2013-12-03-verymodel">VeryModel</a></div><div><a href="/posts/2013-11-30-scala-js">scala.js</a></div><div><a href="/posts/2013-11-27-scale-npm">scalenpm.org</a></div><div><a href="/posts/2013-11-26-rx-js">rx.js</a></div><div><a href="/posts/2013-11-26-docpad">docpad</a></div><div><a href="/posts/2013-11-25-grunt-angular-builder">grunt-angular-builder</a></div><div><a href="/posts/2013-11-22-videoconverter-js">videoconverter.js</a></div><div><a href="/posts/2013-11-22-event-stream">event-stream</a></div><div><a href="/posts/2013-11-21-bacon-js">bacon.js</a></div><div><a href="/posts/2013-11-20-spdy">node-spdy</a></div><div><a href="/posts/2013-11-19-json-mask">json-mask</a></div><div><a href="/posts/2013-11-18-pm2">pm2</a></div><div><a href="/posts/2013-11-18-npmd">npmd</a></div><div><a href="/posts/2013-11-18-nixt">nixt</a></div><div><a href="/posts/2013-11-17-vm-js">vm.js</a></div><div><a href="/posts/2013-11-17-node-jvm">node-jvm</a></div><div><a href="/posts/2013-11-17-flake">flake</a></div></div></aside></div></div><a id="fork-me" href="https://github.com/alexgorbatchev/npm-awesome-site" class="hide-on-mobile">Fork Me</a><script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+// http://drawingablank.me/blog/fix-your-bounce-rate.html
+// https://news.ycombinator.com/item?id=5766883
+setTimeout(function() { ga('send', 'event', 'read', 'auto generated'); }, 5000);
+
+ga('create', 'UA-46164085-1', 'npmawesome.com');
+ga('send', 'pageview');
+</script><div id="fb-root"></div><script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=1425631694354948";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));
+</script><script>/* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+var disqus_shortname = 'npmawesome'; // required: replace example with your forum shortname
+
+/* * * DON'T EDIT BELOW THIS LINE * * */
+(function () {
+  var s = document.createElement('script'); s.async = true;
+  s.type = 'text/javascript';
+  s.src = 'http://' + disqus_shortname + '.disqus.com/count.js';
+  (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+}());
+</script><script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script><script async src="/scripts/npmawesome.min.js"></script><script async src="//platform.twitter.com/widgets.js"></script><script async src="https://apis.google.com/js/plusone.js" parsetags="explicit"></script></body>
