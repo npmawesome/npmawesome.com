@@ -1,0 +1,343 @@
+---
+layout: post
+partner: strongloop
+date: 2014-04-29T10:01:54-0700
+tags: strongloop
+slug: compare-express-restify-hapi-loopback
+title: Comparing Express, Restify, hapi and LoopBack for building RESTful APIs
+description: Comparing Express, Restify, hapi and LoopBack for building RESTful APIs
+---
+If you are writing a Node.js application, chances are you going to have some kind of API end points to be consumed by your frond end or expose data for others to take in. This is where [RESTful APIs](http://en.wikipedia.org/wiki/Representational_state_transfer) come in. And now you have a dilemma - what tools to use and what approach to take? So many choices...
+
+<img src="<%- @image '/compare-express-restify-hapi-loopback/confused.gif' %>"/>
+
+Thanks to the incredibly active Node.js community, the amount of results for a ["rest" search on NPM](https://www.npmjs.org/search?q=rest) is pretty overwhelming. Everyone has their own implementation and approach, but few seem to agree on a common way to go about implementing RESTful APIs in Node.js.
+
+<%- @readMore() %>
+
+## RESTful APIs with Express
+
+The most common approach is to just roll your own end points with [Express]. This practice allows you to get started quickly, but it becomes burdensome in the long run. Lets look at pros and cons:
+
+### Example
+
+Here's what a typical end point might look like in [Express] using the latest 4.x `Router` feature:
+
+```
+var express = require('express');
+var Item = require('models').Item;
+var app = express();
+var itemRoute = express.Router();
+
+itemRoute.param('itemId', function(req, res, next, id) {
+  Item.findById(req.params.itemId, function(err, item) {
+    req.item = item;
+    next();
+  });
+});
+
+itemRoute.route('/:itemId')
+  .get(function(req, res, next) {
+    res.json(req.item);
+  })
+  .put(function(req, res, next) {
+    req.item.set(req.body);
+    req.item.save(function(err, item) {
+      res.json(item);
+    });
+  })
+  .post(function(req, res, next) {
+    var item = new Item(req.body);
+    item.save(function(err, item) {
+      res.json(item);
+    });
+  })
+  .delete(function(req, res, next) {
+    req.item.remove(function(err) {
+      res.json({});
+    });
+  })
+  ;
+
+app.use('/api/items', itemRoute);
+app.listen(8080);
+```
+
+### Pros
+
+1. Little learning curve, [Express] is nearly a standard for Node.js web application
+1. Fully customizable
+
+### Cons
+
+1. All end points need to be created manually, you end up doing a lot of the same code (or worse, start rolling your own libraries after a while)
+1. Every end point needs to be tested (or at the very least I recommend that you hit the end points with HTTP consumer to make sure they are actually there and don't throw 500s)
+1. Refactoring becomes painful because everything needs to be updated everywhere
+1. Doesn't come with anything "standard", have to figure out your own approach
+
+[Express] is a great starting point, but eventually you will feel the pain of "roll your own" approach.
+
+## RESTful APIs with Restify
+
+[Restify] is a relatively old player in the Node.js API field, very stable and being actively developed. It is built specifically to enable you to build correct REST web services and intentionally borrows heavily from [Express].
+
+### Example
+
+Because [Restify] borrows from [Express], the syntax is nearly identical:
+
+```
+var restify = require('restify');
+var Item = require('models').Item;
+var app = restify.createServer()
+
+app.use(function(req, res, next) {
+  if (req.params.itemId) {
+    Item.findById(req.params.itemId, function(err, item) {
+      req.item = item;
+      next();
+    });
+  }
+  else {
+    next();
+  }
+});
+
+app.get('/api/items/:itemId', function(req, res, next) {
+  res.send(200, req.item);
+});
+
+app.put('/api/items/:itemId', function(req, res, next) {
+  req.item.set(req.body);
+  req.item.save(function(err, item) {
+    res.send(204, item);
+  });
+});
+
+app.post('/api/items/:itemId', function(req, res, next) {
+  var item = new Item(req.body);
+  item.save(function(err, item) {
+    res.send(201, item);
+  });
+});
+
+app.delete('/api/items/:itemId', function(req, res, next) {
+  req.item.remove(function(err) {
+    res.send(204, {});
+  });
+});
+
+app.listen(8080);
+```
+
+### Pros
+
+* Automatic DTrace support for all your handlers (if you're running on a platform that supports DTrace)
+* Doesn't have unnecessary functionality like templating and rendering
+* Built in throttling
+* Built in [SPDY](http://en.wikipedia.org/wiki/SPDY) support
+
+### Cons
+
+The cons are all the same with [Restify] as they are with [Express], lots of manual labor.
+
+## RESTful APIs with hapi
+
+[hapi] is a lesser known Node.js framework that is getting momentum thanks to fulltime support of the Walmart Labs team. It takes a somewhat different approach from [Express] and [Restify] by providing significantly more functionality out of the box for building web servers.
+
+### Example
+
+Here's the same example re-written using [hapi]:
+
+```
+var Hapi = require('hapi');
+var Item = require('models').Item;
+var server = Hapi.createServer('0.0.0.0', 8080);
+
+server.ext('onPreHandler', function(req, next) {
+  if (req.params.itemId) {
+    Item.findById(req.params.itemId, function(err, item) {
+      req.item = item;
+      next();
+    });
+  }
+  else {
+    next();
+  }
+});
+
+server.route([
+  {
+    path: '/api/items/{itemId}',
+    method: 'GET',
+    config: {
+      handler: function(req, reply) {
+        reply(req.item);
+      }
+    }
+  },
+  {
+    path: '/api/items',
+    method: 'PUT',
+    config: {
+      handler: function(req, reply) {
+        req.item.set(req.body);
+        req.item.save(function(err, item) {
+          res.send(204, item);
+        });
+      }
+    }
+  },
+  {
+    path: '/api/items',
+    method: 'POST',
+    config: {
+      handler: function(req, reply) {
+        var item = new Item(req.body);
+        item.save(function(err, item) {
+          res.send(201, item);
+        });
+      }
+    }
+  },
+  {
+    path: '/api/items/{itemId}',
+    method: 'DELETE',
+    config: {
+      handler: function(req, reply) {
+        req.item.remove(function(err) {
+          res.send(204, {});
+        });
+      }
+    }
+  }
+]);
+
+server.start();
+```
+
+### Pros
+
+1. Very granular control over request handling
+1. Detailed API [reference](https://github.com/spumko/hapi/blob/master/docs/Reference.md) with support for documentation generation
+
+### Cons
+
+As with [Express] and [Restify], [hapi] gives you great construction blocks, but you are left to your own devices figuring out how to use them.
+
+## What else is there?
+
+[Express], [Restify] and [hapi] are all great starting points, but in the long run it might not be the right choice if you plan on investing heavily into APIs.
+
+## LoopBack
+
+[LoopBack] by [StrongLoop] is a fully featured Node.js backend framework to connect your consumer applications with data. It adopts [convention over configuration](http://en.wikipedia.org/wiki/Convention_over_configuration) mantra popularized by Ruby on Rails.
+
+### Example
+
+```
+var loopback = require('loopback');
+var Item = require('./models').Item;
+var app = module.exports = loopback();
+
+app.model(Item);
+app.use('/api', loopback.rest());
+app.listen(8080);
+```
+
+There's a lot of "magic" happening in the background. But with just 6 lines of code you now have the following end points:
+
+```
+DELETE /items/{id}
+GET /items
+GET /items/count
+GET /items/findOne
+GET /items/{id}
+GET /items/{id}/exists
+POST /items
+PUT /items
+PUT /items/{id}
+```
+
+<img src="<%- @image '/compare-express-restify-hapi-loopback/mind-blowing-nph.gif' %>"/>
+
+To start exploring your own APIs right away, there's a bundled `explorer` module that you can attach to your application:
+
+```
+var explorer = require('loopback-explorer');
+app.use('/explorer', explorer(app, {basePath: '/api'}));
+```
+
+And now opening `http://localhost:8080/explorer` you get this:
+
+<img src="<%- @image '/compare-express-restify-hapi-loopback/screenshot.png' %>"/>
+
+Seriously cool stuff!
+
+### Pros
+
+1. Very quick RESTful API development
+1. Convention over configuration
+1. Built in models ready to use
+1. RPC support
+1. Fully configurable when needed
+1. Extensive documentation
+1. Fulltime team working on the project
+1. Available commercial support
+
+### Cons
+
+1. Learning curve can be pretty steep because there are so many moving parts
+
+## RPC
+
+The [LoopBack] example above is so tiny, I feel bad about it. How about we extend it with a quick RPC endpoint to balance things out?
+
+```
+var loopback = require('loopback');
+var explorer = require('loopback-explorer');
+var remoting = require('strong-remoting');
+var Item = require('./models').Item;
+var app = module.exports = loopback();
+var rpc = remoting.create();
+
+function echo(ping, callback) {
+  callback(null, ping);
+}
+
+echo.shared = true;
+echo.accepts = {arg: 'ping'};
+echo.returns = {arg: 'echo'};
+
+rpc.exports.system = {
+  echo: echo
+};
+
+app.model(Item);
+app.use('/api', loopback.rest());
+app.use('/explorer', explorer(app, {basePath: '/api'}));
+app.use('/rpc', rpc.handler('rest'));
+app.listen(8080);
+```
+
+And now you can do this:
+
+```
+$ curl "http://localhost:8080/rpc/system/echo?ping=hello"
+{
+  "echo": "hello"
+}
+```
+
+<img src="<%- @image '/compare-express-restify-hapi-loopback/thumbs-up-nph.gif' %>"/>
+
+## What's next?
+
+* Install LoopBack with a [simple npm command](http://strongloop.com/get-started/).
+* Read [LoopBack documentation](http://docs.strongloop.com/display/DOC/LoopBack).
+* Need performance monitoring, profiling and cluster capabilites for your Node apps? Check out [StrongOps](http://strongloop.com/node-js-performance/strongops/).
+
+[Express]: http://expressjs.com
+[Restify]: http://mcavage.me/node-restify
+[hapi]: http://spumko.github.io/
+[LoopBack]: http://strongloop.com/mobile-application-development/loopback/
+[StrongLoop]: http://strongloop.com
