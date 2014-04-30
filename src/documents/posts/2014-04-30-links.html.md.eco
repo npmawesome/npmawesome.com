@@ -1,0 +1,47 @@
+---
+date: 2014-04-30T10:00:00-0700
+title: Links for Apr 30, 2014
+layout: post-links
+tags: javascript, links
+description: Nerd links for the day, videos, GitHub projects, talks, articles and other stuff.
+---
+<img src="<%- @image '/html5.png' %>" style="float: right; width: 150px;"/>
+
+## Articles & Slides
+
+* [Handling required parameters in ECMAScript 6](http://www.2ality.com/2014/04/required-parameters-es6.html)
+* [A Good User Interface](http://goodui.org/) has high conversion rates and is easy to use. In other words, it's nice to both the business side as well as the people using it.
+* [Edge.js](http://tjanczuk.github.io/edge/) - run Node.js and .NET code in-process.
+* [How Good an Estimator Are You? Part II](http://blog.codinghorror.com/how-good-an-estimator-are-you-part-ii/)
+
+  > The specific goal of the exercise was to estimate at the 90 percent confidence level. There are 10 questions in the quiz, so if you were truly estimating at a 90 percent confidence level, you would have gotten about 9 answers correct.
+
+* [An introduction to designing CSS transitions using AngularJS](https://speakerdeck.com/jessicaspacekat/an-introduction-to-designing-css-transitions-using-angularjs)
+
+  > …examples of how a UI designer without much JS or AngularJS experience can use some of the features built in to AngularJS (with angular-animate) to help them design interactive components and add CSS transitions.
+
+<%- @readMore() %>
+
+* [Continuous Deployment for node.js apps from Bitbucket to Heroku](http://blog.codeship.io/2014/04/29/continuous-deployment-heroku-bitbucket-nodejs.html)
+
+  > How to set up Continuous Integration and Continuous Deployment for a Node.js Application from Bitbucket to Heroku
+
+* [Designing a Vinyl Toy with Joe Ledbetter](http://makezine.com/2014/02/19/designing-a-vinyl-toy-with-joe-ledbetter/)
+
+  > It all starts with an initial idea or concept for a toy. In this case I wanted to base this project on my popular character called Mr. Bunny. Mr. Bunny has been depicted in my paintings since I first began showing in galleries over 10 years ago.
+
+* [Printoo](http://makezine.com/2014/04/22/paper-thin-arduino-enables-diy-dirigible/) is a platform of paper-thin circuit boards and modules. It gives makers an open-source, lightweight, flexible, and modular Arduino-compatible platform to create just about anything you want! What makes Printoo amazingly unique is that it comes with a range of printed electronics modules previously unavailable to the public. These are electronics building "blocks" of the future, only not so rigid.
+
+## Github
+
+* [Depthy](http://depthy.stamina.pl/) extracts depth map and original from photos made with Google Camera's Lens Blur. I think this is the future of product photography (until there’s proper 3D).
+
+* [flowdock-stream](https://www.npmjs.org/package/flowdock-stream) is a node module for streaming [flowdock](https://www.flowdock.com/) flows.
+
+## Chrome
+
+* [Project Naptha](http://projectnaptha.com/) automatically applies state-of-the-art computer vision algorithms on every image you see while browsing the web. The result is a seamless and intuitive experience, where you can highlight as well as copy and paste and even edit and translate the text formerly trapped within an image.
+
+## Twitter
+
+<blockquote class="twitter-tweet" data-partner="tweetdeck"><p>Breathalyzers for cars? Breathalyzers for Twitter! I’d probably buy one, just to be 100% safe.</p>&mdash; Axel Rauschmayer (@rauschma) <a href="https://twitter.com/rauschma/statuses/459111786382639104">April 23, 2014</a></blockquote>
