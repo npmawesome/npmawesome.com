@@ -1,0 +1,108 @@
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" xmlns:og="http://ogp.me/ns#" xmlns:fb="https://www.facebook.com/2008/fbml"><head><meta charset="utf-8"><link rel="alternate" title="RSS" type="application/rss+xml" href="http://feeds.feedburner.com/npmawesome"><link href="http://npmawesome.com/atom.xml" title="Blog Posts" type="application/atom+xml" rel="alternate"><link rel="stylesheet" type="text/css" media="all" href="/styles.css"><meta name="viewport" content="initial-scale=1, maximum-scale=1"><meta property="twitter:account_id" content="4503599628039784"><meta property="fb:app_id" content="1425631694354948"><title>sentiment</title><meta property="og:title" content="npm awesome"><meta property="og:image" content="http://npmawesome.com/images/default-share-image.jpg"><meta property="og:updated_time" content="1398875075000"><meta property="og:site_name" content="npm awesome"><meta property="og:type" content="article"><meta property="og:url" content="http://npmawesome.com/posts/2014-04-30-sentiment"><meta property="og:description" content="AFINN-based sentiment analysis for Node.js."><link rel="canonical" href="http://npmawesome.com/posts/2014-04-30-sentiment"><meta name="description" content="AFINN-based sentiment analysis for Node.js."></head></html><body><header id="page-header"><div class="container"><div class="row"><h1 id="logo"><a href="/"><span class="name">npmawesome</span><span class="posts-counter">84</span></a></h1><div id="sub-title"><a href="http://npmjs.org">npm</a> picks, old and new.
+<a href="https://github.com/alexgorbatchev/npm-awesome-site">Fork on GitHub to contribute</a></div></div></div></header><div class="container"><div class="row"><div class="main col"><article><header><h2 class="npm"><a href="/posts/2014-04-30-sentiment">sentiment</a></h2><div class="meta"><span>posted by <a href="https://github.com/alexgorbatchev">Alex Gorbatchev</a> on April 30th 2014</span><a href="http://npmawesome.com/posts/2014-04-30-sentiment#disqus_thread" class="comments"></a><div data-github-repo="thisandagain/sentiment" class="github-stars"></div></div><div class="social-box"><div data-url="http://npmawesome.com/posts/2014-04-30-sentiment" class="social"></div></div></header><div class="content"><div class="highlight nodejitsu"><img src="/images/posts/nodejitsu.png" style="height: 80px" class="hide-on-mobile"/><span>This post was written for <a href="http://nodejitsu.com">Nodejitsu</a> blog and is crossposted here.
+<a href="http://nodejitsu.com">Nodejitsu</a> loved what I was doing at <a href="http://npmawesome.com">npmawesome.com</a>
+and is now supporting the project.</span></div><p>Sentiment analysis is one of those things you don&#39;t get to do very often, as cool as it sounds. It&#39;s one of those things I always wanted to do but haven&#39;t had a reason to yet. The field of natural language is as deep and complex as you want it to be. <a href="http://nlp.stanford.edu/sentiment/">Stanford Sentiment Analysis</a> is a pretty massive project and nets pretty decent results.</p>
+<p><img class="hide-on-mobile" src="https://avatars1.githubusercontent.com/u/747641?s=400" style="float: right; margin-left: 1em; width: 100px"/>
+<a href="https://github.com/thisandagain/sentiment">sentiment</a> module by <a href="https://github.com/thisandagain">Andrew Sliwinski</a> takes a very simple approach to the problem of just counting token words and their preassigned weight. For the most part you can expect pretty average results and it gets completely lost with expressions like &quot;I don&#39;t know half of you half as well as I should like, and I like less than half of you half as well as you deserve&quot; (frankly I don&#39;t understand what it says either). But the cool thing is - it actually works and you don&#39;t need a giant database. <a href="https://github.com/thisandagain/sentiment">sentiment</a> can get you started down the path until you feel the need for something more involved.</p>
+<div class="read-more"></div>
+
+<pre><code>npm install sentiment
+</code></pre><h2 id="features">Features</h2>
+<p><a href="https://github.com/thisandagain/sentiment">sentiment</a> uses the <a href="http://www2.imm.dtu.dk/pubdb/views/publication_details.php?id=6010">AFINN-111</a> wordlist to perform sentiment analysis on arbitrary blocks of input text and provides serveral things:</p>
+<ul>
+<li>Performance</li>
+<li>The ability to append and overwrite word / value pairs from the AFINN wordlist</li>
+<li>A build process that makes updating sentiment to future versions of the AFINN word list trivial</li>
+</ul>
+<h2 id="usage">Usage</h2>
+<p>Here&#39;s a simple example analysing bunch of latest <a href="https://www.twitter.com/dhh">DHH tweets</a>.</p>
+<pre><code>var
+  request = require(&#39;request&#39;),
+  cheerio = require(&#39;cheerio&#39;),
+  sentiment = require(&#39;sentiment&#39;)
+  ;
+
+function sentimentToSmiley(sentiment) {
+  var score = sentiment.score;
+
+  if(score === 0) { return &#39;:-|&#39; }
+  if(score &lt; 0) {
+    if(score &gt; -2) { return &#39;:-(&#39; }
+    return &#39;:`(&#39;
+  }
+
+  if(score &lt; 2) { return &#39;:-)&#39; }
+  return &#39;:-D&#39;
+}
+
+request(&#39;https://www.twitter.com/dhh&#39;, function(err, response) {
+  var $ = cheerio.load(response.body);
+
+  $(&#39;.tweet-text&#39;).toArray().forEach(function(item) {
+    var text = $(item).text();
+    var results = sentiment(text);
+    console.log(sentimentToSmiley(results), &#39;-&#39;, text.replace(/\n/g, &#39; &#39;));
+  });
+});
+</code></pre><p>Checkout out <a href="http://runnable.com/U1aiDzGWpo8vHVFK/sentiment-analysis-with-node-js-for-nodejitsu-and-npmawesome">functional example on runnable</a>. Running this will produce result similiar to:</p>
+<pre><code>:-| - @mrbigdreamerYWF We tried to get NBC but they wouldn&#39;t cover it :)
+:-| - @AmianExclusive I think the C7R is the most expensive customer GTE car you can buy. And still not a proven thing.
+:-| - @AmianExclusive Corvette factory team will be at Le Mans but not Viper :(. Apparently they didn&#39;t sell enough cars to afford it.
+:-| - Goooood morning #RailsConf! My talk is at 9:15am central. It will be streamed live on justin.tv/confreaks, if you&#39;re not in Chicago.
+:-| - @ashesfall Hot diggity.
+:-) - (Yes, internet is fast elsewhere too, but most services of note have their app servers in the US, so that&#39;s the ping that counts).
+:-| - @arunagw Just about everything on the internet of note, which happens to have app servers in the US :D
+:-| - For those who can&#39;t attend RailsConf, we&#39;ll be livestreaming the keynotes here: justin.tv/confreaks Schedule here: railsconf.com/schedule
+:-D - It gets me every time I&#39;m back in the US - even if just out for a few weeks: 20ms pings is internet happiness. So fast.
+:-| - @turbineseaplane Nope. May depend on hand size? Could see it be harder to hold with small hands.
+:-| - @mhauer I find that the hybrid model is actually the most common in anything but the newest or smallest companies. Very workable.
+:-( - @N8Gard @railsconf They&#39;re going to record it, I think. So no worries.
+:-( - @dennismajor1 @thereaIbanksy I&#39;d prefer to look at it the other way: drop the religious nonsense and enjoy a party without sin!
+:-| - @turbineseaplane It is sometimes a little awkward but the sacrifice is worth it.
+:-| - @andrestuul Right on the last one, not on the first two. Connecting has never been easier. 10 yrs ago I was working from Denmark.
+:-| - @davegreiner @dhh we had thousands of accounts on Cork’d when it was still on a Mac mini in my friend’s rack (Rails 1.x)
+:`( - @GregMolnar Horrible contortions to the false idol of testing. More on this in my keynote at RailsConf tomorrow.
+:-D - @dhh Sounds familiar. CM was hosted on a cheap box with all our client&#39;s sites. Went dedicated when it started slowing them down 1 yr later.
+:`( - @thomasfuchs @letsfreckle Fuck yeah! But you did have to forgo such necessities as a big fancy office on day 1!
+:-) - @homakov @davidpetschull I was in Denmark while I built Basecamp. But yes timezone and language can be barriers.
+</code></pre><h2 id="closing-thoughts">Closing thoughts</h2>
+<p><a href="https://github.com/thisandagain/sentiment">sentiment</a> is a very simple token counter which has vocabulary of about 2.5k english words. It doesn&#39;t always produce reliable results, but it gets you a step forward if you need to do sentiment analysis without bringing in the heavy weight APIs or expensive commercial libraries.</p>
+<p>I can totally imagine processing customer inquiries coming in via email, twitter and other channels with <a href="https://github.com/thisandagain/sentiment">sentiment</a>. Higher priority could be assigned to inquires with lower, more negative scores.</p>
+</div></article><div id="disqus_thread"></div><script type="text/javascript">/* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+var disqus_shortname = 'npmawesome'; // required: replace example with your forum shortname
+
+/* * * DON'T EDIT BELOW THIS LINE * * */
+(function() {
+    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+})();
+</script></div><aside class="col"><div class="feedburner"><a href="http://feeds.feedburner.com/npmawesome"><img src="/images/feed.gif"></a></div><div class="other-posts"><h4>Previously...</h4><div><a href="/posts/2014-04-30-links">Links for Apr 30, 2014</a></div><div><a href="/posts/2014-04-30-sentiment" class="current partner nodejitsu">sentiment</a></div><div><a href="/posts/2014-04-29-compare-express-restify-hapi-loopback" class="partner strongloop">Comparing Express, Restify, hapi and LoopBack for building RESTful APIs</a></div><div><a href="/posts/2014-04-28-angular-injector">angular-injector</a></div><div><a href="/posts/2014-04-23-platform-js">platform.js</a></div><div><a href="/posts/2014-04-23-links">Links for Apr 23, 2014</a></div><div><a href="/posts/2014-04-19-links">Links for Apr 19, 2014</a></div><div><a href="/posts/2014-04-18-links">Links for Apr 18, 2014</a></div><div><a href="/posts/2014-04-18-terminal-menu" class="partner nodejitsu">terminal-menu</a></div><div><a href="/posts/2014-04-17-links">Links for Apr 17, 2014</a></div><div><a href="/posts/2014-04-16-promises-trycatch-zones" class="partner strongloop">Comparing Node.js Promises, Try/Catch, Angular Zone.js and yes, Zone</a></div><div><a href="/posts/2014-04-15-links">Links for Apr 15, 2014</a></div><div><a href="/posts/2014-04-11-links">Links for Apr 10, 2014</a></div><div><a href="/posts/2014-04-10-shmock">shmock</a></div><div><a href="/posts/2014-04-09-links">Links for Apr 8, 2014</a></div><div><a href="/posts/2014-04-07-links">Links for Apr 7, 2014</a></div><div><a href="/posts/2014-04-04-links">Links for Apr 5, 2014</a></div><div><a href="/posts/2014-04-04-progress" class="partner nodejitsu">progress</a></div><div><a href="/posts/2014-04-04-slate-irc">slate-irc</a></div><div><a href="/posts/2014-04-03-links">Links for Apr 4, 2014</a></div><div><a href="/posts/2014-03-28-cli-table" class="partner nodejitsu">cli-table</a></div><div><a href="/posts/2014-03-21-yargs" class="partner nodejitsu">yargs</a></div><div><a href="/posts/2014-03-12-convict" class="partner nodejitsu">convict</a></div><div><a href="/posts/2014-03-06-lockit" class="partner nodejitsu">lockit</a></div><div><a href="/posts/2014-02-27-qr-image" class="partner nodejitsu">qr-image</a></div><div><a href="/posts/2014-02-25-webdriverjs">webdriver.js</a></div><div><a href="/posts/2014-02-24-pretty-error">pretty-error</a></div><div><a href="/posts/2014-02-21-supertest">supertest</a></div><div><a href="/posts/2014-02-20-spritesmith">spritesmith</a></div><div><a href="/posts/2014-02-19-9-gulp-js-plugins-for-a-great-build-system" class="partner nodejitsu">9 gulp.js plugins for a great build system</a></div><div><a href="/posts/2014-02-18-npm-diff">npm-diff</a></div><div><a href="/posts/2014-02-17-nodepdf">NodePDF</a></div><div><a href="/posts/2014-02-13-domain-context">domain-context</a></div><div><a href="/posts/2014-02-12-jsonstream">JSONStream</a></div><div><a href="/posts/2014-02-11-peer-js">peer.js</a></div><div><a href="/posts/2014-02-10-node-dependencies">node-dependencies</a></div><div><a href="/posts/2014-02-05-cucumber-js">cucumber.js</a></div><div><a href="/posts/2014-02-04-binary-js">binary.js</a></div><div><a href="/posts/2014-02-03-power-assert">power-assert</a></div><div><a href="/posts/2014-01-31-coupon-code">coupon-code</a></div><div><a href="/posts/2014-01-30-rewire">rewire</a></div><div><a href="/posts/2014-01-29-yarm">yarm</a></div><div><a href="/posts/2014-01-28-modella">modella</a></div><div><a href="/posts/2014-01-27-mversion">mversion</a></div><div><a href="/posts/2014-01-24-schema-inspector">schema-inspector</a></div><div><a href="/posts/2014-01-23-oboe-js">oboe.js</a></div><div><a href="/posts/2014-01-22-autoprefixer">autoprefixer</a></div><div><a href="/posts/2014-01-21-js-yaml">js-yaml</a></div><div><a href="/posts/2014-01-17-gaze">gaze</a></div><div><a href="/posts/2014-01-14-shortid">shortId</a></div><div><a href="/posts/2014-01-13-testium">testium</a></div><div><a href="/posts/2014-01-10-messageformat">messageformat.js</a></div><div><a href="/posts/2014-01-09-gulp">gulp</a></div><div><a href="/posts/2014-01-06-chalk">chalk</a></div><div><a href="/posts/2013-12-31-recluster">recluster</a></div><div><a href="/posts/2013-12-30-rework">rework</a></div><div><a href="/posts/2013-12-27-cheerio">cheerio</a></div><div><a href="/posts/2013-12-19-dat">dat</a></div><div><a href="/posts/2013-12-18-xregexp">xregexp</a></div><div><a href="/posts/2013-12-17-npm">npm v1.3.18</a></div><div><a href="/posts/2013-12-16-ect">ect</a></div><div><a href="/posts/2013-12-13-chrono">chrono</a></div><div><a href="/posts/2013-12-11-prettyjson">prettyjson</a></div><div><a href="/posts/2013-12-10-state">state</a></div><div><a href="/posts/2013-12-09-blessed">blessed</a></div><div><a href="/posts/2013-12-05-gm">gm</a></div><div><a href="/posts/2013-12-03-nak">nak</a></div><div><a href="/posts/2013-12-03-verymodel">VeryModel</a></div><div><a href="/posts/2013-11-30-scala-js">scala.js</a></div><div><a href="/posts/2013-11-27-scale-npm">scalenpm.org</a></div><div><a href="/posts/2013-11-26-rx-js">rx.js</a></div><div><a href="/posts/2013-11-26-docpad">docpad</a></div><div><a href="/posts/2013-11-25-grunt-angular-builder">grunt-angular-builder</a></div><div><a href="/posts/2013-11-22-videoconverter-js">videoconverter.js</a></div><div><a href="/posts/2013-11-22-event-stream">event-stream</a></div><div><a href="/posts/2013-11-21-bacon-js">bacon.js</a></div><div><a href="/posts/2013-11-20-spdy">node-spdy</a></div><div><a href="/posts/2013-11-19-json-mask">json-mask</a></div><div><a href="/posts/2013-11-18-pm2">pm2</a></div><div><a href="/posts/2013-11-18-npmd">npmd</a></div><div><a href="/posts/2013-11-18-nixt">nixt</a></div><div><a href="/posts/2013-11-17-vm-js">vm.js</a></div><div><a href="/posts/2013-11-17-node-jvm">node-jvm</a></div><div><a href="/posts/2013-11-17-flake">flake</a></div></div></aside></div></div><a id="fork-me" href="https://github.com/alexgorbatchev/npm-awesome-site" class="hide-on-mobile">Fork Me</a><script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+// http://drawingablank.me/blog/fix-your-bounce-rate.html
+// https://news.ycombinator.com/item?id=5766883
+setTimeout(function() { ga('send', 'event', 'read', 'auto generated'); }, 5000);
+
+ga('create', 'UA-46164085-1', 'npmawesome.com');
+ga('send', 'pageview');
+</script><div id="fb-root"></div><script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=1425631694354948";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));
+</script><script>/* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+var disqus_shortname = 'npmawesome'; // required: replace example with your forum shortname
+
+/* * * DON'T EDIT BELOW THIS LINE * * */
+(function () {
+  var s = document.createElement('script'); s.async = true;
+  s.type = 'text/javascript';
+  s.src = 'http://' + disqus_shortname + '.disqus.com/count.js';
+  (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+}());
+</script><script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script><script async src="/scripts/npmawesome.min.js"></script><script async src="//platform.twitter.com/widgets.js"></script><script async src="https://apis.google.com/js/plusone.js" parsetags="explicit"></script></body>

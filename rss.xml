@@ -15,15 +15,151 @@
     <atom:link href="http://feeds.feedburner.com/npmawesome" rel="self" type="application/rss+xml"/>
     <link>http://npmawesome.com</link>
     <description>Daily dose of awesome NPM modules for Node.js, old and new!</description>
-    <lastBuildDate>Tue, 29 Apr 2014 16:49:25 GMT</lastBuildDate>
+    <lastBuildDate>Wed, 30 Apr 2014 15:53:39 GMT</lastBuildDate>
     <language>en</language>
     <sy:updatePeriod>daily</sy:updatePeriod>
     <sy:updateFrequency>2</sy:updateFrequency>
     <generator>awesomeness</generator>
-    <pubDate>Tue, 29 Apr 2014 16:49:25 GMT</pubDate>
+    <pubDate>Wed, 30 Apr 2014 15:53:39 GMT</pubDate>
 
     
     
+    
+      
+      
+      
+      <item>
+        <title><![CDATA[Links for Apr 30, 2014]]></title>
+        <link><![CDATA[http://npmawesome.com/posts/2014-04-30-links]]></link>
+        <dc:creator><![CDATA[Alex Gorbatchev]]></dc:creator>
+        <guid isPermaLink="true"><![CDATA[http://npmawesome.com/posts/2014-04-30-links]]></guid>
+        <pubDate><![CDATA[Wed, 30 Apr 2014 17:00:00 GMT]]></pubDate>
+        <description><![CDATA[<p><img src="http://npmawesome.com/images/posts/html5.png" style="float: right; width: 150px;"/></p>
+<h2 id="articles-slides">Articles &amp; Slides</h2>
+<ul>
+<li><a href="http://www.2ality.com/2014/04/required-parameters-es6.html">Handling required parameters in ECMAScript 6</a></li>
+<li><a href="http://goodui.org/">A Good User Interface</a> has high conversion rates and is easy to use. In other words, it&#39;s nice to both the business side as well as the people using it.</li>
+<li><a href="http://tjanczuk.github.io/edge/">Edge.js</a> - run Node.js and .NET code in-process.</li>
+<li><p><a href="http://blog.codinghorror.com/how-good-an-estimator-are-you-part-ii/">How Good an Estimator Are You? Part II</a></p>
+<blockquote>
+<p>The specific goal of the exercise was to estimate at the 90 percent confidence level. There are 10 questions in the quiz, so if you were truly estimating at a 90 percent confidence level, you would have gotten about 9 answers correct.</p>
+</blockquote>
+</li>
+<li><p><a href="https://speakerdeck.com/jessicaspacekat/an-introduction-to-designing-css-transitions-using-angularjs">An introduction to designing CSS transitions using AngularJS</a></p>
+<blockquote>
+<p>…examples of how a UI designer without much JS or AngularJS experience can use some of the features built in to AngularJS (with angular-animate) to help them design interactive components and add CSS transitions.</p>
+</blockquote>
+</li>
+</ul>
+<div class="read-more"></div>
+
+<ul>
+<li><p><a href="http://blog.codeship.io/2014/04/29/continuous-deployment-heroku-bitbucket-nodejs.html">Continuous Deployment for node.js apps from Bitbucket to Heroku</a></p>
+<blockquote>
+<p>How to set up Continuous Integration and Continuous Deployment for a Node.js Application from Bitbucket to Heroku</p>
+</blockquote>
+</li>
+<li><p><a href="http://makezine.com/2014/02/19/designing-a-vinyl-toy-with-joe-ledbetter/">Designing a Vinyl Toy with Joe Ledbetter</a></p>
+<blockquote>
+<p>It all starts with an initial idea or concept for a toy. In this case I wanted to base this project on my popular character called Mr. Bunny. Mr. Bunny has been depicted in my paintings since I first began showing in galleries over 10 years ago.</p>
+</blockquote>
+</li>
+<li><p><a href="http://makezine.com/2014/04/22/paper-thin-arduino-enables-diy-dirigible/">Printoo</a> is a platform of paper-thin circuit boards and modules. It gives makers an open-source, lightweight, flexible, and modular Arduino-compatible platform to create just about anything you want! What makes Printoo amazingly unique is that it comes with a range of printed electronics modules previously unavailable to the public. These are electronics building &quot;blocks&quot; of the future, only not so rigid.</p>
+</li>
+</ul>
+<h2 id="github">Github</h2>
+<ul>
+<li><p><a href="http://depthy.stamina.pl/">Depthy</a> extracts depth map and original from photos made with Google Camera&#39;s Lens Blur. I think this is the future of product photography (until there’s proper 3D).</p>
+</li>
+<li><p><a href="https://www.npmjs.org/package/flowdock-stream">flowdock-stream</a> is a node module for streaming <a href="https://www.flowdock.com/">flowdock</a> flows.</p>
+</li>
+</ul>
+<h2 id="chrome">Chrome</h2>
+<ul>
+<li><a href="http://projectnaptha.com/">Project Naptha</a> automatically applies state-of-the-art computer vision algorithms on every image you see while browsing the web. The result is a seamless and intuitive experience, where you can highlight as well as copy and paste and even edit and translate the text formerly trapped within an image.</li>
+</ul>
+<h2 id="twitter">Twitter</h2>
+<blockquote class="twitter-tweet" data-partner="tweetdeck"><p>Breathalyzers for cars? Breathalyzers for Twitter! I’d probably buy one, just to be 100% safe.</p>&mdash; Axel Rauschmayer (@rauschma) <a href="https://twitter.com/rauschma/statuses/459111786382639104">April 23, 2014</a></blockquote>]]></description>
+      </item>
+    
+      
+      
+      
+      <item>
+        <title><![CDATA[sentiment]]></title>
+        <link><![CDATA[http://npmawesome.com/posts/2014-04-30-sentiment]]></link>
+        <dc:creator><![CDATA[Alex Gorbatchev]]></dc:creator>
+        <guid isPermaLink="true"><![CDATA[http://npmawesome.com/posts/2014-04-30-sentiment]]></guid>
+        <pubDate><![CDATA[Wed, 30 Apr 2014 16:24:35 GMT]]></pubDate>
+        <description><![CDATA[<p>Sentiment analysis is one of those things you don&#39;t get to do very often, as cool as it sounds. It&#39;s one of those things I always wanted to do but haven&#39;t had a reason to yet. The field of natural language is as deep and complex as you want it to be. <a href="http://nlp.stanford.edu/sentiment/">Stanford Sentiment Analysis</a> is a pretty massive project and nets pretty decent results.</p>
+<p><img class="hide-on-mobile" src="https://avatars1.githubusercontent.com/u/747641?s=400" style="float: right; margin-left: 1em; width: 100px"/>
+<a href="https://github.com/thisandagain/sentiment">sentiment</a> module by <a href="https://github.com/thisandagain">Andrew Sliwinski</a> takes a very simple approach to the problem of just counting token words and their preassigned weight. For the most part you can expect pretty average results and it gets completely lost with expressions like &quot;I don&#39;t know half of you half as well as I should like, and I like less than half of you half as well as you deserve&quot; (frankly I don&#39;t understand what it says either). But the cool thing is - it actually works and you don&#39;t need a giant database. <a href="https://github.com/thisandagain/sentiment">sentiment</a> can get you started down the path until you feel the need for something more involved.</p>
+<div class="read-more"></div>
+
+<pre><code>npm install sentiment
+</code></pre><h2 id="features">Features</h2>
+<p><a href="https://github.com/thisandagain/sentiment">sentiment</a> uses the <a href="http://www2.imm.dtu.dk/pubdb/views/publication_details.php?id=6010">AFINN-111</a> wordlist to perform sentiment analysis on arbitrary blocks of input text and provides serveral things:</p>
+<ul>
+<li>Performance</li>
+<li>The ability to append and overwrite word / value pairs from the AFINN wordlist</li>
+<li>A build process that makes updating sentiment to future versions of the AFINN word list trivial</li>
+</ul>
+<h2 id="usage">Usage</h2>
+<p>Here&#39;s a simple example analysing bunch of latest <a href="https://www.twitter.com/dhh">DHH tweets</a>.</p>
+<pre><code>var
+  request = require(&#39;request&#39;),
+  cheerio = require(&#39;cheerio&#39;),
+  sentiment = require(&#39;sentiment&#39;)
+  ;
+
+function sentimentToSmiley(sentiment) {
+  var score = sentiment.score;
+
+  if(score === 0) { return &#39;:-|&#39; }
+  if(score &lt; 0) {
+    if(score &gt; -2) { return &#39;:-(&#39; }
+    return &#39;:`(&#39;
+  }
+
+  if(score &lt; 2) { return &#39;:-)&#39; }
+  return &#39;:-D&#39;
+}
+
+request(&#39;https://www.twitter.com/dhh&#39;, function(err, response) {
+  var $ = cheerio.load(response.body);
+
+  $(&#39;.tweet-text&#39;).toArray().forEach(function(item) {
+    var text = $(item).text();
+    var results = sentiment(text);
+    console.log(sentimentToSmiley(results), &#39;-&#39;, text.replace(/\n/g, &#39; &#39;));
+  });
+});
+</code></pre><p>Checkout out <a href="http://runnable.com/U1aiDzGWpo8vHVFK/sentiment-analysis-with-node-js-for-nodejitsu-and-npmawesome">functional example on runnable</a>. Running this will produce result similiar to:</p>
+<pre><code>:-| - @mrbigdreamerYWF We tried to get NBC but they wouldn&#39;t cover it :)
+:-| - @AmianExclusive I think the C7R is the most expensive customer GTE car you can buy. And still not a proven thing.
+:-| - @AmianExclusive Corvette factory team will be at Le Mans but not Viper :(. Apparently they didn&#39;t sell enough cars to afford it.
+:-| - Goooood morning #RailsConf! My talk is at 9:15am central. It will be streamed live on justin.tv/confreaks, if you&#39;re not in Chicago.
+:-| - @ashesfall Hot diggity.
+:-) - (Yes, internet is fast elsewhere too, but most services of note have their app servers in the US, so that&#39;s the ping that counts).
+:-| - @arunagw Just about everything on the internet of note, which happens to have app servers in the US :D
+:-| - For those who can&#39;t attend RailsConf, we&#39;ll be livestreaming the keynotes here: justin.tv/confreaks Schedule here: railsconf.com/schedule
+:-D - It gets me every time I&#39;m back in the US - even if just out for a few weeks: 20ms pings is internet happiness. So fast.
+:-| - @turbineseaplane Nope. May depend on hand size? Could see it be harder to hold with small hands.
+:-| - @mhauer I find that the hybrid model is actually the most common in anything but the newest or smallest companies. Very workable.
+:-( - @N8Gard @railsconf They&#39;re going to record it, I think. So no worries.
+:-( - @dennismajor1 @thereaIbanksy I&#39;d prefer to look at it the other way: drop the religious nonsense and enjoy a party without sin!
+:-| - @turbineseaplane It is sometimes a little awkward but the sacrifice is worth it.
+:-| - @andrestuul Right on the last one, not on the first two. Connecting has never been easier. 10 yrs ago I was working from Denmark.
+:-| - @davegreiner @dhh we had thousands of accounts on Cork’d when it was still on a Mac mini in my friend’s rack (Rails 1.x)
+:`( - @GregMolnar Horrible contortions to the false idol of testing. More on this in my keynote at RailsConf tomorrow.
+:-D - @dhh Sounds familiar. CM was hosted on a cheap box with all our client&#39;s sites. Went dedicated when it started slowing them down 1 yr later.
+:`( - @thomasfuchs @letsfreckle Fuck yeah! But you did have to forgo such necessities as a big fancy office on day 1!
+:-) - @homakov @davidpetschull I was in Denmark while I built Basecamp. But yes timezone and language can be barriers.
+</code></pre><h2 id="closing-thoughts">Closing thoughts</h2>
+<p><a href="https://github.com/thisandagain/sentiment">sentiment</a> is a very simple token counter which has vocabulary of about 2.5k english words. It doesn&#39;t always produce reliable results, but it gets you a step forward if you need to do sentiment analysis without bringing in the heavy weight APIs or expensive commercial libraries.</p>
+<p>I can totally imagine processing customer inquiries coming in via email, twitter and other channels with <a href="https://github.com/thisandagain/sentiment">sentiment</a>. Higher priority could be assigned to inquires with lower, more negative scores.</p>
+]]></description>
+      </item>
     
       
       
@@ -310,8 +446,6 @@ app.listen(8080);
       
       
       
-      
-      
       <item>
         <title><![CDATA[angular-injector]]></title>
         <link><![CDATA[http://npmawesome.com/posts/2014-04-28-angular-injector]]></link>
@@ -407,117 +541,6 @@ console.log(browser.os); // Linux i686
 <h2 id="closing-thoughts">Closing Thoughts</h2>
 <p><a href="https://github.com/bestiejs/platform.js">platform.js</a> is a powerful gift when it comes to determining exactly in which environment your application is running. That means, we do not have to write &quot;if-else-if-else-if&quot; statements anymore, folks. We have a rock-solid foundation now!</p>
 ]]></description>
-      </item>
-    
-      
-      
-      
-      <item>
-        <title><![CDATA[Links for Apr 23, 2014]]></title>
-        <link><![CDATA[http://npmawesome.com/posts/2014-04-23-links]]></link>
-        <dc:creator><![CDATA[Alex Gorbatchev]]></dc:creator>
-        <guid isPermaLink="true"><![CDATA[http://npmawesome.com/posts/2014-04-23-links]]></guid>
-        <pubDate><![CDATA[Wed, 23 Apr 2014 17:00:00 GMT]]></pubDate>
-        <description><![CDATA[<h2 id="andr-k-nig">André König</h2>
-<p><img src="https://avatars0.githubusercontent.com/u/224910?s=400" style="float: right; width: 250px;"/>
-I&#39;m happy to welcome <a href="https://github.com/akoenig">André König</a> to npmawesome! Very excited to publish his first post about <a href="http://npmawesome.com/posts/2014-04-23-platform-js">platform.js</a>! Coming from Bremen, Germany, André is very active on <a href="https://www.npmjs.org/browse/author/akoenig">NPM</a> and better known for <a href="https://github.com/akoenig/angular-deckgrid">angular-deckgrid</a>, <a href="https://github.com/akoenig/imacss">imacss</a> as well as a whole bunch of gulp.js modules. Woot!</p>
-<h2 id="articles-slides">Articles &amp; Slides</h2>
-<ul>
-<li><p><a href="https://groups.google.com/forum/#!msg/nodejs/J59L1AR1lSs/hQfRPDf1Wn0J">Tim Caswell on history of Node.js callbacks</a></p>
-<blockquote>
-<p>Shortly after node was made, the concept of the event emitter was added.  We didn&#39;t have the current callback-last style, but had a convention that non-blocking functions would return a special emitter known as a &quot;Promise&quot;.</p>
-</blockquote>
-</li>
-<li><p><a href="http://www.williambrownstreet.net/blog/2014/04/faster-angularjs-rendering-angularjs-and-reactjs/">Faster AngularJS Rendering (AngularJS and ReactJS)</a></p>
-<blockquote>
-<p>Have you used AngularJs and ran into some performance problems? Using ReactJs rendering becomes much faster. A small examples explains how to use ReactJs for rendering in AngularJs and a comparison is made between native rendering and rendering using ReactJs.</p>
-</blockquote>
-</li>
-</ul>
-<div class="read-more"></div>
-
-<ul>
-<li><p><a href="http://randsinrepose.com/archives/bored-people-quit/">Bored People Quit</a></p>
-<blockquote>
-<p>You call on the motivation and retention police because you believe they can perform the legendary “diving save”.</p>
-</blockquote>
-</li>
-<li><p><a href="https://www.twilio.com/blog/2014/04/build-interactive-voicemail-for-sports-fans-with-twilio-mongodb-angular-and-node-js-part-one.html">Build Interactive Voicemail for Sports Fans with Twilio, MongoDB, Angular, and node.js</a></p>
-<blockquote>
-<p>In this tutorial, we’re going to show how you can build an interactive voicemail (and text message) box to support a marketing campaign around a brand or celebrity.</p>
-</blockquote>
-</li>
-</ul>
-<h2 id="github">Github</h2>
-<ul>
-<li><a href="https://github.com/sebastienros/jint">Jint</a> is a Javascript interpreter for .NET. Jint doesn&#39;t compile Javascript to .NET bytecode and in this sense might be best suited for projects requiring to run relatively small scripts faster, or which need to run on different platforms.</li>
-</ul>
-<h2 id="twitter">Twitter</h2>
-<blockquote class="twitter-tweet"><p>~70,000% Growth in Node.js Jobs since January 2011. <a href="http://t.co/HS2mTrl2ie">pic.twitter.com/HS2mTrl2ie</a></p>&mdash; Joe McCann (@joemccann) <a href="https://twitter.com/joemccann/statuses/456489213803122688">April 16, 2014</a></blockquote>
-
-<blockquote class="twitter-tweet"><p>Why isn&#39;t there a bar that plays Star Trek: Deep Space 9 and has dozens of sleepy cats to pet. I&#39;d hang out at that bar.</p>&mdash; Max Temkin (@MaxTemkin) <a href="https://twitter.com/MaxTemkin/statuses/458328715491950592">April 21, 2014</a></blockquote>]]></description>
-      </item>
-    
-      
-      
-      
-      <item>
-        <title><![CDATA[Links for Apr 19, 2014]]></title>
-        <link><![CDATA[http://npmawesome.com/posts/2014-04-19-links]]></link>
-        <dc:creator><![CDATA[Alex Gorbatchev]]></dc:creator>
-        <guid isPermaLink="true"><![CDATA[http://npmawesome.com/posts/2014-04-19-links]]></guid>
-        <pubDate><![CDATA[Sat, 19 Apr 2014 17:00:00 GMT]]></pubDate>
-        <description><![CDATA[<p><img src="http://npmawesome.com/images/posts/html5.svg" style="float: right; width: 150px;"/></p>
-<h2 id="articles-slides">Articles &amp; Slides</h2>
-<ul>
-<li><p><a href="http://scotch.io/tutorials/javascript/build-a-restful-api-using-node-and-express-4">Build a RESTful API Using Node and Express 4</a></p>
-<blockquote>
-<p>With the release of Express 4.0 just a few days ago, lots of our Node apps will have some changes in how they handle routing. With the changes in the Express Router, we have more flexibility in how we can define the routes for our applications.</p>
-</blockquote>
-</li>
-<li><p><a href="http://www.sitepoint.com/controlling-arduino-nodejs-johnny-five/">Controlling an Arduino with NodeJS and Johnny-Five</a></p>
-<blockquote>
-<p>Firmata and Johnny-Five make it a lot easier for JavaScript developers to get more involved and develop applications that can interact with, respond to and control Arduino powered technology.</p>
-</blockquote>
-</li>
-<li><p><a href="http://alxhill.com/blog/articles/brunch-coffeescript-angular/">Brunch - A build system without the Grunt-work</a></p>
-<blockquote>
-<p>Brunch compiles, concats and (optionally) minifies your scripts and styles. It can also package JavaScript files into AMDor CommonJS modules. Brunch automatically applies plugins in the correct order to the right files - so with the right plugins, a .coffee file would be converted into a .js file and then minified, with no explicit setup necessary.</p>
-</blockquote>
-</li>
-</ul>
-<div class="read-more"></div>
-
-<ul>
-<li><p><a href="https://www.youtube.com/watch?v=HY4d-0Kzp68">EmberConf 2014 HTMLBars: The Next-Generation of Templating in Ember.js by Erik Bryn and Kris Selden</a></p>
-<blockquote>
-<p><img src="https://i1.ytimg.com/vi/HY4d-0Kzp68/maxresdefault.jpg" style="width: 400px" /></p>
-</blockquote>
-</li>
-<li><p><a href="https://www.youtube.com/watch?v=2awbKQ2DLRE#t=211">Pyro Board: 2D Rubens&#39; Tube!</a></p>
-<blockquote>
-<p><img src="https://i1.ytimg.com/vi/2awbKQ2DLRE/maxresdefault.jpg" style="width: 400px" /></p>
-</blockquote>
-</li>
-<li><p><a href="http://www.buzzfeed.com/mjs538/completely-surreal-pictures-of-americas-abandoned-malls">Completely Surreal Photos Of America’s Abandoned Malls</a> and a <a href="https://www.youtube.com/watch?v=ZAo2ue6s5Bc">video</a></p>
-<blockquote>
-<p><img src="http://s3-ec.buzzfed.com/static/2014-04/enhanced/webdr06/2/10/enhanced-29364-1396450428-10.jpg" style="width: 400px" /></p>
-</blockquote>
-</li>
-<li><p><a href="http://www.buzzfeed.com/ryanhatesthis/all-hail-the-mighty-pizza-cake">Pizza Cake</a></p>
-<blockquote>
-<p><img src="http://s3-ec.buzzfed.com/static/2014-04/enhanced/webdr03/18/12/enhanced-buzz-wide-14629-1397837404-8.jpg" style="width: 400px" /></p>
-</blockquote>
-</li>
-</ul>
-<h2 id="github">Github</h2>
-<ul>
-<li><a href="https://github.com/salomvary/soundcleod">SoundCleod</a> is a Mac OS X application which brings SoundCloud to the desktop without using a browser.</li>
-</ul>
-<h2 id="twitter">Twitter</h2>
-<blockquote class="twitter-tweet" data-partner="tweetdeck"><p>A NodeJS Perspective on What’s New in MongoDB 2.6, Part I: Text Search <a href="http://t.co/RCjrLHd2u0">http://t.co/RCjrLHd2u0</a></p>&mdash; MongoDB (@MongoDB) <a href="https://twitter.com/MongoDB/statuses/457562812223852545">April 19, 2014</a></blockquote>
-
-<blockquote class="twitter-tweet"><p>omg shut up and take my money! <a href="https://t.co/UCVqDsakuJ">https://t.co/UCVqDsakuJ</a></p>&mdash; Alex Gorbatchev (@alexgorbatchev) <a href="https://twitter.com/alexgorbatchev/statuses/457219682164940800">April 18, 2014</a></blockquote>]]></description>
       </item>
     
   </channel>
