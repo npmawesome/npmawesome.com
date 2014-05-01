@@ -20,7 +20,7 @@ Everybody appreciates the distance information between two locations in web mapp
 
 <%- @readMore() %>
 
-<%- @npm() %> wraps the distance calculation functionality of the [Google Distance Matrix API](https://developers.google.com/maps/documentation/distancematrix/) into an _easy-to-use_ interface.
+The module wraps the distance calculation functionality of the [Google Distance Matrix API](https://developers.google.com/maps/documentation/distancematrix/) into an _easy-to-use_ interface.
 
     <%- @install() %>
 
@@ -32,7 +32,7 @@ The following basic usage example ...
 
     'use strict';
 
-    var distance = require('<%- @npm() %>');
+    var distance = require('google-distance');
 
     var options = {
         origin: 'New York City, USA',
@@ -74,7 +74,7 @@ If you're crazy enough to cycle all the way down from Oakland to San Diego for i
 
     'use strict';
 
-    var distance = require('<%- @npm() %>');
+    var distance = require('google-distance');
 
     var options = {
         origin: 'Oakland, USA',
@@ -89,6 +89,12 @@ If you're crazy enough to cycle all the way down from Oakland to San Diego for i
 
 Checkout this [runnable example](http://runnable.com/U2IHUgxWgZMpX2Ct/google-distance-example-npmawesome) to verify that cycling is definitely a crazy idea :)
 
-## API Key
+## API key
 
-One last note: It is not necessary to configure an API key in order to use the <%- @npm() -> module. But: To avoid exceeding Google's [quota](https://developers.google.com/maps/documentation/distancematrix/#Limits) it is highly recommended.
+One last note: It is not necessary to configure an API key in order to use the <%- @npm() %> module. But: To avoid exceeding Google's [quota](https://developers.google.com/maps/documentation/distancematrix/#Limits) it is highly recommended.
+
+Follow these [steps](https://developers.google.com/maps/documentation/distancematrix/#api_key) in order to obtain an API key. After that it is easy to inform the module about your key:
+
+    var distance = require('google-distance');
+
+    distance.apiKey = 'YOUR_API_KEY';
