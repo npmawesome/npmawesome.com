@@ -5,7 +5,7 @@
 	<link href="http://npmawesome.com/atom.xml" rel="self" />
 	<link href="http://npmawesome.com" />
 	<id>http://npmawesome.com</id>
-	<updated>2014-05-01T16:13:58.798Z</updated>
+	<updated>2014-05-01T16:53:18.678Z</updated>
 	<author>
 		<name>Alex Gorbatchev</name>
 	</author>
@@ -21,7 +21,8 @@
 			<link href="http://npmawesome.com/posts/2014-05-01-google-distance"/>
 			<updated>2014-05-01T18:30:00.000Z</updated>
 			<id>http://npmawesome.com/posts/2014-05-01-google-distance</id>
-			<content type="html">&lt;p&gt;Everybody appreciates the distance information between two locations in web mapping services like &lt;a href=&quot;http://maps.google.com&quot;&gt;Google Maps&lt;/a&gt;, right? Do you have a similar use case within your application but want to avoid the implementation overhead of abstracting from an external API? &lt;a href=&quot;https://github.com/edwlook/node-google-distance&quot;&gt;google-distance&lt;/a&gt; by &lt;a href=&quot;https://github.com/edwlook&quot;&gt;Edward Look&lt;/a&gt; helps you to do just that.&lt;/p&gt;
+			<content type="html">&lt;p&gt;&lt;img src=&quot;http://npmawesome.com/images/posts/google-distance.png&quot; style=&quot;width: 100%&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;Everybody appreciates the distance information between two locations in web mapping services like &lt;a href=&quot;http://maps.google.com&quot;&gt;Google Maps&lt;/a&gt;, right? Do you have a similar use case within your application but want to avoid the implementation overhead of abstracting from an external API? &lt;a href=&quot;https://github.com/edwlook/node-google-distance&quot;&gt;google-distance&lt;/a&gt; by &lt;a href=&quot;https://github.com/edwlook&quot;&gt;Edward Look&lt;/a&gt; helps you to do just that.&lt;/p&gt;
 &lt;div class=&quot;read-more&quot;&gt;&lt;/div&gt;
 
 &lt;p&gt;The module wraps the distance calculation functionality of the &lt;a href=&quot;https://developers.google.com/maps/documentation/distancematrix/&quot;&gt;Google Distance Matrix API&lt;/a&gt; into an &lt;em&gt;easy-to-use&lt;/em&gt; interface.&lt;/p&gt;
@@ -79,7 +80,7 @@ var options = {
 distance.get(options, onDistance (err, result) {
     // ...
 });
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Checkout this &lt;a href=&quot;http://runnable.com/U2IHUgxWgZMpX2Ct/google-distance-example-npmawesome&quot;&gt;runnable example&lt;/a&gt; to verify that cycling is definitely a crazy idea :)&lt;/p&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Checkout this &lt;a href=&quot;http://runnable.com/U2IHUgxWgZMpX2Ct/google-distance-example-npmawesome&quot;&gt;runnable example&lt;/a&gt; to verify that cycling might be a good one-week trip. Whereas walking would be definitely a crazy idea. Do the math :)&lt;/p&gt;
 &lt;h2 id=&quot;api-key&quot;&gt;API key&lt;/h2&gt;
 &lt;p&gt;One last note: It is not necessary to configure an API key in order to use the &lt;a href=&quot;https://github.com/edwlook/node-google-distance&quot;&gt;google-distance&lt;/a&gt; module. But: To avoid exceeding Google&amp;#39;s &lt;a href=&quot;https://developers.google.com/maps/documentation/distancematrix/#Limits&quot;&gt;quota&lt;/a&gt; it is highly recommended.&lt;/p&gt;
 &lt;p&gt;Follow these &lt;a href=&quot;https://developers.google.com/maps/documentation/distancematrix/#api_key&quot;&gt;steps&lt;/a&gt; in order to obtain an API key. After that it is easy to inform the module about your key:&lt;/p&gt;

@@ -15,12 +15,12 @@
     <atom:link href="http://feeds.feedburner.com/npmawesome" rel="self" type="application/rss+xml"/>
     <link>http://npmawesome.com</link>
     <description>Daily dose of awesome NPM modules for Node.js, old and new!</description>
-    <lastBuildDate>Thu, 01 May 2014 16:13:58 GMT</lastBuildDate>
+    <lastBuildDate>Thu, 01 May 2014 16:53:18 GMT</lastBuildDate>
     <language>en</language>
     <sy:updatePeriod>daily</sy:updatePeriod>
     <sy:updateFrequency>2</sy:updateFrequency>
     <generator>awesomeness</generator>
-    <pubDate>Thu, 01 May 2014 16:13:58 GMT</pubDate>
+    <pubDate>Thu, 01 May 2014 16:53:18 GMT</pubDate>
 
     
     
@@ -34,7 +34,8 @@
         <dc:creator><![CDATA[Alex Gorbatchev]]></dc:creator>
         <guid isPermaLink="true"><![CDATA[http://npmawesome.com/posts/2014-05-01-google-distance]]></guid>
         <pubDate><![CDATA[Thu, 01 May 2014 18:30:00 GMT]]></pubDate>
-        <description><![CDATA[<p>Everybody appreciates the distance information between two locations in web mapping services like <a href="http://maps.google.com">Google Maps</a>, right? Do you have a similar use case within your application but want to avoid the implementation overhead of abstracting from an external API? <a href="https://github.com/edwlook/node-google-distance">google-distance</a> by <a href="https://github.com/edwlook">Edward Look</a> helps you to do just that.</p>
+        <description><![CDATA[<p><img src="http://npmawesome.com/images/posts/google-distance.png" style="width: 100%" /></p>
+<p>Everybody appreciates the distance information between two locations in web mapping services like <a href="http://maps.google.com">Google Maps</a>, right? Do you have a similar use case within your application but want to avoid the implementation overhead of abstracting from an external API? <a href="https://github.com/edwlook/node-google-distance">google-distance</a> by <a href="https://github.com/edwlook">Edward Look</a> helps you to do just that.</p>
 <div class="read-more"></div>
 
 <p>The module wraps the distance calculation functionality of the <a href="https://developers.google.com/maps/documentation/distancematrix/">Google Distance Matrix API</a> into an <em>easy-to-use</em> interface.</p>
@@ -92,7 +93,7 @@ var options = {
 distance.get(options, onDistance (err, result) {
     // ...
 });
-</code></pre><p>Checkout this <a href="http://runnable.com/U2IHUgxWgZMpX2Ct/google-distance-example-npmawesome">runnable example</a> to verify that cycling is definitely a crazy idea :)</p>
+</code></pre><p>Checkout this <a href="http://runnable.com/U2IHUgxWgZMpX2Ct/google-distance-example-npmawesome">runnable example</a> to verify that cycling might be a good one-week trip. Whereas walking would be definitely a crazy idea. Do the math :)</p>
 <h2 id="api-key">API key</h2>
 <p>One last note: It is not necessary to configure an API key in order to use the <a href="https://github.com/edwlook/node-google-distance">google-distance</a> module. But: To avoid exceeding Google&#39;s <a href="https://developers.google.com/maps/documentation/distancematrix/#Limits">quota</a> it is highly recommended.</p>
 <p>Follow these <a href="https://developers.google.com/maps/documentation/distancematrix/#api_key">steps</a> in order to obtain an API key. After that it is easy to inform the module about your key:</p>
