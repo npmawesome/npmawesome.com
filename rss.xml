@@ -15,12 +15,12 @@
     <atom:link href="http://feeds.feedburner.com/npmawesome" rel="self" type="application/rss+xml"/>
     <link>http://npmawesome.com</link>
     <description>Daily dose of awesome NPM modules for Node.js, old and new!</description>
-    <lastBuildDate>Thu, 01 May 2014 16:53:18 GMT</lastBuildDate>
+    <lastBuildDate>Thu, 01 May 2014 16:59:29 GMT</lastBuildDate>
     <language>en</language>
     <sy:updatePeriod>daily</sy:updatePeriod>
     <sy:updateFrequency>2</sy:updateFrequency>
     <generator>awesomeness</generator>
-    <pubDate>Thu, 01 May 2014 16:53:18 GMT</pubDate>
+    <pubDate>Thu, 01 May 2014 16:59:29 GMT</pubDate>
 
     
     
@@ -78,7 +78,7 @@ distance.get(options, onDistance);
 }
 </code></pre><p>Great, isn&#39;t it?</p>
 <h2 id="fine-tuning">Fine tuning</h2>
-<p>If you&#39;re crazy enough to cycle all the way down from Oakland to San Diego for instance and want to check how far it really is, you can measure this as well as switching the metric system or add other <a href="https://github.com/edwlook/node-google-distance#additional-parameters">additional parameters</a>.</p>
+<p>If you&#39;re crazy enough to cycle all the way down from Oakland to San Diego for instance and want to check how far it really is, you can measure this as well as switching to imperial units or add other <a href="https://github.com/edwlook/node-google-distance#additional-parameters">additional parameters</a>.</p>
 <pre><code>&#39;use strict&#39;;
 
 var distance = require(&#39;google-distance&#39;);

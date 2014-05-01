@@ -5,7 +5,7 @@
 	<link href="http://npmawesome.com/atom.xml" rel="self" />
 	<link href="http://npmawesome.com" />
 	<id>http://npmawesome.com</id>
-	<updated>2014-05-01T16:53:18.678Z</updated>
+	<updated>2014-05-01T16:59:29.333Z</updated>
 	<author>
 		<name>Alex Gorbatchev</name>
 	</author>
@@ -65,7 +65,7 @@ distance.get(options, onDistance);
 }
 &lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Great, isn&amp;#39;t it?&lt;/p&gt;
 &lt;h2 id=&quot;fine-tuning&quot;&gt;Fine tuning&lt;/h2&gt;
-&lt;p&gt;If you&amp;#39;re crazy enough to cycle all the way down from Oakland to San Diego for instance and want to check how far it really is, you can measure this as well as switching the metric system or add other &lt;a href=&quot;https://github.com/edwlook/node-google-distance#additional-parameters&quot;&gt;additional parameters&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;If you&amp;#39;re crazy enough to cycle all the way down from Oakland to San Diego for instance and want to check how far it really is, you can measure this as well as switching to imperial units or add other &lt;a href=&quot;https://github.com/edwlook/node-google-distance#additional-parameters&quot;&gt;additional parameters&lt;/a&gt;.&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;&amp;#39;use strict&amp;#39;;
 
 var distance = require(&amp;#39;google-distance&amp;#39;);
