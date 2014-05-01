@@ -70,7 +70,7 @@ Great, isn't it?
 
 ## Fine tuning
 
-If you're crazy enough to cycle all the way down from Oakland to San Diego for instance and want to check how far it really is, you can measure this as well as switching the metric system or add other [additional parameters](https://github.com/edwlook/node-google-distance#additional-parameters).
+If you're crazy enough to cycle all the way down from Oakland to San Diego for instance and want to check how far it really is, you can measure this as well as switching to imperial units or add other [additional parameters](https://github.com/edwlook/node-google-distance#additional-parameters).
 
     'use strict';
 
