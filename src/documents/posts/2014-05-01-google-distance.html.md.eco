@@ -89,6 +89,6 @@ If you're crazy enough to cycle all the way down from Oakland to San Diego for i
 
 Checkout this [runnable example](http://runnable.com/U2IHUgxWgZMpX2Ct/google-distance-example-npmawesome) to verify that cycling is definitely a crazy idea :)
 
-## API
+## API Key
 
 One last note: It is not necessary to configure an API key in order to use the <%- @npm() -> module. But: To avoid exceeding Google's [quota](https://developers.google.com/maps/documentation/distancematrix/#Limits) it is highly recommended.
