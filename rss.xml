@@ -15,15 +15,92 @@
     <atom:link href="http://feeds.feedburner.com/npmawesome" rel="self" type="application/rss+xml"/>
     <link>http://npmawesome.com</link>
     <description>Daily dose of awesome NPM modules for Node.js, old and new!</description>
-    <lastBuildDate>Wed, 30 Apr 2014 15:53:39 GMT</lastBuildDate>
+    <lastBuildDate>Thu, 01 May 2014 16:35:42 GMT</lastBuildDate>
     <language>en</language>
     <sy:updatePeriod>daily</sy:updatePeriod>
     <sy:updateFrequency>2</sy:updateFrequency>
     <generator>awesomeness</generator>
-    <pubDate>Wed, 30 Apr 2014 15:53:39 GMT</pubDate>
+    <pubDate>Thu, 01 May 2014 16:35:42 GMT</pubDate>
 
     
     
+    
+      
+      
+      
+      <item>
+        <title><![CDATA[google-distance]]></title>
+        <link><![CDATA[http://npmawesome.com/posts/2014-05-01-google-distance]]></link>
+        <dc:creator><![CDATA[Alex Gorbatchev]]></dc:creator>
+        <guid isPermaLink="true"><![CDATA[http://npmawesome.com/posts/2014-05-01-google-distance]]></guid>
+        <pubDate><![CDATA[Thu, 01 May 2014 18:30:00 GMT]]></pubDate>
+        <description><![CDATA[<p>Everybody appreciates the distance information between two locations in web mapping services like <a href="http://maps.google.com">Google Maps</a>, right? Do you have a similar use case within your application but want to avoid the implementation overhead of abstracting from an external API? <a href="https://github.com/edwlook/node-google-distance">google-distance</a> by <a href="https://github.com/edwlook">Edward Look</a> helps you to do just that.</p>
+<div class="read-more"></div>
+
+<p>The module wraps the distance calculation functionality of the <a href="https://developers.google.com/maps/documentation/distancematrix/">Google Distance Matrix API</a> into an <em>easy-to-use</em> interface.</p>
+<pre><code>npm install google-distance
+</code></pre><h2 id="usage">Usage</h2>
+<p>Let&#39;s say we want to calculate the distance between New York City and San Diego. <a href="https://github.com/edwlook/node-google-distance">google-distance</a> is frugal and very intuitive to use in this regard. It asks only for two required properties: <code>origin</code> and <code>destination</code>.</p>
+<p>The following basic usage example ...</p>
+<pre><code>&#39;use strict&#39;;
+
+var distance = require(&#39;google-distance&#39;);
+
+var options = {
+    origin: &#39;New York City, USA&#39;,
+    destination: &#39;San Diego, USA&#39;
+};
+
+function onDistance (err, result) {
+    if (err) {
+        return console.error(err);
+    }
+
+    console.log(result);
+}
+
+distance.get(options, onDistance);
+</code></pre><p>will <code>result</code> in:</p>
+<pre><code>{
+    index: null,
+    distance: &#39;4,447 km&#39;,
+    distanceValue: 4447040,
+    duration: &#39;1 day 17 hours&#39;,
+    durationValue: 146399, // in seconds
+    origin: &#39;New York, NY, USA&#39;,
+    destination: &#39;San Diego, CA, USA&#39;,
+    mode: &#39;driving&#39;,
+    units: &#39;metric&#39;,
+    language: &#39;en&#39;,
+    avoid: null,
+    sensor: false
+}
+</code></pre><p>Great, isn&#39;t it?</p>
+<h2 id="fine-tuning">Fine tuning</h2>
+<p>If you&#39;re crazy enough to cycle all the way down from Oakland to San Diego for instance and want to check how far it really is, you can measure this as well as switching the metric system or add other <a href="https://github.com/edwlook/node-google-distance#additional-parameters">additional parameters</a>.</p>
+<pre><code>&#39;use strict&#39;;
+
+var distance = require(&#39;google-distance&#39;);
+
+var options = {
+    origin: &#39;Oakland, USA&#39;,
+    destination: &#39;San Diego, USA&#39;,
+    mode: &#39;bicycling&#39;,
+    units: &#39;imperial&#39;
+};
+
+distance.get(options, onDistance (err, result) {
+    // ...
+});
+</code></pre><p>Checkout this <a href="http://runnable.com/U2IHUgxWgZMpX2Ct/google-distance-example-npmawesome">runnable example</a> to verify that cycling might be a good one-week trip. Whereas walking would be definitely a crazy idea. Do the math :)</p>
+<h2 id="api-key">API key</h2>
+<p>One last note: It is not necessary to configure an API key in order to use the <a href="https://github.com/edwlook/node-google-distance">google-distance</a> module. But: To avoid exceeding Google&#39;s <a href="https://developers.google.com/maps/documentation/distancematrix/#Limits">quota</a> it is highly recommended.</p>
+<p>Follow these <a href="https://developers.google.com/maps/documentation/distancematrix/#api_key">steps</a> in order to obtain an API key. After that it is easy to inform the module about your key:</p>
+<pre><code>var distance = require(&#39;google-distance&#39;);
+
+distance.apiKey = &#39;YOUR_API_KEY&#39;;
+</code></pre>]]></description>
+      </item>
     
       
       
@@ -480,66 +557,6 @@ app.listen(8080);
 </ul>
 <h2 id="closing-thoughts">Closing thoughts</h2>
 <p>The biggest downside of this method is basically remembering to add the <code>ng()</code> wrapper. I found that after about half a day that becomes a habit and not an issue. Check out the plugins and let me know what you think!</p>
-]]></description>
-      </item>
-    
-      
-      
-      
-      <item>
-        <title><![CDATA[platform.js]]></title>
-        <link><![CDATA[http://npmawesome.com/posts/2014-04-23-platform-js]]></link>
-        <dc:creator><![CDATA[Alex Gorbatchev]]></dc:creator>
-        <guid isPermaLink="true"><![CDATA[http://npmawesome.com/posts/2014-04-23-platform-js]]></guid>
-        <pubDate><![CDATA[Thu, 24 Apr 2014 00:30:00 GMT]]></pubDate>
-        <description><![CDATA[<p><img class="hide-on-mobile" src="https://avatars2.githubusercontent.com/u/4303?s=400" style="float: right; margin-left: 1em; width: 100px"/>
-<img class="hide-on-mobile" src="https://avatars3.githubusercontent.com/u/81942?s=400" style="float: right; margin-left: 1em; width: 100px"/>
-There are plenty of different runtime environments in JavaScript-land. Whereas this is a good thing there are also situations where the fragmentation is hindrance. Situations in which your application has to gather information about the platform it is running on. This is where <a href="https://github.com/bestiejs/platform.js">platform.js</a> by <a href="https://github.com/jdalton">John-David Dalton</a> and <a href="https://github.com/mathiasbynens">Mathias Bynens</a> comes to the game.</p>
-<div class="read-more"></div>
-
-<p>Let&#39;s dive into this module with an example. Assume that you have to know if your application runs on <a href="http://nodejs.org">Node.js</a> or <a href="https://developer.mozilla.org/de/docs/Rhino">Rhino</a>. This could be <em>easily</em> done by checking the type of the <code>global</code> variable. In Node.js it is an object whereas Rhino provides a function. Boom! There you go. You can formulate a condition now! But what if you also need to know if your application is running in a browser? Well, game over. Too complicated. The good news is you don&#39;t have to do such things anymore.</p>
-<p><a href="https://github.com/bestiejs/platform.js">platform.js</a> is a platform detection library which aim is to work on all platforms. It squeeze as much information out of the underlying JavaScript environment as it could and wraps them in a really nice informal abstraction. You are able to grab data like:</p>
-<ul>
-<li>The name of the platform (e.g. Google Chrome, Node.js, etc.)</li>
-<li>The version of the platform</li>
-<li>The rendering engine (of the browser; e.g. Gecko, Trident, etc.)</li>
-<li>The manufacturer of the product (e.g. Apple)</li>
-<li>The name of the product (e.g. iPhone, Kindle, etc.)</li>
-<li>The name of the operating system (e.g. iOS 7.0, Mac OS X 10.7.2, etc.)</li>
-<li>The architecture the operating system is build for (e.g. ia32, etc.)</li>
-</ul>
-<h2 id="installation">Installation</h2>
-<p>The installation is easy because your package manager flavor is covered. John-David and Mathias provide module descriptors for <a href="http://bower.io/">Bower</a>, <a href="https://github.com/component/component">component</a> and NPM:</p>
-<pre><code>npm install platform
-</code></pre><h2 id="usage">Usage</h2>
-<p>The API for using <a href="https://github.com/bestiejs/platform.js">platform.js</a> is consistent. What differs is the module loading procedure. Consider the <a href="https://github.com/bestiejs/platform.js/blob/master/README.md">README</a> for a brief explanation about how to use the library with an AMD loader for instance. The following usage example refers to Node.js:</p>
-<pre><code>var platform = require(&#39;platform&#39;);
-
-console.log(platform.name);  // Node.js
-console.log(platform.version); // 0.10.26
-console.log(platform.os.architecture); // 32
-console.log(platform.os.family); // Linux
-console.log(platform.description); // Node.js 0.10.26 on Linux
-</code></pre><p>The library provides also a function with which you are able to parse an <a href="http://www.useragentstring.com/">user agent string</a>:</p>
-<pre><code>var platform = require(&#39;platform&#39;);
-
-var browser = platform.parse(&#39;Mozilla/5.0 (X11; Linux i686; rv:30.0) Gecko/20100101 Firefox/30.0&#39;);
-
-console.log(browser.name); // Firefox
-console.log(browser.description); // Firefox 30.0 on Linux i686
-console.log(browser.version); // 30.0
-console.log(browser.layout); // Gecko
-console.log(browser.os); // Linux i686
-</code></pre><p>If you curious to see how it performs in a browser environment, check out this <a href="http://cdpn.io/tjcEd">codepen</a>.</p>
-<h2 id="use-cases">Use cases</h2>
-<p>I&#39;m pretty sure that you have several use cases in mind where you could use <a href="https://github.com/bestiejs/platform.js">platform.js</a>, but one warning: Don&#39;t see it as a replacement of feature detection libraries. True to the motto: <em>If it is a Gecko-based rendering engine (because browsers with this engine have all the shiny new features) then I could use <code>navigator.getUserMedia()</code>.</em> Never ever make such assumptions. Look at it more in a way to</p>
-<ul>
-<li>display a tailor-made UI.</li>
-<li>collect statistical data about the devices of your users.</li>
-<li>lazy import own platform-specific modules (e.g. Node.js modules).</li>
-</ul>
-<h2 id="closing-thoughts">Closing Thoughts</h2>
-<p><a href="https://github.com/bestiejs/platform.js">platform.js</a> is a powerful gift when it comes to determining exactly in which environment your application is running. That means, we do not have to write &quot;if-else-if-else-if&quot; statements anymore, folks. We have a rock-solid foundation now!</p>
 ]]></description>
       </item>
     
