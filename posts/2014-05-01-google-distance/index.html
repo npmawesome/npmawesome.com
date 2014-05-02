@@ -41,8 +41,39 @@ distance.get(options, onDistance);
     avoid: null,
     sensor: false
 }
-</code></pre><p>Great, isn&#39;t it?</p>
-<h2 id="fine-tuning">Fine tuning</h2>
+</code></pre><p>Calculating the distance between cities is cool, isn&#39;t it? But you know what&#39;s even cooler? Determining the distance between two tupels of latitude and longitude values.</p>
+<pre><code>&#39;use strict&#39;;
+
+var distance = require(&#39;google-distance&#39;);
+
+var options = {
+    origin: &#39;40.759011,-73.984472&#39;,
+    destination: &#39;37.810848,-122.267448&#39;
+};
+
+function onDistance (err, result) {
+    if (err) {
+        return console.error(err);
+    }
+
+    console.log(result);
+}
+
+distance.get(options, onDistance);
+</code></pre><p>Fantastico! Beside the distance of the two points, you also see a reverse geocoded <code>origin</code> and <code>destination</code>. Woot!</p>
+<pre><code>{ index: null,
+  distance: &#39;4,669 km&#39;,
+  distanceValue: 4669361,
+  duration: &#39;1 day 18 hours&#39;,
+  durationValue: 151994,
+  origin: &#39;165-199 West 47th Street, New York, NY 10036, USA&#39;,
+  destination: &#39;400-438 22nd Street, Oakland, CA 94612, USA&#39;,
+  mode: &#39;driving&#39;,
+  units: &#39;metric&#39;,
+  language: &#39;en&#39;,
+  avoid: null,
+  sensor: false }
+</code></pre><h2 id="fine-tuning">Fine tuning</h2>
 <p>If you&#39;re crazy enough to cycle all the way down from Oakland to San Diego for instance and want to check how far it really is, you can measure this as well as switching to imperial units or add other <a href="https://github.com/edwlook/node-google-distance#additional-parameters">additional parameters</a>.</p>
 <pre><code>&#39;use strict&#39;;
 

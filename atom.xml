@@ -5,7 +5,7 @@
 	<link href="http://npmawesome.com/atom.xml" rel="self" />
 	<link href="http://npmawesome.com" />
 	<id>http://npmawesome.com</id>
-	<updated>2014-05-02T16:49:39.511Z</updated>
+	<updated>2014-05-02T17:34:06.700Z</updated>
 	<author>
 		<name>Alex Gorbatchev</name>
 	</author>
@@ -63,8 +63,39 @@ distance.get(options, onDistance);
     avoid: null,
     sensor: false
 }
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Great, isn&amp;#39;t it?&lt;/p&gt;
-&lt;h2 id=&quot;fine-tuning&quot;&gt;Fine tuning&lt;/h2&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Calculating the distance between cities is cool, isn&amp;#39;t it? But you know what&amp;#39;s even cooler? Determining the distance between two tupels of latitude and longitude values.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;&amp;#39;use strict&amp;#39;;
+
+var distance = require(&amp;#39;google-distance&amp;#39;);
+
+var options = {
+    origin: &amp;#39;40.759011,-73.984472&amp;#39;,
+    destination: &amp;#39;37.810848,-122.267448&amp;#39;
+};
+
+function onDistance (err, result) {
+    if (err) {
+        return console.error(err);
+    }
+
+    console.log(result);
+}
+
+distance.get(options, onDistance);
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Fantastico! Beside the distance of the two points, you also see a reverse geocoded &lt;code&gt;origin&lt;/code&gt; and &lt;code&gt;destination&lt;/code&gt;. Woot!&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;{ index: null,
+  distance: &amp;#39;4,669 km&amp;#39;,
+  distanceValue: 4669361,
+  duration: &amp;#39;1 day 18 hours&amp;#39;,
+  durationValue: 151994,
+  origin: &amp;#39;165-199 West 47th Street, New York, NY 10036, USA&amp;#39;,
+  destination: &amp;#39;400-438 22nd Street, Oakland, CA 94612, USA&amp;#39;,
+  mode: &amp;#39;driving&amp;#39;,
+  units: &amp;#39;metric&amp;#39;,
+  language: &amp;#39;en&amp;#39;,
+  avoid: null,
+  sensor: false }
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&quot;fine-tuning&quot;&gt;Fine tuning&lt;/h2&gt;
 &lt;p&gt;If you&amp;#39;re crazy enough to cycle all the way down from Oakland to San Diego for instance and want to check how far it really is, you can measure this as well as switching to imperial units or add other &lt;a href=&quot;https://github.com/edwlook/node-google-distance#additional-parameters&quot;&gt;additional parameters&lt;/a&gt;.&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;&amp;#39;use strict&amp;#39;;
 
