@@ -26,11 +26,11 @@ description: A fresh approach to JSON loading that speeds up web applications by
 
 The library is extremely feature rich for its 13KB size. I will try to summarize them here and you can get full details with examples on the <%- @npm() %> github page.
 
-* Can hanging up when everything that's needed was processed
-* Can react to field and node names
-* Can react to partial arrays
-* Can react to specific nodes or to fields located anywhere
-* Can use CSS4 style matching patterns
+* Hangs up when everything that's needed was processed
+* Reacts to field and node names
+* Reacts to partial arrays
+* Reacts to specific nodes or to fields located anywhere
+* Uses CSS4 style matching patterns
 
 > Asynchronous parsing is better if the data is written out progressively from the server side because we're sending and parsing everything at the earliest possible opportunity. If you can, send small bits of the output asynchronously as soon as it is ready instead of waiting before everything is ready to start sending.
 
