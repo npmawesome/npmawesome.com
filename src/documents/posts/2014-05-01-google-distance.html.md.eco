@@ -68,7 +68,41 @@ will `result` in:
         sensor: false
     }
 
-Great, isn't it?
+Calculating the distance between cities is cool, isn't it? But you know what's even cooler? Determining the distance between two tupels of latitude and longitude values.
+
+    'use strict';
+
+    var distance = require('google-distance');
+
+    var options = {
+        origin: '40.759011,-73.984472',
+        destination: '37.810848,-122.267448'
+    };
+
+    function onDistance (err, result) {
+        if (err) {
+            return console.error(err);
+        }
+
+        console.log(result);
+    }
+
+    distance.get(options, onDistance);
+
+Fantastico! Beside the distance of the two points, you also see a reverse geocoded `origin` and `destination`. Woot!
+
+    { index: null,
+      distance: '4,669 km',
+      distanceValue: 4669361,
+      duration: '1 day 18 hours',
+      durationValue: 151994,
+      origin: '165-199 West 47th Street, New York, NY 10036, USA',
+      destination: '400-438 22nd Street, Oakland, CA 94612, USA',
+      mode: 'driving',
+      units: 'metric',
+      language: 'en',
+      avoid: null,
+      sensor: false }
 
 ## Fine tuning
 
