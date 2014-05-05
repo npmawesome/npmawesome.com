@@ -1,0 +1,77 @@
+---
+ignore: true
+date: 2014-05-01T11:30:00-0700
+author: alexgorbatchev
+partner: nodejitsu
+layout: post
+tags: npm, job, scheduler
+
+npm:
+  repo: &repo rschmukler/agenda
+  name: &name agenda
+
+  author:
+    name: Ryan Schmukler
+    github: rschmukler
+
+slug: *name
+title: *name
+description: Find distance data between two locations in an easy way.
+---
+<img class="hide-on-mobile" src="https://avatars2.githubusercontent.com/u/651740?s=400" style="float: right; margin-left: 1em; width: 100px"/>
+As you web application grows, there comes a time when you will want to have scheduled jobs. The easiest thing is of course go the [cron](http://en.wikipedia.org/wiki/Cron) route. However, maintaining and updating it isn't so easy, especially if you have more than one server to deal with and you still maybe too young for enterprise level job scheduler. What's left? Maybe just do some `setTimeout` calls in process... That doesn't sound very exciting nor very manageable.
+
+This is where <%- @npm() %> by <%- @author() %> comes in. <%- @npm() %>, to plainly put it, is a light-weight job scheduling library for Node.js. Lets give it a go!
+
+    npm install agenda
+
+## Features
+
+* Minimal overhead. <%- @npm() %> aims to keep its code base small.
+* MongoDB 2.4+ backed persistance layer.
+* Scheduling with configurable priority, concurrency, and repeating.
+* Scheduling via cron or human readable syntax.
+* Event backed job queue that you can hook into.
+
+## Usage
+
+Lets make a basic example that runs a job 10 seconds after the startup:
+
+    var Agenda = require('agenda');
+    var agenda = new Agenda({db: {address: 'localhost:27017/agenda-example'}});
+
+    agenda.define('greet the world', function(job, done) {
+      console.log(job.attrs.data.time, 'hello world!');
+      done();
+    });
+
+    agenda.schedule('in 10 seconds', 'greet the world', {time: new Date()});
+    agenda.start();
+
+    console.log('Wait 10 seconds...');
+
+Check out [functional example on runnable](http://runnable.com/U2RE8d2YyYk_iaGU/agenda-module-example-for-npmawesome-nodejitsu-and-node-js). I like plain English option, but you can also schedule regular running task with cron style expressions like so:
+
+    agenda.every('*/3 * * * *', 'greet the world');
+
+<%- @npm() %> is also capable of processing jobs from multiple processes. You just have to specify `lockLifetime` option during the worker definition.
+
+    agenda.define('someJob', {lockLifetime: 10000}, function(job, cb) {
+      //Do something in 10 seconds or less...
+    });
+
+## Mongo vs Redis
+
+Curious why MongoDB was chosen for something most would use Redis for? <%- @author() %> has a few thoughts on this:
+
+> The decision to use Mongo instead of Redis is intentional. Redis is often used for non-essential data (such as sessions) and without configuration doesn't guarantee the same level of persistence as Mongo (should the server need to be restarted/crash).
+>
+> <%- @npm() %> decides to focus on persistence without requiring special configuration of Redis (thereby degrading the performance of the Redis server on non-critical data, such as sessions).
+
+## Closing thoughts
+
+<%- @npm() %> focuses on setting up and managing regular running tasks such as session purging, email sending, data processing and so on. There are a few alternatives out there:
+
+* [kue](https://github.com/learnboost/kue) is a priority job queue backed by redis originally written by [TJ Holowaychuk](https://github.com/visionmedia) and is currently maintained by [Behrad](https://github.com/behrad)
+* [node-schedule](https://github.com/mattpat/node-schedule) is a single process, cron-like and not-cron-like job scheduler by [Matt Patenaude](https://github.com/mattpat). It doesn't have any external dependencies.
+
