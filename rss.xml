@@ -15,12 +15,12 @@
     <atom:link href="http://feeds.feedburner.com/npmawesome" rel="self" type="application/rss+xml"/>
     <link>http://npmawesome.com</link>
     <description>Daily dose of awesome NPM modules for Node.js, old and new!</description>
-    <lastBuildDate>Tue, 06 May 2014 16:44:37 GMT</lastBuildDate>
+    <lastBuildDate>Tue, 06 May 2014 17:03:04 GMT</lastBuildDate>
     <language>en</language>
     <sy:updatePeriod>daily</sy:updatePeriod>
     <sy:updateFrequency>2</sy:updateFrequency>
     <generator>awesomeness</generator>
-    <pubDate>Tue, 06 May 2014 16:44:37 GMT</pubDate>
+    <pubDate>Tue, 06 May 2014 17:03:04 GMT</pubDate>
 
     
     
@@ -37,6 +37,8 @@
         <description><![CDATA[<p><img class="hide-on-mobile" src="https://avatars2.githubusercontent.com/u/651740?s=400" style="float: right; margin-left: 1em; width: 100px"/>
 As you web application grows, there comes a time when you will want to have scheduled jobs. The easiest thing is of course go the <a href="http://en.wikipedia.org/wiki/Cron">cron</a> route. However, maintaining and updating it isn&#39;t so easy, especially if you have more than one server to deal with and you still maybe too young for enterprise level job scheduler. What&#39;s left? Maybe just do some <code>setTimeout</code> calls in process... That doesn&#39;t sound very exciting nor very manageable.</p>
 <p>This is where <a href="https://github.com/rschmukler/agenda">agenda</a> by <a href="https://github.com/rschmukler">Ryan Schmukler</a> comes in. <a href="https://github.com/rschmukler/agenda">agenda</a>, to plainly put it, is a light-weight job scheduling library for Node.js. Lets give it a go!</p>
+<div class="read-more"></div>
+
 <pre><code>npm install agenda
 </code></pre><h2 id="features">Features</h2>
 <ul>
@@ -79,6 +81,63 @@ console.log(&#39;Wait 10 seconds...&#39;);
 <li><a href="https://github.com/mattpat/node-schedule">node-schedule</a> is a single process, cron-like and not-cron-like job scheduler by <a href="https://github.com/mattpat">Matt Patenaude</a>. It doesn&#39;t have any external dependencies.</li>
 </ul>
 ]]></description>
+      </item>
+    
+      
+      
+      
+      <item>
+        <title><![CDATA[Links for May 6, 2014]]></title>
+        <link><![CDATA[http://npmawesome.com/posts/2014-05-06-links]]></link>
+        <dc:creator><![CDATA[Alex Gorbatchev]]></dc:creator>
+        <guid isPermaLink="true"><![CDATA[http://npmawesome.com/posts/2014-05-06-links]]></guid>
+        <pubDate><![CDATA[Tue, 06 May 2014 16:51:37 GMT]]></pubDate>
+        <description><![CDATA[<p><img src="http://npmawesome.com/images/posts/html5.png" style="float: right; width: 150px;"/></p>
+<h2 id="articles-slides">Articles &amp; Slides</h2>
+<ul>
+<li><a href="https://www.youtube.com/watch?v=1FVAS7MdPXo">Video - Build a Killer Node.js Client for Your REST+JSON API</a></li>
+<li><a href="http://javascriptjabber.com/106-jsj-protractor-with-julie-ralph/">Podcast - JSJ Protractor with Julie Ralph</a></li>
+<li><a href="https://atom.io/">Atom</a> editor goes fully <a href="https://github.com/blog/1831-atom-free-and-open-source-for-everyone">open source</a></li>
+<li><p><a href="http://lawsonry.com/2014/05/diy-angularjs-seo-with-phantomjs-the-easy-way/">DIY AngularJS SEO with PhantomJS (the easy way!)</a></p>
+<blockquote>
+<p>I have to be honest: I’m only writing this tutorial because I could not find a decent tutorial on setting up an environment for AngularJS SEO awesomeness. It couldn’t be that hard, right?</p>
+</blockquote>
+</li>
+</ul>
+<div class="read-more"></div>
+
+<ul>
+<li><p><a href="http://www.instructables.com/id/Make-A-Barbarians-Sword/?ALLSTEPS">Make A Barbarian&#39;s Sword</a></p>
+<blockquote>
+<p><img src="http://cdn.instructables.com/F39/E9XD/HUQAT77M/F39E9XDHUQAT77M.LARGE.jpg" style=“width: 300px”/></p>
+</blockquote>
+</li>
+<li><p><a href="https://www.youtube.com/watch?v=0VUjM-jJf2U">Practical Workflows for ES6 Modules, Fluent 2014</a></p>
+<blockquote>
+<p><img src="https://i1.ytimg.com/vi/0VUjM-jJf2U/maxresdefault.jpg" alt=""></p>
+</blockquote>
+</li>
+</ul>
+<h2 id="github">Github</h2>
+<ul>
+<li><a href="http://davej.github.io/angular-classy/">angular-classy</a> is a module for cleaner class-based controllers for AngularJS.</li>
+<li><a href="https://github.com/cwmacdon/gulp-concat-sourcemap">gulp-concat-sourcemap</a> is a gulp.js plugin that concatenate files and generate a source map file.</li>
+<li><a href="https://github.com/aredo/express4-bootstrap-starter">express4-bootstrap-starter</a> is a simple demo app in Node.js using ExpressJS 4, Mongoose, Passport.js and Jade.</li>
+</ul>
+<h2 id="apps">Apps</h2>
+<ul>
+<li><a href="http://www.cakebrew.com/">Cakebrew</a> - the Mac app for Homebrew.</li>
+<li><a href="http://www.json-generator.com/">JSON generator</a> is a pretty slick online tool to generate JSON data fixtures.</li>
+</ul>
+<h2 id="twitter">Twitter</h2>
+<blockquote class="twitter-tweet" data-partner="tweetdeck"><p>Node.js 0.11.13 with <a href="https://twitter.com/search?q=%23ES6&amp;src=hash">#ES6</a> WeakMap, WeakSet, Promise &amp; Object.observe is out! Soon to be in Node 0.12. <a href="http://t.co/Y9RxK4wOnK">http://t.co/Y9RxK4wOnK</a></p>&mdash; Michał Gołębiowski (@m_gol) <a href="https://twitter.com/m_gol/statuses/462294019830456320">May 2, 2014</a></blockquote>
+
+<blockquote class="twitter-tweet" data-partner="tweetdeck"><p>I love Angularjs so much...</p>&mdash; Cindy Juarez (@sceendy) <a href="https://twitter.com/sceendy/statuses/462281885289172992">May 2, 2014</a></blockquote>
+
+<blockquote class="twitter-tweet" data-partner="tweetdeck"><p>Every time I run an npm install :) <a href="https://twitter.com/npmjs">@npmjs</a>. (gif version: <a href="http://t.co/skRgXkyIzQ">http://t.co/skRgXkyIzQ</a>) <a href="http://t.co/59M56CGJdC">pic.twitter.com/59M56CGJdC</a></p>&mdash; Jon Q (@itsJonQ) <a href="https://twitter.com/itsJonQ/statuses/462280358516756480">May 2, 2014</a></blockquote>
+
+<h2 id="misc">Misc</h2>
+<iframe width="560" height="315" src="//www.youtube.com/embed/AYGSpOfIr9Y?rel=0" frameborder="0" allowfullscreen></iframe>]]></description>
       </item>
     
       
@@ -323,288 +382,6 @@ request(&#39;https://www.twitter.com/dhh&#39;, function(err, response) {
 </code></pre><h2 id="closing-thoughts">Closing thoughts</h2>
 <p><a href="https://github.com/thisandagain/sentiment">sentiment</a> is a very simple token counter which has vocabulary of about 2.5k english words. It doesn&#39;t always produce reliable results, but it gets you a step forward if you need to do sentiment analysis without bringing in the heavy weight APIs or expensive commercial libraries.</p>
 <p>I can totally imagine processing customer inquiries coming in via email, twitter and other channels with <a href="https://github.com/thisandagain/sentiment">sentiment</a>. Higher priority could be assigned to inquires with lower, more negative scores.</p>
-]]></description>
-      </item>
-    
-      
-      
-      
-      <item>
-        <title><![CDATA[Comparing Express, Restify, hapi and LoopBack for building RESTful APIs]]></title>
-        <link><![CDATA[http://npmawesome.com/posts/2014-04-29-compare-express-restify-hapi-loopback]]></link>
-        <dc:creator><![CDATA[Alex Gorbatchev]]></dc:creator>
-        <guid isPermaLink="true"><![CDATA[http://npmawesome.com/posts/2014-04-29-compare-express-restify-hapi-loopback]]></guid>
-        <pubDate><![CDATA[Tue, 29 Apr 2014 17:01:54 GMT]]></pubDate>
-        <description><![CDATA[<p>If you are writing a Node.js application, chances are you going to have some kind of API end points to be consumed by your frond end or expose data for others to take in. This is where <a href="http://en.wikipedia.org/wiki/Representational_state_transfer">RESTful APIs</a> come in. And now you have a dilemma - what tools to use and what approach to take? So many choices...</p>
-<p><img src="http://npmawesome.com/images/posts/compare-express-restify-hapi-loopback/confused.gif"/></p>
-<p>Thanks to the incredibly active Node.js community, the amount of results for a <a href="https://www.npmjs.org/search?q=rest">&quot;rest&quot; search on NPM</a> is pretty overwhelming. Everyone has their own implementation and approach, but few seem to agree on a common way to go about implementing RESTful APIs in Node.js.</p>
-<div class="read-more"></div>
-
-<h2 id="restful-apis-with-express">RESTful APIs with Express</h2>
-<p>The most common approach is to just roll your own end points with <a href="http://expressjs.com">Express</a>. This practice allows you to get started quickly, but it becomes burdensome in the long run. Lets look at pros and cons:</p>
-<h3 id="example">Example</h3>
-<p>Here&#39;s what a typical end point might look like in <a href="http://expressjs.com">Express</a> using the latest 4.x <code>Router</code> feature:</p>
-<pre><code>var express = require(&#39;express&#39;);
-var Item = require(&#39;models&#39;).Item;
-var app = express();
-var itemRoute = express.Router();
-
-itemRoute.param(&#39;itemId&#39;, function(req, res, next, id) {
-  Item.findById(req.params.itemId, function(err, item) {
-    req.item = item;
-    next();
-  });
-});
-
-itemRoute.route(&#39;/:itemId&#39;)
-  .get(function(req, res, next) {
-    res.json(req.item);
-  })
-  .put(function(req, res, next) {
-    req.item.set(req.body);
-    req.item.save(function(err, item) {
-      res.json(item);
-    });
-  })
-  .post(function(req, res, next) {
-    var item = new Item(req.body);
-    item.save(function(err, item) {
-      res.json(item);
-    });
-  })
-  .delete(function(req, res, next) {
-    req.item.remove(function(err) {
-      res.json({});
-    });
-  })
-  ;
-
-app.use(&#39;/api/items&#39;, itemRoute);
-app.listen(8080);
-</code></pre><h3 id="pros">Pros</h3>
-<ol>
-<li>Little learning curve, <a href="http://expressjs.com">Express</a> is nearly a standard for Node.js web application</li>
-<li>Fully customizable</li>
-</ol>
-<h3 id="cons">Cons</h3>
-<ol>
-<li>All end points need to be created manually, you end up doing a lot of the same code (or worse, start rolling your own libraries after a while)</li>
-<li>Every end point needs to be tested (or at the very least I recommend that you hit the end points with HTTP consumer to make sure they are actually there and don&#39;t throw 500s)</li>
-<li>Refactoring becomes painful because everything needs to be updated everywhere</li>
-<li>Doesn&#39;t come with anything &quot;standard&quot;, have to figure out your own approach</li>
-</ol>
-<p><a href="http://expressjs.com">Express</a> is a great starting point, but eventually you will feel the pain of &quot;roll your own&quot; approach.</p>
-<h2 id="restful-apis-with-restify">RESTful APIs with Restify</h2>
-<p><a href="http://mcavage.me/node-restify">Restify</a> is a relatively old player in the Node.js API field, very stable and being actively developed. It is built specifically to enable you to build correct REST web services and intentionally borrows heavily from <a href="http://expressjs.com">Express</a>.</p>
-<h3 id="example">Example</h3>
-<p>Because <a href="http://mcavage.me/node-restify">Restify</a> borrows from <a href="http://expressjs.com">Express</a>, the syntax is nearly identical:</p>
-<pre><code>var restify = require(&#39;restify&#39;);
-var Item = require(&#39;models&#39;).Item;
-var app = restify.createServer()
-
-app.use(function(req, res, next) {
-  if (req.params.itemId) {
-    Item.findById(req.params.itemId, function(err, item) {
-      req.item = item;
-      next();
-    });
-  }
-  else {
-    next();
-  }
-});
-
-app.get(&#39;/api/items/:itemId&#39;, function(req, res, next) {
-  res.send(200, req.item);
-});
-
-app.put(&#39;/api/items/:itemId&#39;, function(req, res, next) {
-  req.item.set(req.body);
-  req.item.save(function(err, item) {
-    res.send(204, item);
-  });
-});
-
-app.post(&#39;/api/items/:itemId&#39;, function(req, res, next) {
-  var item = new Item(req.body);
-  item.save(function(err, item) {
-    res.send(201, item);
-  });
-});
-
-app.delete(&#39;/api/items/:itemId&#39;, function(req, res, next) {
-  req.item.remove(function(err) {
-    res.send(204, {});
-  });
-});
-
-app.listen(8080);
-</code></pre><h3 id="pros">Pros</h3>
-<ul>
-<li>Automatic DTrace support for all your handlers (if you&#39;re running on a platform that supports DTrace)</li>
-<li>Doesn&#39;t have unnecessary functionality like templating and rendering</li>
-<li>Built in throttling</li>
-<li>Built in <a href="http://en.wikipedia.org/wiki/SPDY">SPDY</a> support</li>
-</ul>
-<h3 id="cons">Cons</h3>
-<p>The cons are all the same with <a href="http://mcavage.me/node-restify">Restify</a> as they are with <a href="http://expressjs.com">Express</a>, lots of manual labor.</p>
-<h2 id="restful-apis-with-hapi">RESTful APIs with hapi</h2>
-<p><a href="http://spumko.github.io/">hapi</a> is a lesser known Node.js framework that is getting momentum thanks to fulltime support of the Walmart Labs team. It takes a somewhat different approach from <a href="http://expressjs.com">Express</a> and <a href="http://mcavage.me/node-restify">Restify</a> by providing significantly more functionality out of the box for building web servers.</p>
-<h3 id="example">Example</h3>
-<p>Here&#39;s the same example re-written using <a href="http://spumko.github.io/">hapi</a>:</p>
-<pre><code>var Hapi = require(&#39;hapi&#39;);
-var Item = require(&#39;models&#39;).Item;
-var server = Hapi.createServer(&#39;0.0.0.0&#39;, 8080);
-
-server.ext(&#39;onPreHandler&#39;, function(req, next) {
-  if (req.params.itemId) {
-    Item.findById(req.params.itemId, function(err, item) {
-      req.item = item;
-      next();
-    });
-  }
-  else {
-    next();
-  }
-});
-
-server.route([
-  {
-    path: &#39;/api/items/{itemId}&#39;,
-    method: &#39;GET&#39;,
-    config: {
-      handler: function(req, reply) {
-        reply(req.item);
-      }
-    }
-  },
-  {
-    path: &#39;/api/items&#39;,
-    method: &#39;PUT&#39;,
-    config: {
-      handler: function(req, reply) {
-        req.item.set(req.body);
-        req.item.save(function(err, item) {
-          res.send(204, item);
-        });
-      }
-    }
-  },
-  {
-    path: &#39;/api/items&#39;,
-    method: &#39;POST&#39;,
-    config: {
-      handler: function(req, reply) {
-        var item = new Item(req.body);
-        item.save(function(err, item) {
-          res.send(201, item);
-        });
-      }
-    }
-  },
-  {
-    path: &#39;/api/items/{itemId}&#39;,
-    method: &#39;DELETE&#39;,
-    config: {
-      handler: function(req, reply) {
-        req.item.remove(function(err) {
-          res.send(204, {});
-        });
-      }
-    }
-  }
-]);
-
-server.start();
-</code></pre><h3 id="pros">Pros</h3>
-<ol>
-<li>Very granular control over request handling</li>
-<li>Detailed API <a href="https://github.com/spumko/hapi/blob/master/docs/Reference.md">reference</a> with support for documentation generation</li>
-</ol>
-<h3 id="cons">Cons</h3>
-<p>As with <a href="http://expressjs.com">Express</a> and <a href="http://mcavage.me/node-restify">Restify</a>, <a href="http://spumko.github.io/">hapi</a> gives you great construction blocks, but you are left to your own devices figuring out how to use them.</p>
-<h2 id="what-else-is-there-">What else is there?</h2>
-<p><a href="http://expressjs.com">Express</a>, <a href="http://mcavage.me/node-restify">Restify</a> and <a href="http://spumko.github.io/">hapi</a> are all great starting points, but in the long run it might not be the right choice if you plan on investing heavily into APIs.</p>
-<h2 id="loopback">LoopBack</h2>
-<p><a href="http://strongloop.com/mobile-application-development/loopback/">LoopBack</a> by <a href="http://strongloop.com">StrongLoop</a> is a fully featured Node.js backend framework to connect your consumer applications with data. It adopts <a href="http://en.wikipedia.org/wiki/Convention_over_configuration">convention over configuration</a> mantra popularized by Ruby on Rails.</p>
-<h3 id="example">Example</h3>
-<pre><code>var loopback = require(&#39;loopback&#39;);
-var Item = require(&#39;./models&#39;).Item;
-var app = module.exports = loopback();
-
-app.model(Item);
-app.use(&#39;/api&#39;, loopback.rest());
-app.listen(8080);
-</code></pre><p>There&#39;s a lot of &quot;magic&quot; happening in the background. But with just 6 lines of code you now have the following end points:</p>
-<pre><code>DELETE /items/{id}
-GET /items
-GET /items/count
-GET /items/findOne
-GET /items/{id}
-GET /items/{id}/exists
-POST /items
-PUT /items
-PUT /items/{id}
-</code></pre><p><img src="http://npmawesome.com/images/posts/compare-express-restify-hapi-loopback/mind-blowing-nph.gif"/></p>
-<p>To start exploring your own APIs right away, there&#39;s a bundled <code>explorer</code> module that you can attach to your application:</p>
-<pre><code>var explorer = require(&#39;loopback-explorer&#39;);
-app.use(&#39;/explorer&#39;, explorer(app, {basePath: &#39;/api&#39;}));
-</code></pre><p>And now opening <code>http://localhost:8080/explorer</code> you get this:</p>
-<p><img src="http://npmawesome.com/images/posts/compare-express-restify-hapi-loopback/screenshot.png"/></p>
-<p>Seriously cool stuff!</p>
-<h3 id="pros">Pros</h3>
-<ol>
-<li>Very quick RESTful API development</li>
-<li>Convention over configuration</li>
-<li>Built in models ready to use</li>
-<li>RPC support</li>
-<li>Fully configurable when needed</li>
-<li>Extensive documentation</li>
-<li>Fulltime team working on the project</li>
-<li>Available commercial support</li>
-</ol>
-<h3 id="cons">Cons</h3>
-<ol>
-<li>Learning curve can be pretty steep because there are so many moving parts</li>
-</ol>
-<h2 id="rpc">RPC</h2>
-<p>The <a href="http://strongloop.com/mobile-application-development/loopback/">LoopBack</a> example above is so tiny, I feel bad about it. How about we extend it with a quick RPC endpoint to balance things out?</p>
-<pre><code>var loopback = require(&#39;loopback&#39;);
-var explorer = require(&#39;loopback-explorer&#39;);
-var remoting = require(&#39;strong-remoting&#39;);
-var Item = require(&#39;./models&#39;).Item;
-var app = module.exports = loopback();
-var rpc = remoting.create();
-
-function echo(ping, callback) {
-  callback(null, ping);
-}
-
-echo.shared = true;
-echo.accepts = {arg: &#39;ping&#39;};
-echo.returns = {arg: &#39;echo&#39;};
-
-rpc.exports.system = {
-  echo: echo
-};
-
-app.model(Item);
-app.use(&#39;/api&#39;, loopback.rest());
-app.use(&#39;/explorer&#39;, explorer(app, {basePath: &#39;/api&#39;}));
-app.use(&#39;/rpc&#39;, rpc.handler(&#39;rest&#39;));
-app.listen(8080);
-</code></pre><p>And now you can do this:</p>
-<pre><code>$ curl &quot;http://localhost:8080/rpc/system/echo?ping=hello&quot;
-{
-  &quot;echo&quot;: &quot;hello&quot;
-}
-</code></pre><p><img src="http://npmawesome.com/images/posts/compare-express-restify-hapi-loopback/thumbs-up-nph.gif"/></p>
-<h2 id="what-s-next-">What&#39;s next?</h2>
-<ul>
-<li>Install LoopBack with a <a href="http://strongloop.com/get-started/">simple npm command</a>.</li>
-<li>Read <a href="http://docs.strongloop.com/display/DOC/LoopBack">LoopBack documentation</a>.</li>
-<li>Need performance monitoring, profiling and cluster capabilites for your Node apps? Check out <a href="http://strongloop.com/node-js-performance/strongops/">StrongOps</a>.</li>
-</ul>
 ]]></description>
       </item>
     

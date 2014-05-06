@@ -5,7 +5,7 @@
 	<link href="http://npmawesome.com/atom.xml" rel="self" />
 	<link href="http://npmawesome.com" />
 	<id>http://npmawesome.com</id>
-	<updated>2014-05-06T16:44:37.876Z</updated>
+	<updated>2014-05-06T17:03:04.382Z</updated>
 	<author>
 		<name>Alex Gorbatchev</name>
 	</author>
@@ -24,6 +24,8 @@
 			<content type="html">&lt;p&gt;&lt;img class=&quot;hide-on-mobile&quot; src=&quot;https://avatars2.githubusercontent.com/u/651740?s=400&quot; style=&quot;float: right; margin-left: 1em; width: 100px&quot;/&gt;
 As you web application grows, there comes a time when you will want to have scheduled jobs. The easiest thing is of course go the &lt;a href=&quot;http://en.wikipedia.org/wiki/Cron&quot;&gt;cron&lt;/a&gt; route. However, maintaining and updating it isn&amp;#39;t so easy, especially if you have more than one server to deal with and you still maybe too young for enterprise level job scheduler. What&amp;#39;s left? Maybe just do some &lt;code&gt;setTimeout&lt;/code&gt; calls in process... That doesn&amp;#39;t sound very exciting nor very manageable.&lt;/p&gt;
 &lt;p&gt;This is where &lt;a href=&quot;https://github.com/rschmukler/agenda&quot;&gt;agenda&lt;/a&gt; by &lt;a href=&quot;https://github.com/rschmukler&quot;&gt;Ryan Schmukler&lt;/a&gt; comes in. &lt;a href=&quot;https://github.com/rschmukler/agenda&quot;&gt;agenda&lt;/a&gt;, to plainly put it, is a light-weight job scheduling library for Node.js. Lets give it a go!&lt;/p&gt;
+&lt;div class=&quot;read-more&quot;&gt;&lt;/div&gt;
+
 &lt;pre&gt;&lt;code&gt;npm install agenda
 &lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&quot;features&quot;&gt;Features&lt;/h2&gt;
 &lt;ul&gt;
@@ -66,6 +68,62 @@ console.log(&amp;#39;Wait 10 seconds...&amp;#39;);
 &lt;li&gt;&lt;a href=&quot;https://github.com/mattpat/node-schedule&quot;&gt;node-schedule&lt;/a&gt; is a single process, cron-like and not-cron-like job scheduler by &lt;a href=&quot;https://github.com/mattpat&quot;&gt;Matt Patenaude&lt;/a&gt;. It doesn&amp;#39;t have any external dependencies.&lt;/li&gt;
 &lt;/ul&gt;
 </content>
+		</entry>
+	
+    
+    
+    
+		<entry>
+			<title>Links for May 6, 2014</title>
+			<link href="http://npmawesome.com/posts/2014-05-06-links"/>
+			<updated>2014-05-06T16:51:37.000Z</updated>
+			<id>http://npmawesome.com/posts/2014-05-06-links</id>
+			<content type="html">&lt;p&gt;&lt;img src=&quot;http://npmawesome.com/images/posts/html5.png&quot; style=&quot;float: right; width: 150px;&quot;/&gt;&lt;/p&gt;
+&lt;h2 id=&quot;articles-slides&quot;&gt;Articles &amp;amp; Slides&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://www.youtube.com/watch?v=1FVAS7MdPXo&quot;&gt;Video - Build a Killer Node.js Client for Your REST+JSON API&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://javascriptjabber.com/106-jsj-protractor-with-julie-ralph/&quot;&gt;Podcast - JSJ Protractor with Julie Ralph&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://atom.io/&quot;&gt;Atom&lt;/a&gt; editor goes fully &lt;a href=&quot;https://github.com/blog/1831-atom-free-and-open-source-for-everyone&quot;&gt;open source&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a href=&quot;http://lawsonry.com/2014/05/diy-angularjs-seo-with-phantomjs-the-easy-way/&quot;&gt;DIY AngularJS SEO with PhantomJS (the easy way!)&lt;/a&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;I have to be honest: I’m only writing this tutorial because I could not find a decent tutorial on setting up an environment for AngularJS SEO awesomeness. It couldn’t be that hard, right?&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&quot;read-more&quot;&gt;&lt;/div&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;&lt;a href=&quot;http://www.instructables.com/id/Make-A-Barbarians-Sword/?ALLSTEPS&quot;&gt;Make A Barbarian&amp;#39;s Sword&lt;/a&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;img src=&quot;http://cdn.instructables.com/F39/E9XD/HUQAT77M/F39E9XDHUQAT77M.LARGE.jpg&quot; style=“width: 300px”/&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a href=&quot;https://www.youtube.com/watch?v=0VUjM-jJf2U&quot;&gt;Practical Workflows for ES6 Modules, Fluent 2014&lt;/a&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;img src=&quot;https://i1.ytimg.com/vi/0VUjM-jJf2U/maxresdefault.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;github&quot;&gt;Github&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;http://davej.github.io/angular-classy/&quot;&gt;angular-classy&lt;/a&gt; is a module for cleaner class-based controllers for AngularJS.&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/cwmacdon/gulp-concat-sourcemap&quot;&gt;gulp-concat-sourcemap&lt;/a&gt; is a gulp.js plugin that concatenate files and generate a source map file.&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/aredo/express4-bootstrap-starter&quot;&gt;express4-bootstrap-starter&lt;/a&gt; is a simple demo app in Node.js using ExpressJS 4, Mongoose, Passport.js and Jade.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;apps&quot;&gt;Apps&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;http://www.cakebrew.com/&quot;&gt;Cakebrew&lt;/a&gt; - the Mac app for Homebrew.&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://www.json-generator.com/&quot;&gt;JSON generator&lt;/a&gt; is a pretty slick online tool to generate JSON data fixtures.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;twitter&quot;&gt;Twitter&lt;/h2&gt;
+&lt;blockquote class=&quot;twitter-tweet&quot; data-partner=&quot;tweetdeck&quot;&gt;&lt;p&gt;Node.js 0.11.13 with &lt;a href=&quot;https://twitter.com/search?q=%23ES6&amp;amp;src=hash&quot;&gt;#ES6&lt;/a&gt; WeakMap, WeakSet, Promise &amp;amp; Object.observe is out! Soon to be in Node 0.12. &lt;a href=&quot;http://t.co/Y9RxK4wOnK&quot;&gt;http://t.co/Y9RxK4wOnK&lt;/a&gt;&lt;/p&gt;&amp;mdash; Michał Gołębiowski (@m_gol) &lt;a href=&quot;https://twitter.com/m_gol/statuses/462294019830456320&quot;&gt;May 2, 2014&lt;/a&gt;&lt;/blockquote&gt;
+
+&lt;blockquote class=&quot;twitter-tweet&quot; data-partner=&quot;tweetdeck&quot;&gt;&lt;p&gt;I love Angularjs so much...&lt;/p&gt;&amp;mdash; Cindy Juarez (@sceendy) &lt;a href=&quot;https://twitter.com/sceendy/statuses/462281885289172992&quot;&gt;May 2, 2014&lt;/a&gt;&lt;/blockquote&gt;
+
+&lt;blockquote class=&quot;twitter-tweet&quot; data-partner=&quot;tweetdeck&quot;&gt;&lt;p&gt;Every time I run an npm install :) &lt;a href=&quot;https://twitter.com/npmjs&quot;&gt;@npmjs&lt;/a&gt;. (gif version: &lt;a href=&quot;http://t.co/skRgXkyIzQ&quot;&gt;http://t.co/skRgXkyIzQ&lt;/a&gt;) &lt;a href=&quot;http://t.co/59M56CGJdC&quot;&gt;pic.twitter.com/59M56CGJdC&lt;/a&gt;&lt;/p&gt;&amp;mdash; Jon Q (@itsJonQ) &lt;a href=&quot;https://twitter.com/itsJonQ/statuses/462280358516756480&quot;&gt;May 2, 2014&lt;/a&gt;&lt;/blockquote&gt;
+
+&lt;h2 id=&quot;misc&quot;&gt;Misc&lt;/h2&gt;
+&lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;//www.youtube.com/embed/AYGSpOfIr9Y?rel=0&quot; frameborder=&quot;0&quot; allowfullscreen&gt;&lt;/iframe&gt;</content>
 		</entry>
 	
     
@@ -307,287 +365,6 @@ request(&amp;#39;https://www.twitter.com/dhh&amp;#39;, function(err, response) {
 &lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&quot;closing-thoughts&quot;&gt;Closing thoughts&lt;/h2&gt;
 &lt;p&gt;&lt;a href=&quot;https://github.com/thisandagain/sentiment&quot;&gt;sentiment&lt;/a&gt; is a very simple token counter which has vocabulary of about 2.5k english words. It doesn&amp;#39;t always produce reliable results, but it gets you a step forward if you need to do sentiment analysis without bringing in the heavy weight APIs or expensive commercial libraries.&lt;/p&gt;
 &lt;p&gt;I can totally imagine processing customer inquiries coming in via email, twitter and other channels with &lt;a href=&quot;https://github.com/thisandagain/sentiment&quot;&gt;sentiment&lt;/a&gt;. Higher priority could be assigned to inquires with lower, more negative scores.&lt;/p&gt;
-</content>
-		</entry>
-	
-    
-    
-    
-		<entry>
-			<title>Comparing Express, Restify, hapi and LoopBack for building RESTful APIs</title>
-			<link href="http://npmawesome.com/posts/2014-04-29-compare-express-restify-hapi-loopback"/>
-			<updated>2014-04-29T17:01:54.000Z</updated>
-			<id>http://npmawesome.com/posts/2014-04-29-compare-express-restify-hapi-loopback</id>
-			<content type="html">&lt;p&gt;If you are writing a Node.js application, chances are you going to have some kind of API end points to be consumed by your frond end or expose data for others to take in. This is where &lt;a href=&quot;http://en.wikipedia.org/wiki/Representational_state_transfer&quot;&gt;RESTful APIs&lt;/a&gt; come in. And now you have a dilemma - what tools to use and what approach to take? So many choices...&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;http://npmawesome.com/images/posts/compare-express-restify-hapi-loopback/confused.gif&quot;/&gt;&lt;/p&gt;
-&lt;p&gt;Thanks to the incredibly active Node.js community, the amount of results for a &lt;a href=&quot;https://www.npmjs.org/search?q=rest&quot;&gt;&amp;quot;rest&amp;quot; search on NPM&lt;/a&gt; is pretty overwhelming. Everyone has their own implementation and approach, but few seem to agree on a common way to go about implementing RESTful APIs in Node.js.&lt;/p&gt;
-&lt;div class=&quot;read-more&quot;&gt;&lt;/div&gt;
-
-&lt;h2 id=&quot;restful-apis-with-express&quot;&gt;RESTful APIs with Express&lt;/h2&gt;
-&lt;p&gt;The most common approach is to just roll your own end points with &lt;a href=&quot;http://expressjs.com&quot;&gt;Express&lt;/a&gt;. This practice allows you to get started quickly, but it becomes burdensome in the long run. Lets look at pros and cons:&lt;/p&gt;
-&lt;h3 id=&quot;example&quot;&gt;Example&lt;/h3&gt;
-&lt;p&gt;Here&amp;#39;s what a typical end point might look like in &lt;a href=&quot;http://expressjs.com&quot;&gt;Express&lt;/a&gt; using the latest 4.x &lt;code&gt;Router&lt;/code&gt; feature:&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;var express = require(&amp;#39;express&amp;#39;);
-var Item = require(&amp;#39;models&amp;#39;).Item;
-var app = express();
-var itemRoute = express.Router();
-
-itemRoute.param(&amp;#39;itemId&amp;#39;, function(req, res, next, id) {
-  Item.findById(req.params.itemId, function(err, item) {
-    req.item = item;
-    next();
-  });
-});
-
-itemRoute.route(&amp;#39;/:itemId&amp;#39;)
-  .get(function(req, res, next) {
-    res.json(req.item);
-  })
-  .put(function(req, res, next) {
-    req.item.set(req.body);
-    req.item.save(function(err, item) {
-      res.json(item);
-    });
-  })
-  .post(function(req, res, next) {
-    var item = new Item(req.body);
-    item.save(function(err, item) {
-      res.json(item);
-    });
-  })
-  .delete(function(req, res, next) {
-    req.item.remove(function(err) {
-      res.json({});
-    });
-  })
-  ;
-
-app.use(&amp;#39;/api/items&amp;#39;, itemRoute);
-app.listen(8080);
-&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&quot;pros&quot;&gt;Pros&lt;/h3&gt;
-&lt;ol&gt;
-&lt;li&gt;Little learning curve, &lt;a href=&quot;http://expressjs.com&quot;&gt;Express&lt;/a&gt; is nearly a standard for Node.js web application&lt;/li&gt;
-&lt;li&gt;Fully customizable&lt;/li&gt;
-&lt;/ol&gt;
-&lt;h3 id=&quot;cons&quot;&gt;Cons&lt;/h3&gt;
-&lt;ol&gt;
-&lt;li&gt;All end points need to be created manually, you end up doing a lot of the same code (or worse, start rolling your own libraries after a while)&lt;/li&gt;
-&lt;li&gt;Every end point needs to be tested (or at the very least I recommend that you hit the end points with HTTP consumer to make sure they are actually there and don&amp;#39;t throw 500s)&lt;/li&gt;
-&lt;li&gt;Refactoring becomes painful because everything needs to be updated everywhere&lt;/li&gt;
-&lt;li&gt;Doesn&amp;#39;t come with anything &amp;quot;standard&amp;quot;, have to figure out your own approach&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;&lt;a href=&quot;http://expressjs.com&quot;&gt;Express&lt;/a&gt; is a great starting point, but eventually you will feel the pain of &amp;quot;roll your own&amp;quot; approach.&lt;/p&gt;
-&lt;h2 id=&quot;restful-apis-with-restify&quot;&gt;RESTful APIs with Restify&lt;/h2&gt;
-&lt;p&gt;&lt;a href=&quot;http://mcavage.me/node-restify&quot;&gt;Restify&lt;/a&gt; is a relatively old player in the Node.js API field, very stable and being actively developed. It is built specifically to enable you to build correct REST web services and intentionally borrows heavily from &lt;a href=&quot;http://expressjs.com&quot;&gt;Express&lt;/a&gt;.&lt;/p&gt;
-&lt;h3 id=&quot;example&quot;&gt;Example&lt;/h3&gt;
-&lt;p&gt;Because &lt;a href=&quot;http://mcavage.me/node-restify&quot;&gt;Restify&lt;/a&gt; borrows from &lt;a href=&quot;http://expressjs.com&quot;&gt;Express&lt;/a&gt;, the syntax is nearly identical:&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;var restify = require(&amp;#39;restify&amp;#39;);
-var Item = require(&amp;#39;models&amp;#39;).Item;
-var app = restify.createServer()
-
-app.use(function(req, res, next) {
-  if (req.params.itemId) {
-    Item.findById(req.params.itemId, function(err, item) {
-      req.item = item;
-      next();
-    });
-  }
-  else {
-    next();
-  }
-});
-
-app.get(&amp;#39;/api/items/:itemId&amp;#39;, function(req, res, next) {
-  res.send(200, req.item);
-});
-
-app.put(&amp;#39;/api/items/:itemId&amp;#39;, function(req, res, next) {
-  req.item.set(req.body);
-  req.item.save(function(err, item) {
-    res.send(204, item);
-  });
-});
-
-app.post(&amp;#39;/api/items/:itemId&amp;#39;, function(req, res, next) {
-  var item = new Item(req.body);
-  item.save(function(err, item) {
-    res.send(201, item);
-  });
-});
-
-app.delete(&amp;#39;/api/items/:itemId&amp;#39;, function(req, res, next) {
-  req.item.remove(function(err) {
-    res.send(204, {});
-  });
-});
-
-app.listen(8080);
-&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&quot;pros&quot;&gt;Pros&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;Automatic DTrace support for all your handlers (if you&amp;#39;re running on a platform that supports DTrace)&lt;/li&gt;
-&lt;li&gt;Doesn&amp;#39;t have unnecessary functionality like templating and rendering&lt;/li&gt;
-&lt;li&gt;Built in throttling&lt;/li&gt;
-&lt;li&gt;Built in &lt;a href=&quot;http://en.wikipedia.org/wiki/SPDY&quot;&gt;SPDY&lt;/a&gt; support&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id=&quot;cons&quot;&gt;Cons&lt;/h3&gt;
-&lt;p&gt;The cons are all the same with &lt;a href=&quot;http://mcavage.me/node-restify&quot;&gt;Restify&lt;/a&gt; as they are with &lt;a href=&quot;http://expressjs.com&quot;&gt;Express&lt;/a&gt;, lots of manual labor.&lt;/p&gt;
-&lt;h2 id=&quot;restful-apis-with-hapi&quot;&gt;RESTful APIs with hapi&lt;/h2&gt;
-&lt;p&gt;&lt;a href=&quot;http://spumko.github.io/&quot;&gt;hapi&lt;/a&gt; is a lesser known Node.js framework that is getting momentum thanks to fulltime support of the Walmart Labs team. It takes a somewhat different approach from &lt;a href=&quot;http://expressjs.com&quot;&gt;Express&lt;/a&gt; and &lt;a href=&quot;http://mcavage.me/node-restify&quot;&gt;Restify&lt;/a&gt; by providing significantly more functionality out of the box for building web servers.&lt;/p&gt;
-&lt;h3 id=&quot;example&quot;&gt;Example&lt;/h3&gt;
-&lt;p&gt;Here&amp;#39;s the same example re-written using &lt;a href=&quot;http://spumko.github.io/&quot;&gt;hapi&lt;/a&gt;:&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;var Hapi = require(&amp;#39;hapi&amp;#39;);
-var Item = require(&amp;#39;models&amp;#39;).Item;
-var server = Hapi.createServer(&amp;#39;0.0.0.0&amp;#39;, 8080);
-
-server.ext(&amp;#39;onPreHandler&amp;#39;, function(req, next) {
-  if (req.params.itemId) {
-    Item.findById(req.params.itemId, function(err, item) {
-      req.item = item;
-      next();
-    });
-  }
-  else {
-    next();
-  }
-});
-
-server.route([
-  {
-    path: &amp;#39;/api/items/{itemId}&amp;#39;,
-    method: &amp;#39;GET&amp;#39;,
-    config: {
-      handler: function(req, reply) {
-        reply(req.item);
-      }
-    }
-  },
-  {
-    path: &amp;#39;/api/items&amp;#39;,
-    method: &amp;#39;PUT&amp;#39;,
-    config: {
-      handler: function(req, reply) {
-        req.item.set(req.body);
-        req.item.save(function(err, item) {
-          res.send(204, item);
-        });
-      }
-    }
-  },
-  {
-    path: &amp;#39;/api/items&amp;#39;,
-    method: &amp;#39;POST&amp;#39;,
-    config: {
-      handler: function(req, reply) {
-        var item = new Item(req.body);
-        item.save(function(err, item) {
-          res.send(201, item);
-        });
-      }
-    }
-  },
-  {
-    path: &amp;#39;/api/items/{itemId}&amp;#39;,
-    method: &amp;#39;DELETE&amp;#39;,
-    config: {
-      handler: function(req, reply) {
-        req.item.remove(function(err) {
-          res.send(204, {});
-        });
-      }
-    }
-  }
-]);
-
-server.start();
-&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&quot;pros&quot;&gt;Pros&lt;/h3&gt;
-&lt;ol&gt;
-&lt;li&gt;Very granular control over request handling&lt;/li&gt;
-&lt;li&gt;Detailed API &lt;a href=&quot;https://github.com/spumko/hapi/blob/master/docs/Reference.md&quot;&gt;reference&lt;/a&gt; with support for documentation generation&lt;/li&gt;
-&lt;/ol&gt;
-&lt;h3 id=&quot;cons&quot;&gt;Cons&lt;/h3&gt;
-&lt;p&gt;As with &lt;a href=&quot;http://expressjs.com&quot;&gt;Express&lt;/a&gt; and &lt;a href=&quot;http://mcavage.me/node-restify&quot;&gt;Restify&lt;/a&gt;, &lt;a href=&quot;http://spumko.github.io/&quot;&gt;hapi&lt;/a&gt; gives you great construction blocks, but you are left to your own devices figuring out how to use them.&lt;/p&gt;
-&lt;h2 id=&quot;what-else-is-there-&quot;&gt;What else is there?&lt;/h2&gt;
-&lt;p&gt;&lt;a href=&quot;http://expressjs.com&quot;&gt;Express&lt;/a&gt;, &lt;a href=&quot;http://mcavage.me/node-restify&quot;&gt;Restify&lt;/a&gt; and &lt;a href=&quot;http://spumko.github.io/&quot;&gt;hapi&lt;/a&gt; are all great starting points, but in the long run it might not be the right choice if you plan on investing heavily into APIs.&lt;/p&gt;
-&lt;h2 id=&quot;loopback&quot;&gt;LoopBack&lt;/h2&gt;
-&lt;p&gt;&lt;a href=&quot;http://strongloop.com/mobile-application-development/loopback/&quot;&gt;LoopBack&lt;/a&gt; by &lt;a href=&quot;http://strongloop.com&quot;&gt;StrongLoop&lt;/a&gt; is a fully featured Node.js backend framework to connect your consumer applications with data. It adopts &lt;a href=&quot;http://en.wikipedia.org/wiki/Convention_over_configuration&quot;&gt;convention over configuration&lt;/a&gt; mantra popularized by Ruby on Rails.&lt;/p&gt;
-&lt;h3 id=&quot;example&quot;&gt;Example&lt;/h3&gt;
-&lt;pre&gt;&lt;code&gt;var loopback = require(&amp;#39;loopback&amp;#39;);
-var Item = require(&amp;#39;./models&amp;#39;).Item;
-var app = module.exports = loopback();
-
-app.model(Item);
-app.use(&amp;#39;/api&amp;#39;, loopback.rest());
-app.listen(8080);
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;There&amp;#39;s a lot of &amp;quot;magic&amp;quot; happening in the background. But with just 6 lines of code you now have the following end points:&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;DELETE /items/{id}
-GET /items
-GET /items/count
-GET /items/findOne
-GET /items/{id}
-GET /items/{id}/exists
-POST /items
-PUT /items
-PUT /items/{id}
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;img src=&quot;http://npmawesome.com/images/posts/compare-express-restify-hapi-loopback/mind-blowing-nph.gif&quot;/&gt;&lt;/p&gt;
-&lt;p&gt;To start exploring your own APIs right away, there&amp;#39;s a bundled &lt;code&gt;explorer&lt;/code&gt; module that you can attach to your application:&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;var explorer = require(&amp;#39;loopback-explorer&amp;#39;);
-app.use(&amp;#39;/explorer&amp;#39;, explorer(app, {basePath: &amp;#39;/api&amp;#39;}));
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;And now opening &lt;code&gt;http://localhost:8080/explorer&lt;/code&gt; you get this:&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;http://npmawesome.com/images/posts/compare-express-restify-hapi-loopback/screenshot.png&quot;/&gt;&lt;/p&gt;
-&lt;p&gt;Seriously cool stuff!&lt;/p&gt;
-&lt;h3 id=&quot;pros&quot;&gt;Pros&lt;/h3&gt;
-&lt;ol&gt;
-&lt;li&gt;Very quick RESTful API development&lt;/li&gt;
-&lt;li&gt;Convention over configuration&lt;/li&gt;
-&lt;li&gt;Built in models ready to use&lt;/li&gt;
-&lt;li&gt;RPC support&lt;/li&gt;
-&lt;li&gt;Fully configurable when needed&lt;/li&gt;
-&lt;li&gt;Extensive documentation&lt;/li&gt;
-&lt;li&gt;Fulltime team working on the project&lt;/li&gt;
-&lt;li&gt;Available commercial support&lt;/li&gt;
-&lt;/ol&gt;
-&lt;h3 id=&quot;cons&quot;&gt;Cons&lt;/h3&gt;
-&lt;ol&gt;
-&lt;li&gt;Learning curve can be pretty steep because there are so many moving parts&lt;/li&gt;
-&lt;/ol&gt;
-&lt;h2 id=&quot;rpc&quot;&gt;RPC&lt;/h2&gt;
-&lt;p&gt;The &lt;a href=&quot;http://strongloop.com/mobile-application-development/loopback/&quot;&gt;LoopBack&lt;/a&gt; example above is so tiny, I feel bad about it. How about we extend it with a quick RPC endpoint to balance things out?&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;var loopback = require(&amp;#39;loopback&amp;#39;);
-var explorer = require(&amp;#39;loopback-explorer&amp;#39;);
-var remoting = require(&amp;#39;strong-remoting&amp;#39;);
-var Item = require(&amp;#39;./models&amp;#39;).Item;
-var app = module.exports = loopback();
-var rpc = remoting.create();
-
-function echo(ping, callback) {
-  callback(null, ping);
-}
-
-echo.shared = true;
-echo.accepts = {arg: &amp;#39;ping&amp;#39;};
-echo.returns = {arg: &amp;#39;echo&amp;#39;};
-
-rpc.exports.system = {
-  echo: echo
-};
-
-app.model(Item);
-app.use(&amp;#39;/api&amp;#39;, loopback.rest());
-app.use(&amp;#39;/explorer&amp;#39;, explorer(app, {basePath: &amp;#39;/api&amp;#39;}));
-app.use(&amp;#39;/rpc&amp;#39;, rpc.handler(&amp;#39;rest&amp;#39;));
-app.listen(8080);
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;And now you can do this:&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;$ curl &amp;quot;http://localhost:8080/rpc/system/echo?ping=hello&amp;quot;
-{
-  &amp;quot;echo&amp;quot;: &amp;quot;hello&amp;quot;
-}
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;img src=&quot;http://npmawesome.com/images/posts/compare-express-restify-hapi-loopback/thumbs-up-nph.gif&quot;/&gt;&lt;/p&gt;
-&lt;h2 id=&quot;what-s-next-&quot;&gt;What&amp;#39;s next?&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;Install LoopBack with a &lt;a href=&quot;http://strongloop.com/get-started/&quot;&gt;simple npm command&lt;/a&gt;.&lt;/li&gt;
-&lt;li&gt;Read &lt;a href=&quot;http://docs.strongloop.com/display/DOC/LoopBack&quot;&gt;LoopBack documentation&lt;/a&gt;.&lt;/li&gt;
-&lt;li&gt;Need performance monitoring, profiling and cluster capabilites for your Node apps? Check out &lt;a href=&quot;http://strongloop.com/node-js-performance/strongops/&quot;&gt;StrongOps&lt;/a&gt;.&lt;/li&gt;
-&lt;/ul&gt;
 </content>
 		</entry>
 	
