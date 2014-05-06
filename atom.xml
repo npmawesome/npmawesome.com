@@ -5,7 +5,7 @@
 	<link href="http://npmawesome.com/atom.xml" rel="self" />
 	<link href="http://npmawesome.com" />
 	<id>http://npmawesome.com</id>
-	<updated>2014-05-02T17:34:06.700Z</updated>
+	<updated>2014-05-06T16:39:26.027Z</updated>
 	<author>
 		<name>Alex Gorbatchev</name>
 	</author>
@@ -13,6 +13,61 @@
   
   
   
+    
+    
+    
+		<entry>
+			<title>agenda</title>
+			<link href="http://npmawesome.com/posts/2014-05-05-agenda"/>
+			<updated>2014-05-01T18:30:00.000Z</updated>
+			<id>http://npmawesome.com/posts/2014-05-05-agenda</id>
+			<content type="html">&lt;p&gt;&lt;img class=&quot;hide-on-mobile&quot; src=&quot;https://avatars2.githubusercontent.com/u/651740?s=400&quot; style=&quot;float: right; margin-left: 1em; width: 100px&quot;/&gt;
+As you web application grows, there comes a time when you will want to have scheduled jobs. The easiest thing is of course go the &lt;a href=&quot;http://en.wikipedia.org/wiki/Cron&quot;&gt;cron&lt;/a&gt; route. However, maintaining and updating it isn&amp;#39;t so easy, especially if you have more than one server to deal with and you still maybe too young for enterprise level job scheduler. What&amp;#39;s left? Maybe just do some &lt;code&gt;setTimeout&lt;/code&gt; calls in process... That doesn&amp;#39;t sound very exciting nor very manageable.&lt;/p&gt;
+&lt;p&gt;This is where &lt;a href=&quot;https://github.com/rschmukler/agenda&quot;&gt;agenda&lt;/a&gt; by &lt;a href=&quot;https://github.com/rschmukler&quot;&gt;Ryan Schmukler&lt;/a&gt; comes in. &lt;a href=&quot;https://github.com/rschmukler/agenda&quot;&gt;agenda&lt;/a&gt;, to plainly put it, is a light-weight job scheduling library for Node.js. Lets give it a go!&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;npm install agenda
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&quot;features&quot;&gt;Features&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Minimal overhead. &lt;a href=&quot;https://github.com/rschmukler/agenda&quot;&gt;agenda&lt;/a&gt; aims to keep its code base small.&lt;/li&gt;
+&lt;li&gt;MongoDB 2.4+ backed persistance layer.&lt;/li&gt;
+&lt;li&gt;Scheduling with configurable priority, concurrency, and repeating.&lt;/li&gt;
+&lt;li&gt;Scheduling via cron or human readable syntax.&lt;/li&gt;
+&lt;li&gt;Event backed job queue that you can hook into.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;usage&quot;&gt;Usage&lt;/h2&gt;
+&lt;p&gt;Lets make a basic example that runs a job 10 seconds after the startup:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;var Agenda = require(&amp;#39;agenda&amp;#39;);
+var agenda = new Agenda({db: {address: &amp;#39;localhost:27017/agenda-example&amp;#39;}});
+
+agenda.define(&amp;#39;greet the world&amp;#39;, function(job, done) {
+  console.log(job.attrs.data.time, &amp;#39;hello world!&amp;#39;);
+  done();
+});
+
+agenda.schedule(&amp;#39;in 10 seconds&amp;#39;, &amp;#39;greet the world&amp;#39;, {time: new Date()});
+agenda.start();
+
+console.log(&amp;#39;Wait 10 seconds...&amp;#39;);
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Check out &lt;a href=&quot;http://runnable.com/U2RE8d2YyYk_iaGU/agenda-module-example-for-npmawesome-nodejitsu-and-node-js&quot;&gt;functional example on runnable&lt;/a&gt;. I like plain English option, but you can also schedule regular running task with cron style expressions like so:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;agenda.every(&amp;#39;*/3 * * * *&amp;#39;, &amp;#39;greet the world&amp;#39;);
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;a href=&quot;https://github.com/rschmukler/agenda&quot;&gt;agenda&lt;/a&gt; is also capable of processing jobs from multiple processes. You just have to specify &lt;code&gt;lockLifetime&lt;/code&gt; option during the worker definition.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;agenda.define(&amp;#39;someJob&amp;#39;, {lockLifetime: 10000}, function(job, cb) {
+  //Do something in 10 seconds or less...
+});
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&quot;mongo-vs-redis&quot;&gt;Mongo vs Redis&lt;/h2&gt;
+&lt;p&gt;Curious why MongoDB was chosen for something most would use Redis for? &lt;a href=&quot;https://github.com/rschmukler&quot;&gt;Ryan Schmukler&lt;/a&gt; has a few thoughts on this:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;The decision to use Mongo instead of Redis is intentional. Redis is often used for non-essential data (such as sessions) and without configuration doesn&amp;#39;t guarantee the same level of persistence as Mongo (should the server need to be restarted/crash).&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://github.com/rschmukler/agenda&quot;&gt;agenda&lt;/a&gt; decides to focus on persistence without requiring special configuration of Redis (thereby degrading the performance of the Redis server on non-critical data, such as sessions).&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&quot;closing-thoughts&quot;&gt;Closing thoughts&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&quot;https://github.com/rschmukler/agenda&quot;&gt;agenda&lt;/a&gt; focuses on setting up and managing regular running tasks such as session purging, email sending, data processing and so on. There are a few alternatives out there:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/learnboost/kue&quot;&gt;kue&lt;/a&gt; is a priority job queue backed by redis originally written by &lt;a href=&quot;https://github.com/visionmedia&quot;&gt;TJ Holowaychuk&lt;/a&gt; and is currently maintained by &lt;a href=&quot;https://github.com/behrad&quot;&gt;Behrad&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/mattpat/node-schedule&quot;&gt;node-schedule&lt;/a&gt; is a single process, cron-like and not-cron-like job scheduler by &lt;a href=&quot;https://github.com/mattpat&quot;&gt;Matt Patenaude&lt;/a&gt;. It doesn&amp;#39;t have any external dependencies.&lt;/li&gt;
+&lt;/ul&gt;
+</content>
+		</entry>
+	
     
     
     
@@ -533,45 +588,6 @@ app.listen(8080);
 &lt;li&gt;Read &lt;a href=&quot;http://docs.strongloop.com/display/DOC/LoopBack&quot;&gt;LoopBack documentation&lt;/a&gt;.&lt;/li&gt;
 &lt;li&gt;Need performance monitoring, profiling and cluster capabilites for your Node apps? Check out &lt;a href=&quot;http://strongloop.com/node-js-performance/strongops/&quot;&gt;StrongOps&lt;/a&gt;.&lt;/li&gt;
 &lt;/ul&gt;
-</content>
-		</entry>
-	
-    
-    
-    
-		<entry>
-			<title>angular-injector</title>
-			<link href="http://npmawesome.com/posts/2014-04-28-angular-injector"/>
-			<updated>2014-04-28T16:24:35.000Z</updated>
-			<id>http://npmawesome.com/posts/2014-04-28-angular-injector</id>
-			<content type="html">&lt;p&gt;&lt;img class=&quot;hide-on-mobile&quot; src=&quot;http://npmawesome.com/images/posts/../authors/alexgorbatchev.jpg&quot; style=&quot;float: right; margin-left: 1em; width: 100px&quot;/&gt;
-&lt;a href=&quot;https://github.com/alexgorbatchev/angular-injector&quot;&gt;angular-injector&lt;/a&gt; module by &lt;a href=&quot;https://github.com/alexgorbatchev&quot;&gt;Alex Gorbatchev&lt;/a&gt; (me) is meant to address minification problem with &lt;a href=&quot;https://www.angularjs.org/&quot;&gt;angular.js&lt;/a&gt; dependency injection that &lt;a href=&quot;https://www.npmjs.org/package/ngmin&quot;&gt;ngmin&lt;/a&gt; does not - work with any dependency injection syntax.&lt;/p&gt;
-&lt;div class=&quot;read-more&quot;&gt;&lt;/div&gt;
-
-&lt;pre&gt;&lt;code&gt;npm install angular-injector
-&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&quot;features&quot;&gt;Features&lt;/h2&gt;
-&lt;p&gt;&lt;a href=&quot;https://github.com/alexgorbatchev/angular-injector&quot;&gt;angular-injector&lt;/a&gt; works exactly the same way as &lt;a href=&quot;https://www.npmjs.org/package/ngmin&quot;&gt;ngmin&lt;/a&gt; meaning that it modifies the source during build time. Unlike &lt;a href=&quot;https://www.npmjs.org/package/ngmin&quot;&gt;ngmin&lt;/a&gt; however, it&amp;#39;s less dependent on the syntax. In fact, any function wrapped in a &lt;code&gt;ng(func)&lt;/code&gt; call will be escaped with &lt;code&gt;[&amp;#39;dep1&amp;#39;, &amp;#39;dep2&amp;#39;, func]&lt;/code&gt; injector style.&lt;/p&gt;
-&lt;h2 id=&quot;usage&quot;&gt;Usage&lt;/h2&gt;
-&lt;p&gt;Write your angular functions like so:&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;someModule.factory(&amp;#39;greeter&amp;#39;, ng(function($window) {
-  // ...
-}));
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Then run them through angular-injector and it will become:&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;someModule.factory(&amp;#39;greeter&amp;#39;, [&amp;#39;$window&amp;#39;, function($window) {
-  // ...
-}]);
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;You don&amp;#39;t need to declare ng function anywhere and it could be customized to anything. If you wanted to get fancy, use something like &lt;code&gt;ƒ&lt;/code&gt; or &lt;code&gt;∑&lt;/code&gt; to never have any naming conflicts. Or even an emoji if you feeling wild.&lt;/p&gt;
-&lt;p&gt;This syntax works particularly well in CoffeeScript and is literally 2-3 extra characters:&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;someModule.factory &amp;#39;greeter&amp;#39;, ng ($window) -&amp;gt;
-  # ...
-&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&quot;build-plugins&quot;&gt;Build Plugins&lt;/h2&gt;
-&lt;p&gt;Of course, I wouldn&amp;#39;t just write this module without supporting &lt;a href=&quot;http://gulpjs.com/&quot;&gt;gulp.js&lt;/a&gt; and &lt;a href=&quot;http://gruntjs.com/&quot;&gt;grunt.js&lt;/a&gt;.&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://github.com/alexgorbatchev/gulp-angular-injector&quot;&gt;gulp-angular-injector&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://github.com/alexgorbatchev/grunt-angular-injector&quot;&gt;grunt-angular-injector&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&quot;closing-thoughts&quot;&gt;Closing thoughts&lt;/h2&gt;
-&lt;p&gt;The biggest downside of this method is basically remembering to add the &lt;code&gt;ng()&lt;/code&gt; wrapper. I found that after about half a day that becomes a habit and not an issue. Check out the plugins and let me know what you think!&lt;/p&gt;
 </content>
 		</entry>
 	
