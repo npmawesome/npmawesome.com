@@ -22,6 +22,8 @@ As you web application grows, there comes a time when you will want to have sche
 
 This is where <%- @npm() %> by <%- @author() %> comes in. <%- @npm() %>, to plainly put it, is a light-weight job scheduling library for Node.js. Lets give it a go!
 
+<%- @readMore() %>
+
     npm install agenda
 
 ## Features
