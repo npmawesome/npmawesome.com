@@ -1,0 +1,50 @@
+---
+date: 2014-05-06T09:51:37-0700
+title: Links for May 6, 2014
+layout: post-links
+tags: javascript, links
+description: Nerd links for the day, videos, GitHub projects, talks, articles and other stuff.
+---
+<img src="<%- @image '/html5.png' %>" style="float: right; width: 150px;"/>
+
+## Articles & Slides
+
+* [Video - Build a Killer Node.js Client for Your REST+JSON API](https://www.youtube.com/watch?v=1FVAS7MdPXo)
+* [Podcast - JSJ Protractor with Julie Ralph](http://javascriptjabber.com/106-jsj-protractor-with-julie-ralph/)
+* [Atom](https://atom.io/) editor goes fully [open source](https://github.com/blog/1831-atom-free-and-open-source-for-everyone)
+* [DIY AngularJS SEO with PhantomJS (the easy way!)](http://lawsonry.com/2014/05/diy-angularjs-seo-with-phantomjs-the-easy-way/)
+
+  > I have to be honest: I’m only writing this tutorial because I could not find a decent tutorial on setting up an environment for AngularJS SEO awesomeness. It couldn’t be that hard, right?
+
+<%- @readMore() %>
+
+* [Make A Barbarian's Sword](http://www.instructables.com/id/Make-A-Barbarians-Sword/?ALLSTEPS)
+
+  > <img src="http://cdn.instructables.com/F39/E9XD/HUQAT77M/F39E9XDHUQAT77M.LARGE.jpg" style=“width: 300px”/>
+
+* [Practical Workflows for ES6 Modules, Fluent 2014](https://www.youtube.com/watch?v=0VUjM-jJf2U)
+
+  > ![](https://i1.ytimg.com/vi/0VUjM-jJf2U/maxresdefault.jpg)
+
+## Github
+
+* [angular-classy](http://davej.github.io/angular-classy/) is a module for cleaner class-based controllers for AngularJS.
+* [gulp-concat-sourcemap](https://github.com/cwmacdon/gulp-concat-sourcemap) is a gulp.js plugin that concatenate files and generate a source map file.
+* [express4-bootstrap-starter](https://github.com/aredo/express4-bootstrap-starter) is a simple demo app in Node.js using ExpressJS 4, Mongoose, Passport.js and Jade.
+
+## Apps
+
+* [Cakebrew](http://www.cakebrew.com/) - the Mac app for Homebrew.
+* [JSON generator](http://www.json-generator.com/) is a pretty slick online tool to generate JSON data fixtures.
+
+## Twitter
+
+<blockquote class="twitter-tweet" data-partner="tweetdeck"><p>Node.js 0.11.13 with <a href="https://twitter.com/search?q=%23ES6&amp;src=hash">#ES6</a> WeakMap, WeakSet, Promise &amp; Object.observe is out! Soon to be in Node 0.12. <a href="http://t.co/Y9RxK4wOnK">http://t.co/Y9RxK4wOnK</a></p>&mdash; Michał Gołębiowski (@m_gol) <a href="https://twitter.com/m_gol/statuses/462294019830456320">May 2, 2014</a></blockquote>
+
+<blockquote class="twitter-tweet" data-partner="tweetdeck"><p>I love Angularjs so much...</p>&mdash; Cindy Juarez (@sceendy) <a href="https://twitter.com/sceendy/statuses/462281885289172992">May 2, 2014</a></blockquote>
+
+<blockquote class="twitter-tweet" data-partner="tweetdeck"><p>Every time I run an npm install :) <a href="https://twitter.com/npmjs">@npmjs</a>. (gif version: <a href="http://t.co/skRgXkyIzQ">http://t.co/skRgXkyIzQ</a>) <a href="http://t.co/59M56CGJdC">pic.twitter.com/59M56CGJdC</a></p>&mdash; Jon Q (@itsJonQ) <a href="https://twitter.com/itsJonQ/statuses/462280358516756480">May 2, 2014</a></blockquote>
+
+## Misc
+
+<iframe width="560" height="315" src="//www.youtube.com/embed/AYGSpOfIr9Y?rel=0" frameborder="0" allowfullscreen></iframe>
