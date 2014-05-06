@@ -5,7 +5,7 @@
 	<link href="http://npmawesome.com/atom.xml" rel="self" />
 	<link href="http://npmawesome.com" />
 	<id>http://npmawesome.com</id>
-	<updated>2014-05-06T16:39:26.027Z</updated>
+	<updated>2014-05-06T16:44:37.876Z</updated>
 	<author>
 		<name>Alex Gorbatchev</name>
 	</author>
@@ -18,9 +18,9 @@
     
 		<entry>
 			<title>agenda</title>
-			<link href="http://npmawesome.com/posts/2014-05-05-agenda"/>
-			<updated>2014-05-01T18:30:00.000Z</updated>
-			<id>http://npmawesome.com/posts/2014-05-05-agenda</id>
+			<link href="http://npmawesome.com/posts/2014-05-06-agenda"/>
+			<updated>2014-05-06T18:30:00.000Z</updated>
+			<id>http://npmawesome.com/posts/2014-05-06-agenda</id>
 			<content type="html">&lt;p&gt;&lt;img class=&quot;hide-on-mobile&quot; src=&quot;https://avatars2.githubusercontent.com/u/651740?s=400&quot; style=&quot;float: right; margin-left: 1em; width: 100px&quot;/&gt;
 As you web application grows, there comes a time when you will want to have scheduled jobs. The easiest thing is of course go the &lt;a href=&quot;http://en.wikipedia.org/wiki/Cron&quot;&gt;cron&lt;/a&gt; route. However, maintaining and updating it isn&amp;#39;t so easy, especially if you have more than one server to deal with and you still maybe too young for enterprise level job scheduler. What&amp;#39;s left? Maybe just do some &lt;code&gt;setTimeout&lt;/code&gt; calls in process... That doesn&amp;#39;t sound very exciting nor very manageable.&lt;/p&gt;
 &lt;p&gt;This is where &lt;a href=&quot;https://github.com/rschmukler/agenda&quot;&gt;agenda&lt;/a&gt; by &lt;a href=&quot;https://github.com/rschmukler&quot;&gt;Ryan Schmukler&lt;/a&gt; comes in. &lt;a href=&quot;https://github.com/rschmukler/agenda&quot;&gt;agenda&lt;/a&gt;, to plainly put it, is a light-weight job scheduling library for Node.js. Lets give it a go!&lt;/p&gt;

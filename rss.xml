@@ -15,12 +15,12 @@
     <atom:link href="http://feeds.feedburner.com/npmawesome" rel="self" type="application/rss+xml"/>
     <link>http://npmawesome.com</link>
     <description>Daily dose of awesome NPM modules for Node.js, old and new!</description>
-    <lastBuildDate>Tue, 06 May 2014 16:39:26 GMT</lastBuildDate>
+    <lastBuildDate>Tue, 06 May 2014 16:44:37 GMT</lastBuildDate>
     <language>en</language>
     <sy:updatePeriod>daily</sy:updatePeriod>
     <sy:updateFrequency>2</sy:updateFrequency>
     <generator>awesomeness</generator>
-    <pubDate>Tue, 06 May 2014 16:39:26 GMT</pubDate>
+    <pubDate>Tue, 06 May 2014 16:44:37 GMT</pubDate>
 
     
     
@@ -30,10 +30,10 @@
       
       <item>
         <title><![CDATA[agenda]]></title>
-        <link><![CDATA[http://npmawesome.com/posts/2014-05-05-agenda]]></link>
+        <link><![CDATA[http://npmawesome.com/posts/2014-05-06-agenda]]></link>
         <dc:creator><![CDATA[Alex Gorbatchev]]></dc:creator>
-        <guid isPermaLink="true"><![CDATA[http://npmawesome.com/posts/2014-05-05-agenda]]></guid>
-        <pubDate><![CDATA[Thu, 01 May 2014 18:30:00 GMT]]></pubDate>
+        <guid isPermaLink="true"><![CDATA[http://npmawesome.com/posts/2014-05-06-agenda]]></guid>
+        <pubDate><![CDATA[Tue, 06 May 2014 18:30:00 GMT]]></pubDate>
         <description><![CDATA[<p><img class="hide-on-mobile" src="https://avatars2.githubusercontent.com/u/651740?s=400" style="float: right; margin-left: 1em; width: 100px"/>
 As you web application grows, there comes a time when you will want to have scheduled jobs. The easiest thing is of course go the <a href="http://en.wikipedia.org/wiki/Cron">cron</a> route. However, maintaining and updating it isn&#39;t so easy, especially if you have more than one server to deal with and you still maybe too young for enterprise level job scheduler. What&#39;s left? Maybe just do some <code>setTimeout</code> calls in process... That doesn&#39;t sound very exciting nor very manageable.</p>
 <p>This is where <a href="https://github.com/rschmukler/agenda">agenda</a> by <a href="https://github.com/rschmukler">Ryan Schmukler</a> comes in. <a href="https://github.com/rschmukler/agenda">agenda</a>, to plainly put it, is a light-weight job scheduling library for Node.js. Lets give it a go!</p>
