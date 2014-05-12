@@ -95,3 +95,5 @@ Checkout out [functional example on runnable](http://runnable.com/U1aiDzGWpo8vHV
 <%- @npm() %> is a very simple token counter which has vocabulary of about 2.5k english words. It doesn't always produce reliable results, but it gets you a step forward if you need to do sentiment analysis without bringing in the heavy weight APIs or expensive commercial libraries.
 
 I can totally imagine processing customer inquiries coming in via email, twitter and other channels with <%- @npm() %>. Higher priority could be assigned to inquires with lower, more negative scores.
+
+If you want to play around with example, [clone the repo](https://github.com/npmawesome/example-sentiment).
