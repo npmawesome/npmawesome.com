@@ -60,7 +60,7 @@ Here's a simple example analysing bunch of latest [DHH tweets](https://www.twitt
     request('https://www.twitter.com/dhh', function(err, response) {
       var $ = cheerio.load(response.body);
 
-      $('.tweet-text').toArray().forEach(function(item) {
+      $('.ProfileTweet-text').toArray().forEach(function(item) {
         var text = $(item).text();
         var results = sentiment(text);
         console.log(sentimentToSmiley(results), '-', text.replace(/\n/g, ' '));
