@@ -51,7 +51,7 @@ module.exports = function (BasePlugin) {
             }
 
             steps.push(function clean (callback) {
-                docpad.log('info', 'Cleaning cloned example directory "' + wdir + '"...');
+                docpad.log('info', 'Cleaning directory with cloned examples "' + wdir + '"...');
                 rimraf(wdir, callback);
             });
 

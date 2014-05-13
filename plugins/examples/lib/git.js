@@ -17,7 +17,7 @@ var fs = require('fs');
 var exec = require('child_process').exec;
 
 /**
- * Clones a given repositories.
+ * Clones a given repository.
  *
  * Note that the repo object should come straight
  * from the GitHub API
