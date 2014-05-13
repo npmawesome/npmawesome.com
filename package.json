@@ -23,7 +23,8 @@
     "uglify-js": "~2.4.6",
     "shelljs": "~0.2.6",
     "docpad-plugin-moment": "~2.0.2",
-    "marked": "~0.3.2"
+    "marked": "~0.3.2",
+    "rimraf": "^2.2.8"
   },
   "main": "node_modules/docpad/bin/docpad-server",
   "scripts": {

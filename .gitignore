@@ -3,3 +3,4 @@ log
 pids
 node_modules
 .grunt
+.examples
