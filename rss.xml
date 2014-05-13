@@ -15,12 +15,12 @@
     <atom:link href="http://feeds.feedburner.com/npmawesome" rel="self" type="application/rss+xml"/>
     <link>http://npmawesome.com</link>
     <description>Daily dose of awesome NPM modules for Node.js, old and new!</description>
-    <lastBuildDate>Tue, 13 May 2014 01:08:40 GMT</lastBuildDate>
+    <lastBuildDate>Tue, 13 May 2014 07:17:36 GMT</lastBuildDate>
     <language>en</language>
     <sy:updatePeriod>daily</sy:updatePeriod>
     <sy:updateFrequency>2</sy:updateFrequency>
     <generator>awesomeness</generator>
-    <pubDate>Tue, 13 May 2014 01:08:40 GMT</pubDate>
+    <pubDate>Tue, 13 May 2014 07:17:36 GMT</pubDate>
 
     
     
@@ -246,7 +246,8 @@ distance.get(options, onDistance (err, result) {
 <pre><code>var distance = require(&#39;google-distance&#39;);
 
 distance.apiKey = &#39;YOUR_API_KEY&#39;;
-</code></pre>]]></description>
+</code></pre><p>You can find the usage examples in an own <a href="https://github.com/npmawesome/example-google-distance">repository</a>. Play with it and let me know what you think :)</p>
+]]></description>
       </item>
     
       

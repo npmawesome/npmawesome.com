@@ -5,7 +5,7 @@
 	<link href="http://npmawesome.com/atom.xml" rel="self" />
 	<link href="http://npmawesome.com" />
 	<id>http://npmawesome.com</id>
-	<updated>2014-05-13T01:08:40.612Z</updated>
+	<updated>2014-05-13T07:17:36.819Z</updated>
 	<author>
 		<name>Alex Gorbatchev</name>
 	</author>
@@ -231,7 +231,8 @@ distance.get(options, onDistance (err, result) {
 &lt;pre&gt;&lt;code&gt;var distance = require(&amp;#39;google-distance&amp;#39;);
 
 distance.apiKey = &amp;#39;YOUR_API_KEY&amp;#39;;
-&lt;/code&gt;&lt;/pre&gt;</content>
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;You can find the usage examples in an own &lt;a href=&quot;https://github.com/npmawesome/example-google-distance&quot;&gt;repository&lt;/a&gt;. Play with it and let me know what you think :)&lt;/p&gt;
+</content>
 		</entry>
 	
     
