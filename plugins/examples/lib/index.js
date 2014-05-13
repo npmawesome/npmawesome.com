@@ -65,7 +65,7 @@ module.exports = function (BasePlugin) {
 
                     repos.forEach(function (repo) {
                         steps.push(function clone (callback) {
-                            docpad.log('info', 'Cloning from "' + repo.clone_url + '" ...');
+                            docpad.log('info', 'Cloning "' + repo.clone_url + '" ...');
 
                             git.clone(repo, wdir, callback);
                         });
