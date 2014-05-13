@@ -27,7 +27,7 @@ var exec = require('child_process').exec;
  * @param  {Function} callback error-first style.
  *
  */
-exports.clone = function cloneAll (repo, wdir, callback) {
+exports.clone = function clone (repo, wdir, callback) {
     function clone () {
         exec('git clone ' + repo.clone_url, {
             cwd: wdir
