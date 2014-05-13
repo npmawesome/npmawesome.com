@@ -15,15 +15,48 @@
     <atom:link href="http://feeds.feedburner.com/npmawesome" rel="self" type="application/rss+xml"/>
     <link>http://npmawesome.com</link>
     <description>Daily dose of awesome NPM modules for Node.js, old and new!</description>
-    <lastBuildDate>Tue, 13 May 2014 07:17:36 GMT</lastBuildDate>
+    <lastBuildDate>Tue, 13 May 2014 16:39:12 GMT</lastBuildDate>
     <language>en</language>
     <sy:updatePeriod>daily</sy:updatePeriod>
     <sy:updateFrequency>2</sy:updateFrequency>
     <generator>awesomeness</generator>
-    <pubDate>Tue, 13 May 2014 07:17:36 GMT</pubDate>
+    <pubDate>Tue, 13 May 2014 16:39:12 GMT</pubDate>
 
     
     
+    
+      
+      
+      
+      <item>
+        <title><![CDATA[Links for May 13, 2014]]></title>
+        <link><![CDATA[http://npmawesome.com/posts/2014-05-13-links]]></link>
+        <dc:creator><![CDATA[Alex Gorbatchev]]></dc:creator>
+        <guid isPermaLink="true"><![CDATA[http://npmawesome.com/posts/2014-05-13-links]]></guid>
+        <pubDate><![CDATA[Tue, 13 May 2014 16:38:07 GMT]]></pubDate>
+        <description><![CDATA[<p><img src="http://npmawesome.com/images/posts/html5.png" style="float: right; width: 150px;"/></p>
+<h2 id="articles-slides">Articles &amp; Slides</h2>
+<ul>
+<li><a href="http://spencerfry.com/the-domain-market-is-a-mess">The Domain Market is a Mess</a></li>
+<li><a href="http://blog.docker.io/2014/05/docker-0-11-release-candidate-for-1-0/">Docker 0.11 is the Release Candidate for 1.0</a></li>
+<li><a href="http://www.roussos.cc/2014/05/08/free-your-android/">Free Your Android</a></li>
+<li><a href="https://hacks.mozilla.org/2014/05/how-fast-is-pdf-js/">How fast is PDF.js?</a></li>
+<li><a href="http://howtonode.org/generators-vs-fibers">Generators vs Fibers</a></li>
+<li><a href="http://www.ustream.tv/channel/iss-hdev-payload">Live feed from ISS</a></li>
+</ul>
+<div class="read-more"></div>
+
+<h2 id="github">Github</h2>
+<ul>
+<li><a href="http://getuikit.com/">UIKit</a> is a lightweight and modular front-end framework for developing fast and powerful web interfaces.</li>
+</ul>
+<h2 id="apps">Apps</h2>
+<ul>
+<li><a href="http://www.paintcodeapp.com/">PaintCode 2</a></li>
+</ul>
+<h2 id="twitter">Twitter</h2>
+<blockquote class="twitter-tweet" data-partner="tweetdeck"><p>Introducing Synth - A new <a href="https://twitter.com/nodejs">@NodeJS</a> web framework designed just for <a href="https://twitter.com/angularjs">@AngularJS</a>&#10;<a href="http://t.co/7yLOHUittG">http://t.co/7yLOHUittG</a> &#10;via <a href="https://twitter.com/JonathanAbrams">@JonathanAbrams</a> <a href="https://twitter.com/YouTube">@YouTube</a></p>&mdash; PatrickJS (@gdi2290) <a href="https://twitter.com/gdi2290/statuses/464266195739234304">May 8, 2014</a></blockquote>]]></description>
+      </item>
     
       
       
@@ -246,8 +279,7 @@ distance.get(options, onDistance (err, result) {
 <pre><code>var distance = require(&#39;google-distance&#39;);
 
 distance.apiKey = &#39;YOUR_API_KEY&#39;;
-</code></pre><p>You can find the usage examples in an own <a href="https://github.com/npmawesome/example-google-distance">repository</a>. Play with it and let me know what you think :)</p>
-]]></description>
+</code></pre>]]></description>
       </item>
     
       
@@ -305,86 +337,6 @@ distance.apiKey = &#39;YOUR_API_KEY&#39;;
 </ul>
 <h2 id="twitter">Twitter</h2>
 <blockquote class="twitter-tweet" data-partner="tweetdeck"><p>Breathalyzers for cars? Breathalyzers for Twitter! I’d probably buy one, just to be 100% safe.</p>&mdash; Axel Rauschmayer (@rauschma) <a href="https://twitter.com/rauschma/statuses/459111786382639104">April 23, 2014</a></blockquote>]]></description>
-      </item>
-    
-      
-      
-      
-      <item>
-        <title><![CDATA[sentiment]]></title>
-        <link><![CDATA[http://npmawesome.com/posts/2014-04-30-sentiment]]></link>
-        <dc:creator><![CDATA[Alex Gorbatchev]]></dc:creator>
-        <guid isPermaLink="true"><![CDATA[http://npmawesome.com/posts/2014-04-30-sentiment]]></guid>
-        <pubDate><![CDATA[Wed, 30 Apr 2014 16:24:35 GMT]]></pubDate>
-        <description><![CDATA[<p>Sentiment analysis is one of those things you don&#39;t get to do very often, as cool as it sounds. It&#39;s one of those things I always wanted to do but haven&#39;t had a reason to yet. The field of natural language is as deep and complex as you want it to be. <a href="http://nlp.stanford.edu/sentiment/">Stanford Sentiment Analysis</a> is a pretty massive project and nets pretty decent results.</p>
-<p><img class="hide-on-mobile" src="https://avatars1.githubusercontent.com/u/747641?s=400" style="float: right; margin-left: 1em; width: 100px"/>
-<a href="https://github.com/thisandagain/sentiment">sentiment</a> module by <a href="https://github.com/thisandagain">Andrew Sliwinski</a> takes a very simple approach to the problem of just counting token words and their preassigned weight. For the most part you can expect pretty average results and it gets completely lost with expressions like &quot;I don&#39;t know half of you half as well as I should like, and I like less than half of you half as well as you deserve&quot; (frankly I don&#39;t understand what it says either). But the cool thing is - it actually works and you don&#39;t need a giant database. <a href="https://github.com/thisandagain/sentiment">sentiment</a> can get you started down the path until you feel the need for something more involved.</p>
-<div class="read-more"></div>
-
-<pre><code>npm install sentiment
-</code></pre><h2 id="features">Features</h2>
-<p><a href="https://github.com/thisandagain/sentiment">sentiment</a> uses the <a href="http://www2.imm.dtu.dk/pubdb/views/publication_details.php?id=6010">AFINN-111</a> wordlist to perform sentiment analysis on arbitrary blocks of input text and provides serveral things:</p>
-<ul>
-<li>Performance</li>
-<li>The ability to append and overwrite word / value pairs from the AFINN wordlist</li>
-<li>A build process that makes updating sentiment to future versions of the AFINN word list trivial</li>
-</ul>
-<h2 id="usage">Usage</h2>
-<p>Here&#39;s a simple example analysing bunch of latest <a href="https://www.twitter.com/dhh">DHH tweets</a>.</p>
-<pre><code>var
-  request = require(&#39;request&#39;),
-  cheerio = require(&#39;cheerio&#39;),
-  sentiment = require(&#39;sentiment&#39;)
-  ;
-
-function sentimentToSmiley(sentiment) {
-  var score = sentiment.score;
-
-  if(score === 0) { return &#39;:-|&#39; }
-  if(score &lt; 0) {
-    if(score &gt; -2) { return &#39;:-(&#39; }
-    return &#39;:`(&#39;
-  }
-
-  if(score &lt; 2) { return &#39;:-)&#39; }
-  return &#39;:-D&#39;
-}
-
-request(&#39;https://www.twitter.com/dhh&#39;, function(err, response) {
-  var $ = cheerio.load(response.body);
-
-  $(&#39;.ProfileTweet-text&#39;).toArray().forEach(function(item) {
-    var text = $(item).text();
-    var results = sentiment(text);
-    console.log(sentimentToSmiley(results), &#39;-&#39;, text.replace(/\n/g, &#39; &#39;));
-  });
-});
-</code></pre><p>Checkout out <a href="http://runnable.com/U3FuXTY9W-JoY5vl">functional example on runnable</a>. Running this will produce result similiar to:</p>
-<pre><code>:-| - @mrbigdreamerYWF We tried to get NBC but they wouldn&#39;t cover it :)
-:-| - @AmianExclusive I think the C7R is the most expensive customer GTE car you can buy. And still not a proven thing.
-:-| - @AmianExclusive Corvette factory team will be at Le Mans but not Viper :(. Apparently they didn&#39;t sell enough cars to afford it.
-:-| - Goooood morning #RailsConf! My talk is at 9:15am central. It will be streamed live on justin.tv/confreaks, if you&#39;re not in Chicago.
-:-| - @ashesfall Hot diggity.
-:-) - (Yes, internet is fast elsewhere too, but most services of note have their app servers in the US, so that&#39;s the ping that counts).
-:-| - @arunagw Just about everything on the internet of note, which happens to have app servers in the US :D
-:-| - For those who can&#39;t attend RailsConf, we&#39;ll be livestreaming the keynotes here: justin.tv/confreaks Schedule here: railsconf.com/schedule
-:-D - It gets me every time I&#39;m back in the US - even if just out for a few weeks: 20ms pings is internet happiness. So fast.
-:-| - @turbineseaplane Nope. May depend on hand size? Could see it be harder to hold with small hands.
-:-| - @mhauer I find that the hybrid model is actually the most common in anything but the newest or smallest companies. Very workable.
-:-( - @N8Gard @railsconf They&#39;re going to record it, I think. So no worries.
-:-( - @dennismajor1 @thereaIbanksy I&#39;d prefer to look at it the other way: drop the religious nonsense and enjoy a party without sin!
-:-| - @turbineseaplane It is sometimes a little awkward but the sacrifice is worth it.
-:-| - @andrestuul Right on the last one, not on the first two. Connecting has never been easier. 10 yrs ago I was working from Denmark.
-:-| - @davegreiner @dhh we had thousands of accounts on Cork’d when it was still on a Mac mini in my friend’s rack (Rails 1.x)
-:`( - @GregMolnar Horrible contortions to the false idol of testing. More on this in my keynote at RailsConf tomorrow.
-:-D - @dhh Sounds familiar. CM was hosted on a cheap box with all our client&#39;s sites. Went dedicated when it started slowing them down 1 yr later.
-:`( - @thomasfuchs @letsfreckle Fuck yeah! But you did have to forgo such necessities as a big fancy office on day 1!
-:-) - @homakov @davidpetschull I was in Denmark while I built Basecamp. But yes timezone and language can be barriers.
-</code></pre><h2 id="closing-thoughts">Closing thoughts</h2>
-<p><a href="https://github.com/thisandagain/sentiment">sentiment</a> is a very simple token counter which has vocabulary of about 2.5k english words. It doesn&#39;t always produce reliable results, but it gets you a step forward if you need to do sentiment analysis without bringing in the heavy weight APIs or expensive commercial libraries.</p>
-<p>I can totally imagine processing customer inquiries coming in via email, twitter and other channels with <a href="https://github.com/thisandagain/sentiment">sentiment</a>. Higher priority could be assigned to inquires with lower, more negative scores.</p>
-<p>If you want to play around with example, <a href="https://github.com/npmawesome/example-sentiment">clone the repo</a>.</p>
-]]></description>
       </item>
     
   </channel>
