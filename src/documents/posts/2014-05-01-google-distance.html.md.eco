@@ -134,3 +134,5 @@ Follow these [steps](https://developers.google.com/maps/documentation/distancema
     var distance = require('google-distance');
 
     distance.apiKey = 'YOUR_API_KEY';
+
+You can find the usage examples in an own [repository](https://github.com/npmawesome/example-google-distance). Play with it and let me know what you think :)
