@@ -31,9 +31,9 @@ exports.clone = function cloneAll (repo, wdir, callback) {
     function clone () {
         exec('git clone ' + repo.clone_url, {
             cwd: wdir
-        }, function onEnd (err, stdout, stderr) {
+        }, function onEnd (err) {
             if (err) {
-                return callback(new Error('Cloning ' + url + ' failed!'));
+                return callback(new Error('Cloning ' + repo.clone_url + ' failed!'));
             }
 
             return callback();
