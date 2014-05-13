@@ -5,7 +5,7 @@
 	<link href="http://npmawesome.com/atom.xml" rel="self" />
 	<link href="http://npmawesome.com" />
 	<id>http://npmawesome.com</id>
-	<updated>2014-05-06T17:03:04.382Z</updated>
+	<updated>2014-05-13T01:08:40.612Z</updated>
 	<author>
 		<name>Alex Gorbatchev</name>
 	</author>
@@ -335,13 +335,13 @@ function sentimentToSmiley(sentiment) {
 request(&amp;#39;https://www.twitter.com/dhh&amp;#39;, function(err, response) {
   var $ = cheerio.load(response.body);
 
-  $(&amp;#39;.tweet-text&amp;#39;).toArray().forEach(function(item) {
+  $(&amp;#39;.ProfileTweet-text&amp;#39;).toArray().forEach(function(item) {
     var text = $(item).text();
     var results = sentiment(text);
     console.log(sentimentToSmiley(results), &amp;#39;-&amp;#39;, text.replace(/\n/g, &amp;#39; &amp;#39;));
   });
 });
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Checkout out &lt;a href=&quot;http://runnable.com/U1aiDzGWpo8vHVFK/sentiment-analysis-with-node-js-for-nodejitsu-and-npmawesome&quot;&gt;functional example on runnable&lt;/a&gt;. Running this will produce result similiar to:&lt;/p&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Checkout out &lt;a href=&quot;http://runnable.com/U3FuXTY9W-JoY5vl&quot;&gt;functional example on runnable&lt;/a&gt;. Running this will produce result similiar to:&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;:-| - @mrbigdreamerYWF We tried to get NBC but they wouldn&amp;#39;t cover it :)
 :-| - @AmianExclusive I think the C7R is the most expensive customer GTE car you can buy. And still not a proven thing.
 :-| - @AmianExclusive Corvette factory team will be at Le Mans but not Viper :(. Apparently they didn&amp;#39;t sell enough cars to afford it.
@@ -365,6 +365,7 @@ request(&amp;#39;https://www.twitter.com/dhh&amp;#39;, function(err, response) {
 &lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&quot;closing-thoughts&quot;&gt;Closing thoughts&lt;/h2&gt;
 &lt;p&gt;&lt;a href=&quot;https://github.com/thisandagain/sentiment&quot;&gt;sentiment&lt;/a&gt; is a very simple token counter which has vocabulary of about 2.5k english words. It doesn&amp;#39;t always produce reliable results, but it gets you a step forward if you need to do sentiment analysis without bringing in the heavy weight APIs or expensive commercial libraries.&lt;/p&gt;
 &lt;p&gt;I can totally imagine processing customer inquiries coming in via email, twitter and other channels with &lt;a href=&quot;https://github.com/thisandagain/sentiment&quot;&gt;sentiment&lt;/a&gt;. Higher priority could be assigned to inquires with lower, more negative scores.&lt;/p&gt;
+&lt;p&gt;If you want to play around with example, &lt;a href=&quot;https://github.com/npmawesome/example-sentiment&quot;&gt;clone the repo&lt;/a&gt;.&lt;/p&gt;
 </content>
 		</entry>
 	
