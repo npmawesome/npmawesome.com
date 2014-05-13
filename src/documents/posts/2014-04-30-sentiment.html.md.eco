@@ -67,7 +67,7 @@ Here's a simple example analysing bunch of latest [DHH tweets](https://www.twitt
       });
     });
 
-Checkout out [functional example on runnable](http://runnable.com/U1aiDzGWpo8vHVFK/sentiment-analysis-with-node-js-for-nodejitsu-and-npmawesome). Running this will produce result similiar to:
+Checkout out [functional example on runnable](http://runnable.com/U3FuXTY9W-JoY5vl). Running this will produce result similiar to:
 
     :-| - @mrbigdreamerYWF We tried to get NBC but they wouldn't cover it :)
     :-| - @AmianExclusive I think the C7R is the most expensive customer GTE car you can buy. And still not a proven thing.
