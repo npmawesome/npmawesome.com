@@ -5,7 +5,7 @@ layout: post-links
 tags: javascript, links
 description: Nerd links for the day, videos, GitHub projects, talks, articles and other stuff.
 ---
-<img src="<%- @image '/html5.png' %>" style="float: right; width: 150px;"/>
+<img src="<%- @image '/html5.png' %>" class="hide-on-mobile" style="float: right; width: 150px;"/>
 
 ## Articles & Slides
 

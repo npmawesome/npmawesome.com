@@ -9,7 +9,7 @@ description: Comparing Express, Restify, hapi and LoopBack for building RESTful 
 ---
 If you are writing a Node.js application, chances are you going to have some kind of API end points to be consumed by your frond end or expose data for others to take in. This is where [RESTful APIs](http://en.wikipedia.org/wiki/Representational_state_transfer) come in. And now you have a dilemma - what tools to use and what approach to take? So many choices...
 
-<img src="<%- @image '/compare-express-restify-hapi-loopback/confused.gif' %>"/>
+<img src="<%- @image '/compare-express-restify-hapi-loopback/confused.gif' %>" class="hide-on-mobile"/>
 
 Thanks to the incredibly active Node.js community, the amount of results for a ["rest" search on NPM](https://www.npmjs.org/search?q=rest) is pretty overwhelming. Everyone has their own implementation and approach, but few seem to agree on a common way to go about implementing RESTful APIs in Node.js.
 

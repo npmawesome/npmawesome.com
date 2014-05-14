@@ -16,7 +16,7 @@ slug: *name
 title: *name
 description: Find distance data between two locations in an easy way.
 ---
-<img src="<%- @image '/google-distance.png' %>" style="width: 100%" />
+<img src="<%- @image '/google-distance.png' %>" class="hide-on-mobile" style="width: 100%" />
 
 Everybody appreciates the distance information between two locations in web mapping services like [Google Maps](http://maps.google.com), right? Do you have a similar use case within your application but want to avoid the implementation overhead of abstracting from an external API? <%- @npm() %> by <%- @author() %> helps you to do just that.
 
