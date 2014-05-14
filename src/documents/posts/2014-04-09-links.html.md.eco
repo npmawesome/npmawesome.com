@@ -19,6 +19,8 @@ description: Nerd links for the day, videos, GitHub projects, talks, articles an
 * [node-fluent-ffmpeg](https://github.com/schaermu/node-fluent-ffmpeg) abstracts the complex command-line usage of ffmpeg into a fluent, easy to use Node.js module.
 * [Jasper](http://jasperproject.github.io/) is an open source platform for developing always-on, voice-controlled applications.
 
+<%- @readMore() %>
+
 ## Startups
 
 * [Slack](https://slack.com/) brings all your communication together in one place. It’s real-time messaging, archiving and search for modern teams.

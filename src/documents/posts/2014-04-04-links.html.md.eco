@@ -14,6 +14,8 @@ description: Nerd links for the day, videos, GitHub projects, talks, articles an
 * [Practical Examples of the New Node.js Streams API](http://strongloop.com/strongblog/practical-examples-of-the-new-node-js-streams-api/)
 * [How-to Compose Node.js Promises with Q](http://strongloop.com/strongblog/how-to-compose-node-js-promises-with-q/)
 
+<%- @readMore() %>
+
 ## GitHub
 
 * [JavaScript OCR demo](http://kdzwinel.github.io/JS-OCR-demo/)
@@ -27,8 +29,6 @@ description: Nerd links for the day, videos, GitHub projects, talks, articles an
 
 * [Code School Courses](https://www.codeschool.com/courses#all)
 * [MetaWear: Production Ready Wearables in 30 Minutes or Less!](https://www.kickstarter.com/projects/guardyen/metawear-production-ready-wearables-in-30-minutes)
-
-<%- @readMore() %>
 
 ## Twitter
 

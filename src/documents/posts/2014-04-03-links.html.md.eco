@@ -15,6 +15,8 @@ description: Nerd links for the day, videos, GitHub projects, talks, articles an
 * [Koala](http://koala-app.com/) is a GUI application for Less, Sass, Compass and CoffeeScript compilation, to help web developers to use them more efficiently. Koala can run in windows, linux and mac.
 * [Zed](http://zedapp.org/) is a fully offline-capable, open source, keyboard-focused, Chrome-based text and code editor you can use to edit local files as well as remote files on any server.
 
+<%- @readMore() %>
+
 ## Articles & Slides
 
 * [Top Overlooked Security Threats to Node.js Web Applications](https://speakerdeck.com/ckarande/top-overlooked-security-threats-to-node-dot-js-web-applications)
