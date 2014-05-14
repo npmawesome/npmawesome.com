@@ -77,6 +77,8 @@ docpadConfig =
       # Prepare
       {rootPath, outPath} = @docpad.getConfig()
 
+      @docpad.log 'info', 'Browserifying client side files'
+
       # Bundle the scripts the editor uses together
       command = """
         cd #{rootPath} &&

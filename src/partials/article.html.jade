@@ -1,0 +1,20 @@
+article
+  header
+    h2(class=document.npm && 'npm' || 'article')
+      a(href="#{document.url}")= preparedTitle(document)
+
+    .meta
+      span posted by !{by(document)} on #{moment(document.date).format("MMMM Do YYYY")}
+      a.comments(href="#{fullUrl(document)}#disqus_thread")
+
+      - if(document.npm)
+        .github-stars(data-github-repo=document.npm.repo)
+
+    .social-box
+      .social(data-url=fullUrl(document))
+
+  .content
+    if document.partner
+      != partial(document.partner)
+
+    != isPreview && getPreview(document) || document.contentRenderedWithoutLayouts

@@ -8,7 +8,7 @@ pageSize: 20
 
 each page in getCollection('pagedPosts').toJSON().slice(document.page.startIdx, document.page.endIdx)
   if !page.ignored
-    != partial('post', {post: page, isPreview: true})
+    != partial('article', {document: page, isPreview: true})
 
 if document.page.count > 1
   footer.pagination
