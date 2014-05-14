@@ -5,7 +5,7 @@
 	<link href="http://npmawesome.com/atom.xml" rel="self" />
 	<link href="http://npmawesome.com" />
 	<id>http://npmawesome.com</id>
-	<updated>2014-05-13T16:39:12.145Z</updated>
+	<updated>2014-05-14T16:31:30.322Z</updated>
 	<author>
 		<name>Alex Gorbatchev</name>
 	</author>
@@ -21,7 +21,7 @@
 			<link href="http://npmawesome.com/posts/2014-05-13-links"/>
 			<updated>2014-05-13T16:38:07.000Z</updated>
 			<id>http://npmawesome.com/posts/2014-05-13-links</id>
-			<content type="html">&lt;p&gt;&lt;img src=&quot;http://npmawesome.com/images/posts/html5.png&quot; style=&quot;float: right; width: 150px;&quot;/&gt;&lt;/p&gt;
+			<content type="html">&lt;p&gt;&lt;img src=&quot;http://npmawesome.com/images/posts/html5.png&quot; class=&quot;hide-on-mobile&quot; style=&quot;float: right; width: 150px;&quot;/&gt;&lt;/p&gt;
 &lt;h2 id=&quot;articles-slides&quot;&gt;Articles &amp;amp; Slides&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&quot;http://spencerfry.com/the-domain-market-is-a-mess&quot;&gt;The Domain Market is a Mess&lt;/a&gt;&lt;/li&gt;
@@ -110,7 +110,7 @@ console.log(&amp;#39;Wait 10 seconds...&amp;#39;);
 			<link href="http://npmawesome.com/posts/2014-05-06-links"/>
 			<updated>2014-05-06T16:51:37.000Z</updated>
 			<id>http://npmawesome.com/posts/2014-05-06-links</id>
-			<content type="html">&lt;p&gt;&lt;img src=&quot;http://npmawesome.com/images/posts/html5.png&quot; style=&quot;float: right; width: 150px;&quot;/&gt;&lt;/p&gt;
+			<content type="html">&lt;p&gt;&lt;img src=&quot;http://npmawesome.com/images/posts/html5.png&quot; class=&quot;hide-on-mobile&quot; style=&quot;float: right; width: 150px;&quot;/&gt;&lt;/p&gt;
 &lt;h2 id=&quot;articles-slides&quot;&gt;Articles &amp;amp; Slides&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&quot;https://www.youtube.com/watch?v=1FVAS7MdPXo&quot;&gt;Video - Build a Killer Node.js Client for Your REST+JSON API&lt;/a&gt;&lt;/li&gt;
@@ -166,7 +166,7 @@ console.log(&amp;#39;Wait 10 seconds...&amp;#39;);
 			<link href="http://npmawesome.com/posts/2014-05-01-google-distance"/>
 			<updated>2014-05-01T18:30:00.000Z</updated>
 			<id>http://npmawesome.com/posts/2014-05-01-google-distance</id>
-			<content type="html">&lt;p&gt;&lt;img src=&quot;http://npmawesome.com/images/posts/google-distance.png&quot; style=&quot;width: 100%&quot; /&gt;&lt;/p&gt;
+			<content type="html">&lt;p&gt;&lt;img src=&quot;http://npmawesome.com/images/posts/google-distance.png&quot; class=&quot;hide-on-mobile&quot; style=&quot;width: 100%&quot; /&gt;&lt;/p&gt;
 &lt;p&gt;Everybody appreciates the distance information between two locations in web mapping services like &lt;a href=&quot;http://maps.google.com&quot;&gt;Google Maps&lt;/a&gt;, right? Do you have a similar use case within your application but want to avoid the implementation overhead of abstracting from an external API? &lt;a href=&quot;https://github.com/edwlook/node-google-distance&quot;&gt;google-distance&lt;/a&gt; by &lt;a href=&quot;https://github.com/edwlook&quot;&gt;Edward Look&lt;/a&gt; helps you to do just that.&lt;/p&gt;
 &lt;div class=&quot;read-more&quot;&gt;&lt;/div&gt;
 
@@ -263,7 +263,8 @@ distance.get(options, onDistance (err, result) {
 &lt;pre&gt;&lt;code&gt;var distance = require(&amp;#39;google-distance&amp;#39;);
 
 distance.apiKey = &amp;#39;YOUR_API_KEY&amp;#39;;
-&lt;/code&gt;&lt;/pre&gt;</content>
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;You can find the usage examples in an own &lt;a href=&quot;https://github.com/npmawesome/example-google-distance&quot;&gt;repository&lt;/a&gt;. Play with it and let me know what you think :)&lt;/p&gt;
+</content>
 		</entry>
 	
     
@@ -274,7 +275,7 @@ distance.apiKey = &amp;#39;YOUR_API_KEY&amp;#39;;
 			<link href="http://npmawesome.com/posts/2014-04-30-links"/>
 			<updated>2014-04-30T17:00:00.000Z</updated>
 			<id>http://npmawesome.com/posts/2014-04-30-links</id>
-			<content type="html">&lt;p&gt;&lt;img src=&quot;http://npmawesome.com/images/posts/html5.png&quot; style=&quot;float: right; width: 150px;&quot;/&gt;&lt;/p&gt;
+			<content type="html">&lt;p&gt;&lt;img src=&quot;http://npmawesome.com/images/posts/html5.png&quot; class=&quot;hide-on-mobile&quot; style=&quot;float: right; width: 150px;&quot;/&gt;&lt;/p&gt;
 &lt;h2 id=&quot;articles-slides&quot;&gt;Articles &amp;amp; Slides&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&quot;http://www.2ality.com/2014/04/required-parameters-es6.html&quot;&gt;Handling required parameters in ECMAScript 6&lt;/a&gt;&lt;/li&gt;

@@ -15,12 +15,12 @@
     <atom:link href="http://feeds.feedburner.com/npmawesome" rel="self" type="application/rss+xml"/>
     <link>http://npmawesome.com</link>
     <description>Daily dose of awesome NPM modules for Node.js, old and new!</description>
-    <lastBuildDate>Tue, 13 May 2014 16:39:12 GMT</lastBuildDate>
+    <lastBuildDate>Wed, 14 May 2014 16:31:30 GMT</lastBuildDate>
     <language>en</language>
     <sy:updatePeriod>daily</sy:updatePeriod>
     <sy:updateFrequency>2</sy:updateFrequency>
     <generator>awesomeness</generator>
-    <pubDate>Tue, 13 May 2014 16:39:12 GMT</pubDate>
+    <pubDate>Wed, 14 May 2014 16:31:30 GMT</pubDate>
 
     
     
@@ -34,7 +34,7 @@
         <dc:creator><![CDATA[Alex Gorbatchev]]></dc:creator>
         <guid isPermaLink="true"><![CDATA[http://npmawesome.com/posts/2014-05-13-links]]></guid>
         <pubDate><![CDATA[Tue, 13 May 2014 16:38:07 GMT]]></pubDate>
-        <description><![CDATA[<p><img src="http://npmawesome.com/images/posts/html5.png" style="float: right; width: 150px;"/></p>
+        <description><![CDATA[<p><img src="http://npmawesome.com/images/posts/html5.png" class="hide-on-mobile" style="float: right; width: 150px;"/></p>
 <h2 id="articles-slides">Articles &amp; Slides</h2>
 <ul>
 <li><a href="http://spencerfry.com/the-domain-market-is-a-mess">The Domain Market is a Mess</a></li>
@@ -125,7 +125,7 @@ console.log(&#39;Wait 10 seconds...&#39;);
         <dc:creator><![CDATA[Alex Gorbatchev]]></dc:creator>
         <guid isPermaLink="true"><![CDATA[http://npmawesome.com/posts/2014-05-06-links]]></guid>
         <pubDate><![CDATA[Tue, 06 May 2014 16:51:37 GMT]]></pubDate>
-        <description><![CDATA[<p><img src="http://npmawesome.com/images/posts/html5.png" style="float: right; width: 150px;"/></p>
+        <description><![CDATA[<p><img src="http://npmawesome.com/images/posts/html5.png" class="hide-on-mobile" style="float: right; width: 150px;"/></p>
 <h2 id="articles-slides">Articles &amp; Slides</h2>
 <ul>
 <li><a href="https://www.youtube.com/watch?v=1FVAS7MdPXo">Video - Build a Killer Node.js Client for Your REST+JSON API</a></li>
@@ -182,7 +182,7 @@ console.log(&#39;Wait 10 seconds...&#39;);
         <dc:creator><![CDATA[Alex Gorbatchev]]></dc:creator>
         <guid isPermaLink="true"><![CDATA[http://npmawesome.com/posts/2014-05-01-google-distance]]></guid>
         <pubDate><![CDATA[Thu, 01 May 2014 18:30:00 GMT]]></pubDate>
-        <description><![CDATA[<p><img src="http://npmawesome.com/images/posts/google-distance.png" style="width: 100%" /></p>
+        <description><![CDATA[<p><img src="http://npmawesome.com/images/posts/google-distance.png" class="hide-on-mobile" style="width: 100%" /></p>
 <p>Everybody appreciates the distance information between two locations in web mapping services like <a href="http://maps.google.com">Google Maps</a>, right? Do you have a similar use case within your application but want to avoid the implementation overhead of abstracting from an external API? <a href="https://github.com/edwlook/node-google-distance">google-distance</a> by <a href="https://github.com/edwlook">Edward Look</a> helps you to do just that.</p>
 <div class="read-more"></div>
 
@@ -279,7 +279,8 @@ distance.get(options, onDistance (err, result) {
 <pre><code>var distance = require(&#39;google-distance&#39;);
 
 distance.apiKey = &#39;YOUR_API_KEY&#39;;
-</code></pre>]]></description>
+</code></pre><p>You can find the usage examples in an own <a href="https://github.com/npmawesome/example-google-distance">repository</a>. Play with it and let me know what you think :)</p>
+]]></description>
       </item>
     
       
@@ -291,7 +292,7 @@ distance.apiKey = &#39;YOUR_API_KEY&#39;;
         <dc:creator><![CDATA[Alex Gorbatchev]]></dc:creator>
         <guid isPermaLink="true"><![CDATA[http://npmawesome.com/posts/2014-04-30-links]]></guid>
         <pubDate><![CDATA[Wed, 30 Apr 2014 17:00:00 GMT]]></pubDate>
-        <description><![CDATA[<p><img src="http://npmawesome.com/images/posts/html5.png" style="float: right; width: 150px;"/></p>
+        <description><![CDATA[<p><img src="http://npmawesome.com/images/posts/html5.png" class="hide-on-mobile" style="float: right; width: 150px;"/></p>
 <h2 id="articles-slides">Articles &amp; Slides</h2>
 <ul>
 <li><a href="http://www.2ality.com/2014/04/required-parameters-es6.html">Handling required parameters in ECMAScript 6</a></li>
