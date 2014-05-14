@@ -15,67 +15,47 @@
 
 var path = require('path');
 var rimraf = require('rimraf');
+var fs = require('fs');
+var async = require('async');
 
 var api = require('./api');
 var git = require('./git');
 
-module.exports = function (BasePlugin) {
+var EXAMPLES_DIR = path.join(process.cwd(), '.examples');
 
+module.exports = function (BasePlugin) {
     return BasePlugin.extend({
         name: 'examples',
 
         generateBefore : function generateBefore (opts, done) {
             var docpad = this.docpad;
-            var wdir = path.join(process.cwd(), '.examples');
-            var steps = [];
 
+            function cloneOrPull (repo) {
+                return function (done) {
+                    var repoDir = path.join(EXAMPLES_DIR, repo.name);
 
-            function next (err, data) {
-                var fn;
-
-                if (err) {
-                    // TODO: How to handle the error within the plugin.
-                    // done();
-                    return;
-                }
-
-                fn = steps.shift();
-
-                if (!fn) {
-                    return done();
-                }
-
-                (data)?
-                    fn(data, next):
-                    fn(next);
+                    fs.exists(repoDir, function repoExists (exists) {
+                        if (exists) {
+                            docpad.log('info', 'Pulling "' + repoDir + '"...');
+                            git.pull(repoDir, done);
+                        }
+                        else {
+                            docpad.log('info', 'Cloning "' + repo.clone_url + '"...');
+                            git.clone(repo, EXAMPLES_DIR, done);
+                        }
+                    });
+                };
             }
 
-            steps.push(function clean (callback) {
-                docpad.log('info', 'Cleaning directory with cloned examples "' + wdir + '"...');
-                rimraf(wdir, callback);
+            docpad.log('info', 'Fetching repository list from the GitHub API...');
+
+            api.listRepositories('example-', function listRepositories(err, repos) {
+                if (err) {
+                    return done(err);
+                }
+
+                async.parallel(repos.map(cloneOrPull), done);
             });
-
-            steps.push(function fetch (callback) {
-                docpad.log('info', 'Fetching repository list from the GitHub API ...');
-
-                api.listRepositories('example-', function (err, repos) {
-                    if (err) {
-                        return callback(err);
-                    }
-
-                    repos.forEach(function (repo) {
-                        steps.push(function clone (callback) {
-                            docpad.log('info', 'Cloning "' + repo.clone_url + '" ...');
-
-                            git.clone(repo, wdir, callback);
-                        });
-                    });
-
-                    callback();
-                });
-            });
-
-            next();
         }
     });
 };
