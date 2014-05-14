@@ -5,7 +5,7 @@
 	<link href="http://npmawesome.com/atom.xml" rel="self" />
 	<link href="http://npmawesome.com" />
 	<id>http://npmawesome.com</id>
-	<updated>2014-05-14T16:31:30.322Z</updated>
+	<updated>2014-05-14T16:55:13.777Z</updated>
 	<author>
 		<name>Alex Gorbatchev</name>
 	</author>
@@ -13,6 +13,32 @@
   
   
   
+    
+    
+    
+		<entry>
+			<title>Links for May 14, 2014</title>
+			<link href="http://npmawesome.com/posts/2014-05-14-links"/>
+			<updated>2014-05-14T16:45:09.000Z</updated>
+			<id>http://npmawesome.com/posts/2014-05-14-links</id>
+			<content type="html">&lt;h2 id=&quot;articles&quot;&gt;Articles&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://medium.com/p/a2010c13d3d5&quot;&gt;Getting gulpy&lt;/a&gt; - advanced tips for using gulp.js&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://jlongster.com/Removing-User-Interface-Complexity,-or-Why-React-is-Awesome&quot;&gt;Removing user interface complexity, or why React is awesome&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://gizmodo.com/someone-finally-designed-a-better-disposable-coffee-cup-1575905762&quot;&gt;Someone Finally Designed a Better Disposable Coffee Cup Lid&lt;/a&gt; &lt;img src=&quot;http://i.kinja-img.com/gawker-media/image/upload/s--E78R8Pma--/gksygb1vboboawlubax0.jpg&quot; alt=&quot;&quot;&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://www.theverge.com/google/2014/5/14/5714602/photos-inside-googles-self-driving-cars&quot;&gt;Behind the wheel: a look inside Google&amp;#39;s self-driving cars&lt;/a&gt; &lt;img src=&quot;http://cdn2.vox-cdn.com/uploads/chorus_image/image/33019187/google-car-theverge-1_1020.0_standard_2040.0.jpg&quot; alt=&quot;&quot;&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&quot;read-more&quot;&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;github&quot;&gt;Github&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://gist.github.com/sindresorhus/7996717&quot;&gt;git hook to run a command after &lt;code&gt;git pull&lt;/code&gt; if a specified file was changed&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://ricostacruz.com/nprogress/&quot;&gt;NProgress.js&lt;/a&gt; is a nanoscopic progress bar. Featuring realistic trickle animations to convince your users that something is happening!&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;twitter&quot;&gt;Twitter&lt;/h2&gt;
+&lt;blockquote class=&quot;twitter-tweet&quot; data-partner=&quot;tweetdeck&quot;&gt;&lt;p&gt;Our 10 year anniversary is coming up! To help us celebrate, &lt;a href=&quot;https://twitter.com/simpleshow&quot;&gt;@simpleshow&lt;/a&gt; made this incredible video for us - &lt;a href=&quot;http://t.co/KFHz5RvQpx&quot;&gt;http://t.co/KFHz5RvQpx&lt;/a&gt;&lt;/p&gt;&amp;mdash; Moz (@Moz) &lt;a href=&quot;https://twitter.com/Moz/statuses/466618559914065921&quot;&gt;May 14, 2014&lt;/a&gt;&lt;/blockquote&gt;</content>
+		</entry>
+	
     
     
     
@@ -265,62 +291,6 @@ distance.get(options, onDistance (err, result) {
 distance.apiKey = &amp;#39;YOUR_API_KEY&amp;#39;;
 &lt;/code&gt;&lt;/pre&gt;&lt;p&gt;You can find the usage examples in an own &lt;a href=&quot;https://github.com/npmawesome/example-google-distance&quot;&gt;repository&lt;/a&gt;. Play with it and let me know what you think :)&lt;/p&gt;
 </content>
-		</entry>
-	
-    
-    
-    
-		<entry>
-			<title>Links for Apr 30, 2014</title>
-			<link href="http://npmawesome.com/posts/2014-04-30-links"/>
-			<updated>2014-04-30T17:00:00.000Z</updated>
-			<id>http://npmawesome.com/posts/2014-04-30-links</id>
-			<content type="html">&lt;p&gt;&lt;img src=&quot;http://npmawesome.com/images/posts/html5.png&quot; class=&quot;hide-on-mobile&quot; style=&quot;float: right; width: 150px;&quot;/&gt;&lt;/p&gt;
-&lt;h2 id=&quot;articles-slides&quot;&gt;Articles &amp;amp; Slides&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;http://www.2ality.com/2014/04/required-parameters-es6.html&quot;&gt;Handling required parameters in ECMAScript 6&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://goodui.org/&quot;&gt;A Good User Interface&lt;/a&gt; has high conversion rates and is easy to use. In other words, it&amp;#39;s nice to both the business side as well as the people using it.&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://tjanczuk.github.io/edge/&quot;&gt;Edge.js&lt;/a&gt; - run Node.js and .NET code in-process.&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;&lt;a href=&quot;http://blog.codinghorror.com/how-good-an-estimator-are-you-part-ii/&quot;&gt;How Good an Estimator Are You? Part II&lt;/a&gt;&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;The specific goal of the exercise was to estimate at the 90 percent confidence level. There are 10 questions in the quiz, so if you were truly estimating at a 90 percent confidence level, you would have gotten about 9 answers correct.&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;&lt;a href=&quot;https://speakerdeck.com/jessicaspacekat/an-introduction-to-designing-css-transitions-using-angularjs&quot;&gt;An introduction to designing CSS transitions using AngularJS&lt;/a&gt;&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;…examples of how a UI designer without much JS or AngularJS experience can use some of the features built in to AngularJS (with angular-animate) to help them design interactive components and add CSS transitions.&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;div class=&quot;read-more&quot;&gt;&lt;/div&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;&lt;a href=&quot;http://blog.codeship.io/2014/04/29/continuous-deployment-heroku-bitbucket-nodejs.html&quot;&gt;Continuous Deployment for node.js apps from Bitbucket to Heroku&lt;/a&gt;&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;How to set up Continuous Integration and Continuous Deployment for a Node.js Application from Bitbucket to Heroku&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;&lt;a href=&quot;http://makezine.com/2014/02/19/designing-a-vinyl-toy-with-joe-ledbetter/&quot;&gt;Designing a Vinyl Toy with Joe Ledbetter&lt;/a&gt;&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;It all starts with an initial idea or concept for a toy. In this case I wanted to base this project on my popular character called Mr. Bunny. Mr. Bunny has been depicted in my paintings since I first began showing in galleries over 10 years ago.&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;&lt;a href=&quot;http://makezine.com/2014/04/22/paper-thin-arduino-enables-diy-dirigible/&quot;&gt;Printoo&lt;/a&gt; is a platform of paper-thin circuit boards and modules. It gives makers an open-source, lightweight, flexible, and modular Arduino-compatible platform to create just about anything you want! What makes Printoo amazingly unique is that it comes with a range of printed electronics modules previously unavailable to the public. These are electronics building &amp;quot;blocks&amp;quot; of the future, only not so rigid.&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&quot;github&quot;&gt;Github&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;&lt;a href=&quot;http://depthy.stamina.pl/&quot;&gt;Depthy&lt;/a&gt; extracts depth map and original from photos made with Google Camera&amp;#39;s Lens Blur. I think this is the future of product photography (until there’s proper 3D).&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;&lt;a href=&quot;https://www.npmjs.org/package/flowdock-stream&quot;&gt;flowdock-stream&lt;/a&gt; is a node module for streaming &lt;a href=&quot;https://www.flowdock.com/&quot;&gt;flowdock&lt;/a&gt; flows.&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&quot;chrome&quot;&gt;Chrome&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;http://projectnaptha.com/&quot;&gt;Project Naptha&lt;/a&gt; automatically applies state-of-the-art computer vision algorithms on every image you see while browsing the web. The result is a seamless and intuitive experience, where you can highlight as well as copy and paste and even edit and translate the text formerly trapped within an image.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&quot;twitter&quot;&gt;Twitter&lt;/h2&gt;
-&lt;blockquote class=&quot;twitter-tweet&quot; data-partner=&quot;tweetdeck&quot;&gt;&lt;p&gt;Breathalyzers for cars? Breathalyzers for Twitter! I’d probably buy one, just to be 100% safe.&lt;/p&gt;&amp;mdash; Axel Rauschmayer (@rauschma) &lt;a href=&quot;https://twitter.com/rauschma/statuses/459111786382639104&quot;&gt;April 23, 2014&lt;/a&gt;&lt;/blockquote&gt;</content>
 		</entry>
 	
 </feed>

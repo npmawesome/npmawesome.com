@@ -15,15 +15,42 @@
     <atom:link href="http://feeds.feedburner.com/npmawesome" rel="self" type="application/rss+xml"/>
     <link>http://npmawesome.com</link>
     <description>Daily dose of awesome NPM modules for Node.js, old and new!</description>
-    <lastBuildDate>Wed, 14 May 2014 16:31:30 GMT</lastBuildDate>
+    <lastBuildDate>Wed, 14 May 2014 16:55:13 GMT</lastBuildDate>
     <language>en</language>
     <sy:updatePeriod>daily</sy:updatePeriod>
     <sy:updateFrequency>2</sy:updateFrequency>
     <generator>awesomeness</generator>
-    <pubDate>Wed, 14 May 2014 16:31:30 GMT</pubDate>
+    <pubDate>Wed, 14 May 2014 16:55:13 GMT</pubDate>
 
     
     
+    
+      
+      
+      
+      <item>
+        <title><![CDATA[Links for May 14, 2014]]></title>
+        <link><![CDATA[http://npmawesome.com/posts/2014-05-14-links]]></link>
+        <dc:creator><![CDATA[Alex Gorbatchev]]></dc:creator>
+        <guid isPermaLink="true"><![CDATA[http://npmawesome.com/posts/2014-05-14-links]]></guid>
+        <pubDate><![CDATA[Wed, 14 May 2014 16:45:09 GMT]]></pubDate>
+        <description><![CDATA[<h2 id="articles">Articles</h2>
+<ul>
+<li><a href="https://medium.com/p/a2010c13d3d5">Getting gulpy</a> - advanced tips for using gulp.js</li>
+<li><a href="http://jlongster.com/Removing-User-Interface-Complexity,-or-Why-React-is-Awesome">Removing user interface complexity, or why React is awesome</a></li>
+<li><a href="http://gizmodo.com/someone-finally-designed-a-better-disposable-coffee-cup-1575905762">Someone Finally Designed a Better Disposable Coffee Cup Lid</a> <img src="http://i.kinja-img.com/gawker-media/image/upload/s--E78R8Pma--/gksygb1vboboawlubax0.jpg" alt=""></li>
+<li><a href="http://www.theverge.com/google/2014/5/14/5714602/photos-inside-googles-self-driving-cars">Behind the wheel: a look inside Google&#39;s self-driving cars</a> <img src="http://cdn2.vox-cdn.com/uploads/chorus_image/image/33019187/google-car-theverge-1_1020.0_standard_2040.0.jpg" alt=""></li>
+</ul>
+<div class="read-more"></div>
+
+<h2 id="github">Github</h2>
+<ul>
+<li><a href="https://gist.github.com/sindresorhus/7996717">git hook to run a command after <code>git pull</code> if a specified file was changed</a></li>
+<li><a href="http://ricostacruz.com/nprogress/">NProgress.js</a> is a nanoscopic progress bar. Featuring realistic trickle animations to convince your users that something is happening!</li>
+</ul>
+<h2 id="twitter">Twitter</h2>
+<blockquote class="twitter-tweet" data-partner="tweetdeck"><p>Our 10 year anniversary is coming up! To help us celebrate, <a href="https://twitter.com/simpleshow">@simpleshow</a> made this incredible video for us - <a href="http://t.co/KFHz5RvQpx">http://t.co/KFHz5RvQpx</a></p>&mdash; Moz (@Moz) <a href="https://twitter.com/Moz/statuses/466618559914065921">May 14, 2014</a></blockquote>]]></description>
+      </item>
     
       
       
@@ -281,63 +308,6 @@ distance.get(options, onDistance (err, result) {
 distance.apiKey = &#39;YOUR_API_KEY&#39;;
 </code></pre><p>You can find the usage examples in an own <a href="https://github.com/npmawesome/example-google-distance">repository</a>. Play with it and let me know what you think :)</p>
 ]]></description>
-      </item>
-    
-      
-      
-      
-      <item>
-        <title><![CDATA[Links for Apr 30, 2014]]></title>
-        <link><![CDATA[http://npmawesome.com/posts/2014-04-30-links]]></link>
-        <dc:creator><![CDATA[Alex Gorbatchev]]></dc:creator>
-        <guid isPermaLink="true"><![CDATA[http://npmawesome.com/posts/2014-04-30-links]]></guid>
-        <pubDate><![CDATA[Wed, 30 Apr 2014 17:00:00 GMT]]></pubDate>
-        <description><![CDATA[<p><img src="http://npmawesome.com/images/posts/html5.png" class="hide-on-mobile" style="float: right; width: 150px;"/></p>
-<h2 id="articles-slides">Articles &amp; Slides</h2>
-<ul>
-<li><a href="http://www.2ality.com/2014/04/required-parameters-es6.html">Handling required parameters in ECMAScript 6</a></li>
-<li><a href="http://goodui.org/">A Good User Interface</a> has high conversion rates and is easy to use. In other words, it&#39;s nice to both the business side as well as the people using it.</li>
-<li><a href="http://tjanczuk.github.io/edge/">Edge.js</a> - run Node.js and .NET code in-process.</li>
-<li><p><a href="http://blog.codinghorror.com/how-good-an-estimator-are-you-part-ii/">How Good an Estimator Are You? Part II</a></p>
-<blockquote>
-<p>The specific goal of the exercise was to estimate at the 90 percent confidence level. There are 10 questions in the quiz, so if you were truly estimating at a 90 percent confidence level, you would have gotten about 9 answers correct.</p>
-</blockquote>
-</li>
-<li><p><a href="https://speakerdeck.com/jessicaspacekat/an-introduction-to-designing-css-transitions-using-angularjs">An introduction to designing CSS transitions using AngularJS</a></p>
-<blockquote>
-<p>…examples of how a UI designer without much JS or AngularJS experience can use some of the features built in to AngularJS (with angular-animate) to help them design interactive components and add CSS transitions.</p>
-</blockquote>
-</li>
-</ul>
-<div class="read-more"></div>
-
-<ul>
-<li><p><a href="http://blog.codeship.io/2014/04/29/continuous-deployment-heroku-bitbucket-nodejs.html">Continuous Deployment for node.js apps from Bitbucket to Heroku</a></p>
-<blockquote>
-<p>How to set up Continuous Integration and Continuous Deployment for a Node.js Application from Bitbucket to Heroku</p>
-</blockquote>
-</li>
-<li><p><a href="http://makezine.com/2014/02/19/designing-a-vinyl-toy-with-joe-ledbetter/">Designing a Vinyl Toy with Joe Ledbetter</a></p>
-<blockquote>
-<p>It all starts with an initial idea or concept for a toy. In this case I wanted to base this project on my popular character called Mr. Bunny. Mr. Bunny has been depicted in my paintings since I first began showing in galleries over 10 years ago.</p>
-</blockquote>
-</li>
-<li><p><a href="http://makezine.com/2014/04/22/paper-thin-arduino-enables-diy-dirigible/">Printoo</a> is a platform of paper-thin circuit boards and modules. It gives makers an open-source, lightweight, flexible, and modular Arduino-compatible platform to create just about anything you want! What makes Printoo amazingly unique is that it comes with a range of printed electronics modules previously unavailable to the public. These are electronics building &quot;blocks&quot; of the future, only not so rigid.</p>
-</li>
-</ul>
-<h2 id="github">Github</h2>
-<ul>
-<li><p><a href="http://depthy.stamina.pl/">Depthy</a> extracts depth map and original from photos made with Google Camera&#39;s Lens Blur. I think this is the future of product photography (until there’s proper 3D).</p>
-</li>
-<li><p><a href="https://www.npmjs.org/package/flowdock-stream">flowdock-stream</a> is a node module for streaming <a href="https://www.flowdock.com/">flowdock</a> flows.</p>
-</li>
-</ul>
-<h2 id="chrome">Chrome</h2>
-<ul>
-<li><a href="http://projectnaptha.com/">Project Naptha</a> automatically applies state-of-the-art computer vision algorithms on every image you see while browsing the web. The result is a seamless and intuitive experience, where you can highlight as well as copy and paste and even edit and translate the text formerly trapped within an image.</li>
-</ul>
-<h2 id="twitter">Twitter</h2>
-<blockquote class="twitter-tweet" data-partner="tweetdeck"><p>Breathalyzers for cars? Breathalyzers for Twitter! I’d probably buy one, just to be 100% safe.</p>&mdash; Axel Rauschmayer (@rauschma) <a href="https://twitter.com/rauschma/statuses/459111786382639104">April 23, 2014</a></blockquote>]]></description>
       </item>
     
   </channel>
