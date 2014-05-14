@@ -62,16 +62,6 @@ body
     ga('create', 'UA-46164085-1', 'npmawesome.com');
     ga('send', 'pageview');
 
-  #fb-root
-  script.
-    (function(d, s, id) {
-      var js, fjs = d.getElementsByTagName(s)[0];
-      if (d.getElementById(id)) return;
-      js = d.createElement(s); js.id = id;
-      js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=1425631694354948";
-      fjs.parentNode.insertBefore(js, fjs);
-    }(document, 'script', 'facebook-jssdk'));
-
   script.
     /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
     var disqus_shortname = 'npmawesome'; // required: replace example with your forum shortname
@@ -87,7 +77,7 @@ body
   script(src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js")
   script(async src="/scripts/npmawesome.min.js")
   script(async src="//platform.twitter.com/widgets.js")
-  //- script(async src="https://apis.google.com/js/platform.js")
-  script(async src="https://apis.google.com/js/plusone.js" parsetags="explicit")
+  script(async src="//yandex.st/share/share.js")
+
 
 

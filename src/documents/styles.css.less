@@ -77,6 +77,11 @@ article {
   border-bottom: 1px solid silver;
   overflow-x: hidden;
 
+  .social-box {
+    margin-top: 20px;
+    height: 26px;
+  }
+
   > header {
     margin: 3em 0 1em 0;
 
@@ -126,30 +131,6 @@ article {
         &:before {
           content: '★';
           margin: 0 .2em 0;
-        }
-      }
-    }
-
-    .social-box {
-      margin-top: 20px;
-      height: 20px;
-      position: relative;
-
-      .social {
-        position: absolute;
-
-        > *, .fb_iframe_widget > span {
-          vertical-align: top !important;
-        }
-
-        > .fb-like {
-          width: auto !important;
-        }
-
-        > * {
-          height: 20px !important;
-          display: inline-block !important;
-          margin-right: 10px;
         }
       }
     }

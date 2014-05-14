@@ -1,3 +1,8 @@
+mixin social
+  if !isPreview
+    .social-box
+      .yashare-auto-init(data-yashareLink=fullUrl(document) data-yashareL10n="en" data-yashareQuickServices="facebook,twitter,gplus" data-yashareTheme="counter" data-yasharetype-off="small")
+
 article
   header
     h2(class=document.npm && 'npm' || 'article')
@@ -10,11 +15,12 @@ article
       - if(document.npm)
         .github-stars(data-github-repo=document.npm.repo)
 
-    .social-box
-      .social(data-url=fullUrl(document))
+    +social()
 
   .content
     if document.partner
       != partial(document.partner)
 
     != isPreview && getPreview(document) || document.contentRenderedWithoutLayouts
+
+    +social()
