@@ -7,8 +7,8 @@
     "npm": "1.3"
   },
   "dependencies": {
-    "docpad": "~6.64.0",
-    "docpad-plugin-marked": "~2.2.0",
+    "docpad": "~6.64.3",
+    "docpad-plugin-marked": "~2.2.1",
     "docpad-plugin-cleanurls": "~2.7.0",
     "docpad-plugin-eco": "~2.0.3",
     "docpad-plugin-jade": "~2.6.2",
@@ -24,7 +24,8 @@
     "shelljs": "~0.2.6",
     "docpad-plugin-moment": "~2.0.2",
     "marked": "~0.3.2",
-    "rimraf": "^2.2.8"
+    "rimraf": "^2.2.8",
+    "async": "^0.8.0"
   },
   "main": "node_modules/docpad/bin/docpad-server",
   "scripts": {

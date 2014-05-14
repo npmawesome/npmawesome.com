@@ -22,7 +22,7 @@ var exec = require('child_process').exec;
  * Note that the repo object should come straight
  * from the GitHub API
  *
- * @param  {object} repo 
+ * @param  {object} repo
  * @param  {string} wdir The working directory in which the repos should be cloned.
  * @param  {Function} callback error-first style.
  *
@@ -31,12 +31,12 @@ exports.clone = function clone (repo, wdir, callback) {
     function clone () {
         exec('git clone ' + repo.clone_url, {
             cwd: wdir
-        }, function onEnd (err) {
+        }, function onEnd (err, stdout, stderr) {
             if (err) {
                 return callback(new Error('Cloning ' + repo.clone_url + ' failed!'));
             }
 
-            return callback();
+            callback();
         });
     }
 
@@ -49,4 +49,23 @@ exports.clone = function clone (repo, wdir, callback) {
     }
 
     fs.mkdir(wdir, onCreated);
+};
+
+/**
+ * Pulls a given repository.
+ *
+ * @param  {string} wdir The git repository derectory directory in which the repos should be cloned.
+ * @param  {Function} callback error-first style.
+ *
+ */
+exports.pull = function pull (wdir, callback) {
+    exec('git pull', {
+        cwd: wdir
+    }, function onEnd (err, stdout, stderr) {
+        if (err) {
+            return callback(new Error('Pulling ' + wdir + ' failed!'));
+        }
+
+        callback();
+    });
 };
