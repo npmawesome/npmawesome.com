@@ -1,0 +1,24 @@
+---
+date: 2014-05-14T09:45:09-0700
+title: Links for May 14, 2014
+layout: post-links
+tags: javascript, links
+description: Nerd links for the day, videos, GitHub projects, talks, articles and other stuff.
+---
+## Articles
+
+* [Getting gulpy](https://medium.com/p/a2010c13d3d5) - advanced tips for using gulp.js
+* [Removing user interface complexity, or why React is awesome](http://jlongster.com/Removing-User-Interface-Complexity,-or-Why-React-is-Awesome)
+* [Someone Finally Designed a Better Disposable Coffee Cup Lid](http://gizmodo.com/someone-finally-designed-a-better-disposable-coffee-cup-1575905762) ![](http://i.kinja-img.com/gawker-media/image/upload/s--E78R8Pma--/gksygb1vboboawlubax0.jpg)
+* [Behind the wheel: a look inside Google's self-driving cars](http://www.theverge.com/google/2014/5/14/5714602/photos-inside-googles-self-driving-cars) ![](http://cdn2.vox-cdn.com/uploads/chorus_image/image/33019187/google-car-theverge-1_1020.0_standard_2040.0.jpg)
+
+<%- @readMore() %>
+
+## Github
+
+* [git hook to run a command after `git pull` if a specified file was changed](https://gist.github.com/sindresorhus/7996717)
+* [NProgress.js](http://ricostacruz.com/nprogress/) is a nanoscopic progress bar. Featuring realistic trickle animations to convince your users that something is happening!
+
+## Twitter
+
+<blockquote class="twitter-tweet" data-partner="tweetdeck"><p>Our 10 year anniversary is coming up! To help us celebrate, <a href="https://twitter.com/simpleshow">@simpleshow</a> made this incredible video for us - <a href="http://t.co/KFHz5RvQpx">http://t.co/KFHz5RvQpx</a></p>&mdash; Moz (@Moz) <a href="https://twitter.com/Moz/statuses/466618559914065921">May 14, 2014</a></blockquote>
