@@ -16,6 +16,23 @@ docpadConfig =
       description: 'Daily dose of awesome NPM modules for Node.js, old and new!'
       url: 'http://npmawesome.com'
 
+    includeCodeExample: (filename, {npm, exampleName} = @document) ->
+      fs = require 'fs'
+      path = require 'path'
+
+      exampleDir = path.join process.cwd(), '.examples', 'example-' + (exampleName or npm?.name)
+      throw new "No example for #{doc.npm?.name}" unless fs.existsSync exampleDir
+
+      exampleFile = path.join exampleDir, filename
+      throw new "No file #{filename} found in #{doc.npm?.name} example." unless fs.existsSync exampleFile
+
+      fs
+        .readFileSync(exampleFile, 'utf-8')
+        .split(/\n/g)
+        # add four spaces infront of each line so that markdown creates code blocks
+        .map((line) -> "    #{line}")
+        .join('\n')
+
     fullUrl: (doc = @document) ->
       @site.url + doc.url
 
