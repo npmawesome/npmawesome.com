@@ -1,0 +1,31 @@
+---
+date: 2014-05-13T09:38:07-0700
+title: Links for May 13, 2014
+layout: post-links
+tags: javascript, links
+description: Nerd links for the day, videos, GitHub projects, talks, articles and other stuff.
+---
+<img src="<%- @image '/html5.png' %>" style="float: right; width: 150px;"/>
+
+## Articles & Slides
+
+* [The Domain Market is a Mess](http://spencerfry.com/the-domain-market-is-a-mess)
+* [Docker 0.11 is the Release Candidate for 1.0](http://blog.docker.io/2014/05/docker-0-11-release-candidate-for-1-0/)
+* [Free Your Android](http://www.roussos.cc/2014/05/08/free-your-android/)
+* [How fast is PDF.js?](https://hacks.mozilla.org/2014/05/how-fast-is-pdf-js/)
+* [Generators vs Fibers](http://howtonode.org/generators-vs-fibers)
+* [Live feed from ISS](http://www.ustream.tv/channel/iss-hdev-payload)
+
+<%- @readMore() %>
+
+## Github
+
+* [UIKit](http://getuikit.com/) is a lightweight and modular front-end framework for developing fast and powerful web interfaces.
+
+## Apps
+
+* [PaintCode 2](http://www.paintcodeapp.com/)
+
+## Twitter
+
+<blockquote class="twitter-tweet" data-partner="tweetdeck"><p>Introducing Synth - A new <a href="https://twitter.com/nodejs">@NodeJS</a> web framework designed just for <a href="https://twitter.com/angularjs">@AngularJS</a>&#10;<a href="http://t.co/7yLOHUittG">http://t.co/7yLOHUittG</a> &#10;via <a href="https://twitter.com/JonathanAbrams">@JonathanAbrams</a> <a href="https://twitter.com/YouTube">@YouTube</a></p>&mdash; PatrickJS (@gdi2290) <a href="https://twitter.com/gdi2290/statuses/464266195739234304">May 8, 2014</a></blockquote>
