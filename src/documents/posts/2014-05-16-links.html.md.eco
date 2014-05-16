@@ -1,0 +1,40 @@
+---
+date: 2014-05-16T09:56:57-0700
+title: Links for May 16, 2014
+layout: post-links
+tags: javascript, links
+description: Nerd links for the day, videos, GitHub projects, talks, articles and other stuff.
+---
+<img src="<%- @image '/html5.png' %>" class="hide-on-mobile" style="float: right; width: 150px;"/>
+
+## Articles
+
+* [Introducing Firebase Hosting](https://auth0.com/blog/2014/01/07/angularjs-authentication-with-cookies-vs-token/)
+  > Once upon a time, in the dark ages of the internet, apps dynamically generated HTML server-side every time a page was requested. This was slow, difficult to scale, and required users to connect to distant servers to get their content.
+* [Cookies vs Tokens. Getting auth right with Angular.JS](https://auth0.com/blog/2014/01/07/angularjs-authentication-with-cookies-vs-token/)
+  > What's JSON Web Token? JSON Web Token (JWT, pronounced jot) is a relatively new token format used in space-constrained environments such as HTTP Authorization headers.
+* [Auth with JSON Web Tokens](http://jpadilla.com/post/73791304724/auth-with-json-web-tokens)
+  > There’s a relatively new standard called JSON Web Token that happens to be backed by companies like Firebase, Google, Microsoft, and Zendesk. There are already many libraries to handle encoding and decoding of this tokens in the backend.
+* [100,000 e2e selenium tests? Sounds like a nightmare!](http://watirmelon.com/2014/05/14/100000-e2e-selenium-tests-sounds-like-a-nightmare)
+  > If I had to choose just one, I would definitely choose a comprehensive suite of automated unit tests over a comprehensive suite of end-to-end/system tests any day of the week.
+
+* [Lessons learnt by building Single Page Applications](http://www.reinteractive.net/posts/186-lessons-learnt-by-building-single-page-applications)
+  > I want to share some of the lessons I have learnt building them, especially what things I found difficult technically. Based on my experience I think the following are common issues that you may encounter when building them.
+
+## Github
+
+* [Shepherd](https://github.com/HubSpot/shepherd) - guide your users through a tour of your app.
+
+## Startups
+
+* [CityMapper](https://citymapper.com/nyc/superrouter?) is a pretty slick city route planner available for a small number of cities.
+
+## YouTube
+
+* [WebTorrent: Bringing BitTorrent to the Web](https://www.youtube.com/watch?v=PT8s_IVWDgw)
+
+## Twitter
+
+<blockquote class="twitter-tweet" data-partner="tweetdeck"><p>Time for some traffic problems in São Paulo... <a href="http://t.co/d29u5ctJBG">pic.twitter.com/d29u5ctJBG</a></p>&mdash; Patrick Stewart (@SirPatStew) <a href="https://twitter.com/SirPatStew/statuses/466633514482298880">May 14, 2014</a></blockquote>
+
+<blockquote class="twitter-tweet" data-partner="tweetdeck"><p>Today, we are thrilled to introduce &quot;A New Way to Learn Ionic&quot; <a href="http://t.co/CceIQ00TVG">http://t.co/CceIQ00TVG</a> <a href="http://t.co/P97znY5gxb">pic.twitter.com/P97znY5gxb</a></p>&mdash; ionic (@Ionicframework) <a href="https://twitter.com/Ionicframework/statuses/466643147934941184">May 14, 2014</a></blockquote>
