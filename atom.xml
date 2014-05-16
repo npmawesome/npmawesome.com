@@ -5,7 +5,7 @@
 	<link href="http://npmawesome.com/atom.xml" rel="self" />
 	<link href="http://npmawesome.com" />
 	<id>http://npmawesome.com</id>
-	<updated>2014-05-14T16:55:13.777Z</updated>
+	<updated>2014-05-16T18:05:21.556Z</updated>
 	<author>
 		<name>Alex Gorbatchev</name>
 	</author>
@@ -13,6 +13,60 @@
   
   
   
+    
+    
+    
+    
+    
+		<entry>
+			<title>Links for May 16, 2014</title>
+			<link href="http://npmawesome.com/posts/2014-05-16-links"/>
+			<updated>2014-05-16T16:56:57.000Z</updated>
+			<id>http://npmawesome.com/posts/2014-05-16-links</id>
+			<content type="html">&lt;p&gt;&lt;img src=&quot;http://npmawesome.com/images/posts/html5.png&quot; class=&quot;hide-on-mobile&quot; style=&quot;float: right; width: 150px;&quot;/&gt;&lt;/p&gt;
+&lt;h2 id=&quot;articles&quot;&gt;Articles&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://auth0.com/blog/2014/01/07/angularjs-authentication-with-cookies-vs-token/&quot;&gt;Introducing Firebase Hosting&lt;/a&gt;&lt;blockquote&gt;
+&lt;p&gt;Once upon a time, in the dark ages of the internet, apps dynamically generated HTML server-side every time a page was requested. This was slow, difficult to scale, and required users to connect to distant servers to get their content.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://auth0.com/blog/2014/01/07/angularjs-authentication-with-cookies-vs-token/&quot;&gt;Cookies vs Tokens. Getting auth right with Angular.JS&lt;/a&gt;&lt;blockquote&gt;
+&lt;p&gt;What&amp;#39;s JSON Web Token? JSON Web Token (JWT, pronounced jot) is a relatively new token format used in space-constrained environments such as HTTP Authorization headers.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://jpadilla.com/post/73791304724/auth-with-json-web-tokens&quot;&gt;Auth with JSON Web Tokens&lt;/a&gt;&lt;blockquote&gt;
+&lt;p&gt;There’s a relatively new standard called JSON Web Token that happens to be backed by companies like Firebase, Google, Microsoft, and Zendesk. There are already many libraries to handle encoding and decoding of this tokens in the backend.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a href=&quot;http://watirmelon.com/2014/05/14/100000-e2e-selenium-tests-sounds-like-a-nightmare&quot;&gt;100,000 e2e selenium tests? Sounds like a nightmare!&lt;/a&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;If I had to choose just one, I would definitely choose a comprehensive suite of automated unit tests over a comprehensive suite of end-to-end/system tests any day of the week.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a href=&quot;http://www.reinteractive.net/posts/186-lessons-learnt-by-building-single-page-applications&quot;&gt;Lessons learnt by building Single Page Applications&lt;/a&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;I want to share some of the lessons I have learnt building them, especially what things I found difficult technically. Based on my experience I think the following are common issues that you may encounter when building them.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;github&quot;&gt;Github&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/HubSpot/shepherd&quot;&gt;Shepherd&lt;/a&gt; - guide your users through a tour of your app.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;startups&quot;&gt;Startups&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://citymapper.com/nyc/superrouter?&quot;&gt;CityMapper&lt;/a&gt; is a pretty slick city route planner available for a small number of cities.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;youtube&quot;&gt;YouTube&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://www.youtube.com/watch?v=PT8s_IVWDgw&quot;&gt;WebTorrent: Bringing BitTorrent to the Web&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;twitter&quot;&gt;Twitter&lt;/h2&gt;
+&lt;blockquote class=&quot;twitter-tweet&quot; data-partner=&quot;tweetdeck&quot;&gt;&lt;p&gt;Time for some traffic problems in São Paulo... &lt;a href=&quot;http://t.co/d29u5ctJBG&quot;&gt;pic.twitter.com/d29u5ctJBG&lt;/a&gt;&lt;/p&gt;&amp;mdash; Patrick Stewart (@SirPatStew) &lt;a href=&quot;https://twitter.com/SirPatStew/statuses/466633514482298880&quot;&gt;May 14, 2014&lt;/a&gt;&lt;/blockquote&gt;
+
+&lt;blockquote class=&quot;twitter-tweet&quot; data-partner=&quot;tweetdeck&quot;&gt;&lt;p&gt;Today, we are thrilled to introduce &amp;quot;A New Way to Learn Ionic&amp;quot; &lt;a href=&quot;http://t.co/CceIQ00TVG&quot;&gt;http://t.co/CceIQ00TVG&lt;/a&gt; &lt;a href=&quot;http://t.co/P97znY5gxb&quot;&gt;pic.twitter.com/P97znY5gxb&lt;/a&gt;&lt;/p&gt;&amp;mdash; ionic (@Ionicframework) &lt;a href=&quot;https://twitter.com/Ionicframework/statuses/466643147934941184&quot;&gt;May 14, 2014&lt;/a&gt;&lt;/blockquote&gt;</content>
+		</entry>
+	
     
     
     
@@ -182,115 +236,6 @@ console.log(&amp;#39;Wait 10 seconds...&amp;#39;);
 
 &lt;h2 id=&quot;misc&quot;&gt;Misc&lt;/h2&gt;
 &lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;//www.youtube.com/embed/AYGSpOfIr9Y?rel=0&quot; frameborder=&quot;0&quot; allowfullscreen&gt;&lt;/iframe&gt;</content>
-		</entry>
-	
-    
-    
-    
-		<entry>
-			<title>google-distance</title>
-			<link href="http://npmawesome.com/posts/2014-05-01-google-distance"/>
-			<updated>2014-05-01T18:30:00.000Z</updated>
-			<id>http://npmawesome.com/posts/2014-05-01-google-distance</id>
-			<content type="html">&lt;p&gt;&lt;img src=&quot;http://npmawesome.com/images/posts/google-distance.png&quot; class=&quot;hide-on-mobile&quot; style=&quot;width: 100%&quot; /&gt;&lt;/p&gt;
-&lt;p&gt;Everybody appreciates the distance information between two locations in web mapping services like &lt;a href=&quot;http://maps.google.com&quot;&gt;Google Maps&lt;/a&gt;, right? Do you have a similar use case within your application but want to avoid the implementation overhead of abstracting from an external API? &lt;a href=&quot;https://github.com/edwlook/node-google-distance&quot;&gt;google-distance&lt;/a&gt; by &lt;a href=&quot;https://github.com/edwlook&quot;&gt;Edward Look&lt;/a&gt; helps you to do just that.&lt;/p&gt;
-&lt;div class=&quot;read-more&quot;&gt;&lt;/div&gt;
-
-&lt;p&gt;The module wraps the distance calculation functionality of the &lt;a href=&quot;https://developers.google.com/maps/documentation/distancematrix/&quot;&gt;Google Distance Matrix API&lt;/a&gt; into an &lt;em&gt;easy-to-use&lt;/em&gt; interface.&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;npm install google-distance
-&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&quot;usage&quot;&gt;Usage&lt;/h2&gt;
-&lt;p&gt;Let&amp;#39;s say we want to calculate the distance between New York City and San Diego. &lt;a href=&quot;https://github.com/edwlook/node-google-distance&quot;&gt;google-distance&lt;/a&gt; is frugal and very intuitive to use in this regard. It asks only for two required properties: &lt;code&gt;origin&lt;/code&gt; and &lt;code&gt;destination&lt;/code&gt;.&lt;/p&gt;
-&lt;p&gt;The following basic usage example ...&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;&amp;#39;use strict&amp;#39;;
-
-var distance = require(&amp;#39;google-distance&amp;#39;);
-
-var options = {
-    origin: &amp;#39;New York City, USA&amp;#39;,
-    destination: &amp;#39;San Diego, USA&amp;#39;
-};
-
-function onDistance (err, result) {
-    if (err) {
-        return console.error(err);
-    }
-
-    console.log(result);
-}
-
-distance.get(options, onDistance);
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;will &lt;code&gt;result&lt;/code&gt; in:&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;{
-    index: null,
-    distance: &amp;#39;4,447 km&amp;#39;,
-    distanceValue: 4447040,
-    duration: &amp;#39;1 day 17 hours&amp;#39;,
-    durationValue: 146399, // in seconds
-    origin: &amp;#39;New York, NY, USA&amp;#39;,
-    destination: &amp;#39;San Diego, CA, USA&amp;#39;,
-    mode: &amp;#39;driving&amp;#39;,
-    units: &amp;#39;metric&amp;#39;,
-    language: &amp;#39;en&amp;#39;,
-    avoid: null,
-    sensor: false
-}
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Calculating the distance between cities is cool, isn&amp;#39;t it? But you know what&amp;#39;s even cooler? Determining the distance between two tupels of latitude and longitude values.&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;&amp;#39;use strict&amp;#39;;
-
-var distance = require(&amp;#39;google-distance&amp;#39;);
-
-var options = {
-    origin: &amp;#39;40.759011,-73.984472&amp;#39;,
-    destination: &amp;#39;37.810848,-122.267448&amp;#39;
-};
-
-function onDistance (err, result) {
-    if (err) {
-        return console.error(err);
-    }
-
-    console.log(result);
-}
-
-distance.get(options, onDistance);
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Fantastico! Beside the distance of the two points, you also see a reverse geocoded &lt;code&gt;origin&lt;/code&gt; and &lt;code&gt;destination&lt;/code&gt;. Woot!&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;{ index: null,
-  distance: &amp;#39;4,669 km&amp;#39;,
-  distanceValue: 4669361,
-  duration: &amp;#39;1 day 18 hours&amp;#39;,
-  durationValue: 151994,
-  origin: &amp;#39;165-199 West 47th Street, New York, NY 10036, USA&amp;#39;,
-  destination: &amp;#39;400-438 22nd Street, Oakland, CA 94612, USA&amp;#39;,
-  mode: &amp;#39;driving&amp;#39;,
-  units: &amp;#39;metric&amp;#39;,
-  language: &amp;#39;en&amp;#39;,
-  avoid: null,
-  sensor: false }
-&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&quot;fine-tuning&quot;&gt;Fine tuning&lt;/h2&gt;
-&lt;p&gt;If you&amp;#39;re crazy enough to cycle all the way down from Oakland to San Diego for instance and want to check how far it really is, you can measure this as well as switching to imperial units or add other &lt;a href=&quot;https://github.com/edwlook/node-google-distance#additional-parameters&quot;&gt;additional parameters&lt;/a&gt;.&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;&amp;#39;use strict&amp;#39;;
-
-var distance = require(&amp;#39;google-distance&amp;#39;);
-
-var options = {
-    origin: &amp;#39;Oakland, USA&amp;#39;,
-    destination: &amp;#39;San Diego, USA&amp;#39;,
-    mode: &amp;#39;bicycling&amp;#39;,
-    units: &amp;#39;imperial&amp;#39;
-};
-
-distance.get(options, onDistance (err, result) {
-    // ...
-});
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Checkout this &lt;a href=&quot;http://runnable.com/U2IHUgxWgZMpX2Ct/google-distance-example-npmawesome&quot;&gt;runnable example&lt;/a&gt; to verify that cycling might be a good one-week trip. Whereas walking would be definitely a crazy idea. Do the math :)&lt;/p&gt;
-&lt;h2 id=&quot;api-key&quot;&gt;API key&lt;/h2&gt;
-&lt;p&gt;One last note: It is not necessary to configure an API key in order to use the &lt;a href=&quot;https://github.com/edwlook/node-google-distance&quot;&gt;google-distance&lt;/a&gt; module. But: To avoid exceeding Google&amp;#39;s &lt;a href=&quot;https://developers.google.com/maps/documentation/distancematrix/#Limits&quot;&gt;quota&lt;/a&gt; it is highly recommended.&lt;/p&gt;
-&lt;p&gt;Follow these &lt;a href=&quot;https://developers.google.com/maps/documentation/distancematrix/#api_key&quot;&gt;steps&lt;/a&gt; in order to obtain an API key. After that it is easy to inform the module about your key:&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;var distance = require(&amp;#39;google-distance&amp;#39;);
-
-distance.apiKey = &amp;#39;YOUR_API_KEY&amp;#39;;
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;You can find the usage examples in an own &lt;a href=&quot;https://github.com/npmawesome/example-google-distance&quot;&gt;repository&lt;/a&gt;. Play with it and let me know what you think :)&lt;/p&gt;
-</content>
 		</entry>
 	
 </feed>
