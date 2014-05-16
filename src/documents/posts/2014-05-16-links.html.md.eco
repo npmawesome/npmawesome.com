@@ -17,9 +17,10 @@ description: Nerd links for the day, videos, GitHub projects, talks, articles an
   > There’s a relatively new standard called JSON Web Token that happens to be backed by companies like Firebase, Google, Microsoft, and Zendesk. There are already many libraries to handle encoding and decoding of this tokens in the backend.
 * [100,000 e2e selenium tests? Sounds like a nightmare!](http://watirmelon.com/2014/05/14/100000-e2e-selenium-tests-sounds-like-a-nightmare)
   > If I had to choose just one, I would definitely choose a comprehensive suite of automated unit tests over a comprehensive suite of end-to-end/system tests any day of the week.
-
 * [Lessons learnt by building Single Page Applications](http://www.reinteractive.net/posts/186-lessons-learnt-by-building-single-page-applications)
   > I want to share some of the lessons I have learnt building them, especially what things I found difficult technically. Based on my experience I think the following are common issues that you may encounter when building them.
+
+<%- @readMore() %>
 
 ## Github
 
