@@ -15,12 +15,12 @@
     <atom:link href="http://feeds.feedburner.com/npmawesome" rel="self" type="application/rss+xml"/>
     <link>http://npmawesome.com</link>
     <description>Daily dose of awesome NPM modules for Node.js, old and new!</description>
-    <lastBuildDate>Fri, 16 May 2014 18:05:21 GMT</lastBuildDate>
+    <lastBuildDate>Fri, 16 May 2014 18:36:41 GMT</lastBuildDate>
     <language>en</language>
     <sy:updatePeriod>daily</sy:updatePeriod>
     <sy:updateFrequency>2</sy:updateFrequency>
     <generator>awesomeness</generator>
-    <pubDate>Fri, 16 May 2014 18:05:21 GMT</pubDate>
+    <pubDate>Fri, 16 May 2014 18:36:41 GMT</pubDate>
 
     
     
@@ -51,17 +51,17 @@
 <p>There’s a relatively new standard called JSON Web Token that happens to be backed by companies like Firebase, Google, Microsoft, and Zendesk. There are already many libraries to handle encoding and decoding of this tokens in the backend.</p>
 </blockquote>
 </li>
-<li><p><a href="http://watirmelon.com/2014/05/14/100000-e2e-selenium-tests-sounds-like-a-nightmare">100,000 e2e selenium tests? Sounds like a nightmare!</a></p>
-<blockquote>
+<li><a href="http://watirmelon.com/2014/05/14/100000-e2e-selenium-tests-sounds-like-a-nightmare">100,000 e2e selenium tests? Sounds like a nightmare!</a><blockquote>
 <p>If I had to choose just one, I would definitely choose a comprehensive suite of automated unit tests over a comprehensive suite of end-to-end/system tests any day of the week.</p>
 </blockquote>
 </li>
-<li><p><a href="http://www.reinteractive.net/posts/186-lessons-learnt-by-building-single-page-applications">Lessons learnt by building Single Page Applications</a></p>
-<blockquote>
+<li><a href="http://www.reinteractive.net/posts/186-lessons-learnt-by-building-single-page-applications">Lessons learnt by building Single Page Applications</a><blockquote>
 <p>I want to share some of the lessons I have learnt building them, especially what things I found difficult technically. Based on my experience I think the following are common issues that you may encounter when building them.</p>
 </blockquote>
 </li>
 </ul>
+<div class="read-more"></div>
+
 <h2 id="github">Github</h2>
 <ul>
 <li><a href="https://github.com/HubSpot/shepherd">Shepherd</a> - guide your users through a tour of your app.</li>
