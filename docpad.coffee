@@ -20,8 +20,10 @@ docpadConfig =
       fs = require 'fs'
       path = require 'path'
 
-      exampleDir = path.join process.cwd(), '.examples', 'example-' + (exampleName or npm?.name)
-      throw new "No example for #{doc.npm?.name}" unless fs.existsSync exampleDir
+      exampleName = exampleName or npm?.install or npm?.name
+
+      exampleDir = path.join process.cwd(), '.examples', 'example-' + (exampleName)
+      throw new "No example for #{exampleName}" unless fs.existsSync exampleDir
 
       exampleFile = path.join exampleDir, filename
       throw new "No file #{filename} found in #{doc.npm?.name} example." unless fs.existsSync exampleFile

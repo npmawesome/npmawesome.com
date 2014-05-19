@@ -32,96 +32,25 @@ Let's say we want to calculate the distance between New York City and San Diego.
 
 The following basic usage example ...
 
-    'use strict';
-
-    var distance = require('google-distance');
-
-    var options = {
-        origin: 'New York City, USA',
-        destination: 'San Diego, USA'
-    };
-
-    function onDistance (err, result) {
-        if (err) {
-            return console.error(err);
-        }
-
-        console.log(result);
-    }
-
-    distance.get(options, onDistance);
+<%- @includeCodeExample('basic.js') %>
 
 will `result` in:
 
-    {
-        index: null,
-        distance: '4,447 km',
-        distanceValue: 4447040,
-        duration: '1 day 17 hours',
-        durationValue: 146399, // in seconds
-        origin: 'New York, NY, USA',
-        destination: 'San Diego, CA, USA',
-        mode: 'driving',
-        units: 'metric',
-        language: 'en',
-        avoid: null,
-        sensor: false
-    }
+<%- @includeCodeExample('.output/basic') %>
 
 Calculating the distance between cities is cool, isn't it? But you know what's even cooler? Determining the distance between two tupels of latitude and longitude values.
 
-    'use strict';
-
-    var distance = require('google-distance');
-
-    var options = {
-        origin: '40.759011,-73.984472',
-        destination: '37.810848,-122.267448'
-    };
-
-    function onDistance (err, result) {
-        if (err) {
-            return console.error(err);
-        }
-
-        console.log(result);
-    }
-
-    distance.get(options, onDistance);
+<%- @includeCodeExample('advanced.js') %>
 
 Fantastico! Beside the distance of the two points, you also see a reverse geocoded `origin` and `destination`. Woot!
 
-    { index: null,
-      distance: '4,669 km',
-      distanceValue: 4669361,
-      duration: '1 day 18 hours',
-      durationValue: 151994,
-      origin: '165-199 West 47th Street, New York, NY 10036, USA',
-      destination: '400-438 22nd Street, Oakland, CA 94612, USA',
-      mode: 'driving',
-      units: 'metric',
-      language: 'en',
-      avoid: null,
-      sensor: false }
+<%- @includeCodeExample('.output/basic') %>
 
 ## Fine tuning
 
 If you're crazy enough to cycle all the way down from Oakland to San Diego for instance and want to check how far it really is, you can measure this as well as switching to imperial units or add other [additional parameters](https://github.com/edwlook/node-google-distance#additional-parameters).
 
-    'use strict';
-
-    var distance = require('google-distance');
-
-    var options = {
-        origin: 'Oakland, USA',
-        destination: 'San Diego, USA',
-        mode: 'bicycling',
-        units: 'imperial'
-    };
-
-    distance.get(options, onDistance (err, result) {
-        // ...
-    });
+<%- @includeCodeExample('crazy.js') %>
 
 Checkout this [runnable example](http://runnable.com/U2IHUgxWgZMpX2Ct/google-distance-example-npmawesome) to verify that cycling might be a good one-week trip. Whereas walking would be definitely a crazy idea. Do the math :)
 
