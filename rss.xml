@@ -15,18 +15,63 @@
     <atom:link href="http://feeds.feedburner.com/npmawesome" rel="self" type="application/rss+xml"/>
     <link>http://npmawesome.com</link>
     <description>Daily dose of awesome NPM modules for Node.js, old and new!</description>
-    <lastBuildDate>Fri, 16 May 2014 18:36:41 GMT</lastBuildDate>
+    <lastBuildDate>Tue, 20 May 2014 16:41:44 GMT</lastBuildDate>
     <language>en</language>
     <sy:updatePeriod>daily</sy:updatePeriod>
     <sy:updateFrequency>2</sy:updateFrequency>
     <generator>awesomeness</generator>
-    <pubDate>Fri, 16 May 2014 18:36:41 GMT</pubDate>
+    <pubDate>Tue, 20 May 2014 16:41:44 GMT</pubDate>
 
     
     
     
       
       
+      
+      <item>
+        <title><![CDATA[longjohn]]></title>
+        <link><![CDATA[http://npmawesome.com/posts/2014-05-16-longjohn]]></link>
+        <dc:creator><![CDATA[Alex Gorbatchev]]></dc:creator>
+        <guid isPermaLink="true"><![CDATA[http://npmawesome.com/posts/2014-05-16-longjohn]]></guid>
+        <pubDate><![CDATA[Tue, 20 May 2014 04:11:55 GMT]]></pubDate>
+        <description><![CDATA[<p>You know that feeling of disapointment when you get an error and the stack trace just abruptly ends and you know for a fact it should be much longer, and much more useful than that?</p>
+<pre><code>Error: Error message
+    at null._onTimeout (/examples/error-module.js:7:29)
+    at Timer.listOnTimeout [as ontimeout] (timers.js:110:15)
+</code></pre><p>I&#39;m very well familiar with that feeling... Maybe too much? Turns out there&#39;s a way to get much better results in Node with a little bit of magic. Said magic is a module called <a href="https://github.com/mattinsler/longjohn">longjohn</a> by <a href="https://github.com/mattinsler">Matt Insler</a>.</p>
+<div class="read-more"></div>
+
+<pre><code>npm install longjohn
+</code></pre><h2 id="usage">Usage</h2>
+<p>Using <a href="https://github.com/mattinsler/longjohn">longjohn</a> couldn&#39;t get any easier. You just need to <code>require(&#39;longjohn&#39;)</code> and you are all set. The magic that I mentioned above consists of replacing functions like <code>setTimeout</code> and <code>nextTick</code> with patched versions that keep track of the stack as it unfolds and as author suggests, this probably shouldn&#39;t be used in production.</p>
+<p>But, after you require <a href="https://github.com/mattinsler/longjohn">longjohn</a>, your short, mildly helpful stack like this:</p>
+<pre><code>Error: Error message
+    at null._onTimeout (/examples/error-module.js:7:29)
+    at Timer.listOnTimeout [as ontimeout] (timers.js:110:15)
+</code></pre><p>Turns into this:</p>
+<pre><code>Error: Error message
+    at [object Object].&lt;anonymous&gt; (/examples/error-module.js:7:29)
+    at listOnTimeout (timers.js:110:15)
+---------------------------------------------
+    at delayed (/examples/error-module.js:3:3)
+    at delayedError (/examples/error-module.js:7:3)
+    at [object Object].&lt;anonymous&gt; (/examples/error-module.js:21:5)
+    at listOnTimeout (timers.js:110:15)
+---------------------------------------------
+    at delayed (/examples/error-module.js:3:3)
+    at module.exports (/examples/error-module.js:20:3)
+    at Object.&lt;anonymous&gt; (/examples/longjohn.js:2:26)
+    at Module._compile (module.js:456:26)
+    at Module._extensions..js (module.js:474:10)
+    at Module.load (module.js:356:32)
+    at Module._load (module.js:312:12)
+    at Module.runMain (module.js:497:10)
+</code></pre><h2 id="closing-thoughts">Closing thoughts</h2>
+<p>Getting a full stack is imperative to finding out the root cause of the problem in your code. <a href="https://github.com/mattinsler/longjohn">longjohn</a> addresses that on the Node side. There&#39;s a similiar module that works in the browser called <a href="https://github.com/btford/zone.js/">zone.js</a> by <a href="https://github.com/btford">Brian Ford</a> that I think you should check out as well.</p>
+<p>Check out <a href="https://github.com/npmawesome/example-longjohn">example for this article</a> on GitHub.</p>
+]]></description>
+      </item>
+    
       
       
       
@@ -196,63 +241,6 @@ console.log(&#39;Wait 10 seconds...&#39;);
 <li><a href="https://github.com/mattpat/node-schedule">node-schedule</a> is a single process, cron-like and not-cron-like job scheduler by <a href="https://github.com/mattpat">Matt Patenaude</a>. It doesn&#39;t have any external dependencies.</li>
 </ul>
 ]]></description>
-      </item>
-    
-      
-      
-      
-      <item>
-        <title><![CDATA[Links for May 6, 2014]]></title>
-        <link><![CDATA[http://npmawesome.com/posts/2014-05-06-links]]></link>
-        <dc:creator><![CDATA[Alex Gorbatchev]]></dc:creator>
-        <guid isPermaLink="true"><![CDATA[http://npmawesome.com/posts/2014-05-06-links]]></guid>
-        <pubDate><![CDATA[Tue, 06 May 2014 16:51:37 GMT]]></pubDate>
-        <description><![CDATA[<p><img src="http://npmawesome.com/images/posts/html5.png" class="hide-on-mobile" style="float: right; width: 150px;"/></p>
-<h2 id="articles-slides">Articles &amp; Slides</h2>
-<ul>
-<li><a href="https://www.youtube.com/watch?v=1FVAS7MdPXo">Video - Build a Killer Node.js Client for Your REST+JSON API</a></li>
-<li><a href="http://javascriptjabber.com/106-jsj-protractor-with-julie-ralph/">Podcast - JSJ Protractor with Julie Ralph</a></li>
-<li><a href="https://atom.io/">Atom</a> editor goes fully <a href="https://github.com/blog/1831-atom-free-and-open-source-for-everyone">open source</a></li>
-<li><p><a href="http://lawsonry.com/2014/05/diy-angularjs-seo-with-phantomjs-the-easy-way/">DIY AngularJS SEO with PhantomJS (the easy way!)</a></p>
-<blockquote>
-<p>I have to be honest: I’m only writing this tutorial because I could not find a decent tutorial on setting up an environment for AngularJS SEO awesomeness. It couldn’t be that hard, right?</p>
-</blockquote>
-</li>
-</ul>
-<div class="read-more"></div>
-
-<ul>
-<li><p><a href="http://www.instructables.com/id/Make-A-Barbarians-Sword/?ALLSTEPS">Make A Barbarian&#39;s Sword</a></p>
-<blockquote>
-<p><img src="http://cdn.instructables.com/F39/E9XD/HUQAT77M/F39E9XDHUQAT77M.LARGE.jpg" style=“width: 300px”/></p>
-</blockquote>
-</li>
-<li><p><a href="https://www.youtube.com/watch?v=0VUjM-jJf2U">Practical Workflows for ES6 Modules, Fluent 2014</a></p>
-<blockquote>
-<p><img src="https://i1.ytimg.com/vi/0VUjM-jJf2U/maxresdefault.jpg" alt=""></p>
-</blockquote>
-</li>
-</ul>
-<h2 id="github">Github</h2>
-<ul>
-<li><a href="http://davej.github.io/angular-classy/">angular-classy</a> is a module for cleaner class-based controllers for AngularJS.</li>
-<li><a href="https://github.com/cwmacdon/gulp-concat-sourcemap">gulp-concat-sourcemap</a> is a gulp.js plugin that concatenate files and generate a source map file.</li>
-<li><a href="https://github.com/aredo/express4-bootstrap-starter">express4-bootstrap-starter</a> is a simple demo app in Node.js using ExpressJS 4, Mongoose, Passport.js and Jade.</li>
-</ul>
-<h2 id="apps">Apps</h2>
-<ul>
-<li><a href="http://www.cakebrew.com/">Cakebrew</a> - the Mac app for Homebrew.</li>
-<li><a href="http://www.json-generator.com/">JSON generator</a> is a pretty slick online tool to generate JSON data fixtures.</li>
-</ul>
-<h2 id="twitter">Twitter</h2>
-<blockquote class="twitter-tweet" data-partner="tweetdeck"><p>Node.js 0.11.13 with <a href="https://twitter.com/search?q=%23ES6&amp;src=hash">#ES6</a> WeakMap, WeakSet, Promise &amp; Object.observe is out! Soon to be in Node 0.12. <a href="http://t.co/Y9RxK4wOnK">http://t.co/Y9RxK4wOnK</a></p>&mdash; Michał Gołębiowski (@m_gol) <a href="https://twitter.com/m_gol/statuses/462294019830456320">May 2, 2014</a></blockquote>
-
-<blockquote class="twitter-tweet" data-partner="tweetdeck"><p>I love Angularjs so much...</p>&mdash; Cindy Juarez (@sceendy) <a href="https://twitter.com/sceendy/statuses/462281885289172992">May 2, 2014</a></blockquote>
-
-<blockquote class="twitter-tweet" data-partner="tweetdeck"><p>Every time I run an npm install :) <a href="https://twitter.com/npmjs">@npmjs</a>. (gif version: <a href="http://t.co/skRgXkyIzQ">http://t.co/skRgXkyIzQ</a>) <a href="http://t.co/59M56CGJdC">pic.twitter.com/59M56CGJdC</a></p>&mdash; Jon Q (@itsJonQ) <a href="https://twitter.com/itsJonQ/statuses/462280358516756480">May 2, 2014</a></blockquote>
-
-<h2 id="misc">Misc</h2>
-<iframe width="560" height="315" src="//www.youtube.com/embed/AYGSpOfIr9Y?rel=0" frameborder="0" allowfullscreen></iframe>]]></description>
       </item>
     
   </channel>

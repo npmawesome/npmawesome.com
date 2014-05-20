@@ -5,7 +5,7 @@
 	<link href="http://npmawesome.com/atom.xml" rel="self" />
 	<link href="http://npmawesome.com" />
 	<id>http://npmawesome.com</id>
-	<updated>2014-05-16T18:36:41.128Z</updated>
+	<updated>2014-05-20T16:41:44.108Z</updated>
 	<author>
 		<name>Alex Gorbatchev</name>
 	</author>
@@ -15,6 +15,50 @@
   
     
     
+    
+		<entry>
+			<title>longjohn</title>
+			<link href="http://npmawesome.com/posts/2014-05-16-longjohn"/>
+			<updated>2014-05-20T04:11:55.000Z</updated>
+			<id>http://npmawesome.com/posts/2014-05-16-longjohn</id>
+			<content type="html">&lt;p&gt;You know that feeling of disapointment when you get an error and the stack trace just abruptly ends and you know for a fact it should be much longer, and much more useful than that?&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;Error: Error message
+    at null._onTimeout (/examples/error-module.js:7:29)
+    at Timer.listOnTimeout [as ontimeout] (timers.js:110:15)
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;I&amp;#39;m very well familiar with that feeling... Maybe too much? Turns out there&amp;#39;s a way to get much better results in Node with a little bit of magic. Said magic is a module called &lt;a href=&quot;https://github.com/mattinsler/longjohn&quot;&gt;longjohn&lt;/a&gt; by &lt;a href=&quot;https://github.com/mattinsler&quot;&gt;Matt Insler&lt;/a&gt;.&lt;/p&gt;
+&lt;div class=&quot;read-more&quot;&gt;&lt;/div&gt;
+
+&lt;pre&gt;&lt;code&gt;npm install longjohn
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&quot;usage&quot;&gt;Usage&lt;/h2&gt;
+&lt;p&gt;Using &lt;a href=&quot;https://github.com/mattinsler/longjohn&quot;&gt;longjohn&lt;/a&gt; couldn&amp;#39;t get any easier. You just need to &lt;code&gt;require(&amp;#39;longjohn&amp;#39;)&lt;/code&gt; and you are all set. The magic that I mentioned above consists of replacing functions like &lt;code&gt;setTimeout&lt;/code&gt; and &lt;code&gt;nextTick&lt;/code&gt; with patched versions that keep track of the stack as it unfolds and as author suggests, this probably shouldn&amp;#39;t be used in production.&lt;/p&gt;
+&lt;p&gt;But, after you require &lt;a href=&quot;https://github.com/mattinsler/longjohn&quot;&gt;longjohn&lt;/a&gt;, your short, mildly helpful stack like this:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;Error: Error message
+    at null._onTimeout (/examples/error-module.js:7:29)
+    at Timer.listOnTimeout [as ontimeout] (timers.js:110:15)
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Turns into this:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;Error: Error message
+    at [object Object].&amp;lt;anonymous&amp;gt; (/examples/error-module.js:7:29)
+    at listOnTimeout (timers.js:110:15)
+---------------------------------------------
+    at delayed (/examples/error-module.js:3:3)
+    at delayedError (/examples/error-module.js:7:3)
+    at [object Object].&amp;lt;anonymous&amp;gt; (/examples/error-module.js:21:5)
+    at listOnTimeout (timers.js:110:15)
+---------------------------------------------
+    at delayed (/examples/error-module.js:3:3)
+    at module.exports (/examples/error-module.js:20:3)
+    at Object.&amp;lt;anonymous&amp;gt; (/examples/longjohn.js:2:26)
+    at Module._compile (module.js:456:26)
+    at Module._extensions..js (module.js:474:10)
+    at Module.load (module.js:356:32)
+    at Module._load (module.js:312:12)
+    at Module.runMain (module.js:497:10)
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&quot;closing-thoughts&quot;&gt;Closing thoughts&lt;/h2&gt;
+&lt;p&gt;Getting a full stack is imperative to finding out the root cause of the problem in your code. &lt;a href=&quot;https://github.com/mattinsler/longjohn&quot;&gt;longjohn&lt;/a&gt; addresses that on the Node side. There&amp;#39;s a similiar module that works in the browser called &lt;a href=&quot;https://github.com/btford/zone.js/&quot;&gt;zone.js&lt;/a&gt; by &lt;a href=&quot;https://github.com/btford&quot;&gt;Brian Ford&lt;/a&gt; that I think you should check out as well.&lt;/p&gt;
+&lt;p&gt;Check out &lt;a href=&quot;https://github.com/npmawesome/example-longjohn&quot;&gt;example for this article&lt;/a&gt; on GitHub.&lt;/p&gt;
+</content>
+		</entry>
+	
     
     
     
@@ -180,62 +224,6 @@ console.log(&amp;#39;Wait 10 seconds...&amp;#39;);
 &lt;li&gt;&lt;a href=&quot;https://github.com/mattpat/node-schedule&quot;&gt;node-schedule&lt;/a&gt; is a single process, cron-like and not-cron-like job scheduler by &lt;a href=&quot;https://github.com/mattpat&quot;&gt;Matt Patenaude&lt;/a&gt;. It doesn&amp;#39;t have any external dependencies.&lt;/li&gt;
 &lt;/ul&gt;
 </content>
-		</entry>
-	
-    
-    
-    
-		<entry>
-			<title>Links for May 6, 2014</title>
-			<link href="http://npmawesome.com/posts/2014-05-06-links"/>
-			<updated>2014-05-06T16:51:37.000Z</updated>
-			<id>http://npmawesome.com/posts/2014-05-06-links</id>
-			<content type="html">&lt;p&gt;&lt;img src=&quot;http://npmawesome.com/images/posts/html5.png&quot; class=&quot;hide-on-mobile&quot; style=&quot;float: right; width: 150px;&quot;/&gt;&lt;/p&gt;
-&lt;h2 id=&quot;articles-slides&quot;&gt;Articles &amp;amp; Slides&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://www.youtube.com/watch?v=1FVAS7MdPXo&quot;&gt;Video - Build a Killer Node.js Client for Your REST+JSON API&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://javascriptjabber.com/106-jsj-protractor-with-julie-ralph/&quot;&gt;Podcast - JSJ Protractor with Julie Ralph&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://atom.io/&quot;&gt;Atom&lt;/a&gt; editor goes fully &lt;a href=&quot;https://github.com/blog/1831-atom-free-and-open-source-for-everyone&quot;&gt;open source&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;&lt;a href=&quot;http://lawsonry.com/2014/05/diy-angularjs-seo-with-phantomjs-the-easy-way/&quot;&gt;DIY AngularJS SEO with PhantomJS (the easy way!)&lt;/a&gt;&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;I have to be honest: I’m only writing this tutorial because I could not find a decent tutorial on setting up an environment for AngularJS SEO awesomeness. It couldn’t be that hard, right?&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;div class=&quot;read-more&quot;&gt;&lt;/div&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;&lt;a href=&quot;http://www.instructables.com/id/Make-A-Barbarians-Sword/?ALLSTEPS&quot;&gt;Make A Barbarian&amp;#39;s Sword&lt;/a&gt;&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;&lt;img src=&quot;http://cdn.instructables.com/F39/E9XD/HUQAT77M/F39E9XDHUQAT77M.LARGE.jpg&quot; style=“width: 300px”/&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;&lt;a href=&quot;https://www.youtube.com/watch?v=0VUjM-jJf2U&quot;&gt;Practical Workflows for ES6 Modules, Fluent 2014&lt;/a&gt;&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;&lt;img src=&quot;https://i1.ytimg.com/vi/0VUjM-jJf2U/maxresdefault.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&quot;github&quot;&gt;Github&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;http://davej.github.io/angular-classy/&quot;&gt;angular-classy&lt;/a&gt; is a module for cleaner class-based controllers for AngularJS.&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://github.com/cwmacdon/gulp-concat-sourcemap&quot;&gt;gulp-concat-sourcemap&lt;/a&gt; is a gulp.js plugin that concatenate files and generate a source map file.&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://github.com/aredo/express4-bootstrap-starter&quot;&gt;express4-bootstrap-starter&lt;/a&gt; is a simple demo app in Node.js using ExpressJS 4, Mongoose, Passport.js and Jade.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&quot;apps&quot;&gt;Apps&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;http://www.cakebrew.com/&quot;&gt;Cakebrew&lt;/a&gt; - the Mac app for Homebrew.&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://www.json-generator.com/&quot;&gt;JSON generator&lt;/a&gt; is a pretty slick online tool to generate JSON data fixtures.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&quot;twitter&quot;&gt;Twitter&lt;/h2&gt;
-&lt;blockquote class=&quot;twitter-tweet&quot; data-partner=&quot;tweetdeck&quot;&gt;&lt;p&gt;Node.js 0.11.13 with &lt;a href=&quot;https://twitter.com/search?q=%23ES6&amp;amp;src=hash&quot;&gt;#ES6&lt;/a&gt; WeakMap, WeakSet, Promise &amp;amp; Object.observe is out! Soon to be in Node 0.12. &lt;a href=&quot;http://t.co/Y9RxK4wOnK&quot;&gt;http://t.co/Y9RxK4wOnK&lt;/a&gt;&lt;/p&gt;&amp;mdash; Michał Gołębiowski (@m_gol) &lt;a href=&quot;https://twitter.com/m_gol/statuses/462294019830456320&quot;&gt;May 2, 2014&lt;/a&gt;&lt;/blockquote&gt;
-
-&lt;blockquote class=&quot;twitter-tweet&quot; data-partner=&quot;tweetdeck&quot;&gt;&lt;p&gt;I love Angularjs so much...&lt;/p&gt;&amp;mdash; Cindy Juarez (@sceendy) &lt;a href=&quot;https://twitter.com/sceendy/statuses/462281885289172992&quot;&gt;May 2, 2014&lt;/a&gt;&lt;/blockquote&gt;
-
-&lt;blockquote class=&quot;twitter-tweet&quot; data-partner=&quot;tweetdeck&quot;&gt;&lt;p&gt;Every time I run an npm install :) &lt;a href=&quot;https://twitter.com/npmjs&quot;&gt;@npmjs&lt;/a&gt;. (gif version: &lt;a href=&quot;http://t.co/skRgXkyIzQ&quot;&gt;http://t.co/skRgXkyIzQ&lt;/a&gt;) &lt;a href=&quot;http://t.co/59M56CGJdC&quot;&gt;pic.twitter.com/59M56CGJdC&lt;/a&gt;&lt;/p&gt;&amp;mdash; Jon Q (@itsJonQ) &lt;a href=&quot;https://twitter.com/itsJonQ/statuses/462280358516756480&quot;&gt;May 2, 2014&lt;/a&gt;&lt;/blockquote&gt;
-
-&lt;h2 id=&quot;misc&quot;&gt;Misc&lt;/h2&gt;
-&lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;//www.youtube.com/embed/AYGSpOfIr9Y?rel=0&quot; frameborder=&quot;0&quot; allowfullscreen&gt;&lt;/iframe&gt;</content>
 		</entry>
 	
 </feed>
