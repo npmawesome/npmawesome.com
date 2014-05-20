@@ -1,0 +1,20 @@
+---
+date: 2014-05-23T11:30:00-0700
+author: akoenig
+layout: post
+tags: npm, changelog, management
+
+npm:
+  repo: &repo defunctzombie/changelog
+  name: &name changelog
+  install: defunctzombie/changelog
+
+  author:
+    name: Roman Shtylman
+    github: defunctzombie
+
+slug: *name
+title: *name
+description: changelog release management tool
+---
+<img class="hide-on-mobile" src="https://avatars2.githubusercontent.com/u/84792?s=400" style="float: right; margin-left: 1em; width: 100px"/>
