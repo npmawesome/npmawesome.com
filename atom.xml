@@ -5,7 +5,7 @@
 	<link href="http://npmawesome.com/atom.xml" rel="self" />
 	<link href="http://npmawesome.com" />
 	<id>http://npmawesome.com</id>
-	<updated>2014-05-20T16:41:44.108Z</updated>
+	<updated>2014-05-20T19:24:51.080Z</updated>
 	<author>
 		<name>Alex Gorbatchev</name>
 	</author>
@@ -13,6 +13,46 @@
   
   
   
+    
+    
+    
+		<entry>
+			<title>Links for May 20, 2014</title>
+			<link href="http://npmawesome.com/posts/2014-05-20-links"/>
+			<updated>2014-05-20T19:22:40.000Z</updated>
+			<id>http://npmawesome.com/posts/2014-05-20-links</id>
+			<content type="html">&lt;p&gt;&lt;img src=&quot;http://npmawesome.com/images/posts/html5.png&quot; class=&quot;hide-on-mobile&quot; style=&quot;float: right; width: 150px;&quot;/&gt;&lt;/p&gt;
+&lt;h2 id=&quot;articles&quot;&gt;Articles&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;http://viget.com/extend/gulp-browserify-starter-faq&quot;&gt;Gulp + Browserify: The Everything Post&lt;/a&gt;&lt;blockquote&gt;
+&lt;p&gt;When I was done flipping tables, I set aside my newly acquired Grunt + RequireJS skills, and started over again with Gulp and Browserify to see what all the fuss was about.&lt;/p&gt;
+&lt;p&gt;You guys. The internet was right. To save you some googling, doc crawling, and trial and error I went through, I&amp;#39;ve assembled some resources and information I think you&amp;#39;ll find helpful in getting started.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://flippinawesome.org/2014/05/12/roll-your-own-asset-pipeline-with-gulp/&quot;&gt;Roll Your Own Asset Pipeline with Gulp&lt;/a&gt;&lt;blockquote&gt;
+&lt;p&gt;Gulp is a build system. It’s like Grunt, Make, Rake, and the like. It’s easy to use for the person running it. While it does have a slight learning curve, you’ll find it a super useful tool for all kinds of tasks. It’ll be the fastest weapon in your toolbox for asset compilation (both in terms of time to develop and run time).&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://thenextweb.com/google/2014/05/20/chrome-35-launches-developer-control-touch-input-new-apis-javascript-features/&quot;&gt;Chrome 35 launches with more developer control&lt;/a&gt;&lt;blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;More developer control over touch input.&lt;/li&gt;
+&lt;li&gt;New JavaScript features.&lt;/li&gt;
+&lt;li&gt;Unprefixed Shadow DOM.&lt;/li&gt;
+&lt;li&gt;A number of new apps/extension APIs.&lt;/li&gt;
+&lt;li&gt;Lots of under the hood changes for stability and performance.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&quot;read-more&quot;&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;twitter&quot;&gt;Twitter&lt;/h2&gt;
+&lt;blockquote class=&quot;twitter-tweet&quot; data-partner=&quot;tweetdeck&quot;&gt;&lt;p&gt;DevTools Tip: Select a User Agent from a predefined list, or define an arbitrary one. Gif: &lt;a href=&quot;https://t.co/M5QMInl7Fq&quot;&gt;https://t.co/M5QMInl7Fq&lt;/a&gt; &lt;a href=&quot;http://t.co/9XUDDBXwoO&quot;&gt;pic.twitter.com/9XUDDBXwoO&lt;/a&gt;&lt;/p&gt;&amp;mdash; Umar Hansa (@umaar) &lt;a href=&quot;https://twitter.com/umaar/statuses/468823671923306497&quot;&gt;May 20, 2014&lt;/a&gt;&lt;/blockquote&gt;
+
+
+&lt;blockquote class=&quot;twitter-tweet&quot; lang=&quot;en&quot;&gt;&lt;p&gt;Miss the &lt;a href=&quot;https://twitter.com/search?q=%23live&amp;amp;src=hash&quot;&gt;#live&lt;/a&gt; demo at &lt;a href=&quot;https://twitter.com/search?q=%23Bitcoin2014&amp;amp;src=hash&quot;&gt;#Bitcoin2014&lt;/a&gt;? Not to worry! &lt;a href=&quot;https://twitter.com/jerallaire&quot;&gt;@jerallaire&lt;/a&gt; walks you through Circle in this &lt;a href=&quot;https://twitter.com/search?q=%23video&amp;amp;src=hash&quot;&gt;#video&lt;/a&gt;: &lt;a href=&quot;http://t.co/hPpRcZ5fy9&quot;&gt;http://t.co/hPpRcZ5fy9&lt;/a&gt; &lt;a href=&quot;https://twitter.com/search?q=%23bitcoin&amp;amp;src=hash&quot;&gt;#bitcoin&lt;/a&gt;&lt;/p&gt;&amp;mdash; Circle Inc. (@circlebits) &lt;a href=&quot;https://twitter.com/circlebits/statuses/467325134706343936&quot;&gt;May 16, 2014&lt;/a&gt;&lt;/blockquote&gt;</content>
+		</entry>
+	
     
     
     
@@ -167,63 +207,6 @@
 &lt;/ul&gt;
 &lt;h2 id=&quot;twitter&quot;&gt;Twitter&lt;/h2&gt;
 &lt;blockquote class=&quot;twitter-tweet&quot; data-partner=&quot;tweetdeck&quot;&gt;&lt;p&gt;Introducing Synth - A new &lt;a href=&quot;https://twitter.com/nodejs&quot;&gt;@NodeJS&lt;/a&gt; web framework designed just for &lt;a href=&quot;https://twitter.com/angularjs&quot;&gt;@AngularJS&lt;/a&gt;&amp;#10;&lt;a href=&quot;http://t.co/7yLOHUittG&quot;&gt;http://t.co/7yLOHUittG&lt;/a&gt; &amp;#10;via &lt;a href=&quot;https://twitter.com/JonathanAbrams&quot;&gt;@JonathanAbrams&lt;/a&gt; &lt;a href=&quot;https://twitter.com/YouTube&quot;&gt;@YouTube&lt;/a&gt;&lt;/p&gt;&amp;mdash; PatrickJS (@gdi2290) &lt;a href=&quot;https://twitter.com/gdi2290/statuses/464266195739234304&quot;&gt;May 8, 2014&lt;/a&gt;&lt;/blockquote&gt;</content>
-		</entry>
-	
-    
-    
-    
-		<entry>
-			<title>agenda</title>
-			<link href="http://npmawesome.com/posts/2014-05-06-agenda"/>
-			<updated>2014-05-06T18:30:00.000Z</updated>
-			<id>http://npmawesome.com/posts/2014-05-06-agenda</id>
-			<content type="html">&lt;p&gt;&lt;img class=&quot;hide-on-mobile&quot; src=&quot;https://avatars2.githubusercontent.com/u/651740?s=400&quot; style=&quot;float: right; margin-left: 1em; width: 100px&quot;/&gt;
-As you web application grows, there comes a time when you will want to have scheduled jobs. The easiest thing is of course go the &lt;a href=&quot;http://en.wikipedia.org/wiki/Cron&quot;&gt;cron&lt;/a&gt; route. However, maintaining and updating it isn&amp;#39;t so easy, especially if you have more than one server to deal with and you still maybe too young for enterprise level job scheduler. What&amp;#39;s left? Maybe just do some &lt;code&gt;setTimeout&lt;/code&gt; calls in process... That doesn&amp;#39;t sound very exciting nor very manageable.&lt;/p&gt;
-&lt;p&gt;This is where &lt;a href=&quot;https://github.com/rschmukler/agenda&quot;&gt;agenda&lt;/a&gt; by &lt;a href=&quot;https://github.com/rschmukler&quot;&gt;Ryan Schmukler&lt;/a&gt; comes in. &lt;a href=&quot;https://github.com/rschmukler/agenda&quot;&gt;agenda&lt;/a&gt;, to plainly put it, is a light-weight job scheduling library for Node.js. Lets give it a go!&lt;/p&gt;
-&lt;div class=&quot;read-more&quot;&gt;&lt;/div&gt;
-
-&lt;pre&gt;&lt;code&gt;npm install agenda
-&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&quot;features&quot;&gt;Features&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;Minimal overhead. &lt;a href=&quot;https://github.com/rschmukler/agenda&quot;&gt;agenda&lt;/a&gt; aims to keep its code base small.&lt;/li&gt;
-&lt;li&gt;MongoDB 2.4+ backed persistance layer.&lt;/li&gt;
-&lt;li&gt;Scheduling with configurable priority, concurrency, and repeating.&lt;/li&gt;
-&lt;li&gt;Scheduling via cron or human readable syntax.&lt;/li&gt;
-&lt;li&gt;Event backed job queue that you can hook into.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&quot;usage&quot;&gt;Usage&lt;/h2&gt;
-&lt;p&gt;Lets make a basic example that runs a job 10 seconds after the startup:&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;var Agenda = require(&amp;#39;agenda&amp;#39;);
-var agenda = new Agenda({db: {address: &amp;#39;localhost:27017/agenda-example&amp;#39;}});
-
-agenda.define(&amp;#39;greet the world&amp;#39;, function(job, done) {
-  console.log(job.attrs.data.time, &amp;#39;hello world!&amp;#39;);
-  done();
-});
-
-agenda.schedule(&amp;#39;in 10 seconds&amp;#39;, &amp;#39;greet the world&amp;#39;, {time: new Date()});
-agenda.start();
-
-console.log(&amp;#39;Wait 10 seconds...&amp;#39;);
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Check out &lt;a href=&quot;http://runnable.com/U2RE8d2YyYk_iaGU/agenda-module-example-for-npmawesome-nodejitsu-and-node-js&quot;&gt;functional example on runnable&lt;/a&gt;. I like plain English option, but you can also schedule regular running task with cron style expressions like so:&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;agenda.every(&amp;#39;*/3 * * * *&amp;#39;, &amp;#39;greet the world&amp;#39;);
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;a href=&quot;https://github.com/rschmukler/agenda&quot;&gt;agenda&lt;/a&gt; is also capable of processing jobs from multiple processes. You just have to specify &lt;code&gt;lockLifetime&lt;/code&gt; option during the worker definition.&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;agenda.define(&amp;#39;someJob&amp;#39;, {lockLifetime: 10000}, function(job, cb) {
-  //Do something in 10 seconds or less...
-});
-&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&quot;mongo-vs-redis&quot;&gt;Mongo vs Redis&lt;/h2&gt;
-&lt;p&gt;Curious why MongoDB was chosen for something most would use Redis for? &lt;a href=&quot;https://github.com/rschmukler&quot;&gt;Ryan Schmukler&lt;/a&gt; has a few thoughts on this:&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;The decision to use Mongo instead of Redis is intentional. Redis is often used for non-essential data (such as sessions) and without configuration doesn&amp;#39;t guarantee the same level of persistence as Mongo (should the server need to be restarted/crash).&lt;/p&gt;
-&lt;p&gt;&lt;a href=&quot;https://github.com/rschmukler/agenda&quot;&gt;agenda&lt;/a&gt; decides to focus on persistence without requiring special configuration of Redis (thereby degrading the performance of the Redis server on non-critical data, such as sessions).&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h2 id=&quot;closing-thoughts&quot;&gt;Closing thoughts&lt;/h2&gt;
-&lt;p&gt;&lt;a href=&quot;https://github.com/rschmukler/agenda&quot;&gt;agenda&lt;/a&gt; focuses on setting up and managing regular running tasks such as session purging, email sending, data processing and so on. There are a few alternatives out there:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://github.com/learnboost/kue&quot;&gt;kue&lt;/a&gt; is a priority job queue backed by redis originally written by &lt;a href=&quot;https://github.com/visionmedia&quot;&gt;TJ Holowaychuk&lt;/a&gt; and is currently maintained by &lt;a href=&quot;https://github.com/behrad&quot;&gt;Behrad&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://github.com/mattpat/node-schedule&quot;&gt;node-schedule&lt;/a&gt; is a single process, cron-like and not-cron-like job scheduler by &lt;a href=&quot;https://github.com/mattpat&quot;&gt;Matt Patenaude&lt;/a&gt;. It doesn&amp;#39;t have any external dependencies.&lt;/li&gt;
-&lt;/ul&gt;
-</content>
 		</entry>
 	
 </feed>

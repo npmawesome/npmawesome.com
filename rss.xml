@@ -15,15 +15,56 @@
     <atom:link href="http://feeds.feedburner.com/npmawesome" rel="self" type="application/rss+xml"/>
     <link>http://npmawesome.com</link>
     <description>Daily dose of awesome NPM modules for Node.js, old and new!</description>
-    <lastBuildDate>Tue, 20 May 2014 16:41:44 GMT</lastBuildDate>
+    <lastBuildDate>Tue, 20 May 2014 19:24:51 GMT</lastBuildDate>
     <language>en</language>
     <sy:updatePeriod>daily</sy:updatePeriod>
     <sy:updateFrequency>2</sy:updateFrequency>
     <generator>awesomeness</generator>
-    <pubDate>Tue, 20 May 2014 16:41:44 GMT</pubDate>
+    <pubDate>Tue, 20 May 2014 19:24:51 GMT</pubDate>
 
     
     
+    
+      
+      
+      
+      <item>
+        <title><![CDATA[Links for May 20, 2014]]></title>
+        <link><![CDATA[http://npmawesome.com/posts/2014-05-20-links]]></link>
+        <dc:creator><![CDATA[Alex Gorbatchev]]></dc:creator>
+        <guid isPermaLink="true"><![CDATA[http://npmawesome.com/posts/2014-05-20-links]]></guid>
+        <pubDate><![CDATA[Tue, 20 May 2014 19:22:40 GMT]]></pubDate>
+        <description><![CDATA[<p><img src="http://npmawesome.com/images/posts/html5.png" class="hide-on-mobile" style="float: right; width: 150px;"/></p>
+<h2 id="articles">Articles</h2>
+<ul>
+<li><a href="http://viget.com/extend/gulp-browserify-starter-faq">Gulp + Browserify: The Everything Post</a><blockquote>
+<p>When I was done flipping tables, I set aside my newly acquired Grunt + RequireJS skills, and started over again with Gulp and Browserify to see what all the fuss was about.</p>
+<p>You guys. The internet was right. To save you some googling, doc crawling, and trial and error I went through, I&#39;ve assembled some resources and information I think you&#39;ll find helpful in getting started.</p>
+</blockquote>
+</li>
+<li><a href="http://flippinawesome.org/2014/05/12/roll-your-own-asset-pipeline-with-gulp/">Roll Your Own Asset Pipeline with Gulp</a><blockquote>
+<p>Gulp is a build system. It’s like Grunt, Make, Rake, and the like. It’s easy to use for the person running it. While it does have a slight learning curve, you’ll find it a super useful tool for all kinds of tasks. It’ll be the fastest weapon in your toolbox for asset compilation (both in terms of time to develop and run time).</p>
+</blockquote>
+</li>
+<li><a href="http://thenextweb.com/google/2014/05/20/chrome-35-launches-developer-control-touch-input-new-apis-javascript-features/">Chrome 35 launches with more developer control</a><blockquote>
+<ul>
+<li>More developer control over touch input.</li>
+<li>New JavaScript features.</li>
+<li>Unprefixed Shadow DOM.</li>
+<li>A number of new apps/extension APIs.</li>
+<li>Lots of under the hood changes for stability and performance.</li>
+</ul>
+</blockquote>
+</li>
+</ul>
+<div class="read-more"></div>
+
+<h2 id="twitter">Twitter</h2>
+<blockquote class="twitter-tweet" data-partner="tweetdeck"><p>DevTools Tip: Select a User Agent from a predefined list, or define an arbitrary one. Gif: <a href="https://t.co/M5QMInl7Fq">https://t.co/M5QMInl7Fq</a> <a href="http://t.co/9XUDDBXwoO">pic.twitter.com/9XUDDBXwoO</a></p>&mdash; Umar Hansa (@umaar) <a href="https://twitter.com/umaar/statuses/468823671923306497">May 20, 2014</a></blockquote>
+
+
+<blockquote class="twitter-tweet" lang="en"><p>Miss the <a href="https://twitter.com/search?q=%23live&amp;src=hash">#live</a> demo at <a href="https://twitter.com/search?q=%23Bitcoin2014&amp;src=hash">#Bitcoin2014</a>? Not to worry! <a href="https://twitter.com/jerallaire">@jerallaire</a> walks you through Circle in this <a href="https://twitter.com/search?q=%23video&amp;src=hash">#video</a>: <a href="http://t.co/hPpRcZ5fy9">http://t.co/hPpRcZ5fy9</a> <a href="https://twitter.com/search?q=%23bitcoin&amp;src=hash">#bitcoin</a></p>&mdash; Circle Inc. (@circlebits) <a href="https://twitter.com/circlebits/statuses/467325134706343936">May 16, 2014</a></blockquote>]]></description>
+      </item>
     
       
       
@@ -183,64 +224,6 @@
 </ul>
 <h2 id="twitter">Twitter</h2>
 <blockquote class="twitter-tweet" data-partner="tweetdeck"><p>Introducing Synth - A new <a href="https://twitter.com/nodejs">@NodeJS</a> web framework designed just for <a href="https://twitter.com/angularjs">@AngularJS</a>&#10;<a href="http://t.co/7yLOHUittG">http://t.co/7yLOHUittG</a> &#10;via <a href="https://twitter.com/JonathanAbrams">@JonathanAbrams</a> <a href="https://twitter.com/YouTube">@YouTube</a></p>&mdash; PatrickJS (@gdi2290) <a href="https://twitter.com/gdi2290/statuses/464266195739234304">May 8, 2014</a></blockquote>]]></description>
-      </item>
-    
-      
-      
-      
-      <item>
-        <title><![CDATA[agenda]]></title>
-        <link><![CDATA[http://npmawesome.com/posts/2014-05-06-agenda]]></link>
-        <dc:creator><![CDATA[Alex Gorbatchev]]></dc:creator>
-        <guid isPermaLink="true"><![CDATA[http://npmawesome.com/posts/2014-05-06-agenda]]></guid>
-        <pubDate><![CDATA[Tue, 06 May 2014 18:30:00 GMT]]></pubDate>
-        <description><![CDATA[<p><img class="hide-on-mobile" src="https://avatars2.githubusercontent.com/u/651740?s=400" style="float: right; margin-left: 1em; width: 100px"/>
-As you web application grows, there comes a time when you will want to have scheduled jobs. The easiest thing is of course go the <a href="http://en.wikipedia.org/wiki/Cron">cron</a> route. However, maintaining and updating it isn&#39;t so easy, especially if you have more than one server to deal with and you still maybe too young for enterprise level job scheduler. What&#39;s left? Maybe just do some <code>setTimeout</code> calls in process... That doesn&#39;t sound very exciting nor very manageable.</p>
-<p>This is where <a href="https://github.com/rschmukler/agenda">agenda</a> by <a href="https://github.com/rschmukler">Ryan Schmukler</a> comes in. <a href="https://github.com/rschmukler/agenda">agenda</a>, to plainly put it, is a light-weight job scheduling library for Node.js. Lets give it a go!</p>
-<div class="read-more"></div>
-
-<pre><code>npm install agenda
-</code></pre><h2 id="features">Features</h2>
-<ul>
-<li>Minimal overhead. <a href="https://github.com/rschmukler/agenda">agenda</a> aims to keep its code base small.</li>
-<li>MongoDB 2.4+ backed persistance layer.</li>
-<li>Scheduling with configurable priority, concurrency, and repeating.</li>
-<li>Scheduling via cron or human readable syntax.</li>
-<li>Event backed job queue that you can hook into.</li>
-</ul>
-<h2 id="usage">Usage</h2>
-<p>Lets make a basic example that runs a job 10 seconds after the startup:</p>
-<pre><code>var Agenda = require(&#39;agenda&#39;);
-var agenda = new Agenda({db: {address: &#39;localhost:27017/agenda-example&#39;}});
-
-agenda.define(&#39;greet the world&#39;, function(job, done) {
-  console.log(job.attrs.data.time, &#39;hello world!&#39;);
-  done();
-});
-
-agenda.schedule(&#39;in 10 seconds&#39;, &#39;greet the world&#39;, {time: new Date()});
-agenda.start();
-
-console.log(&#39;Wait 10 seconds...&#39;);
-</code></pre><p>Check out <a href="http://runnable.com/U2RE8d2YyYk_iaGU/agenda-module-example-for-npmawesome-nodejitsu-and-node-js">functional example on runnable</a>. I like plain English option, but you can also schedule regular running task with cron style expressions like so:</p>
-<pre><code>agenda.every(&#39;*/3 * * * *&#39;, &#39;greet the world&#39;);
-</code></pre><p><a href="https://github.com/rschmukler/agenda">agenda</a> is also capable of processing jobs from multiple processes. You just have to specify <code>lockLifetime</code> option during the worker definition.</p>
-<pre><code>agenda.define(&#39;someJob&#39;, {lockLifetime: 10000}, function(job, cb) {
-  //Do something in 10 seconds or less...
-});
-</code></pre><h2 id="mongo-vs-redis">Mongo vs Redis</h2>
-<p>Curious why MongoDB was chosen for something most would use Redis for? <a href="https://github.com/rschmukler">Ryan Schmukler</a> has a few thoughts on this:</p>
-<blockquote>
-<p>The decision to use Mongo instead of Redis is intentional. Redis is often used for non-essential data (such as sessions) and without configuration doesn&#39;t guarantee the same level of persistence as Mongo (should the server need to be restarted/crash).</p>
-<p><a href="https://github.com/rschmukler/agenda">agenda</a> decides to focus on persistence without requiring special configuration of Redis (thereby degrading the performance of the Redis server on non-critical data, such as sessions).</p>
-</blockquote>
-<h2 id="closing-thoughts">Closing thoughts</h2>
-<p><a href="https://github.com/rschmukler/agenda">agenda</a> focuses on setting up and managing regular running tasks such as session purging, email sending, data processing and so on. There are a few alternatives out there:</p>
-<ul>
-<li><a href="https://github.com/learnboost/kue">kue</a> is a priority job queue backed by redis originally written by <a href="https://github.com/visionmedia">TJ Holowaychuk</a> and is currently maintained by <a href="https://github.com/behrad">Behrad</a></li>
-<li><a href="https://github.com/mattpat/node-schedule">node-schedule</a> is a single process, cron-like and not-cron-like job scheduler by <a href="https://github.com/mattpat">Matt Patenaude</a>. It doesn&#39;t have any external dependencies.</li>
-</ul>
-]]></description>
       </item>
     
   </channel>
