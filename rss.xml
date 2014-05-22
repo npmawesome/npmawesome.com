@@ -15,15 +15,57 @@
     <atom:link href="http://feeds.feedburner.com/npmawesome" rel="self" type="application/rss+xml"/>
     <link>http://npmawesome.com</link>
     <description>Daily dose of awesome NPM modules for Node.js, old and new!</description>
-    <lastBuildDate>Tue, 20 May 2014 19:24:51 GMT</lastBuildDate>
+    <lastBuildDate>Thu, 22 May 2014 17:27:04 GMT</lastBuildDate>
     <language>en</language>
     <sy:updatePeriod>daily</sy:updatePeriod>
     <sy:updateFrequency>2</sy:updateFrequency>
     <generator>awesomeness</generator>
-    <pubDate>Tue, 20 May 2014 19:24:51 GMT</pubDate>
+    <pubDate>Thu, 22 May 2014 17:27:04 GMT</pubDate>
 
     
     
+    
+      
+      
+      
+      <item>
+        <title><![CDATA[Links for May 22, 2014]]></title>
+        <link><![CDATA[http://npmawesome.com/posts/2014-05-22-links]]></link>
+        <dc:creator><![CDATA[Alex Gorbatchev]]></dc:creator>
+        <guid isPermaLink="true"><![CDATA[http://npmawesome.com/posts/2014-05-22-links]]></guid>
+        <pubDate><![CDATA[Thu, 22 May 2014 17:26:40 GMT]]></pubDate>
+        <description><![CDATA[<p><img src="http://npmawesome.com/images/posts/html5.png" class="hide-on-mobile" style="float: right; width: 150px;"/></p>
+<h2 id="articles">Articles</h2>
+<ul>
+<li><a href="http://davidwalsh.name/add-rules-stylesheets">Add Rules to Stylesheets with JavaScript</a><blockquote>
+<p>Another way we can make our pages efficient and fast is to dynamically add and remove styles directly to a stylesheet instead of constantly querying the DOM for elements and applying styles.  Here&#39;s how it works!</p>
+</blockquote>
+</li>
+<li><a href="http://antirez.com/news/75">Redis new data structure: the HyperLogLog</a><blockquote>
+<p>There is a class of algorithms that use randomization in order to provide an approximation of the number of unique elements in a set using just a constant, and small, amount of memory. The best of such algorithms currently known is called HyperLogLog, and is due to Philippe Flajolet.</p>
+</blockquote>
+</li>
+<li><a href="https://www.igvita.com/2014/05/20/script-injected-async-scripts-considered-harmful/">Script-injected &quot;async scripts&quot; considered harmful</a><blockquote>
+<p>The script-injected pattern offers no benefits over <code>&lt;script async&gt;</code>. The reason it exists is because <code>&lt;script async&gt;</code> was not available and preload scanners did not exist back when it was first introduced. However, that era has now passed, and we need to update our best practices to use async attribute instead of script-injected scripts. In short, script-injected &quot;async scripts&quot; considered harmful.</p>
+</blockquote>
+</li>
+<li><a href="http://www.html5rocks.com/en/tutorials/es7/observe/">Data-binding Revolutions with Object.observe()</a><blockquote>
+<p>A revolution is coming. There’s a new addition to JavaScript that’s going to change everything you think you know about data-binding. It’s also going to change how many of your MVC libraries approach observing models for edits and updates.</p>
+</blockquote>
+</li>
+</ul>
+<div class="read-more"></div>
+
+<h2 id="github">Github</h2>
+<ul>
+<li><a href="http://philipwalton.github.io/solved-by-flexbox/">Solved by Flexbox</a><blockquote>
+<p>This site is not another CSS framework. Instead, its purpose is to showcase problems once hard or impossible to solve with CSS alone, now made trivially easy with Flexbox. And with the recent release of Internet Explorer 11 and Safari 6.1, the latest Flexbox spec is now supported in every modern browser.</p>
+</blockquote>
+</li>
+</ul>
+<h2 id="twitter">Twitter</h2>
+<blockquote class="twitter-tweet" data-partner="tweetdeck"><p>Dawg, RT <a href="https://twitter.com/ItsKieranTime">@ItsKieranTime</a> I&#39;ve found it; the most confusing image on the internet. <a href="https://twitter.com/search?q=%23KieranPresentsTheInternet&amp;src=hash">#KieranPresentsTheInternet</a> <a href="http://t.co/OUysIaxEfX">pic.twitter.com/OUysIaxEfX</a></p>&mdash; Gingerick Lamar (@odiolasgalletas) <a href="https://twitter.com/odiolasgalletas/statuses/466103422454730752">May 13, 2014</a></blockquote>]]></description>
+      </item>
     
       
       
@@ -66,6 +108,8 @@
 <blockquote class="twitter-tweet" lang="en"><p>Miss the <a href="https://twitter.com/search?q=%23live&amp;src=hash">#live</a> demo at <a href="https://twitter.com/search?q=%23Bitcoin2014&amp;src=hash">#Bitcoin2014</a>? Not to worry! <a href="https://twitter.com/jerallaire">@jerallaire</a> walks you through Circle in this <a href="https://twitter.com/search?q=%23video&amp;src=hash">#video</a>: <a href="http://t.co/hPpRcZ5fy9">http://t.co/hPpRcZ5fy9</a> <a href="https://twitter.com/search?q=%23bitcoin&amp;src=hash">#bitcoin</a></p>&mdash; Circle Inc. (@circlebits) <a href="https://twitter.com/circlebits/statuses/467325134706343936">May 16, 2014</a></blockquote>]]></description>
       </item>
     
+      
+      
       
       
       
@@ -191,39 +235,6 @@
 </ul>
 <h2 id="twitter">Twitter</h2>
 <blockquote class="twitter-tweet" data-partner="tweetdeck"><p>Our 10 year anniversary is coming up! To help us celebrate, <a href="https://twitter.com/simpleshow">@simpleshow</a> made this incredible video for us - <a href="http://t.co/KFHz5RvQpx">http://t.co/KFHz5RvQpx</a></p>&mdash; Moz (@Moz) <a href="https://twitter.com/Moz/statuses/466618559914065921">May 14, 2014</a></blockquote>]]></description>
-      </item>
-    
-      
-      
-      
-      <item>
-        <title><![CDATA[Links for May 13, 2014]]></title>
-        <link><![CDATA[http://npmawesome.com/posts/2014-05-13-links]]></link>
-        <dc:creator><![CDATA[Alex Gorbatchev]]></dc:creator>
-        <guid isPermaLink="true"><![CDATA[http://npmawesome.com/posts/2014-05-13-links]]></guid>
-        <pubDate><![CDATA[Tue, 13 May 2014 16:38:07 GMT]]></pubDate>
-        <description><![CDATA[<p><img src="http://npmawesome.com/images/posts/html5.png" class="hide-on-mobile" style="float: right; width: 150px;"/></p>
-<h2 id="articles-slides">Articles &amp; Slides</h2>
-<ul>
-<li><a href="http://spencerfry.com/the-domain-market-is-a-mess">The Domain Market is a Mess</a></li>
-<li><a href="http://blog.docker.io/2014/05/docker-0-11-release-candidate-for-1-0/">Docker 0.11 is the Release Candidate for 1.0</a></li>
-<li><a href="http://www.roussos.cc/2014/05/08/free-your-android/">Free Your Android</a></li>
-<li><a href="https://hacks.mozilla.org/2014/05/how-fast-is-pdf-js/">How fast is PDF.js?</a></li>
-<li><a href="http://howtonode.org/generators-vs-fibers">Generators vs Fibers</a></li>
-<li><a href="http://www.ustream.tv/channel/iss-hdev-payload">Live feed from ISS</a></li>
-</ul>
-<div class="read-more"></div>
-
-<h2 id="github">Github</h2>
-<ul>
-<li><a href="http://getuikit.com/">UIKit</a> is a lightweight and modular front-end framework for developing fast and powerful web interfaces.</li>
-</ul>
-<h2 id="apps">Apps</h2>
-<ul>
-<li><a href="http://www.paintcodeapp.com/">PaintCode 2</a></li>
-</ul>
-<h2 id="twitter">Twitter</h2>
-<blockquote class="twitter-tweet" data-partner="tweetdeck"><p>Introducing Synth - A new <a href="https://twitter.com/nodejs">@NodeJS</a> web framework designed just for <a href="https://twitter.com/angularjs">@AngularJS</a>&#10;<a href="http://t.co/7yLOHUittG">http://t.co/7yLOHUittG</a> &#10;via <a href="https://twitter.com/JonathanAbrams">@JonathanAbrams</a> <a href="https://twitter.com/YouTube">@YouTube</a></p>&mdash; PatrickJS (@gdi2290) <a href="https://twitter.com/gdi2290/statuses/464266195739234304">May 8, 2014</a></blockquote>]]></description>
       </item>
     
   </channel>

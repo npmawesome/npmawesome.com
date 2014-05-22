@@ -5,7 +5,7 @@
 	<link href="http://npmawesome.com/atom.xml" rel="self" />
 	<link href="http://npmawesome.com" />
 	<id>http://npmawesome.com</id>
-	<updated>2014-05-20T19:24:51.080Z</updated>
+	<updated>2014-05-22T17:27:04.977Z</updated>
 	<author>
 		<name>Alex Gorbatchev</name>
 	</author>
@@ -13,6 +13,47 @@
   
   
   
+    
+    
+    
+		<entry>
+			<title>Links for May 22, 2014</title>
+			<link href="http://npmawesome.com/posts/2014-05-22-links"/>
+			<updated>2014-05-22T17:26:40.000Z</updated>
+			<id>http://npmawesome.com/posts/2014-05-22-links</id>
+			<content type="html">&lt;p&gt;&lt;img src=&quot;http://npmawesome.com/images/posts/html5.png&quot; class=&quot;hide-on-mobile&quot; style=&quot;float: right; width: 150px;&quot;/&gt;&lt;/p&gt;
+&lt;h2 id=&quot;articles&quot;&gt;Articles&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;http://davidwalsh.name/add-rules-stylesheets&quot;&gt;Add Rules to Stylesheets with JavaScript&lt;/a&gt;&lt;blockquote&gt;
+&lt;p&gt;Another way we can make our pages efficient and fast is to dynamically add and remove styles directly to a stylesheet instead of constantly querying the DOM for elements and applying styles.  Here&amp;#39;s how it works!&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://antirez.com/news/75&quot;&gt;Redis new data structure: the HyperLogLog&lt;/a&gt;&lt;blockquote&gt;
+&lt;p&gt;There is a class of algorithms that use randomization in order to provide an approximation of the number of unique elements in a set using just a constant, and small, amount of memory. The best of such algorithms currently known is called HyperLogLog, and is due to Philippe Flajolet.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://www.igvita.com/2014/05/20/script-injected-async-scripts-considered-harmful/&quot;&gt;Script-injected &amp;quot;async scripts&amp;quot; considered harmful&lt;/a&gt;&lt;blockquote&gt;
+&lt;p&gt;The script-injected pattern offers no benefits over &lt;code&gt;&amp;lt;script async&amp;gt;&lt;/code&gt;. The reason it exists is because &lt;code&gt;&amp;lt;script async&amp;gt;&lt;/code&gt; was not available and preload scanners did not exist back when it was first introduced. However, that era has now passed, and we need to update our best practices to use async attribute instead of script-injected scripts. In short, script-injected &amp;quot;async scripts&amp;quot; considered harmful.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://www.html5rocks.com/en/tutorials/es7/observe/&quot;&gt;Data-binding Revolutions with Object.observe()&lt;/a&gt;&lt;blockquote&gt;
+&lt;p&gt;A revolution is coming. There’s a new addition to JavaScript that’s going to change everything you think you know about data-binding. It’s also going to change how many of your MVC libraries approach observing models for edits and updates.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&quot;read-more&quot;&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;github&quot;&gt;Github&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;http://philipwalton.github.io/solved-by-flexbox/&quot;&gt;Solved by Flexbox&lt;/a&gt;&lt;blockquote&gt;
+&lt;p&gt;This site is not another CSS framework. Instead, its purpose is to showcase problems once hard or impossible to solve with CSS alone, now made trivially easy with Flexbox. And with the recent release of Internet Explorer 11 and Safari 6.1, the latest Flexbox spec is now supported in every modern browser.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;twitter&quot;&gt;Twitter&lt;/h2&gt;
+&lt;blockquote class=&quot;twitter-tweet&quot; data-partner=&quot;tweetdeck&quot;&gt;&lt;p&gt;Dawg, RT &lt;a href=&quot;https://twitter.com/ItsKieranTime&quot;&gt;@ItsKieranTime&lt;/a&gt; I&amp;#39;ve found it; the most confusing image on the internet. &lt;a href=&quot;https://twitter.com/search?q=%23KieranPresentsTheInternet&amp;amp;src=hash&quot;&gt;#KieranPresentsTheInternet&lt;/a&gt; &lt;a href=&quot;http://t.co/OUysIaxEfX&quot;&gt;pic.twitter.com/OUysIaxEfX&lt;/a&gt;&lt;/p&gt;&amp;mdash; Gingerick Lamar (@odiolasgalletas) &lt;a href=&quot;https://twitter.com/odiolasgalletas/statuses/466103422454730752&quot;&gt;May 13, 2014&lt;/a&gt;&lt;/blockquote&gt;</content>
+		</entry>
+	
     
     
     
@@ -53,6 +94,8 @@
 &lt;blockquote class=&quot;twitter-tweet&quot; lang=&quot;en&quot;&gt;&lt;p&gt;Miss the &lt;a href=&quot;https://twitter.com/search?q=%23live&amp;amp;src=hash&quot;&gt;#live&lt;/a&gt; demo at &lt;a href=&quot;https://twitter.com/search?q=%23Bitcoin2014&amp;amp;src=hash&quot;&gt;#Bitcoin2014&lt;/a&gt;? Not to worry! &lt;a href=&quot;https://twitter.com/jerallaire&quot;&gt;@jerallaire&lt;/a&gt; walks you through Circle in this &lt;a href=&quot;https://twitter.com/search?q=%23video&amp;amp;src=hash&quot;&gt;#video&lt;/a&gt;: &lt;a href=&quot;http://t.co/hPpRcZ5fy9&quot;&gt;http://t.co/hPpRcZ5fy9&lt;/a&gt; &lt;a href=&quot;https://twitter.com/search?q=%23bitcoin&amp;amp;src=hash&quot;&gt;#bitcoin&lt;/a&gt;&lt;/p&gt;&amp;mdash; Circle Inc. (@circlebits) &lt;a href=&quot;https://twitter.com/circlebits/statuses/467325134706343936&quot;&gt;May 16, 2014&lt;/a&gt;&lt;/blockquote&gt;</content>
 		</entry>
 	
+    
+    
     
     
     
@@ -175,38 +218,6 @@
 &lt;/ul&gt;
 &lt;h2 id=&quot;twitter&quot;&gt;Twitter&lt;/h2&gt;
 &lt;blockquote class=&quot;twitter-tweet&quot; data-partner=&quot;tweetdeck&quot;&gt;&lt;p&gt;Our 10 year anniversary is coming up! To help us celebrate, &lt;a href=&quot;https://twitter.com/simpleshow&quot;&gt;@simpleshow&lt;/a&gt; made this incredible video for us - &lt;a href=&quot;http://t.co/KFHz5RvQpx&quot;&gt;http://t.co/KFHz5RvQpx&lt;/a&gt;&lt;/p&gt;&amp;mdash; Moz (@Moz) &lt;a href=&quot;https://twitter.com/Moz/statuses/466618559914065921&quot;&gt;May 14, 2014&lt;/a&gt;&lt;/blockquote&gt;</content>
-		</entry>
-	
-    
-    
-    
-		<entry>
-			<title>Links for May 13, 2014</title>
-			<link href="http://npmawesome.com/posts/2014-05-13-links"/>
-			<updated>2014-05-13T16:38:07.000Z</updated>
-			<id>http://npmawesome.com/posts/2014-05-13-links</id>
-			<content type="html">&lt;p&gt;&lt;img src=&quot;http://npmawesome.com/images/posts/html5.png&quot; class=&quot;hide-on-mobile&quot; style=&quot;float: right; width: 150px;&quot;/&gt;&lt;/p&gt;
-&lt;h2 id=&quot;articles-slides&quot;&gt;Articles &amp;amp; Slides&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;http://spencerfry.com/the-domain-market-is-a-mess&quot;&gt;The Domain Market is a Mess&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://blog.docker.io/2014/05/docker-0-11-release-candidate-for-1-0/&quot;&gt;Docker 0.11 is the Release Candidate for 1.0&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://www.roussos.cc/2014/05/08/free-your-android/&quot;&gt;Free Your Android&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://hacks.mozilla.org/2014/05/how-fast-is-pdf-js/&quot;&gt;How fast is PDF.js?&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://howtonode.org/generators-vs-fibers&quot;&gt;Generators vs Fibers&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://www.ustream.tv/channel/iss-hdev-payload&quot;&gt;Live feed from ISS&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;div class=&quot;read-more&quot;&gt;&lt;/div&gt;
-
-&lt;h2 id=&quot;github&quot;&gt;Github&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;http://getuikit.com/&quot;&gt;UIKit&lt;/a&gt; is a lightweight and modular front-end framework for developing fast and powerful web interfaces.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&quot;apps&quot;&gt;Apps&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;http://www.paintcodeapp.com/&quot;&gt;PaintCode 2&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&quot;twitter&quot;&gt;Twitter&lt;/h2&gt;
-&lt;blockquote class=&quot;twitter-tweet&quot; data-partner=&quot;tweetdeck&quot;&gt;&lt;p&gt;Introducing Synth - A new &lt;a href=&quot;https://twitter.com/nodejs&quot;&gt;@NodeJS&lt;/a&gt; web framework designed just for &lt;a href=&quot;https://twitter.com/angularjs&quot;&gt;@AngularJS&lt;/a&gt;&amp;#10;&lt;a href=&quot;http://t.co/7yLOHUittG&quot;&gt;http://t.co/7yLOHUittG&lt;/a&gt; &amp;#10;via &lt;a href=&quot;https://twitter.com/JonathanAbrams&quot;&gt;@JonathanAbrams&lt;/a&gt; &lt;a href=&quot;https://twitter.com/YouTube&quot;&gt;@YouTube&lt;/a&gt;&lt;/p&gt;&amp;mdash; PatrickJS (@gdi2290) &lt;a href=&quot;https://twitter.com/gdi2290/statuses/464266195739234304&quot;&gt;May 8, 2014&lt;/a&gt;&lt;/blockquote&gt;</content>
 		</entry>
 	
 </feed>
