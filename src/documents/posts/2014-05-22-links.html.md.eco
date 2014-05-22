@@ -1,0 +1,30 @@
+---
+date: 2014-05-22T10:26:40-0700
+title: Links for May 22, 2014
+layout: post-links
+tags: javascript, links
+description: Nerd links for the day, videos, GitHub projects, talks, articles and other stuff.
+---
+<img src="<%- @image '/html5.png' %>" class="hide-on-mobile" style="float: right; width: 150px;"/>
+
+## Articles
+
+* [Add Rules to Stylesheets with JavaScript](http://davidwalsh.name/add-rules-stylesheets)
+  > Another way we can make our pages efficient and fast is to dynamically add and remove styles directly to a stylesheet instead of constantly querying the DOM for elements and applying styles.  Here's how it works!
+* [Redis new data structure: the HyperLogLog](http://antirez.com/news/75)
+  > There is a class of algorithms that use randomization in order to provide an approximation of the number of unique elements in a set using just a constant, and small, amount of memory. The best of such algorithms currently known is called HyperLogLog, and is due to Philippe Flajolet.
+* [Script-injected "async scripts" considered harmful](https://www.igvita.com/2014/05/20/script-injected-async-scripts-considered-harmful/)
+  > The script-injected pattern offers no benefits over `<script async>`. The reason it exists is because `<script async>` was not available and preload scanners did not exist back when it was first introduced. However, that era has now passed, and we need to update our best practices to use async attribute instead of script-injected scripts. In short, script-injected "async scripts" considered harmful.
+* [Data-binding Revolutions with Object.observe()](http://www.html5rocks.com/en/tutorials/es7/observe/)
+  > A revolution is coming. There’s a new addition to JavaScript that’s going to change everything you think you know about data-binding. It’s also going to change how many of your MVC libraries approach observing models for edits and updates.
+
+<%- @readMore() %>
+
+## Github
+
+* [Solved by Flexbox](http://philipwalton.github.io/solved-by-flexbox/)
+  > This site is not another CSS framework. Instead, its purpose is to showcase problems once hard or impossible to solve with CSS alone, now made trivially easy with Flexbox. And with the recent release of Internet Explorer 11 and Safari 6.1, the latest Flexbox spec is now supported in every modern browser.
+
+## Twitter
+
+<blockquote class="twitter-tweet" data-partner="tweetdeck"><p>Dawg, RT <a href="https://twitter.com/ItsKieranTime">@ItsKieranTime</a> I&#39;ve found it; the most confusing image on the internet. <a href="https://twitter.com/search?q=%23KieranPresentsTheInternet&amp;src=hash">#KieranPresentsTheInternet</a> <a href="http://t.co/OUysIaxEfX">pic.twitter.com/OUysIaxEfX</a></p>&mdash; Gingerick Lamar (@odiolasgalletas) <a href="https://twitter.com/odiolasgalletas/statuses/466103422454730752">May 13, 2014</a></blockquote>

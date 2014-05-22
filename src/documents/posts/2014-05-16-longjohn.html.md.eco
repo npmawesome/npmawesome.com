@@ -1,0 +1,66 @@
+---
+date: 2014-05-19T21:11:55-0700
+author: alexgorbatchev
+partner: nodejitsu
+layout: post
+tags: npm, job, scheduler
+
+npm:
+  repo: &repo mattinsler/longjohn
+  name: &name longjohn
+
+  author:
+    name: Matt Insler
+    github: mattinsler
+
+slug: *name
+title: *name
+description: Find distance data between two locations in an easy way.
+---
+You know that feeling of disapointment when you get an error and the stack trace just abruptly ends and you know for a fact it should be much longer, and much more useful than that?
+
+    Error: Error message
+        at null._onTimeout (/examples/error-module.js:7:29)
+        at Timer.listOnTimeout [as ontimeout] (timers.js:110:15)
+
+I'm very well familiar with that feeling... Maybe too much? Turns out there's a way to get much better results in Node with a little bit of magic. Said magic is a module called <%- @npm() %> by <%- @author() %>.
+
+<%- @readMore() %>
+
+    <%- @install() %>
+
+## Usage
+
+Using <%- @npm() %> couldn't get any easier. You just need to `require('longjohn')` and you are all set. The magic that I mentioned above consists of replacing functions like `setTimeout` and `nextTick` with patched versions that keep track of the stack as it unfolds and as author suggests, this probably shouldn't be used in production.
+
+But, after you require <%- @npm() %>, your short, mildly helpful stack like this:
+
+    Error: Error message
+        at null._onTimeout (/examples/error-module.js:7:29)
+        at Timer.listOnTimeout [as ontimeout] (timers.js:110:15)
+
+Turns into this:
+
+    Error: Error message
+        at [object Object].<anonymous> (/examples/error-module.js:7:29)
+        at listOnTimeout (timers.js:110:15)
+    ---------------------------------------------
+        at delayed (/examples/error-module.js:3:3)
+        at delayedError (/examples/error-module.js:7:3)
+        at [object Object].<anonymous> (/examples/error-module.js:21:5)
+        at listOnTimeout (timers.js:110:15)
+    ---------------------------------------------
+        at delayed (/examples/error-module.js:3:3)
+        at module.exports (/examples/error-module.js:20:3)
+        at Object.<anonymous> (/examples/longjohn.js:2:26)
+        at Module._compile (module.js:456:26)
+        at Module._extensions..js (module.js:474:10)
+        at Module.load (module.js:356:32)
+        at Module._load (module.js:312:12)
+        at Module.runMain (module.js:497:10)
+
+## Closing thoughts
+
+Getting a full stack is imperative to finding out the root cause of the problem in your code. <%- @npm() %> addresses that on the Node side. There's a similiar module that works in the browser called [zone.js](https://github.com/btford/zone.js/) by [Brian Ford](https://github.com/btford) that I think you should check out as well.
+
+Check out [example for this article](https://github.com/npmawesome/example-longjohn) on GitHub.

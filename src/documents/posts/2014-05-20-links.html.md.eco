@@ -1,0 +1,32 @@
+---
+date: 2014-05-20T12:22:40-0700
+title: Links for May 20, 2014
+layout: post-links
+tags: javascript, links
+description: Nerd links for the day, videos, GitHub projects, talks, articles and other stuff.
+---
+<img src="<%- @image '/html5.png' %>" class="hide-on-mobile" style="float: right; width: 150px;"/>
+
+## Articles
+
+* [Gulp + Browserify: The Everything Post](http://viget.com/extend/gulp-browserify-starter-faq)
+  > When I was done flipping tables, I set aside my newly acquired Grunt + RequireJS skills, and started over again with Gulp and Browserify to see what all the fuss was about.
+  >
+  >You guys. The internet was right. To save you some googling, doc crawling, and trial and error I went through, I've assembled some resources and information I think you'll find helpful in getting started.
+* [Roll Your Own Asset Pipeline with Gulp](http://flippinawesome.org/2014/05/12/roll-your-own-asset-pipeline-with-gulp/)
+  > Gulp is a build system. It’s like Grunt, Make, Rake, and the like. It’s easy to use for the person running it. While it does have a slight learning curve, you’ll find it a super useful tool for all kinds of tasks. It’ll be the fastest weapon in your toolbox for asset compilation (both in terms of time to develop and run time).
+* [Chrome 35 launches with more developer control](http://thenextweb.com/google/2014/05/20/chrome-35-launches-developer-control-touch-input-new-apis-javascript-features/)
+  > * More developer control over touch input.
+  > * New JavaScript features.
+  > * Unprefixed Shadow DOM.
+  > * A number of new apps/extension APIs.
+  > * Lots of under the hood changes for stability and performance.
+
+<%- @readMore() %>
+
+## Twitter
+
+<blockquote class="twitter-tweet" data-partner="tweetdeck"><p>DevTools Tip: Select a User Agent from a predefined list, or define an arbitrary one. Gif: <a href="https://t.co/M5QMInl7Fq">https://t.co/M5QMInl7Fq</a> <a href="http://t.co/9XUDDBXwoO">pic.twitter.com/9XUDDBXwoO</a></p>&mdash; Umar Hansa (@umaar) <a href="https://twitter.com/umaar/statuses/468823671923306497">May 20, 2014</a></blockquote>
+
+
+<blockquote class="twitter-tweet" lang="en"><p>Miss the <a href="https://twitter.com/search?q=%23live&amp;src=hash">#live</a> demo at <a href="https://twitter.com/search?q=%23Bitcoin2014&amp;src=hash">#Bitcoin2014</a>? Not to worry! <a href="https://twitter.com/jerallaire">@jerallaire</a> walks you through Circle in this <a href="https://twitter.com/search?q=%23video&amp;src=hash">#video</a>: <a href="http://t.co/hPpRcZ5fy9">http://t.co/hPpRcZ5fy9</a> <a href="https://twitter.com/search?q=%23bitcoin&amp;src=hash">#bitcoin</a></p>&mdash; Circle Inc. (@circlebits) <a href="https://twitter.com/circlebits/statuses/467325134706343936">May 16, 2014</a></blockquote>
