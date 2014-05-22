@@ -54,7 +54,7 @@ exports.clone = function clone (repo, wdir, callback) {
 /**
  * Pulls a given repository.
  *
- * @param  {string} wdir The git repository derectory directory in which the repos should be cloned.
+ * @param  {string} wdir The git repository directory in which the repos should be cloned.
  * @param  {Function} callback error-first style.
  *
  */
