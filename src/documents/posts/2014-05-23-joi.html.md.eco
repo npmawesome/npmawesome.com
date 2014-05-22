@@ -1,0 +1,80 @@
+---
+ignore: true
+date: 2014-05-19T21:11:55-0700
+author: alexgorbatchev
+partner: nodejitsu
+layout: post
+tags: npm, json, validation
+
+npm:
+  repo: &repo spumko/joi
+  name: &name Joi
+  install: joi
+
+slug: *name
+title: *name
+description: Object schema validation in Node.js with Joi.
+---
+<img src="https://camo.githubusercontent.com/9dd0f88c6cdb8b7c034ac5e5cce0e4bbdc8de19e/68747470733a2f2f7261772e6769746875622e636f6d2f7370756d6b6f2f6a6f692f6d61737465722f696d616765732f6a6f692e706e67" width="100" align="right"/>
+Object validation is a tricky thing. It sounds pretty simple when you first think of it, yet there are a ton of libraries that try to do that. Why is that? Feels that there are alot of way to approach the subject. <%- @npm() %> is a schema validation library that came out of the [Walmart Labs](http://www.walmartlabs.com/) efforts and more specifically power validation in the [hapi] server framework.
+
+Lets check it out!
+
+    <%- @install() %>
+
+## Usage
+
+<%- @npm() %> works by defining a schema. You can validate a single string or number:
+
+    var Joi = require('joi');
+
+    // will fail
+    Joi.string().validate(10, console.log);
+
+    // also will fail
+    Joi.string().email().validate('hello+gmail.com', console.log);
+
+    // will pass
+    Joi.string().email().validate('hello+world@gmail.com', console.log);
+
+You can validate a basic plain schema
+
+    var schema = {counter: Joi.number().min(1).max(10).required()};
+
+    // will fail
+    Joi.validate({counter: 0}, schema, console.log);
+
+    // will pass
+    Joi.validate({counter: 5}, schema, console.log);
+
+Finally, you can do a some pretty complicated validation with field depending on each other:
+
+    var schema = Joi.object().keys({
+        username: Joi.string().alphanum().min(3).max(30).required(),
+        password: Joi.string().regex(/[a-zA-Z0-9]{3,30}/),
+        confirmation: Joi.ref('password')
+      })
+      .with('password', 'confirmation');
+
+    // will fail because `foo` isn't in the schema at all
+    Joi.validate({foo: 1}, schema, console.log);
+
+    // will fail because `confirmation` is missing
+    Joi.validate({username: 'alex', password: 'qwerty'}, schema, console.log);
+
+    // will pass
+    Joi.validate({
+      username: 'alex', password: 'qwerty', confirmation: 'qwerty'
+    }, schema, console.log);
+
+## Closing thoughts
+
+Here are some other modules you might want to evaluate:
+
+* [validator.js](https://github.com/chriso/validator.js) is a string validation and sanitization module by [Chris O'Hara](https://github.com/chriso).
+* [finito](http://www.finitio.io/) is a language for capturing information structure by [Louis Lambeau](https://github.com/llambeau).
+* [schema-inspector](https://github.com/Atinux/schema-inspector) is a module to sanitize and validate objects by [Sébastien Chopin](https://github.com/Atinux) ([previously featured on npmawesome.com](http://npmawesome.com/posts/2014-01-24-schema-inspector/)).
+
+Finally, check out [source code](https://github.com/npmawesome/example-joi) for this article on GitHub and an [interative example](http://runnable.com/U31mW3RA_pBu7oN-/schema-validation-with-joi-for-node-js-npmawesome-and-nodejitsu) on Runnable.
+
+[hapi]: http://spumko.github.io/
