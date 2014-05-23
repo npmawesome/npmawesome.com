@@ -19,6 +19,8 @@ Object validation is a tricky thing. It sounds pretty simple when you first thin
 
 Lets check it out!
 
+<%- @readMore() %>
+
     <%- @install() %>
 
 ## Usage
