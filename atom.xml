@@ -5,7 +5,7 @@
 	<link href="http://npmawesome.com/atom.xml" rel="self" />
 	<link href="http://npmawesome.com" />
 	<id>http://npmawesome.com</id>
-	<updated>2014-05-22T17:27:04.977Z</updated>
+	<updated>2014-05-23T19:09:39.649Z</updated>
 	<author>
 		<name>Alex Gorbatchev</name>
 	</author>
@@ -13,6 +13,47 @@
   
   
   
+    
+    
+    
+		<entry>
+			<title>changelog</title>
+			<link href="http://npmawesome.com/posts/2014-05-23-changelog"/>
+			<updated>2014-05-23T18:30:00.000Z</updated>
+			<id>http://npmawesome.com/posts/2014-05-23-changelog</id>
+			<content type="html">&lt;p&gt;&lt;img class=&quot;hide-on-mobile&quot; src=&quot;https://avatars2.githubusercontent.com/u/84792?s=400&quot; style=&quot;float: right; margin-left: 1em; width: 100px&quot;/&gt;&lt;/p&gt;
+&lt;p&gt;You fixed &lt;em&gt;all&lt;/em&gt; the bugs, closed some security holes and documented new features in your project. In other words - you did a great job and the next release is ready for the roll-out. But you&amp;#39;re not done just yet! No? What else? You have to update the changelog file, bump the version in the respective &lt;code&gt;package.json&lt;/code&gt; and create a &lt;code&gt;git tag&lt;/code&gt; first. Hm, many steps, right? No more! &lt;a href=&quot;https://github.com/defunctzombie/changelog&quot;&gt;changelog&lt;/a&gt; by &lt;a href=&quot;https://github.com/defunctzombie&quot;&gt;Roman Shtylman&lt;/a&gt; is here to save you.&lt;/p&gt;
+&lt;div class=&quot;read-more&quot;&gt;&lt;/div&gt;
+
+&lt;p&gt;Personally I&amp;#39;m not just a huge fan of the concept behind &lt;a href=&quot;http://tom.preston-werner.com/2010/08/23/readme-driven-development.html&quot;&gt;Readme Driven Development&lt;/a&gt; but also of planning releases in a changelog file. If this is your workflow as well, you will benefit from &lt;a href=&quot;https://github.com/defunctzombie/changelog&quot;&gt;changelog&lt;/a&gt; - you don&amp;#39;t have to adjust your changelog when releasing a new version by hand. It&amp;#39;s there, anyways, as described above.&lt;/p&gt;
+&lt;p&gt;The release workflow consists of many separate tasks which don&amp;#39;t have to be executed manually. They can be handled by &lt;a href=&quot;https://github.com/defunctzombie/changelog&quot;&gt;changelog&lt;/a&gt;. Let&amp;#39;s take a look:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;npm install defunctzombie/changelog
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&quot;initialization&quot;&gt;Initialization&lt;/h2&gt;
+&lt;p&gt;If you starting a new project you will want to create a new changelog. Execute:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;changelog --init
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;This will create an empty &lt;code&gt;HISTORY.md&lt;/code&gt; file for you which has the following structure:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;# UNRELEASED
+
+  * initial
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;The &lt;code&gt;UNRELEASED&lt;/code&gt; section is for all your changes you made or will make in the version you are working on. Look at this as a personal project blog where you keep track of every &lt;em&gt;unreleased&lt;/em&gt; change. No more external &lt;em&gt;todo applications&lt;/em&gt; or what have you. Everything is in the context you are working in – your project.&lt;/p&gt;
+&lt;h2 id=&quot;release&quot;&gt;Release&lt;/h2&gt;
+&lt;p&gt;Let&amp;#39;s say your product is ready for prime time and you want to release the &lt;em&gt;1.0.0&lt;/em&gt; version (OMG!):&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;changelog --release 1.0.0
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;This will will trigger &lt;code&gt;changelog&lt;/code&gt; to perform the following steps:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Convert the first &lt;code&gt;UNRELEASED&lt;/code&gt; section to &lt;code&gt;# 1.0.0 (YYYY-MM-DD)&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Change the &lt;code&gt;version&lt;/code&gt; property in your &lt;em&gt;package.json&lt;/em&gt; accordingly.&lt;/li&gt;
+&lt;li&gt;Execute a &lt;code&gt;git commit -m &amp;quot;v1.0.0&amp;quot;&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Execute a &lt;code&gt;git tag &amp;quot;v1.0.0&amp;quot;&lt;/code&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&quot;keep-on-working-&quot;&gt;Keep on working...&lt;/h2&gt;
+&lt;p&gt;Every project which does not have a roadmap with future changes is a dead project, right? I hope that the next release is always just around the corner! Next, you should start a new &lt;code&gt;UNRELEASED&lt;/code&gt; section by executing the following and keep on working :)&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;changelog --increment
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&quot;closing-thoughts&quot;&gt;Closing thoughts&lt;/h2&gt;
+&lt;p&gt;There might be other tools like &lt;a href=&quot;https://github.com/defunctzombie/changelog&quot;&gt;changelog&lt;/a&gt; out there but this one fits my personal workflow very well and who knows, maybe yours too. Whatever tools you are using for the release management, I can not emphasize enough how important it is to write a changelog file. Not just for you as a project maintainer but also for communicating to the people who are using your product. &lt;a href=&quot;https://github.com/defunctzombie&quot;&gt;Roman Shtylman&lt;/a&gt; helps with &lt;a href=&quot;https://github.com/defunctzombie/changelog&quot;&gt;changelog&lt;/a&gt; to manifest this notion of centering the versioning workflow around the changelog. Thanks!&lt;/p&gt;
+</content>
+		</entry>
+	
     
     
     
@@ -192,32 +233,6 @@
 &lt;blockquote class=&quot;twitter-tweet&quot; data-partner=&quot;tweetdeck&quot;&gt;&lt;p&gt;Time for some traffic problems in São Paulo... &lt;a href=&quot;http://t.co/d29u5ctJBG&quot;&gt;pic.twitter.com/d29u5ctJBG&lt;/a&gt;&lt;/p&gt;&amp;mdash; Patrick Stewart (@SirPatStew) &lt;a href=&quot;https://twitter.com/SirPatStew/statuses/466633514482298880&quot;&gt;May 14, 2014&lt;/a&gt;&lt;/blockquote&gt;
 
 &lt;blockquote class=&quot;twitter-tweet&quot; data-partner=&quot;tweetdeck&quot;&gt;&lt;p&gt;Today, we are thrilled to introduce &amp;quot;A New Way to Learn Ionic&amp;quot; &lt;a href=&quot;http://t.co/CceIQ00TVG&quot;&gt;http://t.co/CceIQ00TVG&lt;/a&gt; &lt;a href=&quot;http://t.co/P97znY5gxb&quot;&gt;pic.twitter.com/P97znY5gxb&lt;/a&gt;&lt;/p&gt;&amp;mdash; ionic (@Ionicframework) &lt;a href=&quot;https://twitter.com/Ionicframework/statuses/466643147934941184&quot;&gt;May 14, 2014&lt;/a&gt;&lt;/blockquote&gt;</content>
-		</entry>
-	
-    
-    
-    
-		<entry>
-			<title>Links for May 14, 2014</title>
-			<link href="http://npmawesome.com/posts/2014-05-14-links"/>
-			<updated>2014-05-14T16:45:09.000Z</updated>
-			<id>http://npmawesome.com/posts/2014-05-14-links</id>
-			<content type="html">&lt;h2 id=&quot;articles&quot;&gt;Articles&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://medium.com/p/a2010c13d3d5&quot;&gt;Getting gulpy&lt;/a&gt; - advanced tips for using gulp.js&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://jlongster.com/Removing-User-Interface-Complexity,-or-Why-React-is-Awesome&quot;&gt;Removing user interface complexity, or why React is awesome&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://gizmodo.com/someone-finally-designed-a-better-disposable-coffee-cup-1575905762&quot;&gt;Someone Finally Designed a Better Disposable Coffee Cup Lid&lt;/a&gt; &lt;img src=&quot;http://i.kinja-img.com/gawker-media/image/upload/s--E78R8Pma--/gksygb1vboboawlubax0.jpg&quot; alt=&quot;&quot;&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://www.theverge.com/google/2014/5/14/5714602/photos-inside-googles-self-driving-cars&quot;&gt;Behind the wheel: a look inside Google&amp;#39;s self-driving cars&lt;/a&gt; &lt;img src=&quot;http://cdn2.vox-cdn.com/uploads/chorus_image/image/33019187/google-car-theverge-1_1020.0_standard_2040.0.jpg&quot; alt=&quot;&quot;&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;div class=&quot;read-more&quot;&gt;&lt;/div&gt;
-
-&lt;h2 id=&quot;github&quot;&gt;Github&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://gist.github.com/sindresorhus/7996717&quot;&gt;git hook to run a command after &lt;code&gt;git pull&lt;/code&gt; if a specified file was changed&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://ricostacruz.com/nprogress/&quot;&gt;NProgress.js&lt;/a&gt; is a nanoscopic progress bar. Featuring realistic trickle animations to convince your users that something is happening!&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&quot;twitter&quot;&gt;Twitter&lt;/h2&gt;
-&lt;blockquote class=&quot;twitter-tweet&quot; data-partner=&quot;tweetdeck&quot;&gt;&lt;p&gt;Our 10 year anniversary is coming up! To help us celebrate, &lt;a href=&quot;https://twitter.com/simpleshow&quot;&gt;@simpleshow&lt;/a&gt; made this incredible video for us - &lt;a href=&quot;http://t.co/KFHz5RvQpx&quot;&gt;http://t.co/KFHz5RvQpx&lt;/a&gt;&lt;/p&gt;&amp;mdash; Moz (@Moz) &lt;a href=&quot;https://twitter.com/Moz/statuses/466618559914065921&quot;&gt;May 14, 2014&lt;/a&gt;&lt;/blockquote&gt;</content>
 		</entry>
 	
 </feed>
