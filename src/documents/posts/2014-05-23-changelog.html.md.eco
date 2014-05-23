@@ -29,7 +29,7 @@ Personally I'm not just a huge fan of the concept behind [Readme Driven Developm
 
 ## Initialization
 
-If you starting a new project and want to create a changelog execute
+If you starting a new project and want to create a changelog, execute
 
     changelog --init
 
