@@ -1,0 +1,65 @@
+---
+date: 2014-05-23T11:30:00-0700
+author: akoenig
+layout: post
+tags: npm, changelog, management
+
+npm:
+  repo: &repo defunctzombie/changelog
+  name: &name changelog
+  install: defunctzombie/changelog
+
+  author:
+    name: Roman Shtylman
+    github: defunctzombie
+
+slug: *name
+title: *name
+description: changelog release management tool
+---
+<img class="hide-on-mobile" src="https://avatars2.githubusercontent.com/u/84792?s=400" style="float: right; margin-left: 1em; width: 100px"/>
+
+You fixed _all_ the bugs, closed some security problems and documented new features in your project. With other words: You did a great job and the next release is ready for roll-out. But you're not done right now! No? What's next? You have to adjust the changelog file, bump the version in the respective `package.json` and create a `git tag` first. Hm, many steps, right? No more! <%- @npm() %> by <%- @author() %> is there to save you.
+
+<%- @readMore() %>
+
+Personally I'm not just a huge fan of the concept behind [Readme Driven Development](http://tom.preston-werner.com/2010/08/23/readme-driven-development.html) but also of planning releases in a changelog file. If this is your workflow as well, you benefit from one central positive aspect: You don't have to adjust your changelog when releasing a new version. It's there. Anyways, as described above, the release workflow consists of many separate tasks which don't have to be executed manually. They can be handled by <%- @npm() %>. Let's take a look.
+
+    <%- @install() %>
+
+## Initialization
+
+If you starting a new project and want to create a changelog execute
+
+    changelog --init
+
+This will create an empty `HISTORY.md` file for you which has the following structure
+
+    # UNRELEASED
+
+      * initial
+
+The `UNRELEASED` section is for all your changes you made or will make in the version you are working on. Look at this as a personal project blog where you keep track of every _unreleased_ change. No more external _todo applications_ or what have you. Everything is in the context you are working in – your project.
+
+## Release
+
+Let's say your product is ready for prime time and you want to release the _1.0.0_ version (OMG!):
+
+    changelog --release 1.0.0
+
+This will will trigger `changelog` to perform the following steps:
+
+1. Convert the first `UNRELEASED` section to `# 1.0.0 (YYYY-MM-DD)`
+2. Change the `version` property in your _package.json_ accordingly.
+3. Execute a `git commit -m "v1.0.0"`
+4. Execute a `git tag "v1.0.0"`
+
+## Keep on working ...
+
+Every project which does not have a roadmap with future changes is a dead project, right? Therefore, I hope that the beginning of your next release cycle is near. If so, start a new `UNRELEASED` section by executing the following and keep on working :) 
+
+    changelog --increment
+
+## Closing thoughts
+
+There might be other tools like <%- @npm() %> out there but this one fits my personal workflow very well and who knows, maybe yours too. Whatever helper you are using for the release management, I can not emphasize enough how important it is to write a changelog file. Not just for you as a project maintainer but also for communicating to the people who are using your product. <%- @author() %> helps with <%- @npm() %> to manifest this notion of centering the versioning workflow around the changelog. Thanks!
