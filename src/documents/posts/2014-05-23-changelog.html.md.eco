@@ -39,7 +39,7 @@ This will create an empty `HISTORY.md` file for you which has the following stru
 
       * initial
 
-The _UNRELEASED_ section is for all your changes you made or will make in the version you are working on. Look at this as a personal project blog where you keep track of every _unreleased_ change. No more external _todo applications_ or what have you. Everything is in the context you are working in – your project.
+The `UNRELEASED` section is for all your changes you made or will make in the version you are working on. Look at this as a personal project blog where you keep track of every _unreleased_ change. No more external _todo applications_ or what have you. Everything is in the context you are working in – your project.
 
 ## Release
 
@@ -49,14 +49,14 @@ Let's say your product is ready for prime time and you want to release the _1.0.
 
 This will will trigger `changelog` to perform the following steps:
 
-1. Convert the first _UNRELEASED_ section to _# 1.0.0 (YYYY-MM-DD)_
+1. Convert the first `UNRELEASED` section to `# 1.0.0 (YYYY-MM-DD)`
 2. Change the `version` property in your _package.json_ accordingly.
 3. Execute a `git commit -m "v1.0.0"`
 4. Execute a `git tag "v1.0.0"`
 
 ## Keep on working ...
 
-Every project which does not have a roadmap with future changes is a dead project, right? Therefore, I hope that the beginning of your next release cycle is near. If so, start a new _UNRELEASED_ section by executing the following and keep on working :) 
+Every project which does not have a roadmap with future changes is a dead project, right? Therefore, I hope that the beginning of your next release cycle is near. If so, start a new `UNRELEASED` section by executing the following and keep on working :) 
 
     changelog --increment
 
