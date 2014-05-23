@@ -5,7 +5,7 @@
 	<link href="http://npmawesome.com/atom.xml" rel="self" />
 	<link href="http://npmawesome.com" />
 	<id>http://npmawesome.com</id>
-	<updated>2014-05-23T19:09:39.649Z</updated>
+	<updated>2014-05-23T19:41:55.737Z</updated>
 	<author>
 		<name>Alex Gorbatchev</name>
 	</author>
@@ -13,6 +13,67 @@
   
   
   
+    
+    
+    
+		<entry>
+			<title>Joi</title>
+			<link href="http://npmawesome.com/posts/2014-05-23-joi"/>
+			<updated>2014-05-23T19:41:03.000Z</updated>
+			<id>http://npmawesome.com/posts/2014-05-23-joi</id>
+			<content type="html">&lt;p&gt;&lt;img src=&quot;https://camo.githubusercontent.com/9dd0f88c6cdb8b7c034ac5e5cce0e4bbdc8de19e/68747470733a2f2f7261772e6769746875622e636f6d2f7370756d6b6f2f6a6f692f6d61737465722f696d616765732f6a6f692e706e67&quot; width=&quot;100&quot; align=&quot;right&quot;/&gt;
+Object validation is a tricky thing. It sounds pretty simple when you first think about it, yet there are a ton of libraries that try to do it. Why is that? I feel like there are just alot of way to approach the subject. [Joi] is a schema validation library that came out of the &lt;a href=&quot;http://www.walmartlabs.com/&quot;&gt;Walmart Labs&lt;/a&gt; efforts and more specifically power validation in the &lt;a href=&quot;http://spumko.github.io/&quot;&gt;hapi&lt;/a&gt; server framework.&lt;/p&gt;
+&lt;p&gt;Lets check it out!&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;npm install joi
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&quot;usage&quot;&gt;Usage&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&quot;https://github.com/spumko/joi&quot;&gt;Joi&lt;/a&gt; works by defining a schema. You can validate a single string or number:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;var Joi = require(&amp;#39;joi&amp;#39;);
+
+// will fail
+Joi.string().validate(10, console.log);
+
+// also will fail
+Joi.string().email().validate(&amp;#39;hello+gmail.com&amp;#39;, console.log);
+
+// will pass
+Joi.string().email().validate(&amp;#39;hello+world@gmail.com&amp;#39;, console.log);
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;You can validate a basic plain schema&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;var schema = {counter: Joi.number().min(1).max(10).required()};
+
+// will fail
+Joi.validate({counter: 0}, schema, console.log);
+
+// will pass
+Joi.validate({counter: 5}, schema, console.log);
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Finally, you can do a some pretty complicated validation with field depending on each other:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;var schema = Joi.object().keys({
+    username: Joi.string().alphanum().min(3).max(30).required(),
+    password: Joi.string().regex(/[a-zA-Z0-9]{3,30}/),
+    confirmation: Joi.ref(&amp;#39;password&amp;#39;)
+  })
+  .with(&amp;#39;password&amp;#39;, &amp;#39;confirmation&amp;#39;);
+
+// will fail because `foo` isn&amp;#39;t in the schema at all
+Joi.validate({foo: 1}, schema, console.log);
+
+// will fail because `confirmation` is missing
+Joi.validate({username: &amp;#39;alex&amp;#39;, password: &amp;#39;qwerty&amp;#39;}, schema, console.log);
+
+// will pass
+Joi.validate({
+  username: &amp;#39;alex&amp;#39;, password: &amp;#39;qwerty&amp;#39;, confirmation: &amp;#39;qwerty&amp;#39;
+}, schema, console.log);
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&quot;closing-thoughts&quot;&gt;Closing thoughts&lt;/h2&gt;
+&lt;p&gt;Here are some other modules you might want to evaluate:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/chriso/validator.js&quot;&gt;validator.js&lt;/a&gt; is a string validation and sanitization module by &lt;a href=&quot;https://github.com/chriso&quot;&gt;Chris O&amp;#39;Hara&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://www.finitio.io/&quot;&gt;finito&lt;/a&gt; is a language for capturing information structure by &lt;a href=&quot;https://github.com/llambeau&quot;&gt;Louis Lambeau&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/Atinux/schema-inspector&quot;&gt;schema-inspector&lt;/a&gt; is a module to sanitize and validate objects by &lt;a href=&quot;https://github.com/Atinux&quot;&gt;Sébastien Chopin&lt;/a&gt; (&lt;a href=&quot;http://npmawesome.com/posts/2014-01-24-schema-inspector/&quot;&gt;previously featured on npmawesome.com&lt;/a&gt;).&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Finally, check out &lt;a href=&quot;https://github.com/npmawesome/example-joi&quot;&gt;source code&lt;/a&gt; for this article on GitHub and an &lt;a href=&quot;http://runnable.com/U31mW3RA_pBu7oN-/schema-validation-with-joi-for-node-js-npmawesome-and-nodejitsu&quot;&gt;interative example&lt;/a&gt; on Runnable.&lt;/p&gt;
+</content>
+		</entry>
+	
     
     
     
@@ -138,8 +199,6 @@
     
     
     
-    
-    
 		<entry>
 			<title>longjohn</title>
 			<link href="http://npmawesome.com/posts/2014-05-16-longjohn"/>
@@ -181,58 +240,6 @@
 &lt;p&gt;Getting a full stack is imperative to finding out the root cause of the problem in your code. &lt;a href=&quot;https://github.com/mattinsler/longjohn&quot;&gt;longjohn&lt;/a&gt; addresses that on the Node side. There&amp;#39;s a similiar module that works in the browser called &lt;a href=&quot;https://github.com/btford/zone.js/&quot;&gt;zone.js&lt;/a&gt; by &lt;a href=&quot;https://github.com/btford&quot;&gt;Brian Ford&lt;/a&gt; that I think you should check out as well.&lt;/p&gt;
 &lt;p&gt;Check out &lt;a href=&quot;https://github.com/npmawesome/example-longjohn&quot;&gt;example for this article&lt;/a&gt; on GitHub.&lt;/p&gt;
 </content>
-		</entry>
-	
-    
-    
-    
-		<entry>
-			<title>Links for May 16, 2014</title>
-			<link href="http://npmawesome.com/posts/2014-05-16-links"/>
-			<updated>2014-05-16T16:56:57.000Z</updated>
-			<id>http://npmawesome.com/posts/2014-05-16-links</id>
-			<content type="html">&lt;p&gt;&lt;img src=&quot;http://npmawesome.com/images/posts/html5.png&quot; class=&quot;hide-on-mobile&quot; style=&quot;float: right; width: 150px;&quot;/&gt;&lt;/p&gt;
-&lt;h2 id=&quot;articles&quot;&gt;Articles&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://auth0.com/blog/2014/01/07/angularjs-authentication-with-cookies-vs-token/&quot;&gt;Introducing Firebase Hosting&lt;/a&gt;&lt;blockquote&gt;
-&lt;p&gt;Once upon a time, in the dark ages of the internet, apps dynamically generated HTML server-side every time a page was requested. This was slow, difficult to scale, and required users to connect to distant servers to get their content.&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://auth0.com/blog/2014/01/07/angularjs-authentication-with-cookies-vs-token/&quot;&gt;Cookies vs Tokens. Getting auth right with Angular.JS&lt;/a&gt;&lt;blockquote&gt;
-&lt;p&gt;What&amp;#39;s JSON Web Token? JSON Web Token (JWT, pronounced jot) is a relatively new token format used in space-constrained environments such as HTTP Authorization headers.&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://jpadilla.com/post/73791304724/auth-with-json-web-tokens&quot;&gt;Auth with JSON Web Tokens&lt;/a&gt;&lt;blockquote&gt;
-&lt;p&gt;There’s a relatively new standard called JSON Web Token that happens to be backed by companies like Firebase, Google, Microsoft, and Zendesk. There are already many libraries to handle encoding and decoding of this tokens in the backend.&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://watirmelon.com/2014/05/14/100000-e2e-selenium-tests-sounds-like-a-nightmare&quot;&gt;100,000 e2e selenium tests? Sounds like a nightmare!&lt;/a&gt;&lt;blockquote&gt;
-&lt;p&gt;If I had to choose just one, I would definitely choose a comprehensive suite of automated unit tests over a comprehensive suite of end-to-end/system tests any day of the week.&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://www.reinteractive.net/posts/186-lessons-learnt-by-building-single-page-applications&quot;&gt;Lessons learnt by building Single Page Applications&lt;/a&gt;&lt;blockquote&gt;
-&lt;p&gt;I want to share some of the lessons I have learnt building them, especially what things I found difficult technically. Based on my experience I think the following are common issues that you may encounter when building them.&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;div class=&quot;read-more&quot;&gt;&lt;/div&gt;
-
-&lt;h2 id=&quot;github&quot;&gt;Github&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://github.com/HubSpot/shepherd&quot;&gt;Shepherd&lt;/a&gt; - guide your users through a tour of your app.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&quot;startups&quot;&gt;Startups&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://citymapper.com/nyc/superrouter?&quot;&gt;CityMapper&lt;/a&gt; is a pretty slick city route planner available for a small number of cities.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&quot;youtube&quot;&gt;YouTube&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://www.youtube.com/watch?v=PT8s_IVWDgw&quot;&gt;WebTorrent: Bringing BitTorrent to the Web&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&quot;twitter&quot;&gt;Twitter&lt;/h2&gt;
-&lt;blockquote class=&quot;twitter-tweet&quot; data-partner=&quot;tweetdeck&quot;&gt;&lt;p&gt;Time for some traffic problems in São Paulo... &lt;a href=&quot;http://t.co/d29u5ctJBG&quot;&gt;pic.twitter.com/d29u5ctJBG&lt;/a&gt;&lt;/p&gt;&amp;mdash; Patrick Stewart (@SirPatStew) &lt;a href=&quot;https://twitter.com/SirPatStew/statuses/466633514482298880&quot;&gt;May 14, 2014&lt;/a&gt;&lt;/blockquote&gt;
-
-&lt;blockquote class=&quot;twitter-tweet&quot; data-partner=&quot;tweetdeck&quot;&gt;&lt;p&gt;Today, we are thrilled to introduce &amp;quot;A New Way to Learn Ionic&amp;quot; &lt;a href=&quot;http://t.co/CceIQ00TVG&quot;&gt;http://t.co/CceIQ00TVG&lt;/a&gt; &lt;a href=&quot;http://t.co/P97znY5gxb&quot;&gt;pic.twitter.com/P97znY5gxb&lt;/a&gt;&lt;/p&gt;&amp;mdash; ionic (@Ionicframework) &lt;a href=&quot;https://twitter.com/Ionicframework/statuses/466643147934941184&quot;&gt;May 14, 2014&lt;/a&gt;&lt;/blockquote&gt;</content>
 		</entry>
 	
 </feed>
