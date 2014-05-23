@@ -15,12 +15,12 @@
     <atom:link href="http://feeds.feedburner.com/npmawesome" rel="self" type="application/rss+xml"/>
     <link>http://npmawesome.com</link>
     <description>Daily dose of awesome NPM modules for Node.js, old and new!</description>
-    <lastBuildDate>Fri, 23 May 2014 19:41:55 GMT</lastBuildDate>
+    <lastBuildDate>Fri, 23 May 2014 19:54:14 GMT</lastBuildDate>
     <language>en</language>
     <sy:updatePeriod>daily</sy:updatePeriod>
     <sy:updateFrequency>2</sy:updateFrequency>
     <generator>awesomeness</generator>
-    <pubDate>Fri, 23 May 2014 19:41:55 GMT</pubDate>
+    <pubDate>Fri, 23 May 2014 19:54:14 GMT</pubDate>
 
     
     
@@ -37,6 +37,8 @@
         <description><![CDATA[<p><img src="https://camo.githubusercontent.com/9dd0f88c6cdb8b7c034ac5e5cce0e4bbdc8de19e/68747470733a2f2f7261772e6769746875622e636f6d2f7370756d6b6f2f6a6f692f6d61737465722f696d616765732f6a6f692e706e67" width="100" align="right"/>
 Object validation is a tricky thing. It sounds pretty simple when you first think about it, yet there are a ton of libraries that try to do it. Why is that? I feel like there are just alot of way to approach the subject. [Joi] is a schema validation library that came out of the <a href="http://www.walmartlabs.com/">Walmart Labs</a> efforts and more specifically power validation in the <a href="http://spumko.github.io/">hapi</a> server framework.</p>
 <p>Lets check it out!</p>
+<div class="read-more"></div>
+
 <pre><code>npm install joi
 </code></pre><h2 id="usage">Usage</h2>
 <p><a href="https://github.com/spumko/joi">Joi</a> works by defining a schema. You can validate a single string or number:</p>

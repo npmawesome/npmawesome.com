@@ -4,54 +4,7 @@
 and is now supporting the project.</span></div><p><img src="https://camo.githubusercontent.com/9dd0f88c6cdb8b7c034ac5e5cce0e4bbdc8de19e/68747470733a2f2f7261772e6769746875622e636f6d2f7370756d6b6f2f6a6f692f6d61737465722f696d616765732f6a6f692e706e67" width="100" align="right"/>
 Object validation is a tricky thing. It sounds pretty simple when you first think about it, yet there are a ton of libraries that try to do it. Why is that? I feel like there are just alot of way to approach the subject. [Joi] is a schema validation library that came out of the <a href="http://www.walmartlabs.com/">Walmart Labs</a> efforts and more specifically power validation in the <a href="http://spumko.github.io/">hapi</a> server framework.</p>
 <p>Lets check it out!</p>
-<pre><code>npm install joi
-</code></pre><h2 id="usage">Usage</h2>
-<p><a href="https://github.com/spumko/joi">Joi</a> works by defining a schema. You can validate a single string or number:</p>
-<pre><code>var Joi = require(&#39;joi&#39;);
-
-// will fail
-Joi.string().validate(10, console.log);
-
-// also will fail
-Joi.string().email().validate(&#39;hello+gmail.com&#39;, console.log);
-
-// will pass
-Joi.string().email().validate(&#39;hello+world@gmail.com&#39;, console.log);
-</code></pre><p>You can validate a basic plain schema</p>
-<pre><code>var schema = {counter: Joi.number().min(1).max(10).required()};
-
-// will fail
-Joi.validate({counter: 0}, schema, console.log);
-
-// will pass
-Joi.validate({counter: 5}, schema, console.log);
-</code></pre><p>Finally, you can do a some pretty complicated validation with field depending on each other:</p>
-<pre><code>var schema = Joi.object().keys({
-    username: Joi.string().alphanum().min(3).max(30).required(),
-    password: Joi.string().regex(/[a-zA-Z0-9]{3,30}/),
-    confirmation: Joi.ref(&#39;password&#39;)
-  })
-  .with(&#39;password&#39;, &#39;confirmation&#39;);
-
-// will fail because `foo` isn&#39;t in the schema at all
-Joi.validate({foo: 1}, schema, console.log);
-
-// will fail because `confirmation` is missing
-Joi.validate({username: &#39;alex&#39;, password: &#39;qwerty&#39;}, schema, console.log);
-
-// will pass
-Joi.validate({
-  username: &#39;alex&#39;, password: &#39;qwerty&#39;, confirmation: &#39;qwerty&#39;
-}, schema, console.log);
-</code></pre><h2 id="closing-thoughts">Closing thoughts</h2>
-<p>Here are some other modules you might want to evaluate:</p>
-<ul>
-<li><a href="https://github.com/chriso/validator.js">validator.js</a> is a string validation and sanitization module by <a href="https://github.com/chriso">Chris O&#39;Hara</a>.</li>
-<li><a href="http://www.finitio.io/">finito</a> is a language for capturing information structure by <a href="https://github.com/llambeau">Louis Lambeau</a>.</li>
-<li><a href="https://github.com/Atinux/schema-inspector">schema-inspector</a> is a module to sanitize and validate objects by <a href="https://github.com/Atinux">Sébastien Chopin</a> (<a href="http://npmawesome.com/posts/2014-01-24-schema-inspector/">previously featured on npmawesome.com</a>).</li>
-</ul>
-<p>Finally, check out <a href="https://github.com/npmawesome/example-joi">source code</a> for this article on GitHub and an <a href="http://runnable.com/U31mW3RA_pBu7oN-/schema-validation-with-joi-for-node-js-npmawesome-and-nodejitsu">interative example</a> on Runnable.</p>
-</div></article><article><header><h2 class="npm"><a href="/posts/2014-05-23-changelog">changelog</a></h2><div class="meta"><span>posted by <a href="https://github.com/akoenig">André König</a> on May 23rd 2014</span><a href="http://npmawesome.com/posts/2014-05-23-changelog#disqus_thread" class="comments"></a><div data-github-repo="defunctzombie/changelog" class="github-stars"></div></div></header><div class="content"><p><img class="hide-on-mobile" src="https://avatars2.githubusercontent.com/u/84792?s=400" style="float: right; margin-left: 1em; width: 100px"/></p>
+<p class="read-more"><a href="/posts/2014-05-23-joi">Continue...</a></p></div></article><article><header><h2 class="npm"><a href="/posts/2014-05-23-changelog">changelog</a></h2><div class="meta"><span>posted by <a href="https://github.com/akoenig">André König</a> on May 23rd 2014</span><a href="http://npmawesome.com/posts/2014-05-23-changelog#disqus_thread" class="comments"></a><div data-github-repo="defunctzombie/changelog" class="github-stars"></div></div></header><div class="content"><p><img class="hide-on-mobile" src="https://avatars2.githubusercontent.com/u/84792?s=400" style="float: right; margin-left: 1em; width: 100px"/></p>
 <p>You fixed <em>all</em> the bugs, closed some security holes and documented new features in your project. In other words - you did a great job and the next release is ready for the roll-out. But you&#39;re not done just yet! No? What else? You have to update the changelog file, bump the version in the respective <code>package.json</code> and create a <code>git tag</code> first. Hm, many steps, right? No more! <a href="https://github.com/defunctzombie/changelog">changelog</a> by <a href="https://github.com/defunctzombie">Roman Shtylman</a> is here to save you.</p>
 <p class="read-more"><a href="/posts/2014-05-23-changelog">Continue...</a></p></div></article><article><header><h2 class="article"><a href="/posts/2014-05-22-links">Links for May 22, 2014</a></h2><div class="meta"><span>posted by <a href="https://github.com/alexgorbatchev">Alex Gorbatchev</a> on May 22nd 2014</span><a href="http://npmawesome.com/posts/2014-05-22-links#disqus_thread" class="comments"></a></div></header><div class="content"><p><img src="http://npmawesome.com/images/posts/html5.png" class="hide-on-mobile" style="float: right; width: 150px;"/></p>
 <h2 id="articles">Articles</h2>

@@ -5,7 +5,7 @@
 	<link href="http://npmawesome.com/atom.xml" rel="self" />
 	<link href="http://npmawesome.com" />
 	<id>http://npmawesome.com</id>
-	<updated>2014-05-23T19:41:55.737Z</updated>
+	<updated>2014-05-23T19:54:14.498Z</updated>
 	<author>
 		<name>Alex Gorbatchev</name>
 	</author>
@@ -24,6 +24,8 @@
 			<content type="html">&lt;p&gt;&lt;img src=&quot;https://camo.githubusercontent.com/9dd0f88c6cdb8b7c034ac5e5cce0e4bbdc8de19e/68747470733a2f2f7261772e6769746875622e636f6d2f7370756d6b6f2f6a6f692f6d61737465722f696d616765732f6a6f692e706e67&quot; width=&quot;100&quot; align=&quot;right&quot;/&gt;
 Object validation is a tricky thing. It sounds pretty simple when you first think about it, yet there are a ton of libraries that try to do it. Why is that? I feel like there are just alot of way to approach the subject. [Joi] is a schema validation library that came out of the &lt;a href=&quot;http://www.walmartlabs.com/&quot;&gt;Walmart Labs&lt;/a&gt; efforts and more specifically power validation in the &lt;a href=&quot;http://spumko.github.io/&quot;&gt;hapi&lt;/a&gt; server framework.&lt;/p&gt;
 &lt;p&gt;Lets check it out!&lt;/p&gt;
+&lt;div class=&quot;read-more&quot;&gt;&lt;/div&gt;
+
 &lt;pre&gt;&lt;code&gt;npm install joi
 &lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&quot;usage&quot;&gt;Usage&lt;/h2&gt;
 &lt;p&gt;&lt;a href=&quot;https://github.com/spumko/joi&quot;&gt;Joi&lt;/a&gt; works by defining a schema. You can validate a single string or number:&lt;/p&gt;
