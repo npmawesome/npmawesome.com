@@ -1,6 +1,5 @@
 ---
-ignore: true
-date: 2014-05-19T21:11:55-0700
+date: 2014-05-23T12:41:03-0700
 author: alexgorbatchev
 partner: nodejitsu
 layout: post
@@ -16,7 +15,7 @@ title: *name
 description: Object schema validation in Node.js with Joi.
 ---
 <img src="https://camo.githubusercontent.com/9dd0f88c6cdb8b7c034ac5e5cce0e4bbdc8de19e/68747470733a2f2f7261772e6769746875622e636f6d2f7370756d6b6f2f6a6f692f6d61737465722f696d616765732f6a6f692e706e67" width="100" align="right"/>
-Object validation is a tricky thing. It sounds pretty simple when you first think of it, yet there are a ton of libraries that try to do that. Why is that? Feels that there are alot of way to approach the subject. <%- @npm() %> is a schema validation library that came out of the [Walmart Labs](http://www.walmartlabs.com/) efforts and more specifically power validation in the [hapi] server framework.
+Object validation is a tricky thing. It sounds pretty simple when you first think about it, yet there are a ton of libraries that try to do it. Why is that? I feel like there are just alot of way to approach the subject. [Joi] is a schema validation library that came out of the [Walmart Labs](http://www.walmartlabs.com/) efforts and more specifically power validation in the [hapi] server framework.
 
 Lets check it out!
 
