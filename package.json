@@ -24,7 +24,6 @@
     "shelljs": "~0.2.6",
     "docpad-plugin-moment": "~2.0.2",
     "marked": "~0.3.2",
-    "rimraf": "^2.2.8",
     "async": "^0.8.0"
   },
   "main": "node_modules/docpad/bin/docpad-server",

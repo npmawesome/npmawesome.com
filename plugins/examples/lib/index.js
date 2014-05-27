@@ -14,7 +14,6 @@
 'use strict';
 
 var path = require('path');
-var rimraf = require('rimraf');
 var fs = require('fs');
 var async = require('async');
 
