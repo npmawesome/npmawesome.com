@@ -1,0 +1,41 @@
+---
+date: 2014-05-29T09:50:42-0700
+title: Links for May 29, 2014
+layout: post-links
+tags: javascript, links
+description: Nerd links for the day, videos, GitHub projects, talks, articles and other stuff.
+---
+<img src="<%- @image '/npmawesome-logo-512x512.png' %>" class="hide-on-mobile" width="150" align="right"/>
+
+## Articles
+
+* [Introducing Socket.IO 1.0](http://socket.io/blog/introducing-socket-io-1-0/)
+  > The first version of Socket.IO was created shortly after Node.JS made its first appearance. I had been looking for a framework that easily enabled me to push data from a server to a client for a long time, and even had tried other approaches to server-side JavaScript.
+* [Understanding web pages better](http://googlewebmastercentral.blogspot.ca/2014/05/understanding-web-pages-better.html)
+  > … we decided to try to understand pages by executing JavaScript. It’s hard to do that at the scale of the current web, but we decided that it’s worth it. We have been gradually improving how we do this for some time. In the past few months, our indexing system has been rendering a substantial number of web pages more like an average user’s browser with JavaScript turned on.
+* [Browserify Handbook](https://github.com/substack/browserify-handbook) is a great resource for beginners and pros on organizing node apps and modules. Very good read.
+* [Device State Detection with CSS Media Queries and JavaScript](http://davidwalsh.name/device-state-detection-css-media-queries-javascript)
+  > Being able to detect device state at any given moment is important for any number of reasons and so it's important that web app CSS and JavaScript are in sync with each other.
+* [hapi hapi joi joi](http://hueniversedotcom.files.wordpress.com/2013/01/hapi-hapi-joi-joi.pdf) - fantastic slides!
+* [Relay Control with Johnny-Five on Node.js](http://bocoup.com/weblog/javascript-relay-with-johnny-five/)
+  > DO NOT TOUCH ANY PART OF THE RELAY WHILE IT'S PLUGGED INTO THE WALL.
+* [How much is your startup stock worth?](http://jdmaturen.github.io/2013/how-much-is-your-startup-stock-worth.html)
+  > You can’t get rich on salary.
+
+<%- @readMore() %>
+
+## Github
+
+* [Object Playground](http://www.objectplayground.com/) is a tool for visualizing and experimenting with JavaScript object relationships.
+* [PDFium](https://code.google.com/p/pdfium/) is an open-source PDF rendering engine that is used in Google Chrome.
+* [DynCSS](http://www.vittoriozaccaria.net/dyn-css/) - simple, dynamic CSS rules to give life to your sites.
+
+## Twitter
+
+<blockquote class="twitter-tweet" data-partner="tweetdeck"><p>This is an amazing <a href="https://twitter.com/StackOverflow">@Stackoverflow</a> answer about Angular (and using jQuery) <a href="http://t.co/pXoyf0zuN6">http://t.co/pXoyf0zuN6</a></p>&mdash; Sara Chipps (@SaraJChipps) <a href="https://twitter.com/SaraJChipps/statuses/468769556765614080">May 20, 2014</a></blockquote>
+
+## Misc
+
+* [AfrikaBurm - Trickster - 2014 photos](http://seanfphotography.blogspot.ca/2014/05/afrikaburm-trickster-2014.html?spref=tw) - some great photos from the AfrikaBurm festival.
+* [Fantasque Sans Mono](http://openfontlibrary.org/en/font/fantasque-sans-mono)
+  > A programming font, designed with functionality in mind, and with some wibbly-wobbly handwriting-like fuzziness that makes it unassumingly cool.
