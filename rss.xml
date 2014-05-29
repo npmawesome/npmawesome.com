@@ -15,15 +15,72 @@
     <atom:link href="http://feeds.feedburner.com/npmawesome" rel="self" type="application/rss+xml"/>
     <link>http://npmawesome.com</link>
     <description>Daily dose of awesome NPM modules for Node.js, old and new!</description>
-    <lastBuildDate>Fri, 23 May 2014 19:54:14 GMT</lastBuildDate>
+    <lastBuildDate>Thu, 29 May 2014 17:02:23 GMT</lastBuildDate>
     <language>en</language>
     <sy:updatePeriod>daily</sy:updatePeriod>
     <sy:updateFrequency>2</sy:updateFrequency>
     <generator>awesomeness</generator>
-    <pubDate>Fri, 23 May 2014 19:54:14 GMT</pubDate>
+    <pubDate>Thu, 29 May 2014 17:02:23 GMT</pubDate>
 
     
     
+    
+      
+      
+      
+      <item>
+        <title><![CDATA[Links for May 29, 2014]]></title>
+        <link><![CDATA[http://npmawesome.com/posts/2014-05-29-links]]></link>
+        <dc:creator><![CDATA[Alex Gorbatchev]]></dc:creator>
+        <guid isPermaLink="true"><![CDATA[http://npmawesome.com/posts/2014-05-29-links]]></guid>
+        <pubDate><![CDATA[Thu, 29 May 2014 16:50:42 GMT]]></pubDate>
+        <description><![CDATA[<p><img src="http://npmawesome.com/images/posts/npmawesome-logo-512x512.png" class="hide-on-mobile" width="150" align="right"/></p>
+<h2 id="articles">Articles</h2>
+<ul>
+<li><a href="http://socket.io/blog/introducing-socket-io-1-0/">Introducing Socket.IO 1.0</a><blockquote>
+<p>The first version of Socket.IO was created shortly after Node.JS made its first appearance. I had been looking for a framework that easily enabled me to push data from a server to a client for a long time, and even had tried other approaches to server-side JavaScript.</p>
+</blockquote>
+</li>
+<li><a href="http://googlewebmastercentral.blogspot.ca/2014/05/understanding-web-pages-better.html">Understanding web pages better</a><blockquote>
+<p>… we decided to try to understand pages by executing JavaScript. It’s hard to do that at the scale of the current web, but we decided that it’s worth it. We have been gradually improving how we do this for some time. In the past few months, our indexing system has been rendering a substantial number of web pages more like an average user’s browser with JavaScript turned on.</p>
+</blockquote>
+</li>
+<li><a href="https://github.com/substack/browserify-handbook">Browserify Handbook</a> is a great resource for beginners and pros on organizing node apps and modules. Very good read.</li>
+<li><a href="http://davidwalsh.name/device-state-detection-css-media-queries-javascript">Device State Detection with CSS Media Queries and JavaScript</a><blockquote>
+<p>Being able to detect device state at any given moment is important for any number of reasons and so it&#39;s important that web app CSS and JavaScript are in sync with each other.</p>
+</blockquote>
+</li>
+<li><a href="http://hueniversedotcom.files.wordpress.com/2013/01/hapi-hapi-joi-joi.pdf">hapi hapi joi joi</a> - fantastic slides!</li>
+<li><a href="http://bocoup.com/weblog/javascript-relay-with-johnny-five/">Relay Control with Johnny-Five on Node.js</a><blockquote>
+<p>DO NOT TOUCH ANY PART OF THE RELAY WHILE IT&#39;S PLUGGED INTO THE WALL.</p>
+</blockquote>
+</li>
+<li><a href="http://jdmaturen.github.io/2013/how-much-is-your-startup-stock-worth.html">How much is your startup stock worth?</a><blockquote>
+<p>You can’t get rich on salary.</p>
+</blockquote>
+</li>
+</ul>
+<div class="read-more"></div>
+
+<h2 id="github">Github</h2>
+<ul>
+<li><a href="http://www.objectplayground.com/">Object Playground</a> is a tool for visualizing and experimenting with JavaScript object relationships.</li>
+<li><a href="https://code.google.com/p/pdfium/">PDFium</a> is an open-source PDF rendering engine that is used in Google Chrome.</li>
+<li><a href="http://www.vittoriozaccaria.net/dyn-css/">DynCSS</a> - simple, dynamic CSS rules to give life to your sites.</li>
+</ul>
+<h2 id="twitter">Twitter</h2>
+<blockquote class="twitter-tweet" data-partner="tweetdeck"><p>This is an amazing <a href="https://twitter.com/StackOverflow">@Stackoverflow</a> answer about Angular (and using jQuery) <a href="http://t.co/pXoyf0zuN6">http://t.co/pXoyf0zuN6</a></p>&mdash; Sara Chipps (@SaraJChipps) <a href="https://twitter.com/SaraJChipps/statuses/468769556765614080">May 20, 2014</a></blockquote>
+
+<h2 id="misc">Misc</h2>
+<ul>
+<li><a href="http://seanfphotography.blogspot.ca/2014/05/afrikaburm-trickster-2014.html?spref=tw">AfrikaBurm - Trickster - 2014 photos</a> - some great photos from the AfrikaBurm festival.</li>
+<li><a href="http://openfontlibrary.org/en/font/fantasque-sans-mono">Fantasque Sans Mono</a><blockquote>
+<p>A programming font, designed with functionality in mind, and with some wibbly-wobbly handwriting-like fuzziness that makes it unassumingly cool.</p>
+</blockquote>
+</li>
+</ul>
+]]></description>
+      </item>
     
       
       
@@ -35,7 +92,7 @@
         <guid isPermaLink="true"><![CDATA[http://npmawesome.com/posts/2014-05-23-joi]]></guid>
         <pubDate><![CDATA[Fri, 23 May 2014 19:41:03 GMT]]></pubDate>
         <description><![CDATA[<p><img src="https://camo.githubusercontent.com/9dd0f88c6cdb8b7c034ac5e5cce0e4bbdc8de19e/68747470733a2f2f7261772e6769746875622e636f6d2f7370756d6b6f2f6a6f692f6d61737465722f696d616765732f6a6f692e706e67" width="100" align="right"/>
-Object validation is a tricky thing. It sounds pretty simple when you first think about it, yet there are a ton of libraries that try to do it. Why is that? I feel like there are just alot of way to approach the subject. [Joi] is a schema validation library that came out of the <a href="http://www.walmartlabs.com/">Walmart Labs</a> efforts and more specifically power validation in the <a href="http://spumko.github.io/">hapi</a> server framework.</p>
+Object validation is a tricky thing. It sounds pretty simple when you first think about it, yet there are a ton of libraries that try to do it. Why is that? I feel like there are just alot of way to approach the subject. <a href="https://github.com/spumko/joi">Joi</a> is a schema validation library that came out of the <a href="http://www.walmartlabs.com/">Walmart Labs</a> efforts and more specifically power validation in the <a href="http://spumko.github.io/">hapi</a> server framework.</p>
 <p>Lets check it out!</p>
 <div class="read-more"></div>
 
@@ -98,7 +155,7 @@ Joi.validate({
         <dc:creator><![CDATA[Alex Gorbatchev]]></dc:creator>
         <guid isPermaLink="true"><![CDATA[http://npmawesome.com/posts/2014-05-23-changelog]]></guid>
         <pubDate><![CDATA[Fri, 23 May 2014 18:30:00 GMT]]></pubDate>
-        <description><![CDATA[<p><img class="hide-on-mobile" src="https://avatars2.githubusercontent.com/u/84792?s=400" style="float: right; margin-left: 1em; width: 100px"/></p>
+        <description><![CDATA[<p><img class="hide-on-mobile" src="https://avatars2.githubusercontent.com/u/84792?s=400" width="150" align="right" hspace="10"/></p>
 <p>You fixed <em>all</em> the bugs, closed some security holes and documented new features in your project. In other words - you did a great job and the next release is ready for the roll-out. But you&#39;re not done just yet! No? What else? You have to update the changelog file, bump the version in the respective <code>package.json</code> and create a <code>git tag</code> first. Hm, many steps, right? No more! <a href="https://github.com/defunctzombie/changelog">changelog</a> by <a href="https://github.com/defunctzombie">Roman Shtylman</a> is here to save you.</p>
 <div class="read-more"></div>
 
@@ -140,7 +197,7 @@ Joi.validate({
         <dc:creator><![CDATA[Alex Gorbatchev]]></dc:creator>
         <guid isPermaLink="true"><![CDATA[http://npmawesome.com/posts/2014-05-22-links]]></guid>
         <pubDate><![CDATA[Thu, 22 May 2014 17:26:40 GMT]]></pubDate>
-        <description><![CDATA[<p><img src="http://npmawesome.com/images/posts/html5.png" class="hide-on-mobile" style="float: right; width: 150px;"/></p>
+        <description><![CDATA[<p><img src="http://npmawesome.com/images/posts/npmawesome-logo-512x512.png" class="hide-on-mobile" width="150" align="right"/></p>
 <h2 id="articles">Articles</h2>
 <ul>
 <li><a href="http://davidwalsh.name/add-rules-stylesheets">Add Rules to Stylesheets with JavaScript</a><blockquote>
@@ -182,7 +239,7 @@ Joi.validate({
         <dc:creator><![CDATA[Alex Gorbatchev]]></dc:creator>
         <guid isPermaLink="true"><![CDATA[http://npmawesome.com/posts/2014-05-20-links]]></guid>
         <pubDate><![CDATA[Tue, 20 May 2014 19:22:40 GMT]]></pubDate>
-        <description><![CDATA[<p><img src="http://npmawesome.com/images/posts/html5.png" class="hide-on-mobile" style="float: right; width: 150px;"/></p>
+        <description><![CDATA[<p><img src="http://npmawesome.com/images/posts/npmawesome-logo-512x512.png" class="hide-on-mobile" width="150" align="right"/></p>
 <h2 id="articles">Articles</h2>
 <ul>
 <li><a href="http://viget.com/extend/gulp-browserify-starter-faq">Gulp + Browserify: The Everything Post</a><blockquote>
@@ -212,53 +269,6 @@ Joi.validate({
 
 
 <blockquote class="twitter-tweet" lang="en"><p>Miss the <a href="https://twitter.com/search?q=%23live&amp;src=hash">#live</a> demo at <a href="https://twitter.com/search?q=%23Bitcoin2014&amp;src=hash">#Bitcoin2014</a>? Not to worry! <a href="https://twitter.com/jerallaire">@jerallaire</a> walks you through Circle in this <a href="https://twitter.com/search?q=%23video&amp;src=hash">#video</a>: <a href="http://t.co/hPpRcZ5fy9">http://t.co/hPpRcZ5fy9</a> <a href="https://twitter.com/search?q=%23bitcoin&amp;src=hash">#bitcoin</a></p>&mdash; Circle Inc. (@circlebits) <a href="https://twitter.com/circlebits/statuses/467325134706343936">May 16, 2014</a></blockquote>]]></description>
-      </item>
-    
-      
-      
-      
-      <item>
-        <title><![CDATA[longjohn]]></title>
-        <link><![CDATA[http://npmawesome.com/posts/2014-05-16-longjohn]]></link>
-        <dc:creator><![CDATA[Alex Gorbatchev]]></dc:creator>
-        <guid isPermaLink="true"><![CDATA[http://npmawesome.com/posts/2014-05-16-longjohn]]></guid>
-        <pubDate><![CDATA[Tue, 20 May 2014 04:11:55 GMT]]></pubDate>
-        <description><![CDATA[<p>You know that feeling of disapointment when you get an error and the stack trace just abruptly ends and you know for a fact it should be much longer, and much more useful than that?</p>
-<pre><code>Error: Error message
-    at null._onTimeout (/examples/error-module.js:7:29)
-    at Timer.listOnTimeout [as ontimeout] (timers.js:110:15)
-</code></pre><p>I&#39;m very well familiar with that feeling... Maybe too much? Turns out there&#39;s a way to get much better results in Node with a little bit of magic. Said magic is a module called <a href="https://github.com/mattinsler/longjohn">longjohn</a> by <a href="https://github.com/mattinsler">Matt Insler</a>.</p>
-<div class="read-more"></div>
-
-<pre><code>npm install longjohn
-</code></pre><h2 id="usage">Usage</h2>
-<p>Using <a href="https://github.com/mattinsler/longjohn">longjohn</a> couldn&#39;t get any easier. You just need to <code>require(&#39;longjohn&#39;)</code> and you are all set. The magic that I mentioned above consists of replacing functions like <code>setTimeout</code> and <code>nextTick</code> with patched versions that keep track of the stack as it unfolds and as author suggests, this probably shouldn&#39;t be used in production.</p>
-<p>But, after you require <a href="https://github.com/mattinsler/longjohn">longjohn</a>, your short, mildly helpful stack like this:</p>
-<pre><code>Error: Error message
-    at null._onTimeout (/examples/error-module.js:7:29)
-    at Timer.listOnTimeout [as ontimeout] (timers.js:110:15)
-</code></pre><p>Turns into this:</p>
-<pre><code>Error: Error message
-    at [object Object].&lt;anonymous&gt; (/examples/error-module.js:7:29)
-    at listOnTimeout (timers.js:110:15)
----------------------------------------------
-    at delayed (/examples/error-module.js:3:3)
-    at delayedError (/examples/error-module.js:7:3)
-    at [object Object].&lt;anonymous&gt; (/examples/error-module.js:21:5)
-    at listOnTimeout (timers.js:110:15)
----------------------------------------------
-    at delayed (/examples/error-module.js:3:3)
-    at module.exports (/examples/error-module.js:20:3)
-    at Object.&lt;anonymous&gt; (/examples/longjohn.js:2:26)
-    at Module._compile (module.js:456:26)
-    at Module._extensions..js (module.js:474:10)
-    at Module.load (module.js:356:32)
-    at Module._load (module.js:312:12)
-    at Module.runMain (module.js:497:10)
-</code></pre><h2 id="closing-thoughts">Closing thoughts</h2>
-<p>Getting a full stack is imperative to finding out the root cause of the problem in your code. <a href="https://github.com/mattinsler/longjohn">longjohn</a> addresses that on the Node side. There&#39;s a similiar module that works in the browser called <a href="https://github.com/btford/zone.js/">zone.js</a> by <a href="https://github.com/btford">Brian Ford</a> that I think you should check out as well.</p>
-<p>Check out <a href="https://github.com/npmawesome/example-longjohn">example for this article</a> on GitHub.</p>
-]]></description>
       </item>
     
   </channel>
