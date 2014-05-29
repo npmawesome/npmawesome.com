@@ -14,7 +14,7 @@ html(xmlns="http://www.w3.org/1999/xhtml" xmlns:og="http://ogp.me/ns#" xmlns:fb=
   title= pageTitle()
 
   meta(property="og:title" content=site.title || document.title)
-  meta(property="og:image" content=site.url + (document.image || '/images/default-share-image.jpg'))
+  meta(property="og:image" content=site.url + (document.image || '/images/npmawesome-logo-512x512.png'))
   meta(property="og:updated_time" content=(document.meta.date || getCollection('posts').at(0).get('date')).valueOf())
   meta(property="og:site_name" content=site.title)
   meta(property="og:type" content=document.url === '/' ? 'blog' : 'article')
