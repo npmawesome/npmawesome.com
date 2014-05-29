@@ -15,7 +15,7 @@ slug: *name
 title: *name
 description: General purpose IRC client with simple plugin system.
 ---
-<img class="hide-on-mobile" src="https://avatars2.githubusercontent.com/u/25254" style="float: right; margin-left: 1em; width: 100px"/>
+<img class="hide-on-mobile" src="https://avatars2.githubusercontent.com/u/25254" width="150" align="right" hspace="10"/>
 <%- @npm() %> is a module by <%- @author() %> that part of the recently released open source IRC client called [Slate] and is a general purpose IRC client with simple plugin system.
 
 <%- @readMore() %>

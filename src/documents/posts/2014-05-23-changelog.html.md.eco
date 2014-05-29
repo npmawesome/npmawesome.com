@@ -17,7 +17,7 @@ slug: *name
 title: *name
 description: changelog release management tool
 ---
-<img class="hide-on-mobile" src="https://avatars2.githubusercontent.com/u/84792?s=400" style="float: right; margin-left: 1em; width: 100px"/>
+<img class="hide-on-mobile" src="https://avatars2.githubusercontent.com/u/84792?s=400" width="150" align="right" hspace="10"/>
 
 You fixed _all_ the bugs, closed some security holes and documented new features in your project. In other words - you did a great job and the next release is ready for the roll-out. But you're not done just yet! No? What else? You have to update the changelog file, bump the version in the respective `package.json` and create a `git tag` first. Hm, many steps, right? No more! <%- @npm() %> by <%- @author() %> is here to save you.
 

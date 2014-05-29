@@ -18,7 +18,7 @@ description: Easy tables in the terminal output with cli-table module.
 ---
 In this post we continue the small mini-series of posts about modules for writing CLI (command line interface) tools in Node.js. In the [first post](<%- @url '/posts/2014-03-21-yargs/' %>) we talked about parsing arguments supplied via the command line.
 
-<img class="hide-on-mobile" src="https://avatars3.githubusercontent.com/u/13041" style="float: right; margin-left: 1em; width: 100px"/>
+<img class="hide-on-mobile" src="https://avatars3.githubusercontent.com/u/13041" width="150" align="right" hspace="10"/>
 One of the more interesting subject when it comes to writing CLI tools is how do you present data back to your users. Assuming you need to spit out bunch of tabular data, the standard way of doing that would be in a CSV format (comma separated values). This generates output that other programs can easily parse, but most of the time it's pretty incomprehensible for humans. It's a good idea to be nice to your users and give them an option for a pretty format, eg with `--pretty` flag.
 
 <%- @readMore() %>

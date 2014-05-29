@@ -18,8 +18,8 @@ slug: *name
 title: *name
 description: A platform detection library that works on nearly all JavaScript platforms.
 ---
-<img class="hide-on-mobile" src="https://avatars2.githubusercontent.com/u/4303?s=400" style="float: right; margin-left: 1em; width: 100px"/>
-<img class="hide-on-mobile" src="https://avatars3.githubusercontent.com/u/81942?s=400" style="float: right; margin-left: 1em; width: 100px"/>
+<img class="hide-on-mobile" src="https://avatars2.githubusercontent.com/u/4303?s=400" width="150" align="right" hspace="10"/>
+<img class="hide-on-mobile" src="https://avatars3.githubusercontent.com/u/81942?s=400" width="150" align="right" hspace="10"/>
 There are plenty of different runtime environments in JavaScript-land. Whereas this is a good thing there are also situations where the fragmentation is hindrance. Situations in which your application has to gather information about the platform it is running on. This is where <%- @npm() %> by [John-David Dalton](https://github.com/jdalton) and [Mathias Bynens](https://github.com/mathiasbynens) comes to the game.
 
 <%- @readMore() %>

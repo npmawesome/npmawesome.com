@@ -16,7 +16,7 @@ slug: *name
 title: *name
 description: General purpose IRC client with simple plugin system.
 ---
-<img class="hide-on-mobile" src="https://avatars0.githubusercontent.com/u/139687?s=400" style="float: right; margin-left: 1em; width: 100px"/>
+<img class="hide-on-mobile" src="https://avatars0.githubusercontent.com/u/139687?s=400" width="150" align="right" hspace="10"/>
 <%- @npm() %> is a module by <%- @author() %> provides a super nice API, like the one of [superagent](https://github.com/visionmedia/superagent) but it creates a real http server (using [express](https://github.com/visionmedia/express)). The nice thing about this is that you don't really care about the implementation, which http client is being used, or even if nodes native http api changes.
 
 <%- @readMore() %>

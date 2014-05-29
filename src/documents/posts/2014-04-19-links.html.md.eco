@@ -5,7 +5,7 @@ layout: post-links
 tags: javascript, links
 description: Nerd links for the day, videos, GitHub projects, talks, articles and other stuff.
 ---
-<img src="<%- @image '/npmawesome-logo-512x512.png' %>" class="hide-on-mobile" style="float: right; width: 150px;"/>
+<img src="<%- @image '/npmawesome-logo-512x512.png' %>" class="hide-on-mobile" width="150" align="right"/>
 
 ## Articles & Slides
 

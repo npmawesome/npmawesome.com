@@ -17,7 +17,7 @@ slug: *name
 title: *name
 description: Find distance data between two locations in an easy way.
 ---
-<img class="hide-on-mobile" src="https://avatars2.githubusercontent.com/u/651740?s=400" style="float: right; margin-left: 1em; width: 100px"/>
+<img class="hide-on-mobile" src="https://avatars2.githubusercontent.com/u/651740?s=400" width="150" align="right" hspace="10"/>
 As you web application grows, there comes a time when you will want to have scheduled jobs. The easiest thing is of course go the [cron](http://en.wikipedia.org/wiki/Cron) route. However, maintaining and updating it isn't so easy, especially if you have more than one server to deal with and you still maybe too young for enterprise level job scheduler. What's left? Maybe just do some `setTimeout` calls in process... That doesn't sound very exciting nor very manageable.
 
 This is where <%- @npm() %> by <%- @author() %> comes in. <%- @npm() %>, to plainly put it, is a light-weight job scheduling library for Node.js. Lets give it a go!

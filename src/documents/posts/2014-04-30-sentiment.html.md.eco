@@ -19,7 +19,7 @@ description: AFINN-based sentiment analysis for Node.js.
 ---
 Sentiment analysis is one of those things you don't get to do very often, as cool as it sounds. It's one of those things I always wanted to do but haven't had a reason to yet. The field of natural language is as deep and complex as you want it to be. [Stanford Sentiment Analysis](http://nlp.stanford.edu/sentiment/) is a pretty massive project and nets pretty decent results.
 
-<img class="hide-on-mobile" src="https://avatars1.githubusercontent.com/u/747641?s=400" style="float: right; margin-left: 1em; width: 100px"/>
+<img class="hide-on-mobile" src="https://avatars1.githubusercontent.com/u/747641?s=400" width="150" align="right" hspace="10"/>
 <%- @npm() %> module by <%- @author() %> takes a very simple approach to the problem of just counting token words and their preassigned weight. For the most part you can expect pretty average results and it gets completely lost with expressions like "I don't know half of you half as well as I should like, and I like less than half of you half as well as you deserve" (frankly I don't understand what it says either). But the cool thing is - it actually works and you don't need a giant database. <%- @npm() %> can get you started down the path until you feel the need for something more involved.
 
 <%- @readMore() %>
