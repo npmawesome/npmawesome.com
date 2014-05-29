@@ -1,5 +1,4 @@
 require '../../vendor/unveil/jquery.unveil'
-require '../../vendor/shine/shine.js'
 {githubStars} = require '../../vendor/github-stars/github-stars'
 numeral = require '../../vendor/numeral'
 
@@ -16,12 +15,5 @@ initGithubStars = ->
 
   stars.unveil()
 
-initLogoSine = ->
-  shine = new Shine $('#logo .name')[0]
-  shine.light.position.x = window.innerWidth * 0.5
-  shine.light.position.y = window.innerHeight * 0.5
-  shine.draw()
-
 $ ->
   initGithubStars()
-  initLogoSine()
