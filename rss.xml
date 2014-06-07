@@ -15,15 +15,60 @@
     <atom:link href="http://feeds.feedburner.com/npmawesome" rel="self" type="application/rss+xml"/>
     <link>http://npmawesome.com</link>
     <description>Daily dose of awesome NPM modules for Node.js, old and new!</description>
-    <lastBuildDate>Thu, 29 May 2014 17:02:23 GMT</lastBuildDate>
+    <lastBuildDate>Sat, 07 Jun 2014 00:41:42 GMT</lastBuildDate>
     <language>en</language>
     <sy:updatePeriod>daily</sy:updatePeriod>
     <sy:updateFrequency>2</sy:updateFrequency>
     <generator>awesomeness</generator>
-    <pubDate>Thu, 29 May 2014 17:02:23 GMT</pubDate>
+    <pubDate>Sat, 07 Jun 2014 00:41:42 GMT</pubDate>
 
     
     
+    
+      
+      
+      
+      <item>
+        <title><![CDATA[Links for June 6, 2014]]></title>
+        <link><![CDATA[http://npmawesome.com/posts/2014-06-06-links]]></link>
+        <dc:creator><![CDATA[Alex Gorbatchev]]></dc:creator>
+        <guid isPermaLink="true"><![CDATA[http://npmawesome.com/posts/2014-06-06-links]]></guid>
+        <pubDate><![CDATA[Sat, 07 Jun 2014 00:39:31 GMT]]></pubDate>
+        <description><![CDATA[<p><img src="http://npmawesome.com/images/posts/npmawesome-logo-512x512.png" class="hide-on-mobile" width="150" align="right"/></p>
+<h2 id="articles">Articles</h2>
+<ul>
+<li><a href="https://stripe.com/blog/open-source-retreat-grantees">Stripe Open Source Retreat Grantees</a><blockquote>
+<p>We received about 120 applications in total. Since we only had a few slots (we in fact were originally going to do two, but we had so much trouble choosing we ended up creating another slot), there were a large number of really awesome projects we had to turn away.</p>
+</blockquote>
+</li>
+<li><a href="http://www.vox.com/2014/5/29/5758542/time-for-the-US-to-use-the-metric-system">It&#39;s time for the US to use the metric system</a><blockquote>
+<p>The United States is the last remaining industrialized nation with no formal commitment to going metric. America&#39;s position is causing unnecessary isolation. It&#39;s an impediment to trade and puts the United States at a disadvantage.</p>
+</blockquote>
+</li>
+<li><a href="https://www.linkedin.com/today/post/article/20140524020851-6170480-how-paypal-and-reddit-faked-their-way-to-traction?_mSplash=1">How Paypal and Reddit faked their way to traction</a><blockquote>
+<p>A platform is useless without complementary products. Marketplaces, especially, are dead without sellers posting on them. To solve the chicken-egg problem, some marketplaces create fake supply to attract buyers.</p>
+</blockquote>
+</li>
+<li><a href="http://www.slate.com/articles/technology/technology/2014/06/i_sold_my_startup_for_25_5_million_here_s_how_i_did_it.html">I Sold My Startup for $25.5 Million</a><blockquote>
+<p>When I shared the news, the team stared blankly at me, unsure if it was a good thing or a bad thing.</p>
+</blockquote>
+</li>
+</ul>
+<div class="read-more"></div>
+
+<h2 id="github">Github</h2>
+<ul>
+<li><a href="http://wicky.nillia.ms/headroom.js/">Headroom.js</a> is a lightweight, high-performance JS widget (with no dependencies!) that allows you to react to the user&#39;s scroll. The header on this site is a living example, it slides out of view when scrolling down and slides back in when scrolling up.</li>
+<li><a href="http://jessepollak.github.io/card/">Card</a> makes your credit card form better in one line of code.</li>
+<li><a href="https://github.com/cory/maury">maury</a> is an example of processing and visualizing ship course data from open ICOADS Maury data set.</li>
+</ul>
+<h2 id="youtube">YouTube</h2>
+<ul>
+<li><a href="http://www.youtube.com/watch?v=lRyRuQdjAww">Introduction to gulp.js</a></li>
+</ul>
+<h2 id="twitter">Twitter</h2>
+<blockquote class="twitter-tweet" data-partner="tweetdeck"><p>In May, <a href="https://twitter.com/tjholowaychuk">@tjholowaychuk</a> was fully or partially responsible for 32MM downloads, or about 10% of all downloads in May: <a href="http://t.co/AlxA8XVGNN">http://t.co/AlxA8XVGNN</a></p>&mdash; Laurie Voss (@seldo) <a href="https://twitter.com/seldo/statuses/474678710390751232">June 5, 2014</a></blockquote>]]></description>
+      </item>
     
       
       
@@ -228,47 +273,6 @@ Joi.validate({
 </ul>
 <h2 id="twitter">Twitter</h2>
 <blockquote class="twitter-tweet" data-partner="tweetdeck"><p>Dawg, RT <a href="https://twitter.com/ItsKieranTime">@ItsKieranTime</a> I&#39;ve found it; the most confusing image on the internet. <a href="https://twitter.com/search?q=%23KieranPresentsTheInternet&amp;src=hash">#KieranPresentsTheInternet</a> <a href="http://t.co/OUysIaxEfX">pic.twitter.com/OUysIaxEfX</a></p>&mdash; Gingerick Lamar (@odiolasgalletas) <a href="https://twitter.com/odiolasgalletas/statuses/466103422454730752">May 13, 2014</a></blockquote>]]></description>
-      </item>
-    
-      
-      
-      
-      <item>
-        <title><![CDATA[Links for May 20, 2014]]></title>
-        <link><![CDATA[http://npmawesome.com/posts/2014-05-20-links]]></link>
-        <dc:creator><![CDATA[Alex Gorbatchev]]></dc:creator>
-        <guid isPermaLink="true"><![CDATA[http://npmawesome.com/posts/2014-05-20-links]]></guid>
-        <pubDate><![CDATA[Tue, 20 May 2014 19:22:40 GMT]]></pubDate>
-        <description><![CDATA[<p><img src="http://npmawesome.com/images/posts/npmawesome-logo-512x512.png" class="hide-on-mobile" width="150" align="right"/></p>
-<h2 id="articles">Articles</h2>
-<ul>
-<li><a href="http://viget.com/extend/gulp-browserify-starter-faq">Gulp + Browserify: The Everything Post</a><blockquote>
-<p>When I was done flipping tables, I set aside my newly acquired Grunt + RequireJS skills, and started over again with Gulp and Browserify to see what all the fuss was about.</p>
-<p>You guys. The internet was right. To save you some googling, doc crawling, and trial and error I went through, I&#39;ve assembled some resources and information I think you&#39;ll find helpful in getting started.</p>
-</blockquote>
-</li>
-<li><a href="http://flippinawesome.org/2014/05/12/roll-your-own-asset-pipeline-with-gulp/">Roll Your Own Asset Pipeline with Gulp</a><blockquote>
-<p>Gulp is a build system. It’s like Grunt, Make, Rake, and the like. It’s easy to use for the person running it. While it does have a slight learning curve, you’ll find it a super useful tool for all kinds of tasks. It’ll be the fastest weapon in your toolbox for asset compilation (both in terms of time to develop and run time).</p>
-</blockquote>
-</li>
-<li><a href="http://thenextweb.com/google/2014/05/20/chrome-35-launches-developer-control-touch-input-new-apis-javascript-features/">Chrome 35 launches with more developer control</a><blockquote>
-<ul>
-<li>More developer control over touch input.</li>
-<li>New JavaScript features.</li>
-<li>Unprefixed Shadow DOM.</li>
-<li>A number of new apps/extension APIs.</li>
-<li>Lots of under the hood changes for stability and performance.</li>
-</ul>
-</blockquote>
-</li>
-</ul>
-<div class="read-more"></div>
-
-<h2 id="twitter">Twitter</h2>
-<blockquote class="twitter-tweet" data-partner="tweetdeck"><p>DevTools Tip: Select a User Agent from a predefined list, or define an arbitrary one. Gif: <a href="https://t.co/M5QMInl7Fq">https://t.co/M5QMInl7Fq</a> <a href="http://t.co/9XUDDBXwoO">pic.twitter.com/9XUDDBXwoO</a></p>&mdash; Umar Hansa (@umaar) <a href="https://twitter.com/umaar/statuses/468823671923306497">May 20, 2014</a></blockquote>
-
-
-<blockquote class="twitter-tweet" lang="en"><p>Miss the <a href="https://twitter.com/search?q=%23live&amp;src=hash">#live</a> demo at <a href="https://twitter.com/search?q=%23Bitcoin2014&amp;src=hash">#Bitcoin2014</a>? Not to worry! <a href="https://twitter.com/jerallaire">@jerallaire</a> walks you through Circle in this <a href="https://twitter.com/search?q=%23video&amp;src=hash">#video</a>: <a href="http://t.co/hPpRcZ5fy9">http://t.co/hPpRcZ5fy9</a> <a href="https://twitter.com/search?q=%23bitcoin&amp;src=hash">#bitcoin</a></p>&mdash; Circle Inc. (@circlebits) <a href="https://twitter.com/circlebits/statuses/467325134706343936">May 16, 2014</a></blockquote>]]></description>
       </item>
     
   </channel>
