@@ -5,3 +5,5 @@ node_modules
 .grunt
 .examples
 tags
+npm-awesome-site.sublime-project
+npm-awesome-site.sublime-workspace
