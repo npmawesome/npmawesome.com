@@ -1,0 +1,35 @@
+---
+date: 2014-06-06T17:39:31-0700
+title: Links for June 6, 2014
+layout: post-links
+tags: javascript, links
+description: Nerd links for the day, videos, GitHub projects, talks, articles and other stuff.
+---
+<img src="<%- @image '/npmawesome-logo-512x512.png' %>" class="hide-on-mobile" width="150" align="right"/>
+
+## Articles
+
+* [Stripe Open Source Retreat Grantees](https://stripe.com/blog/open-source-retreat-grantees)
+  > We received about 120 applications in total. Since we only had a few slots (we in fact were originally going to do two, but we had so much trouble choosing we ended up creating another slot), there were a large number of really awesome projects we had to turn away.
+* [It's time for the US to use the metric system](http://www.vox.com/2014/5/29/5758542/time-for-the-US-to-use-the-metric-system)
+  > The United States is the last remaining industrialized nation with no formal commitment to going metric. America's position is causing unnecessary isolation. It's an impediment to trade and puts the United States at a disadvantage.
+* [How Paypal and Reddit faked their way to traction](https://www.linkedin.com/today/post/article/20140524020851-6170480-how-paypal-and-reddit-faked-their-way-to-traction?_mSplash=1)
+  > A platform is useless without complementary products. Marketplaces, especially, are dead without sellers posting on them. To solve the chicken-egg problem, some marketplaces create fake supply to attract buyers.
+* [I Sold My Startup for $25.5 Million](http://www.slate.com/articles/technology/technology/2014/06/i_sold_my_startup_for_25_5_million_here_s_how_i_did_it.html)
+  > When I shared the news, the team stared blankly at me, unsure if it was a good thing or a bad thing.
+
+<%- @readMore() %>
+
+## Github
+
+* [Headroom.js](http://wicky.nillia.ms/headroom.js/) is a lightweight, high-performance JS widget (with no dependencies!) that allows you to react to the user's scroll. The header on this site is a living example, it slides out of view when scrolling down and slides back in when scrolling up.
+* [Card](http://jessepollak.github.io/card/) makes your credit card form better in one line of code.
+* [maury](https://github.com/cory/maury) is an example of processing and visualizing ship course data from open ICOADS Maury data set.
+
+## YouTube
+
+* [Introduction to gulp.js](http://www.youtube.com/watch?v=lRyRuQdjAww)
+
+## Twitter
+
+<blockquote class="twitter-tweet" data-partner="tweetdeck"><p>In May, <a href="https://twitter.com/tjholowaychuk">@tjholowaychuk</a> was fully or partially responsible for 32MM downloads, or about 10% of all downloads in May: <a href="http://t.co/AlxA8XVGNN">http://t.co/AlxA8XVGNN</a></p>&mdash; Laurie Voss (@seldo) <a href="https://twitter.com/seldo/statuses/474678710390751232">June 5, 2014</a></blockquote>
