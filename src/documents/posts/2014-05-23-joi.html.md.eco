@@ -48,7 +48,7 @@ You can validate a basic plain schema
     // will pass
     Joi.validate({counter: 5}, schema, console.log);
 
-Finally, you can do a some pretty complicated validation with field depending on each other:
+Finally, you can do a some pretty complicated validation with fields depending on each other:
 
     var schema = Joi.object().keys({
         username: Joi.string().alphanum().min(3).max(30).required(),
