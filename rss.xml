@@ -15,12 +15,12 @@
     <atom:link href="http://feeds.feedburner.com/npmawesome" rel="self" type="application/rss+xml"/>
     <link>http://npmawesome.com</link>
     <description>Daily dose of awesome NPM modules for Node.js, old and new!</description>
-    <lastBuildDate>Sat, 07 Jun 2014 00:41:42 GMT</lastBuildDate>
+    <lastBuildDate>Wed, 11 Jun 2014 21:31:17 GMT</lastBuildDate>
     <language>en</language>
     <sy:updatePeriod>daily</sy:updatePeriod>
     <sy:updateFrequency>2</sy:updateFrequency>
     <generator>awesomeness</generator>
-    <pubDate>Sat, 07 Jun 2014 00:41:42 GMT</pubDate>
+    <pubDate>Wed, 11 Jun 2014 21:31:17 GMT</pubDate>
 
     
     
@@ -162,7 +162,7 @@ Joi.validate({counter: 0}, schema, console.log);
 
 // will pass
 Joi.validate({counter: 5}, schema, console.log);
-</code></pre><p>Finally, you can do a some pretty complicated validation with field depending on each other:</p>
+</code></pre><p>Finally, you can do a some pretty complicated validation with fields depending on each other:</p>
 <pre><code>var schema = Joi.object().keys({
     username: Joi.string().alphanum().min(3).max(30).required(),
     password: Joi.string().regex(/[a-zA-Z0-9]{3,30}/),

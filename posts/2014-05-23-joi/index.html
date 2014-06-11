@@ -27,7 +27,7 @@ Joi.validate({counter: 0}, schema, console.log);
 
 // will pass
 Joi.validate({counter: 5}, schema, console.log);
-</code></pre><p>Finally, you can do a some pretty complicated validation with field depending on each other:</p>
+</code></pre><p>Finally, you can do a some pretty complicated validation with fields depending on each other:</p>
 <pre><code>var schema = Joi.object().keys({
     username: Joi.string().alphanum().min(3).max(30).required(),
     password: Joi.string().regex(/[a-zA-Z0-9]{3,30}/),
