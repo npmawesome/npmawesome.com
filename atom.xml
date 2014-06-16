@@ -5,7 +5,7 @@
 	<link href="http://npmawesome.com/atom.xml" rel="self" />
 	<link href="http://npmawesome.com" />
 	<id>http://npmawesome.com</id>
-	<updated>2014-06-11T21:31:17.166Z</updated>
+	<updated>2014-06-16T23:43:18.030Z</updated>
 	<author>
 		<name>Alex Gorbatchev</name>
 	</author>
@@ -13,6 +13,70 @@
   
   
   
+    
+    
+    
+		<entry>
+			<title>JugglingDB</title>
+			<link href="http://npmawesome.com/posts/2014-06-16-jugglingdb"/>
+			<updated>2014-06-16T16:00:00.000Z</updated>
+			<id>http://npmawesome.com/posts/2014-06-16-jugglingdb</id>
+			<content type="html">&lt;p&gt;Data access is something Node.js is very well known for. When it comes to drivers, there&amp;#39;s support for nearly every database under the sun. These days however, in most cases you use an &lt;a href=&quot;http://en.wikipedia.org/wiki/Object-relational_mapping&quot;&gt;ORM&lt;/a&gt; library instead of a plain driver. It saves you time and you don&amp;#39;t have to write every single thing youself.&lt;/p&gt;
+&lt;p&gt;There are database specific &lt;a href=&quot;http://en.wikipedia.org/wiki/Object-relational_mapping&quot;&gt;ORM&lt;/a&gt; libraries such as &lt;a href=&quot;http://mongoosejs.com/&quot;&gt;Mongoose&lt;/a&gt; for MongoDB and &lt;a href=&quot;http://sequelizejs.com/&quot;&gt;Sequelize&lt;/a&gt; for MySQL and PostgreSQL. The downside to this approach is that you have to learn a whole new API when you have to go from one database to another. I&amp;#39;m not suggesting it&amp;#39;s a good idea to switch or use different databases during a lifecycle of a single project (eg SQLite for development and MySQL for production). But going from project to project, client to client, your requirements might change and you will have to use a different database and then learn a whole new API. Fun? Yes! But if you have to delivery features quickly, this might be a setback.&lt;/p&gt;
+&lt;div class=&quot;read-more&quot;&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://npmawesome.com/images/posts/anatoliy_chakkaev.jpg&quot; width=&quot;100&quot; align=&quot;right&quot;/&gt;
+&lt;a href=&quot;https://github.com/1602/jugglingdb&quot;&gt;JugglingDB&lt;/a&gt; by &lt;a href=&quot;https://github.com/1602&quot;&gt;Anatoliy Chakkaev&lt;/a&gt; is a young &lt;a href=&quot;http://en.wikipedia.org/wiki/Object-relational_mapping&quot;&gt;ORM&lt;/a&gt; library that tries to provide a single API for a vast array of databases. All adapters come in a form of separate modules and there are quite a few already available:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;ArangoDB&lt;/li&gt;
+&lt;li&gt;CouchDB&lt;/li&gt;
+&lt;li&gt;Firebird&lt;/li&gt;
+&lt;li&gt;MongoDB&lt;/li&gt;
+&lt;li&gt;MySQL&lt;/li&gt;
+&lt;li&gt;PostgreSQL&lt;/li&gt;
+&lt;li&gt;Redis&lt;/li&gt;
+&lt;li&gt;RethinkDB&lt;/li&gt;
+&lt;li&gt;SQLite&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Lets check it out!&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;npm install jugglingdb
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&quot;usage&quot;&gt;Usage&lt;/h2&gt;
+&lt;pre&gt;&lt;code&gt;var Schema = require(&amp;#39;jugglingdb&amp;#39;).Schema;
+var schema = new Schema(&amp;#39;redis&amp;#39;, {port: 6379});
+
+var Post = schema.define(&amp;#39;Post&amp;#39;, {
+  title: { type: String, length: 255 },
+  content: { type: Schema.Text },
+  date: { type: Date, default: function () { return new Date; } },
+  timestamp: { type: Number,  default: Date.now },
+  published: { type: Boolean, default: false, index: true }
+});
+
+var User = schema.define(&amp;#39;User&amp;#39;, {
+  name: String,
+  bio: Schema.Text,
+  approved: Boolean,
+  joinedAt: Date,
+  age: Number
+});
+
+User.hasMany(Post, { as: &amp;#39;posts&amp;#39;,  foreignKey: &amp;#39;userId&amp;#39; });
+Post.belongsTo(User, { as: &amp;#39;author&amp;#39;, foreignKey: &amp;#39;userId&amp;#39; });
+
+var user = new User({ name: &amp;#39;Alex&amp;#39; });
+
+user.save(function (err) {
+  var post = user.posts.build({ title: &amp;#39;Hello world&amp;#39; });
+  post.save(console.log);
+});
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Here&amp;#39;s the cool part, if you want to use a different database, all you have to do is change how your schema connects:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;var schema = new Schema(&amp;#39;mongodb&amp;#39;, {url: &amp;#39;mongodb://localhost/myapp&amp;#39;});
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;What&amp;#39;s even cooler, is that you can have multiple schemas connecting to multiple databases at the same time. This could be very handy if for example you want to keep some cached data in Redis, which storing your loosly defined documents in MongoDB and your accounting stuff in MySQL. You could do all that with a single API.&lt;/p&gt;
+&lt;h2 id=&quot;closing-thoughts&quot;&gt;Closing thoughts&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&quot;https://github.com/1602/jugglingdb&quot;&gt;JugglingDB&lt;/a&gt; is not as well known as &lt;a href=&quot;http://mongoosejs.com/&quot;&gt;Mongoose&lt;/a&gt;, but it&amp;#39;s been in development since 2011 and has a pretty strong following on GitHub. &lt;a href=&quot;http://jugglingdb.co/&quot;&gt;Documentation&lt;/a&gt; is pretty extensive and &lt;a href=&quot;http://jugglingdb.co/roadmap.3.html&quot;&gt;roadmap&lt;/a&gt; gives you a glimpse of where the project is headed and what is currently considered missing. Finally, check out &lt;a href=&quot;https://github.com/npmawesome/example-jugglingdb&quot;&gt;source code&lt;/a&gt; for this article on GitHub and an &lt;a href=&quot;http://runnable.com/U5SP5uAfzMh7SfoX&quot;&gt;interactive example&lt;/a&gt; on Runnable. I&amp;#39;ve included MongoDB, Redis and Memory examples.&lt;/p&gt;
+</content>
+		</entry>
+	
     
     
     
@@ -215,47 +279,6 @@ Joi.validate({
 &lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&quot;closing-thoughts&quot;&gt;Closing thoughts&lt;/h2&gt;
 &lt;p&gt;There might be other tools like &lt;a href=&quot;https://github.com/defunctzombie/changelog&quot;&gt;changelog&lt;/a&gt; out there but this one fits my personal workflow very well and who knows, maybe yours too. Whatever tools you are using for the release management, I can not emphasize enough how important it is to write a changelog file. Not just for you as a project maintainer but also for communicating to the people who are using your product. &lt;a href=&quot;https://github.com/defunctzombie&quot;&gt;Roman Shtylman&lt;/a&gt; helps with &lt;a href=&quot;https://github.com/defunctzombie/changelog&quot;&gt;changelog&lt;/a&gt; to manifest this notion of centering the versioning workflow around the changelog. Thanks!&lt;/p&gt;
 </content>
-		</entry>
-	
-    
-    
-    
-		<entry>
-			<title>Links for May 22, 2014</title>
-			<link href="http://npmawesome.com/posts/2014-05-22-links"/>
-			<updated>2014-05-22T17:26:40.000Z</updated>
-			<id>http://npmawesome.com/posts/2014-05-22-links</id>
-			<content type="html">&lt;p&gt;&lt;img src=&quot;http://npmawesome.com/images/posts/npmawesome-logo-512x512.png&quot; class=&quot;hide-on-mobile&quot; width=&quot;150&quot; align=&quot;right&quot;/&gt;&lt;/p&gt;
-&lt;h2 id=&quot;articles&quot;&gt;Articles&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;http://davidwalsh.name/add-rules-stylesheets&quot;&gt;Add Rules to Stylesheets with JavaScript&lt;/a&gt;&lt;blockquote&gt;
-&lt;p&gt;Another way we can make our pages efficient and fast is to dynamically add and remove styles directly to a stylesheet instead of constantly querying the DOM for elements and applying styles.  Here&amp;#39;s how it works!&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://antirez.com/news/75&quot;&gt;Redis new data structure: the HyperLogLog&lt;/a&gt;&lt;blockquote&gt;
-&lt;p&gt;There is a class of algorithms that use randomization in order to provide an approximation of the number of unique elements in a set using just a constant, and small, amount of memory. The best of such algorithms currently known is called HyperLogLog, and is due to Philippe Flajolet.&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://www.igvita.com/2014/05/20/script-injected-async-scripts-considered-harmful/&quot;&gt;Script-injected &amp;quot;async scripts&amp;quot; considered harmful&lt;/a&gt;&lt;blockquote&gt;
-&lt;p&gt;The script-injected pattern offers no benefits over &lt;code&gt;&amp;lt;script async&amp;gt;&lt;/code&gt;. The reason it exists is because &lt;code&gt;&amp;lt;script async&amp;gt;&lt;/code&gt; was not available and preload scanners did not exist back when it was first introduced. However, that era has now passed, and we need to update our best practices to use async attribute instead of script-injected scripts. In short, script-injected &amp;quot;async scripts&amp;quot; considered harmful.&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://www.html5rocks.com/en/tutorials/es7/observe/&quot;&gt;Data-binding Revolutions with Object.observe()&lt;/a&gt;&lt;blockquote&gt;
-&lt;p&gt;A revolution is coming. There’s a new addition to JavaScript that’s going to change everything you think you know about data-binding. It’s also going to change how many of your MVC libraries approach observing models for edits and updates.&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;div class=&quot;read-more&quot;&gt;&lt;/div&gt;
-
-&lt;h2 id=&quot;github&quot;&gt;Github&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;http://philipwalton.github.io/solved-by-flexbox/&quot;&gt;Solved by Flexbox&lt;/a&gt;&lt;blockquote&gt;
-&lt;p&gt;This site is not another CSS framework. Instead, its purpose is to showcase problems once hard or impossible to solve with CSS alone, now made trivially easy with Flexbox. And with the recent release of Internet Explorer 11 and Safari 6.1, the latest Flexbox spec is now supported in every modern browser.&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&quot;twitter&quot;&gt;Twitter&lt;/h2&gt;
-&lt;blockquote class=&quot;twitter-tweet&quot; data-partner=&quot;tweetdeck&quot;&gt;&lt;p&gt;Dawg, RT &lt;a href=&quot;https://twitter.com/ItsKieranTime&quot;&gt;@ItsKieranTime&lt;/a&gt; I&amp;#39;ve found it; the most confusing image on the internet. &lt;a href=&quot;https://twitter.com/search?q=%23KieranPresentsTheInternet&amp;amp;src=hash&quot;&gt;#KieranPresentsTheInternet&lt;/a&gt; &lt;a href=&quot;http://t.co/OUysIaxEfX&quot;&gt;pic.twitter.com/OUysIaxEfX&lt;/a&gt;&lt;/p&gt;&amp;mdash; Gingerick Lamar (@odiolasgalletas) &lt;a href=&quot;https://twitter.com/odiolasgalletas/statuses/466103422454730752&quot;&gt;May 13, 2014&lt;/a&gt;&lt;/blockquote&gt;</content>
 		</entry>
 	
 </feed>
