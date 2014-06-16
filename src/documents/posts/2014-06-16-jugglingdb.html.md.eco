@@ -1,0 +1,87 @@
+---
+date: 2014-06-16T09:00:00-0700
+author: alexgorbatchev
+partner: nodejitsu
+layout: post
+tags: npm, database, orm
+
+npm:
+  repo: &repo 1602/jugglingdb
+  name: &name JugglingDB
+  install: jugglingdb
+
+  author:
+    name: Anatoliy Chakkaev
+    github: 1602
+
+slug: *name
+title: *name
+description: Object schema validation in Node.js with Joi.
+---
+Data access is something Node.js is very well known for. When it comes to drivers, there's support for nearly every database under the sun. These days however, in most cases you use an [ORM] library instead of a plain driver. It saves you time and you don't have to write every single thing youself.
+
+There are database specific [ORM] libraries such as [Mongoose] for MongoDB and [Sequelize] for MySQL and PostgreSQL. The downside to this approach is that you have to learn a whole new API when you have to go from one database to another. I'm not suggesting it's a good idea to switch or use different databases during a lifecycle of a single project (eg SQLite for development and MySQL for production). But going from project to project, client to client, your requirements might change and you will have to use a different database and then learn a whole new API. Fun? Yes! But if you have to delivery features quickly, this might be a setback.
+
+<%- @readMore() %>
+
+<img src="<%- @image '/anatoliy_chakkaev.jpg' %>" width="100" align="right"/>
+<%- @npm() %> by <%- @author() %> is a young [ORM] library that tries to provide a single API for a vast array of databases. All adapters come in a form of separate modules and there are quite a few already available:
+
+* ArangoDB
+* CouchDB
+* Firebird
+* MongoDB
+* MySQL
+* PostgreSQL
+* Redis
+* RethinkDB
+* SQLite
+
+Lets check it out!
+
+    <%- @install() %>
+
+## Usage
+
+    var Schema = require('jugglingdb').Schema;
+    var schema = new Schema('redis', {port: 6379});
+
+    var Post = schema.define('Post', {
+      title: { type: String, length: 255 },
+      content: { type: Schema.Text },
+      date: { type: Date, default: function () { return new Date; } },
+      timestamp: { type: Number,  default: Date.now },
+      published: { type: Boolean, default: false, index: true }
+    });
+
+    var User = schema.define('User', {
+      name: String,
+      bio: Schema.Text,
+      approved: Boolean,
+      joinedAt: Date,
+      age: Number
+    });
+
+    User.hasMany(Post, { as: 'posts',  foreignKey: 'userId' });
+    Post.belongsTo(User, { as: 'author', foreignKey: 'userId' });
+
+    var user = new User({ name: 'Alex' });
+
+    user.save(function (err) {
+      var post = user.posts.build({ title: 'Hello world' });
+      post.save(console.log);
+    });
+
+Here's the cool part, if you want to use a different database, all you have to do is change how your schema connects:
+
+    var schema = new Schema('mongodb', {url: 'mongodb://localhost/myapp'});
+
+What's even cooler, is that you can have multiple schemas connecting to multiple databases at the same time. This could be very handy if for example you want to keep some cached data in Redis, which storing your loosly defined documents in MongoDB and your accounting stuff in MySQL. You could do all that with a single API.
+
+## Closing thoughts
+
+<%- @npm() %> is not as well known as [Mongoose], but it's been in development since 2011 and has a pretty strong following on GitHub. [Documentation](http://jugglingdb.co/) is pretty extensive and [roadmap](http://jugglingdb.co/roadmap.3.html) gives you a glimpse of where the project is headed and what is currently considered missing. Finally, check out [source code](https://github.com/npmawesome/example-jugglingdb) for this article on GitHub and an [interactive example](http://runnable.com/U5SP5uAfzMh7SfoX) on Runnable. I've included MongoDB, Redis and Memory examples.
+
+[Mongoose]: http://mongoosejs.com/
+[Sequelize]: http://sequelizejs.com/
+[ORM]: http://en.wikipedia.org/wiki/Object-relational_mapping
