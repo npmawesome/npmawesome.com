@@ -82,5 +82,5 @@ Curious why MongoDB was chosen for something most would use Redis for? <%- @auth
 [browsenpm-kue]: http://browsenpm.org/package/kue
 [github-kue]: https://github.com/learnboost/kue
 
-[browsenpm-kue]: http://browsenpm.org/package/node-schedule
-[github-kue]: https://github.com/mattpat/node-schedule
+[browsenpm-schedule]: http://browsenpm.org/package/node-schedule
+[github-schedule]: https://github.com/mattpat/node-schedule
