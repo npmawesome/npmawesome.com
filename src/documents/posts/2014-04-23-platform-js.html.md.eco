@@ -20,13 +20,13 @@ description: A platform detection library that works on nearly all JavaScript pl
 ---
 <img class="hide-on-mobile" src="https://avatars2.githubusercontent.com/u/4303?s=400" width="150" align="right" hspace="10"/>
 <img class="hide-on-mobile" src="https://avatars3.githubusercontent.com/u/81942?s=400" width="150" align="right" hspace="10"/>
-There are plenty of different runtime environments in JavaScript-land. Whereas this is a good thing there are also situations where the fragmentation is hindrance. Situations in which your application has to gather information about the platform it is running on. This is where <%- @npm() %> by [John-David Dalton](https://github.com/jdalton) and [Mathias Bynens](https://github.com/mathiasbynens) comes to the game.
+There are plenty of different runtime environments in JavaScript-land. Whereas this is a good thing there are also situations where the fragmentation is hindrance. Situations in which your application has to gather information about the platform it is running on. This is where <%- @browsenpm() %> by [John-David Dalton](https://github.com/jdalton) and [Mathias Bynens](https://github.com/mathiasbynens) comes to the game.
 
 <%- @readMore() %>
 
 Let's dive into this module with an example. Assume that you have to know if your application runs on [Node.js](http://nodejs.org) or [Rhino](https://developer.mozilla.org/de/docs/Rhino). This could be _easily_ done by checking the type of the `global` variable. In Node.js it is an object whereas Rhino provides a function. Boom! There you go. You can formulate a condition now! But what if you also need to know if your application is running in a browser? Well, game over. Too complicated. The good news is you don't have to do such things anymore.
 
-<%- @npm() %> is a platform detection library which aim is to work on all platforms. It squeeze as much information out of the underlying JavaScript environment as it could and wraps them in a really nice informal abstraction. You are able to grab data like:
+[platform.js][browsenpm] (Github: [bestiejs/platform.js][github], License: MIT) is a platform detection library which aim is to work on all platforms. It squeeze as much information out of the underlying JavaScript environment as it could and wraps them in a really nice informal abstraction. You are able to grab data like:
 
 - The name of the platform (e.g. Google Chrome, Node.js, etc.)
 - The version of the platform
@@ -38,13 +38,13 @@ Let's dive into this module with an example. Assume that you have to know if you
 
 ## Installation
 
-The installation is easy because your package manager flavor is covered. John-David and Mathias provide module descriptors for [Bower](http://bower.io/), [component][browsenpm] (Github: [component/component][github], License: MIT) and NPM:
+The installation is easy because your package manager flavor is covered. John-David and Mathias provide module descriptors for [Bower](http://bower.io/), [component](https://github.com/component/component) and NPM:
 
     <%- @install() %>
 
 ## Usage
 
-The API for using <%- @npm() %> is consistent. What differs is the module loading procedure. Consider the [README](https://github.com/bestiejs/platform.js/blob/master/README.md) for a brief explanation about how to use the library with an AMD loader for instance. The following usage example refers to Node.js:
+The API for using <%- @browsenpm() %> is consistent. What differs is the module loading procedure. Consider the [README](https://github.com/bestiejs/platform.js/blob/master/README.md) for a brief explanation about how to use the library with an AMD loader for instance. The following usage example refers to Node.js:
 
 <%- @includeCodeExample('basic.js') %>
 
@@ -56,7 +56,7 @@ If you curious to see how it performs in a browser environment, check out this [
 
 ## Use cases
 
-I'm pretty sure that you have several use cases in mind where you could use <%- @npm() %>, but one warning: Don't see it as a replacement of feature detection libraries. True to the motto: _If it is a Gecko-based rendering engine (because browsers with this engine have all the shiny new features) then I could use `navigator.getUserMedia()`._ Never ever make such assumptions. Look at it more in a way to
+I'm pretty sure that you have several use cases in mind where you could use <%- @browsenpm() %>, but one warning: Don't see it as a replacement of feature detection libraries. True to the motto: _If it is a Gecko-based rendering engine (because browsers with this engine have all the shiny new features) then I could use `navigator.getUserMedia()`._ Never ever make such assumptions. Look at it more in a way to
 
 - display a tailor-made UI.
 - collect statistical data about the devices of your users.
@@ -64,7 +64,7 @@ I'm pretty sure that you have several use cases in mind where you could use <%- 
 
 ## Closing Thoughts
 
-<%- @npm() %> is a powerful gift when it comes to determining exactly in which environment your application is running. That means, we do not have to write "if-else-if-else-if" statements anymore, folks. We have a rock-solid foundation now!
+<%- @browsenpm() %> is a powerful gift when it comes to determining exactly in which environment your application is running. That means, we do not have to write "if-else-if-else-if" statements anymore, folks. We have a rock-solid foundation now!
 
-[browsenpm]: http://browsenpm.org/package/component
-[github]: https://github.com/component/component
+[browsenpm]: http://browsenpm.org/package/platformjs
+[github]: https://github.com/bestiejs/platform

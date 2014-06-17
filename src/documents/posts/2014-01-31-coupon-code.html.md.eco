@@ -15,7 +15,7 @@ slug: *name
 title: *name
 description: coupon-code is an implementation of Perl's Algorithm::CouponCode for node.js
 ---
-<%- @npm() %> implementation of Perl's [Algorithm::CouponCode](https://github.com/grantm/Algorithm-CouponCode) written by <%- @author() %>. It is meant to solve a what appears on the surface very simple problem - coupon code validation. You would imagine printing codes on paper cups and then having user enter them - pretty straight forward. What happens however when user confuses zero for letter O, or five for S? Should you tell them their code is invalid?
+[coupon-code][browsenpm] (Github: [appsattic/coupon-code][github], License: MIT) is an implementation of Perl's [Algorithm::CouponCode](https://github.com/grantm/Algorithm-CouponCode) written by <%- @author() %>. It is meant to solve a what appears on the surface very simple problem - coupon code validation. You would imagine printing codes on paper cups and then having user enter them - pretty straight forward. What happens however when user confuses zero for letter O, or five for S? Should you tell them their code is invalid?
 
     <%- @install() %>
 
@@ -45,3 +45,6 @@ You can also specify size of the desired code:
     // WYLKQM-U35V40-9N84DA
 
 Pretty cool, eh? Until finding this package, I haven't given this problem a second thought. Have you dealt with coupon codes in your app?
+
+[browsenpm]: http://browsenpm.org/package/coupon-code
+[github]: https://github.com/appsattic/coupon-code

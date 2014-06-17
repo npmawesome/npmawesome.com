@@ -23,7 +23,7 @@ description: YARM is Yet Another REST Module for node.js and Express.
 
 ## Features
 
-The list of features is very extensive. <%- @npm() %> creates REST style APIs for native objects, [Mongoose](http://mongoosejs.com/) and allows you to have pretty tight control over what's happening. There's a long list of customization options that let you specify output format, what's included, how MongoDB collection are fetched, permissions and so.
+The list of features is very extensive. <%- @browsenpm() %> creates REST style APIs for native objects, [Mongoose](http://mongoosejs.com/) and allows you to have pretty tight control over what's happening. There's a long list of customization options that let you specify output format, what's included, how MongoDB collection are fetched, permissions and so.
 
 ## Usage
 
@@ -107,7 +107,7 @@ Of course, you can have nested resources.
     $ curl http://localhost/rest/posts/first-post/comments/3/foo/bar
     ...
 
-Check out <%- @npm() %> github page for complete documentation. How do you handle your APIs?
+Check out the [yarm][github] github page for complete documentation. How do you handle your APIs?
 
 [browsenpm]: http://browsenpm.org/package/yarm
 [github]: https://github.com/njoyard/yarm

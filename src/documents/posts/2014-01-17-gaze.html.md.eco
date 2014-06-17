@@ -9,7 +9,12 @@ slug: *name
 title: *name
 description: Gaze is a globbing fs.watch wrapper built from the best parts of other fine watch libs.
 ---
-<%- @npm() %> a globbing `fs.watch` wrapper written by [Kyle Robinson Young](https://github.com/shama) and built from the best parts of other fine watch libs. Compatible with Node.js 0.10/0.8, Windows, OSX and Linux. There's a [pretty long list](https://npmjs.org/browse/depended/gaze) of other great modules that are built on top of <%- @npm() %>.
+[gaze][browsenpm] (Github: [shama/gaze][github], License: MIT) a globbing
+`fs.watch` wrapper written by [Kyle Robinson Young](https://github.com/shama)
+and built from the best parts of other fine watch libs. Compatible with Node.js
+0.10/0.8, Windows, OSX and Linux. There's a
+[pretty long list](https://npmjs.org/browse/depended/gaze) of other great modules
+that are built on top of <%- @browsenpm() %>.
 
     npm install <%= @document.npm.name %>
 
@@ -57,9 +62,15 @@ description: Gaze is a globbing fs.watch wrapper built from the best parts of ot
       this.add(['js/*.js']);
     });
 
-I've been getting my feet wet with [gulp.js](http://gulpjs.com) and specifically [gulp-watch][browsenpm] (Github: [floatdrop/gulp-watch][github], License: MIT) plugin which helps you process only the files that were changed. This helps to speed up asset building quite a bit.
+I've been getting my feet wet with [gulp.js](http://gulpjs.com) and specifically
+[gulp-watch][browsenpm-gulp] (Github: [floatdrop/gulp-watch][github-gulp], License: MIT)
+plugin which helps you process only the files that were changed. This helps to
+speed up asset building quite a bit.
 
 Are you using any file watchers in your project?
 
-[browsenpm]: http://browsenpm.org/package/gulp-watch
-[github]: https://github.com/floatdrop/gulp-watch
+[browsenpm]: http://browsenpm.org/package/gaze
+[github]: https://github.com/shama/gaze
+
+[browsenpm-gulp]: http://browsenpm.org/package/gulp-watch
+[github-gulp]: https://github.com/floatdrop/gulp-watch

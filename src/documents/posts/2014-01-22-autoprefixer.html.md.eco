@@ -9,7 +9,7 @@ slug: *name
 title: *name
 description: Autoprefixer parses CSS and adds vendor prefixes to rules using `Can I Use`.
 ---
-<%- @npm() %> parses CSS and adds vendor prefixes to rules based on information from the glorious [Can I Use](http://caniuse.com).
+[autoprefixer][browsenpm] (Github: [ai/autoprefixer][github], License: MIT) parses CSS and adds vendor prefixes to rules based on information from the glorious [Can I Use](http://caniuse.com).
 
     npm install <%= @document.npm.name %>
 

@@ -64,7 +64,7 @@ Passing the app or url each time is not necessary, if you're testing the same ho
       console.log(err);
     });
 
-Anything you can do with [superagent], you can do with <%- @npm() %>. For some strange reason I love testing HTTP end points, this is my goto library for this. Thanks TJ!
+Anything you can do with [superagent], you can do with <%- @browsenpm() %>. For some strange reason I love testing HTTP end points, this is my goto library for this. Thanks TJ!
 
 [superagent]: http://github.com/visionmedia/superagent
 

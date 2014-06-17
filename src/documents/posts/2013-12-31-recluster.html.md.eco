@@ -9,7 +9,8 @@ slug: *name
 title: *name
 description: Clustering library with support for zero-downtime reloading.
 ---
-<%- @npm() %> is a clustering library with support for zero-downtime reloading.
+[recluster][browsenpm] (Github: [doxout/recluster][github], License: MIT) is a
+clustering library with support for zero-downtime reloading.
 
     npm install <%= @document.npm.name %>
 
@@ -17,7 +18,8 @@ description: Clustering library with support for zero-downtime reloading.
 
 Delivering that 100% uptime for web apps can be a tricky business. Errors and new code rollouts are the things we have to deal with on a daily basis and if you run continuous integration, your app is probably restarting many times a day. What kind of experience this might be creating for your users?
 
-<%- @npm() %> is among a [forever][browsenpm] (Github: [nodejitsu/forever][github], License: MIT) [other](https://github.com/superjoe30/naught) libraries that try to address this issue. It is:
+<%- @browsenpm() %> is among a [few][browsenpm-forever] [other][browsenpm-naught]
+libraries that try to address this issue. It is:
 
 * Cluster aware.
 * Zero downtime errors and deploys.
@@ -68,5 +70,8 @@ For some fantastic insights on the subject, checkout [Towards 100% Uptime with N
 
 Curious, how do you manage your node process?
 
-[browsenpm]: http://browsenpm.org/package/forever
-[github]: https://github.com/nodejitsu/forever
+[browsenpm]: http://browsenpm.org/package/recluster
+[github]: https://github.com/doxout/recluster
+
+[browsenpm-forever]: http://browsenpm.org/package/forever
+[browsenpm-naught]: http://browsenpm.org/package/naught

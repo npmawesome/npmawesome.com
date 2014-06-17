@@ -10,7 +10,7 @@ slug: *name
 title: *name
 description: ect is a performance focused JavaScript template engine with embedded CoffeeScript syntax.
 ---
-<%- @npm() %> is a [performance focused](http://ectjs.com/#benchmark) JavaScript template engine with embedded CoffeeScript syntax. [Just try demo](http://ectjs.com) to check all features.
+[ect][browsenpm] (Github: [baryshev/ect][github], License: MIT) is a [performance focused](http://ectjs.com/#benchmark) JavaScript template engine with embedded CoffeeScript syntax. [Just try demo](http://ectjs.com) to check all features.
 
     npm install <%= @document.npm.name %>
 
@@ -62,3 +62,6 @@ views/layout.ect
     </html>
 
 There are plenty of examples and information on the <%- @npm() %>. Check it out!
+
+[browsenpm]: http://browsenpm.org/package/ect
+[github]: https://github.com/baryshev/ect

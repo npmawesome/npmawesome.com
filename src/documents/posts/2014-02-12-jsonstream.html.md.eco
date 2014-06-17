@@ -16,7 +16,7 @@ slug: *name
 title: *name
 description: JSONStream is a module for streaming JSON.parse and JSON.stringify.
 ---
-[JSONStream][browsenpm] (Github: [dominictarr/JSONStream][github], License: Unknown) is a module by <%- @author() %> for streaming `JSON.parse` and `JSON.stringify`.
+[JSONStream][browsenpm] (Github: [dominictarr/JSONStream][github], License: Apache) is a module by <%- @author() %> for streaming `JSON.parse` and `JSON.stringify`.
 
     <%- @install() %>
 

@@ -15,13 +15,15 @@ slug: *name
 title: *name
 description: power-asserts is a module that provides pretty damn descriptive assert messages for your tests.
 ---
-<%- @npm() %> is a module written by <%- @author() %> that provides pretty damn descriptive assert messages for your tests.
+[power-assert][browsenpm] (Github: [twada/power-assert][github], License: MIT) is a
+module written by <%- @author() %> that provides pretty damn descriptive assert
+messages for your tests.
 
     <%- @install() %>
 
 ## Features
 
-<%- @npm() %> transforms your regular boring asserts to this:
+<%- @browsenpm() %> transforms your regular boring asserts to this:
 
     AssertionError: # /path/to/examples/mocha_node.js:10
 
@@ -34,10 +36,10 @@ description: power-asserts is a module that provides pretty damn descriptive ass
 
 ## Usages
 
-There are two ways to use <%- @npm() %>.
+There are two ways to use <%- @browsenpm() %>.
 
 1. `power-assert` + `espower-loader` : Only works under Node.
-2. `power-assert` + [grunt-espower][browsenpm] (Github: [twada/grunt-espower][github], License: MIT) or [`gulp-espower`](http://github.com/twada/gulp-espower) : Generates instrumented code so works anywhere.
+2. `power-assert` + [`grunt-espower`](https://github.com/twada/grunt-espower) or [`gulp-espower`](http://github.com/twada/gulp-espower) : Generates instrumented code so works anywhere.
 
 To give you an idea what the trasnformed code looks like, for example, it transforms:
 
@@ -78,7 +80,7 @@ into:
         path: '/Users/alexgorbatchev/1-npmawesome/1/power-assert-demo/test/power_assert/mocha_power_assert_test.js'
     }, '        assert(this.ary.indexOf(who) === two);'));
 
-<%- @npm() %> also works with CoffeeScript files to produce output:
+<%- @browsenpm() %> also works with CoffeeScript files to produce output:
 
     AssertionError:
 
@@ -91,7 +93,7 @@ into:
 
 I'm very tempted to give this a try over my goto [chai.js](http://chaijs.com/) library. I'm a little bit worried that it changes number of lines and it might be harder to do certain type of debugging, but the benefit might be worth it!
 
-There's a full documentation on the <%- @npm() %> github page and a [demo project](https://github.com/twada/power-assert-demo). What do you think?
+There's a full documentation on the <%- @browsenpm() %> github page and a [demo project](https://github.com/twada/power-assert-demo). What do you think?
 
-[browsenpm]: http://browsenpm.org/package/grunt-espower
-[github]: https://github.com/twada/grunt-espower
+[browsenpm]: http://browsenpm.org/package/power-assert
+[github]: https://github.com/twada/power-assert

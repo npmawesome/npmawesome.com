@@ -20,7 +20,7 @@ description: qr-code is yet another QR Code generator.
 
 [QR code] is this super cool thing you probably have been seeing all over the place lately. It started appearing in North America a few years ago but the actual standard is close to two decades old. It allows you to embed any small amount of data that could be decoded with a basic camera equipped phone. Most common use case here is embedding URLs in printed adverising so that those who are interested could simply point their phone at the add and go to the site instead of having to type in URLs.
 
-<%- @npm() %> is a module by <%- @author() %> to render [QR code] with node.js and no external dependencies.
+[qr-image][browsenpm] (Github: [alexeyten/qr-image][github], License: MIT) is a module by <%- @author() %> to render [QR code] with node.js and no external dependencies.
 
 <%- @readMore() %>
 

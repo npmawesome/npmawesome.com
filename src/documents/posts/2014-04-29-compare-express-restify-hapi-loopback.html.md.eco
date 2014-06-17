@@ -341,3 +341,6 @@ $ curl "http://localhost:8080/rpc/system/echo?ping=hello"
 [hapi]: http://spumko.github.io/
 [LoopBack]: http://strongloop.com/mobile-application-development/loopback/
 [StrongLoop]: http://strongloop.com
+
+[browsenpm]: http://browsenpm.org/package/hapi
+[github]: https://github.com/spumko/hapi

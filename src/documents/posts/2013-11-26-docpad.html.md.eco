@@ -8,7 +8,7 @@ npm:
 slug: *name
 title: *name
 ---
-<%- @npm() %> is a static web site generator that is has been used in production by big and small companies for over a year and a half now to create [plenty of amazing and powerful web sites and applications](http://docpad.org/docs/showcase) quicker than ever before. What makes it different is instead of being a box to cram yourself into and hold you back, it is freeway to what you want to accomplish, just getting out of your way and allowing you to create stuff quicker than ever before without limits. Leave the redudant stuff up to me, so you can focus on the awesome stuff.
+[docpad][browsenpm] (Github: [bevry/docpad][github], License: MIT) is a static web site generator that is has been used in production by big and small companies for over a year and a half now to create [plenty of amazing and powerful web sites and applications](http://docpad.org/docs/showcase) quicker than ever before. What makes it different is instead of being a box to cram yourself into and hold you back, it is freeway to what you want to accomplish, just getting out of your way and allowing you to create stuff quicker than ever before without limits. Leave the redudant stuff up to me, so you can focus on the awesome stuff.
 
     npm install <%= @document.npm.name %>
 
@@ -18,7 +18,7 @@ title: *name
 - Write your documents in any language, markup, templating engine, or pre-processor you wish
 - Changes to your website are automatically recompiled through our built in watch system
 - Add meta data to the top of your files to be used by templating engines to display non-standard information
-- Display custom listings of content with our powerful [query-engine][browsenpm] (Github: [bevry/query-engine][github], License: MIT)
+- Display custom listings of content with our powerful [Query Engine][browsenpm-engine] (Github: [bevry/query-engine][github-engine], License: MIT)
 - Abstract out generic headers and footers into layouts using our nested layout system
 - Deploy by copying static files
 - Built-in server to save you from having to startup your own, for dynamic deployments this even supports things like clean urls, custom routes and server-side logic
@@ -29,5 +29,8 @@ title: *name
 There are plenty of examples and information on the <%- @npm() %>. Check it
 out!
 
-[browsenpm]: http://browsenpm.org/package/query-engine
-[github]: https://github.com/bevry/query-engine
+[browsenpm]: http://browsenpm.org/package/docpad
+[github]: https://github.com/bevry/docpad
+
+[browsenpm-engine]: http://browsenpm.org/package/query-engine
+[github-engine]: https://github.com/bevry/query-engine

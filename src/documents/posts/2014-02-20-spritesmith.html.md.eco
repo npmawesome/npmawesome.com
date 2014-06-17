@@ -16,7 +16,7 @@ title: *name
 description: spritesmith is a module that takes image files and generates spritesheets and coordinate maps.
 ---
 <img class="hide-on-mobile" src="https://0.gravatar.com/avatar/15927fc52919e9223adc7ed99e125d4d" style="float: right; margin-left: 1em"/>
-[spritesmith][browsenpm] (Github: [Ensighten/spritesmith][github], License: MIT) is a module by <%- @author() %> that takes image files and generates [spritesheets] and coordinate maps. By itself <%- @npm() %> would be somewhat difficult to utilize in your workflow, that's why nice people have created [gulp.spritesmith] and [grunt-spritesmith] tasks to make build sprites for you with just a few lines of code.
+[spritesmith][browsenpm] (Github: [Ensighten/spritesmith][github], License: MIT) is a module by <%- @author() %> that takes image files and generates [spritesheets] and coordinate maps. By itself <%- @browsenpm() %> would be somewhat difficult to utilize in your workflow, that's why nice people have created [gulp.spritesmith] and [grunt-spritesmith] tasks to make build sprites for you with just a few lines of code.
 
 <%- @readMore() %>
 

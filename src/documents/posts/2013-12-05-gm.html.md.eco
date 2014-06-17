@@ -17,7 +17,7 @@ title: *name
 
 > ImageMagick is a software suite to create, edit, compose, or convert bitmap images. It can read and write images in a variety of formats (over 100) including DPX, EXR, GIF, JPEG, JPEG-2000, PDF, PNG, Postscript, SVG, and TIFF. Use ImageMagick to resize, flip, mirror, rotate, distort, shear and transform images, adjust image colors, apply various special effects, or draw text, lines, polygons, ellipses and Bézier curves.
 
-The [demo](http://aheckmann.github.io/gm/) page has an interactive playground that shows a tiny fraction of what <%- @npm() %> can do.
+The [demo](http://aheckmann.github.io/gm/) page has an interactive playground that shows a tiny fraction of what <%- @browsenpm() %> can do.
 
     var gm = require('./gm');
 
@@ -39,7 +39,7 @@ The [demo](http://aheckmann.github.io/gm/) page has an interactive playground th
         if (!err) console.log('done');
       });
 
-There are plenty of examples and information on the <%- @npm() %>. Check it out!
+There are plenty of examples and information on the [github page][github]. Check it out!
 
 [browsenpm]: http://browsenpm.org/package/gm
 [github]: https://github.com/aheckmann/gm

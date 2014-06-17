@@ -18,7 +18,8 @@ description: Find distance data between two locations in an easy way.
 ---
 <img src="<%- @image '/google-distance.png' %>" class="hide-on-mobile" style="width: 100%" />
 
-Everybody appreciates the distance information between two locations in web mapping services like [Google Maps](http://maps.google.com), right? Do you have a similar use case within your application but want to avoid the implementation overhead of abstracting from an external API? <%- @npm() %> by <%- @author() %> helps you to do just that.
+Everybody appreciates the distance information between two locations in web mapping services like [Google Maps](http://maps.google.com), right? Do you have a similar use case within your application but want to avoid the implementation overhead of abstracting from an external API?
+[google-distance][browsenpm] (Github: [edwlook/node-google-distance][github], License: MIT) by <%- @author() %> helps you to do just that.
 
 <%- @readMore() %>
 
@@ -28,7 +29,7 @@ The module wraps the distance calculation functionality of the [Google Distance 
 
 ## Usage
 
-Let's say we want to calculate the distance between New York City and San Diego. <%- @npm() %> is frugal and very intuitive to use in this regard. It asks only for two required properties: `origin` and `destination`.
+Let's say we want to calculate the distance between New York City and San Diego. <%- @browsenpm() %> is frugal and very intuitive to use in this regard. It asks only for two required properties: `origin` and `destination`.
 
 The following basic usage example ...
 
@@ -56,7 +57,7 @@ Checkout this [runnable example](http://runnable.com/U2IHUgxWgZMpX2Ct/google-dis
 
 ## API key
 
-One last note: It is not necessary to configure an API key in order to use the <%- @npm() %> module. But: To avoid exceeding Google's [quota](https://developers.google.com/maps/documentation/distancematrix/#Limits) it is highly recommended.
+One last note: It is not necessary to configure an API key in order to use the <%- @browsenpm() %> module. But: To avoid exceeding Google's [quota](https://developers.google.com/maps/documentation/distancematrix/#Limits) it is highly recommended.
 
 Follow these [steps](https://developers.google.com/maps/documentation/distancematrix/#api_key) in order to obtain an API key. After that it is easy to inform the module about your key:
 
@@ -64,4 +65,8 @@ Follow these [steps](https://developers.google.com/maps/documentation/distancema
 
     distance.apiKey = 'YOUR_API_KEY';
 
-You can find the usage examples in an own [repository](https://github.com/npmawesome/example-google-distance). Play with it and let me know what you think :)
+You can find the usage examples in an own [repository](https://github.com/npmawesome/example-google
+-distance). Play with it and let me know what you think :)
+
+[browsenpm]: http://browsenpm.org/package/google-distance
+[github]: https://github.com/edwlook/node-google-distance

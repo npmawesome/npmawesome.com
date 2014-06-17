@@ -17,7 +17,7 @@ title: *name
 description: Solving minification problem with angular.js dependency injection.
 ---
 <img class="hide-on-mobile" src="<%- @image('/../authors/alexgorbatchev.jpg') %>" width="150" align="right" hspace="10"/>
-<%- @npm() %> module by <%- @author() %> (me) is meant to address minification problem with [angular.js](https://www.angularjs.org/) dependency injection that [ngmin](https://www.npmjs.org/package/ngmin) does not - work with any dependency injection syntax.
+[angular-injector][browsenpm] (Github: [alexgorbatchev/angular-injector][github], License: MIT) module by <%- @author() %> (me) is meant to address minification problem with [angular.js](https://www.angularjs.org/) dependency injection that [ngmin](https://www.npmjs.org/package/ngmin) does not - work with any dependency injection syntax.
 
 <%- @readMore() %>
 
@@ -25,7 +25,7 @@ description: Solving minification problem with angular.js dependency injection.
 
 ## Features
 
-<%- @npm() %> works exactly the same way as [ngmin] meaning that it modifies the source during build time. Unlike [ngmin] however, it's less dependent on the syntax. In fact, any function wrapped in a `ng(func)` call will be escaped with `['dep1', 'dep2', func]` injector style.
+<%- @browsenpm() %> works exactly the same way as [ngmin] meaning that it modifies the source during build time. Unlike [ngmin] however, it's less dependent on the syntax. In fact, any function wrapped in a `ng(func)` call will be escaped with `['dep1', 'dep2', func]` injector style.
 
 ## Usage
 
@@ -52,8 +52,8 @@ This syntax works particularly well in CoffeeScript and is literally 2-3 extra c
 
 Of course, I wouldn't just write this module without supporting [gulp.js](http://gulpjs.com/) and [grunt.js](http://gruntjs.com/).
 
-* [gulp-angular-injector][browsenpm] (Github: [alexgorbatchev/gulp-angular-injector][github], License: MIT)
-* [grunt-angular-injector](https://github.com/alexgorbatchev/grunt-angular-injector)
+* [gulp-angular-injector][browsenpm-gulp] (Github: [alexgorbatchev/gulp-angular-injector][github-gulp], License: MIT)
+* [grunt-angular-injector][browsenpm-grunt] (Github: [alexgorbatchev/grunt-angular-injector][github-grunt], License: MIT)
 
 ## Closing thoughts
 
@@ -61,5 +61,11 @@ The biggest downside of this method is basically remembering to add the `ng()` w
 
 [ngmin]: https://www.npmjs.org/package/ngmin
 
-[browsenpm]: http://browsenpm.org/package/gulp-angular-injector
-[github]: https://github.com/alexgorbatchev/gulp-angular-injector
+[browsenpm]: http://browsenpm.org/package/angular-injector
+[github]: https://github.com/alexgorbatchev/angular-injector
+
+[browsenpm-gulp]: http://browsenpm.org/package/gulp-angular-injector
+[github-gulp]: https://github.com/alexgorbatchev/gulp-angular-injector
+
+[browsenpm-grunt]: http://browsenpm.org/package/grunt-angular-injector
+[github-grunt]: https://github.com/alexgorbatchev/grunt-angular-injector
