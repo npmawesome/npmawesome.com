@@ -75,7 +75,7 @@ This will render a box with line borders containing the text 'Hello world!', per
     // Render the screen.
     screen.render();
 
-There are plenty of examples and information on the <%- @npm() %>. Check it out!
+There are plenty of examples and information on the [github page][github]. Check it out!
 
 [browsenpm]: http://browsenpm.org/package/blessed
 [github]: https://github.com/chjj/blessed

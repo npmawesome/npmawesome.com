@@ -17,7 +17,7 @@ title: *name
 description: webdriver.js is a webdriver module for node.js that makes it possible to write super easy selenium tests in your favorite BDD or TDD test framework.
 ---
 <img class="hide-on-mobile" src="https://2.gravatar.com/avatar/2c405e9d55507036d6cc2aff250c3146" style="float: right; margin-left: 1em"/>
-[webdriver.js][browsenpm] (Github: [camme/webdriver.js][github], License: MIT) is a module by <%- @author() %> that makes it possible to write super easy selenium tests in your favorite BDD or TDD test framework. <%- @npm() %> is not the "official webdriverjs driver" says [Christian Bromann](https://github.com/christian-bromann) in [this thread](https://github.com/camme/webdriverjs/issues/138#issuecomment-32051980):
+[webdriver.js][browsenpm] (Github: [camme/webdriver.js][github], License: MIT) is a module by <%- @author() %> that makes it possible to write super easy selenium tests in your favorite BDD or TDD test framework. <%- @browsenpm() %> is not the "official webdriverjs driver" says [Christian Bromann](https://github.com/christian-bromann) in [this thread](https://github.com/camme/webdriverjs/issues/138#issuecomment-32051980):
 
 > We're trying to provide a selenium runner which is easy to use, highly extendable and compatible with all common JavaScript test frameworks. It uses an own chain API to execute all async commands in right order. The specialty of this library is that we wrap all JSONWire protocol commands in useful actions commands. So you don't have to care about to get an element first and then call the click command; you just execute the click with a selector as parameter.
 
@@ -46,7 +46,7 @@ description: webdriver.js is a webdriver module for node.js that makes it possib
 
 ## Selector API
 
-The `JsonWireProtocol` provides several strategies to query an element. <%- @npm() %> simplifies these to make it more familiar with the common existing selector libraries like Sizzle. The following selector types are supported:
+The `JsonWireProtocol` provides several strategies to query an element. <%- @browsenpm() %> simplifies these to make it more familiar with the common existing selector libraries like Sizzle. The following selector types are supported:
 
 * CSS query selector
 * link text
@@ -74,14 +74,14 @@ Here is a simplified example of differences between the drivers:
       .elementById('btnG')
       .click()
 
-<%- @npm() %>:
+<%- @browsenpm() %>:
 
     client
         .url('http://google.com')
         .setValue('#q','webdriver')
         .click('#btnG')
 
-<%- @npm() %> has also almost all protocol commands implemented, so you can do the same with the standard JSONWire protocol commands.
+<%- @browsenpm() %> has also almost all protocol commands implemented, so you can do the same with the standard JSONWire protocol commands.
 
     client
         .url('http://google.com')

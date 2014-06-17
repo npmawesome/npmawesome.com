@@ -13,11 +13,11 @@ title: *name
 description: peer.js provides a complete, configurable, and easy-to-use peer-to-peer API built on top of WebRTC, supporting both data channels and media streams.
 ---
 <img class="hide-on-mobile" src="/images/posts/peerjs.png" style="float: right; margin-left: 1em"/>
-<%- @npm() %> provides a complete, configurable, and easy-to-use peer-to-peer API built on top of WebRTC, supporting both data channels and media streams. <%- @npm() %> wraps the browser's WebRTC implementation to provide a complete, configurable, and easy-to-use peer-to-peer connection API. Equipped with nothing but an ID, a peer can create a P2P data or media stream connection to a remote peer.
+[peer.js][browsenpm] (Github: [peers/peerjs][github], License: MIT) provides a complete, configurable, and easy-to-use peer-to-peer API built on top of WebRTC, supporting both data channels and media streams. <%- @browsenpm() %> wraps the browser's WebRTC implementation to provide a complete, configurable, and easy-to-use peer-to-peer connection API. Equipped with nothing but an ID, a peer can create a P2P data or media stream connection to a remote peer.
 
     <%- @install() %>
 
-To broker connections, <%- @npm() %> connects to a PeerServer ([free hosted](http://peerjs.com/peerserver) or [peer][browsenpm] (Github: [peers/peer][github], License: MIT)). Note that **no peer-to-peer data goes through the server** - the server acts only as connection broker.
+To broker connections, <%- @browsenpm() %> connects to a PeerServer ([free hosted](http://peerjs.com/peerserver) or [host your own](https://github.com/peers/peerjs-server)). Note that **no peer-to-peer data goes through the server** - the server acts only as connection broker.
 
 ## Usage
 
@@ -44,5 +44,5 @@ Receive
 
 Checkout the [awesome API docs](http://peerjs.com/docs/#api) and take it out for a spin. You can create a video chat with just a few lines of code. Have you done any peer-to-peer stuff?
 
-[browsenpm]: http://browsenpm.org/package/peer
-[github]: https://github.com/peers/peer
+[browsenpm]: http://browsenpm.org/package/peerjs
+[github]: https://github.com/peers/peerjs

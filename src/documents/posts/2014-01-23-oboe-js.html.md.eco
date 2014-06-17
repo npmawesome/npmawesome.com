@@ -24,7 +24,7 @@ description: A fresh approach to JSON loading that speeds up web applications by
 
 ## Features
 
-The library is extremely feature rich for its 13KB size. I will try to summarize them here and you can get full details with examples on the <%- @npm() %> github page.
+The library is extremely feature rich for its 13KB size. I will try to summarize them here and you can get full details with examples on the [jimhigson/oboe.js][github] github page.
 
 * Hangs up when everything that's needed was processed
 * Reacts to field and node names

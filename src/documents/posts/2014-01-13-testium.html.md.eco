@@ -9,8 +9,12 @@ slug: *name
 title: *name
 description: Integration test platform for Node.js using mocha and a sync API.
 ---
-<%- @npm() %> is a testing platform focused on providing a simple, but effective, platform for testing your code in different browsers (via Selenium) and headlessly (via PhantomJS). It uses [webdriver-http-sync][browsenpm] (Github: [groupon/webdriver-http-sync][github], License: BSD 2-Clause)
-which Groupon wrote in order to communicate using the WebDriver protocol to a Selenium server.
+[testium][browsenpm] (Github: [groupon/testium][github], License: BSD 3-Clause) is
+a testing platform focused on providing a simple, but effective,
+platform for testing your code in different browsers (via Selenium) and headlessly
+(via PhantomJS). It uses [webdriver-http-sync][browsenpm-http]
+(Github: [groupon/webdriver-http-sync][github-http], License: BSD 2-Clause) which
+Groupon wrote in order to communicate using the WebDriver protocol to a Selenium server.
 
     npm install <%= @document.npm.name %>
 
@@ -35,7 +39,7 @@ and
 
 ## Example
 
-A simple test using [assertive](https://github.com/groupon/assertive).
+A simple test using [assertive][browsenpm-assert] (Github: [groupon/assertive][github-assert], License: BSD 2-Clause).
 
     {getBrowser} = require 'testium'
     assert = require 'assertive' # or whatever assert library you prefer
@@ -59,5 +63,11 @@ One of the more exciting and unique features is ability to diff screenshots and 
 
 On the side note, super excited to find out that Groupon is using CoffeeScript! Are you?
 
-[browsenpm]: http://browsenpm.org/package/webdriver-http-sync
-[github]: https://github.com/groupon/webdriver-http-sync
+[browsenpm]: http://browsenpm.org/package/testium
+[github]: https://github.com/groupon/testium
+
+[browsenpm-assert]: http://browsenpm.org/package/assertive
+[github-assert]: https://github.com/groupon/assertive
+
+[browsenpm-http]: http://browsenpm.org/package/webdriver-http-sync
+[github-http]: https://github.com/groupon/webdriver-http-sync

@@ -37,7 +37,7 @@ Model defintions are recursive Javascript object. At each layer, you can have th
 * `primary` (boolean): Set this on one of your fiels for easy saving and loading.
 * `private` (boolean): `toObject()` will not include this field in expect unless the argumnet usePrivate is true
 
-There are plenty of examples and information on the <%- @npm() %>. Check it out!
+There are plenty of examples and information on the [github page][github]. Check it out!
 
 [browsenpm]: http://browsenpm.org/package/VeryModel
 [github]: https://github.com/fritzy/VeryModel

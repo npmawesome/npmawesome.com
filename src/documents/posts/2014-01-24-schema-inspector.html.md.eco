@@ -78,7 +78,7 @@ Object validation can come in extremely handy when you are writing APIs. On one 
       res.send({status: 'ok'});
     });
 
-On the flip side, you can use the <%- @npm() %> to validate API response in your tests:
+On the flip side, you can use the <%- @browsenpm() %> to validate API response in your tests:
 
     var request = require('request');
     var inspector = require('schema-inspector');

@@ -23,16 +23,16 @@ One of the more interesting subject when it comes to writing CLI tools is how do
 
 <%- @readMore() %>
 
-Getting pretty tabular data to STDOUT isn't a trivial matter if you want to tackle it all by yourself. After all, there isn't a `table` tag. Luckily there are modules in NPM to help you with that. One of those modules is <%- @npm() %> written by <%- @author() %> of the [LearnBoost](https://github.com/LearnBoost) fame.
+Getting pretty tabular data to STDOUT isn't a trivial matter if you want to tackle it all by yourself. After all, there isn't a `table` tag. Luckily there are modules in NPM to help you with that. One of those modules is [cli-table][browsenpm] (Github: [Learnboost/cli-table][github], License: MIT) written by <%- @author() %> of the [LearnBoost](https://github.com/LearnBoost) fame.
 
     <%- @install() %>
 
 ## Features
 
-The feature set of <%- @npm() %> is nearly comparable with HTML tables, which is pretty damn impressive:
+The feature set of <%- @browsenpm() %> is nearly comparable with HTML tables, which is pretty damn impressive:
 
 - Customizable characters that constitute the table.
-- Color/background styling in the header through [colors][browsenpm] (Github: [marak/colors][github], License: MIT)
+- Color/background styling in the header through [colors.js](http://github.com/marak/colors.js)
 - Column width customization
 - Text truncation based on predefined widths
 - Text alignment (left, right, center)
@@ -108,7 +108,7 @@ Pretty cool, right? We can get a little fancy with custom borders and alignments
 
 ## Other modules to checkout
 
-<%- @npm() %> of course isn't the only module that can print out pretty tables in the console. Here are a few alternatives:
+<%- @browsenpm() %> of course isn't the only module that can print out pretty tables in the console. Here are a few alternatives:
 
 * [cliff](https://github.com/flatiron/cliff), Nodejitsu's own module does quite a bit more than just tabular data printing.
 * [text-table](https://github.com/substack/text-table) by James Halliday aka substack can pretty print tabular data with alignment.
@@ -116,7 +116,7 @@ Pretty cool, right? We can get a little fancy with custom borders and alignments
 
 ## Closing thoughts
 
-User experience doesn't have to suffer just because the target platform is STDOUT. Put a little bit more effort into it and your users will love you that much more. Checkout <%- @npm() %> github page for more examples and view the source for the full list of options.
+User experience doesn't have to suffer just because the target platform is STDOUT. Put a little bit more effort into it and your users will love you that much more. Checkout <%- @browsenpm() %> github page for more examples and view the source for the full list of options.
 
-[browsenpm]: http://browsenpm.org/package/colors
-[github]: https://github.com/marak/colors
+[browsenpm]: http://browsenpm.org/package/cli-table
+[github]: https://github.com/LearnBoost/cli-table

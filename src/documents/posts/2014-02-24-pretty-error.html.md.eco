@@ -32,7 +32,7 @@ description: pretty-errors is a module to render node.js error stack with less c
 
 ## How it Works
 
-<%- @npm() %> turns error objects into something similar to an HTML document, and then uses the upcoming [RenderKid] to render the document using simple HTML/CSS-like commands for the console. This allows <%- @npm() %> to be themed using simple CSS-like declarations.
+<%- @browsenpm() %> turns error objects into something similar to an HTML document, and then uses the upcoming [RenderKid] to render the document using simple HTML/CSS-like commands for the console. This allows <%- @browsenpm() %> to be themed using simple CSS-like declarations.
 
 ## The cool bits
 

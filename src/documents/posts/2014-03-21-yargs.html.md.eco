@@ -21,13 +21,13 @@ This post kicks off a small mini-series of posts about modules which making writ
 
 <%- @readMore() %>
 
-This is where <%- @npm() %> comes in handy. This module was originally written by [James Halliday](https://github.com/substack) and called [optimist]. It is now called <%- @npm() %> and the work is continued by <%- @author() %>. Lets get it installed:
+This is where [yargs][browsenpm] (Github: [chevex/yargs][github], License: MIT) comes in handy. This module was originally written by [James Halliday](https://github.com/substack) and called [optimist]. It is now called <%- @browsenpm() %> and the work is continued by <%- @author() %>. Lets get it installed:
 
     <%- @install() %>
 
 ## Features
 
-<%- @npm() %> covers most of the features you would need to parse out options from command line.
+<%- @browsenpm() %> covers most of the features you would need to parse out options from command line.
 
 * Named options: `--foo=1 --bar=2`, `--foo 1 --bar 2` or even `-foo 1 -bar 2`
 * Groupped options tarball style: `-x`, `-xz`, `-xzvf`
@@ -272,14 +272,20 @@ Finally, all together this makes a fully functional options parser.
 
 There are many other modules that can help you figure out CLI arguments, some do more, others do less.
 
-* [minimist][browsenpm] (Github: [substack/minimist][github], License: MIT) by James Halliday aka substack is a light weight module without or usage functionality. James has moved on from [optimist] to [minimist][github] probably around the time when community started adopting mantra of smaller modules that do one thing well. It's a personal preference and I'm glad there are options.
-* [cli](https://github.com/chriso/cli) by Chris O'Hara is a swiss army knife module for writing CLI applications.
+* [minimist][browsenpm-mini] (Github: [substack/minimist][github-mini], License: MIT) by James Halliday aka substack is a light weight module without or usage functionality. James has moved on from [optimist] to [minimist][github] probably around the time when community started adopting mantra of smaller modules that do one thing well. It's a personal preference and I'm glad there are options.
+* [cli][browsenpm-cli] (Github: [chriso/cli][github-cli], License: MIT) by Chris O'Hara is a swiss army knife module for writing CLI applications.
 
 ## Closing thoughts
 
-I've been using [optimist] for over a year now and is saddened to see James giving it up, but at the same time it's exciting that the idea and implementation lives on in <%- @npm() %>. A problem that seems so simple on the surface, such as collecting arguments, can turn out to be a major headache without proper tools. I'm very glad <%- @npm() %> is here to help us deal with it.
+I've been using [optimist] for over a year now and is saddened to see James giving it up, but at the same time it's exciting that the idea and implementation lives on in <%- @browsenpm() %>. A problem that seems so simple on the surface, such as collecting arguments, can turn out to be a major headache without proper tools. I'm very glad <%- @browsenpm() %> is here to help us deal with it.
 
 [optimist]: https://github.com/substack/node-optimist
 
-[browsenpm]: http://browsenpm.org/package/minimist
-[github]: https://github.com/substack/minimist
+[browsenpm]: http://browsenpm.org/package/cli
+[github]: https://github.com/chriso/cli
+
+[browsenpm-mini]: http://browsenpm.org/package/minimist
+[github-mini]: https://github.com/substack/minimist
+
+[browsenpm-cli]: http://browsenpm.org/package/cli
+[github-cli]: https://github.com/chriso/cli
