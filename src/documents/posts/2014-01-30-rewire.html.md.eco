@@ -15,7 +15,7 @@ slug: *name
 title: *name
 description: Rewire is a dependency injection module for node.js applications.
 ---
-<%- @npm() %> is a dependency injection module for node.js applications written by <%- @author() %>. It adds a special setter and getter to modules so you can modify their behaviour for better unit testing.
+[rewire][browsenpm] (Github: [jhnns/rewire][github], License: MIT) is a dependency injection module for node.js applications written by <%- @author() %>. It adds a special setter and getter to modules so you can modify their behaviour for better unit testing.
 
     <%- @install() %>
 
@@ -70,3 +70,6 @@ The biggest difference between `rewire` and `require` is that calling `rewire` m
 This seems like a good and bad idea at the same time. The power to change and introspect private variables might lead to code that isn't exactly very suitable for tests. I find that writing code to be testable leads to much better code structure and I spend alot more time considering my API.
 
 What do you think?
+
+[browsenpm]: http://browsenpm.org/package/rewire
+[github]: https://github.com/jhnns/rewire

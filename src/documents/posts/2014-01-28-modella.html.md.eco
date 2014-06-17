@@ -26,7 +26,7 @@ description: Modella is a bare bones model. It exposes a few APIs on which plugi
 Most of functionality comes bundles as plugins:
 
 * Adapter (Sync Layer) Plugins
-  - [ajax](https://github.com/modella/ajax) - RESTful AJAX HTTP adapter.
+  - [modella-ajax][browsenpm] (Github: [modella/modella-ajax][github], License: MIT) - RESTful AJAX HTTP adapter.
   - [ejdb](https://github.com/modella/ejdb) - Ejdb database adapter.
   - [leveldb](https://github.com/modella/leveldb) - LevelDB adapter.
   - [mongo](https://github.com/modella/mongo) - MongoDB adapter.
@@ -74,3 +74,6 @@ Most of functionality comes bundles as plugins:
     });
 
 If you feel disgrundled with Mongoose or just tired of using the raw driver, give <%- @npm() %> a try!
+
+[browsenpm]: http://browsenpm.org/package/modella-ajax
+[github]: https://github.com/modella/modella-ajax

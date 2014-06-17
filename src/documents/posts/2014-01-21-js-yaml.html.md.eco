@@ -9,7 +9,7 @@ slug: *name
 title: *name
 description: js-yaml JavaScript YAML parser and dumper.
 ---
-<%- @npm() %> is an implementation of [YAML](http://yaml.org/) written by [Dervus Grim](https://github.com/nodeca) and is a human friendly data serialization language. It started as [PyYAML](http://pyyaml.org/) port, but was completely rewritten from scratch. Full support for 1.2 spec.
+[js-yaml][browsenpm] (Github: [nodeca/js-yaml][github], License: MIT) is an implementation of [YAML](http://yaml.org/) written by [Dervus Grim](https://github.com/nodeca) and is a human friendly data serialization language. It started as [PyYAML](http://pyyaml.org/) port, but was completely rewritten from scratch. Full support for 1.2 spec.
 
     npm install <%= @document.npm.name %>
 
@@ -36,3 +36,6 @@ YAML to JSON is what CoffeeScript to JavaScript - pure awesomeness. On the surfa
 Where `&name` is an anchor and repeated using `*name` reference. This is a very simple example, but anchors could point to entire nodes consisting of other references and objects. Checkout <%- @npm() %> repo for more examples and explanation.
 
 YAML is awesome! I wish `package.json` was `package.yaml`. Are you using YAML in your project?
+
+[browsenpm]: http://browsenpm.org/package/js-yaml
+[github]: https://github.com/nodeca/js-yaml

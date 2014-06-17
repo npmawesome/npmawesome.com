@@ -9,7 +9,7 @@ slug: *name
 title: *name
 description: Chalk is a clean and focused alternative to colors.js
 ---
-<%- @npm() %> is a clean and focused alternative to [colors.js](https://github.com/Marak/colors.js), which is currently the most popular string styling module, but it has serious deficiencies like extending String.prototype which causes all kinds of [problems](https://github.com/yeoman/yo/issues/68). Although there are other ones, they either do too much or not enough.
+<%- @npm() %> is a clean and focused alternative to [colors][browsenpm] (Github: [Marak/colors][github], License: MIT), which is currently the most popular string styling module, but it has serious deficiencies like extending String.prototype which causes all kinds of [problems](https://github.com/yeoman/yo/issues/68). Although there are other ones, they either do too much or not enough.
 
     npm install <%= @document.npm.name %>
 
@@ -44,3 +44,6 @@ description: Chalk is a clean and focused alternative to colors.js
     console.log(  chalk.blue('Hello', 'World!', 'Foo', 'bar', 'biz', 'baz')  );
 
 <%- @npm() %> was written by [Sindre Sorhus](https://github.com/sindresorhus) [@sindresorhus](https://twitter.com/sindresorhus) who's got a ton of other opensource work. Thank you!
+
+[browsenpm]: http://browsenpm.org/package/colors
+[github]: https://github.com/Marak/colors

@@ -17,7 +17,7 @@ description: Clustering library with support for zero-downtime reloading.
 
 Delivering that 100% uptime for web apps can be a tricky business. Errors and new code rollouts are the things we have to deal with on a daily basis and if you run continuous integration, your app is probably restarting many times a day. What kind of experience this might be creating for your users?
 
-<%- @npm() %> is among a [few](https://github.com/nodejitsu/forever) [other](https://github.com/superjoe30/naught) libraries that try to address this issue. It is:
+<%- @npm() %> is among a [forever][browsenpm] (Github: [nodejitsu/forever][github], License: MIT) [other](https://github.com/superjoe30/naught) libraries that try to address this issue. It is:
 
 * Cluster aware.
 * Zero downtime errors and deploys.
@@ -67,3 +67,6 @@ Non-server workers can listen for the disconnect command and shut down gracefull
 For some fantastic insights on the subject, checkout [Towards 100% Uptime with Node.js](http://sandinmyjoints.github.io/towards-100-pct-uptime) slides by [William Bert](https://github.com/sandinmyjoints) [@williamjohnbert](https://twitter.com/williamjohnbert) and [10 steps to nodejs nirvana in production](http://qzaidi.github.io/2013/05/14/node-in-production/) by [Qasim Zaidi](http://github.com/qzaidi) [@kernelhacker](http://twitter.com/#!/kernelhacker).
 
 Curious, how do you manage your node process?
+
+[browsenpm]: http://browsenpm.org/package/forever
+[github]: https://github.com/nodejitsu/forever

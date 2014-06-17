@@ -218,7 +218,7 @@ server.start();
 ### Pros
 
 1. Very granular control over request handling
-1. Detailed API [reference](https://github.com/spumko/hapi/blob/master/docs/Reference.md) with support for documentation generation
+1. Detailed API [hapi][browsenpm] (Github: [spumko/hapi][github], License: BSD 4-Clause) with support for documentation generation
 
 ### Cons
 

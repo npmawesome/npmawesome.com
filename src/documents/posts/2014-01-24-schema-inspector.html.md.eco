@@ -19,7 +19,7 @@ description: Schema-Inspector is a powerful tool to sanitize and validate JS obj
 
 <img class="hide-on-mobile" src="https://0.gravatar.com/avatar/16c362a6f8dbbedbc3bf13d001c6b286" style="float: right; margin-left: 1em"/>
 
-<%- @npm() %> is a powerful tool to sanitize and validate JS objects written by <%- @author() %>. It's disigned to work both client-side and server-side and to be scalable with allowing asynchronous and synchronous calls. There's support for object validation and sanitazation with a very simple schema definition.
+[schema-inspector][browsenpm] (Github: [Atinux/schema-inspector][github], License: MIT) is a powerful tool to sanitize and validate JS objects written by <%- @author() %>. It's disigned to work both client-side and server-side and to be scalable with allowing asynchronous and synchronous calls. There's support for object validation and sanitazation with a very simple schema definition.
 
     <%- @install() %>
 
@@ -124,3 +124,6 @@ On the flip side, you can use the <%- @npm() %> to validate API response in your
     });
 
 In the end, you have a strong contract between your APIs, consumer and your tests with just a few lines of code. I'm loving this! The [documentation](http://atinux.github.io/schema-inspector/) site is very good and I strongly recommend checking it out.
+
+[browsenpm]: http://browsenpm.org/package/schema-inspector
+[github]: https://github.com/Atinux/schema-inspector

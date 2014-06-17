@@ -28,7 +28,7 @@ description: ShortId creates amazingly short non-sequential url-friendly unique 
 
 ## More
 
-What really caught my eye was the [custom implementation](https://github.com/dylang/shortid/blob/master/lib/random.js) of `random`.
+What really caught my eye was the [shortid][browsenpm] (Github: [dylang/shortid][github], License: MIT) of `random`.
 
     var seed = 1;
 
@@ -87,3 +87,6 @@ Here's a JavaScript implementation:
 <iframe width="100%" height="300" src="http://jsfiddle.net/alexgorbatchev/g6aRe/1/embedded/" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
 
 Should the function in <%- @npm() %> be patched? Thoughts?
+
+[browsenpm]: http://browsenpm.org/package/shortid
+[github]: https://github.com/dylang/shortid

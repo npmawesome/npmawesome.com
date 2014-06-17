@@ -17,7 +17,7 @@ description: peer.js provides a complete, configurable, and easy-to-use peer-to-
 
     <%- @install() %>
 
-To broker connections, <%- @npm() %> connects to a PeerServer ([free hosted](http://peerjs.com/peerserver) or [host your own](https://github.com/peers/peerjs-server)). Note that **no peer-to-peer data goes through the server** - the server acts only as connection broker.
+To broker connections, <%- @npm() %> connects to a PeerServer ([free hosted](http://peerjs.com/peerserver) or [peer][browsenpm] (Github: [peers/peer][github], License: MIT)). Note that **no peer-to-peer data goes through the server** - the server acts only as connection broker.
 
 ## Usage
 
@@ -43,3 +43,6 @@ Receive
     });
 
 Checkout the [awesome API docs](http://peerjs.com/docs/#api) and take it out for a spin. You can create a video chat with just a few lines of code. Have you done any peer-to-peer stuff?
+
+[browsenpm]: http://browsenpm.org/package/peer
+[github]: https://github.com/peers/peer

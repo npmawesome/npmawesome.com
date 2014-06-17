@@ -73,6 +73,8 @@ Curious why MongoDB was chosen for something most would use Redis for? <%- @auth
 
 <%- @npm() %> focuses on setting up and managing regular running tasks such as session purging, email sending, data processing and so on. There are a few alternatives out there:
 
-* [kue](https://github.com/learnboost/kue) is a priority job queue backed by redis originally written by [TJ Holowaychuk](https://github.com/visionmedia) and is currently maintained by [Behrad](https://github.com/behrad)
+* [kue][browsenpm] (Github: [learnboost/kue][github], License: MIT) is a priority job queue backed by redis originally written by [TJ Holowaychuk](https://github.com/visionmedia) and is currently maintained by [Behrad](https://github.com/behrad)
 * [node-schedule](https://github.com/mattpat/node-schedule) is a single process, cron-like and not-cron-like job scheduler by [Matt Patenaude](https://github.com/mattpat). It doesn't have any external dependencies.
 
+[browsenpm]: http://browsenpm.org/package/kue
+[github]: https://github.com/learnboost/kue

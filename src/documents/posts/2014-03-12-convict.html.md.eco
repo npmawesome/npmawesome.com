@@ -133,7 +133,7 @@ Also, as per our configuration, you can pass `--env=production` when starting th
 
 In the great world of NPM there isn't one package to rule them all and there are various ways of accomplishing what you need. Here are a few alternatives you might want to checkout:
 
-* [nconf](https://github.com/flatiron/nconf) - written and maintained by [Nodejitsu](http://nodejitsu.com) own [Charlie Robbins](https://github.com/indexzero). Very similiar to [convict], but doesn't have the validation feature (if that's important to you) but has better support for overriding and managing order in which settings are pulled in.
+* [nconf][browsenpm] (Github: [flatiron/nconf][github], License: MIT) - written and maintained by [Nodejitsu](http://nodejitsu.com) own [Charlie Robbins](https://github.com/indexzero). Very similiar to [convict], but doesn't have the validation feature (if that's important to you) but has better support for overriding and managing order in which settings are pulled in.
 
 * [rc](https://github.com/dominictarr/rc) - written and maintained by [Dominic Tarr](https://github.com/dominictarr). Has support for INI file types and .rc files.
 
@@ -145,3 +145,5 @@ I found this to be the least frictionless way to manage configuration in Node.js
 
 What are you using to manage your application settings?
 
+[browsenpm]: http://browsenpm.org/package/nconf
+[github]: https://github.com/flatiron/nconf

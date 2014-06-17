@@ -38,7 +38,7 @@ Let's dive into this module with an example. Assume that you have to know if you
 
 ## Installation
 
-The installation is easy because your package manager flavor is covered. John-David and Mathias provide module descriptors for [Bower](http://bower.io/), [component](https://github.com/component/component) and NPM:
+The installation is easy because your package manager flavor is covered. John-David and Mathias provide module descriptors for [Bower](http://bower.io/), [component][browsenpm] (Github: [component/component][github], License: MIT) and NPM:
 
     <%- @install() %>
 
@@ -65,3 +65,6 @@ I'm pretty sure that you have several use cases in mind where you could use <%- 
 ## Closing Thoughts
 
 <%- @npm() %> is a powerful gift when it comes to determining exactly in which environment your application is running. That means, we do not have to write "if-else-if-else-if" statements anymore, folks. We have a rock-solid foundation now!
+
+[browsenpm]: http://browsenpm.org/package/component
+[github]: https://github.com/component/component

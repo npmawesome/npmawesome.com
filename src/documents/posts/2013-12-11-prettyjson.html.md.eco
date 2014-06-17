@@ -9,7 +9,7 @@ layout: post
 slug: *name
 title: *name
 ---
-<%- @npm() %> is package for formatting JSON data in a coloured YAML-style, perfect for CLI output.
+[prettyjson][browsenpm] (Github: [rafeca/prettyjson][github], License: MIT) is package for formatting JSON data in a coloured YAML-style, perfect for CLI output.
 
     npm install <%= @document.npm.name %>
 
@@ -37,3 +37,6 @@ title: *name
     console.log(prettyjson.render(data));
 
 There are plenty of examples and information on the <%- @npm() %>. Check it out!
+
+[browsenpm]: http://browsenpm.org/package/prettyjson
+[github]: https://github.com/rafeca/prettyjson

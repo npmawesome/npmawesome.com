@@ -76,7 +76,7 @@ Well, look no further than <%- @npm() %>, which is a collection of modules writt
 
 By default of course emails aren't being sent. That means that you won't receive any signup and password reset tokens. To send emails you need an email server and you have pass the right settings:
 
-With [mailgun](http://www.mailgun.com/pricing) you can send up to 10,000 emails per month for free. `emailSettings` - see [nodemailer](https://github.com/andris9/Nodemailer) for more information.
+With [mailgun](http://www.mailgun.com/pricing) you can send up to 10,000 emails per month for free. `emailSettings` - see [Nodemailer][browsenpm] (Github: [andris9/Nodemailer][github], License: MIT) for more information.
 
     config = {
       emailType: 'SMTP',
@@ -137,3 +137,6 @@ From [lockit-delete-account](https://github.com/zeMirco/lockit-delete-account)
 I love how customizable <%- @npm() %> is and yet comes with very reasonable defaults. It's has pretty much everything you need to get started with basic user registration and password management flow. Checkout <%- @npm() %> github page for full set of options as well as its associated modules.
 
 [passport.js]: http://passportjs.org/
+
+[browsenpm]: http://browsenpm.org/package/Nodemailer
+[github]: https://github.com/andris9/Nodemailer
