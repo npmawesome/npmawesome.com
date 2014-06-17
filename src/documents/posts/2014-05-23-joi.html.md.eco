@@ -72,7 +72,7 @@ Finally, you can do a some pretty complicated validation with fields depending o
 
 Here are some other modules you might want to evaluate:
 
-* [validator][browsenpm-validator] (Github: [chriso/validator][github-validator], License: MIT) is a string validation and sanitization module by [Chris O'Hara](https://github.com/chriso).
+* [validator.js][browsenpm-validator] (Github: [chriso/validator][github-validator], License: MIT) is a string validation and sanitization module by [Chris O'Hara](https://github.com/chriso).
 * [finito](http://www.finitio.io/) is a language for capturing information structure by [Louis Lambeau](https://github.com/llambeau).
 * [schema-inspector][browsenpm-inspect] (Github: [Atinux/schema-inspector][github-inspect], License: MIT) is a module to sanitize and validate objects by [Sébastien Chopin](https://github.com/Atinux) ([previously featured on npmawesome.com](http://npmawesome.com/posts/2014-01-24-schema-inspector/)).
 
