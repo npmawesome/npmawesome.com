@@ -28,7 +28,7 @@ description: qr-code is yet another QR Code generator.
 
 ## Overview
 
-* No dependecies. This is a really cool bit, if you look at [qr-image][browsenpm] (Github: [alexeyten/qr-image][github], License: MIT) there are literally no dependencies there.
+* No dependecies. This is a really cool bit, if you look at [`package.json`](https://github.com/alexeyten/qr-image/blob/master/package.json) there are literally no dependencies there.
 * Generate image in `png`, `svg`, `eps` and `pdf` formats.
 * Support UTF-8.
 
