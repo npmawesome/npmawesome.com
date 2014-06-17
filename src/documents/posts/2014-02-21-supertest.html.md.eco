@@ -16,7 +16,7 @@ title: *name
 description: supertest is a module for easy HTTP assertions.
 ---
 <img class="hide-on-mobile" src="https://2.gravatar.com/avatar/f1e3ab214a976a39cfd713bc93deb10f" style="float: right; margin-left: 1em"/>
-<%- @npm() %> is a module by <%- @author() %> that takes testing HTTP easier via [superagent]. The motivation with this module is to provide a high-level abstraction for testing HTTP, while still allowing you to drop down to the lower-level API provided by superagent.
+[supertest][browsenpm] (Github: [visionmedia/supertest][github], License: MIT) is a module by <%- @author() %> that takes testing HTTP easier via [superagent]. The motivation with this module is to provide a high-level abstraction for testing HTTP, while still allowing you to drop down to the lower-level API provided by superagent.
 
 <%- @readMore() %>
 
@@ -68,3 +68,5 @@ Anything you can do with [superagent], you can do with <%- @npm() %>. For some s
 
 [superagent]: http://github.com/visionmedia/superagent
 
+[browsenpm]: http://browsenpm.org/package/supertest
+[github]: https://github.com/visionmedia/supertest

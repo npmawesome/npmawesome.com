@@ -8,7 +8,7 @@ npm:
 slug: *name
 title: *name
 ---
-<%- @npm() %> is an ack/ag clone written in Node.js. The focus here is on speed and performance, rather than trying to 100% mimic all the functionality of ack.
+[nak][browsenpm] (Github: [gjtorikian/nak][github], License: MIT) is an ack/ag clone written in Node.js. The focus here is on speed and performance, rather than trying to 100% mimic all the functionality of ack.
 
     npm install <%= @document.npm.name %>
 
@@ -34,3 +34,6 @@ Find all files in the current directory, with the phrase in `def` (case-insensit
 Find all files in the current directory that are not `.less`, with the phrase `mixin` (whole word), in the current directory
 
 There are plenty of examples and information on the <%- @npm() %>. Check it out!
+
+[browsenpm]: http://browsenpm.org/package/nak
+[github]: https://github.com/gjtorikian/nak

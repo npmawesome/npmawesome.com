@@ -17,7 +17,7 @@ description: YARM is Yet Another REST Module for node.js and Express.
 ---
 <img class="hide-on-mobile" src="https://0.gravatar.com/avatar/b928accd038cf24ef3f14cb5dd758b04" style="float: right; margin-left: 1em"/>
 
-<%- @npm() %> is Yet Another REST Middleware for node.js and Express written by <%- @author() %>. It has no dependencies, however it is intended to be used with [Express](http://expressjs.com/) and will have additional features if [Mongoose](http://mongoosejs.com/) is present.
+[yarm][browsenpm] (Github: [njoyard/yarm][github], License: MIT) is Yet Another REST Middleware for node.js and Express written by <%- @author() %>. It has no dependencies, however it is intended to be used with [Express](http://expressjs.com/) and will have additional features if [Mongoose](http://mongoosejs.com/) is present.
 
     <%- @install() %>
 
@@ -109,3 +109,5 @@ Of course, you can have nested resources.
 
 Check out <%- @npm() %> github page for complete documentation. How do you handle your APIs?
 
+[browsenpm]: http://browsenpm.org/package/yarm
+[github]: https://github.com/njoyard/yarm

@@ -9,7 +9,7 @@ layout: post
 slug: *name
 title: *name
 ---
-<%- @npm() %> is a natural language date parser in Javascript. It is designed to extract date informations from any given text. Works in node and browser. Check out the [nifty test page](http://wanasit.github.io/pages/chrono/).
+[chrono-node][browsenpm] (Github: [wanasit/chrono-node][github], License: MIT) is a natural language date parser in Javascript. It is designed to extract date informations from any given text. Works in node and browser. Check out the [nifty test page](http://wanasit.github.io/pages/chrono/).
 
     npm install <%= @document.npm.name %>
 
@@ -68,3 +68,6 @@ What's even more cool, <%- @npm() %> is designed to work with long text (notes, 
           ....
 
 There are plenty of examples and information on the <%- @npm() %>. Check it out!
+
+[browsenpm]: http://browsenpm.org/package/chrono-node
+[github]: https://github.com/wanasit/chrono-node

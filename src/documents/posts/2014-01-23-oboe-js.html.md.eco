@@ -18,7 +18,7 @@ description: A fresh approach to JSON loading that speeds up web applications by
 ---
 <img class="hide-on-mobile" src="https://2.gravatar.com/avatar/a26d7792bcf2ccd16be185627ce8e37d" style="float: right; margin-left: 1em"/>
 
-<%- @npm() %> is written by <%- @author() %> and helps web applications respond quicker by wrapping HTTP's request-response model with a progressively streamed interface. It glues a transport that sits somewhere between streaming and downloading to a JSON parser. It doesn't have any external dependencies.
+[oboe][browsenpm] (Github: [jimhigson/oboe][github], License: BSD 4-Clause) is written by <%- @author() %> and helps web applications respond quicker by wrapping HTTP's request-response model with a progressively streamed interface. It glues a transport that sits somewhere between streaming and downloading to a JSON parser. It doesn't have any external dependencies.
 
     <%- @install() %>
 
@@ -69,3 +69,6 @@ Here's a very **basic** use case:
       });
 
 Have you used streaming JSON parser before?
+
+[browsenpm]: http://browsenpm.org/package/oboe
+[github]: https://github.com/jimhigson/oboe

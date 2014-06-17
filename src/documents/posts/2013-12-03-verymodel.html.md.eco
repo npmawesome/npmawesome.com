@@ -9,7 +9,7 @@ layout: post
 slug: *name
 title: *name
 ---
-<%- @npm() %> is a system for validation, creation, and editing of models. VeryModel is not tied to a framework, and it implements a full purpose Model system.
+[VeryModel][browsenpm] (Github: [fritzy/VeryModel][github], License: MIT) is a system for validation, creation, and editing of models. VeryModel is not tied to a framework, and it implements a full purpose Model system.
 
     npm install <%= @document.npm.name %>
 
@@ -38,3 +38,6 @@ Model defintions are recursive Javascript object. At each layer, you can have th
 * `private` (boolean): `toObject()` will not include this field in expect unless the argumnet usePrivate is true
 
 There are plenty of examples and information on the <%- @npm() %>. Check it out!
+
+[browsenpm]: http://browsenpm.org/package/VeryModel
+[github]: https://github.com/fritzy/VeryModel

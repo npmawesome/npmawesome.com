@@ -9,7 +9,7 @@ slug: *name
 title: *name
 description: Gulp.js is a streaming build and task runner system.
 ---
-<%- @npm() %> is a streaming build and task runner system. It's an alternative to the ever prelific <a href="http://gruntjs.com/">grunt.js</a>. There's been quite [a bit of buzz on the twitters](https://twitter.com/search?q=gulp%20grunt&src=typd).
+[gulp][browsenpm] (Github: [gulpjs/gulp][github], License: MIT) is a streaming build and task runner system. It's an alternative to the ever prelific <a href="http://gruntjs.com/">grunt.js</a>. There's been quite [a bit of buzz on the twitters](https://twitter.com/search?q=gulp%20grunt&src=typd).
 
     npm install <%= @document.npm.name %>
 
@@ -59,3 +59,5 @@ There's always a lot of excitement when a new thing comes out that promises to b
 
 > Make a choice by yourself, don't just pick something _because XYZ said so_. Pick the tool which works for you. The one you understand, are comfortable with. Above all, **the one that fits your needs**. Don't go blindly chasing the latest fad because someone else tells you to. Similarly, don't get stuck with monolithic jQuery applications (just to give out an example), try something else. Innovate. Be the change you want to see in the world.
 
+[browsenpm]: http://browsenpm.org/package/gulp
+[github]: https://github.com/gulpjs/gulp

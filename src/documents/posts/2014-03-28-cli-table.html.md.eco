@@ -32,7 +32,7 @@ Getting pretty tabular data to STDOUT isn't a trivial matter if you want to tack
 The feature set of <%- @npm() %> is nearly comparable with HTML tables, which is pretty damn impressive:
 
 - Customizable characters that constitute the table.
-- Color/background styling in the header through [colors.js](http://github.com/marak/colors.js)
+- Color/background styling in the header through [colors][browsenpm] (Github: [marak/colors][github], License: MIT)
 - Column width customization
 - Text truncation based on predefined widths
 - Text alignment (left, right, center)
@@ -117,3 +117,6 @@ Pretty cool, right? We can get a little fancy with custom borders and alignments
 ## Closing thoughts
 
 User experience doesn't have to suffer just because the target platform is STDOUT. Put a little bit more effort into it and your users will love you that much more. Checkout <%- @npm() %> github page for more examples and view the source for the full list of options.
+
+[browsenpm]: http://browsenpm.org/package/colors
+[github]: https://github.com/marak/colors

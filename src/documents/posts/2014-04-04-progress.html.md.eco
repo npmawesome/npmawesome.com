@@ -109,10 +109,13 @@ We even get ETA estimate for free. That's what I'm talking about!
 
 Here are a few other modules to check out:
 
-* [progbar](https://github.com/jclulow/node-progbar) by [Joshua M. Clulow](https://github.com/jclulow) is a straight up alternative.
+* [progbar][browsenpm] (Github: [jclulow/progbar][github], License: MIT) by [Joshua M. Clulow](https://github.com/jclulow) is a straight up alternative.
 * [progressbar](https://github.com/bevry/progressbar) by [Benjamin Arthur Lupton](https://github.com/balupton) extends <%- @npm() %> with chaining, domains, and steps.
 * [pm2-multimeter](https://github.com/Unitech/node-multimeter) originally by [James Halliday](https://github.com/substack) and now up kept by [Alexandre Strzelewicz](https://github.com/Unitech) can display multiple progress bars at the same time.
 
 ## Closing thoughts
 
 It's really cool to see a CLI application giving meaningful progress feedback. Please don't forget about user experience when building tools.
+
+[browsenpm]: http://browsenpm.org/package/progbar
+[github]: https://github.com/jclulow/progbar

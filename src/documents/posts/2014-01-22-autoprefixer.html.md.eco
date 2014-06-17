@@ -28,7 +28,7 @@ The best tool is a tool you can't see and one that does the work for you. This i
 
 There's an incredible amount of ways you can use <%- @npm() %>:
 
-* as a grunt task using [grunt-autoprefixer](https://github.com/nDmitry/grunt-autoprefixer) plugin
+* as a grunt task using [grunt-autoprefixer][browsenpm] (Github: [nDmitry/grunt-autoprefixer][github], License: MIT) plugin
 * with Compass
 * with Stylus
 * with Rails
@@ -42,3 +42,6 @@ There are plenty of examples and information on the <%- @npm() %>. Check it out!
 I'm completely in love with CSS preprocessors, they make life so much easier. I still go between [LESS](http://www.lesscss.org/) and [Stylus](http://learnboost.github.io/stylus/), but more often lean towards LESS because it makes using [Bootstrap](http://getbootstrap.com/) framework so much easier and so much more modular.
 
 Do you use a CSS preprocessor? Which one?
+
+[browsenpm]: http://browsenpm.org/package/grunt-autoprefixer
+[github]: https://github.com/nDmitry/grunt-autoprefixer

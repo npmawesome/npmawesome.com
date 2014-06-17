@@ -52,7 +52,7 @@ This syntax works particularly well in CoffeeScript and is literally 2-3 extra c
 
 Of course, I wouldn't just write this module without supporting [gulp.js](http://gulpjs.com/) and [grunt.js](http://gruntjs.com/).
 
-* [gulp-angular-injector](https://github.com/alexgorbatchev/gulp-angular-injector)
+* [gulp-angular-injector][browsenpm] (Github: [alexgorbatchev/gulp-angular-injector][github], License: MIT)
 * [grunt-angular-injector](https://github.com/alexgorbatchev/grunt-angular-injector)
 
 ## Closing thoughts
@@ -60,3 +60,6 @@ Of course, I wouldn't just write this module without supporting [gulp.js](http:/
 The biggest downside of this method is basically remembering to add the `ng()` wrapper. I found that after about half a day that becomes a habit and not an issue. Check out the plugins and let me know what you think!
 
 [ngmin]: https://www.npmjs.org/package/ngmin
+
+[browsenpm]: http://browsenpm.org/package/gulp-angular-injector
+[github]: https://github.com/alexgorbatchev/gulp-angular-injector

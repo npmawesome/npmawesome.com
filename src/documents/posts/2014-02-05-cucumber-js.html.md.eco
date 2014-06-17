@@ -29,7 +29,7 @@ description: cucumber.js is a port of the famous Ruby Cucumber testing framework
 
 ## Usage
 
-Features are written with the [Gherkin syntax](https://github.com/cucumber/cucumber/wiki/Gherkin)
+Features are written with the [cucumber][browsenpm] (Github: [cucumber/cucumber][github], License: MIT)
 
     # features/myFeature.feature
 
@@ -75,3 +75,6 @@ Writing [Cucumber scenarios](https://github.com/cucumber/cucumber/wiki/Feature-I
 [The pipe dream](http://www.martinfowler.com/bliki/BusinessReadableDSL.html) is to be let business people to write software rules without involving programmers. I'm on the fence if it's a good idea, or even if it's possible, but I used to write Cucumber tests back in my Ruby days and loved it!
 
 Check out this [awesome write up](http://flippinawesome.org/2014/01/27/bdd-in-javascript-with-cucumberjs/) on <%- @npm() %>. So, what do you think? Is Cucumber a good idea?
+
+[browsenpm]: http://browsenpm.org/package/cucumber
+[github]: https://github.com/cucumber/cucumber

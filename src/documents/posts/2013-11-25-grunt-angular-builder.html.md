@@ -8,7 +8,7 @@ npm:
 slug: *name
 title: *name
 ---
-[angular-builder](https://github.com/claudio-silva/grunt-angular-builder)
+[grunt-angular-builder][browsenpm] (Github: [claudio-silva/grunt-angular-builder][github], License: MIT)
 is a specialized Grunt plugin to handle all of AngularJS related assets
 issues in a truly practical, automated, simple and easy way.
 
@@ -65,6 +65,8 @@ Features
     compilation st
 
 There are plenty of examples and information on the [github
-page](https://github.com/claudio-silva/grunt-angular-builder). Check it
+page][github]. Check it
 out!
 
+[browsenpm]: http://browsenpm.org/package/grunt-angular-builder
+[github]: https://github.com/claudio-silva/grunt-angular-builder

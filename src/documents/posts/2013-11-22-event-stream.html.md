@@ -10,7 +10,7 @@ title: *name
 ---
 <img class="hide-on-mobile" src="/images/posts/event-stream.gif" style="width: 200px; float: right"/>
 
-[event-stream](https://github.com/dominictarr/event-stream) is a toolkit to make creating and working with streams easy..
+[event-stream][browsenpm] (Github: [dominictarr/event-stream][github], License: MIT) is a toolkit to make creating and working with streams easy..
 
     npm install event-stream
 
@@ -30,5 +30,7 @@ The usage is pretty straight forward:
 
 I found the `map` function to be especially exciting because it takes a callback and lets you asynchronously process stream data where as regular stream `data` event does not.
 
-There are plenty of examples and information on the [github page](https://github.com/dominictarr/event-stream).
+There are plenty of examples and information on the [github page][github].
 
+[browsenpm]: http://browsenpm.org/package/event-stream
+[github]: https://github.com/dominictarr/event-stream

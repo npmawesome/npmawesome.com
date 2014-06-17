@@ -16,7 +16,7 @@ description: CSS manipulations built on css, allowing you to automate vendor pre
 
 <img class="hide-on-mobile" src="<%- @image '/rework.gif' %>" style="width: 250px; float: right" />
 
-Originally written by TJ Holowaychuk, <%- @npm() %> is a module for working with CSS. Just like [esprima](https://github.com/ariya/esprima) for JavaScript, <%- @npm() %> allows you to change and extend CSS, basically take it to a whole new level.
+Originally written by TJ Holowaychuk, <%- @npm() %> is a module for working with CSS. Just like [esprima][browsenpm] (Github: [ariya/esprima][github], License: BSD 4-Clause) for JavaScript, <%- @npm() %> allows you to change and extend CSS, basically take it to a whole new level.
 
 ## Example
 

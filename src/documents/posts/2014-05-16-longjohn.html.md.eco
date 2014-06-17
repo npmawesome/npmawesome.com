@@ -61,6 +61,9 @@ Turns into this:
 
 ## Closing thoughts
 
-Getting a full stack is imperative to finding out the root cause of the problem in your code. <%- @npm() %> addresses that on the Node side. There's a similiar module that works in the browser called [zone.js](https://github.com/btford/zone.js/) by [Brian Ford](https://github.com/btford) that I think you should check out as well.
+Getting a full stack is imperative to finding out the root cause of the problem in your code. <%- @npm() %> addresses that on the Node side. There's a similiar module that works in the browser called [zone.js][browsenpm] (Github: [btford/zone.js][github], License: Apache 2.0) by [Brian Ford](https://github.com/btford) that I think you should check out as well.
 
 Check out [example for this article](https://github.com/npmawesome/example-longjohn) on GitHub.
+
+[browsenpm]: http://browsenpm.org/package/zone.js
+[github]: https://github.com/btford/zone.js

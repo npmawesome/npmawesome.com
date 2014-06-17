@@ -72,10 +72,13 @@ Finally, you can do a some pretty complicated validation with fields depending o
 
 Here are some other modules you might want to evaluate:
 
-* [validator.js](https://github.com/chriso/validator.js) is a string validation and sanitization module by [Chris O'Hara](https://github.com/chriso).
+* [validator][browsenpm] (Github: [chriso/validator][github], License: MIT) is a string validation and sanitization module by [Chris O'Hara](https://github.com/chriso).
 * [finito](http://www.finitio.io/) is a language for capturing information structure by [Louis Lambeau](https://github.com/llambeau).
 * [schema-inspector](https://github.com/Atinux/schema-inspector) is a module to sanitize and validate objects by [Sébastien Chopin](https://github.com/Atinux) ([previously featured on npmawesome.com](http://npmawesome.com/posts/2014-01-24-schema-inspector/)).
 
 Finally, check out [source code](https://github.com/npmawesome/example-joi) for this article on GitHub and an [interative example](http://runnable.com/U31mW3RA_pBu7oN-/schema-validation-with-joi-for-node-js-npmawesome-and-nodejitsu) on Runnable.
 
 [hapi]: http://spumko.github.io/
+
+[browsenpm]: http://browsenpm.org/package/validator
+[github]: https://github.com/chriso/validator

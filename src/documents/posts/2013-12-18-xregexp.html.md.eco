@@ -88,4 +88,7 @@ You can then match recursive constructs using XRegExp pattern strings as left an
 
 XRegExp.matchRecursive throws an error if it scans past an unbalanced delimiter in the target string.
 
-I've been using <%- @npm() %> in [SyntaxHighlighter](https://github.com/alexgorbatchev/SyntaxHighlighter) for a while now. My favourite feature is named captures, which JavaScript is desperately missing. Have you used <%- @npm() %> already? How?
+I've been using <%- @npm() %> in [SyntaxHighlighter][browsenpm] (Github: [alexgorbatchev/SyntaxHighlighter][github], License: MITLGPL) for a while now. My favourite feature is named captures, which JavaScript is desperately missing. Have you used <%- @npm() %> already? How?
+
+[browsenpm]: http://browsenpm.org/package/SyntaxHighlighter
+[github]: https://github.com/alexgorbatchev/SyntaxHighlighter

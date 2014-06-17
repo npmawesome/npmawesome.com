@@ -8,7 +8,7 @@ description: Nerd links for the day, videos, GitHub projects, talks, articles an
 ## Articles & Slides
 
 * [ExpressJS 4.0: New Features and Upgrading from 3.0](http://scotch.io/bar-talk/expressjs-4-0-new-features-and-upgrading-from-3-0)
-* [Express 3.x to 4.0 migration guide](https://github.com/visionmedia/express/wiki/Migrating-from-3.x-to-4.x)
+* [express][browsenpm] (Github: [visionmedia/express][github], License: MIT)
 * [The maximum call stack size](http://www.2ality.com/2014/04/call-stack-size.html)
 * [Jeff Bezos Says Amazon Is Seriously Serious About Drone Deliveries](http://www.wired.com/2014/04/amazon-delivery-drones/)
   > On a per customer basis, Prime members are ordering more items, across more categories, than ever before
@@ -31,3 +31,6 @@ description: Nerd links for the day, videos, GitHub projects, talks, articles an
 <blockquote class="twitter-tweet"><p>BREAKING: NSA said to have used Heartbleed bug to gather intelligence for two years, reports Bloomberg. <a href="https://t.co/wbHhucX7Pq">https://t.co/wbHhucX7Pq</a></p>&mdash; EFF (@EFF) <a href="https://twitter.com/EFF/statuses/454699447797026816">April 11, 2014</a></blockquote>
 
 <blockquote class="twitter-tweet"><p>Talk to me, Twitter. <a href="http://t.co/7skFm6Ffhn">pic.twitter.com/7skFm6Ffhn</a></p>&mdash; Robert Downey Jr (@RobertDowneyJr) <a href="https://twitter.com/RobertDowneyJr/statuses/454733271650144256">April 11, 2014</a></blockquote>
+
+[browsenpm]: http://browsenpm.org/package/express
+[github]: https://github.com/visionmedia/express

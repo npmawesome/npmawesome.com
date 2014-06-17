@@ -9,7 +9,7 @@ layout: post
 slug: *name
 title: *name
 ---
-<%- @npm() %> is [ImageMagick](http://www.imagemagick.org) for node, what else is there to say?
+[gm][browsenpm] (Github: [aheckmann/gm][github], License: MIT) is [ImageMagick](http://www.imagemagick.org) for node, what else is there to say?
 
     npm install <%= @document.npm.name %>
 
@@ -40,3 +40,6 @@ The [demo](http://aheckmann.github.io/gm/) page has an interactive playground th
       });
 
 There are plenty of examples and information on the <%- @npm() %>. Check it out!
+
+[browsenpm]: http://browsenpm.org/package/gm
+[github]: https://github.com/aheckmann/gm

@@ -26,7 +26,7 @@ description: Fast, flexible, and lean implementation of core jQuery designed spe
 
 * Familiar syntax. <%- @npm() %> implements a subset of core jQuery. <%- @npm() %> removes all the DOM inconsistencies and browser cruft from the jQuery library, revealing its truly gorgeous API.
 * Blazingly fast. <%- @npm() %> works with a very simple, consistent DOM model. As a result parsing, manipulating, and rendering are incredibly efficient. Preliminary end-to-end benchmarks suggest that <%- @npm() %> is about 8x faster than JSDOM.
-* Insanely flexible. <%- @npm() %> wraps around [@FB55](https://twitter.com/fb55)'s [forgiving htmlparser](https://github.com/fb55/htmlparser2). <%- @npm() %> can parse nearly any HTML or XML document.
+* Insanely flexible. <%- @npm() %> wraps around [@FB55](https://twitter.com/fb55)'s [htmlparser2][browsenpm] (Github: [fb55/htmlparser2][github], License: MIT). <%- @npm() %> can parse nearly any HTML or XML document.
 
 ## Example
 
@@ -44,3 +44,6 @@ description: Fast, flexible, and lean implementation of core jQuery designed spe
 <iframe src="//player.vimeo.com/video/31950192" width="500" height="281" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
 
 Are you using jQuery on the server side?
+
+[browsenpm]: http://browsenpm.org/package/htmlparser2
+[github]: https://github.com/fb55/htmlparser2
