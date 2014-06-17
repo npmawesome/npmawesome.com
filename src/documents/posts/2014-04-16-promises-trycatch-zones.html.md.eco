@@ -27,7 +27,7 @@ Lets look at the following code:
             package = JSON.parse(content);
           }
           catch (e) {
-            done(e);
+            return done(e);
           }
 
           findDependencies(package, function(err, dependencies)) {
