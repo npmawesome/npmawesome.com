@@ -15,15 +15,70 @@
     <atom:link href="http://feeds.feedburner.com/npmawesome" rel="self" type="application/rss+xml"/>
     <link>http://npmawesome.com</link>
     <description>Daily dose of awesome NPM modules for Node.js, old and new!</description>
-    <lastBuildDate>Tue, 17 Jun 2014 01:27:22 GMT</lastBuildDate>
+    <lastBuildDate>Tue, 17 Jun 2014 17:38:56 GMT</lastBuildDate>
     <language>en</language>
     <sy:updatePeriod>daily</sy:updatePeriod>
     <sy:updateFrequency>2</sy:updateFrequency>
     <generator>awesomeness</generator>
-    <pubDate>Tue, 17 Jun 2014 01:27:22 GMT</pubDate>
+    <pubDate>Tue, 17 Jun 2014 17:38:56 GMT</pubDate>
 
     
     
+    
+      
+      
+      
+      <item>
+        <title><![CDATA[Links for June 17, 2014]]></title>
+        <link><![CDATA[http://npmawesome.com/posts/2014-06-17-links]]></link>
+        <dc:creator><![CDATA[Alex Gorbatchev]]></dc:creator>
+        <guid isPermaLink="true"><![CDATA[http://npmawesome.com/posts/2014-06-17-links]]></guid>
+        <pubDate><![CDATA[Tue, 17 Jun 2014 17:36:34 GMT]]></pubDate>
+        <description><![CDATA[<p><img src="http://npmawesome.com/images/posts/npmawesome-logo-512x512.png" class="hide-on-mobile" width="150" align="right"/></p>
+<h2 id="articles">Articles</h2>
+<ul>
+<li><a href="https://developer.apple.com/library/prerelease/mac/releasenotes/InterapplicationCommunication/RN-JavaScriptForAutomation/index.html#//apple_ref/doc/uid/TP40014508">This article describes JavaScript for Automation, a new feature in OS X 10.10</a></li>
+<li><a href="http://blog.docker.com/2014/06/its-here-docker-1-0/">It’s here: Docker 1.0</a><blockquote>
+<p>First, while many organizations have cheerfully ignored our “Do not run in production!” warnings, others have been waiting for a level of product maturity before deploying production workloads.  This release’s “1.0” label signifies a level of quality, feature completeness, backward compatibility and API stability to meet enterprise IT standards.</p>
+</blockquote>
+</li>
+<li><a href="http://meteortips.com/leaderboard-example-tutorial/">How To Make the Leaderboard Example App in Meteor</a><blockquote>
+<p>In the coming weeks and months, I’ll be publishing tutorials on how to build all four of these applications from scratch. I’ll be simplifying the code in some places, making it more friendly to beginners, but they’ll be practically identical in terms of features.</p>
+</blockquote>
+</li>
+<li><a href="http://gmarty.github.io/jsconf-2014-talk-play-dvd-in-js">Playing DVD in JavaScript</a></li>
+<li><a href="http://www.2ality.com/2014/05/current-script.html">Identifying the current script element</a></li>
+<li><a href="https://medium.com/architecting-a-life/fee8f3ee97a0">Finding the unjustly homeless, and teaching them to code</a><blockquote>
+<p>The idea is simple. Without disrespecting him, I will offer two options:</p>
+<ol>
+<li>I will come back tomorrow and give you $100 in cash.</li>
+<li>I will come back tomorrow and give you three JavaScript books, (beginner-advanced-expert) and a super cheap basic laptop. I will then come an hour early from work each day—when he feels prepared—and teach him to code.</li>
+</ol>
+</blockquote>
+</li>
+<li><a href="http://code.tutsplus.com/tutorials/real-time-chat-with-nodejs-readline-socketio--cms-20953">Real-Time Chat With Node.js&#39; Readline &amp; Socket.io</a><blockquote>
+<p>Node.js has an under-appreciated module in its standard library that is surprisingly useful. The Readline module does what it says on the box: it reads a line of input from the terminal.</p>
+</blockquote>
+</li>
+</ul>
+<div class="read-more"></div>
+
+<h2 id="github">Github</h2>
+<ul>
+<li><a href="https://github.com/snookca/CoffeeConsole">CoffeeConsole</a> is a Chrome Extension for running CoffeeScript from the Web Inspector.</li>
+</ul>
+<h2 id="twitter">Twitter</h2>
+<blockquote class="twitter-tweet" data-partner="tweetdeck"><p>Introducing the new <a href="http://t.co/JK8ZTaMria">http://t.co/JK8ZTaMria</a> &lt;3 <a href="http://t.co/tPJOHsGYgj">pic.twitter.com/tPJOHsGYgj</a></p>&mdash; Yeoman (@yeoman) <a href="https://twitter.com/yeoman/statuses/477493274509602816">June 13, 2014</a></blockquote>
+
+<h2 id="misc">Misc</h2>
+<ul>
+<li><a href="http://www.thisiscolossal.com/2014/06/a-retired-boeing-727-converted-into-a-home-in-the-woods/">A Retired Boeing 727 Converted Into a Home in the Woods</a><blockquote>
+<p><img src="http://www.thisiscolossal.com/wp-content/uploads/2014/06/retired-boeing-727-recycled-home-bruce-campbell-1.jpg" alt=""></p>
+</blockquote>
+</li>
+</ul>
+]]></description>
+      </item>
     
       
       
@@ -253,48 +308,6 @@ Joi.validate({
 <li><a href="https://github.com/Atinux/schema-inspector">schema-inspector</a> is a module to sanitize and validate objects by <a href="https://github.com/Atinux">Sébastien Chopin</a> (<a href="http://npmawesome.com/posts/2014-01-24-schema-inspector/">previously featured on npmawesome.com</a>).</li>
 </ul>
 <p>Finally, check out <a href="https://github.com/npmawesome/example-joi">source code</a> for this article on GitHub and an <a href="http://runnable.com/U31mW3RA_pBu7oN-/schema-validation-with-joi-for-node-js-npmawesome-and-nodejitsu">interative example</a> on Runnable.</p>
-]]></description>
-      </item>
-    
-      
-      
-      
-      <item>
-        <title><![CDATA[changelog]]></title>
-        <link><![CDATA[http://npmawesome.com/posts/2014-05-23-changelog]]></link>
-        <dc:creator><![CDATA[Alex Gorbatchev]]></dc:creator>
-        <guid isPermaLink="true"><![CDATA[http://npmawesome.com/posts/2014-05-23-changelog]]></guid>
-        <pubDate><![CDATA[Fri, 23 May 2014 18:30:00 GMT]]></pubDate>
-        <description><![CDATA[<p><img class="hide-on-mobile" src="https://avatars2.githubusercontent.com/u/84792?s=400" width="150" align="right" hspace="10"/></p>
-<p>You fixed <em>all</em> the bugs, closed some security holes and documented new features in your project. In other words - you did a great job and the next release is ready for the roll-out. But you&#39;re not done just yet! No? What else? You have to update the changelog file, bump the version in the respective <code>package.json</code> and create a <code>git tag</code> first. Hm, many steps, right? No more! <a href="https://github.com/defunctzombie/changelog">changelog</a> by <a href="https://github.com/defunctzombie">Roman Shtylman</a> is here to save you.</p>
-<div class="read-more"></div>
-
-<p>Personally I&#39;m not just a huge fan of the concept behind <a href="http://tom.preston-werner.com/2010/08/23/readme-driven-development.html">Readme Driven Development</a> but also of planning releases in a changelog file. If this is your workflow as well, you will benefit from <a href="https://github.com/defunctzombie/changelog">changelog</a> - you don&#39;t have to adjust your changelog when releasing a new version by hand. It&#39;s there, anyways, as described above.</p>
-<p>The release workflow consists of many separate tasks which don&#39;t have to be executed manually. They can be handled by <a href="https://github.com/defunctzombie/changelog">changelog</a>. Let&#39;s take a look:</p>
-<pre><code>npm install defunctzombie/changelog
-</code></pre><h2 id="initialization">Initialization</h2>
-<p>If you starting a new project you will want to create a new changelog. Execute:</p>
-<pre><code>changelog --init
-</code></pre><p>This will create an empty <code>HISTORY.md</code> file for you which has the following structure:</p>
-<pre><code># UNRELEASED
-
-  * initial
-</code></pre><p>The <code>UNRELEASED</code> section is for all your changes you made or will make in the version you are working on. Look at this as a personal project blog where you keep track of every <em>unreleased</em> change. No more external <em>todo applications</em> or what have you. Everything is in the context you are working in – your project.</p>
-<h2 id="release">Release</h2>
-<p>Let&#39;s say your product is ready for prime time and you want to release the <em>1.0.0</em> version (OMG!):</p>
-<pre><code>changelog --release 1.0.0
-</code></pre><p>This will will trigger <code>changelog</code> to perform the following steps:</p>
-<ol>
-<li>Convert the first <code>UNRELEASED</code> section to <code># 1.0.0 (YYYY-MM-DD)</code></li>
-<li>Change the <code>version</code> property in your <em>package.json</em> accordingly.</li>
-<li>Execute a <code>git commit -m &quot;v1.0.0&quot;</code></li>
-<li>Execute a <code>git tag &quot;v1.0.0&quot;</code></li>
-</ol>
-<h2 id="keep-on-working-">Keep on working...</h2>
-<p>Every project which does not have a roadmap with future changes is a dead project, right? I hope that the next release is always just around the corner! Next, you should start a new <code>UNRELEASED</code> section by executing the following and keep on working :)</p>
-<pre><code>changelog --increment
-</code></pre><h2 id="closing-thoughts">Closing thoughts</h2>
-<p>There might be other tools like <a href="https://github.com/defunctzombie/changelog">changelog</a> out there but this one fits my personal workflow very well and who knows, maybe yours too. Whatever tools you are using for the release management, I can not emphasize enough how important it is to write a changelog file. Not just for you as a project maintainer but also for communicating to the people who are using your product. <a href="https://github.com/defunctzombie">Roman Shtylman</a> helps with <a href="https://github.com/defunctzombie/changelog">changelog</a> to manifest this notion of centering the versioning workflow around the changelog. Thanks!</p>
 ]]></description>
       </item>
     

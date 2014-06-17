@@ -5,7 +5,7 @@
 	<link href="http://npmawesome.com/atom.xml" rel="self" />
 	<link href="http://npmawesome.com" />
 	<id>http://npmawesome.com</id>
-	<updated>2014-06-17T01:27:22.018Z</updated>
+	<updated>2014-06-17T17:38:56.880Z</updated>
 	<author>
 		<name>Alex Gorbatchev</name>
 	</author>
@@ -13,6 +13,60 @@
   
   
   
+    
+    
+    
+		<entry>
+			<title>Links for June 17, 2014</title>
+			<link href="http://npmawesome.com/posts/2014-06-17-links"/>
+			<updated>2014-06-17T17:36:34.000Z</updated>
+			<id>http://npmawesome.com/posts/2014-06-17-links</id>
+			<content type="html">&lt;p&gt;&lt;img src=&quot;http://npmawesome.com/images/posts/npmawesome-logo-512x512.png&quot; class=&quot;hide-on-mobile&quot; width=&quot;150&quot; align=&quot;right&quot;/&gt;&lt;/p&gt;
+&lt;h2 id=&quot;articles&quot;&gt;Articles&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://developer.apple.com/library/prerelease/mac/releasenotes/InterapplicationCommunication/RN-JavaScriptForAutomation/index.html#//apple_ref/doc/uid/TP40014508&quot;&gt;This article describes JavaScript for Automation, a new feature in OS X 10.10&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://blog.docker.com/2014/06/its-here-docker-1-0/&quot;&gt;It’s here: Docker 1.0&lt;/a&gt;&lt;blockquote&gt;
+&lt;p&gt;First, while many organizations have cheerfully ignored our “Do not run in production!” warnings, others have been waiting for a level of product maturity before deploying production workloads.  This release’s “1.0” label signifies a level of quality, feature completeness, backward compatibility and API stability to meet enterprise IT standards.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://meteortips.com/leaderboard-example-tutorial/&quot;&gt;How To Make the Leaderboard Example App in Meteor&lt;/a&gt;&lt;blockquote&gt;
+&lt;p&gt;In the coming weeks and months, I’ll be publishing tutorials on how to build all four of these applications from scratch. I’ll be simplifying the code in some places, making it more friendly to beginners, but they’ll be practically identical in terms of features.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://gmarty.github.io/jsconf-2014-talk-play-dvd-in-js&quot;&gt;Playing DVD in JavaScript&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://www.2ality.com/2014/05/current-script.html&quot;&gt;Identifying the current script element&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://medium.com/architecting-a-life/fee8f3ee97a0&quot;&gt;Finding the unjustly homeless, and teaching them to code&lt;/a&gt;&lt;blockquote&gt;
+&lt;p&gt;The idea is simple. Without disrespecting him, I will offer two options:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;I will come back tomorrow and give you $100 in cash.&lt;/li&gt;
+&lt;li&gt;I will come back tomorrow and give you three JavaScript books, (beginner-advanced-expert) and a super cheap basic laptop. I will then come an hour early from work each day—when he feels prepared—and teach him to code.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/blockquote&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://code.tutsplus.com/tutorials/real-time-chat-with-nodejs-readline-socketio--cms-20953&quot;&gt;Real-Time Chat With Node.js&amp;#39; Readline &amp;amp; Socket.io&lt;/a&gt;&lt;blockquote&gt;
+&lt;p&gt;Node.js has an under-appreciated module in its standard library that is surprisingly useful. The Readline module does what it says on the box: it reads a line of input from the terminal.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&quot;read-more&quot;&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;github&quot;&gt;Github&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/snookca/CoffeeConsole&quot;&gt;CoffeeConsole&lt;/a&gt; is a Chrome Extension for running CoffeeScript from the Web Inspector.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;twitter&quot;&gt;Twitter&lt;/h2&gt;
+&lt;blockquote class=&quot;twitter-tweet&quot; data-partner=&quot;tweetdeck&quot;&gt;&lt;p&gt;Introducing the new &lt;a href=&quot;http://t.co/JK8ZTaMria&quot;&gt;http://t.co/JK8ZTaMria&lt;/a&gt; &amp;lt;3 &lt;a href=&quot;http://t.co/tPJOHsGYgj&quot;&gt;pic.twitter.com/tPJOHsGYgj&lt;/a&gt;&lt;/p&gt;&amp;mdash; Yeoman (@yeoman) &lt;a href=&quot;https://twitter.com/yeoman/statuses/477493274509602816&quot;&gt;June 13, 2014&lt;/a&gt;&lt;/blockquote&gt;
+
+&lt;h2 id=&quot;misc&quot;&gt;Misc&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;http://www.thisiscolossal.com/2014/06/a-retired-boeing-727-converted-into-a-home-in-the-woods/&quot;&gt;A Retired Boeing 727 Converted Into a Home in the Woods&lt;/a&gt;&lt;blockquote&gt;
+&lt;p&gt;&lt;img src=&quot;http://www.thisiscolossal.com/wp-content/uploads/2014/06/retired-boeing-727-recycled-home-bruce-campbell-1.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+</content>
+		</entry>
+	
     
     
     
@@ -237,47 +291,6 @@ Joi.validate({
 &lt;li&gt;&lt;a href=&quot;https://github.com/Atinux/schema-inspector&quot;&gt;schema-inspector&lt;/a&gt; is a module to sanitize and validate objects by &lt;a href=&quot;https://github.com/Atinux&quot;&gt;Sébastien Chopin&lt;/a&gt; (&lt;a href=&quot;http://npmawesome.com/posts/2014-01-24-schema-inspector/&quot;&gt;previously featured on npmawesome.com&lt;/a&gt;).&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;Finally, check out &lt;a href=&quot;https://github.com/npmawesome/example-joi&quot;&gt;source code&lt;/a&gt; for this article on GitHub and an &lt;a href=&quot;http://runnable.com/U31mW3RA_pBu7oN-/schema-validation-with-joi-for-node-js-npmawesome-and-nodejitsu&quot;&gt;interative example&lt;/a&gt; on Runnable.&lt;/p&gt;
-</content>
-		</entry>
-	
-    
-    
-    
-		<entry>
-			<title>changelog</title>
-			<link href="http://npmawesome.com/posts/2014-05-23-changelog"/>
-			<updated>2014-05-23T18:30:00.000Z</updated>
-			<id>http://npmawesome.com/posts/2014-05-23-changelog</id>
-			<content type="html">&lt;p&gt;&lt;img class=&quot;hide-on-mobile&quot; src=&quot;https://avatars2.githubusercontent.com/u/84792?s=400&quot; width=&quot;150&quot; align=&quot;right&quot; hspace=&quot;10&quot;/&gt;&lt;/p&gt;
-&lt;p&gt;You fixed &lt;em&gt;all&lt;/em&gt; the bugs, closed some security holes and documented new features in your project. In other words - you did a great job and the next release is ready for the roll-out. But you&amp;#39;re not done just yet! No? What else? You have to update the changelog file, bump the version in the respective &lt;code&gt;package.json&lt;/code&gt; and create a &lt;code&gt;git tag&lt;/code&gt; first. Hm, many steps, right? No more! &lt;a href=&quot;https://github.com/defunctzombie/changelog&quot;&gt;changelog&lt;/a&gt; by &lt;a href=&quot;https://github.com/defunctzombie&quot;&gt;Roman Shtylman&lt;/a&gt; is here to save you.&lt;/p&gt;
-&lt;div class=&quot;read-more&quot;&gt;&lt;/div&gt;
-
-&lt;p&gt;Personally I&amp;#39;m not just a huge fan of the concept behind &lt;a href=&quot;http://tom.preston-werner.com/2010/08/23/readme-driven-development.html&quot;&gt;Readme Driven Development&lt;/a&gt; but also of planning releases in a changelog file. If this is your workflow as well, you will benefit from &lt;a href=&quot;https://github.com/defunctzombie/changelog&quot;&gt;changelog&lt;/a&gt; - you don&amp;#39;t have to adjust your changelog when releasing a new version by hand. It&amp;#39;s there, anyways, as described above.&lt;/p&gt;
-&lt;p&gt;The release workflow consists of many separate tasks which don&amp;#39;t have to be executed manually. They can be handled by &lt;a href=&quot;https://github.com/defunctzombie/changelog&quot;&gt;changelog&lt;/a&gt;. Let&amp;#39;s take a look:&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;npm install defunctzombie/changelog
-&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&quot;initialization&quot;&gt;Initialization&lt;/h2&gt;
-&lt;p&gt;If you starting a new project you will want to create a new changelog. Execute:&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;changelog --init
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;This will create an empty &lt;code&gt;HISTORY.md&lt;/code&gt; file for you which has the following structure:&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;# UNRELEASED
-
-  * initial
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;The &lt;code&gt;UNRELEASED&lt;/code&gt; section is for all your changes you made or will make in the version you are working on. Look at this as a personal project blog where you keep track of every &lt;em&gt;unreleased&lt;/em&gt; change. No more external &lt;em&gt;todo applications&lt;/em&gt; or what have you. Everything is in the context you are working in – your project.&lt;/p&gt;
-&lt;h2 id=&quot;release&quot;&gt;Release&lt;/h2&gt;
-&lt;p&gt;Let&amp;#39;s say your product is ready for prime time and you want to release the &lt;em&gt;1.0.0&lt;/em&gt; version (OMG!):&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;changelog --release 1.0.0
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;This will will trigger &lt;code&gt;changelog&lt;/code&gt; to perform the following steps:&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;Convert the first &lt;code&gt;UNRELEASED&lt;/code&gt; section to &lt;code&gt;# 1.0.0 (YYYY-MM-DD)&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;Change the &lt;code&gt;version&lt;/code&gt; property in your &lt;em&gt;package.json&lt;/em&gt; accordingly.&lt;/li&gt;
-&lt;li&gt;Execute a &lt;code&gt;git commit -m &amp;quot;v1.0.0&amp;quot;&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;Execute a &lt;code&gt;git tag &amp;quot;v1.0.0&amp;quot;&lt;/code&gt;&lt;/li&gt;
-&lt;/ol&gt;
-&lt;h2 id=&quot;keep-on-working-&quot;&gt;Keep on working...&lt;/h2&gt;
-&lt;p&gt;Every project which does not have a roadmap with future changes is a dead project, right? I hope that the next release is always just around the corner! Next, you should start a new &lt;code&gt;UNRELEASED&lt;/code&gt; section by executing the following and keep on working :)&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;changelog --increment
-&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&quot;closing-thoughts&quot;&gt;Closing thoughts&lt;/h2&gt;
-&lt;p&gt;There might be other tools like &lt;a href=&quot;https://github.com/defunctzombie/changelog&quot;&gt;changelog&lt;/a&gt; out there but this one fits my personal workflow very well and who knows, maybe yours too. Whatever tools you are using for the release management, I can not emphasize enough how important it is to write a changelog file. Not just for you as a project maintainer but also for communicating to the people who are using your product. &lt;a href=&quot;https://github.com/defunctzombie&quot;&gt;Roman Shtylman&lt;/a&gt; helps with &lt;a href=&quot;https://github.com/defunctzombie/changelog&quot;&gt;changelog&lt;/a&gt; to manifest this notion of centering the versioning workflow around the changelog. Thanks!&lt;/p&gt;
 </content>
 		</entry>
 	
