@@ -16,7 +16,7 @@ npm:
 
 slug: *name
 title: *name
-description: Object schema validation in Node.js with Joi.
+description: Multi-database ORM: redis, mongodb, mysql, sqlite, postgres, neo4j, memory... Many databases, common API.
 ---
 Data access is something Node.js is very well known for. When it comes to drivers, there's support for nearly every database under the sun. These days however, in most cases you use an [ORM] library instead of a plain driver. It saves you time and you don't have to write every single thing youself.
 
