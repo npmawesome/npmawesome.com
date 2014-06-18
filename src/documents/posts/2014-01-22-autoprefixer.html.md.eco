@@ -29,7 +29,7 @@ The best tool is a tool you can't see and one that does the work for you. This i
 
 There's an incredible amount of ways you can use <%- @browsenpm() %>:
 
-* as a grunt task using <%- @reference({ name: 'grunt-autoprefixer', repo: 'nDmitry/grunt-autoprefixer' license: 'MIT' }) %>
+* as a grunt task using <%- @reference({ name: 'grunt-autoprefixer', repo: 'nDmitry/grunt-autoprefixer', license: 'MIT' }) %>
 * with Compass
 * with Stylus
 * with Rails

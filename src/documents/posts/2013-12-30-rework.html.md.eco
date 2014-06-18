@@ -17,11 +17,11 @@ description: CSS manipulations built on css, allowing you to automate vendor pre
 
 <img class="hide-on-mobile" src="<%- @image '/rework.gif' %>" style="width: 250px; float: right" />
 
-Originally written by TJ Holowaychuk, <%- @browsenpm() %> is a module for working with CSS. Just like <%- @reference({ name: 'esprima', repo: 'ariya/esprima' license: 'BSD 4-Clause' }) %> for JavaScript, <%- @browsenpm() %> allows you to change and extend CSS, basically take it to a whole new level.
+Originally written by TJ Holowaychuk, <%- @browsenpm() %> is a module for working with CSS. Just like <%- @reference({ name: 'esprima', repo: 'ariya/esprima', license: 'BSD 4-Clause' }) %> for JavaScript, <%- @browsenpm() %> allows you to change and extend CSS, basically take it to a whole new level.
 
 ## Example
 
-To get an idea of how to use <%- @browsenpm() %>, take a look at one of the many plugins. A good example would be <%- @reference({ name: 'rework-imagesize', repo: 'simme/rework-imagesize' license: 'MIT' }) %> plugin.
+To get an idea of how to use <%- @browsenpm() %>, take a look at one of the many plugins. A good example would be <%- @reference({ name: 'rework-imagesize', repo: 'simme/rework-imagesize', license: 'MIT' }) %> plugin.
 
     var rework = require('rework');
     var size   = require('rework-imagesize');
