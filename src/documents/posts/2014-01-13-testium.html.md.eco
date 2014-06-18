@@ -12,7 +12,7 @@ description: Integration test platform for Node.js using mocha and a sync API.
 ---
 <%- @reference() %> is a testing platform focused on providing a simple, but effective,
 platform for testing your code in different browsers (via Selenium) and headlessly
-(via PhantomJS). It uses <%- @reference({ name: 'webdriver-http-sync', repo: 'groupon/webdriver-http-sync' license: 'BSD 2-Clause' }) %>
+(via PhantomJS). It uses <%- @reference({ name: 'webdriver-http-sync', repo: 'groupon/webdriver-http-sync', license: 'BSD 2-Clause' }) %>
 which Groupon wrote in order to communicate using the WebDriver protocol to a Selenium server.
 
     npm install <%= @document.npm.name %>
@@ -38,7 +38,7 @@ and
 
 ## Example
 
-A simple test using <%- @reference({ name: 'assertive', repo: 'groupon/assertive' license: 'BSD 2-Clause' }) %>.
+A simple test using <%- @reference({ name: 'assertive', repo: 'groupon/assertive', license: 'BSD 2-Clause' }) %>.
 
     {getBrowser} = require 'testium'
     assert = require 'assertive' # or whatever assert library you prefer

@@ -273,8 +273,8 @@ Finally, all together this makes a fully functional options parser.
 
 There are many other modules that can help you figure out CLI arguments, some do more, others do less.
 
-* <%- @reference({ name: 'minimist', repo: 'substack/minimist' license: 'MIT' }) %> by James Halliday aka substack is a light weight module without or usage functionality. James has moved on from [optimist] to [minimist][github] probably around the time when community started adopting mantra of smaller modules that do one thing well. It's a personal preference and I'm glad there are options.
-* <%- @reference({ name: 'cli', repo: 'chriso/cli' license: 'MIT' }) %> by Chris O'Hara is a swiss army knife module for writing CLI applications.
+* <%- @reference({ name: 'minimist', repo: 'substack/minimist', license: 'MIT' }) %> by James Halliday aka substack is a light weight module without or usage functionality. James has moved on from [optimist] to [minimist][github] probably around the time when community started adopting mantra of smaller modules that do one thing well. It's a personal preference and I'm glad there are options.
+* <%- @reference({ name: 'cli', repo: 'chriso/cli', license: 'MIT' }) %> by Chris O'Hara is a swiss army knife module for writing CLI applications.
 
 ## Closing thoughts
 

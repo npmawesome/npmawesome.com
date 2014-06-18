@@ -10,7 +10,7 @@ slug: *name
 title: *name
 description: Chalk is a clean and focused alternative to colors.js
 ---
-<%- @reference() %> is a clean and focused alternative to <%- @reference({ name: 'colors', repo: 'Marak/colors' license: 'MIT' }) %>, which is currently the most popular
+<%- @reference() %> is a clean and focused alternative to <%- @reference({ name: 'colors', repo: 'Marak/colors', license: 'MIT' }) %>, which is currently the most popular
 string styling module, but it has serious deficiencies like extending
 String.prototype which causes all kinds of [problems](https://github.com/yeoman/yo/issues/68). Although there are other ones, they either do too much or not enough.
 
