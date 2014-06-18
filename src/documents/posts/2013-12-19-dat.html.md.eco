@@ -4,13 +4,14 @@ tags: npm, javascript, data
 npm:
   repo: &repo maxogden/dat
   name: &name dat
+  license: BSD 4-Clause
 
 layout: post
 slug: *name
 title: *name
 description: Real-time replication and versioning for large tabular data sets.
 ---
-<%- @npm() %> is a project that seeks providing better tools for data collaboration.
+<%- @reference() %> is a project that seeks providing better tools for data collaboration.
 
     npm install <%= @document.npm.name %>
 

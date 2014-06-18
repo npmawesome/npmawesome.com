@@ -4,12 +4,13 @@ tags: npm, coffeescript, state
 npm:
   repo: &repo nickfargo/state
   name: &name state
+  license: MIT
 
 layout: post
 slug: *name
 title: *name
 ---
-<%- @npm() %> is a library for implementing [first-class states](http://statejs.org/docs/#concepts--states) on arbitrary owner objects.
+<%- @reference() %> is a library for implementing [first-class states](http://statejs.org/docs/#concepts--states) on arbitrary owner objects.
 
     npm install <%= @document.npm.name %>
 

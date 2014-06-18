@@ -4,23 +4,24 @@ tags: npm, javascript, css
 npm:
   repo: &repo reworkcss/rework
   name: &name rework
+  license: MIT
 
 layout: post
 slug: *name
 title: *name
 description: CSS manipulations built on css, allowing you to automate vendor prefixing, create your own properties, inline images, anything you can imagine! Also works in the browser.
 ---
-<%- @npm() %> is a tool for CSS manipulations built on css, allowing you to automate vendor prefixing, create your own properties, inline images, anything you can imagine! Also works in the browser.
+<%- @reference() %> is a tool for CSS manipulations built on css, allowing you to automate vendor prefixing, create your own properties, inline images, anything you can imagine! Also works in the browser.
 
     npm install <%= @document.npm.name %>
 
 <img class="hide-on-mobile" src="<%- @image '/rework.gif' %>" style="width: 250px; float: right" />
 
-Originally written by TJ Holowaychuk, <%- @npm() %> is a module for working with CSS. Just like [esprima](https://github.com/ariya/esprima) for JavaScript, <%- @npm() %> allows you to change and extend CSS, basically take it to a whole new level.
+Originally written by TJ Holowaychuk, <%- @browsenpm() %> is a module for working with CSS. Just like <%- @reference({ name: 'esprima', repo: 'ariya/esprima', license: 'BSD 4-Clause' }) %> for JavaScript, <%- @browsenpm() %> allows you to change and extend CSS, basically take it to a whole new level.
 
 ## Example
 
-To get an idea of how to use <%- @npm() %>, take a look at one of the many plugins. A good example would be [rework-imagesize](https://github.com/simme/rework-imagesize) plugin.
+To get an idea of how to use <%- @browsenpm() %>, take a look at one of the many plugins. A good example would be <%- @reference({ name: 'rework-imagesize', repo: 'simme/rework-imagesize', license: 'MIT' }) %> plugin.
 
     var rework = require('rework');
     var size   = require('rework-imagesize');
@@ -46,7 +47,7 @@ Would produce something like:
       width: 300px;
     }
 
-[Rework Github](https://github.com/reworkcss) account has a good number of modules to do various things to your CSS. I also like the idea of using <%- @npm() %> as a post processor for your favourite dynamic CSS language, such as [LESS](http://lesscss.org/), [Stylus](http://learnboost.github.io/stylus/) or [SASS](https://github.com/andrew/node-sass).
+[Rework Github](https://github.com/reworkcss) account has a good number of modules to do various things to your CSS. I also like the idea of using <%- @browsenpm() %> as a post processor for your favourite dynamic CSS language, such as [LESS](http://lesscss.org/), [Stylus](http://learnboost.github.io/stylus/) or [SASS](https://github.com/andrew/node-sass).
 
 Curious what is your favourite dynamic CSS framework?
 

@@ -4,12 +4,13 @@ tags: npm, javascript, terminal
 npm:
   repo: &repo chjj/blessed
   name: &name blessed
+  license: MIT
 
 layout: post
 slug: *name
 title: *name
 ---
-<%- @npm() %> is a terminal control library for Unix-like systems, enabling the construction of text user interface (TUI) applications. In other words it's a curses-like library for node.js
+<%- @reference() %> is a terminal control library for Unix-like systems, enabling the construction of text user interface (TUI) applications. In other words it's a curses-like library for node.js
 
     npm install <%= @document.npm.name %>
 
@@ -75,4 +76,5 @@ This will render a box with line borders containing the text 'Hello world!', per
     // Render the screen.
     screen.render();
 
-There are plenty of examples and information on the <%- @npm() %>. Check it out!
+There are plenty of examples and information on the
+<%- @github({ displayName: 'github page', repo: @document.npm.repo }) %>. Check it out!

@@ -3,6 +3,10 @@ date: 2014-05-29T09:50:42-0700
 title: Links for May 29, 2014
 layout: post-links
 tags: javascript, links
+npm:
+  repo: &repo substack/browserify-handbook
+  name: &name browserify-handbook
+  license: cc-by-3.0
 description: Nerd links for the day, videos, GitHub projects, talks, articles and other stuff.
 ---
 <img src="<%- @image '/npmawesome-logo-512x512.png' %>" class="hide-on-mobile" width="150" align="right"/>
@@ -13,7 +17,7 @@ description: Nerd links for the day, videos, GitHub projects, talks, articles an
   > The first version of Socket.IO was created shortly after Node.JS made its first appearance. I had been looking for a framework that easily enabled me to push data from a server to a client for a long time, and even had tried other approaches to server-side JavaScript.
 * [Understanding web pages better](http://googlewebmastercentral.blogspot.ca/2014/05/understanding-web-pages-better.html)
   > … we decided to try to understand pages by executing JavaScript. It’s hard to do that at the scale of the current web, but we decided that it’s worth it. We have been gradually improving how we do this for some time. In the past few months, our indexing system has been rendering a substantial number of web pages more like an average user’s browser with JavaScript turned on.
-* [Browserify Handbook](https://github.com/substack/browserify-handbook) is a great resource for beginners and pros on organizing node apps and modules. Very good read.
+* <%- @reference() %> is a great resource for beginners and pros on organizing node apps and modules. Very good read.
 * [Device State Detection with CSS Media Queries and JavaScript](http://davidwalsh.name/device-state-detection-css-media-queries-javascript)
   > Being able to detect device state at any given moment is important for any number of reasons and so it's important that web app CSS and JavaScript are in sync with each other.
 * [hapi hapi joi joi](http://hueniversedotcom.files.wordpress.com/2013/01/hapi-hapi-joi-joi.pdf) - fantastic slides!

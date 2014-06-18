@@ -6,6 +6,7 @@ tags: npm, diff, tools
 npm:
   repo: &repo segmentio/npm-diff
   name: &name npm-diff
+  license: MIT
 
   author:
     name: Julian Gruber
@@ -16,7 +17,7 @@ title: *name
 description: npm-diff is a utility module to diff two versions of NPM module.
 ---
 <img class="hide-on-mobile" src="https://1.gravatar.com/avatar/a010d5218f2c3d194dbbac9c5d14d0ad" style="float: right; margin-left: 1em"/>
-<%- @npm() %> is a utility module by <%- @author() %> to diff two versions of NPM module. I've been fascinated recently by all the tools being released to help you manage `package.json` and module publishing. It's really cool!
+<%- @reference() %> is a utility module by <%- @author() %> to diff two versions of NPM module. I've been fascinated recently by all the tools being released to help you manage `package.json` and module publishing. It's really cool!
 
     <%- @install() %>
 

@@ -3,19 +3,21 @@ date: 2013-12-13T17:14:45.063788-08:00
 tags: npm, javascript, date, time
 npm:
   repo: &repo wanasit/chrono
-  name: &name chrono
+  name: &name chrono-node
+  displayName: chrono
+  license: MIT
 
 layout: post
 slug: *name
 title: *name
 ---
-<%- @npm() %> is a natural language date parser in Javascript. It is designed to extract date informations from any given text. Works in node and browser. Check out the [nifty test page](http://wanasit.github.io/pages/chrono/).
+<%- @reference() %> is a natural language date parser in Javascript. It is designed to extract date informations from any given text. Works in node and browser. Check out the [nifty test page](http://wanasit.github.io/pages/chrono/).
 
     npm install <%= @document.npm.name %>
 
 <img class="hide-on-mobile" src="<%- @image '/clock.gif' %>" style="float: right; width: 100px; margin-left: 1em" />
 
-<%- @npm() %> supports a number of date and time formats, including:
+<%- @browsenpm() %> supports a number of date and time formats, including:
 
 * Today, Tomorrow, Yesterday, last Friday, etc
 * 10/13/2013
@@ -52,7 +54,7 @@ title: *name
         text: 'Sep 12-13',
         concordance: 'An appointment on Sep 12-13' } ]
 
-What's even more cool, <%- @npm() %> is designed to work with long text (notes, emails, articles, etc). `chrono.parse` will return an array of every date mentioned in the story.
+What's even more cool, <%- @browsenpm() %> is designed to work with long text (notes, emails, articles, etc). `chrono.parse` will return an array of every date mentioned in the story.
 
     > var text = 'October 7, 2011, of which details were not revealed out of respect to Jobs\'s family.[239] Apple announced on the same day that they had no plans for a public service, but were encouraging "well-wishers" to send their remembrance messages to an email address created to receive such messages.[240] Sunday, October 16, 2011'
     > chrono.parse(text)
@@ -67,4 +69,5 @@ What's even more cool, <%- @npm() %> is designed to work with long text (notes, 
           day: 16,
           ....
 
-There are plenty of examples and information on the <%- @npm() %>. Check it out!
+There are plenty of examples and information on the
+<%- @github({ displayName: 'github page', repo: @document.npm.repo }) %>. Check it out!

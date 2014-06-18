@@ -8,6 +8,7 @@ tags: npm, job, scheduler
 npm:
   repo: &repo mattinsler/longjohn
   name: &name longjohn
+  license: MIT
 
   author:
     name: Matt Insler
@@ -23,7 +24,7 @@ You know that feeling of disapointment when you get an error and the stack trace
         at null._onTimeout (/examples/error-module.js:7:29)
         at Timer.listOnTimeout [as ontimeout] (timers.js:110:15)
 
-I'm very well familiar with that feeling... Maybe too much? Turns out there's a way to get much better results in Node with a little bit of magic. Said magic is a module called <%- @npm() %> by <%- @author() %>.
+I'm very well familiar with that feeling... Maybe too much? Turns out there's a way to get much better results in Node with a little bit of magic. Said magic is a module called <%- @reference() %> by <%- @author() %>.
 
 <%- @readMore() %>
 
@@ -31,9 +32,9 @@ I'm very well familiar with that feeling... Maybe too much? Turns out there's a 
 
 ## Usage
 
-Using <%- @npm() %> couldn't get any easier. You just need to `require('longjohn')` and you are all set. The magic that I mentioned above consists of replacing functions like `setTimeout` and `nextTick` with patched versions that keep track of the stack as it unfolds and as author suggests, this probably shouldn't be used in production.
+Using <%- @browsenpm() %> couldn't get any easier. You just need to `require('longjohn')` and you are all set. The magic that I mentioned above consists of replacing functions like `setTimeout` and `nextTick` with patched versions that keep track of the stack as it unfolds and as author suggests, this probably shouldn't be used in production.
 
-But, after you require <%- @npm() %>, your short, mildly helpful stack like this:
+But, after you require <%- @browsenpm() %>, your short, mildly helpful stack like this:
 
     Error: Error message
         at null._onTimeout (/examples/error-module.js:7:29)
@@ -61,6 +62,6 @@ Turns into this:
 
 ## Closing thoughts
 
-Getting a full stack is imperative to finding out the root cause of the problem in your code. <%- @npm() %> addresses that on the Node side. There's a similiar module that works in the browser called [zone.js](https://github.com/btford/zone.js/) by [Brian Ford](https://github.com/btford) that I think you should check out as well.
+Getting a full stack is imperative to finding out the root cause of the problem in your code. <%- @browsenpm() %> addresses that on the Node side. There's a similiar module that works in the browser called <%- @reference({ name: 'zone.js', repo: 'btford/zone.js', license: 'Apache 2.0' }) %> by [Brian Ford](https://github.com/btford) that I think you should check out as well.
 
 Check out [example for this article](https://github.com/npmawesome/example-longjohn) on GitHub.

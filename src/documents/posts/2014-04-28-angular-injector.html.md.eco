@@ -7,6 +7,7 @@ tags: npm, angular, build
 npm:
   repo: &repo alexgorbatchev/angular-injector
   name: &name angular-injector
+  license: MIT
 
   author:
     name: Alex Gorbatchev
@@ -17,7 +18,7 @@ title: *name
 description: Solving minification problem with angular.js dependency injection.
 ---
 <img class="hide-on-mobile" src="<%- @image('/../authors/alexgorbatchev.jpg') %>" width="150" align="right" hspace="10"/>
-<%- @npm() %> module by <%- @author() %> (me) is meant to address minification problem with [angular.js](https://www.angularjs.org/) dependency injection that [ngmin](https://www.npmjs.org/package/ngmin) does not - work with any dependency injection syntax.
+<%- @reference() %> module by <%- @author() %> (me) is meant to address minification problem with [angular.js](https://www.angularjs.org/) dependency injection that [ngmin](https://www.npmjs.org/package/ngmin) does not - work with any dependency injection syntax.
 
 <%- @readMore() %>
 
@@ -25,7 +26,7 @@ description: Solving minification problem with angular.js dependency injection.
 
 ## Features
 
-<%- @npm() %> works exactly the same way as [ngmin] meaning that it modifies the source during build time. Unlike [ngmin] however, it's less dependent on the syntax. In fact, any function wrapped in a `ng(func)` call will be escaped with `['dep1', 'dep2', func]` injector style.
+<%- @browsenpm() %> works exactly the same way as [ngmin] meaning that it modifies the source during build time. Unlike [ngmin] however, it's less dependent on the syntax. In fact, any function wrapped in a `ng(func)` call will be escaped with `['dep1', 'dep2', func]` injector style.
 
 ## Usage
 
@@ -52,8 +53,8 @@ This syntax works particularly well in CoffeeScript and is literally 2-3 extra c
 
 Of course, I wouldn't just write this module without supporting [gulp.js](http://gulpjs.com/) and [grunt.js](http://gruntjs.com/).
 
-* [gulp-angular-injector](https://github.com/alexgorbatchev/gulp-angular-injector)
-* [grunt-angular-injector](https://github.com/alexgorbatchev/grunt-angular-injector)
+* <%- @reference({ name: 'gulp-angular-injector', repo: 'alexgorbatchev/gulp-angular-injector', license: 'MIT' }) %>
+* <%- @reference({ name: 'grunt-angular-injector', repo: 'alexgorbatchev/grunt-angular-injector', license: 'MIT' }) %>
 
 ## Closing thoughts
 

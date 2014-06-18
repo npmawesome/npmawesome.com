@@ -5,8 +5,10 @@ tags: npm, testing
 
 npm:
   repo: &repo cucumber/cucumber-js
-  name: &name cucumber.js
+  name: &name cucumber
   install: cucumber
+  displayName: cucumber.js
+  license: MIT
 
   author:
     name: Julien Biezemans
@@ -19,17 +21,17 @@ description: cucumber.js is a port of the famous Ruby Cucumber testing framework
 <img class="hide-on-mobile" src="<%- @image '/cucumber-logo.png' %>" style="width: 100%; margin-bottom: 1em"/>
 
 <img class="hide-on-mobile" src="https://2.gravatar.com/avatar/cbc1acceddbfaceee4cf3cae24d7c912" style="float: right; margin-left: 1em"/>
-<%- @npm() %> is a port of the famous Ruby [Cucumber testing framework](http://cukes.info/) by <%- @author() %> that lets software development teams describe how software should behave in plain text. The text is written in a business-readable domain-specific language and serves as documentation, automated tests and development-aid - all rolled into one format.
+<%- @reference() %> is a port of the famous Ruby [Cucumber testing framework](http://cukes.info/) by <%- @author() %> that lets software development teams describe how software should behave in plain text. The text is written in a business-readable domain-specific language and serves as documentation, automated tests and development-aid - all rolled into one format.
 
     <%- @install() %>
 
 ## Features
 
-<%- @npm() %> implements most of the Ruby counterpart's feature for feature and has baked in support for CoffeeScript.
+<%- @browsenpm() %> implements most of the Ruby counterpart's feature for feature and has baked in support for CoffeeScript.
 
 ## Usage
 
-Features are written with the [Gherkin syntax](https://github.com/cucumber/cucumber/wiki/Gherkin)
+Features are written with the <%- @browsenpm() %>
 
     # features/myFeature.feature
 
@@ -70,8 +72,8 @@ or in JavaScript
     });
 
 <img class="hide-on-mobile" src="<%- @image '/cucumber-meme.jpg' %>" style="float: right; margin-left: 1em"/>
-Writing [Cucumber scenarios](https://github.com/cucumber/cucumber/wiki/Feature-Introduction) is pretty straight forward and is very addictive. I currently use [Mocha](http://visionmedia.github.io/mocha/) and write `describe` and `it` blocks in nearly the same fasion so that they read as a cohesive story. Perhaps I should just use <%- @npm() %> instead?
+Writing [Cucumber scenarios](https://github.com/cucumber/cucumber/wiki/Feature-Introduction) is pretty straight forward and is very addictive. I currently use [Mocha](http://visionmedia.github.io/mocha/) and write `describe` and `it` blocks in nearly the same fasion so that they read as a cohesive story. Perhaps I should just use <%- @browsenpm() %> instead?
 
 [The pipe dream](http://www.martinfowler.com/bliki/BusinessReadableDSL.html) is to be let business people to write software rules without involving programmers. I'm on the fence if it's a good idea, or even if it's possible, but I used to write Cucumber tests back in my Ruby days and loved it!
 
-Check out this [awesome write up](http://flippinawesome.org/2014/01/27/bdd-in-javascript-with-cucumberjs/) on <%- @npm() %>. So, what do you think? Is Cucumber a good idea?
+Check out this [awesome write up](http://flippinawesome.org/2014/01/27/bdd-in-javascript-with-cucumberjs/) on <%- @browsenpm() %>. So, what do you think? Is Cucumber a good idea?

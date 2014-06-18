@@ -47,8 +47,14 @@ docpadConfig =
     githubUrl: (slug) ->
       "https://github.com/#{slug}"
 
-    npm: ({npm} = @document) ->
-      """<a href="#{@githubUrl npm.repo}">#{npm.name}</a>""" if npm?
+    github: ({npm} = @document) ->
+      """<a href="#{@githubUrl npm.repo}">#{npm.displayName or npm.repo}</a>""" if npm?
+
+    browsenpm: ({npm} = @document) ->
+      """<a href="http://browsenpm.org/package/#{npm.name}">#{npm.displayName or npm.name}</a>""" if npm?
+
+    reference: ({npm} = @document) ->
+      """#{@browsenpm npm} (Github: <a href="https://github.com/#{npm.repo}">#{npm.repo}</a>, License: #{npm.license})""" if npm?
 
     author: ({npm} = @document) ->
       {author} = npm or {}

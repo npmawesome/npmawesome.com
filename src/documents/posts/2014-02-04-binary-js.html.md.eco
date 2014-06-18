@@ -5,8 +5,10 @@ tags: npm, sockets
 
 npm:
   repo: &repo binaryjs/binaryjs
-  name: &name binary.js
+  name: &name binaryjs
   install: binaryjs
+  displayName: binary.js
+  license: MIT
 
   author:
     name: Eric Zhang
@@ -16,7 +18,7 @@ slug: *name
 title: *name
 description: binary.js is a lightweight framework that utilizes websockets to send, stream, and pipe binary data bidirectionally between browser javascript.
 ---
-<%- @npm() %> is a lightweight framework by <%- @author() %> that utilizes websockets to send, stream, and pipe binary data bidirectionally between browser javascript.
+<%- @reference() %> is a lightweight framework by <%- @author() %> that utilizes websockets to send, stream, and pipe binary data bidirectionally between browser javascript.
 
     <%- @install() %>
 

@@ -5,19 +5,21 @@ tags: npm, webrtc, p2p
 
 npm:
   repo: &repo peers/peerjs
-  name: &name peer.js
+  name: &name peerjs
   install: peerjs
+  displayName: peer.js
+  license: MIT
 
 slug: *name
 title: *name
 description: peer.js provides a complete, configurable, and easy-to-use peer-to-peer API built on top of WebRTC, supporting both data channels and media streams.
 ---
 <img class="hide-on-mobile" src="/images/posts/peerjs.png" style="float: right; margin-left: 1em"/>
-<%- @npm() %> provides a complete, configurable, and easy-to-use peer-to-peer API built on top of WebRTC, supporting both data channels and media streams. <%- @npm() %> wraps the browser's WebRTC implementation to provide a complete, configurable, and easy-to-use peer-to-peer connection API. Equipped with nothing but an ID, a peer can create a P2P data or media stream connection to a remote peer.
+<%- @reference() %> provides a complete, configurable, and easy-to-use peer-to-peer API built on top of WebRTC, supporting both data channels and media streams. <%- @browsenpm() %> wraps the browser's WebRTC implementation to provide a complete, configurable, and easy-to-use peer-to-peer connection API. Equipped with nothing but an ID, a peer can create a P2P data or media stream connection to a remote peer.
 
     <%- @install() %>
 
-To broker connections, <%- @npm() %> connects to a PeerServer ([free hosted](http://peerjs.com/peerserver) or [host your own](https://github.com/peers/peerjs-server)). Note that **no peer-to-peer data goes through the server** - the server acts only as connection broker.
+To broker connections, <%- @browsenpm() %> connects to a PeerServer ([free hosted](http://peerjs.com/peerserver) or [host your own](https://github.com/peers/peerjs-server)). Note that **no peer-to-peer data goes through the server** - the server acts only as connection broker.
 
 ## Usage
 

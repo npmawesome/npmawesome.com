@@ -8,6 +8,7 @@ npm:
   repo: &repo defunctzombie/changelog
   name: &name changelog
   install: defunctzombie/changelog
+  license: MIT
 
   author:
     name: Roman Shtylman
@@ -19,13 +20,13 @@ description: changelog release management tool
 ---
 <img class="hide-on-mobile" src="https://avatars2.githubusercontent.com/u/84792?s=400" width="150" align="right" hspace="10"/>
 
-You fixed _all_ the bugs, closed some security holes and documented new features in your project. In other words - you did a great job and the next release is ready for the roll-out. But you're not done just yet! No? What else? You have to update the changelog file, bump the version in the respective `package.json` and create a `git tag` first. Hm, many steps, right? No more! <%- @npm() %> by <%- @author() %> is here to save you.
+You fixed _all_ the bugs, closed some security holes and documented new features in your project. In other words - you did a great job and the next release is ready for the roll-out. But you're not done just yet! No? What else? You have to update the changelog file, bump the version in the respective `package.json` and create a `git tag` first. Hm, many steps, right? No more! <%- @reference() %> by <%- @author() %> is here to save you.
 
 <%- @readMore() %>
 
-Personally I'm not just a huge fan of the concept behind [Readme Driven Development](http://tom.preston-werner.com/2010/08/23/readme-driven-development.html) but also of planning releases in a changelog file. If this is your workflow as well, you will benefit from <%- @npm() %> - you don't have to adjust your changelog when releasing a new version by hand. It's there, anyways, as described above.
+Personally I'm not just a huge fan of the concept behind [Readme Driven Development](http://tom.preston-werner.com/2010/08/23/readme-driven-development.html) but also of planning releases in a changelog file. If this is your workflow as well, you will benefit from <%- @browsenpm() %> - you don't have to adjust your changelog when releasing a new version by hand. It's there, anyways, as described above.
 
-The release workflow consists of many separate tasks which don't have to be executed manually. They can be handled by <%- @npm() %>. Let's take a look:
+The release workflow consists of many separate tasks which don't have to be executed manually. They can be handled by <%- @browsenpm() %>. Let's take a look:
 
     <%- @install() %>
 
@@ -64,4 +65,4 @@ Every project which does not have a roadmap with future changes is a dead projec
 
 ## Closing thoughts
 
-There might be other tools like <%- @npm() %> out there but this one fits my personal workflow very well and who knows, maybe yours too. Whatever tools you are using for the release management, I can not emphasize enough how important it is to write a changelog file. Not just for you as a project maintainer but also for communicating to the people who are using your product. <%- @author() %> helps with <%- @npm() %> to manifest this notion of centering the versioning workflow around the changelog. Thanks!
+There might be other tools like <%- @browsenpm() %> out there but this one fits my personal workflow very well and who knows, maybe yours too. Whatever tools you are using for the release management, I can not emphasize enough how important it is to write a changelog file. Not just for you as a project maintainer but also for communicating to the people who are using your product. <%- @author() %> helps with <%- @browsenpm() %> to manifest this notion of centering the versioning workflow around the changelog. Thanks!

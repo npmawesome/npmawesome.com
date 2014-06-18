@@ -4,13 +4,14 @@ tags: npm, coffeescript, template
 npm:
   repo: &repo baryshev/ect
   name: &name ect
+  license: MIT
 
 layout: post
 slug: *name
 title: *name
 description: ect is a performance focused JavaScript template engine with embedded CoffeeScript syntax.
 ---
-<%- @npm() %> is a [performance focused](http://ectjs.com/#benchmark) JavaScript template engine with embedded CoffeeScript syntax. [Just try demo](http://ectjs.com) to check all features.
+<%- @reference() %> is a [performance focused](http://ectjs.com/#benchmark) JavaScript template engine with embedded CoffeeScript syntax. [Just try demo](http://ectjs.com) to check all features.
 
     npm install <%= @document.npm.name %>
 
@@ -61,4 +62,4 @@ views/layout.ect
       </body>
     </html>
 
-There are plenty of examples and information on the <%- @npm() %>. Check it out!
+There are plenty of examples and information on <%- @github() %>. Check it out!

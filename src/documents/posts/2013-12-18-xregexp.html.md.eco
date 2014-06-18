@@ -4,13 +4,15 @@ tags: npm, javascript, regexp
 npm:
   repo: &repo slevithan/xregexp
   name: &name xregexp
+  displayName: XRegExp
+  license: MIT
 
 layout: post
 slug: *name
 title: *name
 description: XRegExp provides augmented and extensible JavaScript regular expressions.
 ---
-<%- @npm() %> provides augmented and extensible JavaScript regular expressions. You get new syntax, flags, and methods beyond what browsers support natively. XRegExp is also a regex utility belt with tools to make your client-side grepping simpler and more powerful, while freeing you from worrying about pesky cross-browser inconsistencies and the dubious lastIndex property.
+<%- @reference() %> provides augmented and extensible JavaScript regular expressions. You get new syntax, flags, and methods beyond what browsers support natively. XRegExp is also a regex utility belt with tools to make your client-side grepping simpler and more powerful, while freeing you from worrying about pesky cross-browser inconsistencies and the dubious lastIndex property.
 
     npm install <%= @document.npm.name %>
 
@@ -42,7 +44,7 @@ description: XRegExp provides augmented and extensible JavaScript regular expres
 
 ## Addons
 
-Addons are one of the more impressive features of <%- @npm() %>. In particular, the `matchRecursive` addon allows you to match balanced brackets and quotes, which is otherwise impossible with regular regex (.NET had this extension built in for some time now however).
+Addons are one of the more impressive features of <%- @browsenpm() %>. In particular, the `matchRecursive` addon allows you to match balanced brackets and quotes, which is otherwise impossible with regular regex (.NET had this extension built in for some time now however).
 
 In browsers, first include the script:
 
@@ -88,4 +90,4 @@ You can then match recursive constructs using XRegExp pattern strings as left an
 
 XRegExp.matchRecursive throws an error if it scans past an unbalanced delimiter in the target string.
 
-I've been using <%- @npm() %> in [SyntaxHighlighter](https://github.com/alexgorbatchev/SyntaxHighlighter) for a while now. My favourite feature is named captures, which JavaScript is desperately missing. Have you used <%- @npm() %> already? How?
+I've been using <%- @browsenpm() %> in <%- @reference({ displayName: 'SyntaxHighlighter', name: 'syntaxhighlighter', repo: 'alexgorbatchev/SyntaxHighlighter' license: 'MIT LGPL' }) %> for a while now. My favourite feature is named captures, which JavaScript is desperately missing. Have you used <%- @browsenpm() %> already? How?

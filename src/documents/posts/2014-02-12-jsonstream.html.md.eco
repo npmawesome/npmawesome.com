@@ -5,8 +5,10 @@ tags: npm, json, stream, parsing
 
 npm:
   repo: &repo dominictarr/JSONStream
-  name: &name JSONStream
+  name: &name jsonstream
   install: jsonstream
+  displayName: JSONStream
+  license: Apache
 
   author:
     name: Dominic Tarr
@@ -16,7 +18,7 @@ slug: *name
 title: *name
 description: JSONStream is a module for streaming JSON.parse and JSON.stringify.
 ---
-<%- @npm() %> is a module by <%- @author() %> for streaming `JSON.parse` and `JSON.stringify`.
+<%- @reference() %> is a module by <%- @author() %> for streaming `JSON.parse` and `JSON.stringify`.
 
     <%- @install() %>
 

@@ -6,6 +6,7 @@ tags: npm, sales
 npm:
   repo: &repo appsattic/node-coupon-code
   name: &name coupon-code
+  license: MIT
 
   author:
     name: Andrew Chilton
@@ -15,7 +16,7 @@ slug: *name
 title: *name
 description: coupon-code is an implementation of Perl's Algorithm::CouponCode for node.js
 ---
-<%- @npm() %> implementation of Perl's [Algorithm::CouponCode](https://github.com/grantm/Algorithm-CouponCode) written by <%- @author() %>. It is meant to solve a what appears on the surface very simple problem - coupon code validation. You would imagine printing codes on paper cups and then having user enter them - pretty straight forward. What happens however when user confuses zero for letter O, or five for S? Should you tell them their code is invalid?
+<%- @reference() %> is an implementation of Perl's [Algorithm::CouponCode](https://github.com/grantm/Algorithm-CouponCode) written by <%- @author() %>. It is meant to solve a what appears on the surface very simple problem - coupon code validation. You would imagine printing codes on paper cups and then having user enter them - pretty straight forward. What happens however when user confuses zero for letter O, or five for S? Should you tell them their code is invalid?
 
     <%- @install() %>
 

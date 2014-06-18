@@ -3,13 +3,15 @@ date: 2013-11-26T16:40:43.849092-08:00
 tags: npm, javascript, browser, rpf
 npm:
   repo: &repo Reactive-Extensions/RxJS
-  name: &name rx.js
+  name: &name rx
+  license: Apache 2.0
+  displayName: RxJS
 
 layout: post
 slug: *name
 title: *name
 ---
-<%- @npm() %> is a set of libraries to compose asynchronous and event-based programs using observable collections and Array#extras style composition in JavaScript.
+<%- @reference() %> is a set of libraries to compose asynchronous and event-based programs using observable collections and Array#extras style composition in JavaScript.
 
 Using RxJS, you can represent multiple asynchronous data streams (that come from diverse sources, e.g., stock quote, tweets, computer events, web service requests, etc.), and subscribe to the event stream using the Observer object. The Observable notifies the subscribed Observer instance whenever an event occurs.
 
@@ -51,5 +53,5 @@ Reactive programming is a very interesting way of writing code. Check out a few 
 - [Cascadia.js 2012](http://www.youtube.com/watch?v=FqBq4uoiG0M)
 - [Reactive Extensions Videos on Channel 9](http://channel9.msdn.com/Tags/reactive+extensions)
 
-There are plenty of examples and information on the <%- @npm() %>. Check it
+There are plenty of examples and information on <%- @github() %>. Check it
 out!

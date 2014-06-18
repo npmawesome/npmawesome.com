@@ -7,6 +7,7 @@ tags: npm, express, authentication
 npm:
   repo: &repo zeMirco/lockit
   name: &name lockit
+  license: MIT
 
   author:
     name: Mirco Zeiss
@@ -23,7 +24,7 @@ So you got a really cool idea for an app or a service. You get all fired up, tal
 <img class="hide-on-mobile" src="https://1.gravatar.com/avatar/5664d023c8ab7b6eb69a93990198432e" style="float: right; margin-left: 1em"/>
 Of course, [passport.js] is great when you can leverage external authentication, but otherwise you are stuck rolling your own system… After a while you find yourself doing it over and over again. How boring! Wouldn't it be nice if somebody finally just wrote a module that you could plugin into your express app that would take care of all this user registration stuff?
 
-Well, look no further than <%- @npm() %>, which is a collection of modules written by <%- @author() %> that helps you with initial user registraion and password management flow.
+Well, look no further than <%- @reference() %>, which is a collection of modules written by <%- @author() %> that helps you with initial user registraion and password management flow.
 
     <%- @install() %>
 
@@ -134,6 +135,6 @@ From [lockit-delete-account](https://github.com/zeMirco/lockit-delete-account)
 
 ## Closing thoughts
 
-I love how customizable <%- @npm() %> is and yet comes with very reasonable defaults. It's has pretty much everything you need to get started with basic user registration and password management flow. Checkout <%- @npm() %> github page for full set of options as well as its associated modules.
+I love how customizable <%- @browsenpm() %> is and yet comes with very reasonable defaults. It's has pretty much everything you need to get started with basic user registration and password management flow. Checkout <%- @browsenpm() %> github page for full set of options as well as its associated modules.
 
 [passport.js]: http://passportjs.org/

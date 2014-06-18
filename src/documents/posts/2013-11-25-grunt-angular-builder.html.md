@@ -5,12 +5,12 @@ tags: npm, grunt, plugin, javascript, angularjs, deployment, development
 npm:
   repo: &repo claudio-silva/grunt-angular-builder
   name: &name grunt-angular-builder
+  license: MIT
 slug: *name
 title: *name
 ---
-[angular-builder](https://github.com/claudio-silva/grunt-angular-builder)
-is a specialized Grunt plugin to handle all of AngularJS related assets
-issues in a truly practical, automated, simple and easy way.
+<%- @reference() %> is a specialized Grunt plugin to handle all of AngularJS
+related assets issues in a truly practical, automated, simple and easy way.
 
     npm install angular-builder
 
@@ -64,7 +64,5 @@ Features
     process with minification, optimization, preprocessing and/or
     compilation st
 
-There are plenty of examples and information on the [github
-page](https://github.com/claudio-silva/grunt-angular-builder). Check it
-out!
-
+There are plenty of examples and information on the
+<%- @github({ displayName: 'github page', repo: @document.npm.repo }) %>. Check it out!

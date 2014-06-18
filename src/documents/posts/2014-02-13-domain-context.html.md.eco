@@ -6,6 +6,7 @@ tags: npm, express, domains, context
 npm:
   repo: &repo andreypopp/domain-context
   name: &name domain-context
+  license: MIT
 
   author:
     name: Andrey Popp
@@ -17,7 +18,7 @@ description: domain-context is a module for dealing with globally accessible dom
 ---
 <img class="hide-on-mobile" src="<%- @image '/domain-context.jpg" style="width: 100%' %>"/>
 
-<%- @npm() %> is a module by <%- @author() %> for dealing with globally accessible domain-bound contexts, connect/express middleware included.
+<%- @reference() %> is a module by <%- @author() %> for dealing with globally accessible domain-bound contexts, connect/express middleware included.
 
     <%- @install() %>
 

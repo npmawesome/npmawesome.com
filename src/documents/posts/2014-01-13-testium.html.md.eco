@@ -5,11 +5,14 @@ tags: npm, testing, coffeescript, mocha
 npm:
   repo: &repo groupon/testium
   name: &name testium
+  license: BSD 3-Clause
 slug: *name
 title: *name
 description: Integration test platform for Node.js using mocha and a sync API.
 ---
-<%- @npm() %> is a testing platform focused on providing a simple, but effective, platform for testing your code in different browsers (via Selenium) and headlessly (via PhantomJS). It uses [webdriver-http-sync](https://github.com/groupon/webdriver-http-sync)
+<%- @reference() %> is a testing platform focused on providing a simple, but effective,
+platform for testing your code in different browsers (via Selenium) and headlessly
+(via PhantomJS). It uses <%- @reference({ name: 'webdriver-http-sync', repo: 'groupon/webdriver-http-sync', license: 'BSD 2-Clause' }) %>
 which Groupon wrote in order to communicate using the WebDriver protocol to a Selenium server.
 
     npm install <%= @document.npm.name %>
@@ -35,7 +38,7 @@ and
 
 ## Example
 
-A simple test using [assertive](https://github.com/groupon/assertive).
+A simple test using <%- @reference({ name: 'assertive', repo: 'groupon/assertive', license: 'BSD 2-Clause' }) %>.
 
     {getBrowser} = require 'testium'
     assert = require 'assertive' # or whatever assert library you prefer

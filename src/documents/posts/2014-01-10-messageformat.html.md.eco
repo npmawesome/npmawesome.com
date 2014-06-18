@@ -5,14 +5,16 @@ tags: npm, i18n, localization, text
 
 npm:
   repo: &repo SlexAxton/messageformat.js
-  name: &name messageformat.js
+  name: &name messageformat
+  displayName: messageformat.js
   install: messageformat
+  license: WTFPL
 
 slug: *name
 title: *name
 description: ICU MessageFormat for Javascript - i18n Plural and Gender Capable Messages
 ---
-<%- @npm() %> is a module by [Alex Sexton](https://github.com/SlexAxton) ([@SlexAxton](https://twitter.com/SlexAxton)) for handling both *pluralization* and *gender* in your applications. It can also lead to much better translations, as it was built by [ICU](http://icu-project.org/apiref/icu4j/com/ibm/icu/text/MessageFormat.html) to help solve those two problems for all known [CLDR](http://cldr.unicode.org/) languages - likely all the ones you care about.
+<%- @reference() %> is a module by [Alex Sexton](https://github.com/SlexAxton) ([@SlexAxton](https://twitter.com/SlexAxton)) for handling both *pluralization* and *gender* in your applications. It can also lead to much better translations, as it was built by [ICU](http://icu-project.org/apiref/icu4j/com/ibm/icu/text/MessageFormat.html) to help solve those two problems for all known [CLDR](http://cldr.unicode.org/) languages - likely all the ones you care about.
 
     <%- @install() %>
 

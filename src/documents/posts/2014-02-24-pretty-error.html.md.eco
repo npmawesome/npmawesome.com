@@ -6,6 +6,7 @@ tags: npm, errors
 npm:
   repo: &repo AriaMinaei/pretty-error
   name: &name pretty-error
+  license: MIT
 
   author:
     name: Aria Minaei
@@ -16,7 +17,7 @@ title: *name
 description: pretty-errors is a module to render node.js error stack with less clutter.
 ---
 <img class="hide-on-mobile" src="https://0.gravatar.com/avatar/8db4bf4bbef66bb91a4f2a0ba3b26e68" style="float: right; margin-left: 1em"/>
-<%- @npm() %> is a module by <%- @author() %> to render node.js error stack in a much more digestable way. This seems like it might a good module to add to your infrastracture if you, like me, constantly having to weed through the ugly stack messages to find relavant lines.
+<%- @reference() %> is a module by <%- @author() %> to render node.js error stack in a much more digestable way. This seems like it might a good module to add to your infrastracture if you, like me, constantly having to weed through the ugly stack messages to find relavant lines.
 
 <%- @readMore() %>
 
@@ -32,7 +33,7 @@ description: pretty-errors is a module to render node.js error stack with less c
 
 ## How it Works
 
-<%- @npm() %> turns error objects into something similar to an HTML document, and then uses the upcoming [RenderKid] to render the document using simple HTML/CSS-like commands for the console. This allows <%- @npm() %> to be themed using simple CSS-like declarations.
+<%- @browsenpm() %> turns error objects into something similar to an HTML document, and then uses the upcoming [RenderKid] to render the document using simple HTML/CSS-like commands for the console. This allows <%- @browsenpm() %> to be themed using simple CSS-like declarations.
 
 ## The cool bits
 

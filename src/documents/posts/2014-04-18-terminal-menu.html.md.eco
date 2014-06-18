@@ -7,6 +7,7 @@ tags: npm, cli, menu
 npm:
   repo: &repo substack/terminal-menu
   name: &name terminal-menu
+  license: MIT
 
   author:
     name: James Halliday
@@ -19,7 +20,7 @@ description: Multiple choice user prompt for CLI tools using terminal-menu.
 Lets continue building out awesome CLI (command line interface) tool. Previously we have discussed how to [take in command line arguments][1], [output tabular data][2] and [display progress of long running tasks][3].
 
 <img class="hide-on-mobile" src="https://avatars2.githubusercontent.com/u/12631?s=400" style="float: right; margin-left: 1em; width: 100px;"/>
-Prompting a user with options and asking to pick one is a fairly common scenario. Most of the time you get to read the options and press associated key. That works, but we are human and like pretty interfaces. Same thing can be achieved with a common menu interface. This is where <%- @npm() %> by <%- @author() %> comes in.
+Prompting a user with options and asking to pick one is a fairly common scenario. Most of the time you get to read the options and press associated key. That works, but we are human and like pretty interfaces. Same thing can be achieved with a common menu interface. This is where <%- @reference() %> by <%- @author() %> comes in.
 
 <%- @readMore() %>
 
@@ -73,7 +74,7 @@ Generally there is a list of alternative modules here, but as strange as it soun
 
 ## Closing thoughts
 
-Over the last couple of CLI related posts we've progressively been improving user experience of our terminal application. I feel that you can never spend too much time doing this, but you can definetely spend too little. I love little things that feel good. <%- @npm() %> was created for [stream-adventure], an educational terminal based stream adventure game for Node.js and [stream-adventure] in turn inspired [browser based version](http://nodestreams.com/) written by John Resig of the jQuery fame. Both are pretty cool and fun!
+Over the last couple of CLI related posts we've progressively been improving user experience of our terminal application. I feel that you can never spend too much time doing this, but you can definetely spend too little. I love little things that feel good. <%- @browsenpm() %> was created for [stream-adventure], an educational terminal based stream adventure game for Node.js and [stream-adventure] in turn inspired [browser based version](http://nodestreams.com/) written by John Resig of the jQuery fame. Both are pretty cool and fun!
 
 <blockquote class="twitter-tweet" lang="en"><p>everybody going to nodeconf should make sure to npm install -g stream-adventure</p>&mdash; James Halliday (@substack) <a href="https://twitter.com/substack/statuses/350097531730006017">June 27, 2013</a></blockquote>
 

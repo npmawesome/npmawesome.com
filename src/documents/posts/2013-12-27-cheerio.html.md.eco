@@ -4,6 +4,7 @@ tags: npm, javascript, jquery, dom, html
 npm:
   repo: &repo MatthewMueller/cheerio
   name: &name cheerio
+  license: MIT
 
   author:
     name: Matthew Mueller
@@ -16,7 +17,7 @@ description: Fast, flexible, and lean implementation of core jQuery designed spe
 ---
 <img class="hide-on-mobile" src="https://2.gravatar.com/avatar/824b41e6108a22c4c96f50ee23419369" style="float: right; margin-left: 1em"/>
 
-<%- @npm() %> is a fast, flexible, and lean implementation of core jQuery written by <%- @author() %> and designed specifically for the server.
+<%- @reference() %> is a fast, flexible, and lean implementation of core jQuery written by <%- @author() %> and designed specifically for the server.
 
     <%- @install() %>
 
@@ -24,9 +25,9 @@ description: Fast, flexible, and lean implementation of core jQuery designed spe
 
 <img class="hide-on-mobile" src="<%- @image '/cheerio.jpg' %>" style="width: 150px; float: right" />
 
-* Familiar syntax. <%- @npm() %> implements a subset of core jQuery. <%- @npm() %> removes all the DOM inconsistencies and browser cruft from the jQuery library, revealing its truly gorgeous API.
-* Blazingly fast. <%- @npm() %> works with a very simple, consistent DOM model. As a result parsing, manipulating, and rendering are incredibly efficient. Preliminary end-to-end benchmarks suggest that <%- @npm() %> is about 8x faster than JSDOM.
-* Insanely flexible. <%- @npm() %> wraps around [@FB55](https://twitter.com/fb55)'s [forgiving htmlparser](https://github.com/fb55/htmlparser2). <%- @npm() %> can parse nearly any HTML or XML document.
+* Familiar syntax. <%- @browsenpm() %> implements a subset of core jQuery. <%- @browsenpm() %> removes all the DOM inconsistencies and browser cruft from the jQuery library, revealing its truly gorgeous API.
+* Blazingly fast. <%- @browsenpm() %> works with a very simple, consistent DOM model. As a result parsing, manipulating, and rendering are incredibly efficient. Preliminary end-to-end benchmarks suggest that <%- @browsenpm() %> is about 8x faster than JSDOM.
+* Insanely flexible. <%- @browsenpm() %> wraps around [@FB55](https://twitter.com/fb55)'s <%- @reference({ name: 'htmlparser2', repo: 'fb55/htmlparser2', license: 'MIT' }) %>. <%- @browsenpm() %> can parse nearly any HTML or XML document.
 
 ## Example
 

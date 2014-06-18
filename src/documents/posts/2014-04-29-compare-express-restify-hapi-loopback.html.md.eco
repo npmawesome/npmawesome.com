@@ -3,6 +3,10 @@ layout: post
 partner: strongloop
 date: 2014-04-29T10:01:54-0700
 tags: strongloop
+npm:
+  repo: &repo spumko/hapi
+  name: &name hapi
+  license: BSD 4-Clause
 slug: compare-express-restify-hapi-loopback
 title: Comparing Express, Restify, hapi and LoopBack for building RESTful APIs
 description: Comparing Express, Restify, hapi and LoopBack for building RESTful APIs
@@ -218,7 +222,7 @@ server.start();
 ### Pros
 
 1. Very granular control over request handling
-1. Detailed API [reference](https://github.com/spumko/hapi/blob/master/docs/Reference.md) with support for documentation generation
+1. Detailed API <%- @reference() %> with support for documentation generation
 
 ### Cons
 
