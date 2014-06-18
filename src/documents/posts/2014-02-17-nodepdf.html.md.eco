@@ -5,8 +5,10 @@ tags: npm, pdf
 
 npm:
   repo: &repo TJkrusinski/NodePDF
-  name: &name NodePDF
+  name: &name nodepdf
   install: nodepdf
+  displayName: NodePDF
+  license: MIT
 
   author:
     name: TJ Krusinski
@@ -17,7 +19,7 @@ title: *name
 description: NodePDF is a module for creating PDF files from web pages.
 ---
 <img class="hide-on-mobile" src="https://0.gravatar.com/avatar/c0f5a91f71e988a9e2d9c20ffa546f4e" style="float: right; margin-left: 1em"/>
-[NodePDF][browsenpm] (Github: [TJkrusinski/NodePDF][github], License: MIT) is a module by <%- @author() %> for creating PDF files from web pages. It depends on [PhantomJS](http://phantomjs.org/) and works by simply taking a screenshot of a page and stuffing it into a PDF. One the plus side, this makes it really easy to do mostly graphics based PDF files from node. On the down side, the content isn't scalable at all, so printing quality will suffer.
+<%- @reference() %> is a module by <%- @author() %> for creating PDF files from web pages. It depends on [PhantomJS](http://phantomjs.org/) and works by simply taking a screenshot of a page and stuffing it into a PDF. One the plus side, this makes it really easy to do mostly graphics based PDF files from node. On the down side, the content isn't scalable at all, so printing quality will suffer.
 
     <%- @install() %>
 
@@ -50,6 +52,3 @@ description: NodePDF is a module for creating PDF files from web pages.
     });
 
 I can imagine this being used for something simple, like printing tickets, post cards, photos and so on.
-
-[browsenpm]: http://browsenpm.org/package/NodePDF
-[github]: https://github.com/TJkrusinski/NodePDF

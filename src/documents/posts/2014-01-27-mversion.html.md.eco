@@ -6,6 +6,7 @@ tags: npm, json, validation
 npm:
   repo: &repo mikaelbr/mversion
   name: &name mversion
+  license: MIT
 
   author:
     name: Mikael Brevik
@@ -17,7 +18,7 @@ description: mversion is an NPM, Bower, Jam, Ender module version handler.
 ---
 <img class="hide-on-mobile" src="https://0.gravatar.com/avatar/c1ad8925b70df4f6665315865511eafc" style="float: right; margin-left: 1em"/>
 
-[mversion][browsenpm] (Github: [mikaelbr/mversion][github], License: MIT) is an NPM, Bower, Jam, Ender module version handler. It imitates [`npm version`](https://npmjs.org/doc/version.html) to also work on other packaging files. For those times you have either have multiple packaging files (like `bower.json`, `component.json`, `manifest.json`) or just not a `package.json` file. `mversion` can easily bump your version and optionally commit and create a tag.
+<%- @reference() %> is an NPM, Bower, Jam, Ender module version handler. It imitates [`npm version`](https://npmjs.org/doc/version.html) to also work on other packaging files. For those times you have either have multiple packaging files (like `bower.json`, `component.json`, `manifest.json`) or just not a `package.json` file. `mversion` can easily bump your version and optionally commit and create a tag.
 
     <%- @install() %>
 
@@ -64,6 +65,3 @@ description: mversion is an NPM, Bower, Jam, Ender module version handler.
 ## Gulp
 
 Of course, <%- @author() %> has [gulp.js plugin](https://github.com/mikaelbr/gulp-mversion) to help you with automate build and deploy process.
-
-[browsenpm]: http://browsenpm.org/package/mversion
-[github]: https://github.com/mikaelbr/mversion

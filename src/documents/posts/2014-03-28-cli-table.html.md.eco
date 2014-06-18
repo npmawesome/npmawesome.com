@@ -7,6 +7,7 @@ tags: npm, cli, formatting
 npm:
   repo: &repo LearnBoost/cli-table
   name: &name cli-table
+  license: MIT
 
   author:
     name: Guillermo Rauch
@@ -23,7 +24,7 @@ One of the more interesting subject when it comes to writing CLI tools is how do
 
 <%- @readMore() %>
 
-Getting pretty tabular data to STDOUT isn't a trivial matter if you want to tackle it all by yourself. After all, there isn't a `table` tag. Luckily there are modules in NPM to help you with that. One of those modules is [cli-table][browsenpm] (Github: [Learnboost/cli-table][github], License: MIT) written by <%- @author() %> of the [LearnBoost](https://github.com/LearnBoost) fame.
+Getting pretty tabular data to STDOUT isn't a trivial matter if you want to tackle it all by yourself. After all, there isn't a `table` tag. Luckily there are modules in NPM to help you with that. One of those modules is <%- @reference() %> written by <%- @author() %> of the [LearnBoost](https://github.com/LearnBoost) fame.
 
     <%- @install() %>
 
@@ -117,6 +118,3 @@ Pretty cool, right? We can get a little fancy with custom borders and alignments
 ## Closing thoughts
 
 User experience doesn't have to suffer just because the target platform is STDOUT. Put a little bit more effort into it and your users will love you that much more. Checkout <%- @browsenpm() %> github page for more examples and view the source for the full list of options.
-
-[browsenpm]: http://browsenpm.org/package/cli-table
-[github]: https://github.com/LearnBoost/cli-table

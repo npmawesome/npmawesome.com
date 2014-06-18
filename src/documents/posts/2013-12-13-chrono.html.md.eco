@@ -3,13 +3,15 @@ date: 2013-12-13T17:14:45.063788-08:00
 tags: npm, javascript, date, time
 npm:
   repo: &repo wanasit/chrono
-  name: &name chrono
+  name: &name chrono-node
+  displayName: chrono
+  license: MIT
 
 layout: post
 slug: *name
 title: *name
 ---
-[chrono-node][browsenpm] (Github: [wanasit/chrono-node][github], License: MIT) is a natural language date parser in Javascript. It is designed to extract date informations from any given text. Works in node and browser. Check out the [nifty test page](http://wanasit.github.io/pages/chrono/).
+<%- @reference() %> is a natural language date parser in Javascript. It is designed to extract date informations from any given text. Works in node and browser. Check out the [nifty test page](http://wanasit.github.io/pages/chrono/).
 
     npm install <%= @document.npm.name %>
 
@@ -67,7 +69,5 @@ What's even more cool, <%- @browsenpm() %> is designed to work with long text (n
           day: 16,
           ....
 
-There are plenty of examples and information on the [github page][github]. Check it out!
-
-[browsenpm]: http://browsenpm.org/package/chrono-node
-[github]: https://github.com/wanasit/chrono-node
+There are plenty of examples and information on the
+<%- @github({ displayName: 'github page', repo: @document.npm.repo }) %>. Check it out!

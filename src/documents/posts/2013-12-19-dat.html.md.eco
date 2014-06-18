@@ -4,13 +4,14 @@ tags: npm, javascript, data
 npm:
   repo: &repo maxogden/dat
   name: &name dat
+  license: BSD 4-Clause
 
 layout: post
 slug: *name
 title: *name
 description: Real-time replication and versioning for large tabular data sets.
 ---
-[dat][browsenpm] (Github: [maxogden/dat][github], License: BSD 4-Clause) is a project that seeks providing better tools for data collaboration.
+<%- @reference() %> is a project that seeks providing better tools for data collaboration.
 
     npm install <%= @document.npm.name %>
 
@@ -32,6 +33,3 @@ The concept sounds pretty amazing to me. Currently `dat` is in pre-alpha stage b
 <iframe width="560" height="315" src="//www.youtube.com/embed/FX7qSwz3SCk" frameborder="0" allowfullscreen></iframe>
 
 Aside from a truly epic beard, Max also has a [cool talk](http://www.youtube.com/watch?v=FX7qSwz3SCk) on YouTube introducing `dat`. Have you gotten any ideas on how this could be used yet?
-
-[browsenpm]: http://browsenpm.org/package/dat
-[github]: https://github.com/maxogden/dat

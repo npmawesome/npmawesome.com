@@ -9,6 +9,7 @@ npm:
   repo: &repo 1602/jugglingdb
   name: &name JugglingDB
   install: jugglingdb
+  license: MIT
 
   author:
     name: Anatoliy Chakkaev
@@ -25,7 +26,7 @@ There are database specific [ORM] libraries such as [Mongoose] for MongoDB and [
 <%- @readMore() %>
 
 <img src="<%- @image '/anatoliy_chakkaev.jpg' %>" width="100" align="right"/>
-<%- @npm() %> by <%- @author() %> is a young [ORM] library that tries to provide a single API for a vast array of databases. All adapters come in a form of separate modules and there are quite a few already available:
+<%- @reference() %> by <%- @author() %> is a young [ORM] library that tries to provide a single API for a vast array of databases. All adapters come in a form of separate modules and there are quite a few already available:
 
 * ArangoDB
 * CouchDB
@@ -80,7 +81,7 @@ What's even cooler, is that you can have multiple schemas connecting to multiple
 
 ## Closing thoughts
 
-<%- @npm() %> is not as well known as [Mongoose], but it's been in development since 2011 and has a pretty strong following on GitHub. [Documentation](http://jugglingdb.co/) is pretty extensive and [roadmap](http://jugglingdb.co/roadmap.3.html) gives you a glimpse of where the project is headed and what is currently considered missing. Finally, check out [source code](https://github.com/npmawesome/example-jugglingdb) for this article on GitHub and an [interactive example](http://runnable.com/U5SP5uAfzMh7SfoX) on Runnable. I've included MongoDB, Redis and Memory examples.
+<%- @github() %> is not as well known as [Mongoose], but it's been in development since 2011 and has a pretty strong following on GitHub. [Documentation](http://jugglingdb.co/) is pretty extensive and [roadmap](http://jugglingdb.co/roadmap.3.html) gives you a glimpse of where the project is headed and what is currently considered missing. Finally, check out [source code](https://github.com/npmawesome/example-jugglingdb) for this article on GitHub and an [interactive example](http://runnable.com/U5SP5uAfzMh7SfoX) on Runnable. I've included MongoDB, Redis and Memory examples.
 
 [Mongoose]: http://mongoosejs.com/
 [Sequelize]: http://sequelizejs.com/

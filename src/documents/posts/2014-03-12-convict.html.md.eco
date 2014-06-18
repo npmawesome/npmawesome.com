@@ -7,6 +7,7 @@ tags: npm, configuration
 npm:
   repo: &repo mozilla/node-convict
   name: &name convict
+  license: Apache
 
   author:
     name: Lloyd Hilaiel
@@ -21,10 +22,8 @@ Managing application configuration is one of the cornerstones to a reducing stre
 <%- @readMore() %>
 
 <img class="hide-on-mobile" src="https://0.gravatar.com/avatar/93621c22c5e09b5f980c39e8eedbf68c" style="float: right; margin-left: 1em"/>
-To accomplish this for the last couple of years I've been using [convict][browsenpm]
-(Github: [mozilla/node-convict][github], License: Apache), written by <%- @author() %> at
-Mozilla, with great success. Before diving into <%- @browsenpm() %> lets first take
-a moment to review a typical setup for configuring Node.js applications:
+To accomplish this for the last couple of years I've been using <%- @reference() %>, written by <%- @author() %> at Mozilla, with great success. Before diving into <%- @browsenpm() %>
+lets first take a moment to review a typical setup for configuring Node.js applications:
 
 1. in your application you `require` some settings file
 1. the settings need to vary based on running environment (eg development, staging, production, etc)
@@ -147,6 +146,3 @@ In the great world of NPM there isn't one package to rule them all and there are
 I found this to be the least frictionless way to manage configuration in Node.js to date. Check out <%- @browsenpm() %> github page for detailed API method description.
 
 What are you using to manage your application settings?
-
-[browsenpm]: http://browsenpm.org/package/convict
-[github]: https://github.com/mozilla/convict

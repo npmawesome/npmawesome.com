@@ -6,6 +6,7 @@ tags: npm, orm
 npm:
   repo: &repo modella/modella
   name: &name modella
+  license: MIT
 
   author:
     name: Matthew Mueller
@@ -17,7 +18,7 @@ description: Modella is a bare bones model. It exposes a few APIs on which plugi
 ---
 <img class="hide-on-mobile" src="https://2.gravatar.com/avatar/824b41e6108a22c4c96f50ee23419369" style="float: right; margin-left: 1em"/>
 
-[modella][browsenpm] (Github: [modella/modella][github], License: MIT) is a bare bones model framework written by <%- @author() %> of the [cheerio](/posts/2013-12-27-cheerio/) fame. It exposes a few APIs on which plugins can be built to enhance functionality. The core module and select plugins work on the client and server.
+<%- @reference() %> is a bare bones model framework written by <%- @author() %> of the [cheerio](/posts/2013-12-27-cheerio/) fame. It exposes a few APIs on which plugins can be built to enhance functionality. The core module and select plugins work on the client and server.
 
     <%- @install() %>
 
@@ -74,6 +75,3 @@ Most of functionality comes bundles as plugins:
     });
 
 If you feel disgrundled with Mongoose or just tired of using the raw driver, give <%- @browsenpm() %> a try!
-
-[browsenpm]: http://browsenpm.org/package/modella
-[github]: https://github.com/modella/modella

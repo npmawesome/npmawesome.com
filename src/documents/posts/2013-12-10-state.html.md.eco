@@ -4,12 +4,13 @@ tags: npm, coffeescript, state
 npm:
   repo: &repo nickfargo/state
   name: &name state
+  license: MIT
 
 layout: post
 slug: *name
 title: *name
 ---
-[state][browsenpm] (Github: [nickfargo/state][github], License: MIT) is a library for implementing [first-class states](http://statejs.org/docs/#concepts--states) on arbitrary owner objects.
+<%- @reference() %> is a library for implementing [first-class states](http://statejs.org/docs/#concepts--states) on arbitrary owner objects.
 
     npm install <%= @document.npm.name %>
 
@@ -72,6 +73,3 @@ Apart from the addition of the `object.state()` method, a call to `state()` must
     jr.waver();  // log <<< "I hate chocolate, I want AmeriCone Dream!"
 
 There are plenty of examples and information on the [documentation site](http://statejs.org). Check it out!
-
-[browsenpm]: http://browsenpm.org/package/state
-[github]: https://github.com/nickfargo/state

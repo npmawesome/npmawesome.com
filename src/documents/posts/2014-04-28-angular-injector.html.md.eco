@@ -7,6 +7,7 @@ tags: npm, angular, build
 npm:
   repo: &repo alexgorbatchev/angular-injector
   name: &name angular-injector
+  license: MIT
 
   author:
     name: Alex Gorbatchev
@@ -17,7 +18,7 @@ title: *name
 description: Solving minification problem with angular.js dependency injection.
 ---
 <img class="hide-on-mobile" src="<%- @image('/../authors/alexgorbatchev.jpg') %>" width="150" align="right" hspace="10"/>
-[angular-injector][browsenpm] (Github: [alexgorbatchev/angular-injector][github], License: MIT) module by <%- @author() %> (me) is meant to address minification problem with [angular.js](https://www.angularjs.org/) dependency injection that [ngmin](https://www.npmjs.org/package/ngmin) does not - work with any dependency injection syntax.
+<%- @reference() %> module by <%- @author() %> (me) is meant to address minification problem with [angular.js](https://www.angularjs.org/) dependency injection that [ngmin](https://www.npmjs.org/package/ngmin) does not - work with any dependency injection syntax.
 
 <%- @readMore() %>
 
@@ -52,20 +53,11 @@ This syntax works particularly well in CoffeeScript and is literally 2-3 extra c
 
 Of course, I wouldn't just write this module without supporting [gulp.js](http://gulpjs.com/) and [grunt.js](http://gruntjs.com/).
 
-* [gulp-angular-injector][browsenpm-gulp] (Github: [alexgorbatchev/gulp-angular-injector][github-gulp], License: MIT)
-* [grunt-angular-injector][browsenpm-grunt] (Github: [alexgorbatchev/grunt-angular-injector][github-grunt], License: MIT)
+* <%- @reference({ name: 'gulp-angular-injector', repo: 'alexgorbatchev/gulp-angular-injector', license: 'MIT' }) %>
+* <%- @reference({ name: 'grunt-angular-injector', repo: 'alexgorbatchev/grunt-angular-injector', license: 'MIT' }) %>
 
 ## Closing thoughts
 
 The biggest downside of this method is basically remembering to add the `ng()` wrapper. I found that after about half a day that becomes a habit and not an issue. Check out the plugins and let me know what you think!
 
 [ngmin]: https://www.npmjs.org/package/ngmin
-
-[browsenpm]: http://browsenpm.org/package/angular-injector
-[github]: https://github.com/alexgorbatchev/angular-injector
-
-[browsenpm-gulp]: http://browsenpm.org/package/gulp-angular-injector
-[github-gulp]: https://github.com/alexgorbatchev/gulp-angular-injector
-
-[browsenpm-grunt]: http://browsenpm.org/package/grunt-angular-injector
-[github-grunt]: https://github.com/alexgorbatchev/grunt-angular-injector

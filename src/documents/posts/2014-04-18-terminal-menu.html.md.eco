@@ -7,6 +7,7 @@ tags: npm, cli, menu
 npm:
   repo: &repo substack/terminal-menu
   name: &name terminal-menu
+  license: MIT
 
   author:
     name: James Halliday
@@ -19,7 +20,7 @@ description: Multiple choice user prompt for CLI tools using terminal-menu.
 Lets continue building out awesome CLI (command line interface) tool. Previously we have discussed how to [take in command line arguments][1], [output tabular data][2] and [display progress of long running tasks][3].
 
 <img class="hide-on-mobile" src="https://avatars2.githubusercontent.com/u/12631?s=400" style="float: right; margin-left: 1em; width: 100px;"/>
-Prompting a user with options and asking to pick one is a fairly common scenario. Most of the time you get to read the options and press associated key. That works, but we are human and like pretty interfaces. Same thing can be achieved with a common menu interface. This is where [terminal-menu][browsenpm] (Github: [substack/terminal-menu][github], License: MIT) by <%- @author() %> comes in.
+Prompting a user with options and asking to pick one is a fairly common scenario. Most of the time you get to read the options and press associated key. That works, but we are human and like pretty interfaces. Same thing can be achieved with a common menu interface. This is where <%- @reference() %> by <%- @author() %> comes in.
 
 <%- @readMore() %>
 
@@ -83,6 +84,3 @@ Over the last couple of CLI related posts we've progressively been improving use
 [2]: /npmawesome-table-formatting-in-the-terminal-with-cli-tables/
 [3]: /npmawesome-progress-reporting-in-cli-applications/
 [stream-adventure]: https://github.com/substack/stream-adventure
-
-[browsenpm]: http://browsenpm.org/package/terminal-menu
-[github]: https://github.com/substack/terminal-menu

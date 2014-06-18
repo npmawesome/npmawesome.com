@@ -8,6 +8,7 @@ tags: npm, text
 npm:
   repo: &repo thisandagain/sentiment
   name: &name sentiment
+  license: MIT
 
   author:
     name: Andrew Sliwinski
@@ -20,7 +21,7 @@ description: AFINN-based sentiment analysis for Node.js.
 Sentiment analysis is one of those things you don't get to do very often, as cool as it sounds. It's one of those things I always wanted to do but haven't had a reason to yet. The field of natural language is as deep and complex as you want it to be. [Stanford Sentiment Analysis](http://nlp.stanford.edu/sentiment/) is a pretty massive project and nets pretty decent results.
 
 <img class="hide-on-mobile" src="https://avatars1.githubusercontent.com/u/747641?s=400" width="150" align="right" hspace="10"/>
-[sentiment][browsenpm] (Github: [thisandagain/sentiment][github], License: MIT) module by <%- @author() %> takes a very simple approach to the problem of just counting token words and their preassigned weight. For the most part you can expect pretty average results and it gets completely lost with expressions like "I don't know half of you half as well as I should like, and I like less than half of you half as well as you deserve" (frankly I don't understand what it says either). But the cool thing is - it actually works and you don't need a giant database. <%- @browsenpm() %> can get you started down the path until you feel the need for something more involved.
+<%- @reference() %> module by <%- @author() %> takes a very simple approach to the problem of just counting token words and their preassigned weight. For the most part you can expect pretty average results and it gets completely lost with expressions like "I don't know half of you half as well as I should like, and I like less than half of you half as well as you deserve" (frankly I don't understand what it says either). But the cool thing is - it actually works and you don't need a giant database. <%- @browsenpm() %> can get you started down the path until you feel the need for something more involved.
 
 <%- @readMore() %>
 
@@ -97,6 +98,3 @@ Checkout out [functional example on runnable](http://runnable.com/U3FuXTY9W-JoY5
 I can totally imagine processing customer inquiries coming in via email, twitter and other channels with <%- @browsenpm() %>. Higher priority could be assigned to inquires with lower, more negative scores.
 
 If you want to play around with example, [clone the repo](https://github.com/npmawesome/example-sentiment).
-
-[browsenpm]: http://browsenpm.org/package/sentiment
-[github]: https://github.com/thisandagain/sentiment

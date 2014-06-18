@@ -8,7 +8,7 @@ description: Nerd links for the day, videos, GitHub projects, talks, articles an
 ## Articles & Slides
 
 * [ExpressJS 4.0: New Features and Upgrading from 3.0](http://scotch.io/bar-talk/expressjs-4-0-new-features-and-upgrading-from-3-0)
-* [express][browsenpm] (Github: [visionmedia/express][github], License: MIT)
+* [Express 3.x to 4.0 migration guide](https://github.com/visionmedia/express/wiki/Migrating-from-3.x-to-4.x)
 * [The maximum call stack size](http://www.2ality.com/2014/04/call-stack-size.html)
 * [Jeff Bezos Says Amazon Is Seriously Serious About Drone Deliveries](http://www.wired.com/2014/04/amazon-delivery-drones/)
   > On a per customer basis, Prime members are ordering more items, across more categories, than ever before

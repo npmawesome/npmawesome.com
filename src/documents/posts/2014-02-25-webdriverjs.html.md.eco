@@ -5,8 +5,10 @@ tags: npm, webdriver, selenium, testing
 
 npm:
   repo: &repo camme/webdriverjs
-  name: &name webdriver.js
+  name: &name webdriverjs
   install: webdriverjs
+  displayName: webdriver.js
+  license: MIT
 
   author:
     name: Camilo Tapia
@@ -17,7 +19,7 @@ title: *name
 description: webdriver.js is a webdriver module for node.js that makes it possible to write super easy selenium tests in your favorite BDD or TDD test framework.
 ---
 <img class="hide-on-mobile" src="https://2.gravatar.com/avatar/2c405e9d55507036d6cc2aff250c3146" style="float: right; margin-left: 1em"/>
-[webdriver.js][browsenpm] (Github: [camme/webdriver.js][github], License: MIT) is a module by <%- @author() %> that makes it possible to write super easy selenium tests in your favorite BDD or TDD test framework. <%- @browsenpm() %> is not the "official webdriverjs driver" says [Christian Bromann](https://github.com/christian-bromann) in [this thread](https://github.com/camme/webdriverjs/issues/138#issuecomment-32051980):
+<%- @reference() %> is a module by <%- @author() %> that makes it possible to write super easy selenium tests in your favorite BDD or TDD test framework. <%- @browsenpm() %> is not the "official webdriverjs driver" says [Christian Bromann](https://github.com/christian-bromann) in [this thread](https://github.com/camme/webdriverjs/issues/138#issuecomment-32051980):
 
 > We're trying to provide a selenium runner which is easy to use, highly extendable and compatible with all common JavaScript test frameworks. It uses an own chain API to execute all async commands in right order. The specialty of this library is that we wrap all JSONWire protocol commands in useful actions commands. So you don't have to care about to get an element first and then call the click command; you just execute the click with a selector as parameter.
 
@@ -94,6 +96,3 @@ Here is a simplified example of differences between the drivers:
 
 [selenium-webdriverjs]: https://code.google.com/p/selenium/wiki/WebDriverJs
 [WD.js]: https://github.com/admc/wd
-
-[browsenpm]: http://browsenpm.org/package/webdriver.js
-[github]: https://github.com/camme/webdriver.js

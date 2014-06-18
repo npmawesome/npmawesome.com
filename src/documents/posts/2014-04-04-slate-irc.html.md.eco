@@ -6,6 +6,7 @@ tags: npm, webdriver, selenium, testing
 npm:
   repo: &repo slate/slate-irc
   name: &name slate-irc
+  license: MIT
 
   author:
     name: TJ Holowaychuk
@@ -16,7 +17,7 @@ title: *name
 description: General purpose IRC client with simple plugin system.
 ---
 <img class="hide-on-mobile" src="https://avatars2.githubusercontent.com/u/25254" width="150" align="right" hspace="10"/>
-[slate-irc][browsenpm] (Github: [slate/slate-irc][github], License: MIT) is a module by <%- @author() %> that part of the recently released open source IRC client called [Slate] and is a general purpose IRC client with simple plugin system.
+<%- @reference() %> is a module by <%- @author() %> that part of the recently released open source IRC client called [Slate] and is a general purpose IRC client with simple plugin system.
 
 <%- @readMore() %>
 
@@ -76,9 +77,6 @@ Here's a slightly more complex example of a PONG plugin responding to PING messa
 
 ## Closing Thoughts
 
-<%- @browsenpm() %> can serve as a core of a regular IRC client or you can write an IRC bot for your team chat. Checkout the [github page][github] for full documentation.
+<%- @browsenpm() %> can serve as a core of a regular IRC client or you can write an IRC bot for your team chat. Checkout the <%- @github({ displayName: 'github page', repo: @document.npm.repo }) %> for full documentation.
 
 [Slate]: https://github.com/slate/slate
-
-[browsenpm]: http://browsenpm.org/package/slate-irc
-[github]: https://github.com/slate/slate-irc

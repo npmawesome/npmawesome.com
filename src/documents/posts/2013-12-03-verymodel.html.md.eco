@@ -3,13 +3,15 @@ date: 2013-12-03T09:57:46.852413-08:00
 tags: npm, javascript, models, validation, orm
 npm:
   repo: &repo fritzy/VeryModel
-  name: &name VeryModel
+  name: &name verymodel
+  displayName: VeryModel
+  license: MIT
 
 layout: post
 slug: *name
 title: *name
 ---
-[VeryModel][browsenpm] (Github: [fritzy/VeryModel][github], License: MIT) is a system for validation, creation, and editing of models. VeryModel is not tied to a framework, and it implements a full purpose Model system.
+<%- @reference() %> is a system for validation, creation, and editing of models. VeryModel is not tied to a framework, and it implements a full purpose Model system.
 
     npm install <%= @document.npm.name %>
 
@@ -37,7 +39,5 @@ Model defintions are recursive Javascript object. At each layer, you can have th
 * `primary` (boolean): Set this on one of your fiels for easy saving and loading.
 * `private` (boolean): `toObject()` will not include this field in expect unless the argumnet usePrivate is true
 
-There are plenty of examples and information on the [github page][github]. Check it out!
-
-[browsenpm]: http://browsenpm.org/package/VeryModel
-[github]: https://github.com/fritzy/VeryModel
+There are plenty of examples and information on the
+<%- @github({ displayName: 'github page', repo: @document.npm.repo }) %>. Check it out!

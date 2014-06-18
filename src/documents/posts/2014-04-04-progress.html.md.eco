@@ -7,6 +7,7 @@ tags: npm, cli, progress
 npm:
   repo: &repo visionmedia/node-progress
   name: &name progress
+  license: MIT
 
   author:
     name: TJ Holowaychuk
@@ -52,8 +53,7 @@ It's not really clear if it's still happening. Is it time for `ctrl+c` yet? How 
 <div style="padding: 13px 10px 10px; background: black; text-align: center; border-radius: 3px"><img src="<%- @image '/progress/progress02.gif' %>"/></div>
 
 <img class="hide-on-mobile" src="https://avatars2.githubusercontent.com/u/25254" width="150" align="right" hspace="10"/>
-A little better. But still, there's no way of telling how long the process will actually take. Lets just do a real progress bar, shall we? This is where [progress][browsenpm]
-(Github: [visionmedia/node-progress][github], License: MIT) module that was originally started by <%- @author() %> comes into play! Due to the awesomeness of open source, <%- @browsenpm() %> is now pretty much a community effort.
+A little better. But still, there's no way of telling how long the process will actually take. Lets just do a real progress bar, shall we? This is where <%- @reference() %> module that was originally started by <%- @author() %> comes into play! Due to the awesomeness of open source, <%- @browsenpm() %> is now pretty much a community effort.
 
     <%- @install() %>
 
@@ -117,6 +117,3 @@ Here are a few other modules to check out:
 ## Closing thoughts
 
 It's really cool to see a CLI application giving meaningful progress feedback. Please don't forget about user experience when building tools.
-
-[browsenpm]: http://browsenpm.org/package/node-progress
-[github]: https://github.com/visionmedia/node-progress
