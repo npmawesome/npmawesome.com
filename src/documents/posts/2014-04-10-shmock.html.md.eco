@@ -7,6 +7,7 @@ tags: npm, testing, api
 npm:
   repo: &repo xetorthio/shmock
   name: &name shmock
+  license: MIT
 
   author:
     name: Jonathan Leibiusky
@@ -17,7 +18,7 @@ title: *name
 description: General purpose IRC client with simple plugin system.
 ---
 <img class="hide-on-mobile" src="https://avatars0.githubusercontent.com/u/139687?s=400" width="150" align="right" hspace="10"/>
-[shmock][browsenpm] (Github: [xetorthio/shmock][github], License: MIT) is a module by <%- @author() %> provides a super nice API, like the one of [superagent](https://github.com/visionmedia/superagent) but it creates a real http server (using [express](https://github.com/visionmedia/express)). The nice thing about this is that you don't really care about the implementation, which http client is being used, or even if nodes native http api changes.
+<%- @reference() %> is a module by <%- @author() %> provides a super nice API, like the one of [superagent](https://github.com/visionmedia/superagent) but it creates a real http server (using [express](https://github.com/visionmedia/express)). The nice thing about this is that you don't really care about the implementation, which http client is being used, or even if nodes native http api changes.
 
 <%- @readMore() %>
 
@@ -51,7 +52,4 @@ Checkout [runnable example](http://runnable.com/U0bPQd2Mi8VtE_Vi/shmock-example-
 
 ## Closing Thoughts
 
-Being able to mock APIs is a very powerful tool for [BDD](http://en.wikipedia.org/wiki/Behavior-driven_development). You can prototype, design and test your consumer before implementing a line of code. Check out <%- @npm() %> github page for full documentation and test for examples of usage.
-
-[browsenpm]: http://browsenpm.org/package/shmock
-[github]: https://github.com/xetorthio/shmock
+Being able to mock APIs is a very powerful tool for [BDD](http://en.wikipedia.org/wiki/Behavior-driven_development). You can prototype, design and test your consumer before implementing a line of code. Check out <%- @github() %> github page for full documentation and test for examples of usage.
