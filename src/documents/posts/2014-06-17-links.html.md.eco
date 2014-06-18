@@ -1,0 +1,40 @@
+---
+date: 2014-06-17T10:36:34-0700
+title: Links for June 17, 2014
+layout: post-links
+tags: javascript, links
+description: Nerd links for the day, videos, GitHub projects, talks, articles and other stuff.
+---
+<img src="<%- @image '/npmawesome-logo-512x512.png' %>" class="hide-on-mobile" width="150" align="right"/>
+
+## Articles
+
+* [This article describes JavaScript for Automation, a new feature in OS X 10.10](https://developer.apple.com/library/prerelease/mac/releasenotes/InterapplicationCommunication/RN-JavaScriptForAutomation/index.html#//apple_ref/doc/uid/TP40014508)
+* [It’s here: Docker 1.0](http://blog.docker.com/2014/06/its-here-docker-1-0/)
+  > First, while many organizations have cheerfully ignored our “Do not run in production!” warnings, others have been waiting for a level of product maturity before deploying production workloads.  This release’s “1.0” label signifies a level of quality, feature completeness, backward compatibility and API stability to meet enterprise IT standards.
+* [How To Make the Leaderboard Example App in Meteor](http://meteortips.com/leaderboard-example-tutorial/)
+  > In the coming weeks and months, I’ll be publishing tutorials on how to build all four of these applications from scratch. I’ll be simplifying the code in some places, making it more friendly to beginners, but they’ll be practically identical in terms of features.
+* [Playing DVD in JavaScript](http://gmarty.github.io/jsconf-2014-talk-play-dvd-in-js)
+* [Identifying the current script element](http://www.2ality.com/2014/05/current-script.html)
+* [Finding the unjustly homeless, and teaching them to code](https://medium.com/architecting-a-life/fee8f3ee97a0)
+  > The idea is simple. Without disrespecting him, I will offer two options:
+  >
+  > 1. I will come back tomorrow and give you $100 in cash.
+  > 2. I will come back tomorrow and give you three JavaScript books, (beginner-advanced-expert) and a super cheap basic laptop. I will then come an hour early from work each day—when he feels prepared—and teach him to code.
+* [Real-Time Chat With Node.js' Readline & Socket.io](http://code.tutsplus.com/tutorials/real-time-chat-with-nodejs-readline-socketio--cms-20953)
+  > Node.js has an under-appreciated module in its standard library that is surprisingly useful. The Readline module does what it says on the box: it reads a line of input from the terminal.
+
+<%- @readMore() %>
+
+## Github
+
+* [CoffeeConsole](https://github.com/snookca/CoffeeConsole) is a Chrome Extension for running CoffeeScript from the Web Inspector.
+
+## Twitter
+
+<blockquote class="twitter-tweet" data-partner="tweetdeck"><p>Introducing the new <a href="http://t.co/JK8ZTaMria">http://t.co/JK8ZTaMria</a> &lt;3 <a href="http://t.co/tPJOHsGYgj">pic.twitter.com/tPJOHsGYgj</a></p>&mdash; Yeoman (@yeoman) <a href="https://twitter.com/yeoman/statuses/477493274509602816">June 13, 2014</a></blockquote>
+
+## Misc
+
+* [A Retired Boeing 727 Converted Into a Home in the Woods](http://www.thisiscolossal.com/2014/06/a-retired-boeing-727-converted-into-a-home-in-the-woods/)
+  > ![](http://www.thisiscolossal.com/wp-content/uploads/2014/06/retired-boeing-727-recycled-home-bruce-campbell-1.jpg)
