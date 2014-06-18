@@ -47,7 +47,7 @@ docpadConfig =
     githubUrl: (slug) ->
       "https://github.com/#{slug}"
 
-    npm: ({npm} = @document) ->
+    github: ({npm} = @document) ->
       """<a href="#{@githubUrl npm.repo}">#{npm.displayName or npm.name}</a>""" if npm?
 
     browsenpm: ({npm} = @document) ->

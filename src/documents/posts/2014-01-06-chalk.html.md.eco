@@ -5,13 +5,12 @@ tags: npm, terminal, colors, console, stdout
 npm:
   repo: &repo sindresorhus/chalk
   name: &name chalk
+  license: MIT
 slug: *name
 title: *name
 description: Chalk is a clean and focused alternative to colors.js
 ---
-[chalk][browsenpm] (Github: [sindresorhus/chalk][github], License: MIT) is
-a clean and focused alternative to [colors][browsenpm-colors] (Github:
-[Marak/colors][github-colors], License: MIT), which is currently the most popular
+<%- @reference() %> is a clean and focused alternative to <%- @reference({ name: 'colors', repo: 'Marak/colors' license: 'MIT' }) %>, which is currently the most popular
 string styling module, but it has serious deficiencies like extending
 String.prototype which causes all kinds of [problems](https://github.com/yeoman/yo/issues/68). Although there are other ones, they either do too much or not enough.
 
@@ -47,10 +46,4 @@ String.prototype which causes all kinds of [problems](https://github.com/yeoman/
     // pass in multiple arguments
     console.log(  chalk.blue('Hello', 'World!', 'Foo', 'bar', 'biz', 'baz')  );
 
-<%- @npm() %> was written by [Sindre Sorhus](https://github.com/sindresorhus) [@sindresorhus](https://twitter.com/sindresorhus) who's got a ton of other opensource work. Thank you!
-
-[browsenpm]: http://browsenpm.org/package/chalk
-[github]: https://github.com/sindresorhus/chalk
-
-[browsenpm-colors]: http://browsenpm.org/package/colors
-[github-colors]: https://github.com/Marak/colors
+<%- @github() %> was written by [Sindre Sorhus](https://github.com/sindresorhus) [@sindresorhus](https://twitter.com/sindresorhus) who's got a ton of other opensource work. Thank you!
