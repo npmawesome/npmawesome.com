@@ -17,7 +17,7 @@ Now that we have everything sorted out, lets get cracking and make a task runner
 
 ## [gulp-util]
 
-Source: [gulp-util][gulp-util-browsenpm] (Github: [gulpjs/gulp-util][gulp-util], License: MIT)
+Source: <%- @reference({ name: 'gulp-util', repo: 'gulpjs/gulp-util', license: 'MIT' }) %>
 
 This is the official tool belt for [gulp.js]. The authors decided to split up helpers into a separate module which you basically end up requiring every time. This module brings in functionality for logging, coloring console output, and so on. Check out the [gulp-util] github page for the full list.
 
@@ -25,7 +25,7 @@ Since this is a utility module, there isn't a specific place to get started with
 
 ## [gulp-clean]
 
-Source: [gulp-clean][gulp-clean-browsenpm] (Github: [peter-vilja/gulp-clean][gulp-clean], License: MIT)
+Source: <%- @reference({ name: 'gulp-clean', repo: 'peter-vilja/gulp-clean', license: 'MIT' }) %>
 
 The first thing any self-respecting build system should do is clean the space and remove everything that's in the way.
 
@@ -41,7 +41,7 @@ You can now run `gulp clean` and the `build` folder in the root of your project 
 
 ## [gulp-concat]
 
-Source: [gulp-concat][gulp-concat-browsenpm] (Github: [wearefractal/gulp-concat][gulp-concat], License: MIT)
+Source: <%- @reference({ name: 'gulp-concat', repo: 'wearefractal/gulp-concat', license: 'MIT' }) %>
 
 It's probably safe to assume that your HTML5 project has a few external dependencies like [jQuery](http://jquery.com), maybe [Modernizr](http://modernizr.com/) and such. Instead of having a separate `<script>` tag for each one of them, it would be nice to concat them together into one file. That's where [gulp-concat] comes in:
 
@@ -57,7 +57,7 @@ Now, running `gulp vendor` will take all `*.js` files from the local `vendor` fo
 
 ## [gulp-uglify]
 
-Source: [gulp-uglify][gulp-uglify-browsenpm] (Github: [terinjokes/gulp-uglify][gulp-uglify], License: MIT)
+Source: <%- @reference({ name: 'gulp-uglify', repo: 'terinjokes/gulp-uglify', license: 'MIT' }) %>
 
 The next thing to do is to minify our `vendor.js`. Lets add this to our `vendor` task.
 
@@ -86,7 +86,7 @@ This is also where things might start going wrong, because [gulp-uglify] will th
 
 ## [gulp-rename]
 
-Source: [gulp-rename][gulp-rename-browsenpm] (Github: [hparra/gulp-rename][gulp-rename], License: MIT)
+Source: <%- @reference({ name: 'gulp-rename', repo: 'hparra/gulp-rename', license: 'MIT' }) %>
 
 Do you want to keep both, minified and source files around? That's not a problem! Lets extend our `vendor` task to write out `vendor.js` and `vendor.min.js` at the same time.
 
@@ -106,7 +106,7 @@ Notice that `gulp.dest` is used twice here. This is the cool thing about [gulp.j
 
 ## [gulp-filesize]
 
-Source: [gulp-filesize][gulp-filesize-browsenpm] (Github: [Metrime/gulp-filesize][gulp-filesize], License: MIT)
+Source: <%- @reference({ name: 'gulp-filesize', repo: 'Metrime/gulp-filesize', license: 'MIT' }) %>
 
 Don't know about you, but after minifying JavaScript I always want to know the file size. Guess what - I'm not the only one and there's a plugin for that.
 
@@ -128,7 +128,7 @@ Again, see how `filesize` is used twice? It will first print out the size of our
 
 ## [gulp-less]
 
-Source: [gulp-less][gulp-less-browsenpm] (Github: [plus3network/gulp-less][gulp-less], License: MIT)
+Source: <%- @reference({ name: 'gulp-less', repo: 'plus3network/gulp-less', license: 'MIT' }) %>
 
 Lets assume you used the amazing [LESS] preprocessor for your generating your CSS files and now want to generate them. [gulp-less] to the rescue!
 
@@ -148,7 +148,7 @@ Running `gulp css` will compile all [LESS] files from the `less` folder into `bu
 
 ## [gulp-changed]
 
-Source: [gulp-changed][gulp-changed-browsenpm] (Github: [sindresorhus/gulp-changed][gulp-changed], License: MIT)
+Source: <%- @reference({ name: 'gulp-changed', repo: 'sindresorhus/gulp-changed', license: 'MIT' }) %>
 
 I would be forever unhappy if every time I ran `gulp css` all of my files would be regenerated regardless if the source [LESS] files have changed or not. Lets use [gulp-changed] to excluded not modified files.
 
@@ -166,7 +166,7 @@ I would be forever unhappy if every time I ran `gulp css` all of my files would 
 
 ## [gulp-watch]
 
-Source: [gulp-watch][gulp-watch-browsenpm] (Github: [floatdrop/gulp-watch][gulp-watch], License: MIT)
+Source: <%- @reference({ name: 'gulp-watch', repo: 'floatdrop/gulp-watch', license: 'MIT' }) %>
 
 It would be really cool if you didn't have to run `gulp css` every time you make a change, right? Lets set up a task that will monitor our files for changes and and compile them right away.
 
@@ -256,21 +256,11 @@ The thing that I personally really like about [gulp.js] is that it feels to me l
 [LESS]: http://lesscss.org/
 [gulp.js]: http://gulpjs.com
 [gulp-util]: https://github.com/gulpjs/gulp-util
-[gulp-util-browsenpm]: http://browsenpm.org/package/gulp-util
 [gulp-clean]: https://github.com/peter-vilja/gulp-clean
-[gulp-clean-browsenpm]: http://browsenpm.org/package/gulp-clean
 [gulp-concat]: https://github.com/wearefractal/gulp-concat
-[gulp-concat-browsenpm]: http://browsenpm.org/package/gulp-concat
 [gulp-uglify]: https://github.com/terinjokes/gulp-uglify
-[gulp-uglify-browsenpm]: http://browsenpm.org/package/gulp-uglify
 [gulp-rename]: https://github.com/hparra/gulp-rename
-[gulp-rename-browsenpm]: http://browsenpm.org/package/gulp-rename
 [gulp-filesize]: https://github.com/Metrime/gulp-filesize
-[gulp-filesize-browsenpm]: http://browsenpm.org/package/gulp-filesize
 [gulp-less]: https://github.com/plus3network/gulp-less
-[gulp-less-browsenpm]: http://browsenpm.org/package/gulp-less
 [gulp-changed]: https://github.com/sindresorhus/gulp-changed
-[gulp-changed-browsenpm]: http://browsenpm.org/package/gulp-changed
 [gulp-watch]: https://github.com/floatdrop/gulp-watch
-[gulp-watch-browsenpm]: http://browsenpm.org/package/gulp-watch
-
