@@ -6,6 +6,7 @@ tags: npm, express, domains, context
 npm:
   repo: &repo andreypopp/domain-context
   name: &name domain-context
+  license: MIT
 
   author:
     name: Andrey Popp
@@ -17,7 +18,7 @@ description: domain-context is a module for dealing with globally accessible dom
 ---
 <img class="hide-on-mobile" src="<%- @image '/domain-context.jpg" style="width: 100%' %>"/>
 
-[domain-context][browsenpm] (Github: [andreypopp/domain-context][github], License: MIT) is a module by <%- @author() %> for dealing with globally accessible domain-bound contexts, connect/express middleware included.
+<%- @reference() %> is a module by <%- @author() %> for dealing with globally accessible domain-bound contexts, connect/express middleware included.
 
     <%- @install() %>
 
@@ -62,6 +63,3 @@ description: domain-context is a module for dealing with globally accessible dom
     }
 
 I feel that this is pretty self-explanatory here. Being able to get request context outside of the `express` handlers and not having to pass so much context around to API is pretty great.
-
-[browsenpm]: http://browsenpm.org/package/domain-context
-[github]: https://github.com/andreypopp/domain-context

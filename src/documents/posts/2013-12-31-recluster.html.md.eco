@@ -5,11 +5,12 @@ tags: npm, deployment
 npm:
   repo: &repo doxout/recluster
   name: &name recluster
+  license: MIT
 slug: *name
 title: *name
 description: Clustering library with support for zero-downtime reloading.
 ---
-[recluster][browsenpm] (Github: [doxout/recluster][github], License: MIT) is a
+<%- @reference() %> is a
 clustering library with support for zero-downtime reloading.
 
     npm install <%= @document.npm.name %>
@@ -69,9 +70,6 @@ Non-server workers can listen for the disconnect command and shut down gracefull
 For some fantastic insights on the subject, checkout [Towards 100% Uptime with Node.js](http://sandinmyjoints.github.io/towards-100-pct-uptime) slides by [William Bert](https://github.com/sandinmyjoints) [@williamjohnbert](https://twitter.com/williamjohnbert) and [10 steps to nodejs nirvana in production](http://qzaidi.github.io/2013/05/14/node-in-production/) by [Qasim Zaidi](http://github.com/qzaidi) [@kernelhacker](http://twitter.com/#!/kernelhacker).
 
 Curious, how do you manage your node process?
-
-[browsenpm]: http://browsenpm.org/package/recluster
-[github]: https://github.com/doxout/recluster
 
 [browsenpm-forever]: http://browsenpm.org/package/forever
 [browsenpm-naught]: http://browsenpm.org/package/naught

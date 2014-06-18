@@ -34,7 +34,7 @@ description: Nerd links for the day, videos, GitHub projects, talks, articles an
 ## GitHub
 
 * [Kiwi IRC](https://kiwiirc.com) makes Web IRC easy. A hand-crafted IRC client that you canenjoy. Designed to be used easily and freely.
-* [famous][browsenpm] (Github: [famous/famous][github], License: MIT) provides a powerful JavaScript framework and developer tools designed to build rich, fast web applications. Famo.us takes an opinionated approach to developing with web technology, maintaining tight control of rendering to achieve maximum UI performance. Check out the [demos](http://demo.famo.us/).
+* [Famo.us](https://github.com/famous/famous) provides a powerful JavaScript framework and developer tools designed to build rich, fast web applications. Famo.us takes an opinionated approach to developing with web technology, maintaining tight control of rendering to achieve maximum UI performance. Check out the [demos](http://demo.famo.us/).
 
 <%- @readMore() %>
 

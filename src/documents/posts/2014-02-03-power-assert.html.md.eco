@@ -6,6 +6,7 @@ tags: npm, testing, coffeescript, assert
 npm:
   repo: &repo twada/power-assert
   name: &name power-assert
+  license: MIT
 
   author:
     name: Takuto Wada
@@ -15,7 +16,7 @@ slug: *name
 title: *name
 description: power-asserts is a module that provides pretty damn descriptive assert messages for your tests.
 ---
-[power-assert][browsenpm] (Github: [twada/power-assert][github], License: MIT) is a
+<%- @reference() %> is a
 module written by <%- @author() %> that provides pretty damn descriptive assert
 messages for your tests.
 
@@ -94,6 +95,3 @@ into:
 I'm very tempted to give this a try over my goto [chai.js](http://chaijs.com/) library. I'm a little bit worried that it changes number of lines and it might be harder to do certain type of debugging, but the benefit might be worth it!
 
 There's a full documentation on the <%- @browsenpm() %> github page and a [demo project](https://github.com/twada/power-assert-demo). What do you think?
-
-[browsenpm]: http://browsenpm.org/package/power-assert
-[github]: https://github.com/twada/power-assert

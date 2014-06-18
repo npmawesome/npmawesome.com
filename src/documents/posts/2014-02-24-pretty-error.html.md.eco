@@ -6,6 +6,7 @@ tags: npm, errors
 npm:
   repo: &repo AriaMinaei/pretty-error
   name: &name pretty-error
+  license: MIT
 
   author:
     name: Aria Minaei
@@ -16,7 +17,7 @@ title: *name
 description: pretty-errors is a module to render node.js error stack with less clutter.
 ---
 <img class="hide-on-mobile" src="https://0.gravatar.com/avatar/8db4bf4bbef66bb91a4f2a0ba3b26e68" style="float: right; margin-left: 1em"/>
-[pretty-error][browsenpm] (Github: [AriaMinaei/pretty-error][github], License: MIT) is a module by <%- @author() %> to render node.js error stack in a much more digestable way. This seems like it might a good module to add to your infrastracture if you, like me, constantly having to weed through the ugly stack messages to find relavant lines.
+<%- @reference() %> is a module by <%- @author() %> to render node.js error stack in a much more digestable way. This seems like it might a good module to add to your infrastracture if you, like me, constantly having to weed through the ugly stack messages to find relavant lines.
 
 <%- @readMore() %>
 
@@ -75,6 +76,3 @@ You might want to skip trace lines that belong to specific packages (chai, when,
     pe.unskipAllPaths();
 
 [RenderKid]: https://github.com/AriaMinaei/renderkid
-
-[browsenpm]: http://browsenpm.org/package/pretty-error
-[github]: https://github.com/AriaMinaei/pretty-error

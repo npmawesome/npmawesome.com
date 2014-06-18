@@ -5,11 +5,12 @@ tags: npm, random, javascript
 npm:
   repo: &repo dylang/shortid
   name: &name shortId
+  license: MIT
 slug: *name
 title: *name
 description: ShortId creates amazingly short non-sequential url-friendly unique ids.
 ---
-[shortId][browsenpm] (Github: [dylang/shortId][github], License: MIT) creates amazingly short non-sequential url-friendly unique IDs. Perfect for url shorteners, MongoDB and Redis as well as any other ID users might see.
+<%- @reference() %> creates amazingly short non-sequential url-friendly unique IDs. Perfect for url shorteners, MongoDB and Redis as well as any other ID users might see.
 
     npm install <%= @document.npm.name %>
 
@@ -87,6 +88,3 @@ Here's a JavaScript implementation:
 <iframe width="100%" height="300" src="http://jsfiddle.net/alexgorbatchev/g6aRe/1/embedded/" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
 
 Should the function in <%- @browsenpm() %> be patched? Thoughts?
-
-[browsenpm]: http://browsenpm.org/package/shortid
-[github]: https://github.com/dylang/shortid

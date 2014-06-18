@@ -4,12 +4,13 @@ tags: npm, javascript, imagemagick
 npm:
   repo: &repo aheckmann/gm
   name: &name gm
+  license: MIT
 
 layout: post
 slug: *name
 title: *name
 ---
-[gm][browsenpm] (Github: [aheckmann/gm][github], License: MIT) is [ImageMagick](http://www.imagemagick.org) for node, what else is there to say?
+<%- @reference() %> is [ImageMagick](http://www.imagemagick.org) for node, what else is there to say?
 
     npm install <%= @document.npm.name %>
 
@@ -39,7 +40,5 @@ The [demo](http://aheckmann.github.io/gm/) page has an interactive playground th
         if (!err) console.log('done');
       });
 
-There are plenty of examples and information on the [github page][github]. Check it out!
-
-[browsenpm]: http://browsenpm.org/package/gm
-[github]: https://github.com/aheckmann/gm
+There are plenty of examples and information on the
+<%- @github({ displayName: 'github page', repo: @document.npm.repo }) %>. Check it out!

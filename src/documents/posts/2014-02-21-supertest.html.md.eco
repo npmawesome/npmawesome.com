@@ -6,6 +6,7 @@ tags: npm, api, testing
 npm:
   repo: &repo visionmedia/supertest
   name: &name supertest
+  license: MIT
 
   author:
     name: TJ Holowaychuk
@@ -16,7 +17,7 @@ title: *name
 description: supertest is a module for easy HTTP assertions.
 ---
 <img class="hide-on-mobile" src="https://2.gravatar.com/avatar/f1e3ab214a976a39cfd713bc93deb10f" style="float: right; margin-left: 1em"/>
-[supertest][browsenpm] (Github: [visionmedia/supertest][github], License: MIT) is a module by <%- @author() %> that takes testing HTTP easier via [superagent]. The motivation with this module is to provide a high-level abstraction for testing HTTP, while still allowing you to drop down to the lower-level API provided by superagent.
+<%- @reference() %> is a module by <%- @author() %> that takes testing HTTP easier via [superagent]. The motivation with this module is to provide a high-level abstraction for testing HTTP, while still allowing you to drop down to the lower-level API provided by superagent.
 
 <%- @readMore() %>
 
@@ -67,6 +68,3 @@ Passing the app or url each time is not necessary, if you're testing the same ho
 Anything you can do with [superagent], you can do with <%- @browsenpm() %>. For some strange reason I love testing HTTP end points, this is my goto library for this. Thanks TJ!
 
 [superagent]: http://github.com/visionmedia/superagent
-
-[browsenpm]: http://browsenpm.org/package/supertest
-[github]: https://github.com/visionmedia/supertest
