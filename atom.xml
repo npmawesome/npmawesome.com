@@ -5,7 +5,7 @@
 	<link href="http://npmawesome.com/atom.xml" rel="self" />
 	<link href="http://npmawesome.com" />
 	<id>http://npmawesome.com</id>
-	<updated>2014-06-17T17:38:56.880Z</updated>
+	<updated>2014-06-19T16:40:15.404Z</updated>
 	<author>
 		<name>Alex Gorbatchev</name>
 	</author>
@@ -80,7 +80,7 @@
 &lt;div class=&quot;read-more&quot;&gt;&lt;/div&gt;
 
 &lt;p&gt;&lt;img src=&quot;http://npmawesome.com/images/posts/anatoliy_chakkaev.jpg&quot; width=&quot;100&quot; align=&quot;right&quot;/&gt;
-&lt;a href=&quot;https://github.com/1602/jugglingdb&quot;&gt;JugglingDB&lt;/a&gt; by &lt;a href=&quot;https://github.com/1602&quot;&gt;Anatoliy Chakkaev&lt;/a&gt; is a young &lt;a href=&quot;http://en.wikipedia.org/wiki/Object-relational_mapping&quot;&gt;ORM&lt;/a&gt; library that tries to provide a single API for a vast array of databases. All adapters come in a form of separate modules and there are quite a few already available:&lt;/p&gt;
+&lt;a href=&quot;http://browsenpm.org/package/jugglingdb&quot;&gt;JugglingDB&lt;/a&gt; (Github: &lt;a href=&quot;https://github.com/1602/jugglingdb&quot;&gt;1602/jugglingdb&lt;/a&gt;, License: MIT) by &lt;a href=&quot;https://github.com/1602&quot;&gt;Anatoliy Chakkaev&lt;/a&gt; is a young &lt;a href=&quot;http://en.wikipedia.org/wiki/Object-relational_mapping&quot;&gt;ORM&lt;/a&gt; library that tries to provide a single API for a vast array of databases. All adapters come in a form of separate modules and there are quite a few already available:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;ArangoDB&lt;/li&gt;
 &lt;li&gt;CouchDB&lt;/li&gt;
@@ -127,7 +127,7 @@ user.save(function (err) {
 &lt;pre&gt;&lt;code&gt;var schema = new Schema(&amp;#39;mongodb&amp;#39;, {url: &amp;#39;mongodb://localhost/myapp&amp;#39;});
 &lt;/code&gt;&lt;/pre&gt;&lt;p&gt;What&amp;#39;s even cooler, is that you can have multiple schemas connecting to multiple databases at the same time. This could be very handy if for example you want to keep some cached data in Redis, which storing your loosly defined documents in MongoDB and your accounting stuff in MySQL. You could do all that with a single API.&lt;/p&gt;
 &lt;h2 id=&quot;closing-thoughts&quot;&gt;Closing thoughts&lt;/h2&gt;
-&lt;p&gt;&lt;a href=&quot;https://github.com/1602/jugglingdb&quot;&gt;JugglingDB&lt;/a&gt; is not as well known as &lt;a href=&quot;http://mongoosejs.com/&quot;&gt;Mongoose&lt;/a&gt;, but it&amp;#39;s been in development since 2011 and has a pretty strong following on GitHub. &lt;a href=&quot;http://jugglingdb.co/&quot;&gt;Documentation&lt;/a&gt; is pretty extensive and &lt;a href=&quot;http://jugglingdb.co/roadmap.3.html&quot;&gt;roadmap&lt;/a&gt; gives you a glimpse of where the project is headed and what is currently considered missing. Finally, check out &lt;a href=&quot;https://github.com/npmawesome/example-jugglingdb&quot;&gt;source code&lt;/a&gt; for this article on GitHub and an &lt;a href=&quot;http://runnable.com/U5SP5uAfzMh7SfoX&quot;&gt;interactive example&lt;/a&gt; on Runnable. I&amp;#39;ve included MongoDB, Redis and Memory examples.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://github.com/1602/jugglingdb&quot;&gt;1602/jugglingdb&lt;/a&gt; is not as well known as &lt;a href=&quot;http://mongoosejs.com/&quot;&gt;Mongoose&lt;/a&gt;, but it&amp;#39;s been in development since 2011 and has a pretty strong following on GitHub. &lt;a href=&quot;http://jugglingdb.co/&quot;&gt;Documentation&lt;/a&gt; is pretty extensive and &lt;a href=&quot;http://jugglingdb.co/roadmap.3.html&quot;&gt;roadmap&lt;/a&gt; gives you a glimpse of where the project is headed and what is currently considered missing. Finally, check out &lt;a href=&quot;https://github.com/npmawesome/example-jugglingdb&quot;&gt;source code&lt;/a&gt; for this article on GitHub and an &lt;a href=&quot;http://runnable.com/U5SP5uAfzMh7SfoX&quot;&gt;interactive example&lt;/a&gt; on Runnable. I&amp;#39;ve included MongoDB, Redis and Memory examples.&lt;/p&gt;
 </content>
 		</entry>
 	
@@ -194,7 +194,7 @@ user.save(function (err) {
 &lt;p&gt;… we decided to try to understand pages by executing JavaScript. It’s hard to do that at the scale of the current web, but we decided that it’s worth it. We have been gradually improving how we do this for some time. In the past few months, our indexing system has been rendering a substantial number of web pages more like an average user’s browser with JavaScript turned on.&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://github.com/substack/browserify-handbook&quot;&gt;Browserify Handbook&lt;/a&gt; is a great resource for beginners and pros on organizing node apps and modules. Very good read.&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://browsenpm.org/package/browserify-handbook&quot;&gt;browserify-handbook&lt;/a&gt; (Github: &lt;a href=&quot;https://github.com/substack/browserify-handbook&quot;&gt;substack/browserify-handbook&lt;/a&gt;, License: cc-by-3.0) is a great resource for beginners and pros on organizing node apps and modules. Very good read.&lt;/li&gt;
 &lt;li&gt;&lt;a href=&quot;http://davidwalsh.name/device-state-detection-css-media-queries-javascript&quot;&gt;Device State Detection with CSS Media Queries and JavaScript&lt;/a&gt;&lt;blockquote&gt;
 &lt;p&gt;Being able to detect device state at any given moment is important for any number of reasons and so it&amp;#39;s important that web app CSS and JavaScript are in sync with each other.&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -235,18 +235,18 @@ user.save(function (err) {
     
     
 		<entry>
-			<title>Joi</title>
+			<title>joi</title>
 			<link href="http://npmawesome.com/posts/2014-05-23-joi"/>
 			<updated>2014-05-23T19:41:03.000Z</updated>
 			<id>http://npmawesome.com/posts/2014-05-23-joi</id>
 			<content type="html">&lt;p&gt;&lt;img src=&quot;https://camo.githubusercontent.com/9dd0f88c6cdb8b7c034ac5e5cce0e4bbdc8de19e/68747470733a2f2f7261772e6769746875622e636f6d2f7370756d6b6f2f6a6f692f6d61737465722f696d616765732f6a6f692e706e67&quot; width=&quot;100&quot; align=&quot;right&quot;/&gt;
-Object validation is a tricky thing. It sounds pretty simple when you first think about it, yet there are a ton of libraries that try to do it. Why is that? I feel like there are just alot of way to approach the subject. &lt;a href=&quot;https://github.com/spumko/joi&quot;&gt;Joi&lt;/a&gt; is a schema validation library that came out of the &lt;a href=&quot;http://www.walmartlabs.com/&quot;&gt;Walmart Labs&lt;/a&gt; efforts and more specifically power validation in the &lt;a href=&quot;http://spumko.github.io/&quot;&gt;hapi&lt;/a&gt; server framework.&lt;/p&gt;
+Object validation is a tricky thing. It sounds pretty simple when you first think about it, yet there are a ton of libraries that try to do it. Why is that? I feel like there are just alot of way to approach the subject. &lt;a href=&quot;http://browsenpm.org/package/joi&quot;&gt;Joi&lt;/a&gt; (Github: &lt;a href=&quot;https://github.com/spumko/joi&quot;&gt;spumko/joi&lt;/a&gt;, License: BSD 4-Clause) is a schema validation library that came out of the &lt;a href=&quot;http://www.walmartlabs.com/&quot;&gt;Walmart Labs&lt;/a&gt; efforts and more specifically power validation in the &lt;a href=&quot;http://spumko.github.io/&quot;&gt;hapi&lt;/a&gt; server framework.&lt;/p&gt;
 &lt;p&gt;Lets check it out!&lt;/p&gt;
 &lt;div class=&quot;read-more&quot;&gt;&lt;/div&gt;
 
 &lt;pre&gt;&lt;code&gt;npm install joi
 &lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&quot;usage&quot;&gt;Usage&lt;/h2&gt;
-&lt;p&gt;&lt;a href=&quot;https://github.com/spumko/joi&quot;&gt;Joi&lt;/a&gt; works by defining a schema. You can validate a single string or number:&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;http://browsenpm.org/package/joi&quot;&gt;Joi&lt;/a&gt; works by defining a schema. You can validate a single string or number:&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;var Joi = require(&amp;#39;joi&amp;#39;);
 
 // will fail
@@ -286,9 +286,9 @@ Joi.validate({
 &lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&quot;closing-thoughts&quot;&gt;Closing thoughts&lt;/h2&gt;
 &lt;p&gt;Here are some other modules you might want to evaluate:&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://github.com/chriso/validator.js&quot;&gt;validator.js&lt;/a&gt; is a string validation and sanitization module by &lt;a href=&quot;https://github.com/chriso&quot;&gt;Chris O&amp;#39;Hara&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;is a string validation and sanitization module by &lt;a href=&quot;https://github.com/chriso&quot;&gt;Chris O&amp;#39;Hara&lt;/a&gt;.&lt;/li&gt;
 &lt;li&gt;&lt;a href=&quot;http://www.finitio.io/&quot;&gt;finito&lt;/a&gt; is a language for capturing information structure by &lt;a href=&quot;https://github.com/llambeau&quot;&gt;Louis Lambeau&lt;/a&gt;.&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://github.com/Atinux/schema-inspector&quot;&gt;schema-inspector&lt;/a&gt; is a module to sanitize and validate objects by &lt;a href=&quot;https://github.com/Atinux&quot;&gt;Sébastien Chopin&lt;/a&gt; (&lt;a href=&quot;http://npmawesome.com/posts/2014-01-24-schema-inspector/&quot;&gt;previously featured on npmawesome.com&lt;/a&gt;).&lt;/li&gt;
+&lt;li&gt;is a module to sanitize and validate objects by &lt;a href=&quot;https://github.com/Atinux&quot;&gt;Sébastien Chopin&lt;/a&gt; (&lt;a href=&quot;http://npmawesome.com/posts/2014-01-24-schema-inspector/&quot;&gt;previously featured on npmawesome.com&lt;/a&gt;).&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;Finally, check out &lt;a href=&quot;https://github.com/npmawesome/example-joi&quot;&gt;source code&lt;/a&gt; for this article on GitHub and an &lt;a href=&quot;http://runnable.com/U31mW3RA_pBu7oN-/schema-validation-with-joi-for-node-js-npmawesome-and-nodejitsu&quot;&gt;interative example&lt;/a&gt; on Runnable.&lt;/p&gt;
 </content>

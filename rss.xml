@@ -15,12 +15,12 @@
     <atom:link href="http://feeds.feedburner.com/npmawesome" rel="self" type="application/rss+xml"/>
     <link>http://npmawesome.com</link>
     <description>Daily dose of awesome NPM modules for Node.js, old and new!</description>
-    <lastBuildDate>Tue, 17 Jun 2014 17:38:56 GMT</lastBuildDate>
+    <lastBuildDate>Thu, 19 Jun 2014 16:40:15 GMT</lastBuildDate>
     <language>en</language>
     <sy:updatePeriod>daily</sy:updatePeriod>
     <sy:updateFrequency>2</sy:updateFrequency>
     <generator>awesomeness</generator>
-    <pubDate>Tue, 17 Jun 2014 17:38:56 GMT</pubDate>
+    <pubDate>Thu, 19 Jun 2014 16:40:15 GMT</pubDate>
 
     
     
@@ -94,7 +94,7 @@
 <div class="read-more"></div>
 
 <p><img src="http://npmawesome.com/images/posts/anatoliy_chakkaev.jpg" width="100" align="right"/>
-<a href="https://github.com/1602/jugglingdb">JugglingDB</a> by <a href="https://github.com/1602">Anatoliy Chakkaev</a> is a young <a href="http://en.wikipedia.org/wiki/Object-relational_mapping">ORM</a> library that tries to provide a single API for a vast array of databases. All adapters come in a form of separate modules and there are quite a few already available:</p>
+<a href="http://browsenpm.org/package/jugglingdb">JugglingDB</a> (Github: <a href="https://github.com/1602/jugglingdb">1602/jugglingdb</a>, License: MIT) by <a href="https://github.com/1602">Anatoliy Chakkaev</a> is a young <a href="http://en.wikipedia.org/wiki/Object-relational_mapping">ORM</a> library that tries to provide a single API for a vast array of databases. All adapters come in a form of separate modules and there are quite a few already available:</p>
 <ul>
 <li>ArangoDB</li>
 <li>CouchDB</li>
@@ -141,7 +141,7 @@ user.save(function (err) {
 <pre><code>var schema = new Schema(&#39;mongodb&#39;, {url: &#39;mongodb://localhost/myapp&#39;});
 </code></pre><p>What&#39;s even cooler, is that you can have multiple schemas connecting to multiple databases at the same time. This could be very handy if for example you want to keep some cached data in Redis, which storing your loosly defined documents in MongoDB and your accounting stuff in MySQL. You could do all that with a single API.</p>
 <h2 id="closing-thoughts">Closing thoughts</h2>
-<p><a href="https://github.com/1602/jugglingdb">JugglingDB</a> is not as well known as <a href="http://mongoosejs.com/">Mongoose</a>, but it&#39;s been in development since 2011 and has a pretty strong following on GitHub. <a href="http://jugglingdb.co/">Documentation</a> is pretty extensive and <a href="http://jugglingdb.co/roadmap.3.html">roadmap</a> gives you a glimpse of where the project is headed and what is currently considered missing. Finally, check out <a href="https://github.com/npmawesome/example-jugglingdb">source code</a> for this article on GitHub and an <a href="http://runnable.com/U5SP5uAfzMh7SfoX">interactive example</a> on Runnable. I&#39;ve included MongoDB, Redis and Memory examples.</p>
+<p><a href="https://github.com/1602/jugglingdb">1602/jugglingdb</a> is not as well known as <a href="http://mongoosejs.com/">Mongoose</a>, but it&#39;s been in development since 2011 and has a pretty strong following on GitHub. <a href="http://jugglingdb.co/">Documentation</a> is pretty extensive and <a href="http://jugglingdb.co/roadmap.3.html">roadmap</a> gives you a glimpse of where the project is headed and what is currently considered missing. Finally, check out <a href="https://github.com/npmawesome/example-jugglingdb">source code</a> for this article on GitHub and an <a href="http://runnable.com/U5SP5uAfzMh7SfoX">interactive example</a> on Runnable. I&#39;ve included MongoDB, Redis and Memory examples.</p>
 ]]></description>
       </item>
     
@@ -210,7 +210,7 @@ user.save(function (err) {
 <p>… we decided to try to understand pages by executing JavaScript. It’s hard to do that at the scale of the current web, but we decided that it’s worth it. We have been gradually improving how we do this for some time. In the past few months, our indexing system has been rendering a substantial number of web pages more like an average user’s browser with JavaScript turned on.</p>
 </blockquote>
 </li>
-<li><a href="https://github.com/substack/browserify-handbook">Browserify Handbook</a> is a great resource for beginners and pros on organizing node apps and modules. Very good read.</li>
+<li><a href="http://browsenpm.org/package/browserify-handbook">browserify-handbook</a> (Github: <a href="https://github.com/substack/browserify-handbook">substack/browserify-handbook</a>, License: cc-by-3.0) is a great resource for beginners and pros on organizing node apps and modules. Very good read.</li>
 <li><a href="http://davidwalsh.name/device-state-detection-css-media-queries-javascript">Device State Detection with CSS Media Queries and JavaScript</a><blockquote>
 <p>Being able to detect device state at any given moment is important for any number of reasons and so it&#39;s important that web app CSS and JavaScript are in sync with each other.</p>
 </blockquote>
@@ -251,19 +251,19 @@ user.save(function (err) {
       
       
       <item>
-        <title><![CDATA[Joi]]></title>
+        <title><![CDATA[joi]]></title>
         <link><![CDATA[http://npmawesome.com/posts/2014-05-23-joi]]></link>
         <dc:creator><![CDATA[Alex Gorbatchev]]></dc:creator>
         <guid isPermaLink="true"><![CDATA[http://npmawesome.com/posts/2014-05-23-joi]]></guid>
         <pubDate><![CDATA[Fri, 23 May 2014 19:41:03 GMT]]></pubDate>
         <description><![CDATA[<p><img src="https://camo.githubusercontent.com/9dd0f88c6cdb8b7c034ac5e5cce0e4bbdc8de19e/68747470733a2f2f7261772e6769746875622e636f6d2f7370756d6b6f2f6a6f692f6d61737465722f696d616765732f6a6f692e706e67" width="100" align="right"/>
-Object validation is a tricky thing. It sounds pretty simple when you first think about it, yet there are a ton of libraries that try to do it. Why is that? I feel like there are just alot of way to approach the subject. <a href="https://github.com/spumko/joi">Joi</a> is a schema validation library that came out of the <a href="http://www.walmartlabs.com/">Walmart Labs</a> efforts and more specifically power validation in the <a href="http://spumko.github.io/">hapi</a> server framework.</p>
+Object validation is a tricky thing. It sounds pretty simple when you first think about it, yet there are a ton of libraries that try to do it. Why is that? I feel like there are just alot of way to approach the subject. <a href="http://browsenpm.org/package/joi">Joi</a> (Github: <a href="https://github.com/spumko/joi">spumko/joi</a>, License: BSD 4-Clause) is a schema validation library that came out of the <a href="http://www.walmartlabs.com/">Walmart Labs</a> efforts and more specifically power validation in the <a href="http://spumko.github.io/">hapi</a> server framework.</p>
 <p>Lets check it out!</p>
 <div class="read-more"></div>
 
 <pre><code>npm install joi
 </code></pre><h2 id="usage">Usage</h2>
-<p><a href="https://github.com/spumko/joi">Joi</a> works by defining a schema. You can validate a single string or number:</p>
+<p><a href="http://browsenpm.org/package/joi">Joi</a> works by defining a schema. You can validate a single string or number:</p>
 <pre><code>var Joi = require(&#39;joi&#39;);
 
 // will fail
@@ -303,9 +303,9 @@ Joi.validate({
 </code></pre><h2 id="closing-thoughts">Closing thoughts</h2>
 <p>Here are some other modules you might want to evaluate:</p>
 <ul>
-<li><a href="https://github.com/chriso/validator.js">validator.js</a> is a string validation and sanitization module by <a href="https://github.com/chriso">Chris O&#39;Hara</a>.</li>
+<li>is a string validation and sanitization module by <a href="https://github.com/chriso">Chris O&#39;Hara</a>.</li>
 <li><a href="http://www.finitio.io/">finito</a> is a language for capturing information structure by <a href="https://github.com/llambeau">Louis Lambeau</a>.</li>
-<li><a href="https://github.com/Atinux/schema-inspector">schema-inspector</a> is a module to sanitize and validate objects by <a href="https://github.com/Atinux">Sébastien Chopin</a> (<a href="http://npmawesome.com/posts/2014-01-24-schema-inspector/">previously featured on npmawesome.com</a>).</li>
+<li>is a module to sanitize and validate objects by <a href="https://github.com/Atinux">Sébastien Chopin</a> (<a href="http://npmawesome.com/posts/2014-01-24-schema-inspector/">previously featured on npmawesome.com</a>).</li>
 </ul>
 <p>Finally, check out <a href="https://github.com/npmawesome/example-joi">source code</a> for this article on GitHub and an <a href="http://runnable.com/U31mW3RA_pBu7oN-/schema-validation-with-joi-for-node-js-npmawesome-and-nodejitsu">interative example</a> on Runnable.</p>
 ]]></description>
