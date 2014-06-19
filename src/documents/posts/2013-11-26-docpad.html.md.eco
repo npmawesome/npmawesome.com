@@ -19,7 +19,7 @@ title: *name
 - Write your documents in any language, markup, templating engine, or pre-processor you wish
 - Changes to your website are automatically recompiled through our built in watch system
 - Add meta data to the top of your files to be used by templating engines to display non-standard information
-- Display custom listings of content with our powerful <%- @reference({ displayName: 'Query Engine', name: 'query-engine', repo: 'bevry/query-engine' license: 'MIT' }) %>
+- Display custom listings of content with our powerful <%- @reference({ displayName: 'Query Engine', name: 'query-engine', repo: 'bevry/query-engine', license: 'MIT' }) %>
 - Abstract out generic headers and footers into layouts using our nested layout system
 - Deploy by copying static files
 - Built-in server to save you from having to startup your own, for dynamic deployments this even supports things like clean urls, custom routes and server-side logic
