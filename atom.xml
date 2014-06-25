@@ -5,7 +5,7 @@
 	<link href="http://npmawesome.com/atom.xml" rel="self" />
 	<link href="http://npmawesome.com" />
 	<id>http://npmawesome.com</id>
-	<updated>2014-06-19T16:40:15.404Z</updated>
+	<updated>2014-06-25T00:32:54.454Z</updated>
 	<author>
 		<name>Alex Gorbatchev</name>
 	</author>
@@ -13,6 +13,191 @@
   
   
   
+    
+    
+    
+		<entry>
+			<title>Comparing Winston and Bunyan Node.js Logging</title>
+			<link href="http://npmawesome.com/posts/2014-06-24-comparing-winston-and-bunyan-node-js-logging"/>
+			<updated>2014-06-25T00:27:49.000Z</updated>
+			<id>http://npmawesome.com/posts/2014-06-24-comparing-winston-and-bunyan-node-js-logging</id>
+			<content type="html">&lt;p&gt;If you are writing a Node.js application, chances are you going to have some kind of API end points to be consumed by your frond end or expose data for others to take in. This is where &lt;a href=&quot;http://en.wikipedia.org/wiki/Representational_state_transfer&quot;&gt;RESTful APIs&lt;/a&gt; come in. And now you have a dilemma - what tools to use and what approach to take? So many choices...&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://npmawesome.com/images/posts/winston-and-bunyan/arnold.jpg&quot; width=&quot;100%&quot;/&gt;&lt;/p&gt;
+&lt;p&gt;Lets talk about logging, shall we? Arnold over here carrying a giant log feels like an appropriate intro to this article in which we are going to talk about popular Node.js logging frameworks.&lt;/p&gt;
+&lt;p&gt;If you are writing any kind of long living application, detailed logging is paramount to spotting problems and debugging. Without logs you would have few ways of telling how is your application behaving, are there errors, what&amp;#39;s the performance like, is it doing anything at all or is it just falling over every other request when you aren&amp;#39;t looking at it.&lt;/p&gt;
+&lt;div class=&quot;read-more&quot;&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;requirements&quot;&gt;Requirements&lt;/h2&gt;
+&lt;p&gt;Lets identify a few requirements which we can use to pit the frameworks against each other. Some of these requirements are pretty trivial, others are not so much.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Time stamp each log line. This one is pretty self explanatory - you should be able to tell when each log entry occured.&lt;/li&gt;
+&lt;li&gt;Logging format should be easily digestible by humans as well as machines.&lt;/li&gt;
+&lt;li&gt;Allows for multiple configurable destination streams. For example, you might be writing trace logs to one file but when an error is encountered, write to the same file, then into error file and send an email at the same time.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Based on these requirements (and popularity) there are two logging frameworks for Node.js worth checking out, in particular:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/trentm/node-bunyan&quot;&gt;Bunyan&lt;/a&gt; by &lt;a href=&quot;https://github.com/trentm&quot;&gt;Trent Mick&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/flatiron/winston&quot;&gt;Winston&lt;/a&gt; is part of the &lt;a href=&quot;http://flatironjs.org/&quot;&gt;Flatiron&lt;/a&gt; framework and sponsored by &lt;a href=&quot;http://nodejitsu.com&quot;&gt;nodejitstu&lt;/a&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;console&quot;&gt;console&lt;/h2&gt;
+&lt;p&gt;Before we get to &lt;a href=&quot;https://github.com/trentm/node-bunyan&quot;&gt;Bunyan&lt;/a&gt; and &lt;a href=&quot;https://github.com/flatiron/winston&quot;&gt;Winston&lt;/a&gt;, lets look at our old friend &lt;code&gt;console&lt;/code&gt;. The most rudimentary type of logging you could do is using &lt;code&gt;console.log&lt;/code&gt; and &lt;code&gt;console.error&lt;/code&gt; methods. This is better than nothing but hardly the best solution. Console writes to STDOUT and STDERR respectively. There&amp;#39;s a very interesting &lt;a href=&quot;http://nodejs.org/api/stdio.html&quot;&gt;caveat&lt;/a&gt; to know when it comes to &lt;code&gt;console&lt;/code&gt; methods in Node.js.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;The console functions are synchronous when the destination is a terminal or a file (to avoid lost messages in case of premature exit) and asynchronous when it&amp;#39;s a pipe (to avoid blocking for long periods of time).&lt;/p&gt;
+&lt;p&gt;That is, in the following example, stdout is non-blocking while stderr is blocking:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;$ node script.js 2&amp;gt; error.log | tee info.log
+&lt;/code&gt;&lt;/pre&gt;&lt;/blockquote&gt;
+&lt;p&gt;This is basically a &amp;quot;roll your own&amp;quot; logging approach. It is fully manual, you have to come up with your own format and basically manage everything yourself. This is time consuming, prone to errors and you probably want to focus on your application features instead. Considering that there are open source logging libraries out there which are actively maintained, this is not worth the effort if you are trying to focus on delivering features.&lt;/p&gt;
+&lt;p&gt;How does &lt;code&gt;console&lt;/code&gt; satisfy our requirements? Well, out of the box it does nothing in that regard but with some elbow grease you can get everything implemented yourself.&lt;/p&gt;
+&lt;h2 id=&quot;winston&quot;&gt;Winston&lt;/h2&gt;
+&lt;p&gt;&lt;img src=&quot;http://npmawesome.com/images/posts/winston-and-bunyan/lenny-henry.jpg&quot; width=&quot;100%&quot;/&gt;&lt;/p&gt;
+&lt;p&gt;One of the most popular Node.js logging frameworks is &lt;a href=&quot;https://github.com/flatiron/winston&quot;&gt;Winston&lt;/a&gt;. It&amp;#39;s designed to be a simple and universal logging library with support for multiple transports (a transport in &lt;a href=&quot;https://github.com/flatiron/winston&quot;&gt;Winston&lt;/a&gt;&amp;#39;s world is essentially a storage device, eg where your logs end up being stored). Each instance of a &lt;a href=&quot;https://github.com/flatiron/winston&quot;&gt;Winston&lt;/a&gt; logger can have multiple transports configured at different logging levels.&lt;/p&gt;
+&lt;h3 id=&quot;installation&quot;&gt;Installation&lt;/h3&gt;
+&lt;pre&gt;&lt;code&gt;npm install winston
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&quot;usage&quot;&gt;Usage&lt;/h3&gt;
+&lt;p&gt;The most basic &lt;a href=&quot;https://github.com/flatiron/winston&quot;&gt;Winston&lt;/a&gt; usage consists of calling the default instance that is exported from the &lt;code&gt;winston&lt;/code&gt; module.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;var winston = require(&amp;#39;winston&amp;#39;);
+
+winston.log(&amp;#39;info&amp;#39;, &amp;#39;Hello distributed log files!&amp;#39;);
+winston.info(&amp;#39;Hello again distributed logs&amp;#39;);
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;The above is the same as:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;var winston = require(&amp;#39;winston&amp;#39;);
+var logger = new winston.Logger();
+
+logger.log(&amp;#39;info&amp;#39;, &amp;#39;Hello distributed log files!&amp;#39;);
+logger.info(&amp;#39;Hello again distributed logs&amp;#39;);
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Both examples will produce the following output:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;info: Hello distributed log files!
+info: Hello again distributed logs
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&quot;formatting&quot;&gt;Formatting&lt;/h3&gt;
+&lt;p&gt;Personally I&amp;#39;m a little bit puzzled by the lack of details in the default formatter. There&amp;#39;s no time stamp, machine name or process ID and the output format is mildly suitable for machine parsing. Having said that you can get all the information out yourself with just a little of extra work.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;winston.info(&amp;#39;Hello world!&amp;#39;, {timestamp: Date.now(), pid: process.pid});
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Produces the following output, which is more informative, but still not very much suitable for machine parsing.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;info: Hello world! timestamp=1402286804314, pid=80481
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Finally, the &lt;code&gt;log&lt;/code&gt; method provides the same string interpolation methods as &lt;code&gt;util.format&lt;/code&gt;, for example:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;winston.log(&amp;#39;info&amp;#39;, &amp;#39;test message %d&amp;#39;, 123);
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&quot;transporters&quot;&gt;Transporters&lt;/h3&gt;
+&lt;p&gt;&lt;a href=&quot;https://github.com/flatiron/winston&quot;&gt;Winston&lt;/a&gt; could be configured via constructor options or exposed method which are very thoroughly documented on the &lt;a href=&quot;https://github.com/flatiron/winston&quot;&gt;GitHub page&lt;/a&gt;. Most of the configuration typically revolves around various transports. Out of the box &lt;a href=&quot;https://github.com/flatiron/winston&quot;&gt;Winston&lt;/a&gt; comes with console and file based transports and if you have a look on &lt;a href=&quot;https://www.npmjs.org/search?q=winston&quot;&gt;npmjs.org&lt;/a&gt; you will see that there are community modules for pretty much everything imaginable ranging from MongoDB to commercial third party platforms.&lt;/p&gt;
+&lt;p&gt;One of the more notable transporters in my opinion is &lt;a href=&quot;https://github.com/nathan7/winston-irc&quot;&gt;winston-irc&lt;/a&gt; by &lt;a href=&quot;https://github.com/nathan7&quot;&gt;Nathan Zadoks&lt;/a&gt; which you can use to log errors to your team&amp;#39;s IRC channel. I can see this coming in very handy.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;winston.add(require(&amp;#39;winston-irc&amp;#39;), {
+  host: &amp;#39;irc.somewhere.net&amp;#39;,
+  nick: &amp;#39;logger&amp;#39;,
+  pass: &amp;#39;hunter2&amp;#39;,
+  channels: {
+    &amp;#39;#logs&amp;#39;: true,
+    &amp;#39;sysadmin&amp;#39;: [&amp;#39;warn&amp;#39;, &amp;#39;error&amp;#39;]
+  }
+});
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&quot;multiple-loggers&quot;&gt;Multiple Loggers&lt;/h3&gt;
+&lt;p&gt;Once your application starts to grow, chances are you will want to have multiple loggers with different configurations where each logger is responsible for a different feature area (or category). &lt;a href=&quot;https://github.com/flatiron/winston&quot;&gt;Winston&lt;/a&gt; supports that in two ways: through &lt;code&gt;winston.loggers&lt;/code&gt; and instances of &lt;code&gt;winston.Container&lt;/code&gt;. In fact, &lt;code&gt;winston.loggers&lt;/code&gt; is just a predefined instance of &lt;code&gt;winston.Container&lt;/code&gt;:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;winston.loggers.add(&amp;#39;category1&amp;#39;, {console: { ... }, file: { ... }});
+winston.loggers.add(&amp;#39;category2&amp;#39;, {irc: { ... }, file: { ... }});
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Now that your loggers are configured you can require &lt;a href=&quot;https://github.com/flatiron/winston&quot;&gt;Winston&lt;/a&gt; in any file in your application and access these pre-configured loggers:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;var category1 = winston.loggers.get(&amp;#39;category1&amp;#39;);
+category1.info(&amp;#39;logging from your IoC container-based logger&amp;#39;);
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&quot;more&quot;&gt;More&lt;/h3&gt;
+&lt;p&gt;This is most basic &lt;a href=&quot;https://github.com/flatiron/winston&quot;&gt;Winston&lt;/a&gt; usage, but there are quite a few other features, most notably:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/flatiron/winston#profiling&quot;&gt;Profiling&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/flatiron/winston#string-interpolation&quot;&gt;String interpolation&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/flatiron/winston#querying-logs&quot;&gt;Querying&lt;/a&gt; and &lt;a href=&quot;https://github.com/flatiron/winston#streaming-logs&quot;&gt;streaming&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/flatiron/winston#exceptions&quot;&gt;Handling exeptions&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;bunyan&quot;&gt;Bunyan&lt;/h2&gt;
+&lt;p&gt;&lt;img src=&quot;http://npmawesome.com/images/posts/winston-and-bunyan/paul_bunyan_by_brendancorris-d3are2a.jpg&quot; width=&quot;100%&quot;/&gt;&lt;/p&gt;
+&lt;p&gt;&lt;sub&gt;&lt;sup&gt;&lt;a href=&quot;http://brendancorris.deviantart.com/art/Paul-Bunyan-199472626&quot;&gt;Illustration by Brendan Corris&lt;/a&gt;&lt;/sup&gt;&lt;/sub&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://github.com/trentm/node-bunyan&quot;&gt;Bunyan&lt;/a&gt; by &lt;a href=&quot;https://github.com/trentm&quot;&gt;Trent Mick&lt;/a&gt; is another logging framework that I think should be considered. &lt;a href=&quot;https://github.com/trentm/node-bunyan&quot;&gt;Bunyan&lt;/a&gt; takes a slightly different approach to logging than &lt;a href=&quot;https://github.com/flatiron/winston&quot;&gt;Winston&lt;/a&gt; making its mission to provide structured, machine readable logs as first class citizens. As a result, a log record from &lt;a href=&quot;https://github.com/trentm/node-bunyan&quot;&gt;Bunyan&lt;/a&gt; is one line of &lt;code&gt;JSON.stringify&lt;/code&gt; output with some common names for the requisite and common fields for a log record.&lt;/p&gt;
+&lt;h3 id=&quot;installation&quot;&gt;Installation&lt;/h3&gt;
+&lt;pre&gt;&lt;code&gt;npm install bunyan
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&quot;usage&quot;&gt;Usage&lt;/h3&gt;
+&lt;pre&gt;&lt;code&gt;var bunyan = require(&amp;#39;bunyan&amp;#39;);
+var log = bunyan.createLogger({name: &amp;#39;myapp&amp;#39;});
+log.info(&amp;#39;hi&amp;#39;);
+log.warn({lang: &amp;#39;fr&amp;#39;}, &amp;#39;au revoir&amp;#39;);
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Which will produce the following output:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;{&amp;quot;name&amp;quot;:&amp;quot;myapp&amp;quot;,&amp;quot;hostname&amp;quot;:&amp;quot;pwony-2&amp;quot;,&amp;quot;pid&amp;quot;:12616,&amp;quot;level&amp;quot;:30,&amp;quot;msg&amp;quot;:&amp;quot;hi&amp;quot;,&amp;quot;time&amp;quot;:&amp;quot;2014-05-26T17:58:32.835Z&amp;quot;,&amp;quot;v&amp;quot;:0}
+{&amp;quot;name&amp;quot;:&amp;quot;myapp&amp;quot;,&amp;quot;hostname&amp;quot;:&amp;quot;pwony-2&amp;quot;,&amp;quot;pid&amp;quot;:12616,&amp;quot;level&amp;quot;:40,&amp;quot;lang&amp;quot;:&amp;quot;fr&amp;quot;,&amp;quot;msg&amp;quot;:&amp;quot;au revoir&amp;quot;,&amp;quot;time&amp;quot;:&amp;quot;2014-05-26T17:58:32.837Z&amp;quot;,&amp;quot;v&amp;quot;:0}
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;As you can see, out of the box &lt;a href=&quot;https://github.com/trentm/node-bunyan&quot;&gt;Bunyan&lt;/a&gt; is not very human friendly, however most modern logging systems understand JSON format natively, which means there&amp;#39;s little to do here to feed the logs elsewhere for storage and processing. By default, there&amp;#39;s quite a bit of meta data included with each message, such as time stamp, process ID, host name and application name.&lt;/p&gt;
+&lt;p&gt;Of course, us humans, don&amp;#39;t find this very digestible and to address that there&amp;#39;s a &lt;code&gt;bunyan&lt;/code&gt; CLI tool to which takes in JSON via STDIN. Here&amp;#39;s the same example piped through &lt;code&gt;bunyan&lt;/code&gt;:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;node example.js | bunyan
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Produces the following output:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;[2014-05-26T18:03:40.820Z]  INFO: myapp/13372 on pwony-2: hi
+[2014-05-26T18:03:40.824Z]  WARN: myapp/13372 on pwony-2: au revoir (lang=fr)
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;The main benefit here is that you don&amp;#39;t need to reconfigure anything for development environment, all you have to do is pipe to &lt;code&gt;bunyan&lt;/code&gt;. Checkout the &lt;a href=&quot;https://github.com/trentm/node-bunyan#cli-usage&quot;&gt;GitHub page&lt;/a&gt; for more documentation on the CLI tool.&lt;/p&gt;
+&lt;h3 id=&quot;json&quot;&gt;JSON&lt;/h3&gt;
+&lt;p&gt;One of the key differences between &lt;a href=&quot;https://github.com/trentm/node-bunyan&quot;&gt;Bunyan&lt;/a&gt; and &lt;a href=&quot;https://github.com/flatiron/winston&quot;&gt;Winston&lt;/a&gt; is that &lt;a href=&quot;https://github.com/trentm/node-bunyan&quot;&gt;Bunyan&lt;/a&gt; works really well when you want to log complex contexts and objects. Lets look at this line and its output from the example above:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;log.warn({lang: &amp;#39;fr&amp;#39;}, &amp;#39;au revoir&amp;#39;);
+{&amp;quot;name&amp;quot;:&amp;quot;myapp&amp;quot;,&amp;quot;hostname&amp;quot;:&amp;quot;pwony-2&amp;quot;,&amp;quot;pid&amp;quot;:12616,&amp;quot;level&amp;quot;:40,&amp;quot;lang&amp;quot;:&amp;quot;fr&amp;quot;,&amp;quot;msg&amp;quot;:&amp;quot;au revoir&amp;quot;,&amp;quot;time&amp;quot;:&amp;quot;2014-05-26T17:58:32.837Z&amp;quot;,&amp;quot;v&amp;quot;:0}
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;You can see that &lt;code&gt;{lang: &amp;#39;fr&amp;#39;}&lt;/code&gt; got merged with the main log object and &lt;code&gt;au revoir&lt;/code&gt; became &lt;code&gt;msg&lt;/code&gt;. Now picture something like this:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;log.info(user, &amp;#39;registered&amp;#39;);
+log.info({user: user}, &amp;#39;registered&amp;#39;);
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Which produces:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;{&amp;quot;name&amp;quot;:&amp;quot;myapp&amp;quot;,&amp;quot;hostname&amp;quot;:&amp;quot;pwony-2&amp;quot;,&amp;quot;pid&amp;quot;:14837,&amp;quot;level&amp;quot;:30,&amp;quot;username&amp;quot;:&amp;quot;alex&amp;quot;,&amp;quot;email&amp;quot;:&amp;quot;...@gmail.com&amp;quot;,&amp;quot;msg&amp;quot;:&amp;quot;registered&amp;quot;,&amp;quot;time&amp;quot;:&amp;quot;2014-05-26T18:27:43.530Z&amp;quot;,&amp;quot;v&amp;quot;:0}
+{&amp;quot;name&amp;quot;:&amp;quot;myapp&amp;quot;,&amp;quot;hostname&amp;quot;:&amp;quot;pwony-2&amp;quot;,&amp;quot;pid&amp;quot;:14912,&amp;quot;level&amp;quot;:30,&amp;quot;user&amp;quot;:{&amp;quot;username&amp;quot;:&amp;quot;alex&amp;quot;,&amp;quot;email&amp;quot;:&amp;quot;...@gmail.com&amp;quot;},&amp;quot;msg&amp;quot;:&amp;quot;registered&amp;quot;,&amp;quot;time&amp;quot;:&amp;quot;2014-05-26T18:28:19.874Z&amp;quot;,&amp;quot;v&amp;quot;:0}
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Or when piped through &lt;code&gt;bunyan&lt;/code&gt;:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;[2014-05-26T18:28:42.455Z]  INFO: myapp/14943 on pwony-2: registered (username=alex, email=...@gmail.com)
+[2014-05-26T18:28:42.457Z]  INFO: myapp/14943 on pwony-2: registered
+    user: {
+      &amp;quot;username&amp;quot;: &amp;quot;alex&amp;quot;,
+      &amp;quot;email&amp;quot;: &amp;quot;...@gmail.com&amp;quot;
+    }
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;The beauty of this approach will become clear when you we look at child loggers.&lt;/p&gt;
+&lt;h3 id=&quot;child-loggers&quot;&gt;Child Loggers&lt;/h3&gt;
+&lt;p&gt;&lt;a href=&quot;https://github.com/trentm/node-bunyan&quot;&gt;Bunyan&lt;/a&gt; has a concept of child loggers, which allows to specialize a logger for a sub-component of your application, i.e. to create a new logger with additional bound fields that will be included in its log records. A child logger is created with &lt;code&gt;log.child(...)&lt;/code&gt;. This comes in incredibly handy if you want to have scoped loggers for different components in your system, requests, or just plain function calls. Lets look at some code.&lt;/p&gt;
+&lt;p&gt;Imagine you want to carry request ID through out all log lines for a given request so that you can tie them all together.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;var bunyan = require(&amp;#39;bunyan&amp;#39;);
+var log = bunyan.createLogger({name: &amp;#39;myapp&amp;#39;});
+
+app.use(function(req, res, next) {
+  req.log = log.child({reqId: uuid()});
+  next();
+});
+
+app.get(&amp;#39;/&amp;#39;, function(req, res) {
+  req.log.info({user: ...});
+});
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;The &lt;code&gt;req.log&lt;/code&gt; logger will always keep its context passed to the &lt;code&gt;log.child()&lt;/code&gt; function and merge it with all subsequent calls, so the output would look something like this:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;{&amp;quot;name&amp;quot;:&amp;quot;myapp&amp;quot;,&amp;quot;hostname&amp;quot;:&amp;quot;pwony-2&amp;quot;,&amp;quot;pid&amp;quot;:14837,&amp;quot;level&amp;quot;:30,&amp;quot;reqId&amp;quot;:&amp;quot;XXXX-XX-XXXX&amp;quot;,&amp;quot;user&amp;quot;:&amp;quot;...@gmail.com&amp;quot;,&amp;quot;time&amp;quot;:&amp;quot;2014-05-26T18:27:43.530Z&amp;quot;,&amp;quot;v&amp;quot;:0}
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&quot;serializers&quot;&gt;Serializers&lt;/h3&gt;
+&lt;p&gt;Two problems arise when &lt;a href=&quot;https://github.com/trentm/node-bunyan&quot;&gt;Bunyan&lt;/a&gt; tries to stringify entire objects:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Circular references. &lt;a href=&quot;https://github.com/flatiron/winston&quot;&gt;Winston&lt;/a&gt; is a little bit smarter here and detects circular references when they occur (however the result output &lt;code&gt;$ref=$&lt;/code&gt; isn&amp;#39;t very useful).&lt;/li&gt;
+&lt;li&gt;Unwanted noise. It feels to me that because objects are first class in &lt;a href=&quot;https://github.com/trentm/node-bunyan&quot;&gt;Bunyan&lt;/a&gt; it&amp;#39;s much easier to get into a habit of just dumping everything into the log.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;To help deal with both, &lt;a href=&quot;https://github.com/trentm/node-bunyan&quot;&gt;Bunyan&lt;/a&gt; has a concept of &lt;a href=&quot;https://github.com/trentm/node-bunyan#serializers&quot;&gt;serializers&lt;/a&gt; that are basically transformation functions which let you scope down commonly passed objects to just the fields that you are interested in:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;function reqSerializer(req) {
+  return {
+    method: req.method,
+    url: req.url,
+    headers: req.headers
+  }
+}
+
+var log = bunyan.createLogger({name: &amp;#39;myapp&amp;#39;, serializers: {req: reqSerializer}});
+log.info({req: req});
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Now trying to log &lt;code&gt;req&lt;/code&gt; object would just include the three fields that we are interested in.&lt;/p&gt;
+&lt;h3 id=&quot;streams&quot;&gt;Streams&lt;/h3&gt;
+&lt;p&gt;&lt;a href=&quot;https://github.com/trentm/node-bunyan#streams&quot;&gt;Streams&lt;/a&gt; in &lt;a href=&quot;https://github.com/trentm/node-bunyan&quot;&gt;Bunyan&lt;/a&gt; are the same thing as transporters in &lt;a href=&quot;https://github.com/flatiron/winston&quot;&gt;Winston&lt;/a&gt; - it&amp;#39;s a way to send your logs elsewhere for display and storage purposes. &lt;a href=&quot;https://github.com/trentm/node-bunyan&quot;&gt;Bunyan&lt;/a&gt; uses a &lt;a href=&quot;http://nodejs.org/docs/latest/api/all.html#writable_Stream&quot;&gt;Writable Stream&lt;/a&gt; interface with some additional attributes. A &lt;a href=&quot;https://github.com/trentm/node-bunyan&quot;&gt;Bunyan&lt;/a&gt; logger instance has one or more streams and are specified with the &lt;code&gt;streams&lt;/code&gt; option:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;var log = bunyan.createLogger({
+  name: &amp;quot;foo&amp;quot;,
+  streams: [
+    {
+      stream: process.stderr,
+      level: &amp;quot;debug&amp;quot;
+    },
+    ...
+  ]
+});
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&quot;more&quot;&gt;More&lt;/h3&gt;
+&lt;p&gt;Here are a few more notable things to explore in &lt;a href=&quot;https://github.com/trentm/node-bunyan&quot;&gt;Bunyan&lt;/a&gt;:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/trentm/node-bunyan#dtrace-support&quot;&gt;Runtime log snooping via Dtrace support&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/trentm/node-bunyan#log-record-fields&quot;&gt;Log record fields&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;what-s-next-&quot;&gt;What&amp;#39;s next?&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&quot;https://github.com/flatiron/winston&quot;&gt;Winston&lt;/a&gt; and &lt;a href=&quot;https://github.com/trentm/node-bunyan&quot;&gt;Bunyan&lt;/a&gt; are both very mature and established logging frameworks and are very much on par in terms of features. &lt;a href=&quot;https://github.com/flatiron/winston&quot;&gt;Winston&lt;/a&gt; has a lot of community support with various logging modules. &lt;a href=&quot;https://github.com/trentm/node-bunyan&quot;&gt;Bunyan&lt;/a&gt; makes it easy out of the box to parse logs but leaves consumption up the user (generally syslog drain works pretty well here). I feel it all comes down to preference and how easy it is to integrate with your stack.&lt;/p&gt;
+</content>
+		</entry>
+	
     
     
     
@@ -228,69 +413,6 @@ user.save(function (err) {
 &lt;/blockquote&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
-</content>
-		</entry>
-	
-    
-    
-    
-		<entry>
-			<title>joi</title>
-			<link href="http://npmawesome.com/posts/2014-05-23-joi"/>
-			<updated>2014-05-23T19:41:03.000Z</updated>
-			<id>http://npmawesome.com/posts/2014-05-23-joi</id>
-			<content type="html">&lt;p&gt;&lt;img src=&quot;https://camo.githubusercontent.com/9dd0f88c6cdb8b7c034ac5e5cce0e4bbdc8de19e/68747470733a2f2f7261772e6769746875622e636f6d2f7370756d6b6f2f6a6f692f6d61737465722f696d616765732f6a6f692e706e67&quot; width=&quot;100&quot; align=&quot;right&quot;/&gt;
-Object validation is a tricky thing. It sounds pretty simple when you first think about it, yet there are a ton of libraries that try to do it. Why is that? I feel like there are just alot of way to approach the subject. &lt;a href=&quot;http://browsenpm.org/package/joi&quot;&gt;Joi&lt;/a&gt; (Github: &lt;a href=&quot;https://github.com/spumko/joi&quot;&gt;spumko/joi&lt;/a&gt;, License: BSD 4-Clause) is a schema validation library that came out of the &lt;a href=&quot;http://www.walmartlabs.com/&quot;&gt;Walmart Labs&lt;/a&gt; efforts and more specifically power validation in the &lt;a href=&quot;http://spumko.github.io/&quot;&gt;hapi&lt;/a&gt; server framework.&lt;/p&gt;
-&lt;p&gt;Lets check it out!&lt;/p&gt;
-&lt;div class=&quot;read-more&quot;&gt;&lt;/div&gt;
-
-&lt;pre&gt;&lt;code&gt;npm install joi
-&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&quot;usage&quot;&gt;Usage&lt;/h2&gt;
-&lt;p&gt;&lt;a href=&quot;http://browsenpm.org/package/joi&quot;&gt;Joi&lt;/a&gt; works by defining a schema. You can validate a single string or number:&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;var Joi = require(&amp;#39;joi&amp;#39;);
-
-// will fail
-Joi.string().validate(10, console.log);
-
-// also will fail
-Joi.string().email().validate(&amp;#39;hello+gmail.com&amp;#39;, console.log);
-
-// will pass
-Joi.string().email().validate(&amp;#39;hello+world@gmail.com&amp;#39;, console.log);
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;You can validate a basic plain schema&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;var schema = {counter: Joi.number().min(1).max(10).required()};
-
-// will fail
-Joi.validate({counter: 0}, schema, console.log);
-
-// will pass
-Joi.validate({counter: 5}, schema, console.log);
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Finally, you can do a some pretty complicated validation with fields depending on each other:&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;var schema = Joi.object().keys({
-    username: Joi.string().alphanum().min(3).max(30).required(),
-    password: Joi.string().regex(/[a-zA-Z0-9]{3,30}/),
-    confirmation: Joi.ref(&amp;#39;password&amp;#39;)
-  })
-  .with(&amp;#39;password&amp;#39;, &amp;#39;confirmation&amp;#39;);
-
-// will fail because `foo` isn&amp;#39;t in the schema at all
-Joi.validate({foo: 1}, schema, console.log);
-
-// will fail because `confirmation` is missing
-Joi.validate({username: &amp;#39;alex&amp;#39;, password: &amp;#39;qwerty&amp;#39;}, schema, console.log);
-
-// will pass
-Joi.validate({
-  username: &amp;#39;alex&amp;#39;, password: &amp;#39;qwerty&amp;#39;, confirmation: &amp;#39;qwerty&amp;#39;
-}, schema, console.log);
-&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&quot;closing-thoughts&quot;&gt;Closing thoughts&lt;/h2&gt;
-&lt;p&gt;Here are some other modules you might want to evaluate:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;is a string validation and sanitization module by &lt;a href=&quot;https://github.com/chriso&quot;&gt;Chris O&amp;#39;Hara&lt;/a&gt;.&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://www.finitio.io/&quot;&gt;finito&lt;/a&gt; is a language for capturing information structure by &lt;a href=&quot;https://github.com/llambeau&quot;&gt;Louis Lambeau&lt;/a&gt;.&lt;/li&gt;
-&lt;li&gt;is a module to sanitize and validate objects by &lt;a href=&quot;https://github.com/Atinux&quot;&gt;Sébastien Chopin&lt;/a&gt; (&lt;a href=&quot;http://npmawesome.com/posts/2014-01-24-schema-inspector/&quot;&gt;previously featured on npmawesome.com&lt;/a&gt;).&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;Finally, check out &lt;a href=&quot;https://github.com/npmawesome/example-joi&quot;&gt;source code&lt;/a&gt; for this article on GitHub and an &lt;a href=&quot;http://runnable.com/U31mW3RA_pBu7oN-/schema-validation-with-joi-for-node-js-npmawesome-and-nodejitsu&quot;&gt;interative example&lt;/a&gt; on Runnable.&lt;/p&gt;
 </content>
 		</entry>
 	
