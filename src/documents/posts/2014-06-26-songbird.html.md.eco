@@ -1,0 +1,70 @@
+---
+date: 2014-06-26T09:43:14-0700
+author: alexgorbatchev
+partner: nodejitsu
+layout: post
+tags: npm, promises
+
+npm:
+  repo: &repo duereg/songbird
+  name: &name songbird
+  license: MIT
+
+  author:
+    name: Matt Blair
+    github: duereg
+
+slug: *name
+title: *name
+description: Chain promises easily in Node.js
+---
+I'm always on a look out for interesting modules and unusual solutions. When working with [promises] in Node.js, there's a constant friction between callbacks that is Node's defacto interface and your desire to use [promises] throughout your entire project. The now famous [Bluebird] \(Github: [petkaantonov/bluebird], License: MIT) library has a good collection of [helper methods][1] to assist you in going to and from callback world.
+
+<%- @readMore() %>
+
+Over time I began to feel the need for a simple helper function to automagically integrate a callback style function into [promises] control flow. Calling `promisify` each time on a function isn't super fun and `promisifyAll` feels a little odd to me and so yesterday I set out to look for a module that implements something like this:
+
+    Promise
+      .call(fs.readFile, 'path/to/file.txt', 'utf8')
+      .then(console.log)
+
+<img src="https://avatars0.githubusercontent.com/u/325737?s=400" width="100" align="right"/>
+Not surprisingly somebody else has already thought of this. I found the <%- @reference() %> module by <%- @author() %> that implements a very clean interface for converting any callback style function to a return a promise instead. <%- @reference() %> does what is generally considered a no-no - it extends `Object` and `Function` prototype which gives you a magic `promise` property on every function. <%- @reference() %> also wraps the [Bluebird] library so you don't have to install both. Lets check it out:
+
+    <%- @install() %>
+
+## Usage
+
+    var Promise = require('songbird');
+    var fs = require('fs');
+
+    // callback API
+    fs.readFile('./package.json', 'utf8', function(err, pkg) {
+      console.log('callbacks', pkg);
+    });
+
+    // songbird API
+    fs.promise.readFile('./package.json', 'utf8').then(function(pkg) {
+      console.log('promise', pkg);
+    });
+
+    Promise
+      .join(
+        fs.promise.readFile('./package.json', 'utf8'),
+        fs.promise.readFile('./songbird.js', 'utf8')
+      )
+      .spread(function(pkg, songbird) {
+        console.log('package.json length is', pkg.length);
+        console.log('songbird.js length is', songbird.length);
+      });
+
+## Closing thoughts
+
+While I think it's a great idea to mix in the `promise` property to `Object` and `Function`, however with great power comes great responsibility. I strongly urge against using <%- @browsenpm() %> in modules that you would distribute on npm because it would have a very big side effect on anyone who dares to install your code. However, when used on a project that isn't made available publicaly, <%- @browsenpm() %> would be a great asset.
+
+Check out [source code](https://github.com/npmawesome/example-songbird) for this article on GitHub and an [interactive example](http://runnable.com/U575XtnsLhN9grRU) on Runnable. Let us know what you think! It's not every day you encounter a module that boldly extends `Object` and `Function`.
+
+[promises]: http://promises-aplus.github.io/promises-spec/
+[1]: https://github.com/petkaantonov/bluebird/blob/master/API.md#promisification
+[Bluebird]: http://browsenpm.org/package/bluebird
+[petkaantonov/bluebird]: https://github.com/petkaantonov/bluebird
