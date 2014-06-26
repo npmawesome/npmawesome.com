@@ -2,7 +2,7 @@
 layout: post
 partner: strongloop
 date: 2014-04-29T10:01:54-0700
-tags: strongloop
+tags: frameworks
 npm:
   repo: &repo spumko/hapi
   name: &name hapi
