@@ -5,7 +5,7 @@
 	<link href="http://npmawesome.com/atom.xml" rel="self" />
 	<link href="http://npmawesome.com" />
 	<id>http://npmawesome.com</id>
-	<updated>2014-06-25T00:32:54.454Z</updated>
+	<updated>2014-06-26T16:55:26.649Z</updated>
 	<author>
 		<name>Alex Gorbatchev</name>
 	</author>
@@ -13,6 +13,53 @@
   
   
   
+    
+    
+    
+		<entry>
+			<title>songbird</title>
+			<link href="http://npmawesome.com/posts/2014-06-26-songbird"/>
+			<updated>2014-06-26T16:43:14.000Z</updated>
+			<id>http://npmawesome.com/posts/2014-06-26-songbird</id>
+			<content type="html">&lt;p&gt;I&amp;#39;m always on a look out for interesting modules and unusual solutions. When working with &lt;a href=&quot;http://promises-aplus.github.io/promises-spec/&quot;&gt;promises&lt;/a&gt; in Node.js, there&amp;#39;s a constant friction between callbacks that is Node&amp;#39;s defacto interface and your desire to use &lt;a href=&quot;http://promises-aplus.github.io/promises-spec/&quot;&gt;promises&lt;/a&gt; throughout your entire project. The now famous &lt;a href=&quot;http://browsenpm.org/package/bluebird&quot;&gt;Bluebird&lt;/a&gt; (Github: &lt;a href=&quot;https://github.com/petkaantonov/bluebird&quot;&gt;petkaantonov/bluebird&lt;/a&gt;, License: MIT) library has a good collection of &lt;a href=&quot;https://github.com/petkaantonov/bluebird/blob/master/API.md#promisification&quot;&gt;helper methods&lt;/a&gt; to assist you in going to and from callback world.&lt;/p&gt;
+&lt;div class=&quot;read-more&quot;&gt;&lt;/div&gt;
+
+&lt;p&gt;Over time I began to feel the need for a simple helper function to automagically integrate a callback style function into &lt;a href=&quot;http://promises-aplus.github.io/promises-spec/&quot;&gt;promises&lt;/a&gt; control flow. Calling &lt;code&gt;promisify&lt;/code&gt; each time on a function isn&amp;#39;t super fun and &lt;code&gt;promisifyAll&lt;/code&gt; feels a little odd to me and so yesterday I set out to look for a module that implements something like this:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;Promise
+  .call(fs.readFile, &amp;#39;path/to/file.txt&amp;#39;, &amp;#39;utf8&amp;#39;)
+  .then(console.log)
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;img src=&quot;https://avatars0.githubusercontent.com/u/325737?s=400&quot; width=&quot;100&quot; align=&quot;right&quot;/&gt;
+Not surprisingly somebody else has already thought of this. I found the &lt;a href=&quot;http://browsenpm.org/package/songbird&quot;&gt;songbird&lt;/a&gt; (Github: &lt;a href=&quot;https://github.com/duereg/songbird&quot;&gt;duereg/songbird&lt;/a&gt;, License: MIT) module by &lt;a href=&quot;https://github.com/duereg&quot;&gt;Matt Blair&lt;/a&gt; that implements a very clean interface for converting any callback style function to a return a promise instead. &lt;a href=&quot;http://browsenpm.org/package/songbird&quot;&gt;songbird&lt;/a&gt; (Github: &lt;a href=&quot;https://github.com/duereg/songbird&quot;&gt;duereg/songbird&lt;/a&gt;, License: MIT) does what is generally considered a no-no - it extends &lt;code&gt;Object&lt;/code&gt; and &lt;code&gt;Function&lt;/code&gt; prototype which gives you a magic &lt;code&gt;promise&lt;/code&gt; property on every function. &lt;a href=&quot;http://browsenpm.org/package/songbird&quot;&gt;songbird&lt;/a&gt; (Github: &lt;a href=&quot;https://github.com/duereg/songbird&quot;&gt;duereg/songbird&lt;/a&gt;, License: MIT) also wraps the &lt;a href=&quot;http://browsenpm.org/package/bluebird&quot;&gt;Bluebird&lt;/a&gt; library so you don&amp;#39;t have to install both. Lets check it out:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;npm install songbird
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&quot;usage&quot;&gt;Usage&lt;/h2&gt;
+&lt;pre&gt;&lt;code&gt;var Promise = require(&amp;#39;songbird&amp;#39;);
+var fs = require(&amp;#39;fs&amp;#39;);
+
+// callback API
+fs.readFile(&amp;#39;./package.json&amp;#39;, &amp;#39;utf8&amp;#39;, function(err, pkg) {
+  console.log(&amp;#39;callbacks&amp;#39;, pkg);
+});
+
+// songbird API
+fs.promise.readFile(&amp;#39;./package.json&amp;#39;, &amp;#39;utf8&amp;#39;).then(function(pkg) {
+  console.log(&amp;#39;promise&amp;#39;, pkg);
+});
+
+Promise
+  .join(
+    fs.promise.readFile(&amp;#39;./package.json&amp;#39;, &amp;#39;utf8&amp;#39;),
+    fs.promise.readFile(&amp;#39;./songbird.js&amp;#39;, &amp;#39;utf8&amp;#39;)
+  )
+  .spread(function(pkg, songbird) {
+    console.log(&amp;#39;package.json length is&amp;#39;, pkg.length);
+    console.log(&amp;#39;songbird.js length is&amp;#39;, songbird.length);
+  });
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&quot;closing-thoughts&quot;&gt;Closing thoughts&lt;/h2&gt;
+&lt;p&gt;While I think it&amp;#39;s a great idea to mix in the &lt;code&gt;promise&lt;/code&gt; property to &lt;code&gt;Object&lt;/code&gt; and &lt;code&gt;Function&lt;/code&gt;, however with great power comes great responsibility. I strongly urge against using &lt;a href=&quot;http://browsenpm.org/package/songbird&quot;&gt;songbird&lt;/a&gt; in modules that you would distribute on npm because it would have a very big side effect on anyone who dares to install your code. However, when used on a project that isn&amp;#39;t made available publicaly, &lt;a href=&quot;http://browsenpm.org/package/songbird&quot;&gt;songbird&lt;/a&gt; would be a great asset.&lt;/p&gt;
+&lt;p&gt;Check out &lt;a href=&quot;https://github.com/npmawesome/example-songbird&quot;&gt;source code&lt;/a&gt; for this article on GitHub and an &lt;a href=&quot;http://runnable.com/U575XtnsLhN9grRU&quot;&gt;interactive example&lt;/a&gt; on Runnable. Let us know what you think! It&amp;#39;s not every day you encounter a module that boldly extends &lt;code&gt;Object&lt;/code&gt; and &lt;code&gt;Function&lt;/code&gt;.&lt;/p&gt;
+</content>
+		</entry>
+	
     
     
     
@@ -358,62 +405,6 @@ user.save(function (err) {
 &lt;/ul&gt;
 &lt;h2 id=&quot;twitter&quot;&gt;Twitter&lt;/h2&gt;
 &lt;blockquote class=&quot;twitter-tweet&quot; data-partner=&quot;tweetdeck&quot;&gt;&lt;p&gt;In May, &lt;a href=&quot;https://twitter.com/tjholowaychuk&quot;&gt;@tjholowaychuk&lt;/a&gt; was fully or partially responsible for 32MM downloads, or about 10% of all downloads in May: &lt;a href=&quot;http://t.co/AlxA8XVGNN&quot;&gt;http://t.co/AlxA8XVGNN&lt;/a&gt;&lt;/p&gt;&amp;mdash; Laurie Voss (@seldo) &lt;a href=&quot;https://twitter.com/seldo/statuses/474678710390751232&quot;&gt;June 5, 2014&lt;/a&gt;&lt;/blockquote&gt;</content>
-		</entry>
-	
-    
-    
-    
-		<entry>
-			<title>Links for May 29, 2014</title>
-			<link href="http://npmawesome.com/posts/2014-05-29-links"/>
-			<updated>2014-05-29T16:50:42.000Z</updated>
-			<id>http://npmawesome.com/posts/2014-05-29-links</id>
-			<content type="html">&lt;p&gt;&lt;img src=&quot;http://npmawesome.com/images/posts/npmawesome-logo-512x512.png&quot; class=&quot;hide-on-mobile&quot; width=&quot;150&quot; align=&quot;right&quot;/&gt;&lt;/p&gt;
-&lt;h2 id=&quot;articles&quot;&gt;Articles&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;http://socket.io/blog/introducing-socket-io-1-0/&quot;&gt;Introducing Socket.IO 1.0&lt;/a&gt;&lt;blockquote&gt;
-&lt;p&gt;The first version of Socket.IO was created shortly after Node.JS made its first appearance. I had been looking for a framework that easily enabled me to push data from a server to a client for a long time, and even had tried other approaches to server-side JavaScript.&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://googlewebmastercentral.blogspot.ca/2014/05/understanding-web-pages-better.html&quot;&gt;Understanding web pages better&lt;/a&gt;&lt;blockquote&gt;
-&lt;p&gt;… we decided to try to understand pages by executing JavaScript. It’s hard to do that at the scale of the current web, but we decided that it’s worth it. We have been gradually improving how we do this for some time. In the past few months, our indexing system has been rendering a substantial number of web pages more like an average user’s browser with JavaScript turned on.&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://browsenpm.org/package/browserify-handbook&quot;&gt;browserify-handbook&lt;/a&gt; (Github: &lt;a href=&quot;https://github.com/substack/browserify-handbook&quot;&gt;substack/browserify-handbook&lt;/a&gt;, License: cc-by-3.0) is a great resource for beginners and pros on organizing node apps and modules. Very good read.&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://davidwalsh.name/device-state-detection-css-media-queries-javascript&quot;&gt;Device State Detection with CSS Media Queries and JavaScript&lt;/a&gt;&lt;blockquote&gt;
-&lt;p&gt;Being able to detect device state at any given moment is important for any number of reasons and so it&amp;#39;s important that web app CSS and JavaScript are in sync with each other.&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://hueniversedotcom.files.wordpress.com/2013/01/hapi-hapi-joi-joi.pdf&quot;&gt;hapi hapi joi joi&lt;/a&gt; - fantastic slides!&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://bocoup.com/weblog/javascript-relay-with-johnny-five/&quot;&gt;Relay Control with Johnny-Five on Node.js&lt;/a&gt;&lt;blockquote&gt;
-&lt;p&gt;DO NOT TOUCH ANY PART OF THE RELAY WHILE IT&amp;#39;S PLUGGED INTO THE WALL.&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://jdmaturen.github.io/2013/how-much-is-your-startup-stock-worth.html&quot;&gt;How much is your startup stock worth?&lt;/a&gt;&lt;blockquote&gt;
-&lt;p&gt;You can’t get rich on salary.&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;div class=&quot;read-more&quot;&gt;&lt;/div&gt;
-
-&lt;h2 id=&quot;github&quot;&gt;Github&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;http://www.objectplayground.com/&quot;&gt;Object Playground&lt;/a&gt; is a tool for visualizing and experimenting with JavaScript object relationships.&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://code.google.com/p/pdfium/&quot;&gt;PDFium&lt;/a&gt; is an open-source PDF rendering engine that is used in Google Chrome.&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://www.vittoriozaccaria.net/dyn-css/&quot;&gt;DynCSS&lt;/a&gt; - simple, dynamic CSS rules to give life to your sites.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&quot;twitter&quot;&gt;Twitter&lt;/h2&gt;
-&lt;blockquote class=&quot;twitter-tweet&quot; data-partner=&quot;tweetdeck&quot;&gt;&lt;p&gt;This is an amazing &lt;a href=&quot;https://twitter.com/StackOverflow&quot;&gt;@Stackoverflow&lt;/a&gt; answer about Angular (and using jQuery) &lt;a href=&quot;http://t.co/pXoyf0zuN6&quot;&gt;http://t.co/pXoyf0zuN6&lt;/a&gt;&lt;/p&gt;&amp;mdash; Sara Chipps (@SaraJChipps) &lt;a href=&quot;https://twitter.com/SaraJChipps/statuses/468769556765614080&quot;&gt;May 20, 2014&lt;/a&gt;&lt;/blockquote&gt;
-
-&lt;h2 id=&quot;misc&quot;&gt;Misc&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;http://seanfphotography.blogspot.ca/2014/05/afrikaburm-trickster-2014.html?spref=tw&quot;&gt;AfrikaBurm - Trickster - 2014 photos&lt;/a&gt; - some great photos from the AfrikaBurm festival.&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://openfontlibrary.org/en/font/fantasque-sans-mono&quot;&gt;Fantasque Sans Mono&lt;/a&gt;&lt;blockquote&gt;
-&lt;p&gt;A programming font, designed with functionality in mind, and with some wibbly-wobbly handwriting-like fuzziness that makes it unassumingly cool.&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-</content>
 		</entry>
 	
 </feed>

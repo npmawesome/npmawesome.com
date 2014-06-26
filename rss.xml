@@ -15,15 +15,63 @@
     <atom:link href="http://feeds.feedburner.com/npmawesome" rel="self" type="application/rss+xml"/>
     <link>http://npmawesome.com</link>
     <description>Daily dose of awesome NPM modules for Node.js, old and new!</description>
-    <lastBuildDate>Wed, 25 Jun 2014 00:32:54 GMT</lastBuildDate>
+    <lastBuildDate>Thu, 26 Jun 2014 16:55:26 GMT</lastBuildDate>
     <language>en</language>
     <sy:updatePeriod>daily</sy:updatePeriod>
     <sy:updateFrequency>2</sy:updateFrequency>
     <generator>awesomeness</generator>
-    <pubDate>Wed, 25 Jun 2014 00:32:54 GMT</pubDate>
+    <pubDate>Thu, 26 Jun 2014 16:55:26 GMT</pubDate>
 
     
     
+    
+      
+      
+      
+      <item>
+        <title><![CDATA[songbird]]></title>
+        <link><![CDATA[http://npmawesome.com/posts/2014-06-26-songbird]]></link>
+        <dc:creator><![CDATA[Alex Gorbatchev]]></dc:creator>
+        <guid isPermaLink="true"><![CDATA[http://npmawesome.com/posts/2014-06-26-songbird]]></guid>
+        <pubDate><![CDATA[Thu, 26 Jun 2014 16:43:14 GMT]]></pubDate>
+        <description><![CDATA[<p>I&#39;m always on a look out for interesting modules and unusual solutions. When working with <a href="http://promises-aplus.github.io/promises-spec/">promises</a> in Node.js, there&#39;s a constant friction between callbacks that is Node&#39;s defacto interface and your desire to use <a href="http://promises-aplus.github.io/promises-spec/">promises</a> throughout your entire project. The now famous <a href="http://browsenpm.org/package/bluebird">Bluebird</a> (Github: <a href="https://github.com/petkaantonov/bluebird">petkaantonov/bluebird</a>, License: MIT) library has a good collection of <a href="https://github.com/petkaantonov/bluebird/blob/master/API.md#promisification">helper methods</a> to assist you in going to and from callback world.</p>
+<div class="read-more"></div>
+
+<p>Over time I began to feel the need for a simple helper function to automagically integrate a callback style function into <a href="http://promises-aplus.github.io/promises-spec/">promises</a> control flow. Calling <code>promisify</code> each time on a function isn&#39;t super fun and <code>promisifyAll</code> feels a little odd to me and so yesterday I set out to look for a module that implements something like this:</p>
+<pre><code>Promise
+  .call(fs.readFile, &#39;path/to/file.txt&#39;, &#39;utf8&#39;)
+  .then(console.log)
+</code></pre><p><img src="https://avatars0.githubusercontent.com/u/325737?s=400" width="100" align="right"/>
+Not surprisingly somebody else has already thought of this. I found the <a href="http://browsenpm.org/package/songbird">songbird</a> (Github: <a href="https://github.com/duereg/songbird">duereg/songbird</a>, License: MIT) module by <a href="https://github.com/duereg">Matt Blair</a> that implements a very clean interface for converting any callback style function to a return a promise instead. <a href="http://browsenpm.org/package/songbird">songbird</a> (Github: <a href="https://github.com/duereg/songbird">duereg/songbird</a>, License: MIT) does what is generally considered a no-no - it extends <code>Object</code> and <code>Function</code> prototype which gives you a magic <code>promise</code> property on every function. <a href="http://browsenpm.org/package/songbird">songbird</a> (Github: <a href="https://github.com/duereg/songbird">duereg/songbird</a>, License: MIT) also wraps the <a href="http://browsenpm.org/package/bluebird">Bluebird</a> library so you don&#39;t have to install both. Lets check it out:</p>
+<pre><code>npm install songbird
+</code></pre><h2 id="usage">Usage</h2>
+<pre><code>var Promise = require(&#39;songbird&#39;);
+var fs = require(&#39;fs&#39;);
+
+// callback API
+fs.readFile(&#39;./package.json&#39;, &#39;utf8&#39;, function(err, pkg) {
+  console.log(&#39;callbacks&#39;, pkg);
+});
+
+// songbird API
+fs.promise.readFile(&#39;./package.json&#39;, &#39;utf8&#39;).then(function(pkg) {
+  console.log(&#39;promise&#39;, pkg);
+});
+
+Promise
+  .join(
+    fs.promise.readFile(&#39;./package.json&#39;, &#39;utf8&#39;),
+    fs.promise.readFile(&#39;./songbird.js&#39;, &#39;utf8&#39;)
+  )
+  .spread(function(pkg, songbird) {
+    console.log(&#39;package.json length is&#39;, pkg.length);
+    console.log(&#39;songbird.js length is&#39;, songbird.length);
+  });
+</code></pre><h2 id="closing-thoughts">Closing thoughts</h2>
+<p>While I think it&#39;s a great idea to mix in the <code>promise</code> property to <code>Object</code> and <code>Function</code>, however with great power comes great responsibility. I strongly urge against using <a href="http://browsenpm.org/package/songbird">songbird</a> in modules that you would distribute on npm because it would have a very big side effect on anyone who dares to install your code. However, when used on a project that isn&#39;t made available publicaly, <a href="http://browsenpm.org/package/songbird">songbird</a> would be a great asset.</p>
+<p>Check out <a href="https://github.com/npmawesome/example-songbird">source code</a> for this article on GitHub and an <a href="http://runnable.com/U575XtnsLhN9grRU">interactive example</a> on Runnable. Let us know what you think! It&#39;s not every day you encounter a module that boldly extends <code>Object</code> and <code>Function</code>.</p>
+]]></description>
+      </item>
     
       
       
@@ -374,63 +422,6 @@ user.save(function (err) {
 </ul>
 <h2 id="twitter">Twitter</h2>
 <blockquote class="twitter-tweet" data-partner="tweetdeck"><p>In May, <a href="https://twitter.com/tjholowaychuk">@tjholowaychuk</a> was fully or partially responsible for 32MM downloads, or about 10% of all downloads in May: <a href="http://t.co/AlxA8XVGNN">http://t.co/AlxA8XVGNN</a></p>&mdash; Laurie Voss (@seldo) <a href="https://twitter.com/seldo/statuses/474678710390751232">June 5, 2014</a></blockquote>]]></description>
-      </item>
-    
-      
-      
-      
-      <item>
-        <title><![CDATA[Links for May 29, 2014]]></title>
-        <link><![CDATA[http://npmawesome.com/posts/2014-05-29-links]]></link>
-        <dc:creator><![CDATA[Alex Gorbatchev]]></dc:creator>
-        <guid isPermaLink="true"><![CDATA[http://npmawesome.com/posts/2014-05-29-links]]></guid>
-        <pubDate><![CDATA[Thu, 29 May 2014 16:50:42 GMT]]></pubDate>
-        <description><![CDATA[<p><img src="http://npmawesome.com/images/posts/npmawesome-logo-512x512.png" class="hide-on-mobile" width="150" align="right"/></p>
-<h2 id="articles">Articles</h2>
-<ul>
-<li><a href="http://socket.io/blog/introducing-socket-io-1-0/">Introducing Socket.IO 1.0</a><blockquote>
-<p>The first version of Socket.IO was created shortly after Node.JS made its first appearance. I had been looking for a framework that easily enabled me to push data from a server to a client for a long time, and even had tried other approaches to server-side JavaScript.</p>
-</blockquote>
-</li>
-<li><a href="http://googlewebmastercentral.blogspot.ca/2014/05/understanding-web-pages-better.html">Understanding web pages better</a><blockquote>
-<p>… we decided to try to understand pages by executing JavaScript. It’s hard to do that at the scale of the current web, but we decided that it’s worth it. We have been gradually improving how we do this for some time. In the past few months, our indexing system has been rendering a substantial number of web pages more like an average user’s browser with JavaScript turned on.</p>
-</blockquote>
-</li>
-<li><a href="http://browsenpm.org/package/browserify-handbook">browserify-handbook</a> (Github: <a href="https://github.com/substack/browserify-handbook">substack/browserify-handbook</a>, License: cc-by-3.0) is a great resource for beginners and pros on organizing node apps and modules. Very good read.</li>
-<li><a href="http://davidwalsh.name/device-state-detection-css-media-queries-javascript">Device State Detection with CSS Media Queries and JavaScript</a><blockquote>
-<p>Being able to detect device state at any given moment is important for any number of reasons and so it&#39;s important that web app CSS and JavaScript are in sync with each other.</p>
-</blockquote>
-</li>
-<li><a href="http://hueniversedotcom.files.wordpress.com/2013/01/hapi-hapi-joi-joi.pdf">hapi hapi joi joi</a> - fantastic slides!</li>
-<li><a href="http://bocoup.com/weblog/javascript-relay-with-johnny-five/">Relay Control with Johnny-Five on Node.js</a><blockquote>
-<p>DO NOT TOUCH ANY PART OF THE RELAY WHILE IT&#39;S PLUGGED INTO THE WALL.</p>
-</blockquote>
-</li>
-<li><a href="http://jdmaturen.github.io/2013/how-much-is-your-startup-stock-worth.html">How much is your startup stock worth?</a><blockquote>
-<p>You can’t get rich on salary.</p>
-</blockquote>
-</li>
-</ul>
-<div class="read-more"></div>
-
-<h2 id="github">Github</h2>
-<ul>
-<li><a href="http://www.objectplayground.com/">Object Playground</a> is a tool for visualizing and experimenting with JavaScript object relationships.</li>
-<li><a href="https://code.google.com/p/pdfium/">PDFium</a> is an open-source PDF rendering engine that is used in Google Chrome.</li>
-<li><a href="http://www.vittoriozaccaria.net/dyn-css/">DynCSS</a> - simple, dynamic CSS rules to give life to your sites.</li>
-</ul>
-<h2 id="twitter">Twitter</h2>
-<blockquote class="twitter-tweet" data-partner="tweetdeck"><p>This is an amazing <a href="https://twitter.com/StackOverflow">@Stackoverflow</a> answer about Angular (and using jQuery) <a href="http://t.co/pXoyf0zuN6">http://t.co/pXoyf0zuN6</a></p>&mdash; Sara Chipps (@SaraJChipps) <a href="https://twitter.com/SaraJChipps/statuses/468769556765614080">May 20, 2014</a></blockquote>
-
-<h2 id="misc">Misc</h2>
-<ul>
-<li><a href="http://seanfphotography.blogspot.ca/2014/05/afrikaburm-trickster-2014.html?spref=tw">AfrikaBurm - Trickster - 2014 photos</a> - some great photos from the AfrikaBurm festival.</li>
-<li><a href="http://openfontlibrary.org/en/font/fantasque-sans-mono">Fantasque Sans Mono</a><blockquote>
-<p>A programming font, designed with functionality in mind, and with some wibbly-wobbly handwriting-like fuzziness that makes it unassumingly cool.</p>
-</blockquote>
-</li>
-</ul>
-]]></description>
       </item>
     
   </channel>
