@@ -60,7 +60,7 @@ Not surprisingly somebody else has already thought of this. I found the <%- @ref
 
 ## Closing thoughts
 
-While I think it's a great idea to mix in the `promise` property to `Object` and `Function`, however with great power comes great responsibility. I strongly urge against using <%- @browsenpm() %> in modules that you would distribute on npm because it would have a very big side effect on anyone who dares to install your code. However, when used on a project that isn't made available publicaly, <%- @browsenpm() %> would be a great asset.
+While I think it's a great idea to mix in the `promise` property to `Object` and `Function`, however with great power comes great responsibility. I strongly urge against using <%- @browsenpm() %> in modules that you would distribute on npm because it would have a very big side effect on anyone who dares to install your code. However, when used on a project that isn't made available publicly, <%- @browsenpm() %> would be a great asset.
 
 Check out [source code](https://github.com/npmawesome/example-songbird) for this article on GitHub and an [interactive example](http://runnable.com/U575XtnsLhN9grRU) on Runnable. Let us know what you think! It's not every day you encounter a module that boldly extends `Object` and `Function`.
 
