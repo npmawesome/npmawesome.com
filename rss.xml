@@ -15,15 +15,77 @@
     <atom:link href="http://feeds.feedburner.com/npmawesome" rel="self" type="application/rss+xml"/>
     <link>http://npmawesome.com</link>
     <description>Daily dose of awesome NPM modules for Node.js, old and new!</description>
-    <lastBuildDate>Thu, 26 Jun 2014 16:55:26 GMT</lastBuildDate>
+    <lastBuildDate>Mon, 30 Jun 2014 17:39:28 GMT</lastBuildDate>
     <language>en</language>
     <sy:updatePeriod>daily</sy:updatePeriod>
     <sy:updateFrequency>2</sy:updateFrequency>
     <generator>awesomeness</generator>
-    <pubDate>Thu, 26 Jun 2014 16:55:26 GMT</pubDate>
+    <pubDate>Mon, 30 Jun 2014 17:39:28 GMT</pubDate>
 
     
     
+    
+      
+      
+      
+      <item>
+        <title><![CDATA[Links for June 30, 2014]]></title>
+        <link><![CDATA[http://npmawesome.com/posts/2014-06-30-links]]></link>
+        <dc:creator><![CDATA[Alex Gorbatchev]]></dc:creator>
+        <guid isPermaLink="true"><![CDATA[http://npmawesome.com/posts/2014-06-30-links]]></guid>
+        <pubDate><![CDATA[Mon, 30 Jun 2014 16:43:28 GMT]]></pubDate>
+        <description><![CDATA[<p><img src="http://npmawesome.com/images/posts/docker.png" class="hide-on-mobile" width="150" align="right"/></p>
+<h2 id="articles">Articles</h2>
+<ul>
+<li><a href="http://www.joyent.com/developers/node/design/errors">Error Handling in Node.js</a><blockquote>
+<p>Error handling is a pain, and it&#39;s easy to get by for a long time in Node.js without dealing with many errors correctly. But building robust Node.js apps requires dealing properly with errors, and it&#39;s not hard to learn how.</p>
+</blockquote>
+</li>
+<li><a href="http://www.slideshare.net/mongodb/mongodb-and-amazon-web-services-deploying-for-high-availability-31642339">MongoDB and Amazon Web Services: Deploying for High Availability</a><blockquote>
+<p>Best practices are meant to be a sensible starting point</p>
+</blockquote>
+</li>
+<li><a href="http://blog.ponyfoo.com/2014/05/17/css-the-good-parts">CSS: The Good Parts</a><blockquote>
+<p>This style guide is a jab at solving collisions between CSS class names, and issues that ultimately lead to confusion, having to use !important rules, copying and pasting style declarations, and other awful aspects of CSS developments.</p>
+</blockquote>
+</li>
+<li><a href="http://www.cambus.net/emulators-written-in-javascript/">Emulators written in JavaScript</a><blockquote>
+<p>This list started as a compilation of JavaScript emulators posted to Echo JS over the years.</p>
+</blockquote>
+</li>
+<li><a href="http://blog.abhinav.ca/blog/2014/06/17/develop-a-nodejs-app-with-docker/">Develop a NodeJS App With Docker</a><blockquote>
+<p>This is the first of two posts. This post covers a somewhat detailed tutorial on using Docker as a replacement for Vagrant when developing a Node app using the Express framework. To make things a bit non-trivial, the app will persist session information in Redis using the connect-redid middleware.</p>
+</blockquote>
+</li>
+<li><a href="http://www.candyjapan.com/candy-japan-crosses-10000-mrr">Candy Japan crosses $10000 MRR</a><blockquote>
+<p>Out of that $10k / month revenue of course not all (not even most) is profit. Compared to a SaaS, the costs are very high, but I&#39;ve carved enough profit margin to reach an income level similar to a Japanese salaryman now.</p>
+</blockquote>
+</li>
+</ul>
+<div class="read-more"></div>
+
+<h2 id="github">Github</h2>
+<ul>
+<li><a href="https://github.com/flowjs/flow.js">flow.js</a> is a JavaScript library providing multiple simultaneous, stable, fault-tolerant and resumable/restartable file uploads via the HTML5 File API.</li>
+</ul>
+<h2 id="startups">Startups</h2>
+<ul>
+<li><a href="https://www.counterparty.co">Counterparty</a> is a global marketplace and financial platform built on Bitcoin, which makes powerful peer-to-peer financial instruments available to anyone with an Internet connection.</li>
+<li><a href="https://bugsnag.com/">bugsnap</a>’s cross platform error monitoring helps you ship with confidence.</li>
+<li><a href="https://learnable.com/">Learnable</a> is a resource to learn web development and design from the experts.</li>
+<li><a href="https://www.trycelery.com/">Celery</a> is the easiest way to accept orders now and charge when you&#39;re ready.</li>
+</ul>
+<h2 id="youtube">YouTube</h2>
+<ul>
+<li><a href="https://www.youtube.com/watch?v=Dh8kp1AcRg0">Amazon DynamoDB Design Patterns for Ultra-High Performance Apps</a></li>
+</ul>
+<h2 id="unix">Unix</h2>
+<ul>
+<li><a href="http://hippyvm.com/">HippyVM</a> on average is 7.3x faster than stock PHP and 2x faster than Facebook’s HHVM.</li>
+</ul>
+<h2 id="twitter">Twitter</h2>
+<blockquote class="twitter-tweet" data-partner="tweetdeck"><p>New <a href="https://twitter.com/hashtag/dockercon?src=hash">#dockercon</a> 14 video: &quot;Automated <a href="https://twitter.com/chef">@chef</a> cookbook testing with <a href="https://twitter.com/droneio">@droneio</a> and <a href="https://twitter.com/github">@github</a>&quot; <a href="http://t.co/7h13hXi2V3">http://t.co/7h13hXi2V3</a> by <a href="https://twitter.com/pczarkowski">@pczarkowski</a> from <a href="https://twitter.com/Rackspace">@Rackspace</a></p>&mdash; Docker (@docker) <a href="https://twitter.com/docker/statuses/482242087811702784">June 26, 2014</a></blockquote>]]></description>
+      </item>
     
       
       
@@ -68,7 +130,7 @@ Promise
     console.log(&#39;songbird.js length is&#39;, songbird.length);
   });
 </code></pre><h2 id="closing-thoughts">Closing thoughts</h2>
-<p>While I think it&#39;s a great idea to mix in the <code>promise</code> property to <code>Object</code> and <code>Function</code>, however with great power comes great responsibility. I strongly urge against using <a href="http://browsenpm.org/package/songbird">songbird</a> in modules that you would distribute on npm because it would have a very big side effect on anyone who dares to install your code. However, when used on a project that isn&#39;t made available publicaly, <a href="http://browsenpm.org/package/songbird">songbird</a> would be a great asset.</p>
+<p>While I think it&#39;s a great idea to mix in the <code>promise</code> property to <code>Object</code> and <code>Function</code>, however with great power comes great responsibility. I strongly urge against using <a href="http://browsenpm.org/package/songbird">songbird</a> in modules that you would distribute on npm because it would have a very big side effect on anyone who dares to install your code. However, when used on a project that isn&#39;t made available publicly, <a href="http://browsenpm.org/package/songbird">songbird</a> would be a great asset.</p>
 <p>Check out <a href="https://github.com/npmawesome/example-songbird">source code</a> for this article on GitHub and an <a href="http://runnable.com/U575XtnsLhN9grRU">interactive example</a> on Runnable. Let us know what you think! It&#39;s not every day you encounter a module that boldly extends <code>Object</code> and <code>Function</code>.</p>
 ]]></description>
       </item>
@@ -377,51 +439,6 @@ user.save(function (err) {
 <h2 id="closing-thoughts">Closing thoughts</h2>
 <p><a href="https://github.com/1602/jugglingdb">1602/jugglingdb</a> is not as well known as <a href="http://mongoosejs.com/">Mongoose</a>, but it&#39;s been in development since 2011 and has a pretty strong following on GitHub. <a href="http://jugglingdb.co/">Documentation</a> is pretty extensive and <a href="http://jugglingdb.co/roadmap.3.html">roadmap</a> gives you a glimpse of where the project is headed and what is currently considered missing. Finally, check out <a href="https://github.com/npmawesome/example-jugglingdb">source code</a> for this article on GitHub and an <a href="http://runnable.com/U5SP5uAfzMh7SfoX">interactive example</a> on Runnable. I&#39;ve included MongoDB, Redis and Memory examples.</p>
 ]]></description>
-      </item>
-    
-      
-      
-      
-      <item>
-        <title><![CDATA[Links for June 6, 2014]]></title>
-        <link><![CDATA[http://npmawesome.com/posts/2014-06-06-links]]></link>
-        <dc:creator><![CDATA[Alex Gorbatchev]]></dc:creator>
-        <guid isPermaLink="true"><![CDATA[http://npmawesome.com/posts/2014-06-06-links]]></guid>
-        <pubDate><![CDATA[Sat, 07 Jun 2014 00:39:31 GMT]]></pubDate>
-        <description><![CDATA[<p><img src="http://npmawesome.com/images/posts/npmawesome-logo-512x512.png" class="hide-on-mobile" width="150" align="right"/></p>
-<h2 id="articles">Articles</h2>
-<ul>
-<li><a href="https://stripe.com/blog/open-source-retreat-grantees">Stripe Open Source Retreat Grantees</a><blockquote>
-<p>We received about 120 applications in total. Since we only had a few slots (we in fact were originally going to do two, but we had so much trouble choosing we ended up creating another slot), there were a large number of really awesome projects we had to turn away.</p>
-</blockquote>
-</li>
-<li><a href="http://www.vox.com/2014/5/29/5758542/time-for-the-US-to-use-the-metric-system">It&#39;s time for the US to use the metric system</a><blockquote>
-<p>The United States is the last remaining industrialized nation with no formal commitment to going metric. America&#39;s position is causing unnecessary isolation. It&#39;s an impediment to trade and puts the United States at a disadvantage.</p>
-</blockquote>
-</li>
-<li><a href="https://www.linkedin.com/today/post/article/20140524020851-6170480-how-paypal-and-reddit-faked-their-way-to-traction?_mSplash=1">How Paypal and Reddit faked their way to traction</a><blockquote>
-<p>A platform is useless without complementary products. Marketplaces, especially, are dead without sellers posting on them. To solve the chicken-egg problem, some marketplaces create fake supply to attract buyers.</p>
-</blockquote>
-</li>
-<li><a href="http://www.slate.com/articles/technology/technology/2014/06/i_sold_my_startup_for_25_5_million_here_s_how_i_did_it.html">I Sold My Startup for $25.5 Million</a><blockquote>
-<p>When I shared the news, the team stared blankly at me, unsure if it was a good thing or a bad thing.</p>
-</blockquote>
-</li>
-</ul>
-<div class="read-more"></div>
-
-<h2 id="github">Github</h2>
-<ul>
-<li><a href="http://wicky.nillia.ms/headroom.js/">Headroom.js</a> is a lightweight, high-performance JS widget (with no dependencies!) that allows you to react to the user&#39;s scroll. The header on this site is a living example, it slides out of view when scrolling down and slides back in when scrolling up.</li>
-<li><a href="http://jessepollak.github.io/card/">Card</a> makes your credit card form better in one line of code.</li>
-<li><a href="https://github.com/cory/maury">maury</a> is an example of processing and visualizing ship course data from open ICOADS Maury data set.</li>
-</ul>
-<h2 id="youtube">YouTube</h2>
-<ul>
-<li><a href="http://www.youtube.com/watch?v=lRyRuQdjAww">Introduction to gulp.js</a></li>
-</ul>
-<h2 id="twitter">Twitter</h2>
-<blockquote class="twitter-tweet" data-partner="tweetdeck"><p>In May, <a href="https://twitter.com/tjholowaychuk">@tjholowaychuk</a> was fully or partially responsible for 32MM downloads, or about 10% of all downloads in May: <a href="http://t.co/AlxA8XVGNN">http://t.co/AlxA8XVGNN</a></p>&mdash; Laurie Voss (@seldo) <a href="https://twitter.com/seldo/statuses/474678710390751232">June 5, 2014</a></blockquote>]]></description>
       </item>
     
   </channel>
