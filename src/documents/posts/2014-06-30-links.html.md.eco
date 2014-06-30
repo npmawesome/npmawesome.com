@@ -1,0 +1,49 @@
+---
+date: 2014-06-30T09:43:28-0700
+title: Links for June 30, 2014
+layout: post-links
+tags: javascript, links
+description: Nerd links for the day, videos, GitHub projects, talks, articles and other stuff.
+---
+<img src="<%- @image '/docker.png' %>" class="hide-on-mobile" width="150" align="right"/>
+
+## Articles
+
+* [Error Handling in Node.js](http://www.joyent.com/developers/node/design/errors)
+  > Error handling is a pain, and it's easy to get by for a long time in Node.js without dealing with many errors correctly. But building robust Node.js apps requires dealing properly with errors, and it's not hard to learn how.
+* [MongoDB and Amazon Web Services: Deploying for High Availability](http://www.slideshare.net/mongodb/mongodb-and-amazon-web-services-deploying-for-high-availability-31642339)
+  > Best practices are meant to be a sensible starting point
+* [CSS: The Good Parts](http://blog.ponyfoo.com/2014/05/17/css-the-good-parts)
+  > This style guide is a jab at solving collisions between CSS class names, and issues that ultimately lead to confusion, having to use !important rules, copying and pasting style declarations, and other awful aspects of CSS developments.
+* [Emulators written in JavaScript](http://www.cambus.net/emulators-written-in-javascript/)
+  > This list started as a compilation of JavaScript emulators posted to Echo JS over the years.
+* [Develop a NodeJS App With Docker](http://blog.abhinav.ca/blog/2014/06/17/develop-a-nodejs-app-with-docker/)
+  > This is the first of two posts. This post covers a somewhat detailed tutorial on using Docker as a replacement for Vagrant when developing a Node app using the Express framework. To make things a bit non-trivial, the app will persist session information in Redis using the connect-redid middleware.
+* [Candy Japan crosses $10000 MRR](http://www.candyjapan.com/candy-japan-crosses-10000-mrr)
+  > Out of that $10k / month revenue of course not all (not even most) is profit. Compared to a SaaS, the costs are very high, but I've carved enough profit margin to reach an income level similar to a Japanese salaryman now.
+
+<%- @readMore() %>
+
+## Github
+
+* [flow.js](https://github.com/flowjs/flow.js) is a JavaScript library providing multiple simultaneous, stable, fault-tolerant and resumable/restartable file uploads via the HTML5 File API.
+
+## Startups
+
+* [Counterparty](https://www.counterparty.co) is a global marketplace and financial platform built on Bitcoin, which makes powerful peer-to-peer financial instruments available to anyone with an Internet connection.
+* [bugsnap](https://bugsnag.com/)’s cross platform error monitoring helps you ship with confidence.
+* [Learnable](https://learnable.com/) is a resource to learn web development and design from the experts.
+* [Celery](https://www.trycelery.com/) is the easiest way to accept orders now and charge when you're ready.
+
+## YouTube
+
+* [Amazon DynamoDB Design Patterns for Ultra-High Performance Apps](https://www.youtube.com/watch?v=Dh8kp1AcRg0)
+
+## Unix
+
+* [HippyVM](http://hippyvm.com/) on average is 7.3x faster than stock PHP and 2x faster than Facebook’s HHVM.
+
+## Twitter
+
+<blockquote class="twitter-tweet" data-partner="tweetdeck"><p>New <a href="https://twitter.com/hashtag/dockercon?src=hash">#dockercon</a> 14 video: &quot;Automated <a href="https://twitter.com/chef">@chef</a> cookbook testing with <a href="https://twitter.com/droneio">@droneio</a> and <a href="https://twitter.com/github">@github</a>&quot; <a href="http://t.co/7h13hXi2V3">http://t.co/7h13hXi2V3</a> by <a href="https://twitter.com/pczarkowski">@pczarkowski</a> from <a href="https://twitter.com/Rackspace">@Rackspace</a></p>&mdash; Docker (@docker) <a href="https://twitter.com/docker/statuses/482242087811702784">June 26, 2014</a></blockquote>
+
