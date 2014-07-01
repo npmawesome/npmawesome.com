@@ -5,7 +5,7 @@
 	<link href="http://npmawesome.com/atom.xml" rel="self" />
 	<link href="http://npmawesome.com" />
 	<id>http://npmawesome.com</id>
-	<updated>2014-06-30T17:39:28.887Z</updated>
+	<updated>2014-07-01T17:33:40.104Z</updated>
 	<author>
 		<name>Alex Gorbatchev</name>
 	</author>
@@ -13,6 +13,54 @@
   
   
   
+    
+    
+    
+		<entry>
+			<title>Ten open source Node.js apps</title>
+			<link href="http://npmawesome.com/posts/2014-07-01-ten-open-source-nodejs-apps"/>
+			<updated>2014-07-01T17:28:58.000Z</updated>
+			<id>http://npmawesome.com/posts/2014-07-01-ten-open-source-nodejs-apps</id>
+			<content type="html">&lt;p&gt;In this article we are going to quickly look at 10 open source Node.js applications. I want to shed some light on a few awesome Node.js projects for the sake of exposure and hope that you (just like me) would read and learn from their source code even if the applications themselves are of no interest to you.&lt;/p&gt;
+&lt;div class=&quot;read-more&quot;&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;strider-cd&quot;&gt;Strider CD&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&quot;http://browsenpm.org/package/strider&quot;&gt;Strider CD&lt;/a&gt; [GitHub: &lt;a href=&quot;https://github.com/Strider-CD/strider&quot;&gt;Strider-CD/strider&lt;/a&gt;, License: BSD] is Continuous Deployment / Continuous Integration platform.&lt;/p&gt;
+&lt;p&gt;Getting started is very simple. Simply add your GitHub projects to strider, and relax as the tight integration means your tests will run on every commit. &lt;a href=&quot;https://www.youtube.com/watch?v=whVH24yQSHI&quot;&gt;Checkout the YouTube demo&lt;/a&gt; for a 4 minute introduction.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://npmawesome.com/images/posts/ten-open-source-nodejs-apps/strider.jpg&quot; width=&quot;100%&quot; /&gt;&lt;/p&gt;
+&lt;h2 id=&quot;popcorn-time&quot;&gt;Popcorn Time&lt;/h2&gt;
+&lt;p&gt;Popcorn Time [GitHub: &lt;a href=&quot;https://github.com/popcorn-official/popcorn-app&quot;&gt;popcorn-official/popcorn-app&lt;/a&gt;, License: GPL] allows any computer user to watch movies easily streaming from torrents, without any particular knowledge. It is, in my opinion, the most interesting applications technology wise in this list with a good amount of &lt;a href=&quot;https://torrentfreak.com/popcorn-time-devs-drop-like-flies-but-no-one-will-talk-140420/&quot;&gt;controversy&lt;/a&gt; to boot.&lt;/p&gt;
+&lt;p&gt;It&amp;#39;s a desktop app build on top of the node-webkit [GitHub: &lt;a href=&quot;https://github.com/rogerwang/node-webkit&quot;&gt;rogerwang/node-webkit&lt;/a&gt;, License: MIT] that is able to stream and play a torrent movie practicaly in real time... and it&amp;#39;s all JavaScript. Seriously cool stuff!&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://npmawesome.com/images/posts/ten-open-source-nodejs-apps/popcorn1.png&quot; width=&quot;100%&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://npmawesome.com/images/posts/ten-open-source-nodejs-apps/popcorn2.png&quot; width=&quot;100%&quot; /&gt;&lt;/p&gt;
+&lt;h2 id=&quot;mediacenterjs&quot;&gt;MediacenterJS&lt;/h2&gt;
+&lt;p&gt;MediacenterJS [GitHub: &lt;a href=&quot;https://github.com/jansmolders86/mediacenterjs&quot;&gt;jansmolders86/mediacenterjs&lt;/a&gt;, License: GPL] is a media center (like for instance &lt;a href=&quot;http://xbmc.org/&quot;&gt;XBMC&lt;/a&gt;) running completely from the comfort of your browser. The server application runs on Windows, MAC and Linux systems, the client runs in every modern browser.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://npmawesome.com/images/posts/ten-open-source-nodejs-apps/mediacenterjs.png&quot; width=&quot;100%&quot; /&gt;&lt;/p&gt;
+&lt;h2 id=&quot;kiwiirc&quot;&gt;KiwiIRC&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&quot;http://browsenpm.org/package/kiwiirc&quot;&gt;KiwiIRC&lt;/a&gt; [GitHub: &lt;a href=&quot;https://github.com/prawnsalad/KiwiIRC&quot;&gt;prawnsalad/KiwiIRC&lt;/a&gt;, License: AGPL] is a fully featured IRC client that can be extended to suit almost any needs. Using the web application is extremly simple even without any IRC knowledge as all the common needs are built directly into the UI.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://npmawesome.com/images/posts/ten-open-source-nodejs-apps/kiwiirc.png&quot; width=&quot;100%&quot; /&gt;&lt;/p&gt;
+&lt;h2 id=&quot;slate&quot;&gt;Slate&lt;/h2&gt;
+&lt;p&gt;Slate [GitHub: &lt;a href=&quot;https://github.com/slate/slate&quot;&gt;slate/slate&lt;/a&gt;, License: MIT] is a modern minimalistic IRC client, completely extensible through plugins and built with web technologies and for OSX, Linux, and eventually Windows.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://npmawesome.com/images/posts/ten-open-source-nodejs-apps/slate.png&quot; width=&quot;100%&quot; /&gt;&lt;/p&gt;
+&lt;h2 id=&quot;david&quot;&gt;David&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&quot;http://browsenpm.org/package/david&quot;&gt;David&lt;/a&gt; [GitHub: &lt;a href=&quot;https://github.com/alanshaw/david-www&quot;&gt;alanshaw/david-www&lt;/a&gt;, License: MIT] is a web service that tells you when your project NPM dependencies are out of date.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://npmawesome.com/images/posts/ten-open-source-nodejs-apps/david.png&quot; width=&quot;100%&quot; /&gt;&lt;/p&gt;
+&lt;h2 id=&quot;shields&quot;&gt;Shields&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&quot;http://browsenpm.org/package/gh-badges&quot;&gt;Shields&lt;/a&gt; (GitHub: &lt;a href=&quot;https://github.com/badges/shields&quot;&gt;badges/shields&lt;/a&gt;, License: CC0) is a service that provides legible &amp;amp; concise status badges for third-party codebase services, like those that you see aplenty all over GitHub.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://npmawesome.com/images/posts/ten-open-source-nodejs-apps/shields.png&quot; width=&quot;100%&quot; /&gt;&lt;/p&gt;
+&lt;h2 id=&quot;i-love-open-source&quot;&gt;I Love Open Source&lt;/h2&gt;
+&lt;p&gt;I Love Open Source [GitHub: &lt;a href=&quot;https://github.com/codio/iloveopensource&quot;&gt;codio/iloveopensource&lt;/a&gt;, License: MIT] is a way of encouraging users of Open Source code to express their gratitude through a simple acknowledgement page. Along the way, they are gently offered a chance to donate cash or just thanks.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://npmawesome.com/images/posts/ten-open-source-nodejs-apps/iloveopensource.png&quot; width=&quot;100%&quot; /&gt;&lt;/p&gt;
+&lt;h2 id=&quot;browsenpm-org&quot;&gt;browsenpm.org&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&quot;http://browsenpm.org/package/browsenpm&quot;&gt;browsenpm.org&lt;/a&gt; [GitHub: &lt;a href=&quot;https://github.com/nodejitsu/browsenpm.org&quot;&gt;nodejitsu/browsenpm.org&lt;/a&gt;, License: MIT] allows you to browse packages, users, code, stats and more the public npm registry in style.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://npmawesome.com/images/posts/ten-open-source-nodejs-apps/browsenpm.png&quot; width=&quot;100%&quot; /&gt;&lt;/p&gt;
+&lt;h2 id=&quot;npmjs-org&quot;&gt;npmjs.org&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&quot;http://browsenpm.org/package/npm-www&quot;&gt;npmjs.org&lt;/a&gt; [GitHub: &lt;a href=&quot;https://github.com/npm/npm-www&quot;&gt;npm/npm-www&lt;/a&gt;, License: BSD] is the source for npmjs.org that you probably have seen many times before but might have not realized was open for anyone to see and contribute to.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://npmawesome.com/images/posts/ten-open-source-nodejs-apps/npmjs.png&quot; width=&quot;100%&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;Have you seen other interesting applications written in Node.js? Please post them in comments!&lt;/p&gt;
+</content>
+		</entry>
+	
     
     
     
@@ -357,70 +405,6 @@ log.info({req: req});
 &lt;/blockquote&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
-</content>
-		</entry>
-	
-    
-    
-    
-		<entry>
-			<title>JugglingDB</title>
-			<link href="http://npmawesome.com/posts/2014-06-16-jugglingdb"/>
-			<updated>2014-06-16T16:00:00.000Z</updated>
-			<id>http://npmawesome.com/posts/2014-06-16-jugglingdb</id>
-			<content type="html">&lt;p&gt;Data access is something Node.js is very well known for. When it comes to drivers, there&amp;#39;s support for nearly every database under the sun. These days however, in most cases you use an &lt;a href=&quot;http://en.wikipedia.org/wiki/Object-relational_mapping&quot;&gt;ORM&lt;/a&gt; library instead of a plain driver. It saves you time and you don&amp;#39;t have to write every single thing youself.&lt;/p&gt;
-&lt;p&gt;There are database specific &lt;a href=&quot;http://en.wikipedia.org/wiki/Object-relational_mapping&quot;&gt;ORM&lt;/a&gt; libraries such as &lt;a href=&quot;http://mongoosejs.com/&quot;&gt;Mongoose&lt;/a&gt; for MongoDB and &lt;a href=&quot;http://sequelizejs.com/&quot;&gt;Sequelize&lt;/a&gt; for MySQL and PostgreSQL. The downside to this approach is that you have to learn a whole new API when you have to go from one database to another. I&amp;#39;m not suggesting it&amp;#39;s a good idea to switch or use different databases during a lifecycle of a single project (eg SQLite for development and MySQL for production). But going from project to project, client to client, your requirements might change and you will have to use a different database and then learn a whole new API. Fun? Yes! But if you have to delivery features quickly, this might be a setback.&lt;/p&gt;
-&lt;div class=&quot;read-more&quot;&gt;&lt;/div&gt;
-
-&lt;p&gt;&lt;img src=&quot;http://npmawesome.com/images/posts/anatoliy_chakkaev.jpg&quot; width=&quot;100&quot; align=&quot;right&quot;/&gt;
-&lt;a href=&quot;http://browsenpm.org/package/jugglingdb&quot;&gt;JugglingDB&lt;/a&gt; (Github: &lt;a href=&quot;https://github.com/1602/jugglingdb&quot;&gt;1602/jugglingdb&lt;/a&gt;, License: MIT) by &lt;a href=&quot;https://github.com/1602&quot;&gt;Anatoliy Chakkaev&lt;/a&gt; is a young &lt;a href=&quot;http://en.wikipedia.org/wiki/Object-relational_mapping&quot;&gt;ORM&lt;/a&gt; library that tries to provide a single API for a vast array of databases. All adapters come in a form of separate modules and there are quite a few already available:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;ArangoDB&lt;/li&gt;
-&lt;li&gt;CouchDB&lt;/li&gt;
-&lt;li&gt;Firebird&lt;/li&gt;
-&lt;li&gt;MongoDB&lt;/li&gt;
-&lt;li&gt;MySQL&lt;/li&gt;
-&lt;li&gt;PostgreSQL&lt;/li&gt;
-&lt;li&gt;Redis&lt;/li&gt;
-&lt;li&gt;RethinkDB&lt;/li&gt;
-&lt;li&gt;SQLite&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;Lets check it out!&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;npm install jugglingdb
-&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&quot;usage&quot;&gt;Usage&lt;/h2&gt;
-&lt;pre&gt;&lt;code&gt;var Schema = require(&amp;#39;jugglingdb&amp;#39;).Schema;
-var schema = new Schema(&amp;#39;redis&amp;#39;, {port: 6379});
-
-var Post = schema.define(&amp;#39;Post&amp;#39;, {
-  title: { type: String, length: 255 },
-  content: { type: Schema.Text },
-  date: { type: Date, default: function () { return new Date; } },
-  timestamp: { type: Number,  default: Date.now },
-  published: { type: Boolean, default: false, index: true }
-});
-
-var User = schema.define(&amp;#39;User&amp;#39;, {
-  name: String,
-  bio: Schema.Text,
-  approved: Boolean,
-  joinedAt: Date,
-  age: Number
-});
-
-User.hasMany(Post, { as: &amp;#39;posts&amp;#39;,  foreignKey: &amp;#39;userId&amp;#39; });
-Post.belongsTo(User, { as: &amp;#39;author&amp;#39;, foreignKey: &amp;#39;userId&amp;#39; });
-
-var user = new User({ name: &amp;#39;Alex&amp;#39; });
-
-user.save(function (err) {
-  var post = user.posts.build({ title: &amp;#39;Hello world&amp;#39; });
-  post.save(console.log);
-});
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Here&amp;#39;s the cool part, if you want to use a different database, all you have to do is change how your schema connects:&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;var schema = new Schema(&amp;#39;mongodb&amp;#39;, {url: &amp;#39;mongodb://localhost/myapp&amp;#39;});
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;What&amp;#39;s even cooler, is that you can have multiple schemas connecting to multiple databases at the same time. This could be very handy if for example you want to keep some cached data in Redis, which storing your loosly defined documents in MongoDB and your accounting stuff in MySQL. You could do all that with a single API.&lt;/p&gt;
-&lt;h2 id=&quot;closing-thoughts&quot;&gt;Closing thoughts&lt;/h2&gt;
-&lt;p&gt;&lt;a href=&quot;https://github.com/1602/jugglingdb&quot;&gt;1602/jugglingdb&lt;/a&gt; is not as well known as &lt;a href=&quot;http://mongoosejs.com/&quot;&gt;Mongoose&lt;/a&gt;, but it&amp;#39;s been in development since 2011 and has a pretty strong following on GitHub. &lt;a href=&quot;http://jugglingdb.co/&quot;&gt;Documentation&lt;/a&gt; is pretty extensive and &lt;a href=&quot;http://jugglingdb.co/roadmap.3.html&quot;&gt;roadmap&lt;/a&gt; gives you a glimpse of where the project is headed and what is currently considered missing. Finally, check out &lt;a href=&quot;https://github.com/npmawesome/example-jugglingdb&quot;&gt;source code&lt;/a&gt; for this article on GitHub and an &lt;a href=&quot;http://runnable.com/U5SP5uAfzMh7SfoX&quot;&gt;interactive example&lt;/a&gt; on Runnable. I&amp;#39;ve included MongoDB, Redis and Memory examples.&lt;/p&gt;
 </content>
 		</entry>
 	

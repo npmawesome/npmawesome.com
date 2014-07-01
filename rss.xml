@@ -15,15 +15,64 @@
     <atom:link href="http://feeds.feedburner.com/npmawesome" rel="self" type="application/rss+xml"/>
     <link>http://npmawesome.com</link>
     <description>Daily dose of awesome NPM modules for Node.js, old and new!</description>
-    <lastBuildDate>Mon, 30 Jun 2014 17:39:28 GMT</lastBuildDate>
+    <lastBuildDate>Tue, 01 Jul 2014 17:33:40 GMT</lastBuildDate>
     <language>en</language>
     <sy:updatePeriod>daily</sy:updatePeriod>
     <sy:updateFrequency>2</sy:updateFrequency>
     <generator>awesomeness</generator>
-    <pubDate>Mon, 30 Jun 2014 17:39:28 GMT</pubDate>
+    <pubDate>Tue, 01 Jul 2014 17:33:40 GMT</pubDate>
 
     
     
+    
+      
+      
+      
+      <item>
+        <title><![CDATA[Ten open source Node.js apps]]></title>
+        <link><![CDATA[http://npmawesome.com/posts/2014-07-01-ten-open-source-nodejs-apps]]></link>
+        <dc:creator><![CDATA[Alex Gorbatchev]]></dc:creator>
+        <guid isPermaLink="true"><![CDATA[http://npmawesome.com/posts/2014-07-01-ten-open-source-nodejs-apps]]></guid>
+        <pubDate><![CDATA[Tue, 01 Jul 2014 17:28:58 GMT]]></pubDate>
+        <description><![CDATA[<p>In this article we are going to quickly look at 10 open source Node.js applications. I want to shed some light on a few awesome Node.js projects for the sake of exposure and hope that you (just like me) would read and learn from their source code even if the applications themselves are of no interest to you.</p>
+<div class="read-more"></div>
+
+<h2 id="strider-cd">Strider CD</h2>
+<p><a href="http://browsenpm.org/package/strider">Strider CD</a> [GitHub: <a href="https://github.com/Strider-CD/strider">Strider-CD/strider</a>, License: BSD] is Continuous Deployment / Continuous Integration platform.</p>
+<p>Getting started is very simple. Simply add your GitHub projects to strider, and relax as the tight integration means your tests will run on every commit. <a href="https://www.youtube.com/watch?v=whVH24yQSHI">Checkout the YouTube demo</a> for a 4 minute introduction.</p>
+<p><img src="http://npmawesome.com/images/posts/ten-open-source-nodejs-apps/strider.jpg" width="100%" /></p>
+<h2 id="popcorn-time">Popcorn Time</h2>
+<p>Popcorn Time [GitHub: <a href="https://github.com/popcorn-official/popcorn-app">popcorn-official/popcorn-app</a>, License: GPL] allows any computer user to watch movies easily streaming from torrents, without any particular knowledge. It is, in my opinion, the most interesting applications technology wise in this list with a good amount of <a href="https://torrentfreak.com/popcorn-time-devs-drop-like-flies-but-no-one-will-talk-140420/">controversy</a> to boot.</p>
+<p>It&#39;s a desktop app build on top of the node-webkit [GitHub: <a href="https://github.com/rogerwang/node-webkit">rogerwang/node-webkit</a>, License: MIT] that is able to stream and play a torrent movie practicaly in real time... and it&#39;s all JavaScript. Seriously cool stuff!</p>
+<p><img src="http://npmawesome.com/images/posts/ten-open-source-nodejs-apps/popcorn1.png" width="100%" /></p>
+<p><img src="http://npmawesome.com/images/posts/ten-open-source-nodejs-apps/popcorn2.png" width="100%" /></p>
+<h2 id="mediacenterjs">MediacenterJS</h2>
+<p>MediacenterJS [GitHub: <a href="https://github.com/jansmolders86/mediacenterjs">jansmolders86/mediacenterjs</a>, License: GPL] is a media center (like for instance <a href="http://xbmc.org/">XBMC</a>) running completely from the comfort of your browser. The server application runs on Windows, MAC and Linux systems, the client runs in every modern browser.</p>
+<p><img src="http://npmawesome.com/images/posts/ten-open-source-nodejs-apps/mediacenterjs.png" width="100%" /></p>
+<h2 id="kiwiirc">KiwiIRC</h2>
+<p><a href="http://browsenpm.org/package/kiwiirc">KiwiIRC</a> [GitHub: <a href="https://github.com/prawnsalad/KiwiIRC">prawnsalad/KiwiIRC</a>, License: AGPL] is a fully featured IRC client that can be extended to suit almost any needs. Using the web application is extremly simple even without any IRC knowledge as all the common needs are built directly into the UI.</p>
+<p><img src="http://npmawesome.com/images/posts/ten-open-source-nodejs-apps/kiwiirc.png" width="100%" /></p>
+<h2 id="slate">Slate</h2>
+<p>Slate [GitHub: <a href="https://github.com/slate/slate">slate/slate</a>, License: MIT] is a modern minimalistic IRC client, completely extensible through plugins and built with web technologies and for OSX, Linux, and eventually Windows.</p>
+<p><img src="http://npmawesome.com/images/posts/ten-open-source-nodejs-apps/slate.png" width="100%" /></p>
+<h2 id="david">David</h2>
+<p><a href="http://browsenpm.org/package/david">David</a> [GitHub: <a href="https://github.com/alanshaw/david-www">alanshaw/david-www</a>, License: MIT] is a web service that tells you when your project NPM dependencies are out of date.</p>
+<p><img src="http://npmawesome.com/images/posts/ten-open-source-nodejs-apps/david.png" width="100%" /></p>
+<h2 id="shields">Shields</h2>
+<p><a href="http://browsenpm.org/package/gh-badges">Shields</a> (GitHub: <a href="https://github.com/badges/shields">badges/shields</a>, License: CC0) is a service that provides legible &amp; concise status badges for third-party codebase services, like those that you see aplenty all over GitHub.</p>
+<p><img src="http://npmawesome.com/images/posts/ten-open-source-nodejs-apps/shields.png" width="100%" /></p>
+<h2 id="i-love-open-source">I Love Open Source</h2>
+<p>I Love Open Source [GitHub: <a href="https://github.com/codio/iloveopensource">codio/iloveopensource</a>, License: MIT] is a way of encouraging users of Open Source code to express their gratitude through a simple acknowledgement page. Along the way, they are gently offered a chance to donate cash or just thanks.</p>
+<p><img src="http://npmawesome.com/images/posts/ten-open-source-nodejs-apps/iloveopensource.png" width="100%" /></p>
+<h2 id="browsenpm-org">browsenpm.org</h2>
+<p><a href="http://browsenpm.org/package/browsenpm">browsenpm.org</a> [GitHub: <a href="https://github.com/nodejitsu/browsenpm.org">nodejitsu/browsenpm.org</a>, License: MIT] allows you to browse packages, users, code, stats and more the public npm registry in style.</p>
+<p><img src="http://npmawesome.com/images/posts/ten-open-source-nodejs-apps/browsenpm.png" width="100%" /></p>
+<h2 id="npmjs-org">npmjs.org</h2>
+<p><a href="http://browsenpm.org/package/npm-www">npmjs.org</a> [GitHub: <a href="https://github.com/npm/npm-www">npm/npm-www</a>, License: BSD] is the source for npmjs.org that you probably have seen many times before but might have not realized was open for anyone to see and contribute to.</p>
+<p><img src="http://npmawesome.com/images/posts/ten-open-source-nodejs-apps/npmjs.png" width="100%" /></p>
+<p>Have you seen other interesting applications written in Node.js? Please post them in comments!</p>
+]]></description>
+      </item>
     
       
       
@@ -373,71 +422,6 @@ log.info({req: req});
 </blockquote>
 </li>
 </ul>
-]]></description>
-      </item>
-    
-      
-      
-      
-      <item>
-        <title><![CDATA[JugglingDB]]></title>
-        <link><![CDATA[http://npmawesome.com/posts/2014-06-16-jugglingdb]]></link>
-        <dc:creator><![CDATA[Alex Gorbatchev]]></dc:creator>
-        <guid isPermaLink="true"><![CDATA[http://npmawesome.com/posts/2014-06-16-jugglingdb]]></guid>
-        <pubDate><![CDATA[Mon, 16 Jun 2014 16:00:00 GMT]]></pubDate>
-        <description><![CDATA[<p>Data access is something Node.js is very well known for. When it comes to drivers, there&#39;s support for nearly every database under the sun. These days however, in most cases you use an <a href="http://en.wikipedia.org/wiki/Object-relational_mapping">ORM</a> library instead of a plain driver. It saves you time and you don&#39;t have to write every single thing youself.</p>
-<p>There are database specific <a href="http://en.wikipedia.org/wiki/Object-relational_mapping">ORM</a> libraries such as <a href="http://mongoosejs.com/">Mongoose</a> for MongoDB and <a href="http://sequelizejs.com/">Sequelize</a> for MySQL and PostgreSQL. The downside to this approach is that you have to learn a whole new API when you have to go from one database to another. I&#39;m not suggesting it&#39;s a good idea to switch or use different databases during a lifecycle of a single project (eg SQLite for development and MySQL for production). But going from project to project, client to client, your requirements might change and you will have to use a different database and then learn a whole new API. Fun? Yes! But if you have to delivery features quickly, this might be a setback.</p>
-<div class="read-more"></div>
-
-<p><img src="http://npmawesome.com/images/posts/anatoliy_chakkaev.jpg" width="100" align="right"/>
-<a href="http://browsenpm.org/package/jugglingdb">JugglingDB</a> (Github: <a href="https://github.com/1602/jugglingdb">1602/jugglingdb</a>, License: MIT) by <a href="https://github.com/1602">Anatoliy Chakkaev</a> is a young <a href="http://en.wikipedia.org/wiki/Object-relational_mapping">ORM</a> library that tries to provide a single API for a vast array of databases. All adapters come in a form of separate modules and there are quite a few already available:</p>
-<ul>
-<li>ArangoDB</li>
-<li>CouchDB</li>
-<li>Firebird</li>
-<li>MongoDB</li>
-<li>MySQL</li>
-<li>PostgreSQL</li>
-<li>Redis</li>
-<li>RethinkDB</li>
-<li>SQLite</li>
-</ul>
-<p>Lets check it out!</p>
-<pre><code>npm install jugglingdb
-</code></pre><h2 id="usage">Usage</h2>
-<pre><code>var Schema = require(&#39;jugglingdb&#39;).Schema;
-var schema = new Schema(&#39;redis&#39;, {port: 6379});
-
-var Post = schema.define(&#39;Post&#39;, {
-  title: { type: String, length: 255 },
-  content: { type: Schema.Text },
-  date: { type: Date, default: function () { return new Date; } },
-  timestamp: { type: Number,  default: Date.now },
-  published: { type: Boolean, default: false, index: true }
-});
-
-var User = schema.define(&#39;User&#39;, {
-  name: String,
-  bio: Schema.Text,
-  approved: Boolean,
-  joinedAt: Date,
-  age: Number
-});
-
-User.hasMany(Post, { as: &#39;posts&#39;,  foreignKey: &#39;userId&#39; });
-Post.belongsTo(User, { as: &#39;author&#39;, foreignKey: &#39;userId&#39; });
-
-var user = new User({ name: &#39;Alex&#39; });
-
-user.save(function (err) {
-  var post = user.posts.build({ title: &#39;Hello world&#39; });
-  post.save(console.log);
-});
-</code></pre><p>Here&#39;s the cool part, if you want to use a different database, all you have to do is change how your schema connects:</p>
-<pre><code>var schema = new Schema(&#39;mongodb&#39;, {url: &#39;mongodb://localhost/myapp&#39;});
-</code></pre><p>What&#39;s even cooler, is that you can have multiple schemas connecting to multiple databases at the same time. This could be very handy if for example you want to keep some cached data in Redis, which storing your loosly defined documents in MongoDB and your accounting stuff in MySQL. You could do all that with a single API.</p>
-<h2 id="closing-thoughts">Closing thoughts</h2>
-<p><a href="https://github.com/1602/jugglingdb">1602/jugglingdb</a> is not as well known as <a href="http://mongoosejs.com/">Mongoose</a>, but it&#39;s been in development since 2011 and has a pretty strong following on GitHub. <a href="http://jugglingdb.co/">Documentation</a> is pretty extensive and <a href="http://jugglingdb.co/roadmap.3.html">roadmap</a> gives you a glimpse of where the project is headed and what is currently considered missing. Finally, check out <a href="https://github.com/npmawesome/example-jugglingdb">source code</a> for this article on GitHub and an <a href="http://runnable.com/U5SP5uAfzMh7SfoX">interactive example</a> on Runnable. I&#39;ve included MongoDB, Redis and Memory examples.</p>
 ]]></description>
       </item>
     
