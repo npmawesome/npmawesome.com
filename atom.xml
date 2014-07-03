@@ -5,7 +5,7 @@
 	<link href="http://npmawesome.com/atom.xml" rel="self" />
 	<link href="http://npmawesome.com" />
 	<id>http://npmawesome.com</id>
-	<updated>2014-07-01T17:42:31.111Z</updated>
+	<updated>2014-07-03T17:37:05.561Z</updated>
 	<author>
 		<name>Alex Gorbatchev</name>
 	</author>
@@ -13,6 +13,76 @@
   
   
   
+    
+    
+    
+		<entry>
+			<title>Links for June 30, 2014</title>
+			<link href="http://npmawesome.com/posts/2014-07-03-links"/>
+			<updated>2014-07-03T17:25:02.000Z</updated>
+			<id>http://npmawesome.com/posts/2014-07-03-links</id>
+			<content type="html">&lt;p&gt;&lt;img src=&quot;http://bost.ocks.org/mike/algorithms/starry-night-detail.jpg&quot; class=&quot;hide-on-mobile&quot; width=&quot;100%&quot; /&gt;&lt;/p&gt;
+&lt;h2 id=&quot;articles&quot;&gt;Articles&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;http://bost.ocks.org/mike/algorithms/&quot;&gt;Visualizing Algorithms&lt;/a&gt;&lt;blockquote&gt;
+&lt;p&gt;Algorithms are a fascinating use case for visualization. To visualize an algorithm, we don’t merely fit data to a chart; there is no primary dataset. Instead there are logical rules that describe behavior. This may be why algorithm visualizations are so unusual, as designers experiment with novel forms to better communicate. This is reason enough to study them.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://gist.github.com/staltz/868e7e9bc2a7b8c1f754&quot;&gt;The introduction to Reactive Programming you&amp;#39;ve been missing&lt;/a&gt;&lt;blockquote&gt;
+&lt;p&gt;The hardest part of the learning journey is thinking in FRP. It&amp;#39;s a lot about letting go of old imperative and stateful habits of typical programming, and forcing your brain to work in a different paradigm. I haven&amp;#39;t found any guide on the internet in this aspect, and I think the world deserves a practical tutorial on how to think in FRP, so that you can get started. Library documentation can light your way after that. I hope this helps you.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://reset.me/story/howpsychedelicssavedmylife&quot;&gt;How Psychedelics Saved My Life&lt;/a&gt;&lt;blockquote&gt;
+&lt;p&gt;I founded the website reset.me, to produce and aggregate journalism on consciousness, natural medicines, and therapies.  Psychedelic explorer Terrence McKenna compared taking psychedelics to hitting the ‘reset button’ on your internal hard drive, clearing out the junk, and starting over.  I created reset.me to help connect those who need to hit the ‘reset button’ in life with journalism covering the tools that enable us to heal.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://www.thinkster.io/angularjs/eIaGNOAlOk/angularjs-providers&quot;&gt;AngularJS - Providers&lt;/a&gt;&lt;blockquote&gt;
+&lt;p&gt;Factories are a common paradigm in Angular that allow you to configure a function that returns an object which can be then injected into controllers.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://blog.atom.io/2014/07/02/moving-atom-to-react.html&quot;&gt;Moving Atom To React&lt;/a&gt;&lt;blockquote&gt;
+&lt;p&gt;Performance is a top priority for the Atom team, and recently we’ve been focusing on making basic text editing smoother and more responsive. After some initial incremental progress, we decided to take a step back and rewrite the editor component&amp;#39;s view layer with a superior framework and a better understanding of the problem.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&quot;read-more&quot;&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;github&quot;&gt;Github&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/NYTimes/ice&quot;&gt;Ice&lt;/a&gt; is a track changes implementation, built in javascript, for anything that is contenteditable on the web. Conceived by the CMS Group at The New York Times, ice is powering the editor used for writing articles in the newsroom.&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://octicons.github.com/&quot;&gt;Octicons&lt;/a&gt; - github icons!&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;startups&quot;&gt;Startups&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://www.craftcoffee.com&quot;&gt;Craft Coffee&lt;/a&gt; - the world&amp;#39;s best coffee, expertly chosen and delivered to your doorstep.&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://www.candyjapan.com/&quot;&gt;Candy Japan&lt;/a&gt; - Japanese candy surprises in your mailbox twice a month. Free shipping even to United States.&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://www.parkopedia.com&quot;&gt;Parkopedia&lt;/a&gt; is a wikipedia for parking - add, edit and review parking information.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;youtube&quot;&gt;YouTube&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://www.youtube.com/watch?v=8zcWQVdh3SQ&quot;&gt;API Testing and Monitoring with Frisby.js - SF Node.JS talk by Garland Kan&lt;/a&gt;&lt;blockquote&gt;
+&lt;p&gt;An increasing number of applications are built with APIs for internal services communicating with each other and an external API. These critical APIs must be monitored. In this talk, Garland Kan (Engineer, Algorithms.io and AutoDevBot.com), explains how engineers can use Frisby.JS as an API testing and monitoring tool.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;apps&quot;&gt;Apps&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;http://www.macbartender.com/&quot;&gt;Bartender&lt;/a&gt; lets you organize your menu bar apps, by hiding them, rearranging them, or moving them to Bartender&amp;#39;s Bar. You can display the full menu bar, set options to have menu bar items show in the menu bar when they have updated, or have them always visible in Bartender&amp;#39;s Bar.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;unix&quot;&gt;Unix&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;cp -&lt;/code&gt; to go back to the previous directory where you just were.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;twitter&quot;&gt;Twitter&lt;/h2&gt;
+&lt;blockquote class=&quot;twitter-tweet&quot; data-partner=&quot;tweetdeck&quot;&gt;&lt;p&gt;Google Maps | AngularJS directives for the Google Maps Javascript API - &lt;a href=&quot;http://t.co/WzfDvtNgAb&quot;&gt;http://t.co/WzfDvtNgAb&lt;/a&gt; &lt;a href=&quot;http://t.co/y9Gqaa0vTh&quot;&gt;pic.twitter.com/y9Gqaa0vTh&lt;/a&gt;&lt;/p&gt;&amp;mdash; Angular-js Directive (@ng_directives) &lt;a href=&quot;https://twitter.com/ng_directives/statuses/482169124840566785&quot;&gt;June 26, 2014&lt;/a&gt;&lt;/blockquote&gt;
+
+&lt;h2 id=&quot;misc&quot;&gt;Misc&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;http://www.instructables.com/tag/type-id/category-food/channel-cocktails-and-mocktails/&quot;&gt;Instructables Cocktails&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</content>
+		</entry>
+	
     
     
     
@@ -351,60 +421,6 @@ log.info({req: req});
 &lt;/ul&gt;
 &lt;h2 id=&quot;what-s-next-&quot;&gt;What&amp;#39;s next?&lt;/h2&gt;
 &lt;p&gt;&lt;a href=&quot;https://github.com/flatiron/winston&quot;&gt;Winston&lt;/a&gt; and &lt;a href=&quot;https://github.com/trentm/node-bunyan&quot;&gt;Bunyan&lt;/a&gt; are both very mature and established logging frameworks and are very much on par in terms of features. &lt;a href=&quot;https://github.com/flatiron/winston&quot;&gt;Winston&lt;/a&gt; has a lot of community support with various logging modules. &lt;a href=&quot;https://github.com/trentm/node-bunyan&quot;&gt;Bunyan&lt;/a&gt; makes it easy out of the box to parse logs but leaves consumption up the user (generally syslog drain works pretty well here). I feel it all comes down to preference and how easy it is to integrate with your stack.&lt;/p&gt;
-</content>
-		</entry>
-	
-    
-    
-    
-		<entry>
-			<title>Links for June 17, 2014</title>
-			<link href="http://npmawesome.com/posts/2014-06-17-links"/>
-			<updated>2014-06-17T17:36:34.000Z</updated>
-			<id>http://npmawesome.com/posts/2014-06-17-links</id>
-			<content type="html">&lt;p&gt;&lt;img src=&quot;http://npmawesome.com/images/posts/npmawesome-logo-512x512.png&quot; class=&quot;hide-on-mobile&quot; width=&quot;150&quot; align=&quot;right&quot;/&gt;&lt;/p&gt;
-&lt;h2 id=&quot;articles&quot;&gt;Articles&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://developer.apple.com/library/prerelease/mac/releasenotes/InterapplicationCommunication/RN-JavaScriptForAutomation/index.html#//apple_ref/doc/uid/TP40014508&quot;&gt;This article describes JavaScript for Automation, a new feature in OS X 10.10&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://blog.docker.com/2014/06/its-here-docker-1-0/&quot;&gt;It’s here: Docker 1.0&lt;/a&gt;&lt;blockquote&gt;
-&lt;p&gt;First, while many organizations have cheerfully ignored our “Do not run in production!” warnings, others have been waiting for a level of product maturity before deploying production workloads.  This release’s “1.0” label signifies a level of quality, feature completeness, backward compatibility and API stability to meet enterprise IT standards.&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://meteortips.com/leaderboard-example-tutorial/&quot;&gt;How To Make the Leaderboard Example App in Meteor&lt;/a&gt;&lt;blockquote&gt;
-&lt;p&gt;In the coming weeks and months, I’ll be publishing tutorials on how to build all four of these applications from scratch. I’ll be simplifying the code in some places, making it more friendly to beginners, but they’ll be practically identical in terms of features.&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://gmarty.github.io/jsconf-2014-talk-play-dvd-in-js&quot;&gt;Playing DVD in JavaScript&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://www.2ality.com/2014/05/current-script.html&quot;&gt;Identifying the current script element&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://medium.com/architecting-a-life/fee8f3ee97a0&quot;&gt;Finding the unjustly homeless, and teaching them to code&lt;/a&gt;&lt;blockquote&gt;
-&lt;p&gt;The idea is simple. Without disrespecting him, I will offer two options:&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;I will come back tomorrow and give you $100 in cash.&lt;/li&gt;
-&lt;li&gt;I will come back tomorrow and give you three JavaScript books, (beginner-advanced-expert) and a super cheap basic laptop. I will then come an hour early from work each day—when he feels prepared—and teach him to code.&lt;/li&gt;
-&lt;/ol&gt;
-&lt;/blockquote&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://code.tutsplus.com/tutorials/real-time-chat-with-nodejs-readline-socketio--cms-20953&quot;&gt;Real-Time Chat With Node.js&amp;#39; Readline &amp;amp; Socket.io&lt;/a&gt;&lt;blockquote&gt;
-&lt;p&gt;Node.js has an under-appreciated module in its standard library that is surprisingly useful. The Readline module does what it says on the box: it reads a line of input from the terminal.&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;div class=&quot;read-more&quot;&gt;&lt;/div&gt;
-
-&lt;h2 id=&quot;github&quot;&gt;Github&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://github.com/snookca/CoffeeConsole&quot;&gt;CoffeeConsole&lt;/a&gt; is a Chrome Extension for running CoffeeScript from the Web Inspector.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&quot;twitter&quot;&gt;Twitter&lt;/h2&gt;
-&lt;blockquote class=&quot;twitter-tweet&quot; data-partner=&quot;tweetdeck&quot;&gt;&lt;p&gt;Introducing the new &lt;a href=&quot;http://t.co/JK8ZTaMria&quot;&gt;http://t.co/JK8ZTaMria&lt;/a&gt; &amp;lt;3 &lt;a href=&quot;http://t.co/tPJOHsGYgj&quot;&gt;pic.twitter.com/tPJOHsGYgj&lt;/a&gt;&lt;/p&gt;&amp;mdash; Yeoman (@yeoman) &lt;a href=&quot;https://twitter.com/yeoman/statuses/477493274509602816&quot;&gt;June 13, 2014&lt;/a&gt;&lt;/blockquote&gt;
-
-&lt;h2 id=&quot;misc&quot;&gt;Misc&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;http://www.thisiscolossal.com/2014/06/a-retired-boeing-727-converted-into-a-home-in-the-woods/&quot;&gt;A Retired Boeing 727 Converted Into a Home in the Woods&lt;/a&gt;&lt;blockquote&gt;
-&lt;p&gt;&lt;img src=&quot;http://www.thisiscolossal.com/wp-content/uploads/2014/06/retired-boeing-727-recycled-home-bruce-campbell-1.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
 </content>
 		</entry>
 	

@@ -15,15 +15,86 @@
     <atom:link href="http://feeds.feedburner.com/npmawesome" rel="self" type="application/rss+xml"/>
     <link>http://npmawesome.com</link>
     <description>Daily dose of awesome NPM modules for Node.js, old and new!</description>
-    <lastBuildDate>Tue, 01 Jul 2014 17:42:31 GMT</lastBuildDate>
+    <lastBuildDate>Thu, 03 Jul 2014 17:37:05 GMT</lastBuildDate>
     <language>en</language>
     <sy:updatePeriod>daily</sy:updatePeriod>
     <sy:updateFrequency>2</sy:updateFrequency>
     <generator>awesomeness</generator>
-    <pubDate>Tue, 01 Jul 2014 17:42:31 GMT</pubDate>
+    <pubDate>Thu, 03 Jul 2014 17:37:05 GMT</pubDate>
 
     
     
+    
+      
+      
+      
+      <item>
+        <title><![CDATA[Links for June 30, 2014]]></title>
+        <link><![CDATA[http://npmawesome.com/posts/2014-07-03-links]]></link>
+        <dc:creator><![CDATA[Alex Gorbatchev]]></dc:creator>
+        <guid isPermaLink="true"><![CDATA[http://npmawesome.com/posts/2014-07-03-links]]></guid>
+        <pubDate><![CDATA[Thu, 03 Jul 2014 17:25:02 GMT]]></pubDate>
+        <description><![CDATA[<p><img src="http://bost.ocks.org/mike/algorithms/starry-night-detail.jpg" class="hide-on-mobile" width="100%" /></p>
+<h2 id="articles">Articles</h2>
+<ul>
+<li><a href="http://bost.ocks.org/mike/algorithms/">Visualizing Algorithms</a><blockquote>
+<p>Algorithms are a fascinating use case for visualization. To visualize an algorithm, we don’t merely fit data to a chart; there is no primary dataset. Instead there are logical rules that describe behavior. This may be why algorithm visualizations are so unusual, as designers experiment with novel forms to better communicate. This is reason enough to study them.</p>
+</blockquote>
+</li>
+<li><a href="https://gist.github.com/staltz/868e7e9bc2a7b8c1f754">The introduction to Reactive Programming you&#39;ve been missing</a><blockquote>
+<p>The hardest part of the learning journey is thinking in FRP. It&#39;s a lot about letting go of old imperative and stateful habits of typical programming, and forcing your brain to work in a different paradigm. I haven&#39;t found any guide on the internet in this aspect, and I think the world deserves a practical tutorial on how to think in FRP, so that you can get started. Library documentation can light your way after that. I hope this helps you.</p>
+</blockquote>
+</li>
+<li><a href="http://reset.me/story/howpsychedelicssavedmylife">How Psychedelics Saved My Life</a><blockquote>
+<p>I founded the website reset.me, to produce and aggregate journalism on consciousness, natural medicines, and therapies.  Psychedelic explorer Terrence McKenna compared taking psychedelics to hitting the ‘reset button’ on your internal hard drive, clearing out the junk, and starting over.  I created reset.me to help connect those who need to hit the ‘reset button’ in life with journalism covering the tools that enable us to heal.</p>
+</blockquote>
+</li>
+<li><a href="http://www.thinkster.io/angularjs/eIaGNOAlOk/angularjs-providers">AngularJS - Providers</a><blockquote>
+<p>Factories are a common paradigm in Angular that allow you to configure a function that returns an object which can be then injected into controllers.</p>
+</blockquote>
+</li>
+<li><a href="http://blog.atom.io/2014/07/02/moving-atom-to-react.html">Moving Atom To React</a><blockquote>
+<p>Performance is a top priority for the Atom team, and recently we’ve been focusing on making basic text editing smoother and more responsive. After some initial incremental progress, we decided to take a step back and rewrite the editor component&#39;s view layer with a superior framework and a better understanding of the problem.</p>
+</blockquote>
+</li>
+</ul>
+<div class="read-more"></div>
+
+<h2 id="github">Github</h2>
+<ul>
+<li><a href="https://github.com/NYTimes/ice">Ice</a> is a track changes implementation, built in javascript, for anything that is contenteditable on the web. Conceived by the CMS Group at The New York Times, ice is powering the editor used for writing articles in the newsroom.</li>
+<li><a href="http://octicons.github.com/">Octicons</a> - github icons!</li>
+</ul>
+<h2 id="startups">Startups</h2>
+<ul>
+<li><a href="https://www.craftcoffee.com">Craft Coffee</a> - the world&#39;s best coffee, expertly chosen and delivered to your doorstep.</li>
+<li><a href="http://www.candyjapan.com/">Candy Japan</a> - Japanese candy surprises in your mailbox twice a month. Free shipping even to United States.</li>
+<li><a href="http://www.parkopedia.com">Parkopedia</a> is a wikipedia for parking - add, edit and review parking information.</li>
+</ul>
+<h2 id="youtube">YouTube</h2>
+<ul>
+<li><a href="https://www.youtube.com/watch?v=8zcWQVdh3SQ">API Testing and Monitoring with Frisby.js - SF Node.JS talk by Garland Kan</a><blockquote>
+<p>An increasing number of applications are built with APIs for internal services communicating with each other and an external API. These critical APIs must be monitored. In this talk, Garland Kan (Engineer, Algorithms.io and AutoDevBot.com), explains how engineers can use Frisby.JS as an API testing and monitoring tool.</p>
+</blockquote>
+</li>
+</ul>
+<h2 id="apps">Apps</h2>
+<ul>
+<li><a href="http://www.macbartender.com/">Bartender</a> lets you organize your menu bar apps, by hiding them, rearranging them, or moving them to Bartender&#39;s Bar. You can display the full menu bar, set options to have menu bar items show in the menu bar when they have updated, or have them always visible in Bartender&#39;s Bar.</li>
+</ul>
+<h2 id="unix">Unix</h2>
+<ul>
+<li><code>cp -</code> to go back to the previous directory where you just were.</li>
+</ul>
+<h2 id="twitter">Twitter</h2>
+<blockquote class="twitter-tweet" data-partner="tweetdeck"><p>Google Maps | AngularJS directives for the Google Maps Javascript API - <a href="http://t.co/WzfDvtNgAb">http://t.co/WzfDvtNgAb</a> <a href="http://t.co/y9Gqaa0vTh">pic.twitter.com/y9Gqaa0vTh</a></p>&mdash; Angular-js Directive (@ng_directives) <a href="https://twitter.com/ng_directives/statuses/482169124840566785">June 26, 2014</a></blockquote>
+
+<h2 id="misc">Misc</h2>
+<ul>
+<li><a href="http://www.instructables.com/tag/type-id/category-food/channel-cocktails-and-mocktails/">Instructables Cocktails</a></li>
+</ul>
+]]></description>
+      </item>
     
       
       
@@ -367,61 +438,6 @@ log.info({req: req});
 </ul>
 <h2 id="what-s-next-">What&#39;s next?</h2>
 <p><a href="https://github.com/flatiron/winston">Winston</a> and <a href="https://github.com/trentm/node-bunyan">Bunyan</a> are both very mature and established logging frameworks and are very much on par in terms of features. <a href="https://github.com/flatiron/winston">Winston</a> has a lot of community support with various logging modules. <a href="https://github.com/trentm/node-bunyan">Bunyan</a> makes it easy out of the box to parse logs but leaves consumption up the user (generally syslog drain works pretty well here). I feel it all comes down to preference and how easy it is to integrate with your stack.</p>
-]]></description>
-      </item>
-    
-      
-      
-      
-      <item>
-        <title><![CDATA[Links for June 17, 2014]]></title>
-        <link><![CDATA[http://npmawesome.com/posts/2014-06-17-links]]></link>
-        <dc:creator><![CDATA[Alex Gorbatchev]]></dc:creator>
-        <guid isPermaLink="true"><![CDATA[http://npmawesome.com/posts/2014-06-17-links]]></guid>
-        <pubDate><![CDATA[Tue, 17 Jun 2014 17:36:34 GMT]]></pubDate>
-        <description><![CDATA[<p><img src="http://npmawesome.com/images/posts/npmawesome-logo-512x512.png" class="hide-on-mobile" width="150" align="right"/></p>
-<h2 id="articles">Articles</h2>
-<ul>
-<li><a href="https://developer.apple.com/library/prerelease/mac/releasenotes/InterapplicationCommunication/RN-JavaScriptForAutomation/index.html#//apple_ref/doc/uid/TP40014508">This article describes JavaScript for Automation, a new feature in OS X 10.10</a></li>
-<li><a href="http://blog.docker.com/2014/06/its-here-docker-1-0/">It’s here: Docker 1.0</a><blockquote>
-<p>First, while many organizations have cheerfully ignored our “Do not run in production!” warnings, others have been waiting for a level of product maturity before deploying production workloads.  This release’s “1.0” label signifies a level of quality, feature completeness, backward compatibility and API stability to meet enterprise IT standards.</p>
-</blockquote>
-</li>
-<li><a href="http://meteortips.com/leaderboard-example-tutorial/">How To Make the Leaderboard Example App in Meteor</a><blockquote>
-<p>In the coming weeks and months, I’ll be publishing tutorials on how to build all four of these applications from scratch. I’ll be simplifying the code in some places, making it more friendly to beginners, but they’ll be practically identical in terms of features.</p>
-</blockquote>
-</li>
-<li><a href="http://gmarty.github.io/jsconf-2014-talk-play-dvd-in-js">Playing DVD in JavaScript</a></li>
-<li><a href="http://www.2ality.com/2014/05/current-script.html">Identifying the current script element</a></li>
-<li><a href="https://medium.com/architecting-a-life/fee8f3ee97a0">Finding the unjustly homeless, and teaching them to code</a><blockquote>
-<p>The idea is simple. Without disrespecting him, I will offer two options:</p>
-<ol>
-<li>I will come back tomorrow and give you $100 in cash.</li>
-<li>I will come back tomorrow and give you three JavaScript books, (beginner-advanced-expert) and a super cheap basic laptop. I will then come an hour early from work each day—when he feels prepared—and teach him to code.</li>
-</ol>
-</blockquote>
-</li>
-<li><a href="http://code.tutsplus.com/tutorials/real-time-chat-with-nodejs-readline-socketio--cms-20953">Real-Time Chat With Node.js&#39; Readline &amp; Socket.io</a><blockquote>
-<p>Node.js has an under-appreciated module in its standard library that is surprisingly useful. The Readline module does what it says on the box: it reads a line of input from the terminal.</p>
-</blockquote>
-</li>
-</ul>
-<div class="read-more"></div>
-
-<h2 id="github">Github</h2>
-<ul>
-<li><a href="https://github.com/snookca/CoffeeConsole">CoffeeConsole</a> is a Chrome Extension for running CoffeeScript from the Web Inspector.</li>
-</ul>
-<h2 id="twitter">Twitter</h2>
-<blockquote class="twitter-tweet" data-partner="tweetdeck"><p>Introducing the new <a href="http://t.co/JK8ZTaMria">http://t.co/JK8ZTaMria</a> &lt;3 <a href="http://t.co/tPJOHsGYgj">pic.twitter.com/tPJOHsGYgj</a></p>&mdash; Yeoman (@yeoman) <a href="https://twitter.com/yeoman/statuses/477493274509602816">June 13, 2014</a></blockquote>
-
-<h2 id="misc">Misc</h2>
-<ul>
-<li><a href="http://www.thisiscolossal.com/2014/06/a-retired-boeing-727-converted-into-a-home-in-the-woods/">A Retired Boeing 727 Converted Into a Home in the Woods</a><blockquote>
-<p><img src="http://www.thisiscolossal.com/wp-content/uploads/2014/06/retired-boeing-727-recycled-home-bruce-campbell-1.jpg" alt=""></p>
-</blockquote>
-</li>
-</ul>
 ]]></description>
       </item>
     
