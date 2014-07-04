@@ -1,0 +1,55 @@
+---
+date: 2014-07-03T10:25:02-0700
+title: Links for June 30, 2014
+layout: post-links
+tags: javascript, links
+description: Nerd links for the day, videos, GitHub projects, talks, articles and other stuff.
+---
+<img src="http://bost.ocks.org/mike/algorithms/starry-night-detail.jpg" class="hide-on-mobile" width="100%" />
+
+## Articles
+
+* [Visualizing Algorithms](http://bost.ocks.org/mike/algorithms/)
+  > Algorithms are a fascinating use case for visualization. To visualize an algorithm, we don’t merely fit data to a chart; there is no primary dataset. Instead there are logical rules that describe behavior. This may be why algorithm visualizations are so unusual, as designers experiment with novel forms to better communicate. This is reason enough to study them.
+* [The introduction to Reactive Programming you've been missing](https://gist.github.com/staltz/868e7e9bc2a7b8c1f754)
+  > The hardest part of the learning journey is thinking in FRP. It's a lot about letting go of old imperative and stateful habits of typical programming, and forcing your brain to work in a different paradigm. I haven't found any guide on the internet in this aspect, and I think the world deserves a practical tutorial on how to think in FRP, so that you can get started. Library documentation can light your way after that. I hope this helps you.
+* [How Psychedelics Saved My Life](http://reset.me/story/howpsychedelicssavedmylife)
+  > I founded the website reset.me, to produce and aggregate journalism on consciousness, natural medicines, and therapies.  Psychedelic explorer Terrence McKenna compared taking psychedelics to hitting the ‘reset button’ on your internal hard drive, clearing out the junk, and starting over.  I created reset.me to help connect those who need to hit the ‘reset button’ in life with journalism covering the tools that enable us to heal.
+* [AngularJS - Providers](http://www.thinkster.io/angularjs/eIaGNOAlOk/angularjs-providers)
+  > Factories are a common paradigm in Angular that allow you to configure a function that returns an object which can be then injected into controllers.
+* [Moving Atom To React](http://blog.atom.io/2014/07/02/moving-atom-to-react.html)
+  > Performance is a top priority for the Atom team, and recently we’ve been focusing on making basic text editing smoother and more responsive. After some initial incremental progress, we decided to take a step back and rewrite the editor component's view layer with a superior framework and a better understanding of the problem.
+
+<%- @readMore() %>
+
+## Github
+
+* [Ice](https://github.com/NYTimes/ice) is a track changes implementation, built in javascript, for anything that is contenteditable on the web. Conceived by the CMS Group at The New York Times, ice is powering the editor used for writing articles in the newsroom.
+* [Octicons](http://octicons.github.com/) - github icons!
+
+## Startups
+
+* [Craft Coffee](https://www.craftcoffee.com) - the world's best coffee, expertly chosen and delivered to your doorstep.
+* [Candy Japan](http://www.candyjapan.com/) - Japanese candy surprises in your mailbox twice a month. Free shipping even to United States.
+* [Parkopedia](http://www.parkopedia.com) is a wikipedia for parking - add, edit and review parking information.
+
+## YouTube
+
+* [API Testing and Monitoring with Frisby.js - SF Node.JS talk by Garland Kan](https://www.youtube.com/watch?v=8zcWQVdh3SQ)
+  > An increasing number of applications are built with APIs for internal services communicating with each other and an external API. These critical APIs must be monitored. In this talk, Garland Kan (Engineer, Algorithms.io and AutoDevBot.com), explains how engineers can use Frisby.JS as an API testing and monitoring tool.
+
+## Apps
+
+* [Bartender](http://www.macbartender.com/) lets you organize your menu bar apps, by hiding them, rearranging them, or moving them to Bartender's Bar. You can display the full menu bar, set options to have menu bar items show in the menu bar when they have updated, or have them always visible in Bartender's Bar.
+
+## Unix
+
+* `cp -` to go back to the previous directory where you just were.
+
+## Twitter
+
+<blockquote class="twitter-tweet" data-partner="tweetdeck"><p>Google Maps | AngularJS directives for the Google Maps Javascript API - <a href="http://t.co/WzfDvtNgAb">http://t.co/WzfDvtNgAb</a> <a href="http://t.co/y9Gqaa0vTh">pic.twitter.com/y9Gqaa0vTh</a></p>&mdash; Angular-js Directive (@ng_directives) <a href="https://twitter.com/ng_directives/statuses/482169124840566785">June 26, 2014</a></blockquote>
+
+## Misc
+
+* [Instructables Cocktails](http://www.instructables.com/tag/type-id/category-food/channel-cocktails-and-mocktails/)
