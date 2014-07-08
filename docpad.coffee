@@ -5,6 +5,9 @@ CONTRIBUTORS =
   akoenig:
     name: 'André König'
     github: 'akoenig'
+  evlasenko:
+    name: 'Eugeny Vlasenko'
+    github: 'mahnunchik'
 
 docpadConfig =
   env: 'static'
@@ -55,7 +58,7 @@ docpadConfig =
 
     reference: (doc = @document) ->
       {npm} = doc
-      """#{@browsenpm doc} (Github: <a href="https://github.com/#{npm.repo}">#{npm.repo}</a>, License: #{npm.license})""" if npm?
+      """#{@browsenpm doc} (GitHub: <a href="https://github.com/#{npm.repo}">#{npm.repo}</a>, License: #{npm.license})""" if npm?
 
     author: ({npm} = @document) ->
       {author} = npm or {}
