@@ -29,7 +29,7 @@ Over time I began to feel the need for a simple helper function to automagically
       .then(console.log)
 
 <img src="https://avatars0.githubusercontent.com/u/325737?s=400" width="100" align="right"/>
-Not surprisingly somebody else has already thought of this. I found the <%- @reference() %> module by <%- @author() %> that implements a very clean interface for converting any callback style function to a return a promise instead. <%- @reference() %> does what is generally considered a no-no - it extends `Object` and `Function` prototype which gives you a magic `promise` property on every function. <%- @reference() %> also wraps the [Bluebird] library so you don't have to install both. Lets check it out:
+Not surprisingly somebody else has already thought of this. I found the <%- @reference() %> module by <%- @author() %> that implements a very clean interface for converting any callback style function to a return a promise instead. <%- @browsenpm() %> does what is generally considered a no-no - it extends `Object` and `Function` prototype which gives you a magic `promise` property on every function. <%- @browsenpm() %> also wraps the [Bluebird] library so you don't have to install both. Lets check it out:
 
     <%- @install() %>
 
