@@ -5,7 +5,7 @@
 	<link href="http://npmawesome.com/atom.xml" rel="self" />
 	<link href="http://npmawesome.com" />
 	<id>http://npmawesome.com</id>
-	<updated>2014-07-08T17:46:43.558Z</updated>
+	<updated>2014-07-09T18:31:17.283Z</updated>
 	<author>
 		<name>Alex Gorbatchev</name>
 	</author>
@@ -13,6 +13,78 @@
   
   
   
+    
+    
+    
+		<entry>
+			<title>colorguard</title>
+			<link href="http://npmawesome.com/posts/2014-07-09-colorguard"/>
+			<updated>2014-07-09T17:04:58.000Z</updated>
+			<id>http://npmawesome.com/posts/2014-07-09-colorguard</id>
+			<content type="html">&lt;p&gt;&lt;img src=&quot;https://avatars0.githubusercontent.com/u/96554?s=400&quot; width=&quot;100&quot; align=&quot;right&quot;/&gt;
+When a small web project gains traction and more people join and begin editing the CSS files, it becomes progressively more difficult to keep everything consistent. Creative people hand off a new element style to a developer who just joined the team. Our protagonist has been around the block and promptly opens up a favorite color picker and grabs the colors from the JPEG. It looks good. Next day same things happens, and then again and again.&lt;/p&gt;
+&lt;p&gt;In a short amount of time there are now 20 color values in the CSS that are all factually different from each other yet represent the same color visually. &lt;a href=&quot;http://browsenpm.org/package/colorguard&quot;&gt;colorguard&lt;/a&gt; (GitHub: &lt;a href=&quot;https://github.com/SlexAxton/css-colorguard&quot;&gt;SlexAxton/css-colorguard&lt;/a&gt;, License: Apache 2) by &lt;a href=&quot;https://github.com/SlexAxton&quot;&gt;Alex Sexton&lt;/a&gt; helps you maintain the color set that you want, and warns you when colors you&amp;#39;ve added are too similar to ones that already exist.&lt;/p&gt;
+&lt;div class=&quot;read-more&quot;&gt;&lt;/div&gt;
+
+&lt;pre&gt;&lt;code&gt;npm install colorguard
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&quot;usage&quot;&gt;Usage&lt;/h2&gt;
+&lt;pre&gt;&lt;code class=&quot;lang-javascript&quot;&gt;# Just regular
+colorguard --file style.css
+
+# pipe a file
+cat file.css | colorguard
+
+# Threshold is available via command line
+colorguard --file style.css --threshold 3
+
+# The other options are too hard to type, so just pass it a json object
+# with `ignore` or `whitelist` properties (overrides `--threshold option`)
+colorguard --file style.css --options colorguard.json
+
+# Change the output type to full json (includes stats)
+colorguard --file style.css --format json
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Example output&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;lang-bash&quot;&gt;$ colorguard --file test/fixtures/simple.css
+Collision: #020202, #000000
+  - #020202 [line: 2] is too close (0.3146196209793196) to #000000 [line: 2, 3, 7, 12, 13, 16, 17]
+Collision: #020202, #010101
+  - #020202 [line: 2] is too close (0.1574963682909058) to #010101 [line: 20]
+Collision: #000000, #010101
+  - #000000 [line: 2, 3, 7, 12, 13, 16, 17] is too close (0.15712369811016996) to #010101 [line: 20]
+
+$ cat test/fixtures/simple.css | colorguard --format json
+{&amp;quot;collisions&amp;quot;:[{&amp;quot;colors&amp;quot;:[{&amp;quot;rgb&amp;quot;:&amp;quot;#020202&amp;quot;,&amp;quot;lines&amp;quot;:[2]},{&amp;quot;rgb&amp;quot;:&amp;quot;#000000&amp;quot;,&amp;quot;lines&amp;quot;:[2,3,7,
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id=&quot;api&quot;&gt;API&lt;/h2&gt;
+&lt;pre&gt;&lt;code class=&quot;lang-javascript&quot;&gt;var colorguard = require(&amp;#39;colorguard&amp;#39;);
+var fs = require(&amp;#39;fs&amp;#39;);
+var css = fs.readFileSync(&amp;#39;./file.css&amp;#39;, &amp;#39;utf8&amp;#39;);
+
+var output = colorguard.inspect(css, {
+  // 0 through 100. Lower is more similar. Anything below 3 warns you.
+  // 3 is the default threshold, but that&amp;#39;s mostly personal opinion
+  threshold: 3,
+
+  // This color is just ignored entirely (use with caution)
+  ignore: [&amp;quot;#030303&amp;quot;],
+
+  // These color combinations are ignored (usually use this)
+  whitelist: [[&amp;quot;#000000&amp;quot;, &amp;quot;#010101&amp;quot;]]
+});
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id=&quot;build-tools&quot;&gt;Build Tools&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&quot;http://browsenpm.org/package/colorguard&quot;&gt;colorguard&lt;/a&gt; can also be used in conjunction with &lt;a href=&quot;http://browsenpm.org/package/gulp&quot;&gt;Gulp&lt;/a&gt; (GitHub: &lt;a href=&quot;https://github.com/gulpjs/gulp&quot;&gt;gulpjs/gulp&lt;/a&gt;, License: MIT), &lt;a href=&quot;http://browsenpm.org/package/grunt&quot;&gt;Grunt&lt;/a&gt; (GitHub: &lt;a href=&quot;https://github.com/gruntjs/grunt&quot;&gt;gruntjs/grunt&lt;/a&gt;, License: MIT) and &lt;a href=&quot;http://browsenpm.org/package/broccoli&quot;&gt;Broccoli&lt;/a&gt; (GitHub: &lt;a href=&quot;https://github.com/broccolijs/broccoli&quot;&gt;broccolijs/broccoli&lt;/a&gt;, License: MIT) build systems:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;http://browsenpm.org/package/gulp-colorguard&quot;&gt;gulp-colorguard&lt;/a&gt; (GitHub: &lt;a href=&quot;https://github.com/pgilad/gulp-colorguard&quot;&gt;pgilad/gulp-colorguard&lt;/a&gt;, License: MIT)&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://browsenpm.org/package/broccoli-colorguard&quot;&gt;broccoli-colorguard&lt;/a&gt; (GitHub: &lt;a href=&quot;https://github.com/SlexAxton/broccoli-colorguard&quot;&gt;SlexAxton/broccoli-colorguard&lt;/a&gt;, License: Apache 2)&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://browsenpm.org/package/grunt-colorguard&quot;&gt;grunt-colorguard&lt;/a&gt; (GitHub: &lt;a href=&quot;https://github.com/elliottwilliams/grunt-colorguard&quot;&gt;elliottwilliams/grunt-colorguard&lt;/a&gt;, License: MIT)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;what-else-&quot;&gt;What Else?&lt;/h2&gt;
+&lt;p&gt;Checkout the &lt;a href=&quot;http://runnable.com/U72CW5aEx3ISuIdl/colorguard-module-example-for-node-js-for-nodejitsu-npmawesome-css-and-colors&quot;&gt;runnable&lt;/a&gt; example and &lt;a href=&quot;https://github.com/npmawesome/example-colorguard&quot;&gt;github example repository&lt;/a&gt;.&lt;/p&gt;
+</content>
+		</entry>
+	
     
     
     
@@ -265,53 +337,6 @@ hub.pipe(info())
 &lt;/ul&gt;
 &lt;h2 id=&quot;twitter&quot;&gt;Twitter&lt;/h2&gt;
 &lt;blockquote class=&quot;twitter-tweet&quot; data-partner=&quot;tweetdeck&quot;&gt;&lt;p&gt;New &lt;a href=&quot;https://twitter.com/hashtag/dockercon?src=hash&quot;&gt;#dockercon&lt;/a&gt; 14 video: &amp;quot;Automated &lt;a href=&quot;https://twitter.com/chef&quot;&gt;@chef&lt;/a&gt; cookbook testing with &lt;a href=&quot;https://twitter.com/droneio&quot;&gt;@droneio&lt;/a&gt; and &lt;a href=&quot;https://twitter.com/github&quot;&gt;@github&lt;/a&gt;&amp;quot; &lt;a href=&quot;http://t.co/7h13hXi2V3&quot;&gt;http://t.co/7h13hXi2V3&lt;/a&gt; by &lt;a href=&quot;https://twitter.com/pczarkowski&quot;&gt;@pczarkowski&lt;/a&gt; from &lt;a href=&quot;https://twitter.com/Rackspace&quot;&gt;@Rackspace&lt;/a&gt;&lt;/p&gt;&amp;mdash; Docker (@docker) &lt;a href=&quot;https://twitter.com/docker/statuses/482242087811702784&quot;&gt;June 26, 2014&lt;/a&gt;&lt;/blockquote&gt;</content>
-		</entry>
-	
-    
-    
-    
-		<entry>
-			<title>songbird</title>
-			<link href="http://npmawesome.com/posts/2014-06-26-songbird"/>
-			<updated>2014-06-26T16:43:14.000Z</updated>
-			<id>http://npmawesome.com/posts/2014-06-26-songbird</id>
-			<content type="html">&lt;p&gt;I&amp;#39;m always on a look out for interesting modules and unusual solutions. When working with &lt;a href=&quot;http://promises-aplus.github.io/promises-spec/&quot;&gt;promises&lt;/a&gt; in Node.js, there&amp;#39;s a constant friction between callbacks that is Node&amp;#39;s defacto interface and your desire to use &lt;a href=&quot;http://promises-aplus.github.io/promises-spec/&quot;&gt;promises&lt;/a&gt; throughout your entire project. The now famous &lt;a href=&quot;http://browsenpm.org/package/bluebird&quot;&gt;Bluebird&lt;/a&gt; (Github: &lt;a href=&quot;https://github.com/petkaantonov/bluebird&quot;&gt;petkaantonov/bluebird&lt;/a&gt;, License: MIT) library has a good collection of &lt;a href=&quot;https://github.com/petkaantonov/bluebird/blob/master/API.md#promisification&quot;&gt;helper methods&lt;/a&gt; to assist you in going to and from callback world.&lt;/p&gt;
-&lt;div class=&quot;read-more&quot;&gt;&lt;/div&gt;
-
-&lt;p&gt;Over time I began to feel the need for a simple helper function to automagically integrate a callback style function into &lt;a href=&quot;http://promises-aplus.github.io/promises-spec/&quot;&gt;promises&lt;/a&gt; control flow. Calling &lt;code&gt;promisify&lt;/code&gt; each time on a function isn&amp;#39;t super fun and &lt;code&gt;promisifyAll&lt;/code&gt; feels a little odd to me and so yesterday I set out to look for a module that implements something like this:&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;Promise
-  .call(fs.readFile, &amp;#39;path/to/file.txt&amp;#39;, &amp;#39;utf8&amp;#39;)
-  .then(console.log)
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;img src=&quot;https://avatars0.githubusercontent.com/u/325737?s=400&quot; width=&quot;100&quot; align=&quot;right&quot;/&gt;
-Not surprisingly somebody else has already thought of this. I found the &lt;a href=&quot;http://browsenpm.org/package/songbird&quot;&gt;songbird&lt;/a&gt; (GitHub: &lt;a href=&quot;https://github.com/duereg/songbird&quot;&gt;duereg/songbird&lt;/a&gt;, License: MIT) module by &lt;a href=&quot;https://github.com/duereg&quot;&gt;Matt Blair&lt;/a&gt; that implements a very clean interface for converting any callback style function to a return a promise instead. &lt;a href=&quot;http://browsenpm.org/package/songbird&quot;&gt;songbird&lt;/a&gt; (GitHub: &lt;a href=&quot;https://github.com/duereg/songbird&quot;&gt;duereg/songbird&lt;/a&gt;, License: MIT) does what is generally considered a no-no - it extends &lt;code&gt;Object&lt;/code&gt; and &lt;code&gt;Function&lt;/code&gt; prototype which gives you a magic &lt;code&gt;promise&lt;/code&gt; property on every function. &lt;a href=&quot;http://browsenpm.org/package/songbird&quot;&gt;songbird&lt;/a&gt; (GitHub: &lt;a href=&quot;https://github.com/duereg/songbird&quot;&gt;duereg/songbird&lt;/a&gt;, License: MIT) also wraps the &lt;a href=&quot;http://browsenpm.org/package/bluebird&quot;&gt;Bluebird&lt;/a&gt; library so you don&amp;#39;t have to install both. Lets check it out:&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;npm install songbird
-&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&quot;usage&quot;&gt;Usage&lt;/h2&gt;
-&lt;pre&gt;&lt;code&gt;var Promise = require(&amp;#39;songbird&amp;#39;);
-var fs = require(&amp;#39;fs&amp;#39;);
-
-// callback API
-fs.readFile(&amp;#39;./package.json&amp;#39;, &amp;#39;utf8&amp;#39;, function(err, pkg) {
-  console.log(&amp;#39;callbacks&amp;#39;, pkg);
-});
-
-// songbird API
-fs.promise.readFile(&amp;#39;./package.json&amp;#39;, &amp;#39;utf8&amp;#39;).then(function(pkg) {
-  console.log(&amp;#39;promise&amp;#39;, pkg);
-});
-
-Promise
-  .join(
-    fs.promise.readFile(&amp;#39;./package.json&amp;#39;, &amp;#39;utf8&amp;#39;),
-    fs.promise.readFile(&amp;#39;./songbird.js&amp;#39;, &amp;#39;utf8&amp;#39;)
-  )
-  .spread(function(pkg, songbird) {
-    console.log(&amp;#39;package.json length is&amp;#39;, pkg.length);
-    console.log(&amp;#39;songbird.js length is&amp;#39;, songbird.length);
-  });
-&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&quot;closing-thoughts&quot;&gt;Closing thoughts&lt;/h2&gt;
-&lt;p&gt;While I think it&amp;#39;s a great idea to mix in the &lt;code&gt;promise&lt;/code&gt; property to &lt;code&gt;Object&lt;/code&gt; and &lt;code&gt;Function&lt;/code&gt;, however with great power comes great responsibility. I strongly urge against using &lt;a href=&quot;http://browsenpm.org/package/songbird&quot;&gt;songbird&lt;/a&gt; in modules that you would distribute on npm because it would have a very big side effect on anyone who dares to install your code. However, when used on a project that isn&amp;#39;t made available publicly, &lt;a href=&quot;http://browsenpm.org/package/songbird&quot;&gt;songbird&lt;/a&gt; would be a great asset.&lt;/p&gt;
-&lt;p&gt;Check out &lt;a href=&quot;https://github.com/npmawesome/example-songbird&quot;&gt;source code&lt;/a&gt; for this article on GitHub and an &lt;a href=&quot;http://runnable.com/U575XtnsLhN9grRU&quot;&gt;interactive example&lt;/a&gt; on Runnable. Let us know what you think! It&amp;#39;s not every day you encounter a module that boldly extends &lt;code&gt;Object&lt;/code&gt; and &lt;code&gt;Function&lt;/code&gt;.&lt;/p&gt;
-</content>
 		</entry>
 	
 </feed>
