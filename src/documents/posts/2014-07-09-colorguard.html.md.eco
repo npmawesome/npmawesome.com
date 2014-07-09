@@ -1,0 +1,95 @@
+---
+date: 2014-07-09T10:04:58-0700
+author: alexgorbatchev
+partner: nodejitsu
+layout: post
+tags: npm, logging
+
+npm:
+  repo: &repo SlexAxton/css-colorguard
+  name: &name colorguard
+  license: Apache 2
+
+  author:
+    name: Alex Sexton
+    github: SlexAxton
+
+slug: *name
+title: *name
+description: CSS Colorguard helps you maintain the color set that you want, and warns you when colors you've added are too similar to ones that already exist.
+---
+<img src="https://avatars0.githubusercontent.com/u/96554?s=400" width="100" align="right"/>
+When a small web project gains traction and more people join and begin editing the CSS files, it becomes progressively more difficult to keep everything consistent. Creative people hand off a new element style to a developer who just joined the team. Our protagonist has been around the block and promptly opens up a favorite color picker and grabs the colors from the JPEG. It looks good. Next day same things happens, and then again and again.
+
+In a short amount of time there are now 20 color values in the CSS that are all factually different from each other yet represent the same color visually. <%- @reference() %> by <%- @author() %> helps you maintain the color set that you want, and warns you when colors you've added are too similar to ones that already exist.
+
+<%- @readMore() %>
+
+    <%- @install() %>
+
+## Usage
+
+```javascript
+# Just regular
+colorguard --file style.css
+
+# pipe a file
+cat file.css | colorguard
+
+# Threshold is available via command line
+colorguard --file style.css --threshold 3
+
+# The other options are too hard to type, so just pass it a json object
+# with `ignore` or `whitelist` properties (overrides `--threshold option`)
+colorguard --file style.css --options colorguard.json
+
+# Change the output type to full json (includes stats)
+colorguard --file style.css --format json
+```
+
+Example output
+
+```bash
+$ colorguard --file test/fixtures/simple.css
+Collision: #020202, #000000
+  - #020202 [line: 2] is too close (0.3146196209793196) to #000000 [line: 2, 3, 7, 12, 13, 16, 17]
+Collision: #020202, #010101
+  - #020202 [line: 2] is too close (0.1574963682909058) to #010101 [line: 20]
+Collision: #000000, #010101
+  - #000000 [line: 2, 3, 7, 12, 13, 16, 17] is too close (0.15712369811016996) to #010101 [line: 20]
+
+$ cat test/fixtures/simple.css | colorguard --format json
+{"collisions":[{"colors":[{"rgb":"#020202","lines":[2]},{"rgb":"#000000","lines":[2,3,7,
+```
+
+## API
+
+```javascript
+var colorguard = require('colorguard');
+var fs = require('fs');
+var css = fs.readFileSync('./file.css', 'utf8');
+
+var output = colorguard.inspect(css, {
+  // 0 through 100. Lower is more similar. Anything below 3 warns you.
+  // 3 is the default threshold, but that's mostly personal opinion
+  threshold: 3,
+
+  // This color is just ignored entirely (use with caution)
+  ignore: ["#030303"],
+
+  // These color combinations are ignored (usually use this)
+  whitelist: [["#000000", "#010101"]]
+});
+```
+
+## Build Tools
+
+<%- @browsenpm() %> can also be used in conjunction with [Gulp](http://browsenpm.org/package/gulp) (GitHub: [gulpjs/gulp](https://github.com/gulpjs/gulp), License: MIT), [Grunt](http://browsenpm.org/package/grunt) (GitHub: [gruntjs/grunt](https://github.com/gruntjs/grunt), License: MIT) and [Broccoli](http://browsenpm.org/package/broccoli) (GitHub: [broccolijs/broccoli](https://github.com/broccolijs/broccoli), License: MIT) build systems:
+
+* [gulp-colorguard](http://browsenpm.org/package/gulp-colorguard) (GitHub: [pgilad/gulp-colorguard](https://github.com/pgilad/gulp-colorguard), License: MIT)
+* [broccoli-colorguard](http://browsenpm.org/package/broccoli-colorguard) (GitHub: [SlexAxton/broccoli-colorguard](https://github.com/SlexAxton/broccoli-colorguard), License: Apache 2)
+* [grunt-colorguard](http://browsenpm.org/package/grunt-colorguard) (GitHub: [elliottwilliams/grunt-colorguard](https://github.com/elliottwilliams/grunt-colorguard), License: MIT)
+
+## What Else?
+
+Checkout the [runnable](http://runnable.com/U72CW5aEx3ISuIdl/colorguard-module-example-for-node-js-for-nodejitsu-npmawesome-css-and-colors) example and [github example repository](https://github.com/npmawesome/example-colorguard).
