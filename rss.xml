@@ -15,15 +15,32 @@
     <atom:link href="http://feeds.feedburner.com/npmawesome" rel="self" type="application/rss+xml"/>
     <link>http://npmawesome.com</link>
     <description>Daily dose of awesome NPM modules for Node.js, old and new!</description>
-    <lastBuildDate>Wed, 09 Jul 2014 18:31:17 GMT</lastBuildDate>
+    <lastBuildDate>Thu, 10 Jul 2014 19:38:19 GMT</lastBuildDate>
     <language>en</language>
     <sy:updatePeriod>daily</sy:updatePeriod>
     <sy:updateFrequency>2</sy:updateFrequency>
     <generator>awesomeness</generator>
-    <pubDate>Wed, 09 Jul 2014 18:31:17 GMT</pubDate>
+    <pubDate>Thu, 10 Jul 2014 19:38:19 GMT</pubDate>
 
     
     
+    
+      
+      
+      
+      <item>
+        <title><![CDATA[colorguard]]></title>
+        <link><![CDATA[http://npmawesome.com/posts/2014-07-10-sweetjs]]></link>
+        <dc:creator><![CDATA[Alex Gorbatchev]]></dc:creator>
+        <guid isPermaLink="true"><![CDATA[http://npmawesome.com/posts/2014-07-10-sweetjs]]></guid>
+        <pubDate><![CDATA[Wed, 09 Jul 2014 17:04:58 GMT]]></pubDate>
+        <description><![CDATA[<p><img src="https://avatars0.githubusercontent.com/u/96554?s=400" width="100" align="right"/></p>
+<div class="read-more"></div>
+
+<pre><code>npm install colorguard
+</code></pre><h2 id="usage">Usage</h2>
+]]></description>
+      </item>
     
       
       
@@ -233,7 +250,7 @@ hub.pipe(info())
 </ul>
 <h2 id="unix">Unix</h2>
 <ul>
-<li><code>cp -</code> to go back to the previous directory where you just were.</li>
+<li><code>cd -</code> to go back to the previous directory where you just were.</li>
 </ul>
 <h2 id="twitter">Twitter</h2>
 <blockquote class="twitter-tweet" data-partner="tweetdeck"><p>Google Maps | AngularJS directives for the Google Maps Javascript API - <a href="http://t.co/WzfDvtNgAb">http://t.co/WzfDvtNgAb</a> <a href="http://t.co/y9Gqaa0vTh">pic.twitter.com/y9Gqaa0vTh</a></p>&mdash; Angular-js Directive (@ng_directives) <a href="https://twitter.com/ng_directives/statuses/482169124840566785">June 26, 2014</a></blockquote>
@@ -292,68 +309,6 @@ hub.pipe(info())
 <p><img src="http://npmawesome.com/images/posts/ten-open-source-nodejs-apps/npmjs.png" width="100%" /></p>
 <p>Have you seen other interesting applications written in Node.js? Please post them in comments!</p>
 ]]></description>
-      </item>
-    
-      
-      
-      
-      <item>
-        <title><![CDATA[Links for June 30, 2014]]></title>
-        <link><![CDATA[http://npmawesome.com/posts/2014-06-30-links]]></link>
-        <dc:creator><![CDATA[Alex Gorbatchev]]></dc:creator>
-        <guid isPermaLink="true"><![CDATA[http://npmawesome.com/posts/2014-06-30-links]]></guid>
-        <pubDate><![CDATA[Mon, 30 Jun 2014 16:43:28 GMT]]></pubDate>
-        <description><![CDATA[<p><img src="http://npmawesome.com/images/posts/docker.png" class="hide-on-mobile" width="150" align="right"/></p>
-<h2 id="articles">Articles</h2>
-<ul>
-<li><a href="http://www.joyent.com/developers/node/design/errors">Error Handling in Node.js</a><blockquote>
-<p>Error handling is a pain, and it&#39;s easy to get by for a long time in Node.js without dealing with many errors correctly. But building robust Node.js apps requires dealing properly with errors, and it&#39;s not hard to learn how.</p>
-</blockquote>
-</li>
-<li><a href="http://www.slideshare.net/mongodb/mongodb-and-amazon-web-services-deploying-for-high-availability-31642339">MongoDB and Amazon Web Services: Deploying for High Availability</a><blockquote>
-<p>Best practices are meant to be a sensible starting point</p>
-</blockquote>
-</li>
-<li><a href="http://blog.ponyfoo.com/2014/05/17/css-the-good-parts">CSS: The Good Parts</a><blockquote>
-<p>This style guide is a jab at solving collisions between CSS class names, and issues that ultimately lead to confusion, having to use !important rules, copying and pasting style declarations, and other awful aspects of CSS developments.</p>
-</blockquote>
-</li>
-<li><a href="http://www.cambus.net/emulators-written-in-javascript/">Emulators written in JavaScript</a><blockquote>
-<p>This list started as a compilation of JavaScript emulators posted to Echo JS over the years.</p>
-</blockquote>
-</li>
-<li><a href="http://blog.abhinav.ca/blog/2014/06/17/develop-a-nodejs-app-with-docker/">Develop a NodeJS App With Docker</a><blockquote>
-<p>This is the first of two posts. This post covers a somewhat detailed tutorial on using Docker as a replacement for Vagrant when developing a Node app using the Express framework. To make things a bit non-trivial, the app will persist session information in Redis using the connect-redid middleware.</p>
-</blockquote>
-</li>
-<li><a href="http://www.candyjapan.com/candy-japan-crosses-10000-mrr">Candy Japan crosses $10000 MRR</a><blockquote>
-<p>Out of that $10k / month revenue of course not all (not even most) is profit. Compared to a SaaS, the costs are very high, but I&#39;ve carved enough profit margin to reach an income level similar to a Japanese salaryman now.</p>
-</blockquote>
-</li>
-</ul>
-<div class="read-more"></div>
-
-<h2 id="github">Github</h2>
-<ul>
-<li><a href="https://github.com/flowjs/flow.js">flow.js</a> is a JavaScript library providing multiple simultaneous, stable, fault-tolerant and resumable/restartable file uploads via the HTML5 File API.</li>
-</ul>
-<h2 id="startups">Startups</h2>
-<ul>
-<li><a href="https://www.counterparty.co">Counterparty</a> is a global marketplace and financial platform built on Bitcoin, which makes powerful peer-to-peer financial instruments available to anyone with an Internet connection.</li>
-<li><a href="https://bugsnag.com/">bugsnap</a>’s cross platform error monitoring helps you ship with confidence.</li>
-<li><a href="https://learnable.com/">Learnable</a> is a resource to learn web development and design from the experts.</li>
-<li><a href="https://www.trycelery.com/">Celery</a> is the easiest way to accept orders now and charge when you&#39;re ready.</li>
-</ul>
-<h2 id="youtube">YouTube</h2>
-<ul>
-<li><a href="https://www.youtube.com/watch?v=Dh8kp1AcRg0">Amazon DynamoDB Design Patterns for Ultra-High Performance Apps</a></li>
-</ul>
-<h2 id="unix">Unix</h2>
-<ul>
-<li><a href="http://hippyvm.com/">HippyVM</a> on average is 7.3x faster than stock PHP and 2x faster than Facebook’s HHVM.</li>
-</ul>
-<h2 id="twitter">Twitter</h2>
-<blockquote class="twitter-tweet" data-partner="tweetdeck"><p>New <a href="https://twitter.com/hashtag/dockercon?src=hash">#dockercon</a> 14 video: &quot;Automated <a href="https://twitter.com/chef">@chef</a> cookbook testing with <a href="https://twitter.com/droneio">@droneio</a> and <a href="https://twitter.com/github">@github</a>&quot; <a href="http://t.co/7h13hXi2V3">http://t.co/7h13hXi2V3</a> by <a href="https://twitter.com/pczarkowski">@pczarkowski</a> from <a href="https://twitter.com/Rackspace">@Rackspace</a></p>&mdash; Docker (@docker) <a href="https://twitter.com/docker/statuses/482242087811702784">June 26, 2014</a></blockquote>]]></description>
       </item>
     
   </channel>
