@@ -44,7 +44,7 @@ description: Nerd links for the day, videos, GitHub projects, talks, articles an
 
 ## Unix
 
-* `cp -` to go back to the previous directory where you just were.
+* `cd -` to go back to the previous directory where you just were.
 
 ## Twitter
 
