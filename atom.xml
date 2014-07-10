@@ -5,7 +5,7 @@
 	<link href="http://npmawesome.com/atom.xml" rel="self" />
 	<link href="http://npmawesome.com" />
 	<id>http://npmawesome.com</id>
-	<updated>2014-07-10T19:38:19.150Z</updated>
+	<updated>2014-07-10T19:43:43.425Z</updated>
 	<author>
 		<name>Alex Gorbatchev</name>
 	</author>
@@ -15,20 +15,6 @@
   
     
     
-    
-		<entry>
-			<title>colorguard</title>
-			<link href="http://npmawesome.com/posts/2014-07-10-sweetjs"/>
-			<updated>2014-07-09T17:04:58.000Z</updated>
-			<id>http://npmawesome.com/posts/2014-07-10-sweetjs</id>
-			<content type="html">&lt;p&gt;&lt;img src=&quot;https://avatars0.githubusercontent.com/u/96554?s=400&quot; width=&quot;100&quot; align=&quot;right&quot;/&gt;&lt;/p&gt;
-&lt;div class=&quot;read-more&quot;&gt;&lt;/div&gt;
-
-&lt;pre&gt;&lt;code&gt;npm install colorguard
-&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&quot;usage&quot;&gt;Usage&lt;/h2&gt;
-</content>
-		</entry>
-	
     
     
     
@@ -292,6 +278,67 @@ hub.pipe(info())
 &lt;p&gt;&lt;img src=&quot;http://npmawesome.com/images/posts/ten-open-source-nodejs-apps/npmjs.png&quot; width=&quot;100%&quot; /&gt;&lt;/p&gt;
 &lt;p&gt;Have you seen other interesting applications written in Node.js? Please post them in comments!&lt;/p&gt;
 </content>
+		</entry>
+	
+    
+    
+    
+		<entry>
+			<title>Links for June 30, 2014</title>
+			<link href="http://npmawesome.com/posts/2014-06-30-links"/>
+			<updated>2014-06-30T16:43:28.000Z</updated>
+			<id>http://npmawesome.com/posts/2014-06-30-links</id>
+			<content type="html">&lt;p&gt;&lt;img src=&quot;http://npmawesome.com/images/posts/docker.png&quot; class=&quot;hide-on-mobile&quot; width=&quot;150&quot; align=&quot;right&quot;/&gt;&lt;/p&gt;
+&lt;h2 id=&quot;articles&quot;&gt;Articles&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;http://www.joyent.com/developers/node/design/errors&quot;&gt;Error Handling in Node.js&lt;/a&gt;&lt;blockquote&gt;
+&lt;p&gt;Error handling is a pain, and it&amp;#39;s easy to get by for a long time in Node.js without dealing with many errors correctly. But building robust Node.js apps requires dealing properly with errors, and it&amp;#39;s not hard to learn how.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://www.slideshare.net/mongodb/mongodb-and-amazon-web-services-deploying-for-high-availability-31642339&quot;&gt;MongoDB and Amazon Web Services: Deploying for High Availability&lt;/a&gt;&lt;blockquote&gt;
+&lt;p&gt;Best practices are meant to be a sensible starting point&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://blog.ponyfoo.com/2014/05/17/css-the-good-parts&quot;&gt;CSS: The Good Parts&lt;/a&gt;&lt;blockquote&gt;
+&lt;p&gt;This style guide is a jab at solving collisions between CSS class names, and issues that ultimately lead to confusion, having to use !important rules, copying and pasting style declarations, and other awful aspects of CSS developments.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://www.cambus.net/emulators-written-in-javascript/&quot;&gt;Emulators written in JavaScript&lt;/a&gt;&lt;blockquote&gt;
+&lt;p&gt;This list started as a compilation of JavaScript emulators posted to Echo JS over the years.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://blog.abhinav.ca/blog/2014/06/17/develop-a-nodejs-app-with-docker/&quot;&gt;Develop a NodeJS App With Docker&lt;/a&gt;&lt;blockquote&gt;
+&lt;p&gt;This is the first of two posts. This post covers a somewhat detailed tutorial on using Docker as a replacement for Vagrant when developing a Node app using the Express framework. To make things a bit non-trivial, the app will persist session information in Redis using the connect-redid middleware.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://www.candyjapan.com/candy-japan-crosses-10000-mrr&quot;&gt;Candy Japan crosses $10000 MRR&lt;/a&gt;&lt;blockquote&gt;
+&lt;p&gt;Out of that $10k / month revenue of course not all (not even most) is profit. Compared to a SaaS, the costs are very high, but I&amp;#39;ve carved enough profit margin to reach an income level similar to a Japanese salaryman now.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&quot;read-more&quot;&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;github&quot;&gt;Github&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/flowjs/flow.js&quot;&gt;flow.js&lt;/a&gt; is a JavaScript library providing multiple simultaneous, stable, fault-tolerant and resumable/restartable file uploads via the HTML5 File API.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;startups&quot;&gt;Startups&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://www.counterparty.co&quot;&gt;Counterparty&lt;/a&gt; is a global marketplace and financial platform built on Bitcoin, which makes powerful peer-to-peer financial instruments available to anyone with an Internet connection.&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://bugsnag.com/&quot;&gt;bugsnap&lt;/a&gt;’s cross platform error monitoring helps you ship with confidence.&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://learnable.com/&quot;&gt;Learnable&lt;/a&gt; is a resource to learn web development and design from the experts.&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://www.trycelery.com/&quot;&gt;Celery&lt;/a&gt; is the easiest way to accept orders now and charge when you&amp;#39;re ready.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;youtube&quot;&gt;YouTube&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://www.youtube.com/watch?v=Dh8kp1AcRg0&quot;&gt;Amazon DynamoDB Design Patterns for Ultra-High Performance Apps&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;unix&quot;&gt;Unix&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;http://hippyvm.com/&quot;&gt;HippyVM&lt;/a&gt; on average is 7.3x faster than stock PHP and 2x faster than Facebook’s HHVM.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;twitter&quot;&gt;Twitter&lt;/h2&gt;
+&lt;blockquote class=&quot;twitter-tweet&quot; data-partner=&quot;tweetdeck&quot;&gt;&lt;p&gt;New &lt;a href=&quot;https://twitter.com/hashtag/dockercon?src=hash&quot;&gt;#dockercon&lt;/a&gt; 14 video: &amp;quot;Automated &lt;a href=&quot;https://twitter.com/chef&quot;&gt;@chef&lt;/a&gt; cookbook testing with &lt;a href=&quot;https://twitter.com/droneio&quot;&gt;@droneio&lt;/a&gt; and &lt;a href=&quot;https://twitter.com/github&quot;&gt;@github&lt;/a&gt;&amp;quot; &lt;a href=&quot;http://t.co/7h13hXi2V3&quot;&gt;http://t.co/7h13hXi2V3&lt;/a&gt; by &lt;a href=&quot;https://twitter.com/pczarkowski&quot;&gt;@pczarkowski&lt;/a&gt; from &lt;a href=&quot;https://twitter.com/Rackspace&quot;&gt;@Rackspace&lt;/a&gt;&lt;/p&gt;&amp;mdash; Docker (@docker) &lt;a href=&quot;https://twitter.com/docker/statuses/482242087811702784&quot;&gt;June 26, 2014&lt;/a&gt;&lt;/blockquote&gt;</content>
 		</entry>
 	
 </feed>
