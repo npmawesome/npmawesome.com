@@ -14,7 +14,7 @@ In this article we are going to quickly look at 10 open source Node.js applicati
 
 ## Strider CD
 
-[Strider CD](http://browsenpm.org/package/strider) [GitHub: [Strider-CD/strider](https://github.com/Strider-CD/strider), License: BSD] is Continuous Deployment / Continuous Integration platform.
+[Strider CD](http://browsenpm.org/package/strider) (GitHub: [Strider-CD/strider](https://github.com/Strider-CD/strider), License: BSD) is Continuous Deployment / Continuous Integration platform.
 
 Getting started is very simple. Simply add your GitHub projects to strider, and relax as the tight integration means your tests will run on every commit. [Checkout the YouTube demo](https://www.youtube.com/watch?v=whVH24yQSHI) for a 4 minute introduction.
 
@@ -22,9 +22,9 @@ Getting started is very simple. Simply add your GitHub projects to strider, and 
 
 ## Popcorn Time
 
-Popcorn Time [GitHub: [popcorn-official/popcorn-app](https://github.com/popcorn-official/popcorn-app), License: GPL] allows any computer user to watch movies easily streaming from torrents, without any particular knowledge. It is, in my opinion, the most interesting applications technology wise in this list with a good amount of [controversy](https://torrentfreak.com/popcorn-time-devs-drop-like-flies-but-no-one-will-talk-140420/) to boot.
+Popcorn Time (GitHub: [popcorn-official/popcorn-app](https://github.com/popcorn-official/popcorn-app), License: GPL) allows any computer user to watch movies easily streaming from torrents, without any particular knowledge. It is, in my opinion, the most interesting applications technology wise in this list with a good amount of [controversy](https://torrentfreak.com/popcorn-time-devs-drop-like-flies-but-no-one-will-talk-140420/) to boot.
 
-It's a desktop app build on top of the node-webkit [GitHub: [rogerwang/node-webkit](https://github.com/rogerwang/node-webkit), License: MIT] that is able to stream and play a torrent movie practicaly in real time... and it's all JavaScript. Seriously cool stuff!
+It's a desktop app build on top of the node-webkit (GitHub: [rogerwang/node-webkit](https://github.com/rogerwang/node-webkit), License: MIT) that is able to stream and play a torrent movie practicaly in real time... and it's all JavaScript. Seriously cool stuff!
 
 <img src="<%- @image '/ten-open-source-nodejs-apps/popcorn1.png' %>" width="100%" />
 
@@ -32,25 +32,25 @@ It's a desktop app build on top of the node-webkit [GitHub: [rogerwang/node-webk
 
 ## MediacenterJS
 
-MediacenterJS [GitHub: [jansmolders86/mediacenterjs](https://github.com/jansmolders86/mediacenterjs), License: GPL] is a media center (like for instance [XBMC](http://xbmc.org/)) running completely from the comfort of your browser. The server application runs on Windows, MAC and Linux systems, the client runs in every modern browser.
+MediacenterJS (GitHub: [jansmolders86/mediacenterjs](https://github.com/jansmolders86/mediacenterjs), License: GPL) is a media center (like for instance [XBMC](http://xbmc.org/)) running completely from the comfort of your browser. The server application runs on Windows, MAC and Linux systems, the client runs in every modern browser.
 
 <img src="<%- @image '/ten-open-source-nodejs-apps/mediacenterjs.png' %>" width="100%" />
 
 ## KiwiIRC
 
-[KiwiIRC](http://browsenpm.org/package/kiwiirc) [GitHub: [prawnsalad/KiwiIRC](https://github.com/prawnsalad/KiwiIRC), License: AGPL] is a fully featured IRC client that can be extended to suit almost any needs. Using the web application is extremly simple even without any IRC knowledge as all the common needs are built directly into the UI.
+[KiwiIRC](http://browsenpm.org/package/kiwiirc) (GitHub: [prawnsalad/KiwiIRC](https://github.com/prawnsalad/KiwiIRC), License: AGPL) is a fully featured IRC client that can be extended to suit almost any needs. Using the web application is extremly simple even without any IRC knowledge as all the common needs are built directly into the UI.
 
 <img src="<%- @image '/ten-open-source-nodejs-apps/kiwiirc.png' %>" width="100%" />
 
 ## Slate
 
-Slate [GitHub: [slate/slate](https://github.com/slate/slate), License: MIT] is a modern minimalistic IRC client, completely extensible through plugins and built with web technologies and for OSX, Linux, and eventually Windows.
+Slate (GitHub: [slate/slate](https://github.com/slate/slate), License: MIT) is a modern minimalistic IRC client, completely extensible through plugins and built with web technologies and for OSX, Linux, and eventually Windows.
 
 <img src="<%- @image '/ten-open-source-nodejs-apps/slate.png' %>" width="100%" />
 
 ## David
 
-[David](http://browsenpm.org/package/david) [GitHub: [alanshaw/david-www](https://github.com/alanshaw/david-www), License: MIT] is a web service that tells you when your project NPM dependencies are out of date.
+[David](http://browsenpm.org/package/david) (GitHub: [alanshaw/david-www](https://github.com/alanshaw/david-www), License: MIT) is a web service that tells you when your project NPM dependencies are out of date.
 
 <img src="<%- @image '/ten-open-source-nodejs-apps/david.png' %>" width="100%" />
 
@@ -62,19 +62,19 @@ Slate [GitHub: [slate/slate](https://github.com/slate/slate), License: MIT] is a
 
 ## I Love Open Source
 
-I Love Open Source [GitHub: [codio/iloveopensource](https://github.com/codio/iloveopensource), License: MIT] is a way of encouraging users of Open Source code to express their gratitude through a simple acknowledgement page. Along the way, they are gently offered a chance to donate cash or just thanks.
+I Love Open Source (GitHub: [codio/iloveopensource](https://github.com/codio/iloveopensource), License: MIT) is a way of encouraging users of Open Source code to express their gratitude through a simple acknowledgement page. Along the way, they are gently offered a chance to donate cash or just thanks.
 
 <img src="<%- @image '/ten-open-source-nodejs-apps/iloveopensource.png' %>" width="100%" />
 
 ## browsenpm.org
 
-[browsenpm.org](http://browsenpm.org/package/browsenpm) [GitHub: [nodejitsu/browsenpm.org](https://github.com/nodejitsu/browsenpm.org), License: MIT] allows you to browse packages, users, code, stats and more the public npm registry in style.
+[browsenpm.org](http://browsenpm.org/package/browsenpm) (GitHub: [nodejitsu/browsenpm.org](https://github.com/nodejitsu/browsenpm.org), License: MIT) allows you to browse packages, users, code, stats and more the public npm registry in style.
 
 <img src="<%- @image '/ten-open-source-nodejs-apps/browsenpm.png' %>" width="100%" />
 
 ## npmjs.org
 
-[npmjs.org](http://browsenpm.org/package/npm-www) [GitHub: [npm/npm-www](https://github.com/npm/npm-www), License: BSD] is the source for npmjs.org that you probably have seen many times before but might have not realized was open for anyone to see and contribute to.
+[npmjs.org](http://browsenpm.org/package/npm-www) (GitHub: [npm/npm-www](https://github.com/npm/npm-www), License: BSD) is the source for npmjs.org that you probably have seen many times before but might have not realized was open for anyone to see and contribute to.
 
 <img src="<%- @image '/ten-open-source-nodejs-apps/npmjs.png' %>" width="100%" />
 
