@@ -1,0 +1,71 @@
+---
+date: 2014-07-18T13:43:54-0700
+title: Links for July 18, 2014
+layout: post-links
+tags: javascript, links
+description: Nerd links for the day, videos, GitHub projects, talks, articles and other stuff.
+---
+<img src="https://camo.githubusercontent.com/c2a4a539845cf882e7d4da1acc84153b19d549bc/68747470733a2f2f662e636c6f75642e6769746875622e636f6d2f6173736574732f333433322f38313238322f30366334346337652d363330662d313165322d396139312d3835633962393137383335632e706e67" class="hide-on-mobile" width="100%" />
+
+## Articles
+
+* [Hackernews Redesign](http://hilapeleg.io/2014/06/01/hackernews-redesign/)
+
+  > The challenge: adding to a simple thing - but after the additions, make sure it remains simple or even simpler.
+
+* [Compiling JSX with Sweet.js using Readtables](http://jlongster.com/Compiling-JSX-with-Sweet.js-using-Readtables)
+
+  > I have a vision. A vision where somebody can add a feature as complicated as pattern matching to JavaScript, and all I have to do is install the module to use it. With how far-reaching JavaScript is today, I think this kind of language extensibility is important.
+
+* [Introducing Ampersand.js](http://blog.andyet.com/2014/06/25/introducing-ampersand-js/)
+
+  > Introducing Ampersand.js a highly modular, loosely coupled, non-frameworky framework for building advanced JavaScript apps.
+
+* [Portals](http://howistart.org/posts/elixir/1)
+
+  > In this guide we will use the Elixir programming language to build portals by shooting doors of different colors and transferring data between them! We will even learn how we can distribute doors across different machines in our network.
+
+* [Favoring Curry](http://fr.umio.us/favoring-curry)
+
+  > Currying is the process of turning a function that expects multiple parameters into one that, when supplied fewer parameters, returns a new function that awaits the remaining ones.
+
+* [Acquaintance with SVG images](http://frontendbabel.info/articles/acquaintance-with-svg/)
+
+  > SVG is quite a mature technology but it began to gain its popularity just recently. Mostly due to the fact that vector graphics perfectly suit for adaptive web sites
+
+<%- @readMore() %>
+
+## Github
+
+* [Runtime.JS](http://runtimejs.org/) is an operating system kernel built on V8 JavaScript engine.
+* [soundcloud2000](https://github.com/grobie/soundcloud2000) is a terminal based SoundCloud client.
+
+## Startups
+
+* [Product Hunt](http://www.producthunt.com/) the best new products, every day.
+
+## YouTube
+
+* [JSConf US 2014 playlist](https://www.youtube.com/playlist?list=PL37ZVnwpeshFXOP2lqCUykYPXYNsK_fgN) - all JSConf 2014 talks in one place, awesome!
+* [Buy My Barina](https://www.youtube.com/watch?v=BJj7Km7Raks)
+* [Buy My Volvo](https://www.youtube.com/watch?v=JJ0nkStZnWo)
+* [#LOLVO V60](https://www.youtube.com/watch?v=W2298iagVro)
+
+## Apps
+
+* [TypeCast](http://typecast.com/) is a visual web based type setter. Very cool!
+* [Hydra](https://github.com/sdegutis/hydra) is a lightweight window manager with a powerful API and an extremely small footprint.
+* [MacDown](http://macdown.uranusjr.com/) is the open source Markdown editor for OS X.
+* [Breach](http://breach.cc/) is a browser for the HTML5 era. Entirely written in Javascript. Free. Modular. Hackable.
+* [Copay](https://copay.io/) is a secure, open source bitcoin wallet for friends and companies.
+
+## Twitter
+
+<blockquote class="twitter-tweet" data-partner="tweetdeck"><p>We now offer a FREE plan for Continuous Delivery. Get 100 builds/month for 5 private projects. Please Retweet! <a href="http://t.co/g5qf7SEVME">http://t.co/g5qf7SEVME</a></p>&mdash; Codeship (@codeship) <a href="https://twitter.com/codeship/statuses/489160510823473153">July 15, 2014</a></blockquote>
+
+## Misc
+
+* [The Simpsons in CSS](http://pattle.github.io/simpsons-in-css/) - some Simpsons characters made in pure CSS.
+* [Calculator: Just how much is that 2% really worth?](http://www.tejusparikh.com/projects/equity_calculator/index.html) - calculator for early stage startups giving a portion of salary in equity. See if it’s worth it of you.
+* [What are great examples of viral UX/UI design patterns?](http://www.quora.com/UI-UX-Design-Patterns/What-are-great-examples-of-viral-UX-UI-design-patterns)
+
