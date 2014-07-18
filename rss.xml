@@ -15,15 +15,96 @@
     <atom:link href="http://feeds.feedburner.com/npmawesome" rel="self" type="application/rss+xml"/>
     <link>http://npmawesome.com</link>
     <description>Daily dose of awesome NPM modules for Node.js, old and new!</description>
-    <lastBuildDate>Thu, 10 Jul 2014 19:43:43 GMT</lastBuildDate>
+    <lastBuildDate>Fri, 18 Jul 2014 20:48:34 GMT</lastBuildDate>
     <language>en</language>
     <sy:updatePeriod>daily</sy:updatePeriod>
     <sy:updateFrequency>2</sy:updateFrequency>
     <generator>awesomeness</generator>
-    <pubDate>Thu, 10 Jul 2014 19:43:43 GMT</pubDate>
+    <pubDate>Fri, 18 Jul 2014 20:48:34 GMT</pubDate>
 
     
     
+    
+      
+      
+      
+      <item>
+        <title><![CDATA[Links for July 18, 2014]]></title>
+        <link><![CDATA[http://npmawesome.com/posts/2014-07-18-links]]></link>
+        <dc:creator><![CDATA[Alex Gorbatchev]]></dc:creator>
+        <guid isPermaLink="true"><![CDATA[http://npmawesome.com/posts/2014-07-18-links]]></guid>
+        <pubDate><![CDATA[Fri, 18 Jul 2014 20:43:54 GMT]]></pubDate>
+        <description><![CDATA[<p><img src="https://camo.githubusercontent.com/c2a4a539845cf882e7d4da1acc84153b19d549bc/68747470733a2f2f662e636c6f75642e6769746875622e636f6d2f6173736574732f333433322f38313238322f30366334346337652d363330662d313165322d396139312d3835633962393137383335632e706e67" class="hide-on-mobile" width="100%" /></p>
+<h2 id="articles">Articles</h2>
+<ul>
+<li><p><a href="http://hilapeleg.io/2014/06/01/hackernews-redesign/">Hackernews Redesign</a></p>
+<blockquote>
+<p>The challenge: adding to a simple thing - but after the additions, make sure it remains simple or even simpler.</p>
+</blockquote>
+</li>
+<li><p><a href="http://jlongster.com/Compiling-JSX-with-Sweet.js-using-Readtables">Compiling JSX with Sweet.js using Readtables</a></p>
+<blockquote>
+<p>I have a vision. A vision where somebody can add a feature as complicated as pattern matching to JavaScript, and all I have to do is install the module to use it. With how far-reaching JavaScript is today, I think this kind of language extensibility is important.</p>
+</blockquote>
+</li>
+<li><p><a href="http://blog.andyet.com/2014/06/25/introducing-ampersand-js/">Introducing Ampersand.js</a></p>
+<blockquote>
+<p>Introducing Ampersand.js a highly modular, loosely coupled, non-frameworky framework for building advanced JavaScript apps.</p>
+</blockquote>
+</li>
+<li><p><a href="http://howistart.org/posts/elixir/1">Portals</a></p>
+<blockquote>
+<p>In this guide we will use the Elixir programming language to build portals by shooting doors of different colors and transferring data between them! We will even learn how we can distribute doors across different machines in our network.</p>
+</blockquote>
+</li>
+<li><p><a href="http://fr.umio.us/favoring-curry">Favoring Curry</a></p>
+<blockquote>
+<p>Currying is the process of turning a function that expects multiple parameters into one that, when supplied fewer parameters, returns a new function that awaits the remaining ones.</p>
+</blockquote>
+</li>
+<li><p><a href="http://frontendbabel.info/articles/acquaintance-with-svg/">Acquaintance with SVG images</a></p>
+<blockquote>
+<p>SVG is quite a mature technology but it began to gain its popularity just recently. Mostly due to the fact that vector graphics perfectly suit for adaptive web sites</p>
+</blockquote>
+</li>
+</ul>
+<div class="read-more"></div>
+
+<h2 id="github">Github</h2>
+<ul>
+<li><a href="http://runtimejs.org/">Runtime.JS</a> is an operating system kernel built on V8 JavaScript engine.</li>
+<li><a href="https://github.com/grobie/soundcloud2000">soundcloud2000</a> is a terminal based SoundCloud client.</li>
+</ul>
+<h2 id="startups">Startups</h2>
+<ul>
+<li><a href="http://www.producthunt.com/">Product Hunt</a> the best new products, every day.</li>
+</ul>
+<h2 id="youtube">YouTube</h2>
+<ul>
+<li><a href="https://www.youtube.com/playlist?list=PL37ZVnwpeshFXOP2lqCUykYPXYNsK_fgN">JSConf US 2014 playlist</a> - all JSConf 2014 talks in one place, awesome!</li>
+<li><a href="https://www.youtube.com/watch?v=BJj7Km7Raks">Buy My Barina</a></li>
+<li><a href="https://www.youtube.com/watch?v=JJ0nkStZnWo">Buy My Volvo</a></li>
+<li><a href="https://www.youtube.com/watch?v=W2298iagVro">#LOLVO V60</a></li>
+</ul>
+<h2 id="apps">Apps</h2>
+<ul>
+<li><a href="http://typecast.com/">TypeCast</a> is a visual web based type setter. Very cool!</li>
+<li><a href="https://github.com/sdegutis/hydra">Hydra</a> is a lightweight window manager with a powerful API and an extremely small footprint.</li>
+<li><a href="http://macdown.uranusjr.com/">MacDown</a> is the open source Markdown editor for OS X.</li>
+<li><a href="http://breach.cc/">Breach</a> is a browser for the HTML5 era. Entirely written in Javascript. Free. Modular. Hackable.</li>
+<li><a href="https://copay.io/">Copay</a> is a secure, open source bitcoin wallet for friends and companies.</li>
+</ul>
+<h2 id="twitter">Twitter</h2>
+<blockquote class="twitter-tweet" data-partner="tweetdeck"><p>We now offer a FREE plan for Continuous Delivery. Get 100 builds/month for 5 private projects. Please Retweet! <a href="http://t.co/g5qf7SEVME">http://t.co/g5qf7SEVME</a></p>&mdash; Codeship (@codeship) <a href="https://twitter.com/codeship/statuses/489160510823473153">July 15, 2014</a></blockquote>
+
+<h2 id="misc">Misc</h2>
+<ul>
+<li><a href="http://pattle.github.io/simpsons-in-css/">The Simpsons in CSS</a> - some Simpsons characters made in pure CSS.</li>
+<li><a href="http://www.tejusparikh.com/projects/equity_calculator/index.html">Calculator: Just how much is that 2% really worth?</a> - calculator for early stage startups giving a portion of salary in equity. See if it’s worth it of you.</li>
+<li><a href="http://www.quora.com/UI-UX-Design-Patterns/What-are-great-examples-of-viral-UX-UI-design-patterns">What are great examples of viral UX/UI design patterns?</a></li>
+</ul>
+]]></description>
+      </item>
     
       
       
@@ -110,7 +191,7 @@ var output = colorguard.inspect(css, {
         <guid isPermaLink="true"><![CDATA[http://npmawesome.com/posts/2014-07-08-mag]]></guid>
         <pubDate><![CDATA[Tue, 08 Jul 2014 17:02:58 GMT]]></pubDate>
         <description><![CDATA[<p><img src="https://avatars0.githubusercontent.com/u/780935?s=400" width="100" align="right"/>
-My name is <a href="https://github.com/mahnunchik">Eugeny Vlasenko</a> and I want to introduce my logging module called <a href="http://browsenpm.org/package/mag">mag</a> (GitHub: <a href="https://github.com/mahnunchik/mag">mahnunchik/mag</a>, License: MIT). There are lots of full-featured logging frameworks such as <a href="http://browsenpm.org/package/bunyan">Bunyan</a> [GitHub: <a href="https://github.com/trentm/node-bunyan">trentm/node-bunyan</a>, License: MIT) <a href="http://browsenpm.org/package/node-bunyan">Winston</a> (GitHub: <a href="https://github.com/flatiron/winston">flatiron/winston</a>, License: MIT) or <a href="http://browsenpm.org/package/log4js">log4js</a> (GitHub: <a href="https://github.com/nomiddlename/log4js-node, License: MIT">nomiddlename/log4js-node</a>. Why write another one? Personally, I subscribe to the <a href="http://12factor.net">twelve-factor app methodology</a> and more specifically <a href="http://12factor.net/logs">the part about logs</a>. Another cool thing about <code>mag</code> is that it’s fully built on <a href="https://www.npmjs.org/package/readable-stream">Streams3</a>.</p>
+My name is <a href="https://github.com/mahnunchik">Eugeny Vlasenko</a> and I want to introduce my logging module called <a href="http://browsenpm.org/package/mag">mag</a> (GitHub: <a href="https://github.com/mahnunchik/mag">mahnunchik/mag</a>, License: MIT). There are lots of full-featured logging frameworks such as <a href="http://browsenpm.org/package/bunyan">Bunyan</a> [GitHub: <a href="https://github.com/trentm/node-bunyan">trentm/node-bunyan</a>, License: MIT) <a href="http://browsenpm.org/package/node-bunyan">Winston</a> (GitHub: <a href="https://github.com/flatiron/winston">flatiron/winston</a>, License: MIT) or <a href="http://browsenpm.org/package/log4js">log4js</a> (GitHub: <a href="https://github.com/nomiddlename/log4js-node">nomiddlename/log4js-node</a>, License: MIT). Why write another one? Personally, I subscribe to the <a href="http://12factor.net">twelve-factor app methodology</a> and more specifically <a href="http://12factor.net/logs">the part about logs</a>. Another cool thing about <code>mag</code> is that it’s fully built on <a href="https://www.npmjs.org/package/readable-stream">Streams3</a>.</p>
 <div class="read-more"></div>
 
 <h2 id="installation">Installation</h2>
@@ -260,102 +341,40 @@ hub.pipe(info())
 <div class="read-more"></div>
 
 <h2 id="strider-cd">Strider CD</h2>
-<p><a href="http://browsenpm.org/package/strider">Strider CD</a> [GitHub: <a href="https://github.com/Strider-CD/strider">Strider-CD/strider</a>, License: BSD] is Continuous Deployment / Continuous Integration platform.</p>
+<p><a href="http://browsenpm.org/package/strider">Strider CD</a> (GitHub: <a href="https://github.com/Strider-CD/strider">Strider-CD/strider</a>, License: BSD) is Continuous Deployment / Continuous Integration platform.</p>
 <p>Getting started is very simple. Simply add your GitHub projects to strider, and relax as the tight integration means your tests will run on every commit. <a href="https://www.youtube.com/watch?v=whVH24yQSHI">Checkout the YouTube demo</a> for a 4 minute introduction.</p>
 <p><img src="http://npmawesome.com/images/posts/ten-open-source-nodejs-apps/strider.jpg" width="100%" /></p>
 <h2 id="popcorn-time">Popcorn Time</h2>
-<p>Popcorn Time [GitHub: <a href="https://github.com/popcorn-official/popcorn-app">popcorn-official/popcorn-app</a>, License: GPL] allows any computer user to watch movies easily streaming from torrents, without any particular knowledge. It is, in my opinion, the most interesting applications technology wise in this list with a good amount of <a href="https://torrentfreak.com/popcorn-time-devs-drop-like-flies-but-no-one-will-talk-140420/">controversy</a> to boot.</p>
-<p>It&#39;s a desktop app build on top of the node-webkit [GitHub: <a href="https://github.com/rogerwang/node-webkit">rogerwang/node-webkit</a>, License: MIT] that is able to stream and play a torrent movie practicaly in real time... and it&#39;s all JavaScript. Seriously cool stuff!</p>
+<p>Popcorn Time (GitHub: <a href="https://github.com/popcorn-official/popcorn-app">popcorn-official/popcorn-app</a>, License: GPL) allows any computer user to watch movies easily streaming from torrents, without any particular knowledge. It is, in my opinion, the most interesting applications technology wise in this list with a good amount of <a href="https://torrentfreak.com/popcorn-time-devs-drop-like-flies-but-no-one-will-talk-140420/">controversy</a> to boot.</p>
+<p>It&#39;s a desktop app build on top of the node-webkit (GitHub: <a href="https://github.com/rogerwang/node-webkit">rogerwang/node-webkit</a>, License: MIT) that is able to stream and play a torrent movie practicaly in real time... and it&#39;s all JavaScript. Seriously cool stuff!</p>
 <p><img src="http://npmawesome.com/images/posts/ten-open-source-nodejs-apps/popcorn1.png" width="100%" /></p>
 <p><img src="http://npmawesome.com/images/posts/ten-open-source-nodejs-apps/popcorn2.png" width="100%" /></p>
 <h2 id="mediacenterjs">MediacenterJS</h2>
-<p>MediacenterJS [GitHub: <a href="https://github.com/jansmolders86/mediacenterjs">jansmolders86/mediacenterjs</a>, License: GPL] is a media center (like for instance <a href="http://xbmc.org/">XBMC</a>) running completely from the comfort of your browser. The server application runs on Windows, MAC and Linux systems, the client runs in every modern browser.</p>
+<p>MediacenterJS (GitHub: <a href="https://github.com/jansmolders86/mediacenterjs">jansmolders86/mediacenterjs</a>, License: GPL) is a media center (like for instance <a href="http://xbmc.org/">XBMC</a>) running completely from the comfort of your browser. The server application runs on Windows, MAC and Linux systems, the client runs in every modern browser.</p>
 <p><img src="http://npmawesome.com/images/posts/ten-open-source-nodejs-apps/mediacenterjs.png" width="100%" /></p>
 <h2 id="kiwiirc">KiwiIRC</h2>
-<p><a href="http://browsenpm.org/package/kiwiirc">KiwiIRC</a> [GitHub: <a href="https://github.com/prawnsalad/KiwiIRC">prawnsalad/KiwiIRC</a>, License: AGPL] is a fully featured IRC client that can be extended to suit almost any needs. Using the web application is extremly simple even without any IRC knowledge as all the common needs are built directly into the UI.</p>
+<p><a href="http://browsenpm.org/package/kiwiirc">KiwiIRC</a> (GitHub: <a href="https://github.com/prawnsalad/KiwiIRC">prawnsalad/KiwiIRC</a>, License: AGPL) is a fully featured IRC client that can be extended to suit almost any needs. Using the web application is extremly simple even without any IRC knowledge as all the common needs are built directly into the UI.</p>
 <p><img src="http://npmawesome.com/images/posts/ten-open-source-nodejs-apps/kiwiirc.png" width="100%" /></p>
 <h2 id="slate">Slate</h2>
-<p>Slate [GitHub: <a href="https://github.com/slate/slate">slate/slate</a>, License: MIT] is a modern minimalistic IRC client, completely extensible through plugins and built with web technologies and for OSX, Linux, and eventually Windows.</p>
+<p>Slate (GitHub: <a href="https://github.com/slate/slate">slate/slate</a>, License: MIT) is a modern minimalistic IRC client, completely extensible through plugins and built with web technologies and for OSX, Linux, and eventually Windows.</p>
 <p><img src="http://npmawesome.com/images/posts/ten-open-source-nodejs-apps/slate.png" width="100%" /></p>
 <h2 id="david">David</h2>
-<p><a href="http://browsenpm.org/package/david">David</a> [GitHub: <a href="https://github.com/alanshaw/david-www">alanshaw/david-www</a>, License: MIT] is a web service that tells you when your project NPM dependencies are out of date.</p>
+<p><a href="http://browsenpm.org/package/david">David</a> (GitHub: <a href="https://github.com/alanshaw/david-www">alanshaw/david-www</a>, License: MIT) is a web service that tells you when your project NPM dependencies are out of date.</p>
 <p><img src="http://npmawesome.com/images/posts/ten-open-source-nodejs-apps/david.png" width="100%" /></p>
 <h2 id="shields">Shields</h2>
 <p><a href="http://browsenpm.org/package/gh-badges">Shields</a> (GitHub: <a href="https://github.com/badges/shields">badges/shields</a>, License: CC0) is a service that provides legible &amp; concise status badges for third-party codebase services, like those that you see aplenty all over GitHub.</p>
 <p><img src="http://npmawesome.com/images/posts/ten-open-source-nodejs-apps/shields.png" width="100%" /></p>
 <h2 id="i-love-open-source">I Love Open Source</h2>
-<p>I Love Open Source [GitHub: <a href="https://github.com/codio/iloveopensource">codio/iloveopensource</a>, License: MIT] is a way of encouraging users of Open Source code to express their gratitude through a simple acknowledgement page. Along the way, they are gently offered a chance to donate cash or just thanks.</p>
+<p>I Love Open Source (GitHub: <a href="https://github.com/codio/iloveopensource">codio/iloveopensource</a>, License: MIT) is a way of encouraging users of Open Source code to express their gratitude through a simple acknowledgement page. Along the way, they are gently offered a chance to donate cash or just thanks.</p>
 <p><img src="http://npmawesome.com/images/posts/ten-open-source-nodejs-apps/iloveopensource.png" width="100%" /></p>
 <h2 id="browsenpm-org">browsenpm.org</h2>
-<p><a href="http://browsenpm.org/package/browsenpm">browsenpm.org</a> [GitHub: <a href="https://github.com/nodejitsu/browsenpm.org">nodejitsu/browsenpm.org</a>, License: MIT] allows you to browse packages, users, code, stats and more the public npm registry in style.</p>
+<p><a href="http://browsenpm.org/package/browsenpm">browsenpm.org</a> (GitHub: <a href="https://github.com/nodejitsu/browsenpm.org">nodejitsu/browsenpm.org</a>, License: MIT) allows you to browse packages, users, code, stats and more the public npm registry in style.</p>
 <p><img src="http://npmawesome.com/images/posts/ten-open-source-nodejs-apps/browsenpm.png" width="100%" /></p>
 <h2 id="npmjs-org">npmjs.org</h2>
-<p><a href="http://browsenpm.org/package/npm-www">npmjs.org</a> [GitHub: <a href="https://github.com/npm/npm-www">npm/npm-www</a>, License: BSD] is the source for npmjs.org that you probably have seen many times before but might have not realized was open for anyone to see and contribute to.</p>
+<p><a href="http://browsenpm.org/package/npm-www">npmjs.org</a> (GitHub: <a href="https://github.com/npm/npm-www">npm/npm-www</a>, License: BSD) is the source for npmjs.org that you probably have seen many times before but might have not realized was open for anyone to see and contribute to.</p>
 <p><img src="http://npmawesome.com/images/posts/ten-open-source-nodejs-apps/npmjs.png" width="100%" /></p>
 <p>Have you seen other interesting applications written in Node.js? Please post them in comments!</p>
 ]]></description>
-      </item>
-    
-      
-      
-      
-      <item>
-        <title><![CDATA[Links for June 30, 2014]]></title>
-        <link><![CDATA[http://npmawesome.com/posts/2014-06-30-links]]></link>
-        <dc:creator><![CDATA[Alex Gorbatchev]]></dc:creator>
-        <guid isPermaLink="true"><![CDATA[http://npmawesome.com/posts/2014-06-30-links]]></guid>
-        <pubDate><![CDATA[Mon, 30 Jun 2014 16:43:28 GMT]]></pubDate>
-        <description><![CDATA[<p><img src="http://npmawesome.com/images/posts/docker.png" class="hide-on-mobile" width="150" align="right"/></p>
-<h2 id="articles">Articles</h2>
-<ul>
-<li><a href="http://www.joyent.com/developers/node/design/errors">Error Handling in Node.js</a><blockquote>
-<p>Error handling is a pain, and it&#39;s easy to get by for a long time in Node.js without dealing with many errors correctly. But building robust Node.js apps requires dealing properly with errors, and it&#39;s not hard to learn how.</p>
-</blockquote>
-</li>
-<li><a href="http://www.slideshare.net/mongodb/mongodb-and-amazon-web-services-deploying-for-high-availability-31642339">MongoDB and Amazon Web Services: Deploying for High Availability</a><blockquote>
-<p>Best practices are meant to be a sensible starting point</p>
-</blockquote>
-</li>
-<li><a href="http://blog.ponyfoo.com/2014/05/17/css-the-good-parts">CSS: The Good Parts</a><blockquote>
-<p>This style guide is a jab at solving collisions between CSS class names, and issues that ultimately lead to confusion, having to use !important rules, copying and pasting style declarations, and other awful aspects of CSS developments.</p>
-</blockquote>
-</li>
-<li><a href="http://www.cambus.net/emulators-written-in-javascript/">Emulators written in JavaScript</a><blockquote>
-<p>This list started as a compilation of JavaScript emulators posted to Echo JS over the years.</p>
-</blockquote>
-</li>
-<li><a href="http://blog.abhinav.ca/blog/2014/06/17/develop-a-nodejs-app-with-docker/">Develop a NodeJS App With Docker</a><blockquote>
-<p>This is the first of two posts. This post covers a somewhat detailed tutorial on using Docker as a replacement for Vagrant when developing a Node app using the Express framework. To make things a bit non-trivial, the app will persist session information in Redis using the connect-redid middleware.</p>
-</blockquote>
-</li>
-<li><a href="http://www.candyjapan.com/candy-japan-crosses-10000-mrr">Candy Japan crosses $10000 MRR</a><blockquote>
-<p>Out of that $10k / month revenue of course not all (not even most) is profit. Compared to a SaaS, the costs are very high, but I&#39;ve carved enough profit margin to reach an income level similar to a Japanese salaryman now.</p>
-</blockquote>
-</li>
-</ul>
-<div class="read-more"></div>
-
-<h2 id="github">Github</h2>
-<ul>
-<li><a href="https://github.com/flowjs/flow.js">flow.js</a> is a JavaScript library providing multiple simultaneous, stable, fault-tolerant and resumable/restartable file uploads via the HTML5 File API.</li>
-</ul>
-<h2 id="startups">Startups</h2>
-<ul>
-<li><a href="https://www.counterparty.co">Counterparty</a> is a global marketplace and financial platform built on Bitcoin, which makes powerful peer-to-peer financial instruments available to anyone with an Internet connection.</li>
-<li><a href="https://bugsnag.com/">bugsnap</a>’s cross platform error monitoring helps you ship with confidence.</li>
-<li><a href="https://learnable.com/">Learnable</a> is a resource to learn web development and design from the experts.</li>
-<li><a href="https://www.trycelery.com/">Celery</a> is the easiest way to accept orders now and charge when you&#39;re ready.</li>
-</ul>
-<h2 id="youtube">YouTube</h2>
-<ul>
-<li><a href="https://www.youtube.com/watch?v=Dh8kp1AcRg0">Amazon DynamoDB Design Patterns for Ultra-High Performance Apps</a></li>
-</ul>
-<h2 id="unix">Unix</h2>
-<ul>
-<li><a href="http://hippyvm.com/">HippyVM</a> on average is 7.3x faster than stock PHP and 2x faster than Facebook’s HHVM.</li>
-</ul>
-<h2 id="twitter">Twitter</h2>
-<blockquote class="twitter-tweet" data-partner="tweetdeck"><p>New <a href="https://twitter.com/hashtag/dockercon?src=hash">#dockercon</a> 14 video: &quot;Automated <a href="https://twitter.com/chef">@chef</a> cookbook testing with <a href="https://twitter.com/droneio">@droneio</a> and <a href="https://twitter.com/github">@github</a>&quot; <a href="http://t.co/7h13hXi2V3">http://t.co/7h13hXi2V3</a> by <a href="https://twitter.com/pczarkowski">@pczarkowski</a> from <a href="https://twitter.com/Rackspace">@Rackspace</a></p>&mdash; Docker (@docker) <a href="https://twitter.com/docker/statuses/482242087811702784">June 26, 2014</a></blockquote>]]></description>
       </item>
     
   </channel>
