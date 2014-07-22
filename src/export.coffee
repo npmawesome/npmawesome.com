@@ -74,7 +74,7 @@ context =
     attrs = ['full']
     attrs.push "name=\"#{name}\"" if name?
     attrs.push "displayName=\"#{displayName}\"" if displayName?
-    attrs.push "repo=\"#{repo}\"" if repo?
+    attrs.push "github=\"#{repo}\"" if repo?
     attrs.push "license=\"#{license}\"" if license?
     "[module #{attrs.join ' '}]"
 
@@ -197,7 +197,7 @@ for filename, postId in fs.readdirSync documentsDir when filename.indexOf('20') 
       <category domain="category" nicename="nerd-links"><![CDATA[Nerd Links]]></category>
     """
 
-  for tag in meta.tags when not tag in ['npm', 'links']
+  for tag in meta.tags when tag not in ['npm', 'links']
     print """
       <category domain="post_tag" nicename="#{tag}"><![CDATA[#{tag}]]></category>
     """
